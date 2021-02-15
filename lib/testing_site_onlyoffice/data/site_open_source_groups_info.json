@@ -1,0 +1,22 @@
+{
+  "docker": {
+    "instruction": "Installing ONLYOFFICE Groups for Docker on a local server - ONLYOFFICE",
+    "download": "groups-install.sh",
+    "github": "GitHub - ONLYOFFICE/Docker-CommunityServer: Collaborative system for managing documents, projects, customer relations and emails in one place"
+  },
+  "debian": {
+    "instruction": "Installing ONLYOFFICE Groups for Debian, Ubuntu, and derivatives - ONLYOFFICE",
+    "download": "groups-install.sh",
+    "github": "GitHub - ONLYOFFICE/CommunityServer: Free open source office suite with business productivity tools: document and project management, CRM, mail aggregator."
+  },
+  "centos": {
+    "instruction": "Installing ONLYOFFICE Groups for Red Hat, CentOS, and derivatives - ONLYOFFICE",
+    "download": "groups-install.sh",
+    "github": "GitHub - ONLYOFFICE/CommunityServer: Free open source office suite with business productivity tools: document and project management, CRM, mail aggregator."
+  },
+  "windows": {
+    "instruction": "Installing ONLYOFFICE Groups on a local server - ONLYOFFICE",
+    "download": "ONLYOFFICE_Groups_Win-install.latest.exe",
+    "github": "GitHub - ONLYOFFICE/CommunityServer: Free open source office suite with business productivity tools: document and project management, CRM, mail aggregator."
+  }
+}

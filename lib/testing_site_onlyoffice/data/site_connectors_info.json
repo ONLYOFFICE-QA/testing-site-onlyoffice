@@ -1,0 +1,38 @@
+{
+  "alfresco": {
+    "github_title": "GitHub - ONLYOFFICE/onlyoffice-alfresco: The package which enables the users to edit office documents from Alfresco using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Alfresco",
+    "instruction_title": "Integration. Getting Started. Alfresco - ONLYOFFICE"
+  },
+  "confluence": {
+    "github_title": "GitHub - ONLYOFFICE/onlyoffice-confluence: The plugin which enables the users to edit office documents from Confluence using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Confluence",
+    "instruction_title": "Integration. Getting Started. Confluence - ONLYOFFICE"
+  },
+  "humhub": {
+    "github_title": "GitHub - ONLYOFFICE/onlyoffice-humhub: Plugin for integrating ONLYOFFICE online editors with HumHub",
+    "instruction_title": "Integration. Getting Started. Humhub - ONLYOFFICE"
+  },
+  "liferay": {
+    "github_title": "GitHub - ONLYOFFICE/onlyoffice-liferay: Plugin for integrating ONLYOFFICE online editors with Liferay",
+    "instruction_title": "Integration. Getting Started. Liferay - ONLYOFFICE"
+  },
+  "nextcloud": {
+    "github_title": "GitHub - ONLYOFFICE/onlyoffice-nextcloud: The app which enables the users to edit office documents from Nextcloud using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Nextcloud",
+    "instruction_title": "Integration. Getting Started. Nextcloud - ONLYOFFICE"
+  },
+  "nuxeo": {
+    "github_title": "GitHub - ONLYOFFICE/onlyoffice-nuxeo: Plugin for integrating ONLYOFFICE online editors with Nuxeo",
+    "instruction_title": "Integration. Getting Started. Nuxeo - ONLYOFFICE"
+  },
+  "owncloud": {
+    "github_title": "GitHub - ONLYOFFICE/onlyoffice-owncloud: The app which enables the users to edit office documents from ownCloud/Nextcloud using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to ownCloud/Nextcloud",
+    "instruction_title": "Integration. Getting Started. OwnCloud - ONLYOFFICE"
+  },
+  "plone": {
+    "github_title": "GitHub - ONLYOFFICE/onlyoffice-plone: Plugin for integrating ONLYOFFICE online editors with Plone",
+    "instruction_title": "Integration. Getting Started. Plone - ONLYOFFICE"
+  },
+  "sharepoint": {
+    "github_title": "GitHub - ONLYOFFICE/onlyoffice-sharepoint: The solution which enables the users to edit office documents from SharePoint using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to SharePoint",
+    "instruction_title": "Integration. Getting Started. SharePoint - ONLYOFFICE"
+  }
+}
