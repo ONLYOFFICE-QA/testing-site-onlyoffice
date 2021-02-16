@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/onlyoffice-testing-robot/onlyoffice_iredmail_helper
-  revision: a6317cb581f860e96c554271a6e60b9ca61f3611
+  revision: bd029a376268997fe9adb8cdbe45c5f9e3874ef3
   specs:
     onlyoffice_iredmail_helper (0.2.1)
       mail (~> 2)
