@@ -1,0 +1,39 @@
+{
+  "docker": {
+    "instruction": "Installing ONLYOFFICE Docs for Docker on a local server - ONLYOFFICE",
+    "download": "Installing ONLYOFFICE Docs for Docker on a local server - ONLYOFFICE",
+    "github": "GitHub - ONLYOFFICE/Docker-DocumentServer: ONLYOFFICE Document Server is an online office suite comprising viewers and editors for texts, spreadsheets and presentations, fully compatible with Office Open XML formats: .docx, .xlsx, .pptx and enabling collaborative editing in real time."
+  },
+  "ubuntu": {
+    "instruction": "Installing ONLYOFFICE Docs for Debian, Ubuntu, and derivatives - ONLYOFFICE",
+    "download": "Installing ONLYOFFICE Docs for Debian, Ubuntu, and derivatives - ONLYOFFICE",
+    "github": "GitHub - ONLYOFFICE/DocumentServer: ONLYOFFICE Document Server is an online office suite comprising viewers and editors for texts, spreadsheets and presentations, fully compatible with Office Open XML formats: .docx, .xlsx, .pptx and enabling collaborative editing in real time."
+  },
+  "centos": {
+    "instruction": "Installing ONLYOFFICE Docs for CentOS and derivatives - ONLYOFFICE",
+    "download": "Installing ONLYOFFICE Docs for CentOS and derivatives - ONLYOFFICE",
+    "github": "GitHub - ONLYOFFICE/DocumentServer: ONLYOFFICE Document Server is an online office suite comprising viewers and editors for texts, spreadsheets and presentations, fully compatible with Office Open XML formats: .docx, .xlsx, .pptx and enabling collaborative editing in real time."
+  },
+  "windows": {
+    "instruction": "Installing ONLYOFFICE Docs for Windows on a local server - ONLYOFFICE",
+    "download": "onlyoffice-documentserver.exe",
+    "github": "GitHub - ONLYOFFICE/DocumentServer: ONLYOFFICE Document Server is an online office suite comprising viewers and editors for texts, spreadsheets and presentations, fully compatible with Office Open XML formats: .docx, .xlsx, .pptx and enabling collaborative editing in real time."
+  },
+  "snap": {
+    "instruction": "Installing ONLYOFFICE Docs for Linux from snap package - ONLYOFFICE",
+    "download": "Installing ONLYOFFICE Docs for Linux from snap package - ONLYOFFICE",
+    "github": "GitHub - ONLYOFFICE/snap-documentserver: The ONLYOFFICE Document Server snap package for the snap package system"
+  },
+  "digitalocean": {
+    "instruction": "Deploying ONLYOFFICE Docs in DigitalOcean - ONLYOFFICE",
+    "download": "ONLYOFFICE Workspace Hosting | DigitalOcean Marketplace 1-Click App"
+  },
+  "Cloudron": {
+    "instruction": "Integration. Getting Started. Nextcloud - ONLYOFFICE",
+    "download": "Cloudron - Install ONLYOFFICE Docs - Open source office and productivity suite"
+  },
+  "UCS": {
+    "instruction": "Integration. Getting Started. Nextcloud - ONLYOFFICE",
+    "download": "ONLYOFFICE Docs - Univention App Center"
+  }
+}

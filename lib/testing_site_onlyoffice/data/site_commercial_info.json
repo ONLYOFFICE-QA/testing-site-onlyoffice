@@ -1,0 +1,62 @@
+{
+  "workspace": {
+    "windows": {
+      "instruction": "Installing ONLYOFFICE Workspace for Windows on a local server - ONLYOFFICE"
+    },
+    "docker": {
+      "instruction": "Installing server version using the provided script - ONLYOFFICE"
+    },
+    "debian": {
+      "instruction": "Installing server version from RPM/DEB packages using the provided script - ONLYOFFICE"
+    },
+    "centos": {
+      "instruction": "Installing server version from RPM/DEB packages using the provided script - ONLYOFFICE"
+    },
+    "amazon_machine": {
+      "instruction": "Deploying ONLYOFFICE Workspace Enterprise Edition using AMI - ONLYOFFICE",
+      "download": "AWS Marketplace: Ascensio Systems Inc"
+    },
+    "ovhcloud": {
+      "download": "Full IP solutions - OVHcloud Marketplace"
+    }
+  },
+  "docs_enterprise": {
+    "docker": {
+      "instruction": "Installing ONLYOFFICE Docs for Docker on a local server - ONLYOFFICE"
+    },
+    "debian": {
+      "instruction": "Installing ONLYOFFICE Docs for Debian, Ubuntu, and derivatives - ONLYOFFICE"
+    },
+    "centos": {
+      "instruction": "Installing ONLYOFFICE Docs for CentOS and derivatives - ONLYOFFICE"
+    },
+    "windows": {
+      "instruction": "Installing ONLYOFFICE Docs for Windows on a local server - ONLYOFFICE"
+    },
+    "amazon_machine": {
+      "instruction": "Deploying ONLYOFFICE Docs Enterprise Edition using AMI - ONLYOFFICE",
+      "download": "AWS Marketplace: Ascensio Systems Inc"
+    },
+    "univention": {
+      "download": "Katalog"
+    }
+  },
+  "docs_developer": {
+    "docker": {
+      "instruction": "Installing ONLYOFFICE Docs for Docker on a local server - ONLYOFFICE"
+    },
+    "debian": {
+      "instruction": "Installing ONLYOFFICE Docs for Debian, Ubuntu, and derivatives - ONLYOFFICE"
+    },
+    "centos": {
+      "instruction": "Installing ONLYOFFICE Docs for CentOS and derivatives - ONLYOFFICE"
+    },
+    "windows": {
+      "instruction": "Installing ONLYOFFICE Docs for Windows on a local server - ONLYOFFICE"
+    },
+    "amazon_machine": {
+      "instruction": "Deploying ONLYOFFICE Docs Developer Edition using AMI - ONLYOFFICE",
+      "download": "AWS Marketplace: Ascensio Systems Inc"
+    }
+  }
+}
