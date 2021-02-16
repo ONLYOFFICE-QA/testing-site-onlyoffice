@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: https://github.com/onlyoffice-testing-robot/onlyoffice_tcm_helper
-  revision: c266ee4bd502e68c7a820266e29a79dcafaf0839
+  revision: 3a741b34f09879928cf7239a3dc34e76fec793d7
   specs:
     onlyoffice_tcm_helper (0.2.0)
       onlyoffice_file_helper (~> 0)
