@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../../../../Teamlab/Framework/TestInstance'
+require_relative '../../../../TeamLab/Framework/TestInstance'
 
 module TestingSiteOnlyffice
   class SiteData

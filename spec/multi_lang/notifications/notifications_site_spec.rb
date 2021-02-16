@@ -25,7 +25,6 @@ describe 'Registration new portal' do
   end
 
   # CAUTION: do not test on .com frequently
-  # for debug: nonprofit.manager.t@gmail.com Teamlab123
   describe 'Partnership' do
     it '[Site][Partnership] Send request for partnership' do
       pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if StaticDataTeamLab.portal_type == '.com'
