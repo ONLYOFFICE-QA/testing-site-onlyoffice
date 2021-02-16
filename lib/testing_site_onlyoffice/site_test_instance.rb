@@ -1,5 +1,5 @@
 require_relative 'site_home_page'
-require_relative '../../../Teamlab/Framework/TestInstance'
+require_relative '../../../TeamLab/Framework/TestInstance'
 
 # Instance of browser to perform actions
 module TestingSiteOnlyffice
