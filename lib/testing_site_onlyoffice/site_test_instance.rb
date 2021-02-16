@@ -24,5 +24,10 @@ module TestingSiteOnlyffice
 
       @doc_instance.selenium = @webdriver
     end
+
+    # @return [Hash] private data of site
+    def private_data
+      @private_data ||= SitePrivateData.new.decrypt
+    end
   end
 end
