@@ -14,7 +14,7 @@ module TestingSiteOnlyffice
     # user = AuthData.new(any params) or hash(see in "submit_invited_user" method), link = https://portal-name.onlyoffice.com/info?any keys
     # method will open browser, add passwords on invite page, click confirm and close browser
     def submit_user_by_link_web(user, link)
-      test_session = TestInstance.new(AuthData.new(link))
+      test_session = SiteTestInstance.new(AuthData.new(link))
       general_invite_page = SettingsGeneralAddNewUser.new(test_session)
       general_invite_page.submit_invited_user(user)
       test_session.webdriver.quit

@@ -106,14 +106,6 @@ module TestingSiteOnlyffice
                                           '//*[@id="ReleaseNewVersion"]//*[contains(@class, "btn-close")]').click
     end
 
-    def open_api_page
-      page_address = StaticDataTeamLab.portal_type == '.info' ? 'api.teamlab.info' : 'api.onlyoffice.com'
-      @test = TestInstance.new
-      @test.webdriver.open(page_address)
-      api_page = SiteApi.new(@test)
-      [api_page, @test]
-    end
-
     def open_page_teamlab_office(portal = get_full_portal_name('www'))
       log_new_portal('Init browser: Start')
       admin = AuthData.new(portal)

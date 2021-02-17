@@ -18,7 +18,7 @@ module TestingSiteOnlyffice
                   end
       log_new_portal("Add users: Count: #{user_list.count}")
       if user_list.length > 1
-        test = TestInstance.new(user_list.first)
+        test = SiteTestInstance.new(user_list.first)
         api = GeneralApiService.new(user_list.first.portal, user_list.first.email, user_list.first.password)
         user_link = api.portal.invite_user_url
         guest_link = api.portal.invite_visitor_url
@@ -139,27 +139,6 @@ module TestingSiteOnlyffice
     def get_mail_to_user_ired_mail(clone, current_time)
       clone.username += current_time.to_s if current_time != 1
       "#{clone.username}@#{SettingsData::DOMAIN}"
-    end
-
-    def add_users_to_portal(portal_data, user_list)
-      user_list.each do |current_user|
-        next unless current_user.type != :admin
-
-        p "current_user: #{current_user.first_name}"
-        admin = AuthData.new(portal_data.portal_name, portal_data.portal_login, portal_data.portal_pwd)
-        test = TestInstance.new(admin)
-        begin
-          login_page = LoginPage.new(test)
-          main_page = login_page.login_with
-          people_page = main_page.go_to_people
-          invitation_link_form = people_page.open_invitation_link_form
-          add_user_page = invitation_link_form.open_people_invitation_link_for(current_user.type)
-          add_user_page.add_current_user_by_link_and_relogin(current_user)
-        rescue StandardError
-          p "cant add user: #{current_user.first_name}"
-        end
-        test.webdriver.quit
-      end
     end
   end
 end
