@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../../../../TeamLab/Framework/TestInstance'
-
 module TestingSiteOnlyoffice
   class SiteData
     EMAIL_FOR_SITE = 'site@qamail.teamlab.info'
