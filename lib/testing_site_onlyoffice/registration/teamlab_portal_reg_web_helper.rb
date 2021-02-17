@@ -1,4 +1,4 @@
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module TeamlabPortalRegWebHelper
     def create_portal_by_web(param, change_language_flag = StaticDataTeamLab.change_portal_language_flag, language = StaticDataTeamLab.current_language, site_language = 'en-US')
       log_new_portal('Start')

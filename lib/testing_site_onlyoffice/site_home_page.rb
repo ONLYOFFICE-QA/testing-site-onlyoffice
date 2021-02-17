@@ -79,7 +79,7 @@ require_relative 'site_helper'
 require_relative 'site_wrong_portal'
 require_relative 'site_notification_helper'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteHomePage
     attr_accessor :instance
 

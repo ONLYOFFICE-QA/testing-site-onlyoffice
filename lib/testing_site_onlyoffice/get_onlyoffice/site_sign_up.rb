@@ -2,7 +2,7 @@
 # https://user-images.githubusercontent.com/40513035/107354674-7fd74e00-6adf-11eb-9f6d-bcb5aaa3790f.png
 require_relative '../modules/site_toolbar'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteSignUp
     include PageObject
     include SiteToolbar

@@ -4,7 +4,7 @@ require_relative 'modules/site_desktop_mobiles_toolbar'
 require_relative '../modules/site_download_helper'
 require_relative '../../modules/site_toolbar'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteMobileApps
     include PageObject
     include SiteDownloadHelper

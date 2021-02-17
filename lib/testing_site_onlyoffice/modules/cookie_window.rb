@@ -1,7 +1,7 @@
 # Handle operations with cookie window
 # https://user-images.githubusercontent.com/668524/64252317-3d413780-cf23-11e9-9ec8-503c5c3bdb82.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module CookieWindow
     include PageObject
 

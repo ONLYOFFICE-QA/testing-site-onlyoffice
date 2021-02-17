@@ -5,7 +5,7 @@ require_relative 'modules/site_open_source_toolbar'
 require_relative '../modules/site_download_helper'
 require_relative 'site_installer_block_constructor'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteOpenSourceDocs
     include PageObject
     include SiteDownloadHelper

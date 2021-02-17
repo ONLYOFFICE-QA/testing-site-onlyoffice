@@ -3,7 +3,7 @@
 require_relative '../modules/site_toolbar'
 require_relative 'modules/site_pricing_helper'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SitePriceServerEnterprise
     include PageObject
     include SitePricingHelper

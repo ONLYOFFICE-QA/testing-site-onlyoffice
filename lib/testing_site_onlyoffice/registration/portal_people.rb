@@ -1,4 +1,4 @@
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module PortalPeople
     def get_full_users_name_from_user_list(user_list)
       user_list_full_name = []

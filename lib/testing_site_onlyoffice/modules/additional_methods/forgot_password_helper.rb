@@ -1,6 +1,6 @@
 # Module for code for password forgot function
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module ForgotPasswordHelper
     # @return [IredMailHelper] mail to send forgotten password
     def mail_for_forgotten_password

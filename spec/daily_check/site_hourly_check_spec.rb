@@ -5,18 +5,18 @@ describe 'SiteHourlyCheck' do
   StaticDataTeamLab.set_portal_type('.com')
   StaticDataTeamLab.set_current_language(language)
 
-  test_run = "Site Hourly Checks version: #{TestingSiteOnlyffice::SiteHelper.fetch_site_version}, time: #{Time.new}, region: #{StaticDataTeamLab.server_region}"
+  test_run = "Site Hourly Checks version: #{TestingSiteOnlyoffice::SiteHelper.fetch_site_version}, time: #{Time.new}, region: #{StaticDataTeamLab.server_region}"
   testrail = DailyCheckHelper.init_testrail('[Studio] Site Hourly Checks', test_run, 'Site Hourly Check')
   run_name = nil
 
   describe 'Site onlyoffice.com' do
     before do
-      @site_home_page, @test = TestingSiteOnlyffice::PortalHelper.new.open_page_teamlab_office('http://www.onlyoffice.com')
+      @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office('http://www.onlyoffice.com')
       @site_home_page.set_page_language(language)
     end
 
     it '[Site] Check exists languages' do
-      expect(@site_home_page.get_all_language_from_site).to eq(TestingSiteOnlyffice::SiteData.site_languages)
+      expect(@site_home_page.get_all_language_from_site).to eq(TestingSiteOnlyoffice::SiteData.site_languages)
     end
 
     it '[Site] Check link Personal Office' do
@@ -26,46 +26,46 @@ describe 'SiteHourlyCheck' do
 
     it '[Site] Check Products' do
       page = @site_home_page.click_link_on_toolbar(:products_workspace)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsWorkspace
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsWorkspace
       page = @site_home_page.click_link_on_toolbar(:products_docs)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsDocs
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocs
       page = @site_home_page.click_link_on_toolbar(:products_document_editor)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsDocumentEditor
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocumentEditor
       page = @site_home_page.click_link_on_toolbar(:products_spreadsheet_editor)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsSpreadsheetEditor
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsSpreadsheetEditor
       page = @site_home_page.click_link_on_toolbar(:products_presentation_editor)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsPresentationEditor
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsPresentationEditor
       page = @site_home_page.click_link_on_toolbar(:products_desktop)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsDesktop
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDesktop
       page = @site_home_page.click_link_on_toolbar(:products_ios)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsIos
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsIos
       page = @site_home_page.click_link_on_toolbar(:products_android)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsAndroid
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsAndroid
       page = @site_home_page.click_link_on_toolbar(:products_groups)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsGroups
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsGroups
       page = @site_home_page.click_link_on_toolbar(:products_doc_manager)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsDocumentManager
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocumentManager
       page = @site_home_page.click_link_on_toolbar(:products_mail)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsMail
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsMail
       page = @site_home_page.click_link_on_toolbar(:products_crm)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsCRM
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCRM
       page = @site_home_page.click_link_on_toolbar(:products_projects)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsProjects
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsProjects
       page = @site_home_page.click_link_on_toolbar(:products_calendar)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsCalendar
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCalendar
       page = @site_home_page.click_link_on_toolbar(:products_community)
-      expect(page).to be_a TestingSiteOnlyffice::SiteProductsCommunity
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCommunity
     end
 
     it '[Site] Check cloud' do
       page = @site_home_page.click_link_on_toolbar(:pricing_cloud)
-      expect(page).to be_a TestingSiteOnlyffice::SitePricingCloud
+      expect(page).to be_a TestingSiteOnlyoffice::SitePricingCloud
       page = @site_home_page.click_link_on_toolbar(:pricing_server)
-      expect(page).to be_a TestingSiteOnlyffice::SitePriceServerEnterprise
+      expect(page).to be_a TestingSiteOnlyoffice::SitePriceServerEnterprise
       page = @site_home_page.click_link_on_toolbar(:pricing_enterprise)
-      expect(page).to be_a TestingSiteOnlyffice::SitePriceDocsEnterprise
+      expect(page).to be_a TestingSiteOnlyoffice::SitePriceDocsEnterprise
       page = @site_home_page.click_link_on_toolbar(:pricing_developer)
-      expect(page).to be_a TestingSiteOnlyffice::SitePriceDocsDeveloper
+      expect(page).to be_a TestingSiteOnlyoffice::SitePriceDocsDeveloper
     end
 
     it '[Site] Check link HelpCenter' do
@@ -76,12 +76,12 @@ describe 'SiteHourlyCheck' do
     it '[Site] Check notify about forgot password' do
       @site_home_page.mail_for_forgotten_password.delete_all_messages
       @site_home_page.send_forgot_password_from_sign_in
-      expect(TestingSiteOnlyffice::SiteNotificationHelper.check_site_notification(language: language,
-                                                                                  pattern: 'teamlab_pwd_reminder',
-                                                                                  module: 'WebStudio',
-                                                                                  search: @site_home_page.portal_of_forgotten_password,
-                                                                                  mail: @site_home_page.mail_for_forgotten_password,
-                                                                                  move_out: true)).to be_truthy
+      expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: language,
+                                                                                   pattern: 'teamlab_pwd_reminder',
+                                                                                   module: 'WebStudio',
+                                                                                   search: @site_home_page.portal_of_forgotten_password,
+                                                                                   mail: @site_home_page.mail_for_forgotten_password,
+                                                                                   move_out: true)).to be_truthy
     end
 
     describe 'Site Downloads' do
@@ -199,7 +199,7 @@ describe 'SiteHourlyCheck' do
           before { @commercial_workspace_page = @download_commercial_page.open_commercial_workspace }
 
           it_behaves_like 'commercial_installer_download', 'Workspace',
-                          TestingSiteOnlyffice::SiteDownloadData.commercial_workspace_list_type do
+                          TestingSiteOnlyoffice::SiteDownloadData.commercial_workspace_list_type do
             let(:installers_download_page) { @commercial_workspace_page }
           end
         end
@@ -207,14 +207,14 @@ describe 'SiteHourlyCheck' do
         describe 'docs' do
           describe 'Enterprise edition' do
             it_behaves_like 'commercial_installer_download', 'Docs_Enterprise',
-                            TestingSiteOnlyffice::SiteDownloadData.commercial_enterprise_docs_list_type do
+                            TestingSiteOnlyoffice::SiteDownloadData.commercial_enterprise_docs_list_type do
               let(:installers_download_page) { @download_commercial_page }
             end
           end
 
           describe 'Developer edition' do
             it_behaves_like 'commercial_installer_download', 'Docs_Developer',
-                            TestingSiteOnlyffice::SiteDownloadData.commercial_developer_docs_list_type do
+                            TestingSiteOnlyoffice::SiteDownloadData.commercial_developer_docs_list_type do
               let(:installers_download_page) { @download_commercial_page }
             end
           end
@@ -227,7 +227,7 @@ describe 'SiteHourlyCheck' do
         describe 'open source bundles /download.aspx' do
           before { @opensource_bundles_page = @download_opensource_page.open_opensource_bundles }
 
-          TestingSiteOnlyffice::SiteDownloadData.open_source_bundles_list.each do |installer|
+          TestingSiteOnlyoffice::SiteDownloadData.open_source_bundles_list.each do |installer|
             it "[Site][DownloadOpenSource][Bundlers] download link for `#{installer}` alive /download.aspx" do
               expect(@opensource_bundles_page).to be_download_link_alive(installer.to_sym)
             end
@@ -241,7 +241,7 @@ describe 'SiteHourlyCheck' do
         describe 'open source groups /download.aspx' do
           before { @opensource_groups_page = @download_opensource_page.open_opensource_groups }
 
-          TestingSiteOnlyffice::SiteDownloadData.open_source_groups_list.each do |installer|
+          TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_list.each do |installer|
             it "[Site][DownloadOpenSource][Groups] download link for `#{installer}` alive /download.aspx" do
               expect(@opensource_groups_page).to be_download_link_alive(installer.to_sym)
               expect(@opensource_groups_page).to be_download_link_valid(
@@ -256,7 +256,7 @@ describe 'SiteHourlyCheck' do
         end
 
         describe 'open source docs /download.aspx' do
-          TestingSiteOnlyffice::SiteDownloadData.open_source_docs_list.each do |installer|
+          TestingSiteOnlyoffice::SiteDownloadData.open_source_docs_list.each do |installer|
             describe installer.to_s do
               before { @current_installation = @download_opensource_page.installer_type_block(installer) }
 
@@ -297,7 +297,7 @@ describe 'SiteHourlyCheck' do
           @download_builder_page = builder_page.click_download_now
         end
 
-        TestingSiteOnlyffice::SiteDownloadData.document_builder_list.each do |installer|
+        TestingSiteOnlyoffice::SiteDownloadData.document_builder_list.each do |installer|
           describe installer.to_s do
             before do
               @current_installation = @download_builder_page.installer_document_builder_type_block(installer)
@@ -313,7 +313,7 @@ describe 'SiteHourlyCheck' do
           end
         end
 
-        it_behaves_like 'document_builder_version_and_realise_date', TestingSiteOnlyffice::SiteDownloadData.document_builder_list do
+        it_behaves_like 'document_builder_version_and_realise_date', TestingSiteOnlyoffice::SiteDownloadData.document_builder_list do
           let(:installers_download_page) { @download_builder_page }
         end
       end
@@ -323,7 +323,7 @@ describe 'SiteHourlyCheck' do
           @connectors_page = @site_home_page.click_link_on_toolbar(:open_source_packages).open_opensource_connectors
         end
 
-        TestingSiteOnlyffice::SiteDownloadData.connectors_list.each do |connector|
+        TestingSiteOnlyoffice::SiteDownloadData.connectors_list.each do |connector|
           it "[Site][DownloadConnectors] download link `#{connector}` alive /download.aspx" do
             expect(@connectors_page).to be_download_link_alive(connector.to_sym)
           end
@@ -333,10 +333,10 @@ describe 'SiteHourlyCheck' do
           end
 
           it "[Site][DownloadConnectors] release info for `#{connector}` on site matches github data /download.aspx" do
-            site_data = TestingSiteOnlyffice::SiteConnectorReleaseData.new(version: @connectors_page.site_version(connector),
-                                                                           date: @connectors_page.site_date(connector))
-            github_data = TestingSiteOnlyffice::SiteConnectorReleaseData.new(version: @connectors_page.github_version(connector),
-                                                                             date: @connectors_page.github_date(connector))
+            site_data = TestingSiteOnlyoffice::SiteConnectorReleaseData.new(version: @connectors_page.site_version(connector),
+                                                                            date: @connectors_page.site_date(connector))
+            github_data = TestingSiteOnlyoffice::SiteConnectorReleaseData.new(version: @connectors_page.github_version(connector),
+                                                                              date: @connectors_page.github_date(connector))
             error = @connectors_page.error_message(connector: connector, github_date: github_data.date,
                                                    github_version: github_data.version, site_date: site_data.date, site_version: site_data.version)
             expect(github_data == site_data).to be_truthy, error
@@ -349,13 +349,13 @@ describe 'SiteHourlyCheck' do
       before { @blog_page = @site_home_page.click_link_on_toolbar(:blog) }
 
       it '[BLOG] Check click Blog link' do
-        expect(@blog_page).to be_a TestingSiteOnlyffice::SiteBlog
+        expect(@blog_page).to be_a TestingSiteOnlyoffice::SiteBlog
       end
 
       it '[BLOG] Check click Home logo' do
         pending('Home logo button doesnt work for blog page')
         home_page = @blog_page.click_home_logo
-        expect(home_page).to be_a TestingSiteOnlyffice::SiteHomePage
+        expect(home_page).to be_a TestingSiteOnlyoffice::SiteHomePage
       end
     end
   end

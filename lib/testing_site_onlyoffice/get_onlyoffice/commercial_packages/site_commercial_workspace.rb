@@ -6,7 +6,7 @@ require_relative '../modules/site_download_helper'
 require_relative 'site_commercial_block_constructor'
 require_relative 'modules/site_commercial_download_helper'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteCommercialWorkspace
     include PageObject
     include SiteDownloadHelper

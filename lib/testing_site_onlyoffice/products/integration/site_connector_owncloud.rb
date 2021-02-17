@@ -2,7 +2,7 @@
 # /connectors-owncloud.aspx
 require_relative 'site_connector_base'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteConnectorOwncloud
     include PageObject
     include SiteConnectorBase

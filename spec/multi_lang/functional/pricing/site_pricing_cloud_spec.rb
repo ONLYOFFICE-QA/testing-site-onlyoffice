@@ -4,7 +4,7 @@ describe 'Pricing Cloud Service' do
   test_manager = TestManager.new(suite_name: File.basename(__FILE__))
 
   before do
-    site_home_page, @test = TestingSiteOnlyffice::PortalHelper.new.open_page_teamlab_office
+    site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office
     @pricing_cloud_page = site_home_page.click_link_on_toolbar(:pricing_cloud)
   end
 
@@ -16,7 +16,7 @@ describe 'Pricing Cloud Service' do
 
   it '[Site][Pricing][Cloud] Check FAQ link' do
     faq_page = @pricing_cloud_page.click_on_faq_center
-    expect(faq_page).to be_a TestingSiteOnlyffice::SiteFaq
+    expect(faq_page).to be_a TestingSiteOnlyoffice::SiteFaq
   end
 
   after do |example|

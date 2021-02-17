@@ -5,13 +5,13 @@ test_manager = TestManager.new(suite_name: File.basename(__FILE__))
 SettingsData::EMAIL = SettingsData::EMAIL_ADMIN
 
 mail = IredMailHelper.new(username: SettingsData::EMAIL_ADMIN)
-mail_site = IredMailHelper.new(username: TestingSiteOnlyffice::SiteData::EMAIL_FOR_SITE)
+mail_site = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_FOR_SITE)
 checker = { language: StaticDataTeamLab.current_language, module: 'WebStudio' }
 
 describe 'Registration new portal' do
   before do
     @portal_creation_data = PortalCreationData.new
-    @site_home_page, @test = TestingSiteOnlyffice::PortalHelper.new.open_page_teamlab_office
+    @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office
   end
 
   context 'Sign Up' do
@@ -24,10 +24,10 @@ describe 'Registration new portal' do
 
     it 'Check sign up letter: "Welcome to TeamLab Portal!" from "Sign Up"' do
       @sign_up_page.fill_data(portal_name: @portal_creation_data.portal_to_create)
-      portal_name = TestingSiteOnlyffice::PortalHelper.new.get_full_portal_name(@portal_creation_data.portal_to_create)
-      expect(TestingSiteOnlyffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
-                                                                                                pattern: 'subject_congratulations',
-                                                                                                search: portal_name))).to be_truthy
+      portal_name = TestingSiteOnlyoffice::PortalHelper.new.get_full_portal_name(@portal_creation_data.portal_to_create)
+      expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
+                                                                                                 pattern: 'subject_congratulations',
+                                                                                                 search: portal_name))).to be_truthy
     end
 
     it 'Create new portal with wrong data from "Sign Up"' do
@@ -37,12 +37,12 @@ describe 'Registration new portal' do
 
     it 'Check open "Term and conditions" link for "Sign Up' do
       @sign_up_page.terms_and_conditions
-      expect(@sign_up_page.check_opened_file_name).to eq(TestingSiteOnlyffice::SiteNotificationData::TERMS_OF_USE_FILE_NAME)
+      expect(@sign_up_page.check_opened_file_name).to eq(TestingSiteOnlyoffice::SiteNotificationData::TERMS_OF_USE_FILE_NAME)
     end
 
     it 'Check open "Privacy statement" link for "Sign Up' do
       @sign_up_page.privacy_statement
-      expect(@sign_up_page.check_opened_file_name).to eq(TestingSiteOnlyffice::SiteNotificationData::PRIVACY_STATEMENT)
+      expect(@sign_up_page.check_opened_file_name).to eq(TestingSiteOnlyoffice::SiteNotificationData::PRIVACY_STATEMENT)
     end
   end
 
@@ -66,10 +66,10 @@ describe 'Registration new portal' do
     end
 
     it 'Check mail "Forgot password"' do
-      @sign_in_page.send_forgot_password(TestingSiteOnlyffice::SiteData::EMAIL_FOR_SITE)
-      expect(TestingSiteOnlyffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail_site,
-                                                                                                pattern: 'teamlab_pwd_reminder',
-                                                                                                search: TestingSiteOnlyffice::SiteData::PORTAL_ADDRESS))).to be_truthy
+      @sign_in_page.send_forgot_password(TestingSiteOnlyoffice::SiteData::EMAIL_FOR_SITE)
+      expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail_site,
+                                                                                                 pattern: 'teamlab_pwd_reminder',
+                                                                                                 search: TestingSiteOnlyoffice::SiteData::PORTAL_ADDRESS))).to be_truthy
     end
 
     it 'Sign in with wrong data' do

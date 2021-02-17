@@ -1,6 +1,6 @@
 # Module with base elements of connectors
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module SiteConnectorBase
     def initialize(instance, connector_type)
       super(instance.webdriver.driver)

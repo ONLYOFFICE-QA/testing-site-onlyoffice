@@ -1,7 +1,7 @@
 # /partnership-request.aspx
 # https://user-images.githubusercontent.com/40513035/102610597-892ae680-413e-11eb-9fb3-2911ff59e420.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SitePartnersRequest
     include PageObject
     include SiteToolbar

@@ -4,7 +4,7 @@ require_relative '../../modules/site_toolbar'
 require_relative 'modules/site_open_source_toolbar'
 require_relative '../modules/site_download_helper'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteOpenSourceBundles
     include PageObject
     include SiteDownloadHelper

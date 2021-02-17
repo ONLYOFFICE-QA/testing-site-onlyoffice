@@ -2,7 +2,7 @@
 
 # https://cloud.githubusercontent.com/assets/18173785/22210192/090c46ae-e19a-11e6-9a40-bbbcee366377.png
 # /awards.aspx
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteAwards
     include PageObject
 

@@ -1,7 +1,7 @@
 # /collaboration-platform.aspx
 # https://user-images.githubusercontent.com/40513035/101089919-e6fbf200-35c6-11eb-99e6-b82c727dda22.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteProductsGroups
     include PageObject
     include SiteToolbar

@@ -1,4 +1,4 @@
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteConnectorReleaseData
     attr_accessor :version, :date
 

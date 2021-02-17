@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteData
     EMAIL_FOR_SITE = 'site@qamail.teamlab.info'
     PORTAL_ADDRESS_COM = 'https://nctautotest-notifications-site-com.onlyoffice.com'

@@ -1,6 +1,6 @@
 # Get install, instruction, version or release date xpaths of current Document Builder installer block
 # https://user-images.githubusercontent.com/40513035/100555121-7b561400-32aa-11eb-9763-c0625f914b16.png
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteDocumentBuilderBlockConstructor
     attr_accessor :instance, :instruction_xpath, :download_xpath
 

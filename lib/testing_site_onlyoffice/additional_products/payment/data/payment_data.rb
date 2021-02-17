@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module PaymentData
     TRAFFIC_SELECTED = 'tariffs-selected'
     CLASS = 'class'

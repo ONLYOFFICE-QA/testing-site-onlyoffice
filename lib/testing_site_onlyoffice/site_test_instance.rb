@@ -1,7 +1,7 @@
 require_relative 'site_home_page'
 
 # Instance of browser to perform actions
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteTestInstance
     attr_accessor :webdriver, :user, :headless, :doc_instance
     # @return [Hash] list of secret data

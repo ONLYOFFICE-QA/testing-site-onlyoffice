@@ -1,6 +1,6 @@
 # Contains methods for downloading packages
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module SiteDownloadHelper
     def file_downloaded?(file_name)
       path_to_downloaded_file = "#{@instance.webdriver.download_directory}/#{file_name}"

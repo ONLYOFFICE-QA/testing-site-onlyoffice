@@ -1,4 +1,4 @@
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteNotificationData
     TERMS_OF_USE_FILE_NAME = 'ONLYOFFICE Terms of Service (SaaS).docx'.freeze
     PRIVACY_STATEMENT = 'Privacy Statement.docx'.freeze

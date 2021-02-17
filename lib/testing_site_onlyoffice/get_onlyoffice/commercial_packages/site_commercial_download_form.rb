@@ -1,7 +1,7 @@
 # Form for commercial packages to get trial version
 # https://user-images.githubusercontent.com/40513035/99250896-81191780-281d-11eb-867a-e5cbd4e8fc6b.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteCommercialDownloadForm
     include PageObject
 

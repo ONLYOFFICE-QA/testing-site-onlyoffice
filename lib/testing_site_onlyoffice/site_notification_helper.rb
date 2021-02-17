@@ -1,6 +1,6 @@
 require 'csv'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteNotificationHelper < NotificationHelper
     def self.site_translate_from_resource(language, string_name, tm_module)
       file_path = "#{ENV['HOME']}/RubymineProjects/TeamLab/Framework/Modules/site/data/site_translates.csv"

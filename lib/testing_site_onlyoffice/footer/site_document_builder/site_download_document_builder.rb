@@ -3,7 +3,7 @@
 require_relative 'site_document_builder_block_constructor'
 require_relative '../../get_onlyoffice/modules/site_download_helper'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteDownloadDocumentBuilder
     include PageObject
     include SiteDownloadHelper

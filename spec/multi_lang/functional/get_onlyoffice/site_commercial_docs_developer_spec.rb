@@ -4,12 +4,12 @@ test_manager = TestManager.new(suite_name: File.basename(__FILE__))
 
 describe 'Commercial packages Onlyoffice Docs Developer edition download' do
   before do
-    site_home_page, @test = TestingSiteOnlyffice::PortalHelper.new.open_page_teamlab_office
+    site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office
     @download_commercial_page = site_home_page.click_link_on_toolbar(:commercial_packages)
   end
 
   it_behaves_like 'commercial_installer_download', 'Docs_Developer',
-                  TestingSiteOnlyffice::SiteDownloadData.commercial_developer_docs_list_type do
+                  TestingSiteOnlyoffice::SiteDownloadData.commercial_developer_docs_list_type do
     let(:installers_download_page) { @download_commercial_page }
   end
 

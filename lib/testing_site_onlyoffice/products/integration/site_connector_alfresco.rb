@@ -2,7 +2,7 @@
 # /connectors-alfresco.aspx
 require_relative 'site_connector_base'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteConnectorAlfresco
     include PageObject
     include SiteConnectorBase

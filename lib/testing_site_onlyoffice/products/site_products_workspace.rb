@@ -1,7 +1,7 @@
 # Products & Features -> Onlyoffice Workspace
 # https://user-images.githubusercontent.com/40513035/100944239-e48a9100-350f-11eb-8259-2039d8176454.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteProductsWorkspace
     include PageObject
     include SiteToolbar

@@ -1,7 +1,7 @@
 # Popup for chatting with support
 # https://user-images.githubusercontent.com/40513035/99503591-72527200-298f-11eb-8227-b3d5632a1099.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module SiteSupportChatPopup
     CHAT_OPENED_FRAME_XPATH = '//iframe[@data-test-id="ChatWidgetWindow-iframe"]'.freeze
     CHAT_CLOSED_FRAME_XPATH = '//iframe[@data-test-id="ChatWidgetButton-iframe"]'.freeze

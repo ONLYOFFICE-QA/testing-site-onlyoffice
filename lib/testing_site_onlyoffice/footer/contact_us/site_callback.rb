@@ -1,6 +1,6 @@
 # https://cloud.githubusercontent.com/assets/18173785/22292502/a5427aec-e31c-11e6-90e9-49d0b18621c7.png
 # /call-back-form.aspx
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteCallback
     include PageObject
     include SiteToolbar

@@ -1,6 +1,6 @@
 # Gets Release date and Version of connectors on both site and Github
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module SiteConnectorsVersionDate
     def get_connector_version_xpath(connector)
       "#{instruction_links[connector].selector[:xpath]}/../../p[1]"

@@ -2,7 +2,7 @@
 # https://user-images.githubusercontent.com/40513035/101343337-e8fad500-3894-11eb-82ab-3475aa336020.png
 require_relative '../modules/site_groups_xpath'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteProductsMail
     include PageObject
     include SiteGroupsXpath
