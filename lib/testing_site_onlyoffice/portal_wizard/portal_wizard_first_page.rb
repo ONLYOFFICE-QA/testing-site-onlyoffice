@@ -1,6 +1,6 @@
 require_relative '../../Studio/TopToolbar'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class PortalWizardFirstPage
     include PageObject
     include TopToolbar

@@ -1,6 +1,6 @@
 # Methods for signin page
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module SignInMethods
     # Open SigIn Page
     # @param open_signin_by_url [True, False]

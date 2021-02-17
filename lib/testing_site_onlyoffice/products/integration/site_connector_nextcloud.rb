@@ -2,7 +2,7 @@
 # /connectors-nextcloud.aspx
 require_relative 'site_connector_base'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteConnectorNextcloud
     include PageObject
     include SiteConnectorBase

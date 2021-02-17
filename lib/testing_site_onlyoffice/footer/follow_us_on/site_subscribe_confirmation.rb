@@ -1,6 +1,6 @@
 # Go to link in mail for confirm subscribe
 # https://user-images.githubusercontent.com/3971732/43830155-53b20eda-9b09-11e8-97fa-78a27aa53e94.png
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteSubscribeConfirmation
     include PageObject
 

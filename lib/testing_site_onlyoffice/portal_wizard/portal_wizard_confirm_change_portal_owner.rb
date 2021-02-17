@@ -1,4 +1,4 @@
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class PortalWizardConfirmChangePortalOwner
     include PageObject
     link(:save_link, xpath: '//a[contains(@onclick,"submit")]')

@@ -2,7 +2,7 @@
 # https://user-images.githubusercontent.com/40513035/101172507-4f43e580-3652-11eb-8218-3b0f96dd55a9.png
 require_relative '../modules/site_editors_xpath'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteProductsPresentationEditor
     include PageObject
     include SiteEditorsXpath

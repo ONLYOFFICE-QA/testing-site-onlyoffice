@@ -1,4 +1,4 @@
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SitePricesData
     def self.developer_edition_single_server_250
       return 5_875 if StaticDataTeamLab.current_language == 'ru-RU'

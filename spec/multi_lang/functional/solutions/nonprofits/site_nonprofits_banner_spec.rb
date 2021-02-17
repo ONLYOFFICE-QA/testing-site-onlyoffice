@@ -4,7 +4,7 @@ test_manager = TestManager.new(suite_name: File.basename(__FILE__))
 
 describe 'Site Banners' do
   before do
-    site_home_page, @test = TestingSiteOnlyffice::PortalHelper.new.open_page_teamlab_office
+    site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office
     non_profit_organizatins_page = site_home_page.click_link_on_toolbar(:nonprofits)
     @non_profit_banners = non_profit_organizatins_page.click_request_free_cloud.open_banners
   end

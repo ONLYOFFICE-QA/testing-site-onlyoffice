@@ -2,7 +2,7 @@
 # https://user-images.githubusercontent.com/40513035/98994364-bb926400-2540-11eb-8b40-f53e99ef2cbc.png
 require_relative 'site_commercial_download_form'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteCommercialBlockConstructor
     attr_accessor :instance, :instruction_xpath, :download_xpath
 

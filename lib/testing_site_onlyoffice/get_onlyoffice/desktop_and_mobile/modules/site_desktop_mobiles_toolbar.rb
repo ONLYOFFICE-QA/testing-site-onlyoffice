@@ -1,7 +1,7 @@
 # Desktop and mobiles top toolbar
 # https://user-images.githubusercontent.com/40513035/96172632-60645600-0f2f-11eb-8853-b6c348e7235d.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module SiteToolbarDesktopMobiles
     include PageObject
 

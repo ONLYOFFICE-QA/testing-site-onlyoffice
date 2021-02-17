@@ -8,7 +8,7 @@ require_relative '../../products/site_connectors'
 require_relative '../../get_onlyoffice/desktop_and_mobile/site_desktop_apps'
 require_relative '../../get_onlyoffice/modules/site_download_helper'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteNonProfits
     include PageObject
     include SiteDownloadHelper

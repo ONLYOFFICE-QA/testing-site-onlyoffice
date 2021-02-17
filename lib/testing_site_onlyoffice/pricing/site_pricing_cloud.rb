@@ -2,7 +2,7 @@
 # https://user-images.githubusercontent.com/40513035/102266177-257ba000-3f29-11eb-9745-e0a798e94ba7.png
 require_relative '../additional_products/site_faq'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SitePricingCloud
     include PageObject
     include SiteToolbar

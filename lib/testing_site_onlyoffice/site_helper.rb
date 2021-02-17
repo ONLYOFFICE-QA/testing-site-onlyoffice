@@ -1,4 +1,4 @@
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteHelper
     attr_accessor :test, :user_list
 

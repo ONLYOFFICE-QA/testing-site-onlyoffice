@@ -1,7 +1,7 @@
 # /all-connectors.aspx
 # https://user-images.githubusercontent.com/40513035/100945721-d9853000-3512-11eb-97e9-9880b0264f9d.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteConnectors
     include PageObject
 

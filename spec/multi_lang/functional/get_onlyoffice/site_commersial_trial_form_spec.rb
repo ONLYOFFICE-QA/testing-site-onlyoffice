@@ -7,7 +7,7 @@ client_email = IredMailHelper.new(username: SettingsData::CLIENT_EMAIL)
 
 describe 'Check trial request form' do
   before do
-    @site_home_page, @test = TestingSiteOnlyffice::PortalHelper.new.open_page_teamlab_office
+    @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office
     pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if StaticDataTeamLab.portal_type == '.com'
   end
 
@@ -17,9 +17,9 @@ describe 'Check trial request form' do
     site_commercial_trial_form = commercial_docs_page.installer_docs_developer_type_block.click_install_button
     site_commercial_trial_form.send_trial_request(company_name: company_name)
     expect(partner_email.check_email_by_subject(
-             { subject: "#{company_name} - #{TestingSiteOnlyffice::SiteNotificationData::COMMERCIAL_DEVELOPER_DOCS}" }, 300, true
+             { subject: "#{company_name} - #{TestingSiteOnlyoffice::SiteNotificationData::COMMERCIAL_DEVELOPER_DOCS}" }, 300, true
            )).to be true
-    expect(client_email.check_email_by_subject({ subject: TestingSiteOnlyffice::SiteNotificationData::DEVELOPER_TRIAL }, 300,
+    expect(client_email.check_email_by_subject({ subject: TestingSiteOnlyoffice::SiteNotificationData::DEVELOPER_TRIAL }, 300,
                                                true)).to be_truthy
   end
 
@@ -29,9 +29,9 @@ describe 'Check trial request form' do
     site_commercial_trial_form = commercial_docs_page.installer_docs_enterprise_type_block.click_install_button
     site_commercial_trial_form.send_trial_request(company_name: company_name)
     expect(partner_email.check_email_by_subject(
-             { subject: "#{company_name} - #{TestingSiteOnlyffice::SiteNotificationData::COMMERCIAL_ENTERPRISE_DOCS}" }, 300, true
+             { subject: "#{company_name} - #{TestingSiteOnlyoffice::SiteNotificationData::COMMERCIAL_ENTERPRISE_DOCS}" }, 300, true
            )).to be_truthy
-    expect(client_email.check_email_by_subject({ subject: TestingSiteOnlyffice::SiteNotificationData::INTEGRATION_TRIAL }, 300,
+    expect(client_email.check_email_by_subject({ subject: TestingSiteOnlyoffice::SiteNotificationData::INTEGRATION_TRIAL }, 300,
                                                true)).to be_truthy
   end
 
@@ -41,9 +41,9 @@ describe 'Check trial request form' do
     site_commercial_trial_form = commercial_workspace_page.installer_type_block.click_install_button
     site_commercial_trial_form.send_trial_request(company_name: company_name)
     expect(partner_email.check_email_by_subject(
-             { subject: "#{company_name} - #{TestingSiteOnlyffice::SiteNotificationData::COMMERCIAL_ENTERPRISE_WORKSPACE}" }, 300, true
+             { subject: "#{company_name} - #{TestingSiteOnlyoffice::SiteNotificationData::COMMERCIAL_ENTERPRISE_WORKSPACE}" }, 300, true
            )).to be_truthy
-    expect(client_email.check_email_by_subject({ subject: TestingSiteOnlyffice::SiteNotificationData::ENTERPRISE_TRIAL },
+    expect(client_email.check_email_by_subject({ subject: TestingSiteOnlyoffice::SiteNotificationData::ENTERPRISE_TRIAL },
                                                300, true)).to be_truthy
   end
 

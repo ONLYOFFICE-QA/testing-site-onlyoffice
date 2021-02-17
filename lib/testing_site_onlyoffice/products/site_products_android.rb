@@ -1,7 +1,7 @@
 # /office-for-android.aspx
 # https://user-images.githubusercontent.com/40513035/101054027-7e4a5080-3599-11eb-8a32-36765e3a202e.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteProductsAndroid
     include PageObject
     include SiteToolbar

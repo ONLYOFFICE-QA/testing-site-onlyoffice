@@ -1,7 +1,7 @@
 # Open source packages page
 # https://user-images.githubusercontent.com/40513035/95976363-0e80da80-0e20-11eb-8a03-310fd68a4945.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module SiteToolbarOpenSource
     include PageObject
 

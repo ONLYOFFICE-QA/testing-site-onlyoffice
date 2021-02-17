@@ -2,7 +2,7 @@
 # https://user-images.githubusercontent.com/40513035/102991038-798a1400-4529-11eb-8eb2-75fb5ccf8c4d.png
 require_relative 'modules/site_toolbar'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteWrongPortal
     include PageObject
     include SiteToolbar

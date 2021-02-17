@@ -2,7 +2,7 @@
 # /connectors-confluence.aspx
 require_relative 'site_connector_base'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteConnectorConfluence
     include PageObject
     include SiteConnectorBase

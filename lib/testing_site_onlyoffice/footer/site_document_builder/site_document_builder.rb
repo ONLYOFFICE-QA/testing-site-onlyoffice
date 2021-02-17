@@ -2,7 +2,7 @@
 # https://user-images.githubusercontent.com/668524/68375334-ba716e80-0157-11ea-9a82-807f8464db7a.png
 require_relative 'site_download_document_builder'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteDocumentBuilder
     include PageObject
 

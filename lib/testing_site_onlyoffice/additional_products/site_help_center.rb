@@ -2,7 +2,7 @@
 
 require_relative '../modules/site_toolbar'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteHelpCenter
     attr_accessor :instance
 

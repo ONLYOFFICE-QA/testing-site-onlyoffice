@@ -1,7 +1,7 @@
 # Try in the cloud and Run on your own server xpath for editors
 # https://user-images.githubusercontent.com/40513035/101160435-169b1080-3640-11eb-913a-3d1e80502b2b.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module SiteEditorsXpath
     include PageObject
 

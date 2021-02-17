@@ -2,7 +2,7 @@
 # /connectors-sharepoint.aspx
 require_relative 'site_connector_base'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteConnectorSharepoint
     include PageObject
     include SiteConnectorBase

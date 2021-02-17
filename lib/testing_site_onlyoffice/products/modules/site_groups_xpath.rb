@@ -1,7 +1,7 @@
 # Try in the cloud and Run on your own server xpath for groups
 # https://user-images.githubusercontent.com/40513035/101329235-2dc94080-3882-11eb-8591-ff3c2a1cac1d.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module SiteGroupsXpath
     include PageObject
 

@@ -3,7 +3,7 @@
 require_relative 'site_languages'
 require_relative 'additional_methods/forgot_password_helper'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module SiteToolbar
     include PageObject
     include SiteLanguages

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteDownloadData
     # Desktop
     DESKTOP_WINDOWS_10_X64 = 'DesktopEditors_x64.exe'

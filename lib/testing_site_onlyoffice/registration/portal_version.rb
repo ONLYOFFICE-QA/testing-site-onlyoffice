@@ -1,4 +1,4 @@
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module PortalVersion
     def get_portal_name(test_name = '')
       test_name.gsub!('http:', 'https:') if StaticDataTeamLab.portal_type == '.com'

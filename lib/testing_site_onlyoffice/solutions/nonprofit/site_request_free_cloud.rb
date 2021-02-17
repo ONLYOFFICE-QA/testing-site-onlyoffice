@@ -3,7 +3,7 @@
 require_relative 'site_nonprofit_banners'
 require_relative '../../get_onlyoffice/site_sign_up'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteRequestFreeCloud
     include PageObject
 

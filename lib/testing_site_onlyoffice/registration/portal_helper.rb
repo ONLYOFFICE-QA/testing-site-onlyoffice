@@ -3,7 +3,7 @@ require_relative 'portal_version'
 require_relative 'portal_mail'
 require_relative 'teamlab_portal_reg_web_helper'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class PortalHelper
     include PortalPeople
     include PortalVersion

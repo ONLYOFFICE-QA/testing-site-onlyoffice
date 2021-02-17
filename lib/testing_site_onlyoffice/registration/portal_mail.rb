@@ -1,4 +1,4 @@
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   module PortalMail
     def submit_all_users_by_mail(users, params)
       return unless params.submit_users_by_mail

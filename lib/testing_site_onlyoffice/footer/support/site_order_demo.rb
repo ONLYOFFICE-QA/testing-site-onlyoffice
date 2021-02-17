@@ -1,7 +1,7 @@
 # /demo-order.aspx
 # https://user-images.githubusercontent.com/40513035/102109795-80d46200-3e45-11eb-87c7-e72f3297ee57.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteOrderDemo
     include PageObject
 

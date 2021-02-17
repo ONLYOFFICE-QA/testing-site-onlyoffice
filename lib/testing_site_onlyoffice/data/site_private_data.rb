@@ -2,7 +2,7 @@
 
 require 'yaml'
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   # Class for storing config parameters
   class SitePrivateData
     def initialize(file: "#{Dir.pwd}/lib/testing_site_onlyoffice/data/private_data/data.yml.gpg",

@@ -1,7 +1,7 @@
 # /banners.aspx
 # https://user-images.githubusercontent.com/18173785/29400808-57bbeeaa-8337-11e7-86f8-c4223588a3c8.png
 
-module TestingSiteOnlyffice
+module TestingSiteOnlyoffice
   class SiteNonProfitBanners
     include PageObject
 
