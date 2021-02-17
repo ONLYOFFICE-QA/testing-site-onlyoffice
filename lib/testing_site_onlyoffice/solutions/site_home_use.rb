@@ -79,7 +79,8 @@ module TestingSiteOnlyoffice
 
     def get_marketplace_title
       @instance.webdriver.wait_until { !download_now_desktop_editors_element.present? }
-      @instance.webdriver.get_title_of_current_tab
+      title = @instance.webdriver.get_title_of_current_tab
+      title.gsub(/\P{ASCII}/, ' ').strip
     end
   end
 end
