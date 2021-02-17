@@ -46,22 +46,9 @@ module TestingSiteOnlyoffice
       languages_list
     end
 
-    def check_wrong_portal_region(region)
-      regions = %w[com eu sg]
-      regions.delete(region.to_s)
-      wrong_region = regions.sample
-      portal = { com: SiteData::PORTAL_ADDRESS_COM, eu: SiteData::PORTAL_ADDRESS_EU, sg: SiteData::PORTAL_ADDRESS_SG,
-                 info: SiteData::PORTAL_ADDRESS_INFO }[region.to_sym]
-      wrong_portal = portal.gsub(".#{region}", ".#{wrong_region}")
-      admin = AuthData.new(wrong_portal)
-      @test = TestInstance.new(admin)
-      LoginPage.new(@test)
-      @test.webdriver.get_url.include? portal
-    end
-
     def wrong_portal_name
       wrong_portal = SiteData::PORTAL_ADDRESS.dup.insert(10, Time.now.nsec.to_s)
-      @test = TestInstance.new
+      @test = SiteTestInstance.new
       @test.webdriver.open('https://teamlab.info/?Site_Testing=4testing')
       @test.webdriver.open(wrong_portal)
       @test.webdriver.wait_until { @test.webdriver.driver.current_url.include? '/wrongportalname.aspx?url=' }
