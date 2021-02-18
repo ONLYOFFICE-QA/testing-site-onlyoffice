@@ -1,10 +1,12 @@
 # Solutions -> Home use page
 # https://user-images.githubusercontent.com/40513035/100807023-a3787b00-3442-11eb-933d-a119c3d902a4.png
 require_relative '../modules/site_toolbar'
+require_relative '../get_onlyoffice/modules/site_download_helper'
 
 module TestingSiteOnlyoffice
   class SiteHomeUse
     include PageObject
+    include SiteDownloadHelper
     include SiteToolbar
 
     link(:download_now_desktop_editors, xpath: '//a[@href="/download-desktop.aspx?from=home-use"]')
@@ -79,8 +81,7 @@ module TestingSiteOnlyoffice
 
     def get_marketplace_title
       @instance.webdriver.wait_until { !download_now_desktop_editors_element.present? }
-      title = @instance.webdriver.get_title_of_current_tab
-      title.gsub(/\P{ASCII}/, ' ').strip
+      fetch_page_title
     end
   end
 end
