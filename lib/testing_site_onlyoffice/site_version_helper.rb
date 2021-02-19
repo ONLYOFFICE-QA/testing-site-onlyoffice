@@ -13,11 +13,17 @@ module TestingSiteOnlyoffice
     # @return [String] hash of site by url `site/revision`
     def self.fetch_site_hash
       Net::HTTP.get(fetch_uri).split[0]
+    rescue StandardError => e
+      OnlyofficeLoggerHelper.log("Cannot get site hash because of #{e}")
+      Time.now.strftime('%Y-%m-%d')
     end
 
     # @return [String] branch number of site by url `site/revision`
     def self.fetch_site_branch
       Net::HTTP.get(fetch_uri).strip.split('/')[-1]
+    rescue StandardError => e
+      OnlyofficeLoggerHelper.log("Cannot get site branch number because of #{e}")
+      Time.now.strftime('%Y-%m-%d')
     end
   end
 end
