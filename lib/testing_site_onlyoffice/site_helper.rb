@@ -54,20 +54,5 @@ module TestingSiteOnlyoffice
       @test.webdriver.wait_until { @test.webdriver.driver.current_url.include? '/wrongportalname.aspx?url=' }
       SiteWrongPortal.new(@test)
     end
-
-    # @return [String] url of site
-    def self.site_url
-      return 'https://teamlab.info' if StaticDataTeamLab.portal_type == '.info'
-      return 'https://www.onlyoffice.com' if StaticDataTeamLab.portal_type == '.com'
-    end
-
-    # @return [String] version of site by url `site/revision`
-    def self.fetch_site_version
-      uri = URI("#{site_url}/revision?Site_Testing=4testing")
-      Net::HTTP.get(uri).strip
-    rescue StandardError => e
-      OnlyofficeLoggerHelper.log("Cannot get site version because of #{e}")
-      Time.now.strftime('%Y-%m-%d')
-    end
   end
 end

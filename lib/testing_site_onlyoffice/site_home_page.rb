@@ -76,6 +76,7 @@ require_relative 'registration/portal_people'
 require_relative 'registration/teamlab_portal_reg_web_helper'
 
 require_relative 'site_helper'
+require_relative 'site_version_helper'
 require_relative 'site_wrong_portal'
 require_relative 'site_notification_helper'
 
