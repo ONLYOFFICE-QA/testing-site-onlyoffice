@@ -25,5 +25,9 @@ module TestingSiteOnlyoffice
       OnlyofficeLoggerHelper.log("Cannot get site branch number because of #{e}")
       Time.now.strftime('%Y-%m-%d')
     end
+
+    def self.full_site_version
+      "branch: #{fetch_site_branch},hash: #{fetch_site_hash}"
+    end
   end
 end
