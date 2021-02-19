@@ -27,7 +27,7 @@ module TestingSiteOnlyoffice
     end
 
     def self.full_site_version
-      "branch: #{fetch_site_branch},hash: #{fetch_site_hash}"
+      "branch: #{fetch_site_branch}, hash: #{fetch_site_hash}"
     end
   end
 end

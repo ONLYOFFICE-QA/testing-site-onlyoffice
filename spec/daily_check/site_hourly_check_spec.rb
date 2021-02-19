@@ -5,7 +5,7 @@ describe 'SiteHourlyCheck' do
   StaticDataTeamLab.set_portal_type('.com')
   StaticDataTeamLab.set_current_language(language)
 
-  test_run = "Site Hourly Checks version: #{TestingSiteOnlyoffice::SiteVersionHelper.fetch_site_hash}, time: #{Time.new}, region: #{StaticDataTeamLab.server_region}"
+  test_run = "Site Hourly Checks version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}, time: #{Time.new}, region: #{StaticDataTeamLab.server_region}"
   testrail = DailyCheckHelper.init_testrail('[Studio] Site Hourly Checks', test_run, 'Site Hourly Check')
   run_name = nil
 
