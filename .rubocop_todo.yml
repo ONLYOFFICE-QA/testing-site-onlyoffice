@@ -59,7 +59,7 @@ Naming/VariableNumber:
   Exclude:
     - 'lib/testing_site_onlyoffice/data/site_prices_data.rb'
     - 'lib/testing_site_onlyoffice/get_onlyoffice/desktop_and_mobile/site_desktop_apps.rb'
-    - 'spec/daily/site_hourly_check_spec.rb'
+    - 'spec/site_hourly_check_spec.rb'
 
 # Offense count: 15
 # Configuration parameters: Prefixes.
