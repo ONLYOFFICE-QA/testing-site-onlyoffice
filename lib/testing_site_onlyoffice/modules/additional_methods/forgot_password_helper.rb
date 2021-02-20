@@ -5,7 +5,7 @@ module TestingSiteOnlyoffice
     # @return [IredMailHelper] mail to send forgotten password
     def mail_for_forgotten_password
       @mail_for_forgotten_password ||= IredMailHelper.new(username: 'portal-forgot-password@qamail.teamlab.info',
-                                                          password: 'qQe9C4vxSy5mbUMP6kCm')
+                                                          password: @instance.private_data['mail_portal-forgot-password_pass'])
     end
 
     # @return [String] portal on which forgot password
