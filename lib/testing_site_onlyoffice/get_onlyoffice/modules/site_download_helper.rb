@@ -54,12 +54,7 @@ module TestingSiteOnlyoffice
 
     def check_opened_page_title
       @instance.webdriver.choose_tab(2)
-      fetch_page_title
-    end
-
-    def fetch_page_title
-      title = @instance.webdriver.get_title_of_current_tab
-      title.gsub(/\P{ASCII}/, ' ').strip
+      @instance.webdriver.get_title_of_current_tab
     end
   end
 end

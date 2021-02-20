@@ -81,7 +81,7 @@ module TestingSiteOnlyoffice
 
     def get_marketplace_title
       @instance.webdriver.wait_until { !download_now_desktop_editors_element.present? }
-      fetch_page_title
+      @instance.webdriver.get_title_of_current_tab
     end
   end
 end
