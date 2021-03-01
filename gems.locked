@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ONLYOFFICE/onlyoffice_api_gem
-  revision: 04a54e5eb1592661ba4b75da8dfdd1b93a2ba10f
+  revision: 460e4129d432e667ae6ff22745d841826fb3d395
   specs:
     onlyoffice_api (0.7)
       httparty (~> 0.16)
