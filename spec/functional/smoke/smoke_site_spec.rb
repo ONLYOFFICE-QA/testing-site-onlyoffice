@@ -5,6 +5,8 @@ test_manager = TestManager.new(suite_name: File.basename(__FILE__))
 
 mail = IredMailHelper.new(username: SettingsData::EMAIL_ADMIN)
 
+checker = { mail: mail, module: 'WebStudio' }
+
 describe 'Site Smoke' do
   before do
     @portal_creation_data = PortalCreationData.new
@@ -27,14 +29,17 @@ describe 'Site Smoke' do
         it "Check welcome message for #{current_language}" do
           admin = TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(@portal_creation_data, current_language,
                                                                                            AuthData::DEFAULT_ADMIN_NAME, SettingsData::EMAIL_ADMIN)
-          Timeout.timeout(5.minutes) do
-            expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: current_language,
-                                                                                         module: 'WebStudio',
-                                                                                         mail: mail,
-                                                                                         pattern: 'subject_congratulations',
-                                                                                         search: admin.portal,
-                                                                                         move_out: true)).to be_truthy
-          end
+          expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(language: current_language,
+                                                                                                     pattern: 'subject_confirmation',
+                                                                                                     search: admin.portal,
+                                                                                                     move_out: false))).to be_truthy
+          confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(language: current_language,
+                                                                                                                         pattern: 'subject_confirmation',
+                                                                                                                         search: admin.portal))
+          @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link)
+          expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(language: current_language,
+                                                                                                     pattern: 'subject_congratulations',
+                                                                                                     search: admin.portal))).to be_truthy
         end
 
         it "Check changing to #{current_language} language" do

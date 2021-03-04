@@ -60,6 +60,7 @@ module TestingSiteOnlyoffice
       @test.webdriver.open(confirmation_link)
       login_page = LoginPage.new(@test)
       login_page.login_with(mail, pwd)
+      @test.webdriver.quit
     end
   end
 end
