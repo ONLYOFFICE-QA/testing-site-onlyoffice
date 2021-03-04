@@ -34,7 +34,7 @@ describe 'Registration new portal' do
       @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link)
       expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
                                                                                                  pattern: 'subject_congratulations',
-                                                                                                 search: @portal_creation_data.custom_user_list[0].first_name))).to be_truthy
+                                                                                                 search: ''))).to be_truthy
     end
 
     it 'Create new portal with wrong data from "Sign Up"' do

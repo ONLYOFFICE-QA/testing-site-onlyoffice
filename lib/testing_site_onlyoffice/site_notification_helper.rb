@@ -3,7 +3,7 @@ require 'csv'
 module TestingSiteOnlyoffice
   class SiteNotificationHelper < NotificationHelper
     def self.site_translate_from_resource(language, string_name, tm_module)
-      file_path = "#{ENV['HOME']}/RubymineProjects/testing-site-onlyoffice/lib/testing_site_onlyoffice/data/site_translates.csv"
+      file_path = File.absolute_path('lib/testing_site_onlyoffice/data/site_translates.csv')
       get_csv_match(file_path, language, string_name, tm_module)
     end
 
@@ -22,7 +22,7 @@ module TestingSiteOnlyoffice
                                                                             params[:module])
       confirmation_html = params[:mail].get_html_body_email_by_subject({ subject: expected_string,
                                                                          search: params[:search] })
-      confirmation_html.match(%r{(?:https)://[\w-]+(?:\.[\w-]+)+/(?:[\w.,@^=%&:/~+-]*/)?confirm(?:[\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?}).to_s
+      confirmation_html.split('href="').grep(/confirm.aspx/)[0].split('"')[0]
     end
   end
 end
