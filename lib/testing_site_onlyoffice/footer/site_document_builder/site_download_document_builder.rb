@@ -1,6 +1,5 @@
 # /download-document-builder.aspx
 # https://user-images.githubusercontent.com/40513035/100556307-84e37a00-32b2-11eb-8b00-7f3b628aaa00.png
-require_relative 'site_document_builder_block_constructor'
 require_relative '../../get_onlyoffice/modules/site_download_helper'
 
 module TestingSiteOnlyoffice
@@ -46,11 +45,6 @@ module TestingSiteOnlyoffice
 
     def deb_currently_selected?
       deb_package_switch_element.attribute_value('class').include?('currently_selected')
-    end
-
-    def installer_document_builder_type_block(type = :windows)
-      switch_to_rpm if type == :rpm
-      SiteDocumentBuilderBlockConstructor.new(@instance, type.to_s)
     end
   end
 end
