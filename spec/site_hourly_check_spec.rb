@@ -291,33 +291,6 @@ describe 'SiteHourlyCheck' do
         end
       end
 
-      describe 'document builder' do
-        before do
-          builder_page = @site_home_page.click_document_builder
-          @download_builder_page = builder_page.click_download_now
-        end
-
-        TestingSiteOnlyoffice::SiteDownloadData.document_builder_list.each do |installer|
-          describe installer.to_s do
-            before do
-              @current_installation = @download_builder_page.installer_document_builder_type_block(installer)
-            end
-
-            it "[Site][DownloadDocumentBuilder][#{installer}] download link for `#{installer}` alive /document-builder.aspx" do
-              expect(@download_builder_page).to be_link_alive(@current_installation.download_xpath)
-            end
-
-            it "[Site][DownloadDocumentBuilder][#{installer}] read instruction link for `#{installer}` alive /document-builder.aspx" do
-              expect(@download_builder_page).to be_link_alive(@current_installation.instruction_xpath)
-            end
-          end
-        end
-
-        it_behaves_like 'document_builder_version_and_realise_date', TestingSiteOnlyoffice::SiteDownloadData.document_builder_list do
-          let(:installers_download_page) { @download_builder_page }
-        end
-      end
-
       describe '#download_connectors' do
         before do
           @connectors_page = @site_home_page.click_link_on_toolbar(:open_source_packages).open_opensource_connectors
