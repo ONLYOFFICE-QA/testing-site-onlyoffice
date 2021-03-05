@@ -54,5 +54,13 @@ module TestingSiteOnlyoffice
       @test.webdriver.wait_until { @test.webdriver.driver.current_url.include? '/wrongportalname.aspx?url=' }
       SiteWrongPortal.new(@test)
     end
+
+    def registration_confirmation(confirmation_link, mail = SettingsData::EMAIL_ADMIN, pwd = SettingsData::PORTAL_PASSWORD)
+      @test = SiteTestInstance.new
+      @test.webdriver.open(confirmation_link)
+      login_page = LoginPage.new(@test)
+      login_page.login_with(mail, pwd)
+      @test.webdriver.quit
+    end
   end
 end

@@ -1,11 +1,8 @@
-WebStudio,Neutral,subject_congratulations,Welcome to ONLYOFFICE cloud!
-WebStudio,de-DE,subject_congratulations,Willkommen in der ONLYOFFICE Cloud!
-WebStudio,fr-FR,subject_congratulations,Bienvenue dans le nuage ONLYOFFICE
-WebStudio,es-ES,subject_congratulations,¡Bienvenido a la nube de ONLYOFFICE!
-WebStudio,ru-RU,subject_congratulations,Добро пожаловать в облако ONLYOFFICE!
-WebStudio,pt-BR,subject_congratulations,Bem vindo ao ONLYOFFICE Cloud!
-WebStudio,it-IT,subject_congratulations,Benvenuto nel cloud di ONLYOFFICE!
-WebStudio,pt-BR,subject_congratulations,Bem vindo ao ONLYOFFICE Cloud!
+WebStudio,Neutral,subject_confirmation,Confirm your email
+WebStudio,ru-RU,subject_confirmation,Подтвердите адрес электронной почты
+
+WebStudio,Neutral,subject_congratulations,Welcome to ONLYOFFICE!
+WebStudio,ru-RU,subject_congratulations,Добро пожаловать в ONLYOFFICE!
 
 WebStudio,Neutral,portal_name_reminder,ONLYOFFICE Portal Name Reminder
 WebStudio,es-ES,portal_name_reminder,Recordatorio de nombre de ONLYOFFICE Portal
