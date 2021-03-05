@@ -29,10 +29,6 @@ describe 'Site Smoke' do
         it "Check welcome message for #{current_language}" do
           admin = TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(@portal_creation_data, current_language,
                                                                                            AuthData::DEFAULT_ADMIN_NAME, SettingsData::EMAIL_ADMIN)
-          expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(language: current_language,
-                                                                                                     pattern: 'subject_confirmation',
-                                                                                                     search: admin.portal,
-                                                                                                     move_out: false))).to be_truthy
           confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(language: current_language,
                                                                                                                          pattern: 'subject_confirmation',
                                                                                                                          search: admin.portal))

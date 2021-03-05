@@ -20,9 +20,11 @@ module TestingSiteOnlyoffice
     def self.confirmation_registration_link(params = {})
       expected_string = SiteNotificationHelper.site_translate_from_resource(params[:language], params[:pattern],
                                                                             params[:module])
-      confirmation_html = params[:mail].get_html_body_email_by_subject({ subject: expected_string,
-                                                                         search: params[:search] })
-      confirmation_html.split('href="').grep(/confirm.aspx/)[0].split('"')[0]
+      mail = params[:mail].get_email_by_subject({ subject: expected_string,
+                                                  search: params[:search] },
+                                                params[:times] = params.fetch(:times, 300),
+                                                params[:move_out] = params.fetch(:move_out, true))
+      mail[:html_body].split('href="').grep(/confirm.aspx/)[0].split('"')[0]
     end
   end
 end
