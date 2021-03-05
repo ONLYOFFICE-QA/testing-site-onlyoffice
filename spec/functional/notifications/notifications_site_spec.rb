@@ -42,8 +42,8 @@ describe 'Registration new portal' do
       pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if StaticDataTeamLab.portal_type == '.com'
       demo_order_page = @site_home_page.click_order_demo
       company_name = "nctautotest #{Time.now} /demo-order.aspx"
-      @home_page = demo_order_page.send_demonstration_request(company_name: company_name)
-      expect(@home_page).to be_a TestingSiteOnlyoffice::SiteHomePage
+      demo_order_page.send_demonstration_request(company_name: company_name)
+      expect(demo_order_page).to be_a TestingSiteOnlyoffice::SiteOrderDemo
       expect(partner_email.check_email_by_subject(
                { subject: TestingSiteOnlyoffice::SiteNotificationData::ORDER_DEMO_REQUEST, search: company_name }, 300, true
              )).to be true

@@ -9,11 +9,16 @@ module TestingSiteOnlyoffice
     text_field(:last_name, xpath: '//input[contains(@class,"LastName")]')
     text_field(:email, xpath: '//input[contains(@class,"Email")]')
     text_field(:phone, xpath: '//input[contains(@class,"Phone")]')
-    text_field(:website, xpath: '//input[contains(@class,"CompanyAddress")]')
+    text_field(:website, xpath: '//input[contains(@class,"txtWebsite")]')
     text_field(:company_name, xpath: '//input[contains(@class,"CompanyName")]')
 
-    checkbox(:onlyoffice_groups, xpath: '//input[@id="ONLYOFFICE_Groups"]')
-    checkbox(:onlyoffice_docs, xpath: '//input[@id="ONLYOFFICE_Docs"]')
+    span(:onlyoffice_groups, xpath: '//input[@id="ONLYOFFICE_Groups"]/../span')
+    span(:onlyoffice_docs, xpath: '//input[@id="ONLYOFFICE_Docs"]/../span')
+
+    table(:select_time_field, xpath: '//table[@class= "timetable"]')
+    span(:time_zone, id: 'tmzone')
+    span(:demo_time, id: 'tm')
+    link(:select, id: 'selectbtn')
 
     text_field(:send_request, xpath: '//input[@id="sendDemoRequest"]')
 
@@ -34,13 +39,21 @@ module TestingSiteOnlyoffice
       self.phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.website = params.fetch(:website, Faker::Internet.domain_name)
       self.company_name = params.fetch(:company_name, Faker::Company.name)
-      check_onlyoffice_groups if params.fetch(:docs_demo, true)
-      check_onlyoffice_docs if params.fetch(:groups_demo, true)
+      add_demo_time
+      onlyoffice_groups_element.click if params.fetch(:docs_demo, true)
+      onlyoffice_docs_element.click if params.fetch(:groups_demo, true)
       @instance.webdriver.wait_until do
         !@instance.webdriver.get_attribute(send_request_element, 'class').include?('disable')
       end
       send_request_element.click
-      SiteHomePage.new(@instance)
+    end
+
+    def add_demo_time
+      select_time_field_element.click
+      @instance.webdriver.wait_until { select_element.present? }
+      @instance.webdriver.driver.find_element(:xpath, "(//li[@id='-10:00'])[1]").click
+      @instance.webdriver.driver.find_element(:xpath, "//li[@id='1']").click
+      select_element.click
     end
   end
 end
