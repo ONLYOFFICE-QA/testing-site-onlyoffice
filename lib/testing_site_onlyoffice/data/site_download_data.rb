@@ -127,7 +127,7 @@ module TestingSiteOnlyoffice
     end
 
     DOCUMENT_BUILDER_INSTRUCTION = 'ONLYOFFICE Api Documentation - Getting started'
-    DOCUMENT_BUILDER_CHANGELOG = 'DocumentBuilder/CHANGELOG.md at master · ONLYOFFICE/DocumentBuilder'
+    DOCUMENT_BUILDER_CHANGELOG = 'DocumentBuilder/CHANGELOG.md at master · ONLYOFFICE/DocumentBuilder · GitHub'
     FORK_ME_ON_GITHUB = 'GitHub - ONLYOFFICE/DocumentBuilder: ONLYOFFICE Document Builder is powerful text, spreadsheet, presentation and PDF generating tool'
   end
 end

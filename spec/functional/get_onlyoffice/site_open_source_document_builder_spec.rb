@@ -17,7 +17,7 @@ describe 'Open source Document builder download' do
       it "[Site][DownloadDocumentBuilder][#{installer}] 'Whats new' button works for`#{installer}`/download.aspx#builder" do
         @current_installation = @document_builder_download_page.installer_document_builder_block(installer)
         @current_installation.click_whats_new_link
-        expect(@document_builder_download_page).to eq(TestingSiteOnlyoffice::SiteDownloadData::DOCUMENT_BUILDER_CHANGELOG)
+        expect(@document_builder_download_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DOCUMENT_BUILDER_CHANGELOG)
       end
     end
 
