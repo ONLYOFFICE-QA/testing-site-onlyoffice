@@ -123,18 +123,11 @@ module TestingSiteOnlyoffice
 
     # Document Builder
     def self.document_builder_list
-      %i[windows deb rpm]
-    end
-
-    def self.document_builder_download_file
-      {
-        windows: 'docbuilder_x64.exe',
-        deb: 'onlyoffice-documentbuilder_amd64.deb',
-        rpm: 'onlyoffice-documentbuilder.x86_64.rpm'
-      }
+      %i[windows debian centos]
     end
 
     DOCUMENT_BUILDER_INSTRUCTION = 'ONLYOFFICE Api Documentation - Getting started'
+    DOCUMENT_BUILDER_CHANGELOG = 'DocumentBuilder/CHANGELOG.md at master · ONLYOFFICE/DocumentBuilder · GitHub'
     FORK_ME_ON_GITHUB = 'GitHub - ONLYOFFICE/DocumentBuilder: ONLYOFFICE Document Builder is powerful text, spreadsheet, presentation and PDF generating tool'
   end
 end

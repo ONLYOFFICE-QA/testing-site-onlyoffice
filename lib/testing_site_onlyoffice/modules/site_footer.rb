@@ -20,7 +20,7 @@ module TestingSiteOnlyoffice
     # follow us on
     label(:subscribe_to_newsletter, xpath: '//div[@class="footer_menu"]//label[@title="Subscribe to our newsletters"]')
 
-    def click_document_builder
+    def click_document_builder_info
       document_builder_element.click
       SiteDocumentBuilder.new(@instance)
     end

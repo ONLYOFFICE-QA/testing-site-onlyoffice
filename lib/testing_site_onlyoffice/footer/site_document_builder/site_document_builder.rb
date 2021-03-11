@@ -1,6 +1,6 @@
 # /document-builder.aspx
 # https://user-images.githubusercontent.com/668524/68375334-ba716e80-0157-11ea-9a82-807f8464db7a.png
-require_relative 'site_download_document_builder'
+require_relative '../../get_onlyoffice/open_source_packages/document_builder/site_open_source_document_builder'
 
 module TestingSiteOnlyoffice
   class SiteDocumentBuilder
@@ -24,7 +24,7 @@ module TestingSiteOnlyoffice
 
     def click_download_now
       download_now_element.click
-      SiteDownloadDocumentBuilder.new(@instance)
+      SiteOpenSourceDocumentBuilder.new(@instance)
     end
   end
 end

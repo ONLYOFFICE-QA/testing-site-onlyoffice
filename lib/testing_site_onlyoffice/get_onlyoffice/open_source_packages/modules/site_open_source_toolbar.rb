@@ -1,5 +1,5 @@
 # Open source packages page
-# https://user-images.githubusercontent.com/40513035/95976363-0e80da80-0e20-11eb-8a03-310fd68a4945.png
+# https://user-images.githubusercontent.com/40513035/110755741-58001500-825a-11eb-9356-7a99013a9b69.png
 
 module TestingSiteOnlyoffice
   module SiteToolbarOpenSource
@@ -9,6 +9,7 @@ module TestingSiteOnlyoffice
     div(:open_source_onlyoffice_groups, xpath: '//div[@id="groups"]')
     div(:open_source_bundles, xpath: '//div[@id="bundles" or @id="workspace"]')
     div(:open_source_connectors, xpath: '//div[@id="connectors"]')
+    div(:open_source_document_builder, xpath: '//div[@id="builder"]')
 
     def open_opensource_onlyoffice_docs
       open_source_onlyoffice_docs_element.click
@@ -28,6 +29,11 @@ module TestingSiteOnlyoffice
     def open_opensource_groups
       open_source_onlyoffice_groups_element.click
       SiteOpenSourceGroups.new(@instance)
+    end
+
+    def open_opensource_document_builder
+      open_source_document_builder_element.click
+      SiteOpenSourceDocumentBuilder.new(@instance)
     end
   end
 end
