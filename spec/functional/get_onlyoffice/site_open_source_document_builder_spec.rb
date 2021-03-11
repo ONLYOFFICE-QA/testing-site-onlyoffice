@@ -7,13 +7,13 @@ describe 'Open source Document builder download' do
     @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office
   end
 
-  context 'open download page from top toolbar' do
+  describe 'open download page from top toolbar' do
     before do
       download_open_source_page = @site_home_page.click_link_on_toolbar(:open_source_packages)
       @document_builder_download_page = download_open_source_page.open_opensource_document_builder
     end
 
-    TestingSiteOnlyoffice::SiteDownloadData.document_builder_list do |installer|
+    TestingSiteOnlyoffice::SiteDownloadData.document_builder_list.each do |installer|
       it "[Site][DownloadDocumentBuilder][#{installer}] 'Whats new' button works for`#{installer}`/download.aspx#builder" do
         @current_installation = @document_builder_download_page.installer_document_builder_block(installer)
         @current_installation.click_whats_new_link
@@ -27,7 +27,7 @@ describe 'Open source Document builder download' do
     end
   end
 
-  context 'open download page from footer' do
+  describe 'open download page from footer' do
     it 'Open download document builder page from footer' do
       document_builder_info_page = @site_home_page.click_document_builder_info
       document_builder_download_page = document_builder_info_page.click_download_now
