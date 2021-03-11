@@ -18,7 +18,7 @@ describe 'Site Smoke' do
       expect(site_home_page.get_all_language_from_site).to eq(TestingSiteOnlyoffice::SiteData.site_languages)
     end
 
-    SiteData.site_languages.each do |current_language|
+    TestingSiteOnlyoffice::SiteData.site_languages.each do |current_language|
       describe "Registration #{current_language}" do
         it "Registration from portal sign in page for #{current_language}" do
           admin = TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(@portal_creation_data, current_language)
