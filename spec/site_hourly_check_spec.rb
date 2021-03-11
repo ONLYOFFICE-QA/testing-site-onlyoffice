@@ -291,6 +291,18 @@ describe 'SiteHourlyCheck' do
         end
       end
 
+      describe 'document builder' do
+        before do
+          download_open_source_page = @site_home_page.click_link_on_toolbar(:open_source_packages)
+          @document_builder_download_page = download_open_source_page.open_opensource_document_builder
+        end
+
+        it_behaves_like 'document_builder_download',
+                        TestingSiteOnlyoffice::SiteDownloadData.document_builder_list do
+          let(:installers_download_page) { @document_builder_download_page }
+        end
+      end
+
       describe '#download_connectors' do
         before do
           @connectors_page = @site_home_page.click_link_on_toolbar(:open_source_packages).open_opensource_connectors
