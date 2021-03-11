@@ -1,5 +1,6 @@
-# Open source packages
-# https://user-images.githubusercontent.com/40513035/95982402-c0240980-0e28-11eb-8690-711459dae4e3.png
+# Open source packages for document builder
+# https://user-images.githubusercontent.com/40513035/110755500-14a5a680-825a-11eb-960c-7eb9a3d58c8e.png
+
 require_relative '../../../modules/site_toolbar'
 require_relative '../modules/site_open_source_toolbar'
 require_relative '../../modules/site_download_helper'

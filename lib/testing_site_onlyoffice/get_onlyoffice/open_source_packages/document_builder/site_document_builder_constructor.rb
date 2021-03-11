@@ -1,5 +1,5 @@
 # Get download, install, release date, verson and what's new xpath for document builder block
-#
+# https://user-images.githubusercontent.com/40513035/110755314-d9a37300-8259-11eb-8552-65c083de1b7a.png
 
 module TestingSiteOnlyoffice
   class SiteDocumentBuilderConstructor
