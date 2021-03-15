@@ -34,6 +34,7 @@ module TestingSiteOnlyoffice
       if installer == :windows
         file_downloaded?(downloaded_installer)
       else
+        @instance.webdriver.wait_until { !check_opened_page_title.empty? } # Digitalocean title loading timeout
         check_opened_page_title == downloaded_installer
       end
     end
