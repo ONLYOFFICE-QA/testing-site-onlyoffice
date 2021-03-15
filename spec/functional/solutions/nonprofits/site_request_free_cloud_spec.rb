@@ -20,6 +20,7 @@ describe 'Request free cloud' do
   end
 
   it '[Site][Nonprofits] Send free cloud request for nonprofit' do
+    pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if StaticDataTeamLab.portal_type == '.com'
     last_name = "nctautotest #{Time.now}"
     @request_free_cloud_page.send_non_profit_request(last_name: last_name)
     expect(@request_free_cloud_page).to be_request_accepted
