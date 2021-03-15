@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe 'Buy Product Notification' do
-  test_manager = TestManager.new(suite_name: File.basename(__FILE__))
+  test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
   before do
     @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office

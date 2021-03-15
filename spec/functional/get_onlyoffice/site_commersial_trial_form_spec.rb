@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-test_manager = TestManager.new(suite_name: File.basename(__FILE__))
+test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
 partner_email = IredMailHelper.new(username: SettingsData::PARTNERS_EMAIL)
 client_email = IredMailHelper.new(username: SettingsData::CLIENT_EMAIL)
