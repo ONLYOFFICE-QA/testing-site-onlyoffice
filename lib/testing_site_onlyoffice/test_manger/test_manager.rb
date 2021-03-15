@@ -15,8 +15,8 @@ module TestingSiteOnlyoffice
 
     def initialize(params = {})
       params[:suite_name] ||= File.basename(__FILE__)
-      params[:plan_name] ||= "Site Domain: #{PortalHelper.new.get_portal_name}, Version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}"
-      params[:plan_name_testrail] ||= "Site Domain: #{PortalHelper.new.get_portal_name}, Version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}"
+      params[:plan_name] ||= test_plan_name
+      params[:plan_name_testrail] ||= test_plan_name
       params[:product_name] ||= 'Site onlyoffice.com Autotests'
       @tcm_helper = OnlyofficeTcmHelper::TcmHelper.new(params)
       @palladium = init_palladium(params)
@@ -55,6 +55,10 @@ module TestingSiteOnlyoffice
     # get code for colorize message in console
     def get_result_color(status_name)
       { failed: 45, pending: 43, passed: 42, passed_2: 46, aborted: 41, blocked: 44 }[status_name]
+    end
+
+    def test_plan_name
+      "Site Domain: #{PortalHelper.new.get_portal_name}, Version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}"
     end
 
     private
