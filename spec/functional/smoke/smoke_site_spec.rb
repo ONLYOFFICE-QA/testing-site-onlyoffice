@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'timeout'
 
-test_manager = TestManager.new(suite_name: File.basename(__FILE__))
+test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
 mail = IredMailHelper.new(username: SettingsData::EMAIL_ADMIN)
 

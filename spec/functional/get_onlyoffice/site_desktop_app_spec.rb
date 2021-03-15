@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-test_manager = TestManager.new(suite_name: File.basename(__FILE__))
+test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
 describe 'Desktop apps' do
   before do
