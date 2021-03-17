@@ -58,7 +58,7 @@ module TestingSiteOnlyoffice
     end
 
     def test_plan_name
-      "Site Domain: #{config.default_server}, Version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}"
+      "Site Domain: #{config.server}, Version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}"
     end
 
     private

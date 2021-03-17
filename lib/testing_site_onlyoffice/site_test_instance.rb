@@ -18,7 +18,7 @@ module TestingSiteOnlyoffice
     end
 
     def init_online_documents
-      @doc_instance = TestInstanceDocs.new(webdriver: @webdriver)
+      @doc_instance = TestInstanceDocs.new(AuthData.new, use_community_server_api: false)
       raise 'Cannot init online documents, because browser was not initialized' if @webdriver.driver.nil?
 
       @doc_instance.selenium = @webdriver

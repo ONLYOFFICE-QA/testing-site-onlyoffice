@@ -13,6 +13,8 @@ module TestingApiOnlyfficeCom
       @browser = params.fetch(:browser, :chrome)
     end
 
+    private
+
     # @return [String] server on which test are performed
     def default_server
       return 'https://onlyoffice.com' if ENV['SPEC_REGION']&.include?('com')
