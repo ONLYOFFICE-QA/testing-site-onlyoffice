@@ -106,11 +106,10 @@ module TestingSiteOnlyoffice
                                           '//*[@id="ReleaseNewVersion"]//*[contains(@class, "btn-close")]').click
     end
 
-    def open_page_teamlab_office(portal = get_full_portal_name('www'))
+    def open_page_teamlab_office(config)
       log_new_portal('Init browser: Start')
-      admin = AuthData.new(portal)
-      log_new_portal("Init browser: Open: #{portal}")
-      @test = SiteTestInstance.new(admin)
+      log_new_portal("Init browser: Open: #{config.server}")
+      @test = SiteTestInstance.new(config)
       register_page = SiteHomePage.new(@test)
       log_new_portal('Init browser: Creating')
       [register_page, @test]

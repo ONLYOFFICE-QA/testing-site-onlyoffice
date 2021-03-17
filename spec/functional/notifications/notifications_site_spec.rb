@@ -2,7 +2,7 @@ require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-site_helper = SiteHelper.new
+site_helper = TestingSiteOnlyoffice::SiteHelper.new
 
 mail_site = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_FOR_SITE)
 partner_email = IredMailHelper.new(username: SettingsData::PARTNERS_EMAIL)
@@ -10,7 +10,7 @@ client_email = IredMailHelper.new(username: SettingsData::CLIENT_EMAIL)
 
 describe 'Registration new portal' do
   before do
-    @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office
+    @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
     @site_home_page.set_page_language(StaticDataTeamLab.current_language)
   end
 

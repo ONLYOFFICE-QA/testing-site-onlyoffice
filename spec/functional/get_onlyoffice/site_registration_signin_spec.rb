@@ -11,7 +11,7 @@ checker = { language: StaticDataTeamLab.current_language, module: 'WebStudio' }
 describe 'Registration new portal' do
   before do
     @portal_creation_data = PortalCreationData.new
-    @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office
+    @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
   end
 
   context 'Sign Up' do
@@ -63,7 +63,7 @@ describe 'Registration new portal' do
       password = SecureRandom.uuid
       @sign_up_page.fill_data(portal_name: @portal_creation_data.portal_to_create, password: password)
       @test.webdriver.quit
-      site_home_page, @test = PortalHelper.new.open_page_teamlab_office
+      site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
       sign_in_page = site_home_page.click_link_on_toolbar(:sign_in)
       portal_page = sign_in_page.sign_in(SettingsData::EMAIL_ADMIN, password)
       expect(portal_page.current_user_name).to eq(AuthData::DEFAULT_ADMIN_FULLNAME)

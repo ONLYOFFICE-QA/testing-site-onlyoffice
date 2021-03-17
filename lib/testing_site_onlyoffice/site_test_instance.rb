@@ -4,22 +4,21 @@ require_relative 'test_manger/test_manager'
 # Instance of browser to perform actions
 module TestingSiteOnlyoffice
   class SiteTestInstance
-    attr_accessor :webdriver, :user, :headless, :doc_instance
+    attr_accessor :webdriver, :doc_instance
     # @return [Hash] list of secret data
     attr_reader :secret_data
     alias driver webdriver
     alias selenium webdriver
 
-    def initialize(user = AuthData.new, browser = :chrome)
-      @user = user
+    def initialize(config)
       @secret_data = SecretData.new.decrypt
-      @webdriver = WebDriver.new(browser, record_video: false)
-      url = @user.portal.end_with?('//www.teamlab.info') ? "#{@user.portal}?Site_Testing=4testing" : @user.portal
+      @webdriver = WebDriver.new(config.browser, record_video: false)
+      url = config.server.end_with?('teamlab.info') ? "#{config.server}?Site_Testing=4testing" : config.server
       @webdriver.open(url)
     end
 
     def init_online_documents
-      @doc_instance = TestInstanceDocs.new(@user, use_community_server_api: false)
+      @doc_instance = TestInstanceDocs.new(webdriver: @webdriver)
       raise 'Cannot init online documents, because browser was not initialized' if @webdriver.driver.nil?
 
       @doc_instance.selenium = @webdriver

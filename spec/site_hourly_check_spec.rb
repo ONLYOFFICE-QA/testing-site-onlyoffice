@@ -11,7 +11,7 @@ describe 'SiteHourlyCheck' do
 
   describe 'Site onlyoffice.com' do
     before do
-      @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office('http://www.onlyoffice.com')
+      @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
       @site_home_page.set_page_language(language)
     end
 
