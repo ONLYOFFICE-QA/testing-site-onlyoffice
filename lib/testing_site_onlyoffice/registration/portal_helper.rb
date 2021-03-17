@@ -2,6 +2,7 @@ require_relative 'portal_people'
 require_relative 'portal_version'
 require_relative 'portal_mail'
 require_relative 'teamlab_portal_reg_web_helper'
+require_relative 'portal_helper/portal_reg_api_helper'
 
 module TestingSiteOnlyoffice
   class PortalHelper
@@ -9,7 +10,7 @@ module TestingSiteOnlyoffice
     include PortalVersion
     include PortalMail
     include TeamlabPortalRegWebHelper
-    include APIPortalRegHelper
+    include PortalRegAPIHelper
 
     def init_portal(portal_creation_data, language = StaticDataTeamLab.current_language)
       if StaticDataTeamLab.custom_portal_flag
