@@ -18,7 +18,7 @@ module TestingSiteOnlyoffice
                   end
       log_new_portal("Add users: Count: #{user_list.count}")
       if user_list.length > 1
-        test = SiteTestInstance.new(user_list.first)
+        test = TestInstance.new(user_list.first)
         api = GeneralApiService.new(user_list.first.portal, user_list.first.email, user_list.first.password)
         user_link = api.portal.invite_user_url
         guest_link = api.portal.invite_visitor_url

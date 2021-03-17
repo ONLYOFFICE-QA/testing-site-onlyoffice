@@ -24,7 +24,7 @@ module TestingSiteOnlyoffice
     end
 
     def init_instance(admin, change_language_flag = false, language = StaticDataTeamLab.current_language)
-      test = SiteTestInstance.new(admin)
+      test = TestInstance.new(admin)
       if test.webdriver.get_page_source.include?('Error 503')
         test.webdriver.webdriver_error('HTTP Error 503. Service Unavailable')
       end

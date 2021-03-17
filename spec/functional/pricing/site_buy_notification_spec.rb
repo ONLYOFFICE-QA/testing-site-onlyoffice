@@ -4,7 +4,7 @@ describe 'Buy Product Notification' do
   test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
   before do
-    @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office
+    @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
     @mail = IredMailHelper.new(username: 'avangate-buy-product@qamail.teamlab.info',
                                password: @test.private_data['mail_avangate-buy-product_pass'])
     @mail.delete_all_messages

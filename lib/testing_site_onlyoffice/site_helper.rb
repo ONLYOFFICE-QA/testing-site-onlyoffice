@@ -35,7 +35,7 @@ module TestingSiteOnlyoffice
       portal_helper = PortalHelper.new
       @portal_name = portal_helper.get_full_portal_name(param.portal_to_create)
       @user_list = portal_helper.current_portal_create_users(param)
-      register_page, @test = portal_helper.open_page_teamlab_office
+      register_page, @test = portal_helper.open_page_teamlab_office(config)
       register_page.create_portal_from_source(param, language, user_name, email)
     end
 
@@ -48,7 +48,7 @@ module TestingSiteOnlyoffice
 
     def wrong_portal_name
       wrong_portal = SiteData::PORTAL_ADDRESS.dup.insert(10, Time.now.nsec.to_s)
-      @test = SiteTestInstance.new
+      @test = SiteTestInstance.new(config)
       @test.webdriver.open('https://teamlab.info/?Site_Testing=4testing')
       @test.webdriver.open(wrong_portal)
       @test.webdriver.wait_until { @test.webdriver.driver.current_url.include? '/wrongportalname.aspx?url=' }
@@ -56,7 +56,7 @@ module TestingSiteOnlyoffice
     end
 
     def registration_confirmation(confirmation_link, mail = SettingsData::EMAIL_ADMIN, pwd = SettingsData::PORTAL_PASSWORD)
-      @test = SiteTestInstance.new
+      @test = SiteTestInstance.new(config)
       @test.webdriver.open(confirmation_link)
       login_page = LoginPage.new(@test)
       login_page.login_with(mail, pwd)
