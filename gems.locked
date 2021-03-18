@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/ONLYOFFICE/onlyoffice_api_gem
-  revision: 89c6bb8e2a3323bd03e212bc2ad096d51b454324
-  specs:
-    onlyoffice_api (0.7)
-      httparty (~> 0.16)
-
-GIT
   remote: https://github.com/onlyoffice-testing-robot/onlyoffice_documentserver_testing_framework
   revision: 62d510f7647a2b1611bdd4c24330aa10f36b3948
   specs:
@@ -137,6 +130,8 @@ GEM
       racc (~> 1.4)
     ntlm-http (0.1.1)
     oauth (0.5.5)
+    onlyoffice_api (0.8.0)
+      httparty (~> 0.16)
     onlyoffice_bugzilla_helper (0.6.0)
     onlyoffice_documentserver_conversion_helper (0.2.0)
       jwt (~> 2)
@@ -295,7 +290,7 @@ DEPENDENCIES
   json
   mail
   mechanize
-  onlyoffice_api!
+  onlyoffice_api
   onlyoffice_documentserver_conversion_helper
   onlyoffice_documentserver_testing_framework!
   onlyoffice_file_helper
