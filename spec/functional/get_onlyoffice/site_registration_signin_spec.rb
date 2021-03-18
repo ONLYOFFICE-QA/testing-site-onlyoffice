@@ -25,13 +25,21 @@ describe 'Registration new portal' do
     it 'Check sign up letter: "Welcome to TeamLab Portal!" from "Sign Up"' do
       @sign_up_page.fill_data(portal_name: @portal_creation_data.portal_to_create)
       portal_name = TestingSiteOnlyoffice::PortalHelper.new.get_full_portal_name(@portal_creation_data.portal_to_create)
-      confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(mail: mail,
-                                                                                                                     pattern: 'subject_confirmation',
-                                                                                                                     search: portal_name))
-      @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link)
-      expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
-                                                                                                 pattern: 'subject_congratulations',
-                                                                                                 search: portal_name))).to be_truthy
+      case config.server
+      when 'https://teamlab.info'
+        confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(mail: mail,
+                                                                                                                       pattern: 'subject_confirmation',
+                                                                                                                       search: portal_name))
+        @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link)
+        expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
+                                                                                                   pattern: 'subject_congratulations',
+                                                                                                   search: portal_name))).to be_truthy
+      when 'https://onlyoffice.com'
+        expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
+                                                                                                   pattern: 'subject_congratulations_com',
+                                                                                                   search: portal_name))).to be_truthy
+
+      end
     end
 
     it 'Create new portal with wrong data from "Sign Up"' do

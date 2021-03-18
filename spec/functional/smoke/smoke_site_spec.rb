@@ -29,13 +29,23 @@ describe 'Site Smoke' do
         it "Check welcome message for #{current_language}" do
           admin = TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(@portal_creation_data, current_language,
                                                                                            AuthData::DEFAULT_ADMIN_NAME, SettingsData::EMAIL_ADMIN)
-          confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(language: current_language,
-                                                                                                                         pattern: 'subject_confirmation',
-                                                                                                                         search: admin.portal))
-          @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link)
-          expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(language: current_language,
-                                                                                                     pattern: 'subject_congratulations',
-                                                                                                     search: admin.portal))).to be_truthy
+          case config.server
+          when 'https://teamlab.info'
+            confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(language: current_language,
+                                                                                                                           pattern: 'subject_confirmation',
+                                                                                                                           search: admin.portal))
+            @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link)
+            expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(language: current_language,
+                                                                                                       pattern: 'subject_congratulations',
+                                                                                                       search: admin.portal))).to be_truthy
+          when 'https://onlyoffice.com'
+            expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: current_language,
+                                                                                         module: 'WebStudio',
+                                                                                         mail: mail,
+                                                                                         pattern: 'subject_congratulations_com',
+                                                                                         search: admin.portal,
+                                                                                         move_out: true)).to be_truthy
+          end
         end
 
         it "Check changing to #{current_language} language" do
