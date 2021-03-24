@@ -8,122 +8,31 @@ describe 'Desktop apps' do
     @desktop_app_page = site_home_page.click_link_on_toolbar(:desktop_mobile_apps)
   end
 
-  context 'Windows 10/8.1/8/7' do
-    it '[Desktop][Windows 10]Check download х64' do
-      @desktop_app_page.site_desktop_download_windows_10_x64
-      expect(@desktop_app_page).to be_file_downloaded(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_WINDOWS_10_X64)
-    end
+  it_behaves_like 'desktop_installer_download', TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list do
+    let(:installers_download_page) { @desktop_app_page }
+  end
 
-    it '[Desktop][Windows 10]Check download х86' do
-      @desktop_app_page.site_desktop_download_windows_10_x86
-      expect(@desktop_app_page).to be_file_downloaded(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_WINDOWS_10_X86)
-    end
+  TestingSiteOnlyoffice::SiteDownloadData.desktop_installer_list.each do |installer|
+    describe installer.to_s do
+      before { @current_installation = @desktop_app_page.desktop_installer_block(installer) }
 
-    it '[Desktop][Windows 10]Check "Read instructions" link' do
-      @desktop_app_page.site_desktop_windows_10_instructions
-      expect(@desktop_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_WINDOWS_INSTRUCTION)
+      it "[Site][DownloadDesktop] 'Github' link works for `#{installer}`/download-desktop.aspx#desktop" do
+        @desktop_app_page.click_constructor_link(@current_installation.github_link)
+        github_title = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['github']
+        expect(@desktop_app_page.check_opened_page_title).to eq(github_title)
+      end
+
+      it "[Site][DownloadDesktop] 'Whats new' link works for `#{installer}`/download-desktop.aspx#desktop" do
+        pending("'Desktop Editors changelog' should be open instead of 'ONLYOFFICE Docs changelog'") if installer.include?('debian')
+        @desktop_app_page.click_constructor_link(@current_installation.whats_new_link)
+        whats_new_title = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop']['whats_new']
+        expect(@desktop_app_page.check_opened_page_title).to eq(whats_new_title)
+      end
     end
   end
 
-  context 'Windows XP/Vista' do
-    it '[Desktop][Windows XP]Check download х64' do
-      @desktop_app_page.site_desktop_download_windows_xp_x64
-      expect(@desktop_app_page).to be_file_downloaded(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_WINDOWS_XP_X64)
-    end
-
-    it '[Desktop][Windows XP]Check download х86' do
-      @desktop_app_page.site_desktop_download_windows_xp_x86
-      expect(@desktop_app_page).to be_file_downloaded(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_WINDOWS_XP_X86)
-    end
-
-    it '[Desktop][Windows XP]Check "Read instructions" link' do
-      @desktop_app_page.site_desktop_windows_xp_instructions
-      expect(@desktop_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_WINDOWS_INSTRUCTION)
-    end
-  end
-
-  context 'Mac' do
-    it '[Desktop][MacOS]Check download' do
-      expect(@desktop_app_page).to be_download_link_alive(:desktop_mac)
-      expect(@desktop_app_page).to be_download_link_valid(@desktop_app_page.download_xpath(:desktop_mac), :mac)
-    end
-
-    it '[Desktop][MacOS]Check "Read instructions" link' do
-      @desktop_app_page.site_desktop_mac_instructions
-      expect(@desktop_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_MACOS_INSTRUCTION)
-    end
-  end
-
-  context 'Debian 8' do
-    it '[Desktop][Debian 8]Check download' do
-      expect(@desktop_app_page).to be_download_link_alive(:desktop_deb_new)
-      expect(@desktop_app_page).to be_download_link_valid(@desktop_app_page.download_xpath(:desktop_deb_new), :deb)
-    end
-
-    it '[Desktop][Debian 8]Check "Read instructions" link' do
-      @desktop_app_page.site_desktop_deb_new_instructions
-      expect(@desktop_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_DEB_INSTRUCTION)
-    end
-  end
-
-  context 'Debian 7' do
-    it '[Desktop][Debian 7]Check download' do
-      expect(@desktop_app_page).to be_download_link_alive(:desktop_deb_old)
-      expect(@desktop_app_page).to be_download_link_valid(@desktop_app_page.download_xpath(:desktop_deb_old), :deb)
-    end
-
-    it '[Desktop][Debian 7]Check "Read instructions" link' do
-      @desktop_app_page.site_desktop_deb_old_instructions
-      expect(@desktop_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_DEB_INSTRUCTION)
-    end
-  end
-
-  context 'CentOS' do
-    it '[Desktop][CentOS]Check download' do
-      expect(@desktop_app_page).to be_download_link_alive(:desktop_rpm)
-      expect(@desktop_app_page).to be_download_link_valid(@desktop_app_page.download_xpath(:desktop_rpm), :rpm)
-    end
-
-    it '[Desktop][CentOS]Check "Read instructions" link' do
-      @desktop_app_page.site_desktop_rpm_instructions
-      expect(@desktop_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_RPM_INSTRUCTION)
-    end
-  end
-
-  context 'AppImage' do
-    it '[Desktop][AppImage]Check download' do
-      @desktop_app_page.site_desktop_download_appimage
-      expect(@desktop_app_page).to be_file_downloaded(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_APPIMAGE)
-    end
-
-    it '[Desktop][AppImage]Check "Read instructions" link' do
-      @desktop_app_page.site_desktop_appimage_instructions
-      expect(@desktop_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_APPIMAGE_INSTRUCTION)
-    end
-  end
-
-  context 'Snap' do
-    it '[Desktop][Snap]Check install from snap store' do
-      @desktop_app_page.site_desktop_install_from_snap_store
-      expect(@desktop_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_INSTALL_FROM_SNAP)
-    end
-
-    it '[Desktop][Snap]Check "Read instructions" link' do
-      @desktop_app_page.site_desktop_snap_instructions
-      expect(@desktop_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_SNAP_INSTRUCTION)
-    end
-  end
-
-  context 'Flatpak' do
-    it '[Desktop][Flatpak]Check install from Flatpak' do
-      @desktop_app_page.site_desktop_install_from_flatpak
-      expect(@desktop_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_INSTALL_FROM_FLATPAK)
-    end
-
-    it '[Desktop][Flatpak]Check "Read instructions" link' do
-      @desktop_app_page.site_desktop_flatpak_instructions
-      expect(@desktop_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DESKTOP_FLATPAK_INSTRUCTION)
-    end
+  it "[Site][DownloadDesktop] Desktop block number didn't change /download-desktop.aspx#desktop" do
+    expect(@desktop_app_page.desktop_block_number).to eq(TestingSiteOnlyoffice::SiteDownloadData.desktop_installer_list.count)
   end
 
   after do |example|
