@@ -3,23 +3,21 @@
 module TestingSiteOnlyoffice
   class SiteDownloadData
     # Desktop
-    DESKTOP_WINDOWS_10_X64 = 'DesktopEditors_x64.exe'
-    DESKTOP_WINDOWS_10_X86 = 'DesktopEditors_x86.exe'
-    DESKTOP_WINDOWS_XP_X64 = 'DesktopEditors_x64_xp.exe'
-    DESKTOP_WINDOWS_XP_X86 = 'DesktopEditors_x86_xp.exe'
-    DESKTOP_WINDOWS_INSTRUCTION = 'How to install Desktop Editors for Windows to your computer? - ONLYOFFICE'
-    DESKTOP_MACOS = 'ONLYOFFICE.dmg'
-    DESKTOP_MACOS_INSTRUCTION = 'How to install ONLYOFFICE Desktop Editors for Mac OS? - ONLYOFFICE'
-    DESKTOP_DEBIAN = 'onlyoffice-desktopeditors_amd64.deb'
-    DESKTOP_DEB_INSTRUCTION = 'How to install Desktop Editors to Ubuntu and derivatives? - ONLYOFFICE'
-    DESKTOP_CENTOS = 'onlyoffice-desktopeditors.x86_64.rpm'
-    DESKTOP_RPM_INSTRUCTION = 'How to install Desktop Editors to Red Hat and derivatives? - ONLYOFFICE'
-    DESKTOP_APPIMAGE = 'DesktopEditors-x86_64.AppImage'
-    DESKTOP_APPIMAGE_INSTRUCTION = 'ONLYOFFICE – AppImageHub'
-    DESKTOP_INSTALL_FROM_SNAP = 'Install ONLYOFFICE Desktop Editors for Linux using the Snap Store | Snapcraft'
-    DESKTOP_SNAP_INSTRUCTION = 'How to install Desktop Editors from snap package? - ONLYOFFICE'
-    DESKTOP_INSTALL_FROM_FLATPAK = 'ONLYOFFICE Desktop Editors—Linux Apps on Flathub'
-    DESKTOP_FLATPAK_INSTRUCTION  = 'How to install ONLYOFFICE Desktop Editors for Linux to your computer using Flatpak? - ONLYOFFICE'
+    def self.desktop_download_list_type
+      {
+        download_file: %i[macos_10 macos_x86 debian_8 debian_7 centos appimage],
+        two_download_files: %i[windows_10 windows_xp],
+        download_from_store: %i[snap flatpak]
+      }
+    end
+
+    def self.desktop_download_list
+      desktop_download_list_type[:download_file] + desktop_download_list_type[:two_download_files] + desktop_download_list_type[:download_from_store]
+    end
+
+    def self.desktop_mobile_info
+      @desktop_mobile_info ||= JSON.parse(File.read("#{__dir__}/site_desktop_info.json"))
+    end
 
     # Mobile
     MOBILE_GOOGLE = 'ONLYOFFICE Documents - Apps on Google Play'

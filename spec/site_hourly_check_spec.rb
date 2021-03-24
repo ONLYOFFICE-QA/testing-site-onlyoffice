@@ -86,95 +86,10 @@ describe 'SiteHourlyCheck' do
 
     describe 'Site Downloads' do
       context 'download desktop editors /download-desktop.aspx' do
-        before { @desktop_editors_download_page = @site_home_page.click_link_on_toolbar(:desktop_mobile_apps) }
+        before { @desktop_app_page = @site_home_page.click_link_on_toolbar(:desktop_mobile_apps) }
 
-        it '[Download Desktop Editors] /download-desktop.aspx: Windows 10/8.1/8/7 x86 download link works' do
-          expect(@desktop_editors_download_page).to be_download_link_alive(:desktop_win_10_86)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Windows 10/8.1/8/7 x64 download link works' do
-          expect(@desktop_editors_download_page).to be_download_link_alive(:desktop_win_10_64)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Windows XP/Vista x86 download link works' do
-          expect(@desktop_editors_download_page).to be_download_link_alive(:desktop_win_xp_86)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Windows XP/Vista x64 download link works' do
-          expect(@desktop_editors_download_page).to be_download_link_alive(:desktop_win_xp_64)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Mac OS download link works' do
-          expect(@desktop_editors_download_page).to be_download_link_alive(:desktop_mac)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Debian 8, Ubuntu 14.04, 16.04 download link works' do
-          expect(@desktop_editors_download_page).to be_download_link_alive(:desktop_deb_new)
-          expect(@desktop_editors_download_page).to be_download_link_valid(
-            @desktop_editors_download_page.download_xpath(:desktop_deb_new), :deb
-          )
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Debian 7, Ubuntu 12.04 download link works' do
-          expect(@desktop_editors_download_page).to be_download_link_alive(:desktop_deb_old)
-          expect(@desktop_editors_download_page).to be_download_link_valid(
-            @desktop_editors_download_page.download_xpath(:desktop_deb_old), :deb
-          )
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Centos 7, Redhat 7, Fedora 23, 24 download link works' do
-          expect(@desktop_editors_download_page).to be_download_link_alive(:desktop_rpm)
-          expect(@desktop_editors_download_page).to be_download_link_valid(
-            @desktop_editors_download_page.download_xpath(:desktop_rpm), :rpm
-          )
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: AppImage' do
-          expect(@desktop_editors_download_page).to be_download_link_alive(:desktop_appimage)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: FlatPak' do
-          expect(@desktop_editors_download_page).to be_download_link_alive(:desktop_flatpak)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Snap' do
-          expect(@desktop_editors_download_page).to be_download_link_alive(:desktop_snap)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Windows 10/8.1/8/7 instruction link alive' do
-          expect(@desktop_editors_download_page).to be_instruction_link_alive(:desktop_win_10_instruction)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Windows XP/Vista instruction link alive' do
-          expect(@desktop_editors_download_page).to be_instruction_link_alive(:desktop_win_xp_instruction)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: MacOS instruction link alive' do
-          expect(@desktop_editors_download_page).to be_instruction_link_alive(:desktop_mac_instruction)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Debian 8, Ubuntu 14.04, 16.04 instruction link alive' do
-          expect(@desktop_editors_download_page).to be_instruction_link_alive(:desktop_deb_new_instruction)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Debian 7, Ubuntu 12.04 instruction link alive' do
-          expect(@desktop_editors_download_page).to be_instruction_link_alive(:desktop_deb_old_instruction)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Centos 7, Redhat 7, Fedora 23, 24 instruction link alive' do
-          expect(@desktop_editors_download_page).to be_instruction_link_alive(:desktop_rpm_instruction)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: AppImage instruction link alive' do
-          expect(@desktop_editors_download_page).to be_instruction_link_alive(:desktop_appimage_instruction)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: FlatPak instruction link alive' do
-          expect(@desktop_editors_download_page).to be_instruction_link_alive(:desktop_flatpak_instruction)
-        end
-
-        it '[Download Desktop Editors] /download-desktop.aspx: Snap instruction link alive' do
-          expect(@desktop_editors_download_page).to be_instruction_link_alive(:desktop_snap_instruction)
+        it_behaves_like 'desktop_installer_download', TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list_type do
+          let(:installers_download_page) { @desktop_app_page }
         end
       end
 

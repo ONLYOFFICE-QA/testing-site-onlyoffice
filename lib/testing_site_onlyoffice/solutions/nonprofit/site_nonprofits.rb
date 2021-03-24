@@ -5,7 +5,7 @@ require_relative '../../products/site_products_docs'
 require_relative '../../products/site_products_groups'
 require_relative '../../products/site_products_security'
 require_relative '../../products/site_connectors'
-require_relative '../../get_onlyoffice/desktop_and_mobile/site_desktop_apps'
+require_relative '../../get_onlyoffice/desktop_and_mobile/desktop/site_desktop_apps'
 require_relative '../../get_onlyoffice/modules/site_download_helper'
 
 module TestingSiteOnlyoffice
