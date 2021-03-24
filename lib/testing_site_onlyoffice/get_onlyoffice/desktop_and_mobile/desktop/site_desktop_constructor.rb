@@ -36,7 +36,7 @@ module TestingSiteOnlyoffice
     end
 
     def fetch_release_date
-      if installer.include?('mac') || installer.include?('windows')
+      if @installer.include?('mac') || @installer.include?('windows')
         "#{@download_xpath}/../../div/p[3]"
       else
         "#{@download_xpath}/../../div/p[2]"

@@ -23,7 +23,7 @@ describe 'Desktop apps' do
       end
 
       it "[Site][DownloadDesktop] 'Whats new' link works for `#{installer}`/download-desktop.aspx#desktop" do
-        pending("'Desktop Editors changelog' should be open instead of 'ONLYOFFICE Docs changelog'") if installer.include?('debian')
+        pending("'Desktop Editors changelog' should be open instead of 'ONLYOFFICE Docs changelog'") if installer.to_s.include?('debian')
         @desktop_app_page.click_constructor_link(@current_installation.whats_new_link)
         whats_new_title = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop']['whats_new']
         expect(@desktop_app_page.check_opened_page_title).to eq(whats_new_title)
