@@ -35,7 +35,7 @@ shared_examples_for 'desktop_installer_download' do |installers_list|
     end
   end
 
-  (installers_list[:download_file] + installers_list[:two_download_files] + installers_list[:download_from_store]).each do |installer|
+  TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list.each do |installer|
     describe installer.to_s do
       before { @current_installation = installers_download_page.desktop_installer_block(installer) }
 

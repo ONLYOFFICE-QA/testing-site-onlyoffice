@@ -8,11 +8,11 @@ describe 'Desktop apps' do
     @desktop_app_page = site_home_page.click_link_on_toolbar(:desktop_mobile_apps)
   end
 
-  it_behaves_like 'desktop_installer_download', TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list do
+  it_behaves_like 'desktop_installer_download', TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list_type do
     let(:installers_download_page) { @desktop_app_page }
   end
 
-  TestingSiteOnlyoffice::SiteDownloadData.desktop_installer_list.each do |installer|
+  TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list.each do |installer|
     describe installer.to_s do
       before { @current_installation = @desktop_app_page.desktop_installer_block(installer) }
 
@@ -32,7 +32,7 @@ describe 'Desktop apps' do
   end
 
   it "[Site][DownloadDesktop] Desktop block number didn't change /download-desktop.aspx#desktop" do
-    expect(@desktop_app_page.desktop_block_number).to eq(TestingSiteOnlyoffice::SiteDownloadData.desktop_installer_list.count)
+    expect(@desktop_app_page.desktop_block_number).to eq(TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list.count)
   end
 
   after do |example|

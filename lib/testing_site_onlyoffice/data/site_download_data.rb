@@ -3,7 +3,7 @@
 module TestingSiteOnlyoffice
   class SiteDownloadData
     # Desktop
-    def self.desktop_download_list
+    def self.desktop_download_list_type
       {
         download_file: %i[macos_10 macos_x86 debian_8 debian_7 centos appimage],
         two_download_files: %i[windows_10 windows_xp],
@@ -11,8 +11,8 @@ module TestingSiteOnlyoffice
       }
     end
 
-    def self.desktop_installer_list
-      desktop_download_list[:download_file] + desktop_download_list[:two_download_files] + desktop_download_list[:download_from_store]
+    def self.desktop_download_list
+      desktop_download_list_type[:download_file] + desktop_download_list_type[:two_download_files] + desktop_download_list_type[:download_from_store]
     end
 
     def self.desktop_mobile_info

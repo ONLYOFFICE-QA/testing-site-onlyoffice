@@ -88,7 +88,7 @@ describe 'SiteHourlyCheck' do
       context 'download desktop editors /download-desktop.aspx' do
         before { @desktop_app_page = @site_home_page.click_link_on_toolbar(:desktop_mobile_apps) }
 
-        it_behaves_like 'desktop_installer_download', TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list do
+        it_behaves_like 'desktop_installer_download', TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list_type do
           let(:installers_download_page) { @desktop_app_page }
         end
       end
