@@ -4,11 +4,13 @@
 require_relative '../../../modules/site_toolbar'
 require_relative '../modules/site_open_source_toolbar'
 require_relative '../../modules/site_download_helper'
+require_relative '../../modules/site_block_constructor_helper'
 require_relative 'site_document_builder_constructor'
 
 module TestingSiteOnlyoffice
   class SiteOpenSourceDocumentBuilder
     include PageObject
+    include SiteBlockConstructorHelper
     include SiteDownloadHelper
     include SiteToolbar
     include SiteToolbarOpenSource

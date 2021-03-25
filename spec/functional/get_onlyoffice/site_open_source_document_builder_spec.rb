@@ -16,8 +16,9 @@ describe 'Open source Document builder download' do
     TestingSiteOnlyoffice::SiteDownloadData.document_builder_list.each do |installer|
       it "[Site][DownloadDocumentBuilder][#{installer}] 'Whats new' button works for`#{installer}`/download.aspx#builder" do
         @current_installation = @document_builder_download_page.installer_document_builder_block(installer)
-        @current_installation.click_whats_new_link
-        expect(@document_builder_download_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DOCUMENT_BUILDER_CHANGELOG)
+        @document_builder_download_page.click_constructor_link(@current_installation.whats_new_xpath)
+        expected_whats_new = TestingSiteOnlyoffice::SiteDownloadData.document_builder_info['whats_new']
+        expect(@document_builder_download_page.check_opened_page_title).to eq(expected_whats_new)
       end
     end
 
