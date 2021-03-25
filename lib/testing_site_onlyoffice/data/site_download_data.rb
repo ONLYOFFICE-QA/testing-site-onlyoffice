@@ -124,8 +124,8 @@ module TestingSiteOnlyoffice
       %i[windows debian centos]
     end
 
-    DOCUMENT_BUILDER_INSTRUCTION = 'ONLYOFFICE Api Documentation - Getting started'
-    DOCUMENT_BUILDER_CHANGELOG = 'DocumentBuilder/CHANGELOG.md at master · ONLYOFFICE/DocumentBuilder · GitHub'
-    FORK_ME_ON_GITHUB = 'GitHub - ONLYOFFICE/DocumentBuilder: ONLYOFFICE Document Builder is powerful text, spreadsheet, presentation and PDF generating tool'
+    def self.document_builder_info
+      @document_builder_info ||= JSON.parse(File.read("#{__dir__}/site_document_builder_info.json"))
+    end
   end
 end

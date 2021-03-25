@@ -1,0 +1,13 @@
+{
+  "windows": {
+    "download": "docbuilder_x64.exe"
+  },
+  "debian": {
+    "download": "onlyoffice-documentbuilder_amd64.deb"
+  },
+  "centos": {
+    "download": "onlyoffice-documentbuilder.x86_64.rpm"
+  },
+  "instruction": "ONLYOFFICE Api Documentation - Getting started",
+  "whats_new": "DocumentBuilder/CHANGELOG.md at master · ONLYOFFICE/DocumentBuilder · GitHub"
+}

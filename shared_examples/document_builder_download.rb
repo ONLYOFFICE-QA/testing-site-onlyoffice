@@ -6,18 +6,19 @@ shared_examples_for 'document_builder_download' do |installers_list|
       end
 
       it "[Site][DownloadDocumentBuilder][#{installer}] 'Download' button for`#{installer}`/download.aspx#builder" do
-        expect(installers_download_page).to be_link_alive(@current_installation.download_xpath)
-        expect(installers_download_page).to be_download_link_valid(@current_installation.download_xpath, @current_installation.get_extension[installer])
+        expected_download_file = TestingSiteOnlyoffice::SiteDownloadData.document_builder_info[installer.to_s]['download']
+        expect(installers_download_page).to be_link_alive_and_valid(@current_installation.download_xpath, expected_download_file)
       end
 
       it "[Site][DownloadDocumentBuilder][#{installer}] 'Read installation instructions' works for`#{installer}`/download.aspx#builder" do
-        @current_installation.click_read_instruction
-        expect(installers_download_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DOCUMENT_BUILDER_INSTRUCTION)
+        installers_download_page.click_constructor_link(@current_installation.instruction_xpath)
+        expected_instruction = TestingSiteOnlyoffice::SiteDownloadData.document_builder_info['instruction']
+        expect(installers_download_page.check_opened_page_title).to eq(expected_instruction)
       end
 
       it "[Site][DownloadDocumentBuilder][#{installer}] version and realise date is not empty for `#{installer}`/download.aspx#builder" do
-        expect(@current_installation.get_installer_release_date).not_to be_empty
-        expect(@current_installation.get_installer_version).not_to be_empty
+        expect(installers_download_page.get_installer_release_date_or_version(@current_installation.release_date_xpath)).not_to be_empty
+        expect(installers_download_page.get_installer_release_date_or_version(@current_installation.version_xpath)).not_to be_empty
       end
     end
   end
