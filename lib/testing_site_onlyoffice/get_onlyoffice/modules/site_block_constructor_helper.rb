@@ -6,8 +6,8 @@ module TestingSiteOnlyoffice
       @instance.webdriver.get_element(xpath).click
     end
 
-    def get_installer_release_date_or_version(release_date_xpath)
-      date_text = @instance.webdriver.get_text(release_date_xpath)
+    def get_installer_release_date_or_version(date_xpath)
+      date_text = @instance.webdriver.get_text(date_xpath)
       fetch_release_date_or_version(date_text)
     end
 
