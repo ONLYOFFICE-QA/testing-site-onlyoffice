@@ -37,8 +37,8 @@ shared_examples_for 'commercial_installer_download' do |product, installers_list
         @current_installation = installers_download_page.get_blocks_by_product(product, installer)
       end
 
-      it "[Site][DownloadCommercial][#{product}]  instruction link for `#{installer}` alive /download.aspx" do
-        @current_installation.click_read_instruction
+      it "[Site][DownloadCommercial][#{product}] instruction link for `#{installer}` alive /download.aspx" do
+        installers_download_page.click_constructor_link(@current_installation.instruction_xpath)
         instruction_title = SiteDownloadData.commercial_info[product.downcase][installer.to_s]['instruction']
         expect(installers_download_page.check_opened_page_title).to eq(instruction_title)
       end
@@ -52,8 +52,8 @@ shared_examples_for 'commercial_installer_download' do |product, installers_list
       end
 
       it "[Site][DownloadCommercial][#{product}] version and realise date is not empty for `#{installer}`/download-commercial.aspx" do
-        expect(@current_installation.get_installer_release_date).not_to be_empty
-        expect(@current_installation.get_installer_version).not_to be_empty
+        expect(installers_download_page.get_installer_release_date_or_version(@current_installation.release_date_xpath)).not_to be_empty
+        expect(installers_download_page.get_installer_release_date_or_version(@current_installation.version_xpath)).not_to be_empty
       end
     end
   end

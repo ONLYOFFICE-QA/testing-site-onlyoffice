@@ -4,7 +4,7 @@ require_relative 'site_commercial_download_form'
 
 module TestingSiteOnlyoffice
   class SiteCommercialBlockConstructor
-    attr_accessor :instance, :instruction_xpath, :download_xpath
+    attr_accessor :instance, :instruction_xpath, :download_xpath, :version_xpath, :release_date_xpath
 
     include PageObject
 
@@ -21,7 +21,7 @@ module TestingSiteOnlyoffice
         @instruction_xpath = "#{@download_xpath}/../../div/p/a[not(contains(@href, 'changelog'))]"
       end
       @version_xpath = "#{@download_xpath}/../../div/p[1]"
-      @release_data_xpath = "#{@download_xpath}/../../div/p[2]"
+      @release_date_xpath = "#{@download_xpath}/../../div/p[2]"
       wait_to_load
     end
 
@@ -29,10 +29,6 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until do
         @instance.webdriver.get_element(@download_xpath).present?
       end
-    end
-
-    def click_read_instruction
-      @instance.webdriver.get_element(@instruction_xpath).click
     end
 
     def click_install_button
@@ -52,20 +48,6 @@ module TestingSiteOnlyoffice
       when 'docs_developer'
         SitePriceDocsDeveloper.new(@instance)
       end
-    end
-
-    def get_installer_version
-      version_text = @instance.webdriver.get_text(@version_xpath)
-      get_release_date_or_version(version_text)
-    end
-
-    def get_installer_release_date
-      release_date_text = @instance.webdriver.get_text(@release_data_xpath)
-      get_release_date_or_version(release_date_text)
-    end
-
-    def get_release_date_or_version(text)
-      text.match(%r{\d+[./]\d+[./]\d+}).to_s
     end
   end
 end
