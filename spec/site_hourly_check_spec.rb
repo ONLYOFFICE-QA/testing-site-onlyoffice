@@ -223,24 +223,8 @@ describe 'SiteHourlyCheck' do
           @connectors_page = @site_home_page.click_link_on_toolbar(:open_source_packages).open_opensource_connectors
         end
 
-        TestingSiteOnlyoffice::SiteDownloadData.connectors_list.each do |connector|
-          it "[Site][DownloadConnectors] download link `#{connector}` alive /download.aspx" do
-            expect(@connectors_page).to be_download_link_alive(connector.to_sym)
-          end
-
-          it "[Site][DownloadConnectors]`#{connector}` instruction link alive /download.aspx" do
-            expect(@connectors_page).to be_instruction_link_alive(connector.to_sym)
-          end
-
-          it "[Site][DownloadConnectors] release info for `#{connector}` on site matches github data /download.aspx" do
-            site_data = TestingSiteOnlyoffice::SiteConnectorReleaseData.new(version: @connectors_page.site_version(connector),
-                                                                            date: @connectors_page.site_date(connector))
-            github_data = TestingSiteOnlyoffice::SiteConnectorReleaseData.new(version: @connectors_page.github_version(connector),
-                                                                              date: @connectors_page.github_date(connector))
-            error = @connectors_page.error_message(connector: connector, github_date: github_data.date,
-                                                   github_version: github_data.version, site_date: site_data.date, site_version: site_data.version)
-            expect(github_data == site_data).to be_truthy, error
-          end
+        it_behaves_like 'connector_download', TestingSiteOnlyoffice::SiteDownloadData.connectors_list do
+          let(:connectors_page) { @connectors_page }
         end
       end
     end
