@@ -4,7 +4,13 @@ module TestingSiteOnlyoffice
 
     def initialize(params = {})
       @version = params[:version]
-      @date = params[:date]
+      @date = fetch_release_date(params[:date])
+    end
+
+    def fetch_release_date(date)
+      return date if date.instance_of?(Date)
+
+      Date.strptime(date, '%m/%d/%Y') if date.is_a? String
     end
 
     def ==(other)

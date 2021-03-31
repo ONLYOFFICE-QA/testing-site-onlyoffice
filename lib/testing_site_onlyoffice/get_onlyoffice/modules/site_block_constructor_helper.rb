@@ -12,7 +12,10 @@ module TestingSiteOnlyoffice
     end
 
     def fetch_release_date_or_version(text)
-      text.match(%r{\d+[./]\d+[./]\d+}).to_s
+      date_version = text.match(%r{\d+[./]\d+[./]\d+}).to_s
+      return date_version unless date_version.empty?
+
+      text.match(%r{\d+[./]\d+}).to_s
     end
   end
 end
