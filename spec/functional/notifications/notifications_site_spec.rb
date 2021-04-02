@@ -65,7 +65,7 @@ describe 'Registration new portal' do
 
   describe 'Subscribe' do
     it 'Subscribe to news' do
-      pending('Subscribe confirmation link from mail leads to main page') if config.server.include?('info')
+      pending('Subscribe confirmation link from mail leads to main page https://t.me/c/1440851975/4451') if config.server.include?('info')
       subscribe_popup = @site_home_page.click_subscribe_to_newsletter
       subscribe_popup.fill_subscribe_form
       mail_html = client_email.get_html_body_email_by_subject(

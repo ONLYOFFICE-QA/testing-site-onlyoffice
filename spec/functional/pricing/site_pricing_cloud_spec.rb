@@ -9,7 +9,7 @@ describe 'Pricing Cloud Service' do
   end
 
   it '[Site][Pricing][Cloud] Click Buy now and check plane on Avangate page' do
-    pending('Incorrect pricing users bar') if config.server.include?('info')
+    pending('Incorrect pricing users bar https://t.me/c/1440851975/4472') if config.server.include?('info')
     cost = @pricing_cloud_page.get_cost_tarrif_20_year
     avangate_page = @pricing_cloud_page.click_on_buy_now
     expect(avangate_page.get_avangate_current_price_value.to_i).to eq(cost.to_i)
