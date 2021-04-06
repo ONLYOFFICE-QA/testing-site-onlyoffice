@@ -14,7 +14,7 @@ describe 'Site Smoke' do
 
   describe 'Site' do
     it '[Site] Check exists languages' do
-      site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
+      site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
       expect(site_home_page.get_all_language_from_site).to eq(TestingSiteOnlyoffice::SiteData.site_languages)
     end
 
@@ -49,7 +49,7 @@ describe 'Site Smoke' do
         end
 
         it "Check changing to #{current_language} language" do
-          main_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
+          main_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
           main_page.set_page_language(current_language)
           expect(main_page.get_page_language).to eq(current_language)
         end
@@ -58,7 +58,7 @@ describe 'Site Smoke' do
           admin_mail = "qa-signin-check-#{Faker::Internet.password}@qamail.teamlab.info"
           admin = TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(@portal_creation_data, current_language,
                                                                                            AuthData::DEFAULT_ADMIN_NAME, admin_mail)
-          main_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
+          main_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
           @portal_creation_data.portal_name = admin.portal
           @portal_creation_data.portal_login = admin_mail
           sign_in_page = main_page.sign_in_from_sign_in(@portal_creation_data)
@@ -68,7 +68,7 @@ describe 'Site Smoke' do
 
       describe "Open registration page #{current_language}" do
         before do
-          @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
+          @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
           @site_home_page.set_page_language(current_language)
         end
 

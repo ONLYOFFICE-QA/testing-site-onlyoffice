@@ -7,8 +7,8 @@ client_email = IredMailHelper.new(username: SettingsData::CLIENT_EMAIL)
 
 describe 'Check trial request form' do
   before do
-    @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
-    pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if StaticDataTeamLab.portal_type == '.com'
+    @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
+    pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
   end
 
   it '[Download][DocsDeveloperEdition] docs developer edition request /download-commercial.aspx' do

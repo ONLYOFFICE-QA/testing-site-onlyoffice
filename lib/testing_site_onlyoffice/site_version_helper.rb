@@ -1,13 +1,7 @@
 module TestingSiteOnlyoffice
   class SiteVersionHelper
-    # @return [String] url of site
-    def self.site_url
-      return 'https://teamlab.info' if StaticDataTeamLab.portal_type == '.info'
-      return 'https://www.onlyoffice.com' if StaticDataTeamLab.portal_type == '.com'
-    end
-
     def self.fetch_uri
-      URI("#{site_url}/revision?Site_Testing=4testing")
+      URI("#{config.server}/revision?Site_Testing=4testing")
     end
 
     # @return [String] hash of site by url `site/revision`

@@ -4,7 +4,7 @@ describe 'Pricing Cloud Service' do
   test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
   before do
-    site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
+    site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @pricing_cloud_page = site_home_page.click_link_on_toolbar(:pricing_cloud)
   end
 

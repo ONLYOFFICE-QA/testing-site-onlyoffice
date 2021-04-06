@@ -4,7 +4,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 
 describe 'Desktop apps' do
   before do
-    site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
+    site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @mobile_app_page = site_home_page.click_link_on_toolbar(:desktop_mobile_apps).open_mobile_apps
   end
 

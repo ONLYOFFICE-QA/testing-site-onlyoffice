@@ -1,13 +1,11 @@
 # Top toolbar
 # https://user-images.githubusercontent.com/40513035/95858305-90f89400-0d65-11eb-95a1-3aa66b1258d0.png
 require_relative 'site_languages'
-require_relative 'additional_methods/forgot_password_helper'
 
 module TestingSiteOnlyoffice
   module SiteToolbar
     include PageObject
     include SiteLanguages
-    include ForgotPasswordHelper
 
     link(:logo_home, xpath: '//header//div[contains(@class, "logo")]//a')
 
@@ -260,11 +258,6 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until { link.present? }
       link.click
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
-    end
-
-    def send_forgot_password_from_sign_in(email = mail_for_forgotten_password.username)
-      sign_in = click_link_on_toolbar(:sign_in)
-      sign_in.send_forgot_password(email)
     end
   end
 end

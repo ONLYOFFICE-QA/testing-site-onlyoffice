@@ -10,24 +10,23 @@ client_email = IredMailHelper.new(username: SettingsData::CLIENT_EMAIL)
 
 describe 'Registration new portal' do
   before do
-    @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
-    @site_home_page.set_page_language(StaticDataTeamLab.current_language)
+    @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
   end
 
   it 'Check button `Recover` work on `wrong portal name` page for correct email' do
     wrong_page = site_helper.wrong_portal_name
     wrong_page.recover_address_portal(TestingSiteOnlyoffice::SiteData::EMAIL_FOR_SITE)
-    expect(SiteNotificationHelper.check_site_notification(language: StaticDataTeamLab.current_language,
+    expect(SiteNotificationHelper.check_site_notification(language: config.language,
                                                           module: 'WebStudio',
                                                           mail: mail_site,
                                                           pattern: 'portal_name_reminder',
-                                                          search: TestingSiteOnlyoffice::SiteData::PORTAL_ADDRESS)).to be_truthy
+                                                          search: TestingSiteOnlyoffice::SiteData.site_notification_page)).to be_truthy
   end
 
   # CAUTION: do not test on .com frequently
   describe 'Partnership' do
     it '[Site][Partnership] Send request for partnership' do
-      pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if StaticDataTeamLab.portal_type == '.com'
+      pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
       partnership_request_page = @site_home_page.click_link_on_toolbar(:submit_request)
       company_name = "nctautotest #{Time.now} For Developers /partnership-request.aspx?requestType=1"
       partnership_request_page.send_partners_form_random_data(company_name: company_name)
@@ -39,7 +38,7 @@ describe 'Registration new portal' do
 
   describe 'Order Demo' do
     it '[Site][OrderDemo] Send demo-order request /demo-order.aspx' do
-      pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if StaticDataTeamLab.portal_type == '.com'
+      pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
       demo_order_page = @site_home_page.click_order_demo
       company_name = "nctautotest #{Time.now} /demo-order.aspx"
       demo_order_page.send_demonstration_request(company_name: company_name)
@@ -52,7 +51,7 @@ describe 'Registration new portal' do
 
   describe 'Call back' do
     it '[Site][CallBack] Check request a call /call-back-form.aspx' do
-      pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if StaticDataTeamLab.portal_type == '.com'
+      pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
       site_callback_page = @site_home_page.click_request_a_call
       last_name = "nctautotest #{Time.now} /call-back-form.aspx"
       site_callback_page.send_callback_request(last_name: last_name)
