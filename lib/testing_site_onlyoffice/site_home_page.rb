@@ -1,5 +1,4 @@
 require_relative 'about/site_about'
-require_relative 'about/site_awards'
 require_relative 'about/site_blog'
 
 require_relative 'additional_products/site_forum'
@@ -34,6 +33,7 @@ require_relative 'modules/cookie_window'
 require_relative 'modules/site_footer'
 require_relative 'modules/site_languages'
 require_relative 'modules/additional_methods/sign_in_methods'
+require_relative 'modules/additional_methods/hourly_forgot_password_helper'
 
 require_relative 'partners/site_partners_request'
 
@@ -70,11 +70,9 @@ require_relative 'solutions/site_home_use'
 
 require_relative 'support_chat/site_support_chat'
 
-require_relative 'registration/portal_version'
 require_relative 'registration/portal_helper'
-require_relative 'registration/portal_mail'
 require_relative 'registration/portal_people'
-require_relative 'registration/teamlab_portal_reg_web_helper'
+require_relative 'registration/portal_version'
 
 require_relative 'site_helper'
 require_relative 'site_version_helper'
@@ -86,6 +84,7 @@ module TestingSiteOnlyoffice
     attr_accessor :instance
 
     include CookieWindow
+    include HourlyForgotPasswordHelper
     include PageObject
     include PortalVersion
     include SiteFooter
@@ -118,25 +117,19 @@ module TestingSiteOnlyoffice
       complete_registration_wizard(params)
     end
 
-    def create_portal_from_source(param, change_region = 'en-US', username = AuthData::DEFAULT_ADMIN_NAME, email = SettingsData::EMAIL, last_name = AuthData::DEFAULT_ADMIN_LASTNAME)
-      portal_name = get_full_portal_name(param.portal_to_create)
-      server_region = set_param_and_region(param, change_region)
-      portal_name = portal_name.split('//')[1].split('.')[0]
+    def change_language_and_create_portal(param, language = 'en-US', username = AuthData::DEFAULT_ADMIN_NAME, email = SettingsData::EMAIL, last_name = AuthData::DEFAULT_ADMIN_LASTNAME)
+      set_page_language(language)
       complete_registration_wizard(email: email,
                                    last_name: last_name,
-                                   portal_name: portal_name,
-                                   region: server_region,
+                                   portal_name: param.portal_to_create,
+                                   region: config.region,
                                    username: username,
                                    password: param.portal_pwd)
     end
 
-    def set_param_and_region(param, change_region = 'en-US')
-      set_page_language(change_region)
-      if param.server_region.nil?
-        StaticDataTeamLab.server_region
-      else
-        param.server_region
-      end
+    def complete_registration_wizard(params = {})
+      single_step_registration = start_registration
+      single_step_registration.fill_data(params)
     end
 
     def start_registration
@@ -145,9 +138,9 @@ module TestingSiteOnlyoffice
       SiteSignUp.new(@instance)
     end
 
-    def complete_registration_wizard(params = {})
-      single_step_registration = start_registration
-      single_step_registration.fill_data(params)
+    def send_forgot_password_from_sign_in(email = mail_for_forgotten_password.username)
+      sign_in = click_link_on_toolbar(:sign_in)
+      sign_in.send_forgot_password(email)
     end
   end
 end

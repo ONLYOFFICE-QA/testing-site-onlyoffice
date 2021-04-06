@@ -3,31 +3,29 @@
 module TestingSiteOnlyoffice
   class SiteData
     EMAIL_FOR_SITE = 'site@qamail.teamlab.info'
-    PORTAL_ADDRESS_COM = 'https://nctautotest-notifications-site-com.onlyoffice.com'
-    PORTAL_ADDRESS_EU = 'https://nctautotest-notifications-site-eu.onlyoffice.eu'
-    PORTAL_ADDRESS_SG = 'https://nctautotest-notifications-site-sg.onlyoffice.sg'
-    PORTAL_ADDRESS_INFO = 'https://nctautotest-site-notifications.teamlab.info'
 
-    PORTAL_ADDRESS = if StaticDataTeamLab.portal_type == '.info'
-                       PORTAL_ADDRESS_INFO
-                     else
-                       case StaticDataTeamLab.server_region
-                       when 'us'
-                         PORTAL_ADDRESS_COM
-                       when 'eu'
-                         PORTAL_ADDRESS_EU
-                       when 'sg'
-                         PORTAL_ADDRESS_SG
-                       else
-                         raise "Doesn't exist region=#{StaticDataTeamLab.server_region}"
-                       end
-                     end
+    # @return [String] portal on which forgot password
+    def self.site_notification_page
+      if config.server.include?('.info')
+        'https://nctautotest-site-notifications.teamlab.info'
+      else
+        case config.region
+        when 'us'
+          'https://nctautotest-notifications-site-com.onlyoffice.com'
+        when 'eu'
+          'https://nctautotest-notifications-site-eu.onlyoffice.eu'
+        when 'sg'
+          'https://nctautotest-notifications-site-sg.onlyoffice.sg'
+        else
+          raise "Doesn't exist region=#{config.region}"
+        end
+      end
+    end
 
     def self.site_languages
-      case StaticDataTeamLab.portal_type
-      when '.com'
+      if config.server.include?('.com')
         %w[en-US en-GB ru-RU fr-FR de-DE es-ES pt-BR it-IT cs-CZ nl-NL ja-JP zh-CN]
-      when '.info'
+      elsif config.server.include?('.info')
         %w[en-US en-GB de-DE fr-FR es-ES ru-RU pt-BR it-IT cs-CZ nl-NL ja-JP zh-CN]
       end
     end

@@ -4,7 +4,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 
 describe 'Open source bundlers download' do
   before do
-    site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
+    site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @docs_page = site_home_page.click_link_on_toolbar(:open_source_packages)
   end
 

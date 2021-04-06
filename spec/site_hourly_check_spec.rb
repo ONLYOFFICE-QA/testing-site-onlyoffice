@@ -1,18 +1,13 @@
 require 'spec_helper'
 
 describe 'SiteHourlyCheck' do
-  language = 'en-US'
-  StaticDataTeamLab.set_portal_type('.com')
-  StaticDataTeamLab.set_current_language(language)
-
-  test_run = "Site Hourly Checks version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}, time: #{Time.new}, region: #{StaticDataTeamLab.server_region}"
+  test_run = "Site Hourly Checks version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}, time: #{Time.new}, region: #{config.region}"
   testrail = DailyCheckHelper.init_testrail('[Studio] Site Hourly Checks', test_run, 'Site Hourly Check')
   run_name = nil
 
   describe 'Site onlyoffice.com' do
     before do
-      @site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
-      @site_home_page.set_page_language(language)
+      @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     end
 
     it '[Site] Check exists languages' do
@@ -74,12 +69,11 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check notify about forgot password' do
-      @site_home_page.mail_for_forgotten_password.delete_all_messages
       @site_home_page.send_forgot_password_from_sign_in
-      expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: language,
+      expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: config.language,
                                                                                    pattern: 'teamlab_pwd_reminder',
                                                                                    module: 'WebStudio',
-                                                                                   search: @site_home_page.portal_of_forgotten_password,
+                                                                                   search: @site_home_page.portal_for_hourly_forgotten_password,
                                                                                    mail: @site_home_page.mail_for_forgotten_password,
                                                                                    move_out: true)).to be_truthy
     end

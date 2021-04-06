@@ -55,10 +55,10 @@ module TestingSiteOnlyoffice
     end
 
     def set_region(region)
-      return unless StaticDataTeamLab.portal_type == '.com'
+      return unless config.server.include?('com')
 
       show_regions_dropdown
-      region ||= StaticDataTeamLab.server_region
+      region ||= config.region
       select_server_region(region)
     end
 

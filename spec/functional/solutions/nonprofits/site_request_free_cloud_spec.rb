@@ -4,7 +4,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 
 describe 'Request free cloud' do
   before do
-    site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
+    site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     non_profit_organizatins_page = site_home_page.click_link_on_toolbar(:nonprofits)
     @request_free_cloud_page = non_profit_organizatins_page.click_request_free_cloud
   end
@@ -20,7 +20,7 @@ describe 'Request free cloud' do
   end
 
   it '[Site][Nonprofits] Send free cloud request for nonprofit' do
-    pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if StaticDataTeamLab.portal_type == '.com'
+    pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
     last_name = "nctautotest #{Time.now}"
     @request_free_cloud_page.send_non_profit_request(last_name: last_name)
     expect(@request_free_cloud_page).to be_request_accepted

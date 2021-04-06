@@ -3,7 +3,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 
 describe 'Document Builder download' do
   before do
-    site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
+    site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @home_use_page = site_home_page.click_link_on_toolbar(:home_use)
   end
 

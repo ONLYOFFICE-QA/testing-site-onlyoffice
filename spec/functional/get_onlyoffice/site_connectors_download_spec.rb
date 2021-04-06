@@ -4,7 +4,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 
 describe 'Connectors download' do
   before do
-    site_home_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_page_teamlab_office(config)
+    site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @connectors_page = site_home_page.click_link_on_toolbar(:open_source_packages).open_opensource_connectors
   end
 

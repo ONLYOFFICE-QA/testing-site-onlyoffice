@@ -32,7 +32,7 @@ module TestingSiteOnlyoffice
       click_first_active_day
       sleep 1 # wait for closing calendar form
       submit_element.click
-      @instance.webdriver.wait_until { congratulation_visible? } unless StaticDataTeamLab.portal_type == '.com'
+      @instance.webdriver.wait_until { congratulation_visible? }
     end
 
     def fill_form(params = {})

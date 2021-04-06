@@ -1,11 +1,7 @@
 module TestingSiteOnlyoffice
   module PortalPeople
-    def get_full_users_name_from_user_list(user_list)
-      user_list_full_name = []
-      user_list.each do |current_user|
-        user_list_full_name << current_user.full_name
-      end
-      user_list_full_name
+    def log_new_portal(str)
+      OnlyofficeLoggerHelper.log("Portal creation: #{str}")
     end
 
     def current_portal_create_users(param)
