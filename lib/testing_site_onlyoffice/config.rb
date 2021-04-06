@@ -7,8 +7,10 @@ module TestingApiOnlyfficeCom
     attr_reader :server
     # @return [Symbol] browser
     attr_reader :browser
-    # @return [String] language, region
-    attr_reader :language, :region
+    # @return [String] language
+    attr_reader :language
+    # @return [String] region
+    attr_reader :region
 
     def initialize(params = {})
       @server = params.fetch(:server, default_server)
