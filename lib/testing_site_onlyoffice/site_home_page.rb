@@ -70,9 +70,9 @@ require_relative 'solutions/site_home_use'
 
 require_relative 'support_chat/site_support_chat'
 
-require_relative 'registration/portal_helper'
-require_relative 'registration/portal_people'
-require_relative 'registration/portal_version'
+require_relative 'portal_helper/portal_helper'
+require_relative 'portal_helper/portal_people'
+require_relative 'portal_helper/portal_version'
 
 require_relative 'site_helper'
 require_relative 'site_version_helper'

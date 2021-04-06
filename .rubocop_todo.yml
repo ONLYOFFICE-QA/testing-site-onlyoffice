@@ -113,7 +113,7 @@ Style/FrozenStringLiteralComment:
 Style/IfUnlessModifier:
   Exclude:
     - 'lib/testing_site_onlyoffice/modules/site_toolbar.rb'
-    - 'lib/testing_site_onlyoffice/registration/portal_helper.rb'
+    - 'lib/testing_site_onlyoffice/portal_helper/portal_helper.rb'
 
 # Offense count: 7
 # Configuration parameters: AllowedMethods.
