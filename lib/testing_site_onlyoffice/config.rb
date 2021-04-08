@@ -35,9 +35,9 @@ module TestingApiOnlyfficeCom
     end
 
     def default_region
-      return 'us' if ENV['SPEC_REGION'].blank?
-
-      ENV['SPEC_REGION'].split[-1]
+      # TODO Handle region after fix
+      # https://github.com/ONLYOFFICE/testing-wrata/issues/990
+      'us'
     end
   end
 end
