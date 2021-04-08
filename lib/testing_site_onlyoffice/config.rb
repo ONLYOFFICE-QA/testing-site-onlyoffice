@@ -35,7 +35,7 @@ module TestingApiOnlyfficeCom
     end
 
     def default_region
-      # TODO Handle region after fix
+      # TODO: Handle region after fix
       # https://github.com/ONLYOFFICE/testing-wrata/issues/990
       'us'
     end
