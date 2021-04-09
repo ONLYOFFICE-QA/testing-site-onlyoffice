@@ -1,4 +1,4 @@
-# https://teamlab-hourly-check-eu.onlyoffice.eu/ (portal root page)
+# Portal Main Page
 # https://user-images.githubusercontent.com/40513035/114158371-74cf4d00-98d9-11eb-96ba-c4384ecfaf03.png
 
 module TestingSiteOnlyoffice
@@ -19,13 +19,12 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      OnlyofficeLoggerHelper.log('Opening Main Page')
+      OnlyofficeLoggerHelper.log('Opening Portal Main Page')
       @instance.webdriver.wait_until do
         document_module_visible?
       end
     end
 
-    # visibility
     def document_module_visible?
       documents_link_element.present?
     end
