@@ -8,10 +8,6 @@ mail = IredMailHelper.new(username: SettingsData::EMAIL_ADMIN)
 checker = { mail: mail, module: 'WebStudio' }
 
 describe 'Site Smoke' do
-  before do
-    @portal_creation_data = PortalCreationData.new
-  end
-
   describe 'Site' do
     it '[Site] Check exists languages' do
       site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
@@ -20,30 +16,34 @@ describe 'Site Smoke' do
 
     TestingSiteOnlyoffice::SiteData.site_languages.each do |current_language|
       describe "Registration #{current_language}" do
+        before do
+          @portal_creation_data = TestingSiteOnlyoffice::SitePortalCreationData.new.instance_values.transform_keys(&:to_sym)
+          @portal_url = TestingSiteOnlyoffice::PortalHelper.new.get_full_portal_name(@portal_creation_data[:portal_name])
+        end
+
         it "Registration from portal sign in page for #{current_language}" do
-          admin = TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(@portal_creation_data, current_language)
-          main_page, @test = TestingSiteOnlyoffice::PortalHelper.new.init_instance(admin)
-          expect(main_page.check_visible_main_page_current_module(:documents)).to eq(true)
+          TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(@portal_creation_data, current_language)
+          main_page, @test = TestingSiteOnlyoffice::PortalHelper.new.open_and_login_to_portal(@portal_creation_data, @portal_url)
+          expect(main_page).to be_document_module_visible
         end
 
         it "Check welcome message for #{current_language}" do
-          admin = TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(@portal_creation_data, current_language,
-                                                                                           AuthData::DEFAULT_ADMIN_NAME, SettingsData::EMAIL_ADMIN)
+          TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(@portal_creation_data, current_language)
           case config.server
           when 'https://teamlab.info'
             confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(language: current_language,
                                                                                                                            pattern: 'subject_confirmation',
-                                                                                                                           search: admin.portal))
-            @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link)
+                                                                                                                           search: @portal_url))
+            @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link, @portal_creation_data)
             expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(language: current_language,
                                                                                                        pattern: 'subject_congratulations',
-                                                                                                       search: admin.portal))).to be_truthy
+                                                                                                       search: @portal_url))).to be_truthy
           when 'https://onlyoffice.com'
             expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: current_language,
                                                                                          module: 'WebStudio',
                                                                                          mail: mail,
                                                                                          pattern: 'subject_congratulations_com',
-                                                                                         search: admin.portal,
+                                                                                         search: @portal_url,
                                                                                          move_out: true)).to be_truthy
           end
         end
@@ -55,14 +55,11 @@ describe 'Site Smoke' do
         end
 
         it "Check Sign In after Sign Up in #{current_language} language" do
-          admin_mail = "qa-signin-check-#{Faker::Internet.password}@qamail.teamlab.info"
-          admin = TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(@portal_creation_data, current_language,
-                                                                                           AuthData::DEFAULT_ADMIN_NAME, admin_mail)
+          @portal_creation_data[:email] = "qa-signin-check-#{Faker::Internet.password}@qamail.teamlab.info"
+          TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(@portal_creation_data, current_language)
           main_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-          @portal_creation_data.portal_name = admin.portal
-          @portal_creation_data.portal_login = admin_mail
-          sign_in_page = main_page.sign_in_from_sign_in(@portal_creation_data)
-          expect(sign_in_page).to be_top_logo_visible
+          portal_main_page = main_page.click_link_on_toolbar(:sign_in).sign_in(@portal_creation_data[:email], @portal_creation_data[:password])
+          expect(portal_main_page).to be_document_module_visible
         end
       end
 

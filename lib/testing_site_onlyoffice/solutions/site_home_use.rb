@@ -2,6 +2,7 @@
 # https://user-images.githubusercontent.com/40513035/100807023-a3787b00-3442-11eb-933d-a119c3d902a4.png
 require_relative '../modules/site_toolbar'
 require_relative '../get_onlyoffice/modules/site_download_helper'
+require_relative '../additional_products/personal_main_page'
 
 module TestingSiteOnlyoffice
   class SiteHomeUse

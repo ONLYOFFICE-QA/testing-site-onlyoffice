@@ -6,7 +6,6 @@ module TestingSiteOnlyoffice
 
     include PageObject
 
-    link(:avangate_finish_order_page_link, xpath: "//*[@id='order__finish__finish__order']")
     text_field(:place_order, xpath: '//input[@id="AuthorizeButton"]')
     div(:place_order_loader, xpath: '//div[contains(@class, "page-preloader")]')
 
@@ -21,10 +20,6 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until do
         @instance.webdriver.driver.current_url.include?('/order/finish')
       end
-    end
-
-    def avangate_finish_order_page_visible?
-      avangate_finish_order_page_link_element.present?
     end
 
     def review_and_place_order

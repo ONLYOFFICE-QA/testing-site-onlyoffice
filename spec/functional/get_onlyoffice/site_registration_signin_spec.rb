@@ -2,48 +2,49 @@ require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-SettingsData::EMAIL = SettingsData::EMAIL_ADMIN
-
 mail = IredMailHelper.new(username: SettingsData::EMAIL_ADMIN)
 mail_site = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_FOR_SITE)
 checker = { language: config.language, module: 'WebStudio' }
 
 describe 'Registration new portal' do
   before do
-    @portal_creation_data = PortalCreationData.new
     @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
   end
 
-  context 'Sign Up' do
+  describe 'Sign Up' do
     before { @sign_up_page = @site_home_page.click_link_on_toolbar(:sign_up) }
 
-    it 'Create new portal from "Sign Up"' do
-      portal_page = @sign_up_page.fill_data(portal_name: @portal_creation_data.portal_to_create)
-      expect(portal_page.current_user_name).to eq(AuthData::DEFAULT_ADMIN_FULLNAME)
-    end
+    describe 'Create new portal' do
+      before { @portal_creation_data = TestingSiteOnlyoffice::SitePortalCreationData.new.instance_values.transform_keys(&:to_sym) }
 
-    it 'Check sign up letter: "Welcome to TeamLab Portal!" from "Sign Up"' do
-      @sign_up_page.fill_data(portal_name: @portal_creation_data.portal_to_create)
-      portal_name = TestingSiteOnlyoffice::PortalHelper.new.get_full_portal_name(@portal_creation_data.portal_to_create)
-      case config.server
-      when 'https://teamlab.info'
-        confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(mail: mail,
-                                                                                                                       pattern: 'subject_confirmation',
-                                                                                                                       search: portal_name))
-        @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link)
-        expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
-                                                                                                   pattern: 'subject_congratulations',
-                                                                                                   search: portal_name))).to be_truthy
-      when 'https://onlyoffice.com'
-        expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
-                                                                                                   pattern: 'subject_congratulations_com',
-                                                                                                   search: portal_name))).to be_truthy
+      it 'Create new portal from "Sign Up"' do
+        portal_page = @sign_up_page.fill_data(@portal_creation_data)
+        expect(portal_page.current_user_name).to eq(TestingSiteOnlyoffice::SiteData::DEFAULT_ADMIN_FULLNAME)
+      end
 
+      it 'Check sign up letter: "Welcome to TeamLab Portal!" from "Sign Up"' do
+        @sign_up_page.fill_data(@portal_creation_data)
+        portal_url = TestingSiteOnlyoffice::PortalHelper.new.get_full_portal_name(@portal_creation_data[:portal_name])
+        case config.server
+        when 'https://teamlab.info'
+          confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(mail: mail,
+                                                                                                                         pattern: 'subject_confirmation',
+                                                                                                                         search: portal_url))
+          @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link, @portal_creation_data)
+          expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
+                                                                                                     pattern: 'subject_congratulations',
+                                                                                                     search: portal_url))).to be_truthy
+        when 'https://onlyoffice.com'
+          expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
+                                                                                                     pattern: 'subject_congratulations_com',
+                                                                                                     search: portal_url))).to be_truthy
+
+        end
       end
     end
 
     it 'Create new portal with wrong data from "Sign Up"' do
-      @sign_up_page.fill_params(username: '1', last_name: '2', email: '3', password: '4', portal_name: '5')
+      @sign_up_page.fill_params(first_name: '1', last_name: '2', email: '3', password: '4', portal_name: '5')
       expect(@sign_up_page).to be_all_errors_visible
     end
 
@@ -68,13 +69,14 @@ describe 'Registration new portal' do
 
     it '"Sign in" to new portal' do
       @sign_up_page = @sign_in_page.register_from_sign_in
-      password = SecureRandom.uuid
-      @sign_up_page.fill_data(portal_name: @portal_creation_data.portal_to_create, password: password)
+      portal_creation_data = TestingSiteOnlyoffice::SitePortalCreationData.new.instance_values.transform_keys(&:to_sym)
+      portal_creation_data[:email] = "qa-signin-check-#{SecureRandom.uuid}@qamail.teamlab.info"
+      portal_creation_data[:password] = SecureRandom.uuid
+      @sign_up_page.fill_data(portal_creation_data)
       @test.webdriver.quit
       site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-      sign_in_page = site_home_page.click_link_on_toolbar(:sign_in)
-      portal_page = sign_in_page.sign_in(SettingsData::EMAIL_ADMIN, password)
-      expect(portal_page.current_user_name).to eq(AuthData::DEFAULT_ADMIN_FULLNAME)
+      portal_page = site_home_page.click_link_on_toolbar(:sign_in).sign_in(portal_creation_data[:email], portal_creation_data[:password])
+      expect(portal_page.current_user_name).to eq(TestingSiteOnlyoffice::SiteData::DEFAULT_ADMIN_FULLNAME)
     end
 
     it 'Check mail "Forgot password"' do

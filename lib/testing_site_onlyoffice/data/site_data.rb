@@ -2,6 +2,11 @@
 
 module TestingSiteOnlyoffice
   class SiteData
+    DEFAULT_ADMIN_NAME = 'admin-zero'
+    DEFAULT_ADMIN_LASTNAME = 'admin-zero'
+    DEFAULT_ADMIN_FULLNAME = 'admin-zero admin-zero'
+    PORTAL_PASSWORD = '12345678'
+
     EMAIL_FOR_SITE = 'site@qamail.teamlab.info'
 
     # @return [String] portal on which forgot password

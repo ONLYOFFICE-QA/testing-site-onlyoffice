@@ -1,7 +1,6 @@
 require_relative 'about/site_about'
 require_relative 'about/site_blog'
 
-require_relative 'additional_products/site_forum'
 require_relative 'additional_products/site_help_center'
 
 require_relative 'data/site_data'
@@ -32,7 +31,6 @@ require_relative 'modules/site_toolbar'
 require_relative 'modules/cookie_window'
 require_relative 'modules/site_footer'
 require_relative 'modules/site_languages'
-require_relative 'modules/additional_methods/sign_in_methods'
 require_relative 'modules/additional_methods/hourly_forgot_password_helper'
 
 require_relative 'partners/site_partners_request'
@@ -71,7 +69,6 @@ require_relative 'solutions/site_home_use'
 require_relative 'support_chat/site_support_chat'
 
 require_relative 'portal_helper/portal_helper'
-require_relative 'portal_helper/portal_people'
 require_relative 'portal_helper/portal_version'
 
 require_relative 'site_helper'
@@ -117,14 +114,9 @@ module TestingSiteOnlyoffice
       complete_registration_wizard(params)
     end
 
-    def change_language_and_create_portal(param, language = 'en-US', username = AuthData::DEFAULT_ADMIN_NAME, email = SettingsData::EMAIL, last_name = AuthData::DEFAULT_ADMIN_LASTNAME)
+    def change_language_and_create_portal(param, language = 'en-US')
       set_page_language(language)
-      complete_registration_wizard(email: email,
-                                   last_name: last_name,
-                                   portal_name: param.portal_to_create,
-                                   region: config.region,
-                                   username: username,
-                                   password: param.portal_pwd)
+      complete_registration_wizard(param)
     end
 
     def complete_registration_wizard(params = {})
