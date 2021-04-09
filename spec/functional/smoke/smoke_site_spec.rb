@@ -9,10 +9,10 @@ checker = { mail: mail, module: 'WebStudio' }
 
 describe 'Site Smoke' do
   describe 'Site' do
-    # it '[Site] Check exists languages' do
-    #   site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    #   expect(site_home_page.get_all_language_from_site).to eq(TestingSiteOnlyoffice::SiteData.site_languages)
-    # end
+    it '[Site] Check exists languages' do
+      site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
+      expect(site_home_page.get_all_language_from_site).to eq(TestingSiteOnlyoffice::SiteData.site_languages)
+    end
 
     TestingSiteOnlyoffice::SiteData.site_languages.each do |current_language|
       describe "Registration #{current_language}" do
