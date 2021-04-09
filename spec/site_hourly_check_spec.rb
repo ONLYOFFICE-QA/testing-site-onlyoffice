@@ -231,7 +231,6 @@ describe 'SiteHourlyCheck' do
       end
 
       it '[BLOG] Check click Home logo' do
-        pending('Home logo button doesnt work for blog page')
         home_page = @blog_page.click_home_logo
         expect(home_page).to be_a TestingSiteOnlyoffice::SiteHomePage
       end
