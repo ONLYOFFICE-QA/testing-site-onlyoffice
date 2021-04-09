@@ -1,5 +1,5 @@
 # https://teamlab-hourly-check-eu.onlyoffice.eu/ (portal root page)
-# https://cloud.githubusercontent.com/assets/18173785/20660339/303c979a-b55a-11e6-9930-a3a8e2e7e53b.png
+# https://user-images.githubusercontent.com/40513035/114158371-74cf4d00-98d9-11eb-96ba-c4384ecfaf03.png
 
 module TestingSiteOnlyoffice
   class PortalMainPage
