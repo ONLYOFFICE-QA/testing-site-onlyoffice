@@ -22,9 +22,6 @@ module TestingSiteOnlyoffice
     select_list(:exp_year, xpath: '//*[@id="cbExpYear"]')
     text_field(:name_on_card, xpath: '//*[@id="nameoncard"]')
 
-    # REVIEW: and checkout
-    link(:review_and_checkot, xpath: '')
-
     text_field(:avangate_fname, xpath: "//*[@id='fname']")
     text_field(:avangate_lname, xpath: "//*[@id='lname']")
     text_field(:avangate_address, xpath: "//*[@id='address']")
@@ -41,12 +38,8 @@ module TestingSiteOnlyoffice
     select_list(:avangate_cbExpYear, xpath: "//select[@id='cbExpYear']")
 
     element(:avangate_logo_link, xpath: '//*[@id="avs_header"]/*[@id="logo"]')
-    element(:avangate_with_vat_price, xpath: "//*[@id='with_vat_val']")
-    element(:avangate_with_without_vat, xpath: "//*[@id='td_price']/div[2]")
     element(:avangate_main_continue_button, xpath: '//input[@id="checkoutSubmitBtn"]')
     element(:avangate_user_storage_link, xpath: '//*[@id="order__products"]//td[contains(@class,"item__name")]')
-    element(:avangate_total_price, xpath: '//div[contains(@class,"order__total")]')
-    element(:avangate_price_without_vat, xpath: '//*[@id="without_vat_val"]')
     element(:avangate_total_value_price, xpath: '//*[contains(@class,"order__listing__item__total__price")]')
     element(:avangate_upsell_frame, xpath: '//*[@id="order__page__upsell_product"]')
     element(:avangate_upsell_close, xpath: '//*[@id="order__page__upsell_product"]//a')
@@ -74,36 +67,6 @@ module TestingSiteOnlyoffice
       avangate_upsell_frame_element.present?
     end
 
-    def submit_avangate_main_order(portal, price = 'price')
-      self.avangate_fname = PaymentData::TO
-      self.avangate_lname = price
-      self.avangate_address = PaymentData::OTHER
-      self.avangate_city = PaymentData::OTHER
-      self.avangate_zipcode = PaymentData::OTHER
-      avangate_country_element.select_value(PaymentData::HOLDER_COUNTRY_CODE)
-      sleep 1
-      wait_to_load
-      self.avangate_email = SettingsData::EMAIL
-      self.avangate_re_email = SettingsData::EMAIL
-      self.avangate_tiCNumber = PaymentData::CARD_NUMBER
-      @instance.webdriver.select_combo_box(avangate_cbExpMounth_xpath, PaymentData::MONTH)
-      @instance.webdriver.select_combo_box(avangate_cbExpYear_xpath, PaymentData::YEAR)
-      self.avangate_tiCVV = PaymentData::CVV2
-      self.avangate_nameoncard = PaymentData::HOLDER_NAME
-      avangate_main_continue_button_element.click
-      AvangateFinishOrder.new(@instance)
-      @instance.webdriver.open(portal)
-      MainPage.new(@instance)
-    end
-
-    def submit_avangate_order_new
-      fill_test_payment_data
-      avangate_continue
-      AvangateFinishOrder.new(@instance)
-      @instance.webdriver.open(@instance.user.portal)
-      MainPage.new(@instance)
-    end
-
     def submit_avangate_order_for_notification(params = {})
       fill_test_payment_data_for_notify(params)
       AvangateFinishOrder.new(@instance)
@@ -128,23 +91,6 @@ module TestingSiteOnlyoffice
       avangate_main_continue_button_element.click
     end
 
-    def avangate_continue
-      avangate_main_continue_button_element.click
-    rescue Selenium::WebDriver::Error::UnhandledAlertError
-      @instance.webdriver.webdriver_error('avangate captcha!')
-    end
-
-    def fill_test_payment_data
-      exp_month_element.select_value PaymentData::MONTH
-      exp_year_element.select_value PaymentData::YEAR
-      billing_country_element.select_value PaymentData::HOLDER_COUNTRY_CODE
-      self.full_name = Faker::Name.name
-      self.email = SettingsData::EMAIL
-      self.card_number = PaymentData::CARD_NUMBER
-      self.cvv = PaymentData::CVV2
-      self.name_on_card = PaymentData::HOLDER_NAME
-    end
-
     def avangate_main_continue_button_visible?
       avangate_main_continue_button_element.present?
     end
@@ -167,12 +113,7 @@ module TestingSiteOnlyoffice
       end
     end
 
-    def get_avangate_current_price
-      @instance.webdriver.get_element(avangate_total_value_price_xpath).attribute('innerHTML').split.last
-    end
-
     def get_avangate_current_price_value
-      # values = @instance.webdriver.get_element(avangate_total_value_price_xpath).attribute("innerHTML").split
       values = [avangate_total_value_price_element.text]
       value = values.detect { |val| val.match(/(\d+(?:,|.))?\d+(.\d+)?/) }.to_s.sub(',', '')
       value = value[1..-1] if value[0].to_i.zero?
@@ -181,15 +122,6 @@ module TestingSiteOnlyoffice
 
     def currency_selected
       avangate_currency_selected_element.attribute('value')
-      # @instance.webdriver.get_attribute(avangate_currency_selected_xpath, 'value')
-    end
-
-    def get_avangate_current_users
-      get_product_name[/\d\d?-\d\d?/]
-    end
-
-    def get_product_name
-      @instance.webdriver.get_text(avangate_user_storage_link_element)
     end
   end
 end

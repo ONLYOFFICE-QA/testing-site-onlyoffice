@@ -1,3 +1,5 @@
+require_relative 'portal_helper/portal_login_page'
+
 module TestingSiteOnlyoffice
   class SiteHelper
     attr_accessor :test, :user_list
@@ -15,14 +17,10 @@ module TestingSiteOnlyoffice
       [register_page, @test]
     end
 
-    def create_portal_change_language_site(param, language = 'en-US', user_name = AuthData::DEFAULT_ADMIN_NAME, email = SettingsData::EMAIL)
-      portal_helper = PortalHelper.new
-      @portal_name = portal_helper.get_full_portal_name(param.portal_to_create)
-      @user_list = portal_helper.current_portal_create_users(param)
+    def create_portal_change_language_site(param, language = 'en-US')
       register_page, @test = SiteHelper.new.open_page_teamlab_office(config)
-      register_page.change_language_and_create_portal(param, language, user_name, email)
+      register_page.change_language_and_create_portal(param, language)
       @test.webdriver.quit
-      @user_list[0]
     end
 
     def wrong_portal_name
@@ -34,11 +32,11 @@ module TestingSiteOnlyoffice
       SiteWrongPortal.new(@test)
     end
 
-    def registration_confirmation(confirmation_link, mail = SettingsData::EMAIL_ADMIN, pwd = SettingsData::PORTAL_PASSWORD)
+    def registration_confirmation(confirmation_link, portal_data)
       @test = SiteTestInstance.new(config)
       @test.webdriver.open(confirmation_link)
-      login_page = LoginPage.new(@test)
-      login_page.login_with(mail, pwd)
+      login_page = PortalLoginPage.new(@test)
+      login_page.login_with(portal_data[:email], portal_data[:password])
       @test.webdriver.quit
     end
   end

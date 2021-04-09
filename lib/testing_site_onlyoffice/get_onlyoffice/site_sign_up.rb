@@ -1,6 +1,7 @@
 # /registration.aspx
 # https://user-images.githubusercontent.com/40513035/107354674-7fd74e00-6adf-11eb-9f6d-bcb5aaa3790f.png
 require_relative '../modules/site_toolbar'
+require_relative '../portal_helper/portal_main_page'
 
 module TestingSiteOnlyoffice
   class SiteSignUp
@@ -64,16 +65,16 @@ module TestingSiteOnlyoffice
 
     def fill_data(params = {})
       fill_params(params)
-      MainPage.new(@instance)
+      PortalMainPage.new(@instance)
     end
 
     def fill_params(params = {})
-      self.first_name = params.fetch(:username, AuthData::DEFAULT_ADMIN_NAME)
-      self.last_name = params.fetch(:last_name, AuthData::DEFAULT_ADMIN_LASTNAME)
-      self.email = params.fetch(:email, SettingsData::EMAIL)
+      self.first_name = params.fetch(:first_name, SiteData::DEFAULT_ADMIN_NAME)
+      self.last_name = params.fetch(:last_name, SiteData::DEFAULT_ADMIN_LASTNAME)
+      self.email = params.fetch(:email, SettingsData::EMAIL_ADMIN)
       self.phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.portal_name = params[:portal_name]
-      self.portal_password = params.fetch(:password, SettingsData::PORTAL_PASSWORD)
+      self.portal_password = params.fetch(:password, SiteData::PORTAL_PASSWORD)
       set_region(params[:region])
       remove_recaptcha
       start_trial_element.click
