@@ -24,7 +24,7 @@ describe 'Request free cloud' do
     last_name = "nctautotest #{Time.now}"
     @request_free_cloud_page.send_non_profit_request(last_name: last_name)
     expect(@request_free_cloud_page).to be_request_accepted
-    site_admin_email = IredMailHelper.new(username: SettingsData::PARTNERS_EMAIL)
+    site_admin_email = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL)
     expect(site_admin_email.check_email_by_subject(
              { subject: TestingSiteOnlyoffice::SiteNotificationData::NON_PROFIT_REQUEST, search: last_name }, 300, true
            )).to be_truthy

@@ -1,5 +1,6 @@
 require_relative 'site_home_page'
 require_relative 'portal_helper/site_portal_creation_data'
+require_relative 'teamlab_fail_notifier'
 require_relative 'test_manger/test_manager'
 
 # Instance of browser to perform actions

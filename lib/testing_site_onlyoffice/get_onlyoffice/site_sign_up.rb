@@ -71,7 +71,7 @@ module TestingSiteOnlyoffice
     def fill_params(params = {})
       self.first_name = params.fetch(:first_name, SiteData::DEFAULT_ADMIN_NAME)
       self.last_name = params.fetch(:last_name, SiteData::DEFAULT_ADMIN_LASTNAME)
-      self.email = params.fetch(:email, SettingsData::EMAIL_ADMIN)
+      self.email = params.fetch(:email, SiteData::EMAIL_ADMIN)
       self.phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.portal_name = params[:portal_name]
       self.portal_password = params.fetch(:password, SiteData::PORTAL_PASSWORD)

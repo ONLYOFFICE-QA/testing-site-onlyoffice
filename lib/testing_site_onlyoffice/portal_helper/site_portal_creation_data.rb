@@ -6,7 +6,7 @@ module TestingSiteOnlyoffice
       file_name = params.fetch(:file_name, $ARGV[0])
       @first_name = SiteData::DEFAULT_ADMIN_NAME
       @last_name = SiteData::DEFAULT_ADMIN_LASTNAME
-      @email = SettingsData::EMAIL_ADMIN
+      @email = SiteData::EMAIL_ADMIN
       @password ||= SiteData::PORTAL_PASSWORD
       @portal_name = "nctautotest-#{portal_name_timestamp}-#{file_name.split('/').last.split('.rb')[0].downcase.tr('_', '-')}"[0...50]
     end
