@@ -1,7 +1,6 @@
 require_relative 'palladium_wraper'
 require_relative 'test_manager_testrail'
 require 'onlyoffice_tcm_helper'
-require 'mechanize'
 
 # it is helper for adding result to test case management system, like palladium and testrail
 # for using, create TestManager object in your mail describe
