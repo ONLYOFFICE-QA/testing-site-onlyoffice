@@ -13,7 +13,6 @@ require 'onlyoffice_testrail_wrapper'
 require 'onlyoffice_webdriver_wrapper'
 require 'onlyoffice_tcm_helper'
 require 'palladium'
-require 'wrata_api'
 
 include OnlyofficeDocumentserverTestingFramework
 include OnlyofficeFileHelper
