@@ -5,8 +5,8 @@ describe 'Pricing Cloud Service' do
 
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @pricing_cloud_page = site_home_page.click_link_on_toolbar(:pricing_cloud)
     pending('Cloud Service page is changed for info') if config.server.include?('info')
+    @pricing_cloud_page = site_home_page.click_link_on_toolbar(:pricing_cloud)
   end
 
   it '[Site][Pricing][Cloud] Click Buy now and check plane on Avangate page' do
