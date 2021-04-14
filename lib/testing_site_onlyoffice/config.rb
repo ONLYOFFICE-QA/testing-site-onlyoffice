@@ -29,9 +29,9 @@ module TestingApiOnlyfficeCom
     end
 
     def default_language
-      return 'en-US' if ENV['SPEC_LANGUAGE'].blank?
+      return ENV['SPEC_LANGUAGE'] if ENV['SPEC_LANGUAGE']
 
-      ENV['SPEC_LANGUAGE']
+      'en-US'
     end
 
     def default_region

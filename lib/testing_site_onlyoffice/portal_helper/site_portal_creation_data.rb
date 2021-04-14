@@ -11,6 +11,16 @@ module TestingSiteOnlyoffice
       @portal_name = "nctautotest-#{portal_name_timestamp}-#{file_name.split('/').last.split('.rb')[0].downcase.tr('_', '-')}"[0...50]
     end
 
+    def get_instance_hash
+      {
+        first_name: @first_name,
+        last_name: @last_name,
+        email: @email,
+        password: @password,
+        portal_name: @portal_name
+      }
+    end
+
     private
 
     # @return [String] timestamp used in portal name

@@ -88,9 +88,7 @@ module TestingSiteOnlyoffice
     def check_opened_file_name
       @instance.webdriver.choose_tab(2)
       @instance.init_online_documents
-      @instance.webdriver.wait_until do
-        @instance.doc_instance.management.canvas_editor?
-      end
+      @instance.doc_instance.management.wait_for_operation_with_round_status_canvas
       @instance.doc_instance.management.document_name
     end
 

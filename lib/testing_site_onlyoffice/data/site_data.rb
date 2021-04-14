@@ -10,7 +10,8 @@ module TestingSiteOnlyoffice
     CLIENT_EMAIL = 'client@qamail.teamlab.info'
     EMAIL_ADMIN = 'admin@qamail.teamlab.info'
     PARTNERS_EMAIL = 'partners@qamail.teamlab.info'
-    NON_PROFIT_PORTAL_NAME = 'teamlab-non-profit-portal'
+
+    NON_PROFIT_PORTAL_NAME = 'qateamlab-non-profit-portal'
 
     EMAIL_FOR_SITE = 'site@qamail.teamlab.info'
 

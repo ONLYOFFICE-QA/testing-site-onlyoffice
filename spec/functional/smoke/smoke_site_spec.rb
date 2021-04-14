@@ -17,7 +17,7 @@ describe 'Site Smoke' do
     TestingSiteOnlyoffice::SiteData.site_languages.each do |current_language|
       describe "Registration #{current_language}" do
         before do
-          @portal_creation_data = TestingSiteOnlyoffice::SitePortalCreationData.new.instance_values.transform_keys(&:to_sym)
+          @portal_creation_data = TestingSiteOnlyoffice::SitePortalCreationData.new.get_instance_hash
           @portal_url = TestingSiteOnlyoffice::PortalHelper.new.get_full_portal_name(@portal_creation_data[:portal_name])
         end
 
