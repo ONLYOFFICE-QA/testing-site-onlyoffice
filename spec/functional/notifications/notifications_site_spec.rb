@@ -5,8 +5,8 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 site_helper = TestingSiteOnlyoffice::SiteHelper.new
 
 mail_site = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_FOR_SITE)
-partner_email = IredMailHelper.new(username: SettingsData::PARTNERS_EMAIL)
-client_email = IredMailHelper.new(username: SettingsData::CLIENT_EMAIL)
+partner_email = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL)
+client_email = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::CLIENT_EMAIL)
 
 describe 'Registration new portal' do
   before do
@@ -16,11 +16,11 @@ describe 'Registration new portal' do
   it 'Check button `Recover` work on `wrong portal name` page for correct email' do
     wrong_page = site_helper.wrong_portal_name
     wrong_page.recover_address_portal(TestingSiteOnlyoffice::SiteData::EMAIL_FOR_SITE)
-    expect(SiteNotificationHelper.check_site_notification(language: config.language,
-                                                          module: 'WebStudio',
-                                                          mail: mail_site,
-                                                          pattern: 'portal_name_reminder',
-                                                          search: TestingSiteOnlyoffice::SiteData.site_notification_page)).to be_truthy
+    expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: config.language,
+                                                                                 module: 'WebStudio',
+                                                                                 mail: mail_site,
+                                                                                 pattern: 'portal_name_reminder',
+                                                                                 search: TestingSiteOnlyoffice::SiteData.site_notification_page)).to be_truthy
   end
 
   # CAUTION: do not test on .com frequently
@@ -69,7 +69,7 @@ describe 'Registration new portal' do
       mail_html = client_email.get_html_body_email_by_subject(
         { subject: TestingSiteOnlyoffice::SiteNotificationData::SUBSCRIBE_TO_NEWSLETTER }, 300
       )
-      subscribe_link = SiteSubscribe.parse_subscribe_link(mail_html)
+      subscribe_link = TestingSiteOnlyoffice::SiteSubscribe.parse_subscribe_link(mail_html)
       subscribe_confirm = subscribe_popup.subscribe_from_link(subscribe_link)
       expect(subscribe_confirm).to be_wait_success_text_visible
     end

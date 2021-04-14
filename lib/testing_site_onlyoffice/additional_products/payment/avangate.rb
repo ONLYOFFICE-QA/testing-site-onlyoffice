@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require_relative 'data/payment_data'
+require_relative 'avangate_finish_order'
+
 module TestingSiteOnlyoffice
   class Avangate
     attr_accessor :instance

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-mail = IredMailHelper.new(username: SettingsData::EMAIL_ADMIN)
+mail = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_ADMIN)
 mail_site = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_FOR_SITE)
 checker = { language: config.language, module: 'WebStudio' }
 
@@ -15,7 +15,7 @@ describe 'Registration new portal' do
     before { @sign_up_page = @site_home_page.click_link_on_toolbar(:sign_up) }
 
     describe 'Create new portal' do
-      before { @portal_creation_data = TestingSiteOnlyoffice::SitePortalCreationData.new.instance_values.transform_keys(&:to_sym) }
+      before { @portal_creation_data = TestingSiteOnlyoffice::SitePortalCreationData.new.get_instance_hash }
 
       it 'Create new portal from "Sign Up"' do
         portal_page = @sign_up_page.fill_data(@portal_creation_data)
@@ -49,11 +49,13 @@ describe 'Registration new portal' do
     end
 
     it 'Check open "Term and conditions" link for "Sign Up' do
+      pending('Add fetching file name to onlyoffice_documentserver_testing_framework')
       @sign_up_page.terms_and_conditions
       expect(@sign_up_page.check_opened_file_name).to eq(TestingSiteOnlyoffice::SiteNotificationData::TERMS_OF_USE_FILE_NAME)
     end
 
     it 'Check open "Privacy statement" link for "Sign Up' do
+      pending('Add fetching file name to onlyoffice_documentserver_testing_framework')
       @sign_up_page.privacy_statement
       expect(@sign_up_page.check_opened_file_name).to eq(TestingSiteOnlyoffice::SiteNotificationData::PRIVACY_STATEMENT)
     end
@@ -69,7 +71,7 @@ describe 'Registration new portal' do
 
     it '"Sign in" to new portal' do
       @sign_up_page = @sign_in_page.register_from_sign_in
-      portal_creation_data = TestingSiteOnlyoffice::SitePortalCreationData.new.instance_values.transform_keys(&:to_sym)
+      portal_creation_data = TestingSiteOnlyoffice::SitePortalCreationData.new.get_instance_hash
       portal_creation_data[:email] = "qa-signin-check-#{SecureRandom.uuid}@qamail.teamlab.info"
       portal_creation_data[:password] = SecureRandom.uuid
       @sign_up_page.fill_data(portal_creation_data)

@@ -42,7 +42,7 @@ module TestingSiteOnlyoffice
 
     def fill_commercial_download_form(params = {})
       self.full_name = params.fetch(:full_name, Faker::Name.name)
-      self.email = params.fetch(:email, SettingsData::CLIENT_EMAIL)
+      self.email = params.fetch(:email, SiteData::CLIENT_EMAIL)
       self.phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.company_name = params.fetch(:company_name, Faker::Company.name)
       self.company_website = params.fetch(:site_url, Faker::Internet.domain_name)

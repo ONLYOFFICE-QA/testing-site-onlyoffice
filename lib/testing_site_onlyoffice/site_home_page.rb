@@ -85,7 +85,6 @@ module TestingSiteOnlyoffice
     include PageObject
     include PortalVersion
     include SiteFooter
-    include SignInMethods
     include SiteSupportChatPopup
     include SiteToolbar
 

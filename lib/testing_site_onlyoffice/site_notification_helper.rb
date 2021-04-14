@@ -1,10 +1,10 @@
 require 'csv'
 
 module TestingSiteOnlyoffice
-  class SiteNotificationHelper < NotificationHelper
+  class SiteNotificationHelper
     def self.site_translate_from_resource(language, string_name, tm_module)
       file_path = File.absolute_path('lib/testing_site_onlyoffice/data/site_translates.csv')
-      get_csv_match(file_path, language, string_name, tm_module)
+      SiteNotificationHelper.get_csv_match(file_path, language, string_name, tm_module)
     end
 
     def self.check_site_notification(params = {})
@@ -25,6 +25,17 @@ module TestingSiteOnlyoffice
                                                 params[:times] = params.fetch(:times, 300),
                                                 params[:move_out] = params.fetch(:move_out, true))
       mail[:html_body].split('href="').grep(/confirm.aspx/)[0].split('"')[0]
+    end
+
+    def self.get_csv_match(file_path, language, string_name, tm_module)
+      CSV.foreach(file_path, encoding: 'UTF-8') do |row|
+        return row[3] if row[2] == string_name && row[1] == language && row[0] == tm_module
+      end
+      language = 'Neutral'
+      CSV.foreach(file_path, encoding: 'UTF-8') do |row|
+        return row[3] if row[2] == string_name && row[1] == language && row[0] == tm_module
+      end
+      raise "String #{string_name} not found on language #{language}"
     end
   end
 end

@@ -3,7 +3,7 @@ require 'timeout'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-mail = IredMailHelper.new(username: SettingsData::EMAIL_ADMIN)
+mail = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_ADMIN)
 
 checker = { mail: mail, module: 'WebStudio' }
 
@@ -17,7 +17,7 @@ describe 'Site Smoke' do
     TestingSiteOnlyoffice::SiteData.site_languages.each do |current_language|
       describe "Registration #{current_language}" do
         before do
-          @portal_creation_data = TestingSiteOnlyoffice::SitePortalCreationData.new.instance_values.transform_keys(&:to_sym)
+          @portal_creation_data = TestingSiteOnlyoffice::SitePortalCreationData.new.get_instance_hash
           @portal_url = TestingSiteOnlyoffice::PortalHelper.new.get_full_portal_name(@portal_creation_data[:portal_name])
         end
 

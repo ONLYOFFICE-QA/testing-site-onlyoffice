@@ -65,9 +65,9 @@ module TestingSiteOnlyoffice
     def fill_non_profit_request_form_with_data(params = {})
       self.first_name = params.fetch(:first_name, Faker::Name.first_name)
       self.last_name = params.fetch(:last_name, Faker::Name.last_name)
-      self.portal_name = params.fetch(:portal_name, SettingsData::NON_PROFIT_PORTAL_NAME)
+      self.portal_name = params.fetch(:portal_name, SiteData::NON_PROFIT_PORTAL_NAME)
       choose_you_are(params.fetch(:you_are, :nonprofit))
-      self.email = params.fetch(:email, SettingsData::GMAIL)
+      self.email = params.fetch(:email, SiteData::EMAIL_ADMIN)
       self.site_url = params.fetch(:site_url, Faker::Internet.domain_name)
     end
 

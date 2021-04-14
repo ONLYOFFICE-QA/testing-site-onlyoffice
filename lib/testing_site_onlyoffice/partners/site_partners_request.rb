@@ -47,7 +47,7 @@ module TestingSiteOnlyoffice
       self.first_name_partner = params.fetch(:first_name, Faker::Name.first_name)
       self.last_name_partner = params.fetch(:last_name, Faker::Name.last_name)
       self.position_partner = params.fetch(:position, Faker::Company.profession)
-      self.email_partner = params.fetch(:email, SettingsData::GMAIL)
+      self.email_partner = params.fetch(:email, SiteData::EMAIL_ADMIN)
       self.phone_partner = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.company_name_partner = params.fetch(:company_name, Faker::Company.name)
       self.company_website_partner = params.fetch(:website, Faker::Internet.domain_name)

@@ -22,7 +22,7 @@ module TestingSiteOnlyoffice
 
     def fill_subscribe_form(params = {})
       self.first_name = params.fetch(:name, Faker::Name.first_name)
-      self.email = params.fetch(:email, SettingsData::CLIENT_EMAIL)
+      self.email = params.fetch(:email, SiteData::CLIENT_EMAIL)
       subscribe_button_element.click
       @instance.webdriver.wait_until { subscribe_success_element.present? }
     end

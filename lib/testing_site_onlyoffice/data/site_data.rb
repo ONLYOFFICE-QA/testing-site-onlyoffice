@@ -7,6 +7,12 @@ module TestingSiteOnlyoffice
     DEFAULT_ADMIN_FULLNAME = 'admin-zero admin-zero'
     PORTAL_PASSWORD = '12345678'
 
+    CLIENT_EMAIL = 'client@qamail.teamlab.info'
+    EMAIL_ADMIN = 'admin@qamail.teamlab.info'
+    PARTNERS_EMAIL = 'partners@qamail.teamlab.info'
+
+    NON_PROFIT_PORTAL_NAME = 'qateamlab-non-profit-portal'
+
     EMAIL_FOR_SITE = 'site@qamail.teamlab.info'
 
     # @return [String] portal on which forgot password

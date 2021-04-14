@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'SiteHourlyCheck' do
   test_run = "Site Hourly Checks version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}, time: #{Time.new}, region: #{config.region}"
-  testrail = DailyCheckHelper.init_testrail('[Studio] Site Hourly Checks', test_run, 'Site Hourly Check')
+  testrail = TestrailHelper.new('Site Hourly Check', '[Studio] Site Hourly Checks', nil, test_run)
   run_name = nil
 
   describe 'Site onlyoffice.com' do
@@ -245,13 +245,13 @@ describe 'SiteHourlyCheck' do
 
     unless OnlyofficeFileHelper::RubyHelper.debug?
       fail = example.exception
-      if fail && run_name == example.description && !run_name.include?('[Info]') && !TeamlabFailNotifier.should_be_ignored?(example)
+      if fail && run_name == example.description && !run_name.include?('[Info]') && !TestingSiteOnlyoffice::TeamlabFailNotifier.should_be_ignored?(example)
         message_body = "#{test_run}\n#{run_name}\n#{fail}\n#{testrail&.run&.url}"
         message_report = { subject: '[Error] Site Hourly', body: message_body }
         they_want_to_know = %w[nct.tester@yandex.ru test.teamlab@yandex.ru shockwavenn@gmail.com
                                denis.spitsyn.nct@gmail.com]
         they_want_to_know.push('alexey.safronov@onlyoffice.com') if run_name.include?('[Mail][Socket.IO]')
-        TeamlabFailNotifier.send(message_body)
+        TestingSiteOnlyoffice::TeamlabFailNotifier.send(message_body)
         Gmail_helper.new('onlyoffice.daily.report@gmail.com', 'onlyoffice.daily.report1').send_mail(they_want_to_know,
                                                                                                     message_report[:subject], message_report[:body])
       end

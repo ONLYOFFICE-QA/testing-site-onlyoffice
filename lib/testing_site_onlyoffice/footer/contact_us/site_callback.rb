@@ -38,7 +38,7 @@ module TestingSiteOnlyoffice
     def fill_form(params = {})
       self.first_name = params.fetch(:first_name, Faker::Name.first_name)
       self.last_name = params.fetch(:last_name, Faker::Name.last_name)
-      self.email = params.fetch(:email, SettingsData::GMAIL)
+      self.email = params.fetch(:email, SiteData::EMAIL_ADMIN)
       self.phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
     end
 
