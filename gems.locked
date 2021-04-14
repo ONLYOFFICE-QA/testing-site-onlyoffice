@@ -47,8 +47,12 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0225)
     mini_mime (1.1.0)
+    mini_portile2 (2.5.0)
     minitest (5.14.4)
     multi_xml (0.6.0)
+    nokogiri (1.11.3)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     onlyoffice_bugzilla_helper (0.6.1)
     onlyoffice_documentserver_testing_framework (0.4.0)
       onlyoffice_logger_helper (~> 1)
@@ -88,6 +92,7 @@ GEM
     parallel (1.20.1)
     parser (3.0.1.0)
       ast (~> 2.4.1)
+    racc (1.5.2)
     rainbow (3.0.0)
     rake (13.0.3)
     regexp_parser (2.1.1)
@@ -148,7 +153,7 @@ DEPENDENCIES
   faker
   httparty
   json
-  mail
+  nokogiri
   onlyoffice_documentserver_testing_framework
   onlyoffice_file_helper
   onlyoffice_iredmail_helper
@@ -168,4 +173,4 @@ DEPENDENCIES
   wrata_api
 
 BUNDLED WITH
-   2.2.14
+   2.2.15
