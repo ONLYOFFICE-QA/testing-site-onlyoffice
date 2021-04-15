@@ -3,6 +3,7 @@ require_relative 'portal_helper/site_portal_creation_data'
 require_relative 'teamlab_fail_notifier'
 require_relative 'test_manger/test_manager'
 
+require 'bundler/setup'
 require 'active_support'
 require 'httparty'
 require 'faker'
