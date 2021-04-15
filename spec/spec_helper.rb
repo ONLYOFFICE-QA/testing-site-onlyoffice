@@ -5,8 +5,19 @@ require_relative '../shared_examples/document_builder_download'
 require_relative '../shared_examples/connector_download'
 require 'onlyoffice_testrail_wrapper'
 require 'rspec'
+require 'rspec/retry'
 
 # @return [TestingApiOnlyfficeCom::Config] config of test run
 def config
   @config ||= TestingApiOnlyfficeCom::Config.new
+end
+
+RSpec.configure do |config|
+  is_debug = OnlyofficeFileHelper::RubyHelper.debug?
+  config.default_retry_count = if is_debug
+                                 1
+                               else
+                                 2
+                               end
+  config.verbose_retry = true
 end
