@@ -89,7 +89,7 @@ module TestingSiteOnlyoffice
       @instance.webdriver.choose_tab(2)
       @instance.init_online_documents
       @instance.doc_instance.management.wait_for_operation_with_round_status_canvas
-      @instance.doc_instance.management.document_name
+      @instance.doc_instance.doc_editor.top_toolbar.title_row.document_name
     end
 
     private
