@@ -1,7 +1,13 @@
 WebStudio,Neutral,subject_confirmation,Confirm your email
+WebStudio,de-DE,subject_confirmation,Bestätigen Sie Ihre E-Mail
+WebStudio,es-ES,subject_confirmation,Confirme su correo electrónico
+WebStudio,fr-FR,subject_confirmation,Confirmez votre adresse email
 WebStudio,ru-RU,subject_confirmation,Подтвердите адрес электронной почты
 
 WebStudio,Neutral,subject_congratulations,Welcome to ONLYOFFICE!
+WebStudio,de-DE,subject_congratulations,Willkommen auf ONLYOFFICE!
+WebStudio,es-ES,subject_congratulations,Bienvenido/a a ONLYOFFICE
+WebStudio,fr-FR,subject_congratulations,Bienvenue à ONLYOFFICE !
 WebStudio,ru-RU,subject_congratulations,Добро пожаловать в ONLYOFFICE!
 
 WebStudio,Neutral,portal_name_reminder,ONLYOFFICE Portal Name Reminder
