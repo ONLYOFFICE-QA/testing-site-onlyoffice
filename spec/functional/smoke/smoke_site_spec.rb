@@ -70,7 +70,7 @@ describe 'Site Smoke' do
         end
 
         it "Open trial form Pricing->Cloud Service page in #{current_language} language" do
-          pending('Cloud Service page is changed for info') if config.server.include?('info')
+          pending('Cloud Service page is changed')
           pricing_cloud_page = @site_home_page.click_link_on_toolbar(:pricing_cloud)
           sign_up_page = pricing_cloud_page.click_start_free_trial
           expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteSignUp
