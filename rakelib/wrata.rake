@@ -17,8 +17,8 @@ namespace(:wrata) do
     api = WrataApi::WrataApi.new
     free_pcs = api.free_servers(args[:count])
     free_pcs.power_on('1gb')
-    free_pcs.book
     sleep(60) # timeout to correctly turn on of all services
+    free_pcs.book
   end
 
   desc 'Add tests to queue'
@@ -41,6 +41,6 @@ namespace(:wrata) do
     Rake::Task['wrata:add_tests_to_queue'].execute(location: location, path: 'spec/functional')
     puts('One test node is setup. Please check that test are run fine on it')
     sleep(3 * 60)
-    Rake::Task['wrata:wrata_turn_on_servers'].execute(count: 1)
+    Rake::Task['wrata:wrata_turn_on_servers'].execute(count: 3)
   end
 end
