@@ -23,9 +23,7 @@ module TestingApiOnlyfficeCom
 
     # @return [String] server on which test are performed
     def default_server
-      return 'https://www.onlyoffice.com' if ENV['SPEC_REGION']&.include?('com')
-
-      'https://teamlab.info'
+      return 'https://www.onlyoffice.com'
     end
 
     def default_language
