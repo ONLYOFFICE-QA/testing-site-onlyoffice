@@ -29,23 +29,13 @@ describe 'Site Smoke' do
 
         it "Check welcome message for #{current_language}" do
           TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(@portal_creation_data, current_language)
-          case config.server
-          when 'https://teamlab.info'
-            confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(language: current_language,
-                                                                                                                           pattern: 'subject_confirmation',
-                                                                                                                           search: @portal_url))
-            @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link, @portal_creation_data)
-            expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(language: current_language,
-                                                                                                       pattern: 'subject_congratulations',
-                                                                                                       search: @portal_url))).to be_truthy
-          when 'https://onlyoffice.com'
-            expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: current_language,
-                                                                                         module: 'WebStudio',
-                                                                                         mail: mail,
-                                                                                         pattern: 'subject_congratulations_com',
-                                                                                         search: @portal_url,
-                                                                                         move_out: true)).to be_truthy
-          end
+          confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(language: current_language,
+                                                                                                                         pattern: 'subject_confirmation',
+                                                                                                                         search: @portal_url))
+          @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link, @portal_creation_data)
+          expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(language: current_language,
+                                                                                                     pattern: 'subject_congratulations',
+                                                                                                     search: @portal_url))).to be_truthy
         end
 
         it "Check changing to #{current_language} language" do
@@ -70,7 +60,7 @@ describe 'Site Smoke' do
         end
 
         it "Open trial form Pricing->Cloud Service page in #{current_language} language" do
-          pending('Cloud Service page is changed for info') if config.server.include?('info')
+          pending('Cloud Service page is changed')
           pricing_cloud_page = @site_home_page.click_link_on_toolbar(:pricing_cloud)
           sign_up_page = pricing_cloud_page.click_start_free_trial
           expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteSignUp

@@ -25,21 +25,13 @@ describe 'Registration new portal' do
       it 'Check sign up letter: "Welcome to TeamLab Portal!" from "Sign Up"' do
         @sign_up_page.fill_data(@portal_creation_data)
         portal_url = TestingSiteOnlyoffice::PortalHelper.new.get_full_portal_name(@portal_creation_data[:portal_name])
-        case config.server
-        when 'https://teamlab.info'
-          confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(mail: mail,
-                                                                                                                         pattern: 'subject_confirmation',
-                                                                                                                         search: portal_url))
-          @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link, @portal_creation_data)
-          expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
-                                                                                                     pattern: 'subject_congratulations',
-                                                                                                     search: portal_url))).to be_truthy
-        when 'https://onlyoffice.com'
-          expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
-                                                                                                     pattern: 'subject_congratulations_com',
-                                                                                                     search: portal_url))).to be_truthy
-
-        end
+        confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(mail: mail,
+                                                                                                                       pattern: 'subject_confirmation',
+                                                                                                                       search: portal_url))
+        @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link, @portal_creation_data)
+        expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(mail: mail,
+                                                                                                   pattern: 'subject_congratulations',
+                                                                                                   search: portal_url))).to be_truthy
       end
     end
 
