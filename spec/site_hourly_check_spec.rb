@@ -53,7 +53,6 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check cloud' do
-      pending('Cloud Service page is changed')
       page = @site_home_page.click_link_on_toolbar(:pricing_cloud)
       expect(page).to be_a TestingSiteOnlyoffice::SitePricingCloud
       page = @site_home_page.click_link_on_toolbar(:pricing_server)
