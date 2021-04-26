@@ -13,13 +13,13 @@ module TestingSiteOnlyoffice
     include SiteToolbar
 
     # startup
-    startup = "//div[@class='saas-table-cell saas-cell-startup']"
+    startup = "//div[contains(@class, 'saas-cell-startup')]"
     link(:startup_start_now, xpath: "#{startup}//a[@class='button red']")
     span(:startup_price_person, xpath: "#{startup}//span[contains(@class, 'price-value')]")
 
     # business
     link(:business_try_it_for_free, xpath: "//a[@class='saas-try-free']")
-    link(:business_calculate_your_price, xpath: "//a[@class='saas-calculate button gray']")
+    link(:business_calculate_your_price, xpath: "//a[contains(@class, 'saas-calculate')]")
 
     # vip
     @vip = "//div[@class='saas-table-cell saas-cell-vip']"
@@ -71,6 +71,7 @@ module TestingSiteOnlyoffice
       element = [month_element, one_year_element, three_years_element].each do |period_element|
         break period_element if period_element.attribute('class').include?('active')
       end
+      @instance.webdriver.webdriver_error('No period element is selected') unless element
       element.attribute('data-id').delete_prefix('saas-').to_sym
     end
 

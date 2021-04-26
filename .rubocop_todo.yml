@@ -80,15 +80,7 @@ RSpec/DescribeClass:
 # Offense count: 22
 # Configuration parameters: Max.
 RSpec/ExampleLength:
-  Exclude:
-    - 'spec/functional/get_onlyoffice/site_commersial_trial_form_spec.rb'
-    - 'spec/functional/get_onlyoffice/site_registration_signin_spec.rb'
-    - 'spec/functional/notifications/notifications_site_spec.rb'
-    - 'spec/functional/pricing/site_buy_notification_spec.rb'
-    - 'spec/functional/pricing/site_pricing_developer_edition_spec.rb'
-    - 'spec/functional/smoke/smoke_site_spec.rb'
-    - 'spec/functional/solutions/nonprofits/site_request_free_cloud_spec.rb'
-    - 'spec/site_hourly_check_spec.rb'
+  Enabled: false
 
 # Offense count: 16
 # Cop supports --auto-correct.
