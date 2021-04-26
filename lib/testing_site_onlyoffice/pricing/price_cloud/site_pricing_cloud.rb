@@ -22,8 +22,7 @@ module TestingSiteOnlyoffice
     link(:business_calculate_your_price, xpath: "//a[contains(@class, 'saas-calculate')]")
 
     # vip
-    @vip = "//div[@class='saas-table-cell saas-cell-vip']"
-    link(:vip_contact_us_top, xpath: "//div[@class='saas-table-cell saas-cell-vip']//a[contains(@class, 'saas-vip-contact-us')]")
+    link(:vip_contact_us_top, xpath: "//div[contains(@class, 'saas-cell-vip')]//a[contains(@class, 'saas-vip-contact-us')]")
 
     # faq
     list_item(:other_questions, xpath: "(//div[@class='faq_pricing_block']/ul/li)[3]")
