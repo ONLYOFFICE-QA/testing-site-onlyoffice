@@ -63,6 +63,8 @@ require_relative 'products/site_products_workspace'
 require_relative 'products/site_connectors'
 require_relative 'products/site_products_security'
 
+require_relative 'search/site_search'
+
 require_relative 'solutions/nonprofit/site_nonprofits'
 require_relative 'solutions/site_home_use'
 
@@ -85,6 +87,7 @@ module TestingSiteOnlyoffice
     include PageObject
     include PortalVersion
     include SiteFooter
+    include SiteSearch
     include SiteSupportChatPopup
     include SiteToolbar
 
