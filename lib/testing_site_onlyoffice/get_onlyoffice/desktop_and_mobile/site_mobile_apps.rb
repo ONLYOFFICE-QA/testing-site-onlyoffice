@@ -1,5 +1,5 @@
 # Download Mobile app
-# https://user-images.githubusercontent.com/40513035/96514901-0b954800-126d-11eb-87e5-6928fc765ed3.png
+# https://user-images.githubusercontent.com/40513035/116201991-f226fa00-a6ee-11eb-974e-274184565c65.png
 require_relative 'modules/site_desktop_mobiles_toolbar'
 require_relative '../modules/site_download_helper'
 require_relative '../../modules/site_toolbar'
@@ -12,6 +12,8 @@ module TestingSiteOnlyoffice
     include SiteToolbarDesktopMobiles
 
     link(:site_mobile_google_play, xpath: '//a[contains(@href, "google")]')
+
+    link(:site_mobile_appgallery, xpath: '//a[contains(@href, "appgallery")]')
 
     link(:site_mobile_app_store, xpath: '//a[contains(@href, "apple")]')
     link(:site_mobile_ios_whats_new, xpath: '//a[contains(@href, "apple")]/../..//a[contains(@href, "changelog")]')
