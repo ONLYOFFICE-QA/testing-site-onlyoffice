@@ -99,6 +99,11 @@ describe 'SiteHourlyCheck' do
         it '[Download Mobile Editors] /download-desktop.aspx: "Download on the app store" link works' do
           expect(@mobile_editors_download_page).to be_download_link_alive(:mobile_ios)
         end
+
+        it 'Download Mobile Editors] /download-desktop.aspx: "Explore it on AppGallery" link works' do
+          @mobile_editors_download_page.site_mobile_appgallery
+          expect(@mobile_editors_download_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_GALLERY)
+        end
       end
 
       describe 'download commercial /download-commercial.aspx' do

@@ -21,6 +21,7 @@ module TestingSiteOnlyoffice
 
     # Mobile
     MOBILE_GOOGLE = 'ONLYOFFICE Documents - Apps on Google Play'
+    MOBILE_APP_GALLERY = 'HUAWEI AppGallery'
     MOBILE_APP_STORE = '‎ONLYOFFICE Documents on the App Store'
     MOBILE_IOS_CHANGELOG = 'Documents app for iOS changelog - ONLYOFFICE'
 

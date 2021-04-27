@@ -13,6 +13,11 @@ describe 'Desktop apps' do
     expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_GOOGLE)
   end
 
+  it '[Mobile][Huawei]Check "Explore it on AppGallery" button' do
+    @mobile_app_page.site_mobile_appgallery
+    expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_GALLERY)
+  end
+
   context 'IOS' do
     it '[Mobile][iOS]Check "Download on the app store" button' do
       @mobile_app_page.site_mobile_app_store
