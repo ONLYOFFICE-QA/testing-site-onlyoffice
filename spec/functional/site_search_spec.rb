@@ -2,10 +2,7 @@ require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
 describe 'Site search' do
-  before do
-    @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @site_home_page.open_search_field
-  end
+  before { @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config) }
 
   describe 'non-existing word' do
     before { @result_page = @site_home_page.search('Fakeword') }
@@ -25,7 +22,7 @@ describe 'Site search' do
     search_string = 'calendar'
     result_page = @site_home_page.search(search_string)
     expect(result_page.search_result_count).to be > 0
-    expect(result_page.first_snippet_entry_text).to be_include(search_string)
+    expect(result_page.search_results.first.snippet_text).to be_include(search_string)
   end
 
   it 'xss injection return No results matching your query page' do

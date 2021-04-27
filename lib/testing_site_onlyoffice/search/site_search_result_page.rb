@@ -1,13 +1,13 @@
 # /search.aspx
 # https://user-images.githubusercontent.com/40513035/116189519-eaab2500-a6dd-11eb-8cc7-7af755bb1719.png
 require_relative '../site_home_page'
+require_relative 'search_result_item'
 
 module TestingSiteOnlyoffice
   class SiteSearchResultPage
     include PageObject
 
     list_item(:search_result_entry, xpath: "//li[@class='searchItem']")
-    paragraph(:first_entry_snippet, xpath: "(//p[@class='searchSnippet'])[1]")
 
     # result not found
     no_result_xpath = "//div[@class='noResults']"
@@ -26,10 +26,6 @@ module TestingSiteOnlyoffice
       end
     end
 
-    def first_snippet_entry_text
-      first_entry_snippet_element.text
-    end
-
     # @return [Integer] found entries count
     def search_result_count
       return 0 if no_result_found_element.present?
@@ -40,6 +36,13 @@ module TestingSiteOnlyoffice
     def go_to_main_page
       main_page_element.click
       SiteHomePage.new(@instance)
+    end
+
+    # @return [Array] of search results
+    def search_results
+      results_array = []
+      search_result_count.times { |index| results_array << SiteResultItem.new(@instance, index + 1) }
+      results_array
     end
   end
 end
