@@ -51,7 +51,7 @@ module TestingSiteOnlyoffice
 
     def click_see_all_integrations
       see_all_integrations_element.click
-      SiteConnectors.new(@instance)
+      SiteProductsConnectorsOnlyoffice.new(@instance)
     end
 
     def download_self_hosted_productivity_apps
