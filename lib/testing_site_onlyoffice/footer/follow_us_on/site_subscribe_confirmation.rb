@@ -4,11 +4,7 @@ module TestingSiteOnlyoffice
   class SiteSubscribeConfirmation
     include PageObject
 
-    paragraph(:subscribe_success_text,
-              xpath: "//div[@class='description']/p[contains(text(), 'successfully subscribed')]")
-
     def initialize(instance)
-      super(instance.webdriver.driver)
       @instance = instance
       wait_to_load
     end
@@ -18,7 +14,8 @@ module TestingSiteOnlyoffice
     end
 
     def wait_success_text_visible?
-      @instance.webdriver.wait_until { subscribe_success_text_element.present? }
+      @instance.webdriver.element_present?("//div[@class='description']/p[contains(text(), 'successfully subscribed')]") ||
+        @instance.webdriver.element_present?("//*[@id='subscribepage']//h1[contains(text(), 'Thank you for subscribing')]")
     end
   end
 end
