@@ -34,6 +34,14 @@ module TestingSiteOnlyoffice
       @connectors_info ||= JSON.parse(File.read("#{__dir__}/site_connectors_info.json"))
     end
 
+    def self.connectors_partners_list
+      %i[agorum communigate ecmind exoplatform jalios liferay maarch moodle openolat powerfolder pydio seafile talkspirit xwiki]
+    end
+
+    def self.connectors_partners_info
+      @connectors_partners_info ||= JSON.parse(File.read("#{__dir__}/site_product_connectors_info.json"))
+    end
+
     # Open Source Bundles
     def self.open_source_bundles_list_download_type
       {
