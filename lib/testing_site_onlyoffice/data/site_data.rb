@@ -34,11 +34,7 @@ module TestingSiteOnlyoffice
     end
 
     def self.site_languages
-      if config.server.include?('.com')
-        %w[en-US en-GB ru-RU fr-FR de-DE es-ES pt-BR it-IT cs-CZ nl-NL ja-JP zh-CN]
-      elsif config.server.include?('.info')
-        %w[en-US en-GB de-DE fr-FR es-ES ru-RU pt-BR it-IT cs-CZ nl-NL ja-JP zh-CN]
-      end
+      %w[en-US en-GB ru-RU fr-FR de-DE es-ES pt-BR it-IT cs-CZ nl-NL ja-JP zh-CN]
     end
   end
 end
