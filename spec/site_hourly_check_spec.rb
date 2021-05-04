@@ -11,7 +11,7 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check exists languages' do
-      expect(@site_home_page.get_all_language_from_site).to eq(TestingSiteOnlyoffice::SiteData.site_languages)
+      expect(@site_home_page.get_all_language_from_site.sort).to eq(TestingSiteOnlyoffice::SiteData.site_languages.sort)
     end
 
     it '[Site] Check link Personal Office' do
