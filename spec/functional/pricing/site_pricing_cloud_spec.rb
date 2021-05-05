@@ -63,7 +63,7 @@ describe 'Pricing Cloud Service' do
 
   it '[Site][Pricing][Cloud] Fill `Contact us` form for VIP plan and check notify' do
     pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
-    company_name = Faker::Company.name
+    company_name = "NCT Test #{Faker::Company.name}"
     vip_request_page = @pricing_cloud_page.vip_contact_us
     vip_request_page.send_vip_cloud_request(company_name: company_name)
     subject_message = "#{company_name}#{TestingSiteOnlyoffice::SiteNotificationHelper.site_translate_from_resource(config.language, 'contact_vip', 'WebStudio')}"
