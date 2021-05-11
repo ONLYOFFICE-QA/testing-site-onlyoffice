@@ -24,15 +24,20 @@ module TestingSiteOnlyoffice
     end
 
     # @param [RSpec::Core::Example] example - is a returned object in "after" block
-    # @param [Hash] comment is a data for reuslt. It *must* contain :title and :value keys
-    def add_result(example, comment = {})
+    # @param [Hash] comment is a data for result. It *must* contain :title and :value keys
+    def add_result(example, instance, comment = '')
       result = @tcm_helper.parse(example)
+      comment << "Error #{instance.webdriver.webdriver_screenshot}\n" if test_failed_and_has_no_screenshot?(result, example)
       formatting_describer(comment)
-      @testrail&.add_result_to_test_case(example)
+      @testrail&.add_result_to_test_case(example, comment)
 
       return unless @palladium
 
       add_palladium_result(result)
+    end
+
+    def test_failed_and_has_no_screenshot?(result, example)
+      result.comment.split('Error screenshot: ')[1].nil? if example.exception
     end
 
     # take describer in TcmHelper.result_message and reformat it
@@ -40,11 +45,11 @@ module TestingSiteOnlyoffice
       result_message = JSON.parse(@tcm_helper.result_message)
       describer = result_message['describer'][0]['value']
       new_describer = []
-      new_describer << comment unless comment == {}
+      new_describer << { title: 'Custom comment', value: comment } unless comment == ''
       new_describer << { title: 'Comment', value: describer.split('Page address')[0] }
       new_describer << { value: describer.split('Page address: ')[1],
                          title: 'Page address' }
-      new_describer << { value: describer.split('Error screenshot: ')[1],
+      new_describer << { value: (describer.split('Error screenshot: ')[1]).to_s,
                          title: 'Error screenshot',
                          type: :image }
       result_message['describer'] = new_describer

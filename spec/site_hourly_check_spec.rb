@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'SiteHourlyCheck' do
   test_run = "Site Hourly Checks version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}, time: #{Time.new}, region: #{config.region}"
-  testrail = TestrailHelper.new('Site Hourly Check', '[Studio] Site Hourly Checks', nil, test_run)
+  test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__), plan_name: test_run, plan_name_testrail: test_run, product_name: 'Site Hourly Check')
   run_name = nil
 
   describe 'Site onlyoffice.com' do
@@ -245,7 +245,7 @@ describe 'SiteHourlyCheck' do
   end
 
   after do |example|
-    testrail&.add_result_to_test_case example
+    test_manager&.add_result(example, @test)
     @test&.webdriver&.quit
     @test&.webdriver&.quit
     WebDriver.clean_up
