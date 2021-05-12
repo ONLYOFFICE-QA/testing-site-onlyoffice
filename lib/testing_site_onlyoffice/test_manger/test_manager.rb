@@ -24,7 +24,7 @@ module TestingSiteOnlyoffice
     end
 
     # @param [RSpec::Core::Example] example - is a returned object in "after" block
-    # @param [TestingSiteOnlyoffice::SiteTestInstance]
+    # @param [TestingSiteOnlyoffice::SiteTestInstance] current instance
     # @param [String] comment is a data for result
     def add_result(example, instance, comment = '')
       result = @tcm_helper.parse(example)
