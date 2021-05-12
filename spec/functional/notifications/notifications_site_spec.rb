@@ -76,7 +76,7 @@ describe 'Registration new portal' do
   end
 
   after do |example|
-    test_manager.add_result(example)
+    test_manager.add_result(example, @test)
     @test&.webdriver&.quit
     site_helper.test&.webdriver&.quit
   end

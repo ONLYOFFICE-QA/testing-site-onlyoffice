@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'SiteHourlyCheck' do
   test_run = "Site Hourly Checks version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}, time: #{Time.new}, region: #{config.region}"
-  testrail = TestrailHelper.new('Site Hourly Check', '[Studio] Site Hourly Checks', nil, test_run)
+  test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__), plan_name: test_run, plan_name_testrail: test_run, product_name: 'Site Hourly Check')
   run_name = nil
 
   describe 'Site onlyoffice.com' do
@@ -245,7 +245,7 @@ describe 'SiteHourlyCheck' do
   end
 
   after do |example|
-    testrail&.add_result_to_test_case example
+    test_manager&.add_result(example, @test)
     @test&.webdriver&.quit
     @test&.webdriver&.quit
     WebDriver.clean_up
@@ -257,7 +257,6 @@ describe 'SiteHourlyCheck' do
         message_report = { subject: '[Error] Site Hourly', body: message_body }
         they_want_to_know = %w[nct.tester@yandex.ru test.teamlab@yandex.ru shockwavenn@gmail.com
                                denis.spitsyn.nct@gmail.com]
-        they_want_to_know.push('alexey.safronov@onlyoffice.com') if run_name.include?('[Mail][Socket.IO]')
         TestingSiteOnlyoffice::TeamlabFailNotifier.send(message_body)
         Gmail_helper.new('onlyoffice.daily.report@gmail.com', 'onlyoffice.daily.report1').send_mail(they_want_to_know,
                                                                                                     message_report[:subject], message_report[:body])
