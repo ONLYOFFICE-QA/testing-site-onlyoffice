@@ -31,7 +31,7 @@ describe 'Desktop apps' do
   end
 
   after do |example|
-    test_manager.add_result(example)
+    test_manager.add_result(example, @test)
     @test.webdriver.quit
   end
 end
