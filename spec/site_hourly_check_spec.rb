@@ -257,7 +257,6 @@ describe 'SiteHourlyCheck' do
         message_report = { subject: '[Error] Site Hourly', body: message_body }
         they_want_to_know = %w[nct.tester@yandex.ru test.teamlab@yandex.ru shockwavenn@gmail.com
                                denis.spitsyn.nct@gmail.com]
-        they_want_to_know.push('alexey.safronov@onlyoffice.com') if run_name.include?('[Mail][Socket.IO]')
         TestingSiteOnlyoffice::TeamlabFailNotifier.send(message_body)
         Gmail_helper.new('onlyoffice.daily.report@gmail.com', 'onlyoffice.daily.report1').send_mail(they_want_to_know,
                                                                                                     message_report[:subject], message_report[:body])
