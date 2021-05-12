@@ -15,7 +15,7 @@ Metrics/AbcSize:
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 # IgnoredMethods: refine
 Metrics/BlockLength:
-  Max: 222
+  Max: 224
 
 # Offense count: 2
 # Configuration parameters: CountComments, CountAsOne.
@@ -30,12 +30,12 @@ Metrics/CyclomaticComplexity:
 # Offense count: 19
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 Metrics/MethodLength:
-  Max: 66
+  Max: 70
 
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne.
 Metrics/ModuleLength:
-  Max: 233
+  Max: 238
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.
@@ -44,14 +44,7 @@ Metrics/PerceivedComplexity:
 
 # Offense count: 10
 Naming/AccessorMethodName:
-  Exclude:
-    - 'lib/testing_site_onlyoffice/additional_products/payment/avangate.rb'
-    - 'lib/testing_site_onlyoffice/get_onlyoffice/commercial_packages/site_commercial_download_form.rb'
-    - 'lib/testing_site_onlyoffice/get_onlyoffice/site_sign_up.rb'
-    - 'lib/testing_site_onlyoffice/modules/site_languages.rb'
-    - 'lib/testing_site_onlyoffice/portal_helper/site_portal_creation_data.rb'
-    - 'lib/testing_site_onlyoffice/pricing/site_pricing_cloud.rb'
-    - 'lib/testing_site_onlyoffice/solutions/site_home_use.rb'
+  Enabled: false
 
 # Offense count: 8
 # Configuration parameters: EnforcedStyle, CheckMethodNames, CheckSymbols, AllowedIdentifiers.
@@ -94,7 +87,7 @@ RSpec/InstanceVariable:
 
 # Offense count: 19
 RSpec/MultipleExpectations:
-  Max: 15
+  Max: 16
 
 # Offense count: 15
 RSpec/NestedGroups:

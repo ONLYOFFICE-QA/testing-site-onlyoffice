@@ -40,7 +40,7 @@ describe 'Site Nonprofit page links' do
 
   it '[Site][NonProfits] Check button `See all integrations`' do
     @connectors_page = @nonprofits_page.click_see_all_integrations
-    expect(@connectors_page).to be_a TestingSiteOnlyoffice::SiteConnectors
+    expect(@connectors_page).to be_a TestingSiteOnlyoffice::SiteProductsConnectorsOnlyoffice
   end
 
   it '[Site][NonProfits] Check button `Request free cloud`' do

@@ -4,7 +4,7 @@ require_relative 'site_request_free_cloud'
 require_relative '../../products/site_products_docs'
 require_relative '../../products/site_products_groups'
 require_relative '../../products/site_products_security'
-require_relative '../../products/site_connectors'
+require_relative '../../products/connectors/site_products_connectors_onlyoffice'
 require_relative '../../get_onlyoffice/desktop_and_mobile/desktop/site_desktop_apps'
 require_relative '../../get_onlyoffice/modules/site_download_helper'
 
@@ -61,7 +61,7 @@ module TestingSiteOnlyoffice
 
     def click_see_all_integrations
       see_all_integrations_element.click
-      SiteConnectors.new(@instance)
+      SiteProductsConnectorsOnlyoffice.new(@instance)
     end
   end
 end

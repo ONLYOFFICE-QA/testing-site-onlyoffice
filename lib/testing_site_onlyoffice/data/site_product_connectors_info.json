@@ -1,0 +1,72 @@
+{
+  "agorum": {
+    "more_info": "Dokumente im Team bearbeiten | ONLYOFFICE in agorum core",
+    "website": "Dokumentenmanagement - Open Source DMS/ECM",
+    "get_it_now": "Dokumente im Team bearbeiten | ONLYOFFICE in agorum core"
+  },
+  "communigate": {
+    "more_info": "CommuniGate Pro",
+    "website": "CommuniGate Systems Unified Communications for Regulated Industries",
+    "get_it_now": "CommuniGate Pro"
+  },
+  "ecmind": {
+    "more_info": "ECMind | Embedded Office for enaio®",
+    "website": "ECMind | Die Digitalisierung Ihrer Arbeitswelt",
+    "get_it_now": "ECMind | Embedded Office for enaio®"
+  },
+  "exoplatform": {
+    "more_info": "Editing Documents Inside eXo with New OnlyOffice Add-on |eXo Platform",
+    "website": "Digital Workplace - Best Digital Workplace Software | eXo Platform",
+    "get_it_now": "GitHub - exoplatform/onlyoffice: ONLYOFFICE (http://www.onlyoffice.com/) integration for eXo Platform"
+  },
+  "jalios": {
+    "more_info": "Jalios Community - Module OnlyOffice 1.2",
+    "website": "Jalios Digital Workplace, Collaborative Intranet, Enterprise Social Network, Social Learning, Document Management und content management system",
+    "get_it_now": "Jalios Community - Module OnlyOffice 1.2"
+  },
+  "liferay": {
+    "more_info": "Collaborative Document",
+    "website": "SMC I Soluzioni, Servizi e Formazione IT I Liferay Platinum Partner",
+    "get_it_now": "Collaborative Document"
+  },
+  "maarch": {
+    "more_info": "Paramétrage de l'édition des documents · Documentation Maarch Courrier",
+    "website": "Maarch.com - Editeur de logiciels libres - Archivage électronique - Courrier",
+    "get_it_now": "Paramétrage de l'édition des documents · Documentation Maarch Courrier"
+  },
+  "moodle": {
+    "more_info": "GitHub - logicexpertise/moodle-mod_onlyoffice: Moodle ONLYOFFICE Document Server online editor integration",
+    "website": "logicexpertise (Logic Expertise) · GitHub",
+    "get_it_now": "GitHub - logicexpertise/moodle-mod_onlyoffice: Moodle ONLYOFFICE Document Server online editor integration"
+  },
+  "openolat": {
+    "more_info": "Office-Editor und virtueller Klassenraum (powered by frentix) – OpenOlat",
+    "website": "OpenOlat – Infinite learning",
+    "get_it_now": "Office-Editor und virtueller Klassenraum (powered by frentix) – OpenOlat"
+  },
+  "powerfolder": {
+    "more_info": "ONLYOFFICE Setup Guide - PowerFolder - PowerFolder Wiki",
+    "website": "Private and Public Cloud file sync and share",
+    "get_it_now": "ONLYOFFICE Setup Guide - PowerFolder - PowerFolder Wiki"
+  },
+  "pydio": {
+    "more_info": "[ED] Only office | Pydio",
+    "website": "Pydio | Enterprise File Sharing & Sync Platform",
+    "get_it_now": "[ED] Only office | Pydio"
+  },
+  "seafile": {
+    "more_info": "OnlyOffice Integration - Seafile admin manual",
+    "website": "Seafile - Open Source File Sync and Share Software",
+    "get_it_now": "OnlyOffice Integration - Seafile admin manual"
+  },
+  "talkspirit": {
+    "more_info": "The OfficeNow suite of collaborative documents | Talkspirit Help Center",
+    "website": "Talkspirit - Enterprise social network, Collaborative platform",
+    "get_it_now": "The OfficeNow suite of collaborative documents | Talkspirit Help Center"
+  },
+  "xwiki": {
+    "more_info": "OnlyOffice Connector Application - XWiki Store",
+    "website": "Home - XWiki",
+    "get_it_now": "OnlyOffice Connector Application - XWiki Store"
+  }
+}
