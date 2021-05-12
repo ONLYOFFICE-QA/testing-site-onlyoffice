@@ -24,7 +24,8 @@ module TestingSiteOnlyoffice
     end
 
     # @param [RSpec::Core::Example] example - is a returned object in "after" block
-    # @param [Hash] comment is a data for result. It *must* contain :title and :value keys
+    # @param [TestingSiteOnlyoffice::SiteTestInstance]
+    # @param [String] comment is a data for result
     def add_result(example, instance, comment = '')
       result = @tcm_helper.parse(example)
       comment << "Error #{instance.webdriver.webdriver_screenshot}\n" if test_failed_and_has_no_screenshot?(result, example)
@@ -37,7 +38,7 @@ module TestingSiteOnlyoffice
     end
 
     def test_failed_and_has_no_screenshot?(result, example)
-      result.comment.split('Error screenshot: ')[1].nil? if example.exception
+      !result.comment.include?('Error screenshot') if example.exception
     end
 
     # take describer in TcmHelper.result_message and reformat it
