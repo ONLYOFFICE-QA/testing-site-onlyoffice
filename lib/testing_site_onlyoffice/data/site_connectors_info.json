@@ -35,7 +35,7 @@
     "whats_new": "onlyoffice-nuxeo/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-nuxeo · GitHub"
   },
   "owncloud": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-owncloud: The app which enables the users to edit office documents from ownCloud/Nextcloud using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to ownCloud/Nextcloud",
+    "github": "GitHub - ONLYOFFICE/onlyoffice-owncloud: The app which enables the users to edit office documents from ownCloud using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to ownCloud",
     "instruction": "Integration. Getting Started. OwnCloud - ONLYOFFICE",
     "whats_new": "onlyoffice-owncloud/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-owncloud · GitHub"
   },
