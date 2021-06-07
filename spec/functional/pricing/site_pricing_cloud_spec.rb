@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 partner_email = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL)
@@ -35,6 +37,11 @@ describe 'Pricing Cloud Service' do
     end
   end
 
+  after do |example|
+    test_manager.add_result(example, @test)
+    @test.webdriver.quit
+  end
+
   describe 'business calculator check' do
     before { @pricing_cloud_page.calculate_your_price }
 
@@ -68,10 +75,5 @@ describe 'Pricing Cloud Service' do
     vip_request_page.send_vip_cloud_request(company_name: company_name)
     subject_message = "#{company_name}#{TestingSiteOnlyoffice::SiteNotificationHelper.site_translate_from_resource(config.language, 'contact_vip', 'WebStudio')}"
     expect(partner_email.check_email_by_subject({ subject: subject_message }, 300, true)).to be_truthy
-  end
-
-  after do |example|
-    test_manager.add_result(example, @test)
-    @test.webdriver.quit
   end
 end

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module TestingSiteOnlyoffice
+  # Site helper for getting current hash and branch
   class SiteVersionHelper
     def self.fetch_uri
       URI("#{config.server}/revision?Site_Testing=4testing")

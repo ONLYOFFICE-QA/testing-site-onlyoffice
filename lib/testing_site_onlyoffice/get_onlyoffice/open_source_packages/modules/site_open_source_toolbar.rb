@@ -1,7 +1,8 @@
-# Open source packages page
-# https://user-images.githubusercontent.com/40513035/110755741-58001500-825a-11eb-9356-7a99013a9b69.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Open source packages page
+  # https://user-images.githubusercontent.com/40513035/110755741-58001500-825a-11eb-9356-7a99013a9b69.png
   module SiteToolbarOpenSource
     include PageObject
 

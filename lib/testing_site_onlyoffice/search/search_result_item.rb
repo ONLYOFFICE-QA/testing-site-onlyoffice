@@ -1,7 +1,8 @@
-# Single item in search result
-# https://user-images.githubusercontent.com/40513035/116211956-39b28380-a6f9-11eb-8b4d-ad81fd7f62d9.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Single item in search result
+  # https://user-images.githubusercontent.com/40513035/116211956-39b28380-a6f9-11eb-8b4d-ad81fd7f62d9.png
   class SiteResultItem
     def initialize(instance, index)
       @instance = instance

@@ -1,8 +1,10 @@
-# /spreadsheet-editor.aspx
-# https://user-images.githubusercontent.com/40513035/101172507-4f43e580-3652-11eb-8218-3b0f96dd55a9.png
+# frozen_string_literal: true
+
 require_relative '../modules/site_editors_xpath'
 
 module TestingSiteOnlyoffice
+  # /spreadsheet-editor.aspx
+  # https://user-images.githubusercontent.com/40513035/101172507-4f43e580-3652-11eb-8218-3b0f96dd55a9.png
   class SiteProductsPresentationEditor
     include PageObject
     include SiteEditorsXpath

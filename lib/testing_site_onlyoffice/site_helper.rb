@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 require_relative 'portal_helper/portal_login_page'
 
 module TestingSiteOnlyoffice
+  # Helper methods for site initializing
   class SiteHelper
     attr_accessor :test, :user_list
 

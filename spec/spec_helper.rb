@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/testing_site_onlyoffice'
 require_relative '../shared_examples/commercial_installer_download'
 require_relative '../shared_examples/desktop_installer_download'

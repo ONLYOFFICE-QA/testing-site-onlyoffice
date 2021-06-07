@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module TestingSiteOnlyoffice
+  # Default admin data for creating portal
   class SitePortalCreationData
     attr_accessor :first_name, :last_name, :email, :password, :portal_name
 

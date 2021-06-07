@@ -1,7 +1,8 @@
-# Products & Features -> Onlyoffice Workspace
-# https://user-images.githubusercontent.com/40513035/100944239-e48a9100-350f-11eb-8259-2039d8176454.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Products & Features -> Onlyoffice Workspace
+  # https://user-images.githubusercontent.com/40513035/100944239-e48a9100-350f-11eb-8259-2039d8176454.png
   class SiteProductsWorkspace
     include PageObject
     include SiteToolbar

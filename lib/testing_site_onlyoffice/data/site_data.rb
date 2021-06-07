@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # General site sata
   class SiteData
     DEFAULT_ADMIN_NAME = 'admin-zero'
     DEFAULT_ADMIN_LASTNAME = 'admin-zero'

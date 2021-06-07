@@ -1,8 +1,10 @@
-# /community.aspx
-# https://user-images.githubusercontent.com/40513035/101331190-b052ff80-3884-11eb-8575-ebf4d6bf28fd.png
+# frozen_string_literal: true
+
 require_relative '../modules/site_groups_xpath'
 
 module TestingSiteOnlyoffice
+  # /community.aspx
+  # https://user-images.githubusercontent.com/40513035/101331190-b052ff80-3884-11eb-8575-ebf4d6bf28fd.png
   class SiteProductsCommunity
     include PageObject
     include SiteGroupsXpath

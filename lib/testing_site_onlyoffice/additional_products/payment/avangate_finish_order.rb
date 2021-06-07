@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Finish Avangate order
+  # https://user-images.githubusercontent.com/40513035/120980622-a757c380-c72b-11eb-8786-a5538d5c5ab8.png
   class AvangateFinishOrder
     attr_accessor :instance
 

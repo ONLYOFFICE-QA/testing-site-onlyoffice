@@ -1,8 +1,10 @@
-# /crm.aspx
-# https://user-images.githubusercontent.com/40513035/101342416-940a8f00-3893-11eb-9f44-727eaf88ffa8.png
+# frozen_string_literal: true
+
 require_relative '../modules/site_groups_xpath'
 
 module TestingSiteOnlyoffice
+  # /crm.aspx
+  # https://user-images.githubusercontent.com/40513035/101342416-940a8f00-3893-11eb-9f44-727eaf88ffa8.png
   class SiteProductsCRM
     include PageObject
     include SiteGroupsXpath

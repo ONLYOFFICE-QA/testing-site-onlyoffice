@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_examples_for 'commercial_installer_download' do |product, installers_list|
   installers_list[:without_buy_button].each do |installer|
     describe installer.to_s do

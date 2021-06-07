@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'about/site_about'
 require_relative 'about/site_blog'
 
@@ -75,6 +77,8 @@ require_relative 'site_wrong_portal'
 require_relative 'site_notification_helper'
 
 module TestingSiteOnlyoffice
+  # Site home page
+  # https://user-images.githubusercontent.com/40513035/120973030-42986b00-c723-11eb-81f4-94982ce056cd.png
   class SiteHomePage
     attr_accessor :instance
 

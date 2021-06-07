@@ -1,12 +1,13 @@
-# Popup for chatting with support
-# https://user-images.githubusercontent.com/40513035/99503591-72527200-298f-11eb-8227-b3d5632a1099.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Popup for chatting with support
+  # https://user-images.githubusercontent.com/40513035/99503591-72527200-298f-11eb-8227-b3d5632a1099.png
   module SiteSupportChatPopup
-    CHAT_OPENED_FRAME_XPATH = '//iframe[@data-test-id="ChatWidgetWindow-iframe"]'.freeze
-    CHAT_CLOSED_FRAME_XPATH = '//iframe[@data-test-id="ChatWidgetButton-iframe"]'.freeze
+    CHAT_OPENED_FRAME_XPATH = '//iframe[@data-test-id="ChatWidgetWindow-iframe"]'
+    CHAT_CLOSED_FRAME_XPATH = '//iframe[@data-test-id="ChatWidgetButton-iframe"]'
 
-    HIDE_CHAT_BUTTON_XPATH = '//div[contains(@class, "chatWindow")]//div[contains(@class, "close")]'.freeze
+    HIDE_CHAT_BUTTON_XPATH = '//div[contains(@class, "chatWindow")]//div[contains(@class, "close")]'
 
     def chat_window_shown?
       @instance.webdriver.element_visible?(CHAT_OPENED_FRAME_XPATH) || @instance.webdriver.element_visible?(CHAT_CLOSED_FRAME_XPATH)

@@ -1,7 +1,8 @@
-# /office-for-ios.aspx
-# https://user-images.githubusercontent.com/40513035/101085696-dcd6f500-35c0-11eb-9dae-0bef4df40372.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # /office-for-ios.aspx
+  # https://user-images.githubusercontent.com/40513035/101085696-dcd6f500-35c0-11eb-9dae-0bef4df40372.png
   class SiteProductsIos
     include PageObject
     include SiteToolbar

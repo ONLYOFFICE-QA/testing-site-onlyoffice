@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module TestingSiteOnlyoffice
+  # Version abd release data class
   class SiteConnectorReleaseData
     attr_accessor :version, :date
 

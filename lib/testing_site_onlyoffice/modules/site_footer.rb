@@ -1,7 +1,8 @@
-# Site footer
-# https://user-images.githubusercontent.com/40513035/100441407-75e4a800-30b7-11eb-8e39-9d2cc50329ee.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Site footer
+  # https://user-images.githubusercontent.com/40513035/100441407-75e4a800-30b7-11eb-8e39-9d2cc50329ee.png
   module SiteFooter
     include PageObject
 

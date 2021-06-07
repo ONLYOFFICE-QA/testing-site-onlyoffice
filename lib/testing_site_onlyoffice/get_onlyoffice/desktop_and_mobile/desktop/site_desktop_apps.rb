@@ -1,5 +1,5 @@
-# Download Desktop
-# https://user-images.githubusercontent.com/40513035/96171228-4aee2c80-0f2d-11eb-80f9-5be447890300.png
+# frozen_string_literal: true
+
 require_relative 'site_desktop_constructor'
 require_relative '../modules/site_desktop_mobiles_toolbar'
 require_relative '../../modules/site_download_helper'
@@ -7,6 +7,8 @@ require_relative '../../modules/site_block_constructor_helper'
 require_relative '../../../modules/site_toolbar'
 
 module TestingSiteOnlyoffice
+  # Download Desktop
+  # https://user-images.githubusercontent.com/40513035/96171228-4aee2c80-0f2d-11eb-80f9-5be447890300.png
   class SiteDesktopApps
     include PageObject
     include SiteBlockConstructorHelper

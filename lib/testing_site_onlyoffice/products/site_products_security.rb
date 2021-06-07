@@ -1,7 +1,8 @@
-# /security.aspx
-# https://user-images.githubusercontent.com/40513035/102408701-08b19c00-3fff-11eb-80a6-8de52b3640cd.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # /security.aspx
+  # https://user-images.githubusercontent.com/40513035/102408701-08b19c00-3fff-11eb-80a6-8de52b3640cd.png
   class SiteProductsSecurity
     include PageObject
 

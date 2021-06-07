@@ -1,5 +1,5 @@
-# /all-connectors.aspx for developed by onlyoffice
-# https://user-images.githubusercontent.com/40513035/116680142-2e14c600-a960-11eb-8c87-746906a7db86.png
+# frozen_string_literal: true
+
 require_relative 'modules/site_connectors_toolbar'
 require_relative 'site_connectors_constructor'
 require_relative 'site_connectors_more_info'
@@ -9,6 +9,8 @@ require_relative '../../get_onlyoffice/open_source_packages/connectors/site_open
 require_relative '../../site_home_page'
 
 module TestingSiteOnlyoffice
+  # /all-connectors.aspx for developed by onlyoffice
+  # https://user-images.githubusercontent.com/40513035/116680142-2e14c600-a960-11eb-8c87-746906a7db86.png
   class SiteProductsConnectorsOnlyoffice
     include PageObject
     include SiteConnectorsToolbar

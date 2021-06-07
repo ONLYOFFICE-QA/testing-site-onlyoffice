@@ -1,7 +1,8 @@
-# Get download, install, release date, verson and what's new xpath for desktop
-# https://user-images.githubusercontent.com/40513035/112073762-f3826700-8b31-11eb-8362-d3314f511826.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Get download, install, release date, verson and what's new xpath for desktop
+  # https://user-images.githubusercontent.com/40513035/112073762-f3826700-8b31-11eb-8362-d3314f511826.png
   class SiteDesktopConstructor
     attr_accessor :instance, :instruction_xpath, :download_xpath, :download_xpath_x86, :whats_new_link, :release_date_xpath, :version_xpath, :github_link
 

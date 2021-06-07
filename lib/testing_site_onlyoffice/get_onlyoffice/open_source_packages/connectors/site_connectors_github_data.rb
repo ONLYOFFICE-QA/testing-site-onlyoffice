@@ -1,6 +1,7 @@
-# Gets Release date and Version of connectors on both site and Github
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Gets Release date and Version of connectors on both site and Github
   module SiteConnectorsGithubData
     def github_data_json(connector)
       link = "https://api.github.com/repos/ONLYOFFICE/onlyoffice-#{connector}/releases/latest"

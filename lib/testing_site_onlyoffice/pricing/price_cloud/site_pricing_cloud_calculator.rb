@@ -1,7 +1,8 @@
-# Cloud services price calculator
-# https://user-images.githubusercontent.com/40513035/115660902-82c99880-a2f1-11eb-92d6-c8e6b88fee93.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Cloud services price calculator
+  # https://user-images.githubusercontent.com/40513035/115660902-82c99880-a2f1-11eb-92d6-c8e6b88fee93.png
   module SitePricingCloudCalculator
     include PageObject
 

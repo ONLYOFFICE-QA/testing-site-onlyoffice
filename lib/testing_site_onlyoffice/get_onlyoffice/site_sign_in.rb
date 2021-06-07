@@ -1,9 +1,11 @@
-# Sign in page
-# https://user-images.githubusercontent.com/40513035/95858216-69a1c700-0d65-11eb-9255-5d2361a7d772.png
+# frozen_string_literal: true
+
 require_relative '../modules/site_toolbar'
 require_relative '../portal_helper/portal_main_page'
 
 module TestingSiteOnlyoffice
+  # Sign in page
+  # https://user-images.githubusercontent.com/40513035/95858216-69a1c700-0d65-11eb-9255-5d2361a7d772.png
   class SiteSignIn
     attr_accessor :instance
 

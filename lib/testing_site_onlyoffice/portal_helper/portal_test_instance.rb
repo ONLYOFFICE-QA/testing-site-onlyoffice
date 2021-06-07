@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module TestingSiteOnlyoffice
+  # Portal instance parameters
   class PortalTestInstance
     attr_accessor :webdriver
 

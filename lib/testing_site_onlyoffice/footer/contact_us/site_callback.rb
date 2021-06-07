@@ -1,6 +1,8 @@
-# https://cloud.githubusercontent.com/assets/18173785/22292502/a5427aec-e31c-11e6-90e9-49d0b18621c7.png
-# /call-back-form.aspx
+# frozen_string_literal: true
+
 module TestingSiteOnlyoffice
+  # /call-back-form.aspx
+  # # https://cloud.githubusercontent.com/assets/18173785/22292502/a5427aec-e31c-11e6-90e9-49d0b18621c7.png
   class SiteCallback
     include PageObject
     include SiteToolbar

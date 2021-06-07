@@ -1,7 +1,8 @@
-# /banners.aspx
-# https://user-images.githubusercontent.com/18173785/29400808-57bbeeaa-8337-11e7-86f8-c4223588a3c8.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # /banners.aspx
+  # https://user-images.githubusercontent.com/18173785/29400808-57bbeeaa-8337-11e7-86f8-c4223588a3c8.png
   class SiteNonProfitBanners
     include PageObject
 

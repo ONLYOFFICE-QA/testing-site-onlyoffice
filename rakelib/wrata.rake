@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'wrata_api'
 
 site_wrata_user = 'Site'

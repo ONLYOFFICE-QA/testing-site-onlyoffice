@@ -1,8 +1,10 @@
-# /calendar.aspx
-# https://user-images.githubusercontent.com/40513035/101333009-222c4880-3887-11eb-9abc-f716d57838ce.png
+# frozen_string_literal: true
+
 require_relative '../modules/site_groups_xpath'
 
 module TestingSiteOnlyoffice
+  # /calendar.aspx
+  # https://user-images.githubusercontent.com/40513035/101333009-222c4880-3887-11eb-9abc-f716d57838ce.png
   class SiteProductsCalendar
     include PageObject
     include SiteGroupsXpath

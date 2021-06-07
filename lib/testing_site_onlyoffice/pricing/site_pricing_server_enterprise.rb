@@ -1,9 +1,11 @@
-# Pricing for Enterprice edition
-# https://user-images.githubusercontent.com/40513035/99254413-62b61a80-2823-11eb-8eb2-d68a48e32e2f.png
+# frozen_string_literal: true
+
 require_relative '../modules/site_toolbar'
 require_relative 'modules/site_pricing_helper'
 
 module TestingSiteOnlyoffice
+  # Pricing for Enterprice edition
+  # https://user-images.githubusercontent.com/40513035/99254413-62b61a80-2823-11eb-8eb2-d68a48e32e2f.png
   class SitePriceServerEnterprise
     include PageObject
     include SitePricingHelper

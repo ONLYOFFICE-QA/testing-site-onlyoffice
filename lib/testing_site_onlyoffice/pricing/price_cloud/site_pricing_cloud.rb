@@ -1,5 +1,5 @@
-# /saas.aspx
-# https://user-images.githubusercontent.com/40513035/115361865-d911cc80-a175-11eb-88da-868922b05024.png
+# frozen_string_literal: true
+
 require_relative '../../additional_products/site_faq'
 require_relative '../../additional_products/payment/avangate'
 require_relative '../../get_onlyoffice/site_sign_up'
@@ -7,6 +7,8 @@ require_relative 'site_pricing_cloud_calculator'
 require_relative 'site_require_vip_cloud'
 
 module TestingSiteOnlyoffice
+  # /saas.aspx
+  # https://user-images.githubusercontent.com/40513035/115361865-d911cc80-a175-11eb-88da-868922b05024.png
   class SitePricingCloud
     include PageObject
     include SitePricingCloudCalculator

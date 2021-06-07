@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module TestingSiteOnlyoffice
+  # Telegram error message redactor
   module TelegramPerks
     def self.pimp_my_message(msg)
       hashtags = tags(msg).map { |tag| "##{tag}" }.join(' ')

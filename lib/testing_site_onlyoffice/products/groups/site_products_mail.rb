@@ -1,8 +1,10 @@
-# /mail.aspx
-# https://user-images.githubusercontent.com/40513035/101343337-e8fad500-3894-11eb-82ab-3475aa336020.png
+# frozen_string_literal: true
+
 require_relative '../modules/site_groups_xpath'
 
 module TestingSiteOnlyoffice
+  # /mail.aspx
+  # https://user-images.githubusercontent.com/40513035/101343337-e8fad500-3894-11eb-82ab-3475aa336020.png
   class SiteProductsMail
     include PageObject
     include SiteGroupsXpath

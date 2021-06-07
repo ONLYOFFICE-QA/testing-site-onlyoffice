@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
@@ -5,6 +7,11 @@ describe 'Document Builder download' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @home_use_page = site_home_page.click_link_on_toolbar(:home_use)
+  end
+
+  after do |example|
+    test_manager.add_result(example, @test)
+    @test.webdriver.quit
   end
 
   it '[Site][HomeUse]Button "Download now" works for desktop editors works' do
@@ -50,10 +57,5 @@ describe 'Document Builder download' do
   it '[Site][HomeUse]Button "Get it on Google Play" works' do
     page_title = @home_use_page.click_download_on_google_play
     expect(page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_GOOGLE)
-  end
-
-  after do |example|
-    test_manager.add_result(example, @test)
-    @test.webdriver.quit
   end
 end

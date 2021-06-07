@@ -1,7 +1,8 @@
-# /collaboration-platform.aspx
-# https://user-images.githubusercontent.com/40513035/101089919-e6fbf200-35c6-11eb-99e6-b82c727dda22.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # /collaboration-platform.aspx
+  # https://user-images.githubusercontent.com/40513035/101089919-e6fbf200-35c6-11eb-99e6-b82c727dda22.png
   class SiteProductsGroups
     include PageObject
     include SiteToolbar

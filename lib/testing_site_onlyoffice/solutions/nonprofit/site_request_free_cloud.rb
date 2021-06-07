@@ -1,9 +1,11 @@
-# /free-cloud.aspx
-# https://user-images.githubusercontent.com/40513035/101844672-0a421680-3b5e-11eb-8107-cde00a74100b.png
+# frozen_string_literal: true
+
 require_relative 'site_nonprofit_banners'
 require_relative '../../get_onlyoffice/site_sign_up'
 
 module TestingSiteOnlyoffice
+  # /free-cloud.aspx
+  # https://user-images.githubusercontent.com/40513035/101844672-0a421680-3b5e-11eb-8107-cde00a74100b.png
   class SiteRequestFreeCloud
     include PageObject
 

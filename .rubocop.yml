@@ -18,6 +18,8 @@ inherit_from:
 AllCops:
   NewCops: enable
 
-# Until https://github.com/rubocop-hq/rubocop/issues/9083
-Style/RedundantArgument:
+# Totally disable this check
+# since we don't initialize class directly in spec
+# and checking of one class can be split into different specs
+RSpec/DescribeClass:
   Enabled: false

@@ -1,7 +1,8 @@
-# Get download, install, github or what's new xpath of current block
-# https://user-images.githubusercontent.com/40513035/98486550-fd649700-222e-11eb-98f9-f46137322bf6.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Get download, install, github or what's new xpath of current block
+  # https://user-images.githubusercontent.com/40513035/98486550-fd649700-222e-11eb-98f9-f46137322bf6.png
   class SiteBlockConstructor
     attr_accessor :instance, :instruction_xpath, :download_xpath
 

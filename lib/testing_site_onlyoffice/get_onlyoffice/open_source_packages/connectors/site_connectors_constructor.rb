@@ -1,7 +1,8 @@
-# Get download, install, release date, verson and what's new xpath for open source connector block
-# https://user-images.githubusercontent.com/40513035/112917085-cba57d00-90b6-11eb-8191-1de6102afadb.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Get download, install, release date, verson and what's new xpath for open source connector block
+  # https://user-images.githubusercontent.com/40513035/112917085-cba57d00-90b6-11eb-8191-1de6102afadb.png
   class SiteConnectorsConstructor
     attr_accessor :instance, :get_on_github_xpath, :instruction_xpath, :whats_new_xpath, :version_xpath, :release_date_xpath
 

@@ -1,10 +1,12 @@
-# Site connectors top toolbar
-# https://user-images.githubusercontent.com/40513035/116348744-7e92f480-a7a3-11eb-9e56-a04ae6fd53d5.png
+# frozen_string_literal: true
+
 require_relative '../../../get_onlyoffice/commercial_packages/site_commercial_docs'
 require_relative '../site_products_connectors_onlyoffice'
 require_relative '../site_products_connectors_partners'
 
 module TestingSiteOnlyoffice
+  # Site connectors top toolbar
+  # https://user-images.githubusercontent.com/40513035/116348744-7e92f480-a7a3-11eb-9e56-a04ae6fd53d5.png
   module SiteConnectorsToolbar
     include PageObject
 

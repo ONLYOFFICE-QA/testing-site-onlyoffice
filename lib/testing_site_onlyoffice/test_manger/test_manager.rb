@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 require_relative 'palladium_wraper'
 require_relative 'test_manager_testrail'
 require 'onlyoffice_tcm_helper'
 
-# it is helper for adding result to test case management system, like palladium and testrail
-# for using, create TestManager object in your mail describe
-# Example: test_manager = TestManager.new(suite_name: description)
-# Then, add result in `after: each` block
-# Example: test_manager.add_result(example)
 module TestingSiteOnlyoffice
+  # it is helper for adding result to test case management system, like palladium and testrail
+  # for using, create TestManager object in your mail describe
+  # Example: test_manager = TestManager.new(suite_name: description)
+  # Then, add result in `after: each` block
+  # Example: test_manager.add_result(example)
   class TestManager
     include PalladiumWrapper
     include TestManagerTestrail

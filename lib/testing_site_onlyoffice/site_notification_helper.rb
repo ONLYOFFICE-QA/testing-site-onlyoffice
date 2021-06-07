@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 require 'csv'
 
 module TestingSiteOnlyoffice
+  # Methods for checking admins mail notifications
   class SiteNotificationHelper
     def self.site_translate_from_resource(language, string_name, tm_module)
       file_path = File.absolute_path('lib/testing_site_onlyoffice/data/site_translates.csv')

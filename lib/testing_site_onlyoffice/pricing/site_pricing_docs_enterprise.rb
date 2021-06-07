@@ -1,9 +1,11 @@
-# Pricing for Onlyoffice Docs Enterprice edition
-# https://user-images.githubusercontent.com/40513035/100147949-1adf6500-2ead-11eb-8a68-1f477922c777.png
+# frozen_string_literal: true
+
 require_relative '../modules/site_toolbar'
 require_relative 'modules/site_pricing_helper'
 
 module TestingSiteOnlyoffice
+  # Pricing for Onlyoffice Docs Enterprice edition
+  # https://user-images.githubusercontent.com/40513035/100147949-1adf6500-2ead-11eb-8a68-1f477922c777.png
   class SitePriceDocsEnterprise
     include PageObject
     include SitePricingHelper

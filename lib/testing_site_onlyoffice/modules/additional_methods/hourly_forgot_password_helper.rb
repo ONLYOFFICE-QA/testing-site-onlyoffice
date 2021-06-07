@@ -1,6 +1,7 @@
-# Module for code for password forgot function
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Module for code for password forgot function
   module HourlyForgotPasswordHelper
     # @return [IredMailHelper] mail to send forgotten password
     def mail_for_forgotten_password

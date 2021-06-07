@@ -1,7 +1,8 @@
-# Top toolbar languages selector
-# https://user-images.githubusercontent.com/40513035/95858305-90f89400-0d65-11eb-95a1-3aa66b1258d0.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Top toolbar languages selector
+  # https://user-images.githubusercontent.com/40513035/95858305-90f89400-0d65-11eb-95a1-3aa66b1258d0.png
   module SiteLanguages
     include PageObject
 

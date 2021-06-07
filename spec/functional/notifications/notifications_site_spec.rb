@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
@@ -11,6 +13,12 @@ client_email = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::CLI
 describe 'Registration new portal' do
   before do
     @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
+  end
+
+  after do |example|
+    test_manager.add_result(example, @test)
+    @test&.webdriver&.quit
+    site_helper.test&.webdriver&.quit
   end
 
   it 'Check button `Recover` work on `wrong portal name` page for correct email' do
@@ -73,11 +81,5 @@ describe 'Registration new portal' do
       subscribe_confirm = subscribe_popup.subscribe_from_link(subscribe_link)
       expect(subscribe_confirm).to be_wait_success_text_visible
     end
-  end
-
-  after do |example|
-    test_manager.add_result(example, @test)
-    @test&.webdriver&.quit
-    site_helper.test&.webdriver&.quit
   end
 end

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Site Download data
   class SiteDownloadData
     # Desktop
     def self.desktop_download_list_type
