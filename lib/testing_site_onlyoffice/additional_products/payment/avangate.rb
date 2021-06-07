@@ -4,6 +4,8 @@ require_relative 'data/payment_data'
 require_relative 'avangate_finish_order'
 
 module TestingSiteOnlyoffice
+  # https://store.onlyoffice.com/order/checkout.php
+  # https://user-images.githubusercontent.com/40513035/120980303-56e06600-c72b-11eb-9752-630afdeb2609.png
   class Avangate
     attr_accessor :instance
 
@@ -46,13 +48,15 @@ module TestingSiteOnlyoffice
     element(:avangate_upsell_frame, xpath: '//*[@id="order__page__upsell_product"]')
     element(:avangate_upsell_close, xpath: '//*[@id="order__page__upsell_product"]//a')
 
-    def initialize(instance, select_usd = true, close_upsell = false)
+    def initialize(instance, params = {})
       super(instance.webdriver.driver)
       @instance = instance
-      wait_to_load(select_usd, close_upsell)
+      wait_to_load(params)
     end
 
-    def wait_to_load(select_usd = true, close_upsell = false)
+    def wait_to_load(params = {})
+      select_usd = params.fetch(:select_usd, true)
+      close_upsell = params.fetch(:close_upsell, false)
       @instance.webdriver.wait_until do
         avangate_logo_visible? ||
           avangate_upsell_frame_visible? ||

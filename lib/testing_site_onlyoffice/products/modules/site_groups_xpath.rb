@@ -1,7 +1,8 @@
-# Try in the cloud and Run on your own server xpath for groups
-# https://user-images.githubusercontent.com/40513035/101329235-2dc94080-3882-11eb-8591-ff3c2a1cac1d.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Try in the cloud and Run on your own server xpath for groups
+  # https://user-images.githubusercontent.com/40513035/101329235-2dc94080-3882-11eb-8591-ff3c2a1cac1d.png
   module SiteGroupsXpath
     include PageObject
 

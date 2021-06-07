@@ -1,6 +1,8 @@
-# Main site page footer -> Subscribe to our newsletters link
-# https://user-images.githubusercontent.com/3971732/43764973-7fd0ad5a-9a37-11e8-9a43-11439b0a4800.png
+# frozen_string_literal: true
+
 module TestingSiteOnlyoffice
+  # Main site page footer -> Subscribe to our newsletters link
+  # https://user-images.githubusercontent.com/3971732/43764973-7fd0ad5a-9a37-11e8-9a43-11439b0a4800.png
   class SiteSubscribe
     include PageObject
 

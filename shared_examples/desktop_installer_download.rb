@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_examples_for 'desktop_installer_download' do |installers_list|
   installers_list[:download_file].each do |installer|
     describe installer.to_s do

@@ -1,7 +1,8 @@
-# Portal Main Page
-# https://user-images.githubusercontent.com/40513035/114158371-74cf4d00-98d9-11eb-96ba-c4384ecfaf03.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Portal Main Page
+  # https://user-images.githubusercontent.com/40513035/114158371-74cf4d00-98d9-11eb-96ba-c4384ecfaf03.png
   class PortalMainPage
     attr_accessor :instance
 

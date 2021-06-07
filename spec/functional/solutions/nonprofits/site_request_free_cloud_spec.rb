@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
@@ -7,6 +9,11 @@ describe 'Request free cloud' do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     non_profit_organizatins_page = site_home_page.click_link_on_toolbar(:nonprofits)
     @request_free_cloud_page = non_profit_organizatins_page.click_request_free_cloud
+  end
+
+  after do |example|
+    test_manager.add_result(example, @test)
+    @test.webdriver.quit
   end
 
   it '[Site][RequestFreeCloud] Check link `create your cloud office here`' do
@@ -28,10 +35,5 @@ describe 'Request free cloud' do
     expect(site_admin_email.check_email_by_subject(
              { subject: TestingSiteOnlyoffice::SiteNotificationData::NON_PROFIT_REQUEST, search: last_name }, 300, true
            )).to be_truthy
-  end
-
-  after do |example|
-    test_manager.add_result(example, @test)
-    @test.webdriver.quit
   end
 end

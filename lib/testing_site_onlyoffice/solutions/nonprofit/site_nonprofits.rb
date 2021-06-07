@@ -1,5 +1,5 @@
-# /nonprofit-organizations.aspx
-# https://user-images.githubusercontent.com/40513035/101904951-b704ae00-3bc7-11eb-9787-a5deff0df8fc.png
+# frozen_string_literal: true
+
 require_relative 'site_request_free_cloud'
 require_relative '../../products/site_products_docs'
 require_relative '../../products/site_products_groups'
@@ -9,6 +9,8 @@ require_relative '../../get_onlyoffice/desktop_and_mobile/desktop/site_desktop_a
 require_relative '../../get_onlyoffice/modules/site_download_helper'
 
 module TestingSiteOnlyoffice
+  # /nonprofit-organizations.aspx
+  # https://user-images.githubusercontent.com/40513035/101904951-b704ae00-3bc7-11eb-9787-a5deff0df8fc.png
   class SiteNonProfits
     include PageObject
     include SiteDownloadHelper

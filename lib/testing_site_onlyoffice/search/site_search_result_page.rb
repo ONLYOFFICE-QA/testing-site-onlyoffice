@@ -1,9 +1,11 @@
-# /search.aspx
-# https://user-images.githubusercontent.com/40513035/116189519-eaab2500-a6dd-11eb-8cc7-7af755bb1719.png
+# frozen_string_literal: true
+
 require_relative '../site_home_page'
 require_relative 'search_result_item'
 
 module TestingSiteOnlyoffice
+  # /search.aspx
+  # https://user-images.githubusercontent.com/40513035/116189519-eaab2500-a6dd-11eb-8cc7-7af755bb1719.png
   class SiteSearchResultPage
     include PageObject
 

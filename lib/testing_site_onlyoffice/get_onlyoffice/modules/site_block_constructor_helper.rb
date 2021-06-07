@@ -1,6 +1,7 @@
-# Helper methods for constructor block installers
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Helper methods for constructor block installers
   module SiteBlockConstructorHelper
     def click_constructor_link(xpath)
       @instance.webdriver.get_element(xpath).click

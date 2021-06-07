@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'site_home_page'
 require_relative 'portal_helper/site_portal_creation_data'
 require_relative 'teamlab_fail_notifier'
@@ -22,8 +24,8 @@ include OnlyofficeIredmailHelper
 include OnlyofficeTestrailWrapper
 include OnlyofficeWebdriverWrapper
 
-# Instance of browser to perform actions
 module TestingSiteOnlyoffice
+  # Instance of browser to perform actions
   class SiteTestInstance
     attr_accessor :webdriver, :doc_instance
     alias driver webdriver

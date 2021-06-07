@@ -1,7 +1,8 @@
-# Get download, install, release date, verson and what's new xpath for document builder block
-# https://user-images.githubusercontent.com/40513035/110755314-d9a37300-8259-11eb-8552-65c083de1b7a.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Get download, install, release date, verson and what's new xpath for document builder block
+  # https://user-images.githubusercontent.com/40513035/110755314-d9a37300-8259-11eb-8552-65c083de1b7a.png
   class SiteDocumentBuilderConstructor
     attr_accessor :instance, :instruction_xpath, :download_xpath, :whats_new_xpath, :version_xpath, :release_date_xpath
 

@@ -1,10 +1,12 @@
-# /all-connectors.aspx for developed by partners
-# https://user-images.githubusercontent.com/40513035/116680005-0887bc80-a960-11eb-82cb-b8327c4c5298.png
+# frozen_string_literal: true
+
 require_relative 'site_connectors_constructor'
 require_relative '../../get_onlyoffice/modules/site_block_constructor_helper'
 require_relative '../../get_onlyoffice/modules/site_download_helper'
 
 module TestingSiteOnlyoffice
+  # /all-connectors.aspx for developed by partners
+  # https://user-images.githubusercontent.com/40513035/116680005-0887bc80-a960-11eb-82cb-b8327c4c5298.png
   class SiteProductsConnectorsPartners
     include PageObject
     include SiteBlockConstructorHelper

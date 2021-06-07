@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_examples_for 'document_builder_download' do |installers_list|
   installers_list.each do |installer|
     describe installer.to_s do

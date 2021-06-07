@@ -1,7 +1,8 @@
-# /office-suite.aspx
-# https://user-images.githubusercontent.com/40513035/101088255-718f2200-35c4-11eb-9e24-ce43b069f4fb.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # /office-suite.aspx
+  # https://user-images.githubusercontent.com/40513035/101088255-718f2200-35c4-11eb-9e24-ce43b069f4fb.png
   class SiteProductsDocs
     include PageObject
     include SiteToolbar

@@ -1,11 +1,13 @@
-# Open source packages
-# https://user-images.githubusercontent.com/40513035/95982402-c0240980-0e28-11eb-8690-711459dae4e3.png
+# frozen_string_literal: true
+
 require_relative '../../modules/site_toolbar'
 require_relative 'modules/site_open_source_toolbar'
 require_relative '../modules/site_download_helper'
 require_relative 'site_installer_block_constructor'
 
 module TestingSiteOnlyoffice
+  # Open source packages
+  # https://user-images.githubusercontent.com/40513035/95982402-c0240980-0e28-11eb-8690-711459dae4e3.png
   class SiteOpenSourceDocs
     include PageObject
     include SiteDownloadHelper

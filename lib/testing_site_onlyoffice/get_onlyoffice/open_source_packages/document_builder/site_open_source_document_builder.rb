@@ -1,5 +1,4 @@
-# Open source packages for document builder
-# https://user-images.githubusercontent.com/40513035/110755500-14a5a680-825a-11eb-960c-7eb9a3d58c8e.png
+# frozen_string_literal: true
 
 require_relative '../../../modules/site_toolbar'
 require_relative '../modules/site_open_source_toolbar'
@@ -8,6 +7,8 @@ require_relative '../../modules/site_block_constructor_helper'
 require_relative 'site_document_builder_constructor'
 
 module TestingSiteOnlyoffice
+  # Open source packages for document builder
+  # https://user-images.githubusercontent.com/40513035/110755500-14a5a680-825a-11eb-960c-7eb9a3d58c8e.png
   class SiteOpenSourceDocumentBuilder
     include PageObject
     include SiteBlockConstructorHelper

@@ -1,8 +1,10 @@
-# /document-editor.aspx
-# https://user-images.githubusercontent.com/40513035/101095370-e10a0f00-35ce-11eb-94df-968041d32462.png
+# frozen_string_literal: true
+
 require_relative '../modules/site_editors_xpath'
 
 module TestingSiteOnlyoffice
+  # /document-editor.aspx
+  # https://user-images.githubusercontent.com/40513035/101095370-e10a0f00-35ce-11eb-94df-968041d32462.png
   class SiteProductsDocumentEditor
     include PageObject
     include SiteEditorsXpath

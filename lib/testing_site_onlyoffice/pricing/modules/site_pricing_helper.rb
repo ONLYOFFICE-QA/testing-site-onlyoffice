@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require_relative '../../additional_products/payment/avangate'
 
 module TestingSiteOnlyoffice
+  # Helper methods for pricing pages
   module SitePricingHelper
-    def go_to_avangate_from_pricing_page(buy_element, test_purchase = false)
+    def go_to_avangate_from_pricing_page(buy_element, test_purchase: false)
       buy_element.click
       if test_purchase
         Avangate.new(@instance)

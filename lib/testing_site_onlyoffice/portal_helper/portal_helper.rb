@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require_relative 'portal_version'
 require_relative 'portal_test_instance'
 require_relative 'portal_login_page'
 
 module TestingSiteOnlyoffice
+  # Helper methods for Portal
   class PortalHelper
     include PortalVersion
 

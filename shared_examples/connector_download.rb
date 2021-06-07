@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_examples_for 'connector_download' do |connectors_list|
   connectors_list.each do |connector|
     describe connector.to_s do

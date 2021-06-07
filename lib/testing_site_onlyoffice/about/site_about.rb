@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-# /about.aspx
-# https://user-images.githubusercontent.com/40513035/101415041-44aa7a00-38f8-11eb-858b-8c1f89115293.png
 require_relative '../modules/site_toolbar'
 module TestingSiteOnlyoffice
+  # /about.aspx
+  # https://user-images.githubusercontent.com/40513035/101415041-44aa7a00-38f8-11eb-858b-8c1f89115293.png
   class SiteAbout
     include PageObject
     include SiteToolbar

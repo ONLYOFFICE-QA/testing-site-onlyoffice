@@ -1,8 +1,10 @@
-# Portal Login page
-# https://user-images.githubusercontent.com/40513035/113820223-401f9200-972f-11eb-963a-5d4dedbd7e34.png
+# frozen_string_literal: true
+
 require_relative 'portal_main_page'
 
 module TestingSiteOnlyoffice
+  # Portal Login page
+  # https://user-images.githubusercontent.com/40513035/113820223-401f9200-972f-11eb-963a-5d4dedbd7e34.png
   class PortalLoginPage
     include PageObject
 

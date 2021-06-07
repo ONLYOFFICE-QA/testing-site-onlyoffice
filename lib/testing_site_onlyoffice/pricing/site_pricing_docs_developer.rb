@@ -1,9 +1,11 @@
-# Pricing for Onlyoffice Docs Developer edition
-# https://user-images.githubusercontent.com/40513035/100148241-89bcbe00-2ead-11eb-8683-52e8eb21a710.png
+# frozen_string_literal: true
+
 require_relative '../modules/site_toolbar'
 require_relative 'modules/site_pricing_helper'
 
 module TestingSiteOnlyoffice
+  # Pricing for Onlyoffice Docs Developer edition
+  # https://user-images.githubusercontent.com/40513035/100148241-89bcbe00-2ead-11eb-8683-52e8eb21a710.png
   class SitePriceDocsDeveloper
     include PageObject
     include SitePricingHelper

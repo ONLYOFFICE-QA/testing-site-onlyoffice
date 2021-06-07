@@ -1,9 +1,32 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe 'SiteHourlyCheck' do
   test_run = "Site Hourly Checks version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}, time: #{Time.new}, region: #{config.region}"
   test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__), plan_name: test_run, plan_name_testrail: test_run, product_name: 'Site Hourly Check')
   run_name = nil
+
+  after do |example|
+    test_manager&.add_result(example, @test)
+    @test&.webdriver&.quit
+    @test&.webdriver&.quit
+    WebDriver.clean_up
+
+    unless OnlyofficeFileHelper::RubyHelper.debug?
+      fail = example.exception
+      if fail && run_name == example.description && !run_name.include?('[Info]') && !TestingSiteOnlyoffice::TeamlabFailNotifier.should_be_ignored?(example)
+        message_body = "#{test_run}\n#{run_name}\n#{fail}\n#{testrail&.run&.url}"
+        message_report = { subject: '[Error] Site Hourly', body: message_body }
+        they_want_to_know = %w[nct.tester@yandex.ru test.teamlab@yandex.ru shockwavenn@gmail.com
+                               denis.spitsyn.nct@gmail.com]
+        TestingSiteOnlyoffice::TeamlabFailNotifier.send(message_body)
+        Gmail_helper.new('onlyoffice.daily.report@gmail.com', 'onlyoffice.daily.report1').send_mail(they_want_to_know,
+                                                                                                    message_report[:subject], message_report[:body])
+      end
+      run_name = example.description
+    end
+  end
 
   describe 'Site onlyoffice.com' do
     before do
@@ -81,42 +104,40 @@ describe 'SiteHourlyCheck' do
     end
 
     describe 'Site Downloads' do
-      context 'download desktop editors /download-desktop.aspx' do
-        before { @desktop_app_page = @site_home_page.click_link_on_toolbar(:desktop_mobile_apps) }
+      describe 'download desktop editors /download-desktop.aspx' do
+        let(:desktop_app_page) { @site_home_page.click_link_on_toolbar(:desktop_mobile_apps) }
 
         it_behaves_like 'desktop_installer_download', TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list_type do
-          let(:installers_download_page) { @desktop_app_page }
+          let(:installers_download_page) { desktop_app_page }
         end
       end
 
-      context 'download mobile editors /download-desktop.aspx' do
-        before do
-          @mobile_editors_download_page = @site_home_page.click_link_on_toolbar(:desktop_mobile_apps).open_mobile_apps
-        end
+      describe 'download mobile editors /download-desktop.aspx' do
+        let(:mobile_editors_download_page) { @site_home_page.click_link_on_toolbar(:desktop_mobile_apps).open_mobile_apps }
 
         it '[Download Mobile Editors] /download-desktop.aspx: "Get it on Google play" link works' do
-          expect(@mobile_editors_download_page).to be_download_link_alive(:mobile_android)
+          expect(mobile_editors_download_page).to be_download_link_alive(:mobile_android)
         end
 
         it '[Download Mobile Editors] /download-desktop.aspx: "Download on the app store" link works' do
-          expect(@mobile_editors_download_page).to be_download_link_alive(:mobile_ios)
+          expect(mobile_editors_download_page).to be_download_link_alive(:mobile_ios)
         end
 
         it 'Download Mobile Editors] /download-desktop.aspx: "Explore it on AppGallery" link works' do
-          @mobile_editors_download_page.site_mobile_appgallery
-          expect(@mobile_editors_download_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_GALLERY)
+          mobile_editors_download_page.site_mobile_appgallery
+          expect(mobile_editors_download_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_GALLERY)
         end
       end
 
       describe 'download commercial /download-commercial.aspx' do
-        before { @download_commercial_page = @site_home_page.click_link_on_toolbar(:commercial_packages) }
+        let(:download_commercial_page) { @site_home_page.click_link_on_toolbar(:commercial_packages) }
 
         describe 'workspace' do
-          before { @commercial_workspace_page = @download_commercial_page.open_commercial_workspace }
+          let(:commercial_workspace_page) { download_commercial_page.open_commercial_workspace }
 
           it_behaves_like 'commercial_installer_download', 'Workspace',
                           TestingSiteOnlyoffice::SiteDownloadData.commercial_workspace_list_type do
-            let(:installers_download_page) { @commercial_workspace_page }
+            let(:installers_download_page) { commercial_workspace_page }
           end
         end
 
@@ -124,49 +145,49 @@ describe 'SiteHourlyCheck' do
           describe 'Enterprise edition' do
             it_behaves_like 'commercial_installer_download', 'Docs_Enterprise',
                             TestingSiteOnlyoffice::SiteDownloadData.commercial_enterprise_docs_list_type do
-              let(:installers_download_page) { @download_commercial_page }
+              let(:installers_download_page) { download_commercial_page }
             end
           end
 
           describe 'Developer edition' do
             it_behaves_like 'commercial_installer_download', 'Docs_Developer',
                             TestingSiteOnlyoffice::SiteDownloadData.commercial_developer_docs_list_type do
-              let(:installers_download_page) { @download_commercial_page }
+              let(:installers_download_page) { download_commercial_page }
             end
           end
         end
       end
 
       describe 'download open source /download.aspx' do
-        before { @download_opensource_page = @site_home_page.click_link_on_toolbar(:open_source_packages) }
+        let(:download_opensource_page) { @site_home_page.click_link_on_toolbar(:open_source_packages) }
 
         describe 'open source bundles /download.aspx' do
-          before { @opensource_bundles_page = @download_opensource_page.open_opensource_bundles }
+          let(:opensource_bundles_page) { download_opensource_page.open_opensource_bundles }
 
           TestingSiteOnlyoffice::SiteDownloadData.open_source_bundles_list.each do |installer|
             it "[Site][DownloadOpenSource][Bundlers] download link for `#{installer}` alive /download.aspx" do
-              expect(@opensource_bundles_page).to be_download_link_alive(installer.to_sym)
+              expect(opensource_bundles_page).to be_download_link_alive(installer.to_sym)
             end
 
             it "[Site][DownloadOpenSource][Bundlers] `#{installer}` instruction link alive /download.aspx" do
-              expect(@opensource_bundles_page).to be_instruction_link_alive(installer.to_sym)
+              expect(opensource_bundles_page).to be_instruction_link_alive(installer.to_sym)
             end
           end
         end
 
         describe 'open source groups /download.aspx' do
-          before { @opensource_groups_page = @download_opensource_page.open_opensource_groups }
+          let(:opensource_groups_page) { download_opensource_page.open_opensource_groups }
 
           TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_list.each do |installer|
             it "[Site][DownloadOpenSource][Groups] download link for `#{installer}` alive /download.aspx" do
-              expect(@opensource_groups_page).to be_download_link_alive(installer.to_sym)
-              expect(@opensource_groups_page).to be_download_link_valid(
-                @opensource_groups_page.download_xpath(installer), installer
+              expect(opensource_groups_page).to be_download_link_alive(installer.to_sym)
+              expect(opensource_groups_page).to be_download_link_valid(
+                opensource_groups_page.download_xpath(installer), installer
               )
             end
 
             it "[Site][DownloadOpenSource][Groups] `#{installer}` instruction link alive /download.aspx" do
-              expect(@opensource_groups_page).to be_instruction_link_alive(installer.to_sym)
+              expect(opensource_groups_page).to be_instruction_link_alive(installer.to_sym)
             end
           end
         end
@@ -174,21 +195,21 @@ describe 'SiteHourlyCheck' do
         describe 'open source docs /download.aspx' do
           TestingSiteOnlyoffice::SiteDownloadData.open_source_docs_list.each do |installer|
             describe installer.to_s do
-              before { @current_installation = @download_opensource_page.installer_type_block(installer) }
+              let(:current_installation) { download_opensource_page.installer_type_block(installer) }
 
               it "[Site][DownloadOpenSource][Docs] download link for `#{installer}` alive /download.aspx" do
-                expect(@download_opensource_page).to be_link_alive(@current_installation.download_xpath)
+                expect(download_opensource_page).to be_link_alive(current_installation.download_xpath)
               end
 
               it "[Site][DownloadOpenSource][Docs] `#{installer}` instruction link alive /download.aspx" do
-                expect(@download_opensource_page).to be_link_alive(@current_installation.instruction_xpath)
+                expect(download_opensource_page).to be_link_alive(current_installation.instruction_xpath)
               end
             end
           end
 
           it '[Site][DownloadOpenSource][Docs] `windows` instruction link valid /download.aspx' do
-            windows_installation = @download_opensource_page.installer_type_block(:windows)
-            expect(@download_opensource_page).to be_download_link_valid(windows_installation.download_xpath, :windows)
+            windows_installation = download_opensource_page.installer_type_block(:windows)
+            expect(download_opensource_page).to be_download_link_valid(windows_installation.download_xpath, :windows)
           end
         end
       end
@@ -208,60 +229,37 @@ describe 'SiteHourlyCheck' do
       end
 
       describe 'document builder' do
-        before do
+        let(:document_builder_download_page) do
           download_open_source_page = @site_home_page.click_link_on_toolbar(:open_source_packages)
-          @document_builder_download_page = download_open_source_page.open_opensource_document_builder
+          download_open_source_page.open_opensource_document_builder
         end
 
         it_behaves_like 'document_builder_download',
                         TestingSiteOnlyoffice::SiteDownloadData.document_builder_list do
-          let(:installers_download_page) { @document_builder_download_page }
+          let(:installers_download_page) { document_builder_download_page }
         end
       end
 
       describe '#download_connectors' do
-        before do
-          @connectors_page = @site_home_page.click_link_on_toolbar(:open_source_packages).open_opensource_connectors
-        end
+        let(:site_connectors_page) { @site_home_page.click_link_on_toolbar(:open_source_packages).open_opensource_connectors }
 
         it_behaves_like 'connector_download', TestingSiteOnlyoffice::SiteDownloadData.connectors_list do
-          let(:connectors_page) { @connectors_page }
+          let(:connectors_page) { site_connectors_page }
         end
       end
     end
 
-    context 'BLOG' do
-      before { @blog_page = @site_home_page.click_link_on_toolbar(:blog) }
+    describe 'BLOG' do
+      let(:blog_page) { @site_home_page.click_link_on_toolbar(:blog) }
 
       it '[BLOG] Check click Blog link' do
-        expect(@blog_page).to be_a TestingSiteOnlyoffice::SiteBlog
+        expect(blog_page).to be_a TestingSiteOnlyoffice::SiteBlog
       end
 
       it '[BLOG] Check click Home logo' do
-        home_page = @blog_page.click_home_logo
+        home_page = blog_page.click_home_logo
         expect(home_page).to be_a TestingSiteOnlyoffice::SiteHomePage
       end
-    end
-  end
-
-  after do |example|
-    test_manager&.add_result(example, @test)
-    @test&.webdriver&.quit
-    @test&.webdriver&.quit
-    WebDriver.clean_up
-
-    unless OnlyofficeFileHelper::RubyHelper.debug?
-      fail = example.exception
-      if fail && run_name == example.description && !run_name.include?('[Info]') && !TestingSiteOnlyoffice::TeamlabFailNotifier.should_be_ignored?(example)
-        message_body = "#{test_run}\n#{run_name}\n#{fail}\n#{testrail&.run&.url}"
-        message_report = { subject: '[Error] Site Hourly', body: message_body }
-        they_want_to_know = %w[nct.tester@yandex.ru test.teamlab@yandex.ru shockwavenn@gmail.com
-                               denis.spitsyn.nct@gmail.com]
-        TestingSiteOnlyoffice::TeamlabFailNotifier.send(message_body)
-        Gmail_helper.new('onlyoffice.daily.report@gmail.com', 'onlyoffice.daily.report1').send_mail(they_want_to_know,
-                                                                                                    message_report[:subject], message_report[:body])
-      end
-      run_name = example.description
     end
   end
 end

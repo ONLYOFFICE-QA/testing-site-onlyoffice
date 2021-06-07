@@ -1,5 +1,5 @@
-# Connectors
-# https://user-images.githubusercontent.com/40513035/96696620-a25c2480-1393-11eb-9f6b-4abba59d41b5.png
+# frozen_string_literal: true
+
 require_relative '../../../modules/site_toolbar'
 require_relative '../../modules/site_download_helper'
 require_relative '../../modules/site_block_constructor_helper'
@@ -9,6 +9,8 @@ require_relative 'site_connectors_github_data'
 require_relative 'site_connector_release_data'
 
 module TestingSiteOnlyoffice
+  # Connectors
+  # https://user-images.githubusercontent.com/40513035/96696620-a25c2480-1393-11eb-9f6b-4abba59d41b5.png
   class SiteOpenSourceConnectors
     include PageObject
     include SiteBlockConstructorHelper

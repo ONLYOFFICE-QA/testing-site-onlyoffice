@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# https://user-images.githubusercontent.com/40513035/103107863-93c01100-4653-11eb-9931-86b122a0d680.png
-
 module TestingSiteOnlyoffice
+  # https://helpcenter.onlyoffice.com/faq/faq.aspx
+  # https://user-images.githubusercontent.com/40513035/103107863-93c01100-4653-11eb-9931-86b122a0d680.png
   class SiteFaq
     include PageObject
 

@@ -1,8 +1,10 @@
-# Top toolbar
-# https://user-images.githubusercontent.com/40513035/95858305-90f89400-0d65-11eb-95a1-3aa66b1258d0.png
+# frozen_string_literal: true
+
 require_relative 'site_languages'
 
 module TestingSiteOnlyoffice
+  # Top toolbar
+  # https://user-images.githubusercontent.com/40513035/95858305-90f89400-0d65-11eb-95a1-3aa66b1258d0.png
   module SiteToolbar
     include PageObject
     include SiteLanguages
@@ -241,24 +243,12 @@ module TestingSiteOnlyoffice
     end
 
     def click_link_on_toolbar(section)
-      if site_toolbar_solutions.key?(section)
-        @instance.webdriver.move_to_element_by_locator(site_solutions_element.selector[:xpath])
-      end
-      if site_toolbar_products.key?(section)
-        @instance.webdriver.move_to_element_by_locator(site_products_element.selector[:xpath])
-      end
-      if site_toolbar_get_onlyoffice.key?(section)
-        @instance.webdriver.move_to_element_by_locator(site_get_onlyoffice_element.selector[:xpath])
-      end
-      if site_toolbar_pricing.key?(section)
-        @instance.webdriver.move_to_element_by_locator(site_pricing_element.selector[:xpath])
-      end
-      if site_toolbar_partners.key?(section)
-        @instance.webdriver.move_to_element_by_locator(site_partners_element.selector[:xpath])
-      end
-      if site_toolbar_about.key?(section)
-        @instance.webdriver.move_to_element_by_locator(site_about_element.selector[:xpath])
-      end
+      @instance.webdriver.move_to_element_by_locator(site_solutions_element.selector[:xpath]) if site_toolbar_solutions.key?(section)
+      @instance.webdriver.move_to_element_by_locator(site_products_element.selector[:xpath]) if site_toolbar_products.key?(section)
+      @instance.webdriver.move_to_element_by_locator(site_get_onlyoffice_element.selector[:xpath]) if site_toolbar_get_onlyoffice.key?(section)
+      @instance.webdriver.move_to_element_by_locator(site_pricing_element.selector[:xpath]) if site_toolbar_pricing.key?(section)
+      @instance.webdriver.move_to_element_by_locator(site_partners_element.selector[:xpath]) if site_toolbar_partners.key?(section)
+      @instance.webdriver.move_to_element_by_locator(site_about_element.selector[:xpath]) if site_toolbar_about.key?(section)
       link = all_toolbar_links_and_classes_hash[section][:element]
       @instance.webdriver.wait_until { link.present? }
       link.click

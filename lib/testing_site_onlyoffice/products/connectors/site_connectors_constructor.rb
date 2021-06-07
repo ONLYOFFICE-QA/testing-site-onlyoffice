@@ -1,7 +1,8 @@
-# Get more info, website and Get it now xpath of current connector
-# https://user-images.githubusercontent.com/40513035/116356047-97090c00-a7af-11eb-8030-5228f553d2b1.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Get more info, website and Get it now xpath of current connector
+  # https://user-images.githubusercontent.com/40513035/116356047-97090c00-a7af-11eb-8030-5228f553d2b1.png
   class SiteProductsConnectorConstructor
     attr_accessor :instance, :get_it_now_xpath, :more_info_xpath, :developer_website_xpath
 

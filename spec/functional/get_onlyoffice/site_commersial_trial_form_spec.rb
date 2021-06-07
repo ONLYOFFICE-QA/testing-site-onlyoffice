@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
@@ -9,6 +11,11 @@ describe 'Check trial request form' do
   before do
     @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
+  end
+
+  after do |example|
+    test_manager.add_result(example, @test)
+    @test.webdriver.quit
   end
 
   it '[Download][DocsDeveloperEdition] docs developer edition request /download-commercial.aspx' do
@@ -45,10 +52,5 @@ describe 'Check trial request form' do
            )).to be_truthy
     expect(client_email.check_email_by_subject({ subject: TestingSiteOnlyoffice::SiteNotificationData::ENTERPRISE_TRIAL },
                                                300, true)).to be_truthy
-  end
-
-  after do |example|
-    test_manager.add_result(example, @test)
-    @test.webdriver.quit
   end
 end

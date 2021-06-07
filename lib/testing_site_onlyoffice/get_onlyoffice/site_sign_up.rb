@@ -1,9 +1,11 @@
-# /registration.aspx
-# https://user-images.githubusercontent.com/40513035/107354674-7fd74e00-6adf-11eb-9f6d-bcb5aaa3790f.png
+# frozen_string_literal: true
+
 require_relative '../modules/site_toolbar'
 require_relative '../portal_helper/portal_main_page'
 
 module TestingSiteOnlyoffice
+  # /registration.aspx
+  # https://user-images.githubusercontent.com/40513035/107354674-7fd74e00-6adf-11eb-9f6d-bcb5aaa3790f.png
   class SiteSignUp
     include PageObject
     include SiteToolbar

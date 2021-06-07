@@ -1,10 +1,12 @@
-# Download Mobile app
-# https://user-images.githubusercontent.com/40513035/116201991-f226fa00-a6ee-11eb-974e-274184565c65.png
+# frozen_string_literal: true
+
 require_relative 'modules/site_desktop_mobiles_toolbar'
 require_relative '../modules/site_download_helper'
 require_relative '../../modules/site_toolbar'
 
 module TestingSiteOnlyoffice
+  # Download Mobile app
+  # https://user-images.githubusercontent.com/40513035/116201991-f226fa00-a6ee-11eb-974e-274184565c65.png
   class SiteMobileApps
     include PageObject
     include SiteDownloadHelper

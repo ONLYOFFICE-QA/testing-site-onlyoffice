@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-# /blog/
-# https://user-images.githubusercontent.com/40513035/101406576-af54b900-38ea-11eb-942d-ec817bad65cf.png
 module TestingSiteOnlyoffice
+  # /blog/
+  # https://user-images.githubusercontent.com/40513035/101406576-af54b900-38ea-11eb-942d-ec817bad65cf.png
   class SiteBlog
     include PageObject
     include SiteToolbar

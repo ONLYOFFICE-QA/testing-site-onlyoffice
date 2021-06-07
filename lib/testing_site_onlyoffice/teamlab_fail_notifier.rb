@@ -1,7 +1,9 @@
-# represents communication layer between telegram and something
+# frozen_string_literal: true
+
 require_relative 'telegram_perks'
 
 module TestingSiteOnlyoffice
+  # represents communication layer between telegram and something
   class TeamlabFailNotifier
     # @return [Array<String>] exception with words should be ignored
     IGNORED_EXCEPTIONS = ['reCAPTCHA'].freeze

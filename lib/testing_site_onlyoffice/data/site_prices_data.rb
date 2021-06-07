@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module TestingSiteOnlyoffice
+  # Site pricing data
   class SitePricesData
     def self.cloud_services_price_periods
       %i[month year-1 year-3]

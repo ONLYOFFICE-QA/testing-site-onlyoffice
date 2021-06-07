@@ -1,10 +1,12 @@
-# Open Source Bundles
-# https://user-images.githubusercontent.com/40513035/97213564-d049ca80-17d2-11eb-9c9d-fffac028177d.png
+# frozen_string_literal: true
+
 require_relative '../../modules/site_toolbar'
 require_relative 'modules/site_open_source_toolbar'
 require_relative '../modules/site_download_helper'
 
 module TestingSiteOnlyoffice
+  # Open Source Bundles
+  # https://user-images.githubusercontent.com/40513035/97213564-d049ca80-17d2-11eb-9c9d-fffac028177d.png
   class SiteOpenSourceBundles
     include PageObject
     include SiteDownloadHelper

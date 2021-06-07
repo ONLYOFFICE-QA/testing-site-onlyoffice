@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module TestingSiteOnlyoffice
+  # Method for getting full portal name
   module PortalVersion
     def get_full_portal_name(portal_to_create)
       portal_domain_region = if config.server.include?('teamlab')

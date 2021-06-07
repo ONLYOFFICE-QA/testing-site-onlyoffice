@@ -1,8 +1,10 @@
-# Get install, instruction, buy or what's new xpath of current commercial packages installer block
-# https://user-images.githubusercontent.com/40513035/98994364-bb926400-2540-11eb-8b40-f53e99ef2cbc.png
+# frozen_string_literal: true
+
 require_relative 'site_commercial_download_form'
 
 module TestingSiteOnlyoffice
+  # Get install, instruction, buy or what's new xpath of current commercial packages installer block
+  # https://user-images.githubusercontent.com/40513035/98994364-bb926400-2540-11eb-8b40-f53e99ef2cbc.png
   class SiteCommercialBlockConstructor
     attr_accessor :instance, :instruction_xpath, :download_xpath, :version_xpath, :release_date_xpath
 

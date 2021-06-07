@@ -1,7 +1,8 @@
-# /document-management.aspx
-# https://user-images.githubusercontent.com/40513035/101329886-032bb780-3883-11eb-853b-bd6945388f2b.png
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # /document-management.aspx
+  # https://user-images.githubusercontent.com/40513035/101329886-032bb780-3883-11eb-853b-bd6945388f2b.png
   class SiteProductsDocumentManager
     include PageObject
     include SiteToolbar

@@ -1,5 +1,5 @@
-# Commercial workspace packages
-# https://user-images.githubusercontent.com/40513035/99003720-9822e580-254f-11eb-9cd5-2b0c7a966d95.png
+# frozen_string_literal: true
+
 require_relative '../../modules/site_toolbar'
 require_relative 'modules/site_commercial_toolbar'
 require_relative '../modules/site_download_helper'
@@ -8,6 +8,8 @@ require_relative 'site_commercial_block_constructor'
 require_relative 'modules/site_commercial_download_helper'
 
 module TestingSiteOnlyoffice
+  # Commercial workspace packages
+  # https://user-images.githubusercontent.com/40513035/99003720-9822e580-254f-11eb-9cd5-2b0c7a966d95.png
   class SiteCommercialWorkspace
     include PageObject
     include SiteBlockConstructorHelper

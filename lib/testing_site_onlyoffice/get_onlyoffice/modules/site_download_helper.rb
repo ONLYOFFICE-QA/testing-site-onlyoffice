@@ -1,6 +1,7 @@
-# Contains methods for downloading packages
+# frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Contains methods for downloading packages
   module SiteDownloadHelper
     def file_downloaded?(file_name)
       path_to_downloaded_file = "#{@instance.webdriver.download_directory}/#{file_name}"

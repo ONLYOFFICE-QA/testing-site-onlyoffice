@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
@@ -6,6 +8,11 @@ describe 'Site Pricing Developer Edition' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @developer_edition_prices = site_home_page.click_link_on_toolbar(:pricing_developer)
+  end
+
+  after do |example|
+    test_manager.add_result(example, @test)
+    @test.webdriver.quit
   end
 
   describe '#developer_saas_server' do
@@ -82,10 +89,5 @@ describe 'Site Pricing Developer Edition' do
 
   it '[Pricing][Developer Edition][Cluster] Cluster prices contains only link to email' do
     expect(@developer_edition_prices.cluster_quote_email).to eq('mailto:sales@onlyoffice.com')
-  end
-
-  after do |example|
-    test_manager.add_result(example, @test)
-    @test.webdriver.quit
   end
 end

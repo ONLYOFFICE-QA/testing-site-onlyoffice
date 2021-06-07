@@ -1,10 +1,12 @@
-# Open Source Groups
-# https://user-images.githubusercontent.com/40513035/98349927-ab075880-202b-11eb-89b8-cf36b090830e.png
+# frozen_string_literal: true
+
 require_relative '../../modules/site_toolbar'
 require_relative 'modules/site_open_source_toolbar'
 require_relative '../modules/site_download_helper'
 
 module TestingSiteOnlyoffice
+  # Open Source Groups
+  # https://user-images.githubusercontent.com/40513035/98349927-ab075880-202b-11eb-89b8-cf36b090830e.png
   class SiteOpenSourceGroups
     include PageObject
     include SiteDownloadHelper

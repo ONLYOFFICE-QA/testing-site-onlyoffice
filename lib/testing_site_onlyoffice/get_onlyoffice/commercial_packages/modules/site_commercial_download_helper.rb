@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module TestingSiteOnlyoffice
+  # Helper data for Commercial download page
   module SiteCommercialDownloadHelper
     def get_blocks_by_product(product, installer)
       case product

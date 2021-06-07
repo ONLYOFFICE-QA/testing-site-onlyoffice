@@ -1,8 +1,10 @@
-# Search field
-# https://user-images.githubusercontent.com/40513035/116186728-1081fb00-a6d9-11eb-9fc6-522830d6987f.png
+# frozen_string_literal: true
+
 require_relative 'site_search_result_page'
 
 module TestingSiteOnlyoffice
+  # Search field
+  # https://user-images.githubusercontent.com/40513035/116186728-1081fb00-a6d9-11eb-9fc6-522830d6987f.png
   module SiteSearch
     include PageObject
 

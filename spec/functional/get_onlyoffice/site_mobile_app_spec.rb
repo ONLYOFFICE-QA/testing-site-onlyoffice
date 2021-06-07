@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
@@ -6,6 +8,11 @@ describe 'Desktop apps' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @mobile_app_page = site_home_page.click_link_on_toolbar(:desktop_mobile_apps).open_mobile_apps
+  end
+
+  after do |example|
+    test_manager.add_result(example, @test)
+    @test.webdriver.quit
   end
 
   it '[Mobile][Android]Check "Get it on Google play" button' do
@@ -18,7 +25,7 @@ describe 'Desktop apps' do
     expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_GALLERY)
   end
 
-  context 'IOS' do
+  describe 'IOS' do
     it '[Mobile][iOS]Check "Download on the app store" button' do
       @mobile_app_page.site_mobile_app_store
       expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_STORE)
@@ -28,10 +35,5 @@ describe 'Desktop apps' do
       @mobile_app_page.site_mobile_ios_whats_new
       expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_IOS_CHANGELOG)
     end
-  end
-
-  after do |example|
-    test_manager.add_result(example, @test)
-    @test.webdriver.quit
   end
 end
