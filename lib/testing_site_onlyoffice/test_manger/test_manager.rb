@@ -30,7 +30,7 @@ module TestingSiteOnlyoffice
     # @param [String] comment is a data for result
     def add_result(example, instance, comment = '')
       result = @tcm_helper.parse(example)
-      comment << "Error #{instance.webdriver.webdriver_screenshot}\n" if test_failed_and_has_no_screenshot?(result, example)
+      comment = "Error #{instance.webdriver.webdriver_screenshot}\n" if test_failed_and_has_no_screenshot?(result, example)
       formatting_describer(comment)
       @testrail&.add_result_to_test_case(example, comment)
 
