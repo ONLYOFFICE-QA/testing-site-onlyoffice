@@ -25,5 +25,6 @@ with user `Site`
 3. `rake update_secret_config`
 4. Add `lib/testing_site_onlyoffice/data/private_data/data.yml.gpg` to VCS
 
-**Important** Never add decrypted `lib/testing_site_onlyoffice/data/private_data/data.yml` to VCS. 
-This file is in `.gitignore' and should never be committed
+**Important** Never add decrypted
+  `lib/testing_site_onlyoffice/data/private_data/data.yml` to VCS. 
+  This file is in `.gitignore` and should never be committed
