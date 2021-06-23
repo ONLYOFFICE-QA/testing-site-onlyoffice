@@ -26,5 +26,5 @@ with user `Site`
 4. Add `lib/testing_site_onlyoffice/data/private_data/data.yml.gpg` to VCS
 
 **Important** Never add decrypted
-  `lib/testing_site_onlyoffice/data/private_data/data.yml` to VCS. 
+  `lib/testing_site_onlyoffice/data/private_data/data.yml` to VCS.
   This file is in `.gitignore` and should never be committed
