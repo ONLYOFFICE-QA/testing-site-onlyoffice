@@ -17,3 +17,13 @@ Remotely
 with user `Site`
 2. Obtain API key and use it via terminal
 3. `rake wrata:run_site_tests`
+
+## How to update secret config
+
+1. `rake decrypt_secret_config`
+2. Edit `lib/testing_site_onlyoffice/data/private_data/data.yml` via any text editor
+3. `rake update_secret_config`
+4. Add `lib/testing_site_onlyoffice/data/private_data/data.yml.gpg` to VCS
+
+**Important** Never add decrypted `lib/testing_site_onlyoffice/data/private_data/data.yml` to VCS. 
+This file is in `.gitignore' and should never be committed
