@@ -32,11 +32,6 @@ GEM
     diff-lcs (1.4.4)
     faker (2.18.0)
       i18n (>= 1.6, < 2)
-    gmail (0.7.1)
-      gmail_xoauth (>= 0.3.0)
-      mail (>= 2.2.1)
-    gmail_xoauth (0.4.2)
-      oauth (>= 0.3.6)
     headless (2.3.1)
     httparty (0.18.1)
       mime-types (~> 3.0)
@@ -58,7 +53,6 @@ GEM
     nokogiri (1.11.7)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
-    oauth (0.5.6)
     onlyoffice_bugzilla_helper (0.6.1)
     onlyoffice_documentserver_testing_framework (0.5.1)
       onlyoffice_logger_helper (~> 1)
@@ -66,9 +60,6 @@ GEM
     onlyoffice_file_helper (0.4.0)
       onlyoffice_logger_helper (~> 1)
       rubyzip (~> 2)
-    onlyoffice_gmail_helper (0.2.0)
-      gmail (~> 0.6)
-      onlyoffice_logger_helper (~> 1)
     onlyoffice_iredmail_helper (0.2.1)
       mail (~> 2)
       onlyoffice_logger_helper (~> 1)
@@ -166,7 +157,6 @@ DEPENDENCIES
   nokogiri
   onlyoffice_documentserver_testing_framework
   onlyoffice_file_helper
-  onlyoffice_gmail_helper
   onlyoffice_iredmail_helper
   onlyoffice_tcm_helper
   onlyoffice_testrail_wrapper

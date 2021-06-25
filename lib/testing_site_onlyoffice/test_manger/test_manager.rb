@@ -14,7 +14,7 @@ module TestingSiteOnlyoffice
     include PalladiumWrapper
     include TestManagerTestrail
     # @return [Object] testrail params
-    attr_accessor :testrail
+    attr_reader :testrail
 
     def initialize(params = {})
       params[:suite_name] ||= File.basename(__FILE__)

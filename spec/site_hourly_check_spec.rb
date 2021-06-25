@@ -9,19 +9,13 @@ describe 'SiteHourlyCheck' do
   after do |example|
     test_manager&.add_result(example, @test)
     @test&.webdriver&.quit
-    @test&.webdriver&.quit
     WebDriver.clean_up
 
     unless OnlyofficeFileHelper::RubyHelper.debug?
       fail = example.exception
       if fail
-        message_body = "#{test_run}\n#{fail}\n#{test_manager&.testrail&.run&.url}"
-        message_report = { subject: '[Error] Site Hourly', body: message_body }
-        they_want_to_know = %w[nct.tester@yandex.ru test.teamlab@yandex.ru shockwavenn@gmail.com
-                               denis.spitsyn.nct@gmail.com]
+        message_body = "#{test_run}\n#{example.description}\n#{fail}\n#{test_manager&.testrail&.run&.url}"
         TestingSiteOnlyoffice::TeamlabFailNotifier.send(message_body)
-        OnlyofficeGmailHelper::Gmail_helper.new('onlyoffice.daily.report@gmail.com', 'onlyoffice.daily.report1').send_mail(they_want_to_know,
-                                                                                                                           message_report[:subject], message_report[:body])
       end
     end
   end
