@@ -5,26 +5,18 @@ require 'spec_helper'
 describe 'SiteHourlyCheck' do
   test_run = "Site Hourly Checks version: #{TestingSiteOnlyoffice::SiteVersionHelper.full_site_version}, time: #{Time.new}, region: #{config.region}"
   test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__), plan_name: test_run, plan_name_testrail: test_run, product_name: 'Site Hourly Check')
-  run_name = nil
 
   after do |example|
     test_manager&.add_result(example, @test)
-    @test&.webdriver&.quit
     @test&.webdriver&.quit
     WebDriver.clean_up
 
     unless OnlyofficeFileHelper::RubyHelper.debug?
       fail = example.exception
-      if fail && run_name == example.description && !run_name.include?('[Info]') && !TestingSiteOnlyoffice::TeamlabFailNotifier.should_be_ignored?(example)
-        message_body = "#{test_run}\n#{run_name}\n#{fail}\n#{testrail&.run&.url}"
-        message_report = { subject: '[Error] Site Hourly', body: message_body }
-        they_want_to_know = %w[nct.tester@yandex.ru test.teamlab@yandex.ru shockwavenn@gmail.com
-                               denis.spitsyn.nct@gmail.com]
+      if fail
+        message_body = "#{test_run}\n#{example.description}\n#{fail}\n#{test_manager&.testrail&.run&.url}"
         TestingSiteOnlyoffice::TeamlabFailNotifier.send(message_body)
-        Gmail_helper.new('onlyoffice.daily.report@gmail.com', 'onlyoffice.daily.report1').send_mail(they_want_to_know,
-                                                                                                    message_report[:subject], message_report[:body])
       end
-      run_name = example.description
     end
   end
 
