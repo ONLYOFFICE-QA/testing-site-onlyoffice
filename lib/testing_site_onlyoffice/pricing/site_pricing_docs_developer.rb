@@ -11,7 +11,7 @@ module TestingSiteOnlyoffice
     include SitePricingHelper
     include SiteToolbar
 
-    link(:buy_now_single_server, xpath: "//a[@class='saas-price-url button gray']")
+    link(:buy_now_single_server, xpath: "//a[contains(@class, 'saas-price-url')]")
     span(:single_server_price, xpath: "//span[@class='saas-price']")
     element(:single_server_connections_num, xpath: "//div[@class='saas server_price_recommendation spr_block2']/p/b")
     div(:single_server_connections_num_increase, xpath: "//div[@class='saas simcon_change connections_increase']")
