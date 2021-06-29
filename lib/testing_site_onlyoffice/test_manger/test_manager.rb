@@ -78,7 +78,7 @@ module TestingSiteOnlyoffice
     def add_palladium_result(result)
       @palladium.set_result(status: result.status.to_s, description: result.result_message, name: result.case_name)
       OnlyofficeLoggerHelper.log("Set test case result to palladium: #{result.status}." \
-                               "URL: #{@palladium.result_set_link}",
+                                 "URL: #{@palladium.result_set_link}",
                                  get_result_color(result.status))
     rescue StandardError => e
       OnlyofficeLoggerHelper.log("Can't write result to palladium. Error: #{e}")
