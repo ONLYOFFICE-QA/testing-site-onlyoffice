@@ -19,9 +19,9 @@ module TestingSiteOnlyoffice
 
     def error_version_message(params = {})
       "url: #{@instance.webdriver.driver.current_url}\n" \
-    "Release info about #{params[:connector]} connector on site != github data\n" \
-    "github's version: #{params[:github_version]} release date #{params[:github_date]}\n" \
-    "site's version: #{params[:site_version]} release date #{params[:site_date]}\n"
+        "Release info about #{params[:connector]} connector on site != github data\n" \
+        "github's version: #{params[:github_version]} release date #{params[:github_date]}\n" \
+        "site's version: #{params[:site_version]} release date #{params[:site_date]}\n"
     end
   end
 end
