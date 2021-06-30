@@ -23,8 +23,3 @@ AllCops:
 # and checking of one class can be split into different specs
 RSpec/DescribeClass:
   Enabled: false
-
-# Totally disable this check
-# since we use `master` by default in a lot of projects we can't replace it with `main`
-Naming/InclusiveLanguage:
-  Enabled: false
