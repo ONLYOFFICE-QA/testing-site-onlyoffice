@@ -46,6 +46,7 @@ describe 'Training courses' do
 
   TestingSiteOnlyoffice::SiteData.all_training_courses.each do |course|
     it "[Training courses] Check #{course} course mail request confirmation" do
+      pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
       @training_courses_page.open_and_send_request_courses_form(course)
       expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: config.language,
                                                                                    pattern: 'training_courses',
