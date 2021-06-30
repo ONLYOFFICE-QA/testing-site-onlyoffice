@@ -49,7 +49,6 @@ module TestingSiteOnlyoffice
       change_time_zone(time_zone)
     end
 
-    # preferred language dropdown
     def dropdown_element_xpath(language)
       "//li[@data-value='#{language}']"
     end
