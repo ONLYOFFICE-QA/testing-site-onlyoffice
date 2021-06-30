@@ -37,5 +37,17 @@ module TestingSiteOnlyoffice
     def self.site_languages
       %w[en-US en-GB ru-RU fr-FR de-DE es-ES pt-BR it-IT cs-CZ nl-NL ja-JP zh-CN]
     end
+
+    def self.courses_modules
+      %w[documents projects crm mail_calendar people_chat_community]
+    end
+
+    def self.courses_purposes
+      %w[office_suite working_with_customers working_in_a_team administrating_the_portal vip_package custom_package]
+    end
+
+    def self.all_training_courses
+      courses_modules + courses_purposes
+    end
   end
 end

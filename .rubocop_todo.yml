@@ -11,7 +11,7 @@
 Metrics/AbcSize:
   Max: 54
 
-# Offense count: 32
+# Offense count: 33
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 # IgnoredMethods: refine
 Metrics/BlockLength:
@@ -27,7 +27,7 @@ Metrics/ClassLength:
 Metrics/CyclomaticComplexity:
   Max: 15
 
-# Offense count: 17
+# Offense count: 18
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 Metrics/MethodLength:
   Max: 70
@@ -35,7 +35,7 @@ Metrics/MethodLength:
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne.
 Metrics/ModuleLength:
-  Max: 226
+  Max: 231
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.
@@ -63,7 +63,7 @@ Naming/VariableNumber:
     - 'lib/testing_site_onlyoffice/data/site_prices_data.rb'
     - 'lib/testing_site_onlyoffice/test_manger/test_manager.rb'
 
-# Offense count: 23
+# Offense count: 25
 # Configuration parameters: CountAsOne.
 RSpec/ExampleLength:
   Max: 32
@@ -73,7 +73,7 @@ RSpec/ExampleLength:
 RSpec/InstanceVariable:
   Enabled: false
 
-# Offense count: 22
+# Offense count: 24
 RSpec/MultipleExpectations:
   Max: 16
 
