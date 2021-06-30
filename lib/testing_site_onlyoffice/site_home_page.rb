@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'about/site_about'
+require_relative 'about/training_courses/site_about_training_courses'
 require_relative 'about/site_blog'
 
 require_relative 'additional_products/site_help_center'

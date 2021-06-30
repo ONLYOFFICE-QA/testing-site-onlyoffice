@@ -37,5 +37,30 @@ module TestingSiteOnlyoffice
     def self.site_languages
       %w[en-US en-GB ru-RU fr-FR de-DE es-ES pt-BR it-IT cs-CZ nl-NL ja-JP zh-CN]
     end
+
+    def self.courses_modules
+      {
+        documents: 'Documents',
+        projects: 'Projects',
+        crm: 'CRM',
+        mail_calendar: 'Mail & Calendar',
+        people_chat_community: 'People, Chat, Community'
+      }
+    end
+
+    def self.courses_purposes
+      {
+        office_suite: 'Office suite',
+        working_with_customers: 'Working with customers',
+        working_in_a_team: 'Working in a team',
+        administrating_the_portal: 'Administrating the portal',
+        vip_package: 'VIP package',
+        custom_package: 'Custom package'
+      }
+    end
+
+    def self.all_training_courses
+      courses_modules.merge(courses_purposes)
+    end
   end
 end
