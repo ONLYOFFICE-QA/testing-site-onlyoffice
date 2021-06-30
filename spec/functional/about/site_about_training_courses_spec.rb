@@ -18,11 +18,11 @@ describe 'Training courses' do
   end
 
   it "[Training courses] Number of modules didn't change" do
-    expect(@training_courses_page.courses_modules_number).to eq(TestingSiteOnlyoffice::SiteData.courses_modules.count)
+    expect(@training_courses_page.courses_modules_names).to eq(TestingSiteOnlyoffice::SiteData.courses_modules.values)
   end
 
   it "[Training courses] Number of purpose didn't change" do
-    expect(@training_courses_page.courses_purpose_number).to eq(TestingSiteOnlyoffice::SiteData.courses_purposes.count)
+    expect(@training_courses_page.courses_purpose_names).to eq(TestingSiteOnlyoffice::SiteData.courses_purposes.values)
   end
 
   it '[Training courses] Search field works' do
@@ -44,14 +44,14 @@ describe 'Training courses' do
     expect(@training_courses_page).to be_courses_block_present('working_in_a_team')
   end
 
-  TestingSiteOnlyoffice::SiteData.all_training_courses.each do |course|
+  TestingSiteOnlyoffice::SiteData.all_training_courses.each_key do |course|
     it "[Training courses] Check #{course} course mail request confirmation" do
       pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
-      @training_courses_page.open_and_send_request_courses_form(course)
+      @training_courses_page.open_and_send_request_courses_form(course.to_s)
       expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: config.language,
                                                                                    pattern: 'training_courses',
                                                                                    module: 'WebStudio',
-                                                                                   search: course,
+                                                                                   search: course.to_s,
                                                                                    mail: partner_email,
                                                                                    move_out: true)).to be_truthy
     end

@@ -55,16 +55,18 @@ module TestingSiteOnlyoffice
 
     def change_course_language(language)
       courses_language_element.click
-      dropdown_language_xpath = dropdown_element_xpath(language)
-      @instance.webdriver.wait_until { @instance.webdriver.element_visible?(dropdown_language_xpath) }
-      @instance.webdriver.driver.find_element(:xpath, dropdown_language_xpath).click
+      choose_dropdown_element(language)
     end
 
     def change_time_zone(zone)
       courses_time_zone_element.click
-      dropdown_zone_xpath = dropdown_element_xpath(zone)
-      @instance.webdriver.wait_until { @instance.webdriver.element_visible?(dropdown_zone_xpath) }
-      @instance.webdriver.driver.find_element(:xpath, dropdown_zone_xpath).click
+      choose_dropdown_element(zone)
+    end
+
+    def choose_dropdown_element(item_to_select)
+      xpath = dropdown_element_xpath(item_to_select)
+      @instance.webdriver.wait_until { @instance.webdriver.element_visible?(xpath) }
+      @instance.webdriver.driver.find_element(:xpath, xpath).click
     end
   end
 end

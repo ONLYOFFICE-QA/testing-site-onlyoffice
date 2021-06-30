@@ -39,15 +39,28 @@ module TestingSiteOnlyoffice
     end
 
     def self.courses_modules
-      %w[documents projects crm mail_calendar people_chat_community]
+      {
+        documents: 'Documents',
+        projects: 'Projects',
+        crm: 'CRM',
+        mail_calendar: 'Mail & Calendar',
+        people_chat_community: 'People, Chat, Community'
+      }
     end
 
     def self.courses_purposes
-      %w[office_suite working_with_customers working_in_a_team administrating_the_portal vip_package custom_package]
+      {
+        office_suite: 'Office suite',
+        working_with_customers: 'Working with customers',
+        working_in_a_team: 'Working in a team',
+        administrating_the_portal: 'Administrating the portal',
+        vip_package: 'VIP package',
+        custom_package: 'Custom package'
+      }
     end
 
     def self.all_training_courses
-      courses_modules + courses_purposes
+      courses_modules.merge(courses_purposes)
     end
   end
 end

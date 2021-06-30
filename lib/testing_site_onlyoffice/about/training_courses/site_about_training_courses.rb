@@ -10,8 +10,8 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteToolbar
 
-    div(:courses_module_block, xpath: "//div[@id='modules-item-list']/div")
-    div(:courses_purpose_block, xpath: "//div[@id='purpose-item-list']/div")
+    elements(:courses_module_block, xpath: "//div[@id='modules-item-list']/div/div/h4")
+    elements(:courses_purpose_block, xpath: "//div[@id='purpose-item-list']/div/div/h4")
     text_field(:courses_search_field, xpath: "//input[@id='ad-search-input']")
     element(:current_left_side_filter, xpath: "//div[@class='choose-item-type popup-starting-point']/h2")
 
@@ -22,19 +22,23 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { courses_purpose_block_element.present? }
+      @instance.webdriver.wait_until { courses_search_field_element.present? }
+    end
+
+    def courses_modules_names
+      courses_modules_names = []
+      courses_module_block_elements.each { |element| courses_modules_names << element.text }
+      courses_modules_names
+    end
+
+    def courses_purpose_names
+      courses_purpose_names = []
+      courses_purpose_block_elements.each { |element| courses_purpose_names << element.text }
+      courses_purpose_names
     end
 
     def courses_submit_request_xpath(course)
       "//div[contains(@class,'#{course}')]/..//a[@class='button transparent']"
-    end
-
-    def courses_modules_number
-      @instance.webdriver.driver.find_elements(:xpath, courses_module_block_element.selector[:xpath]).count
-    end
-
-    def courses_purpose_number
-      @instance.webdriver.driver.find_elements(:xpath, courses_purpose_block_element.selector[:xpath]).count
     end
 
     def courses_block_present?(course)
