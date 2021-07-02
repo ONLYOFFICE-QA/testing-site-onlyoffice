@@ -82,4 +82,15 @@ describe 'Registration new portal' do
       expect(subscribe_confirm).to be_wait_success_text_visible
     end
   end
+
+  describe 'Support' do
+    it 'Support contact form' do
+      pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
+      support_form_page = @site_home_page.click_support_contact_form
+      name = "NCT Test #{Faker::Name.name}"
+      support_form_page.send_training_courses_request(name: name)
+      subject_message = "#{name} - Support Request [from: support-contact-form]"
+      expect(partner_email.check_email_by_subject({ subject: subject_message }, 300, true)).to be_truthy
+    end
+  end
 end

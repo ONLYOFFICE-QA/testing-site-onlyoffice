@@ -14,6 +14,7 @@ module TestingSiteOnlyoffice
 
     # support
     link(:order_demo, xpath: '//a[@href="/demo-order.aspx"]')
+    link(:support_contact_form, xpath: '//a[@href="/support-contact-form.aspx"]')
 
     # contact us
     link(:request_a_call, xpath: '//a[@href="/call-back-form.aspx"]')
@@ -34,6 +35,11 @@ module TestingSiteOnlyoffice
     def click_order_demo
       order_demo_element.click
       SiteOrderDemo.new(@instance)
+    end
+
+    def click_support_contact_form
+      support_contact_form_element.click
+      SiteSupportContactForm.new(@instance)
     end
 
     def click_request_a_call
