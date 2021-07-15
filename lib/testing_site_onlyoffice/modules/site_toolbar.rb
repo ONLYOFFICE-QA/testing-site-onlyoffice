@@ -75,6 +75,7 @@ module TestingSiteOnlyoffice
     link(:site_about_awards, xpath: '//a[@id="navitem_about_awards"]')
     link(:site_about_events, xpath: '//a[@id="navitem_about_events"]')
     link(:site_about_press_downloads, xpath: '//a[@id="navitem_about_pressdownloads"]')
+    link(:site_about_white_papers, xpath: '//a[@id="navitem_about_whitepapers"]')
     link(:site_about_training_courses, xpath: '//a[@id="navitem_about_training_courses"]')
     link(:site_about_gift_shop, xpath: '//a[@id="navitem_about_giftshop"]')
     link(:site_about_contacts, xpath: '//a[@id="navitem_about_contacts"]')
@@ -234,6 +235,10 @@ module TestingSiteOnlyoffice
         blog: {
           element: site_about_blog_element,
           class: SiteBlog
+        },
+        white_papers: {
+          element: site_about_white_papers_element,
+          class: SiteWhitePapers
         },
         training_courses: {
           element: site_about_training_courses_element,

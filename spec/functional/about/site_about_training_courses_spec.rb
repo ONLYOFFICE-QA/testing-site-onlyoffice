@@ -26,7 +26,7 @@ describe 'Training courses' do
   end
 
   it '[Training courses] Search field works' do
-    @training_courses_page.courses_search('chat')
+    @training_courses_page.about_search('chat')
     expect(@training_courses_page).to be_courses_block_present('people_chat_community')
     expect(@training_courses_page).not_to be_courses_block_present('projects')
     expect(@training_courses_page).not_to be_courses_block_present('working_in_a_team')

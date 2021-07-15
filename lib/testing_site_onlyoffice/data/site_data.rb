@@ -62,5 +62,31 @@ module TestingSiteOnlyoffice
     def self.all_training_courses
       courses_modules.merge(courses_purposes)
     end
+
+    def self.white_papers
+      {
+        for_government_offices: 'onlyoffice_for_government_offices.pdf',
+        end_to_end_document_encryption: 'end-to-end_document_encryption.pdf',
+        data_encryption_at_rest_1_0: 'data_encryption_at_rest_1.0.pdf'
+      }
+    end
+
+    def self.datasheets
+      {
+        onlyoffice_docs_for_nextcloud: 'onlyoffice_docs_for_nextcloud.pdf',
+        onlyoffice_docs_for_owncloud: 'onlyoffice_docs_for_owncloud.pdf',
+        onlyoffice_docs: 'onlyoffice_docs.pdf',
+        onlyoffice_workspace: 'onlyoffice_workspace.pdf',
+        onlyoffice_private_room: 'onlyoffice_workspace_private_rooms.pdf',
+        onlyoffice_for_law_firms: 'onlyoffice_datasheet_for_law_firms.pdf',
+        onlyoffice_for_medical_industry: 'docs_datasheet_medical_3.pdf',
+        onlyoffice_for_pharmaceutical_companies: 'onlyoffice_datasheet__for_pharmaceutical_industry.pdf',
+        onlyoffice_for_non_profit_organizations: 'onlyoffice_datasheet_for_non-profits.pdf'
+      }
+    end
+
+    def self.white_peppers_and_datasheets
+      white_papers.merge(datasheets)
+    end
   end
 end
