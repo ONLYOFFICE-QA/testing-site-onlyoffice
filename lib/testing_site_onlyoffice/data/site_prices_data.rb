@@ -54,5 +54,12 @@ module TestingSiteOnlyoffice
 
       6160
     end
+
+    def self.support_users
+      {
+        min: 50,
+        min_increased: 100
+      }
+    end
   end
 end

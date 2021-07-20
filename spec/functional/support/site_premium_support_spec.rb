@@ -32,7 +32,7 @@ describe 'Buy Product Notification' do
   it '[Site][PremiumSupport] Prices on store.onlyoffice.com and onlyoffice.com are the same for 100 users for `Plus` plan' do
     @premium_support_page.increase_plus_users
     plus_price_data = @premium_support_page.current_support_plus_price_and_user_number
-    expect(plus_price_data[:user_number]).to eq(100)
+    expect(plus_price_data[:user_number]).to eq(TestingSiteOnlyoffice::SitePricesData.support_users[:min_increased])
     avangate = @premium_support_page.go_to_avangate_from_pricing_page(@premium_support_page.buy_now_support_element, test_purchase: true)
     avangate_price = avangate.get_avangate_current_price_value.to_i
     expect(avangate_price).to eq(plus_price_data[:price])
@@ -53,22 +53,22 @@ describe 'Buy Product Notification' do
   it '[Pricing][PremiumSupport] `+` and `-` buttons work for `Plus` plan' do
     @premium_support_page.increase_plus_users
     plus_price_data = @premium_support_page.current_support_plus_price_and_user_number
-    expect(plus_price_data[:user_number]).to eq(100)
+    expect(plus_price_data[:user_number]).to eq(TestingSiteOnlyoffice::SitePricesData.support_users[:min_increased])
     expect(plus_price_data[:price]).to eq(TestingSiteOnlyoffice::SitePricesData.plus_support_100)
     @premium_support_page.decrease_plus_users
     plus_price_data = @premium_support_page.current_support_plus_price_and_user_number
-    expect(plus_price_data[:user_number]).to eq(50)
+    expect(plus_price_data[:user_number]).to eq(TestingSiteOnlyoffice::SitePricesData.support_users[:min])
     expect(plus_price_data[:price]).to eq(TestingSiteOnlyoffice::SitePricesData.plus_support_50)
   end
 
   it '[Pricing][PremiumSupport] `+` and `-` buttons work for `Premium` plan' do
     @premium_support_page.increase_premium_users
     premium_price_data = @premium_support_page.current_support_premium_price_and_user_number
-    expect(premium_price_data[:user_number]).to eq(100)
+    expect(premium_price_data[:user_number]).to eq(TestingSiteOnlyoffice::SitePricesData.support_users[:min_increased])
     expect(premium_price_data[:price]).to eq(TestingSiteOnlyoffice::SitePricesData.premium_support_100)
     @premium_support_page.decrease_premium_users
     premium_price_data = @premium_support_page.current_support_premium_price_and_user_number
-    expect(premium_price_data[:user_number]).to eq(50)
+    expect(premium_price_data[:user_number]).to eq(TestingSiteOnlyoffice::SitePricesData.support_users[:min])
     expect(premium_price_data[:price]).to eq(TestingSiteOnlyoffice::SitePricesData.premium_support_50)
   end
 end
