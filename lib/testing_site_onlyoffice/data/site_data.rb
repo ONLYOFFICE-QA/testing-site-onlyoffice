@@ -38,6 +38,10 @@ module TestingSiteOnlyoffice
       %w[en-US en-GB ru-RU fr-FR de-DE es-ES pt-BR it-IT cs-CZ nl-NL ja-JP zh-CN]
     end
 
+    def self.european_languages
+      %w[en-GB fr-FR de-DE es-ES it-IT cs-CZ nl-NL]
+    end
+
     def self.courses_modules
       {
         documents: 'Documents',
