@@ -62,14 +62,14 @@ module TestingSiteOnlyoffice
       user_number = plus_user_number_element.text
       price_xpath = "//div[@data-value='#{user_number}' and @class='pp_sum standartSum']/span"
       price = @instance.webdriver.driver.find_element(:xpath, price_xpath).text
-      [price, user_number]
+      { price: price.to_i, user_number: user_number.to_i }
     end
 
     def current_support_premium_price_and_user_number
       user_number = premium_user_number_element.text
       price_xpath = "//div[@data-value='#{user_number}' and @class='pp_sum premiumSum']/span"
       price = @instance.webdriver.driver.find_element(:xpath, price_xpath).text
-      [price, user_number]
+      { price: price.to_i, user_number: user_number.to_i }
     end
 
     def plus_quote_email

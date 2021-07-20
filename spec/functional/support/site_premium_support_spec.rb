@@ -31,11 +31,11 @@ describe 'Buy Product Notification' do
 
   it '[Site][PremiumSupport] Prices on store.onlyoffice.com and onlyoffice.com are the same for 100 users for `Plus` plan' do
     @premium_support_page.increase_plus_users
-    price, user_number = @premium_support_page.current_support_plus_price_and_user_number
-    expect(user_number.to_i).to eq(100)
+    plus_price_data = @premium_support_page.current_support_plus_price_and_user_number
+    expect(plus_price_data[:user_number]).to eq(100)
     avangate = @premium_support_page.go_to_avangate_from_pricing_page(@premium_support_page.buy_now_support_element, test_purchase: true)
     avangate_price = avangate.get_avangate_current_price_value.to_i
-    expect(avangate_price).to eq(price.to_i)
+    expect(avangate_price).to eq(plus_price_data[:price])
   end
 
   it '[Pricing][PremiumSupport] `Get a quote` button for more then 200 users contains link to email for for `Plus` plan' do
@@ -52,23 +52,23 @@ describe 'Buy Product Notification' do
 
   it '[Pricing][PremiumSupport] `+` and `-` buttons work for `Plus` plan' do
     @premium_support_page.increase_plus_users
-    price, user_number = @premium_support_page.current_support_plus_price_and_user_number
-    expect(user_number.to_i).to eq(100)
-    expect(price.to_i).to eq(TestingSiteOnlyoffice::SitePricesData.plus_support_100)
+    plus_price_data = @premium_support_page.current_support_plus_price_and_user_number
+    expect(plus_price_data[:user_number]).to eq(100)
+    expect(plus_price_data[:price]).to eq(TestingSiteOnlyoffice::SitePricesData.plus_support_100)
     @premium_support_page.decrease_plus_users
-    price, user_number = @premium_support_page.current_support_plus_price_and_user_number
-    expect(user_number.to_i).to eq(50)
-    expect(price.to_i).to eq(TestingSiteOnlyoffice::SitePricesData.plus_support_50)
+    plus_price_data = @premium_support_page.current_support_plus_price_and_user_number
+    expect(plus_price_data[:user_number]).to eq(50)
+    expect(plus_price_data[:price]).to eq(TestingSiteOnlyoffice::SitePricesData.plus_support_50)
   end
 
   it '[Pricing][PremiumSupport] `+` and `-` buttons work for `Premium` plan' do
     @premium_support_page.increase_premium_users
-    price, user_number = @premium_support_page.current_support_premium_price_and_user_number
-    expect(user_number.to_i).to eq(100)
-    expect(price.to_i).to eq(TestingSiteOnlyoffice::SitePricesData.premium_support_100)
+    premium_price_data = @premium_support_page.current_support_premium_price_and_user_number
+    expect(premium_price_data[:user_number]).to eq(100)
+    expect(premium_price_data[:price]).to eq(TestingSiteOnlyoffice::SitePricesData.premium_support_100)
     @premium_support_page.decrease_premium_users
-    price, user_number = @premium_support_page.current_support_premium_price_and_user_number
-    expect(user_number.to_i).to eq(50)
-    expect(price.to_i).to eq(TestingSiteOnlyoffice::SitePricesData.premium_support_50)
+    premium_price_data = @premium_support_page.current_support_premium_price_and_user_number
+    expect(premium_price_data[:user_number]).to eq(50)
+    expect(premium_price_data[:price]).to eq(TestingSiteOnlyoffice::SitePricesData.premium_support_50)
   end
 end
