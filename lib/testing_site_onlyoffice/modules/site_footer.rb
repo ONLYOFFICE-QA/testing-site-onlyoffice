@@ -13,6 +13,7 @@ module TestingSiteOnlyoffice
     link(:help_center_footer_link, xpath: '//a[contains(@href,"helpcenter.onlyoffice.com/index.aspx")]')
 
     # support
+    link(:premium_support, xpath: '//a[@href="/support.aspx"]')
     link(:order_demo, xpath: '//a[@href="/demo-order.aspx"]')
     link(:support_contact_form, xpath: '//a[@href="/support-contact-form.aspx"]')
 
@@ -35,6 +36,11 @@ module TestingSiteOnlyoffice
     def click_order_demo
       order_demo_element.click
       SiteOrderDemo.new(@instance)
+    end
+
+    def click_premium_support
+      premium_support_element.click
+      SitePremiumSupport.new(@instance)
     end
 
     def click_support_contact_form

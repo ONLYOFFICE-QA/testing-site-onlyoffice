@@ -30,5 +30,36 @@ module TestingSiteOnlyoffice
 
       1500
     end
+
+    def self.plus_support_50
+      return 1250 if SiteData.european_languages.include? config.language
+
+      1480
+    end
+
+    def self.plus_support_100
+      return 2000 if SiteData.european_languages.include? config.language
+
+      2380
+    end
+
+    def self.premium_support_50
+      return 3250 if SiteData.european_languages.include? config.language
+
+      3850
+    end
+
+    def self.premium_support_100
+      return 5200 if SiteData.european_languages.include? config.language
+
+      6160
+    end
+
+    def self.support_users
+      {
+        min: 50,
+        min_increased: 100
+      }
+    end
   end
 end

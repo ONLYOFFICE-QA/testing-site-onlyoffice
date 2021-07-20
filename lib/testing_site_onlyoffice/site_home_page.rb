@@ -15,6 +15,7 @@ require_relative 'data/site_private_data'
 
 require_relative 'footer/site_document_builder/site_document_builder'
 require_relative 'footer/contact_us/site_callback'
+require_relative 'footer/support/premium_support/site_premium_support'
 require_relative 'footer/support/site_order_demo'
 require_relative 'footer/support/site_support_contact_form'
 require_relative 'footer/follow_us_on/site_subscribe'
