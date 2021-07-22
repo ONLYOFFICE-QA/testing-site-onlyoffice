@@ -35,7 +35,7 @@ describe 'Registration new portal' do
   describe 'Partnership' do
     it '[Site][Partnership] Send request for partnership' do
       pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
-      partnership_request_page = @site_home_page.click_link_on_toolbar(:submit_request)
+      partnership_request_page = @site_home_page.click_link_on_toolbar(:partners_submit_request)
       company_name = "nctautotest #{Time.now} For Developers /partnership-request.aspx?requestType=1"
       partnership_request_page.send_partners_form_random_data(company_name: company_name)
       subject_message = "#{company_name} - Partner Request"

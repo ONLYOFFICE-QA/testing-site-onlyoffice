@@ -32,6 +32,7 @@ require_relative 'get_onlyoffice/commercial_packages/site_commercial_docs'
 require_relative 'get_onlyoffice/commercial_packages/site_commercial_workspace'
 require_relative 'get_onlyoffice/site_sign_up'
 require_relative 'get_onlyoffice/site_sign_in'
+require_relative 'get_onlyoffice/modules/site_download_helper'
 
 require_relative 'modules/site_toolbar'
 require_relative 'modules/cookie_window'
@@ -90,6 +91,7 @@ module TestingSiteOnlyoffice
     include HourlyForgotPasswordHelper
     include PageObject
     include PortalVersion
+    include SiteDownloadHelper
     include SiteFooter
     include SiteSearch
     include SiteSupportChatPopup

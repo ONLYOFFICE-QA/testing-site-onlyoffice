@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Site Nonprofit page links' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @nonprofits_page = site_home_page.click_link_on_toolbar(:nonprofits)
+    @nonprofits_page = site_home_page.click_link_on_toolbar(:solutions_nonprofits)
   end
 
   after do |example|
