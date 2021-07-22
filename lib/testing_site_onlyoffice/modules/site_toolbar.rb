@@ -23,10 +23,12 @@ module TestingSiteOnlyoffice
     link(:site_solutions_education, xpath: '//a[@id="navitem_solutions_education"]')
     link(:site_solutions_nonprofit, xpath: '//a[@id="navitem_solutions_nonprofit"]')
     link(:site_solutions_home_use, xpath: '//a[@id="navitem_solutions_home_use"]')
+    link(:site_solutions_customer_stories, xpath: '//a[@id="navitem_features_cloud_service"]')
 
     # top toolbar - Products
     link(:site_products, xpath: '//a[@id="navitem_features"]')
     link(:site_products_workspace, xpath: '//a[@id="navitem_solutions_clients_workspace"]')
+    link(:site_products_workspace_cloud_service, xpath: '//a[@id="navitem_features_cloud_service"]')
     link(:site_products_editors, xpath: '//a[@id="navitem_features_editors"]')
     link(:site_products_editors_documents, xpath: '//a[@id="navitem_features_document_editor"]')
     link(:site_products_editors_spreadsheet, xpath: '//a[@id="navitem_features_spreadsheet_editor"]')
@@ -50,6 +52,7 @@ module TestingSiteOnlyoffice
     link(:site_pricing_docs_developer, xpath: '//a[@id="navitem_prices_integration"]')
     link(:site_pricing_workspace_cloud, xpath: '//a[@id="navitem_prices_saas"]')
     link(:site_pricing_workspace_server, xpath: '//a[@id="navitem_prices_enterprise"]')
+    link(:site_pricing_buy_from_reseller, xpath: '//a[@id="navitem_prices_reseller"]')
 
     # top toolbar - Get Onlyoffice
     link(:site_get_onlyoffice, xpath: '//a[@id="navitem_download"]')
@@ -58,13 +61,15 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice_open_source, xpath: '//a[@id="navitem_download_connectors"]')
     link(:site_get_onlyoffice_commercial, xpath: '//a[@id="navitem_download_commercial"]')
     link(:site_get_onlyoffice_desktop_mobile, xpath: '//a[@id="navitem_download_desktop"]')
+    link(:site_get_onlyoffice_compare_editions, xpath: '//a[@id="navitem_download_compare"]')
 
     # top toolbar - Partners
     link(:site_partners, xpath: '//a[@id="navitem_partners"]')
     link(:site_partners_affiliates, xpath: '//a[@id="navitem_hosters"]')
     link(:site_partners_resellers, xpath: '//a[@id="navitem_resellers"]')
-    link(:site_partners_find, xpath: '//a[@id="navitem_find_partners"]')
+    link(:site_partners_find_partners, xpath: '//a[@id="navitem_find_partners"]')
     link(:site_partners_submit_request, xpath: '//a[@id="navitem_submit_request"]')
+    link(:site_partners_latest_events, xpath: '//a[@id="navitem_latest_events"]')
 
     # top toolbar - About
     link(:site_about, xpath: '//a[@id="navitem_about"]')
@@ -79,6 +84,7 @@ module TestingSiteOnlyoffice
     link(:site_about_training_courses, xpath: '//a[@id="navitem_about_training_courses"]')
     link(:site_about_gift_shop, xpath: '//a[@id="navitem_about_giftshop"]')
     link(:site_about_contacts, xpath: '//a[@id="navitem_about_contacts"]')
+    link(:site_about_latest_news, xpath: '//a[@id="navitem_latest_events"]')
 
     def click_home_logo
       logo_home_element.click
@@ -87,13 +93,40 @@ module TestingSiteOnlyoffice
 
     def site_toolbar_solutions
       {
-        home_use: {
+        solutions_home_use: {
           element: site_solutions_home_use_element,
           class: SiteHomeUse
         },
-        nonprofits: {
+        solutions_nonprofits: {
           element: site_solutions_nonprofit_element,
           class: SiteNonProfits
+        },
+        solutions_smbs: {
+          element: site_solutions_smbs_element
+        },
+        solutions_enterprises: {
+          element: site_solutions_enterprises_element
+        },
+        solutions_developers: {
+          element: site_solutions_developers_element
+        },
+        solutions_hosting: {
+          element: site_solutions_hosting_element
+        },
+        solutions_government: {
+          element: site_solutions_government_element
+        },
+        solutions_healthcare: {
+          element: site_solutions_healthcare_element
+        },
+        solutions_research: {
+          element: site_solutions_research_element
+        },
+        solutions_education: {
+          element: site_solutions_education_element
+        },
+        solutions_customer_stories: {
+          element: site_solutions_customer_stories_element
         }
       }
     end
@@ -103,6 +136,9 @@ module TestingSiteOnlyoffice
         products_workspace: {
           element: site_products_workspace_element,
           class: SiteProductsWorkspace
+        },
+        products_cloud_service: {
+          element: site_products_workspace_cloud_service_element
         },
         products_docs: {
           element: site_products_editors_element,
@@ -188,6 +224,9 @@ module TestingSiteOnlyoffice
         pricing_server: {
           element: site_pricing_workspace_server_element,
           class: SitePriceServerEnterprise
+        },
+        pricing_buy_from_reseller: {
+          element: site_pricing_buy_from_reseller_element
         }
       }
     end
@@ -213,15 +252,30 @@ module TestingSiteOnlyoffice
         desktop_mobile_apps: {
           element: site_get_onlyoffice_desktop_mobile_element,
           class: SiteDesktopApps
+        },
+        compare_editions: {
+          element: site_get_onlyoffice_compare_editions_element
         }
       }
     end
 
     def site_toolbar_partners
       {
-        submit_request: {
+        partners_submit_request: {
           element: site_partners_submit_request_element,
           class: SitePartnersRequest
+        },
+        partners_affiliates: {
+          element: site_partners_affiliates_element
+        },
+        partners_resellers: {
+          element: site_partners_resellers_element
+        },
+        partners_find_partners: {
+          element: site_partners_find_partners_element
+        },
+        partners_latest_events: {
+          element: site_partners_latest_events_element
         }
       }
     end
@@ -232,9 +286,24 @@ module TestingSiteOnlyoffice
           element: site_about_about_onlyoffice_element,
           class: SiteAbout
         },
-        blog: {
+        about_blog: {
           element: site_about_blog_element,
           class: SiteBlog
+        },
+        about_contribute: {
+          element: site_about_contribute_element
+        },
+        about_customers: {
+          element: site_about_customers_element
+        },
+        about_awards: {
+          element: site_about_awards_element
+        },
+        about_events: {
+          element: site_about_events_element
+        },
+        about_press_downloads: {
+          element: site_about_press_downloads_element
         },
         white_papers: {
           element: site_about_white_papers_element,
@@ -243,6 +312,15 @@ module TestingSiteOnlyoffice
         training_courses: {
           element: site_about_training_courses_element,
           class: SiteAboutTrainingCourses
+        },
+        about_gift_shop: {
+          element: site_about_gift_shop_element
+        },
+        about_contacts: {
+          element: site_about_contacts_element
+        },
+        about_latest_news: {
+          element: site_about_latest_news_element
         }
       }
     end

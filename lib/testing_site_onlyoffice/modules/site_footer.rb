@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
+require_relative '../get_onlyoffice/modules/site_download_helper'
+
 module TestingSiteOnlyoffice
   # Site footer
   # https://user-images.githubusercontent.com/40513035/100441407-75e4a800-30b7-11eb-8e39-9d2cc50329ee.png
   module SiteFooter
     include PageObject
+    include SiteDownloadHelper
 
     # developers
     link(:document_builder, xpath: '//a[@href="/document-builder.aspx"]')
@@ -56,6 +59,20 @@ module TestingSiteOnlyoffice
     def click_subscribe_to_newsletter
       subscribe_to_newsletter_element.click
       SiteSubscribe.new(@instance)
+    end
+
+    def site_footer_link_alive?(section_title, title)
+      link_xpath = get_footer_xpath_by_title(section_title, title)
+      link_element = @instance.webdriver.driver.find_element(:xpath, link_xpath)
+      link_success_response?(link_element.attribute('href'))
+    end
+
+    def get_footer_xpath_by_title(section_title, title)
+      if section_title == :'Follow us on'
+        "//div[@class='footercolor']//a[@title='#{title}']"
+      else
+        "//div[@class='footercolor']//a[text()='#{title}']"
+      end
     end
   end
 end

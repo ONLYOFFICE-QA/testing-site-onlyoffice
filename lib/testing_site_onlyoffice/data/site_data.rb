@@ -92,5 +92,9 @@ module TestingSiteOnlyoffice
     def self.white_peppers_and_datasheets
       white_papers.merge(datasheets)
     end
+
+    def self.footer_links
+      @footer_links ||= YAML.load_file("#{__dir__}/footer_links_info.yml")
+    end
   end
 end

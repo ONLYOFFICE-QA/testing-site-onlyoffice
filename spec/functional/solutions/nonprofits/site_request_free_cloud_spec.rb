@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Request free cloud' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    non_profit_organizatins_page = site_home_page.click_link_on_toolbar(:nonprofits)
+    non_profit_organizatins_page = site_home_page.click_link_on_toolbar(:solutions_nonprofits)
     @request_free_cloud_page = non_profit_organizatins_page.click_request_free_cloud
   end
 

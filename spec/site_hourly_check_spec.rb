@@ -30,7 +30,7 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check link Personal Office' do
-      tour_page = @site_home_page.click_link_on_toolbar(:home_use).open_personal
+      tour_page = @site_home_page.click_link_on_toolbar(:solutions_home_use).open_personal
       expect(tour_page.login_visible?).to be true
     end
 
@@ -242,7 +242,7 @@ describe 'SiteHourlyCheck' do
     end
 
     describe 'BLOG' do
-      let(:blog_page) { @site_home_page.click_link_on_toolbar(:blog) }
+      let(:blog_page) { @site_home_page.click_link_on_toolbar(:about_blog) }
 
       it '[BLOG] Check click Blog link' do
         expect(blog_page).to be_a TestingSiteOnlyoffice::SiteBlog
