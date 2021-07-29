@@ -8,6 +8,7 @@ require_relative 'about/site_blog'
 require_relative 'additional_products/site_help_center'
 
 require_relative 'data/site_data'
+require_relative 'data/main_page_links_data'
 require_relative 'data/site_download_data'
 require_relative 'data/site_notification_data'
 require_relative 'data/site_prices_data'
@@ -35,6 +36,7 @@ require_relative 'get_onlyoffice/site_sign_in'
 require_relative 'get_onlyoffice/modules/site_download_helper'
 
 require_relative 'modules/site_toolbar'
+require_relative 'modules/site_home_page_helper'
 require_relative 'modules/cookie_window'
 require_relative 'modules/site_footer'
 require_relative 'modules/site_languages'
@@ -93,6 +95,7 @@ module TestingSiteOnlyoffice
     include PortalVersion
     include SiteDownloadHelper
     include SiteFooter
+    include SiteHomePageHelper
     include SiteSearch
     include SiteSupportChatPopup
     include SiteToolbar
