@@ -16,7 +16,7 @@
     "download": "workspace-install.sh"
   },
   "workspace_docker_compose": {
-    "instruction": "Installing Community Server using Docker Compose - ONLYOFFICE",
+    "instruction": "Installing ONLYOFFICE Workspace using Docker Compose - ONLYOFFICE",
     "download": "GitHub - ONLYOFFICE/Docker-CommunityServer: Collaborative system for managing documents, projects, customer relations and emails in one place"
   },
   "workspace_digitalocean": {
