@@ -59,8 +59,18 @@ module TestingSiteOnlyoffice
     end
 
     def check_opened_page_title
+      long_page_load_timeout
       @instance.webdriver.choose_tab(2)
       @instance.webdriver.get_title_of_current_tab
+    end
+
+    # some page like https://helpcenter.onlyoffice.com/ or
+    # https://appimage.github.io/ONLYOFFICE/
+    # loads for very long time sometimes so page load timeout is failing
+    def long_page_load_timeout
+      timeout = 60
+      OnlyofficeLoggerHelper.log("Sleeping for #{timeout}seconds until checking that page correctly loaded")
+      sleep(timeout)
     end
   end
 end
