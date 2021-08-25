@@ -29,7 +29,7 @@ describe 'SiteHourlyCheck' do
       expect(@site_home_page.get_all_language_from_site.sort).to eq(TestingSiteOnlyoffice::SiteData.site_languages.sort)
     end
 
-    it '[Site] Check link Personal Office' do
+    it '[Site] Check link Personal Offices' do
       tour_page = @site_home_page.click_link_on_toolbar(:solutions_home_use).open_personal
       expect(tour_page.login_visible?).to be true
     end
