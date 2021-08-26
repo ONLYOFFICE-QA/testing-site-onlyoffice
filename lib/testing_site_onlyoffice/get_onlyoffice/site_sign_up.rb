@@ -78,7 +78,7 @@ module TestingSiteOnlyoffice
       self.phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.portal_name = params[:portal_name]
       self.portal_password = params.fetch(:password, SiteData::PORTAL_PASSWORD)
-      set_number_of_users
+      set_number_of_users if number_of_users_element.present?
       set_region(params[:region])
       remove_recaptcha
       start_trial_element.click
