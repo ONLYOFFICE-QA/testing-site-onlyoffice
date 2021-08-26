@@ -5,7 +5,7 @@ require_relative '../portal_helper/portal_main_page'
 
 module TestingSiteOnlyoffice
   # /registration.aspx
-  # https://user-images.githubusercontent.com/40513035/107354674-7fd74e00-6adf-11eb-9f6d-bcb5aaa3790f.png
+  # https://user-images.githubusercontent.com/40513035/130948402-3f673af1-84ee-47fc-a965-af672792e293.png
   class SiteSignUp
     include PageObject
     include SiteToolbar
