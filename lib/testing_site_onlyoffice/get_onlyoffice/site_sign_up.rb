@@ -5,7 +5,7 @@ require_relative '../portal_helper/portal_main_page'
 
 module TestingSiteOnlyoffice
   # /registration.aspx
-  # https://user-images.githubusercontent.com/40513035/107354674-7fd74e00-6adf-11eb-9f6d-bcb5aaa3790f.png
+  # https://user-images.githubusercontent.com/40513035/130948402-3f673af1-84ee-47fc-a965-af672792e293.png
   class SiteSignUp
     include PageObject
     include SiteToolbar
@@ -20,6 +20,7 @@ module TestingSiteOnlyoffice
     text_field(:last_name, xpath: '//*[@class="txtSignUpLastName"]')
     text_field(:email, xpath: '//input[contains(@class,"txtSignUpEmail")]')
     text_field(:phone, xpath: '//input[@id="txtPhone"]')
+    span(:number_of_users, xpath: '//span[contains(@class, "registNumberOfUsersSelect")]')
     text_field(:portal_name, xpath: '//input[contains(@class,"txtSignUpPortalName")]')
     text_field(:portal_password, xpath: '//input[contains(@class,"txtSignUpPassword")]')
 
@@ -77,9 +78,21 @@ module TestingSiteOnlyoffice
       self.phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.portal_name = params[:portal_name]
       self.portal_password = params.fetch(:password, SiteData::PORTAL_PASSWORD)
+      set_number_of_users(params[:users_number]) if number_of_users_element.present?
       set_region(params[:region])
       remove_recaptcha
       start_trial_element.click
+    end
+
+    def set_number_of_users(number)
+      number_of_users_element.click
+      @instance.webdriver.wait_until { dropdown_user_number_element(number).present? }
+      dropdown_user_number_element(number).click
+    end
+
+    def dropdown_user_number_element(number)
+      user_number_xpath = "//li[@data-value='#{number}']"
+      @instance.webdriver.get_element(user_number_xpath)
     end
 
     def all_errors_visible?
