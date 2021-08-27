@@ -5,7 +5,7 @@ require_relative 'site_connectors_constructor'
 require_relative 'site_connectors_more_info'
 require_relative '../../get_onlyoffice/modules/site_block_constructor_helper'
 require_relative '../../get_onlyoffice/modules/site_download_helper'
-require_relative '../../get_onlyoffice/open_source_packages/connectors/site_open_source_connectors'
+require_relative '../../get_onlyoffice/other_products/connectors/site_other_products_connectors'
 require_relative '../../site_home_page'
 
 module TestingSiteOnlyoffice
@@ -38,7 +38,7 @@ module TestingSiteOnlyoffice
 
     def click_get_it_now_link(xpath)
       @instance.webdriver.get_element(xpath).click
-      SiteOpenSourceConnectors.new(@instance)
+      SiteOtherProductsConnectors.new(@instance)
     end
 
     def click_more_info_link(xpath, connector)

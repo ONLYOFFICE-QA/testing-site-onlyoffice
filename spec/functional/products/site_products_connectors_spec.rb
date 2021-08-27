@@ -60,7 +60,7 @@ describe 'Site products connectors ' do
 
       it "[Site][Products][OnlyofficeConnectors][#{connector}] 'Get it now' button works /all-connectors.aspx" do
         download_connectors_page = @products_connectors_page.click_get_it_now_link(current_connector.get_it_now_xpath)
-        expect(download_connectors_page).to be_a TestingSiteOnlyoffice::SiteOpenSourceConnectors
+        expect(download_connectors_page).to be_a TestingSiteOnlyoffice::SiteOtherProductsConnectors
       end
     end
   end

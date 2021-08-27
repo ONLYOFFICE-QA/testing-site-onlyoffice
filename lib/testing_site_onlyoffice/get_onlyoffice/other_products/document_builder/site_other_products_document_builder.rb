@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
 require_relative '../../../modules/site_toolbar'
-require_relative '../modules/site_open_source_toolbar'
+require_relative '../modules/other_products_toolbar'
 require_relative '../../modules/site_download_helper'
 require_relative '../../modules/site_block_constructor_helper'
 require_relative 'site_document_builder_constructor'
 
 module TestingSiteOnlyoffice
-  # Open source packages for document builder
-  # https://user-images.githubusercontent.com/40513035/110755500-14a5a680-825a-11eb-960c-7eb9a3d58c8e.png
-  class SiteOpenSourceDocumentBuilder
+  # /download.aspx#builder
+  # https://user-images.githubusercontent.com/40513035/131142257-9a25026f-9131-4835-99b8-ef23134d1637.png
+  class SiteOtherProductsDocumentBuilder
     include PageObject
     include SiteBlockConstructorHelper
     include SiteDownloadHelper
     include SiteToolbar
-    include SiteToolbarOpenSource
+    include SiteOtherProductsToolbar
 
     def initialize(instance)
       super(instance.webdriver.driver)

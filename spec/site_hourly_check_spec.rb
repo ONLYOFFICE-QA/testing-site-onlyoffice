@@ -121,87 +121,124 @@ describe 'SiteHourlyCheck' do
         end
       end
 
-      describe 'download commercial /download-commercial.aspx' do
-        let(:download_commercial_page) { @site_home_page.click_link_on_toolbar(:commercial_packages) }
+      describe 'download onlyoffice docs /download-docs.aspx' do
+        let(:onlyoffice_docs_page) { @site_home_page.click_link_on_toolbar(:onlyoffice_docs) }
 
-        describe 'workspace' do
-          let(:commercial_workspace_page) { download_commercial_page.open_commercial_workspace }
-
-          it_behaves_like 'commercial_installer_download', 'Workspace',
-                          TestingSiteOnlyoffice::SiteDownloadData.commercial_workspace_list_type do
-            let(:installers_download_page) { commercial_workspace_page }
+        describe 'enterprise' do
+          it_behaves_like 'commercial_installer_download', 'Docs_Enterprise',
+                          TestingSiteOnlyoffice::SiteDownloadData.commercial_enterprise_docs_list_type do
+            let(:installers_download_page) { onlyoffice_docs_page }
           end
         end
 
-        describe 'docs' do
-          describe 'Enterprise edition' do
-            it_behaves_like 'commercial_installer_download', 'Docs_Enterprise',
-                            TestingSiteOnlyoffice::SiteDownloadData.commercial_enterprise_docs_list_type do
-              let(:installers_download_page) { download_commercial_page }
-            end
-          end
+        describe 'developer' do
+          let(:onlyoffice_docs_developer_page) { onlyoffice_docs_page.site_docs_developer_download }
 
-          describe 'Developer edition' do
-            it_behaves_like 'commercial_installer_download', 'Docs_Developer',
-                            TestingSiteOnlyoffice::SiteDownloadData.commercial_developer_docs_list_type do
-              let(:installers_download_page) { download_commercial_page }
-            end
-          end
-        end
-      end
-
-      describe 'download open source /download.aspx' do
-        let(:download_opensource_page) { @site_home_page.click_link_on_toolbar(:open_source_packages) }
-
-        describe 'open source bundles /download.aspx' do
-          let(:opensource_bundles_page) { download_opensource_page.open_opensource_bundles }
-
-          TestingSiteOnlyoffice::SiteDownloadData.open_source_bundles_list.each do |installer|
-            it "[Site][DownloadOpenSource][Bundlers] download link for `#{installer}` alive /download.aspx" do
-              expect(opensource_bundles_page).to be_download_link_alive(installer.to_sym)
-            end
-
-            it "[Site][DownloadOpenSource][Bundlers] `#{installer}` instruction link alive /download.aspx" do
-              expect(opensource_bundles_page).to be_instruction_link_alive(installer.to_sym)
-            end
+          it_behaves_like 'commercial_installer_download', 'Docs_Developer',
+                          TestingSiteOnlyoffice::SiteDownloadData.commercial_developer_docs_list_type do
+            let(:installers_download_page) { onlyoffice_docs_developer_page }
           end
         end
 
-        describe 'open source groups /download.aspx' do
-          let(:opensource_groups_page) { download_opensource_page.open_opensource_groups }
+        describe 'community' do
+          let(:onlyoffice_docs_community_page) { onlyoffice_docs_page.site_docs_community_download }
 
-          TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_list.each do |installer|
-            it "[Site][DownloadOpenSource][Groups] download link for `#{installer}` alive /download.aspx" do
-              expect(opensource_groups_page).to be_download_link_alive(installer.to_sym)
-              expect(opensource_groups_page).to be_download_link_valid(
-                opensource_groups_page.download_xpath(installer), installer
-              )
-            end
-
-            it "[Site][DownloadOpenSource][Groups] `#{installer}` instruction link alive /download.aspx" do
-              expect(opensource_groups_page).to be_instruction_link_alive(installer.to_sym)
-            end
-          end
-        end
-
-        describe 'open source docs /download.aspx' do
           TestingSiteOnlyoffice::SiteDownloadData.open_source_docs_list.each do |installer|
             describe installer.to_s do
-              let(:current_installation) { download_opensource_page.installer_type_block(installer) }
+              let(:current_installation) { onlyoffice_docs_community_page.installer_type_block(installer) }
 
-              it "[Site][DownloadOpenSource][Docs] download link for `#{installer}` alive /download.aspx" do
-                expect(download_opensource_page).to be_link_alive(current_installation.download_xpath)
+              it "[Site][Docs_Community] download link for `#{installer}` alive /download-docs.aspx#docs-community" do
+                expect(onlyoffice_docs_community_page).to be_link_alive(current_installation.download_xpath)
               end
 
-              it "[Site][DownloadOpenSource][Docs] `#{installer}` instruction link alive /download.aspx" do
-                expect(download_opensource_page).to be_link_alive(current_installation.instruction_xpath)
+              it "[Site][Docs_Community] `#{installer}` instruction link alive /download-docs.aspx#docs-community" do
+                expect(onlyoffice_docs_community_page).to be_link_alive(current_installation.instruction_xpath)
               end
             end
           end
 
           it '[Site][DownloadOpenSource][Docs] `windows` instruction link valid /download.aspx' do
-            windows_installation = download_opensource_page.installer_type_block(:windows)
-            expect(download_opensource_page).to be_download_link_valid(windows_installation.download_xpath, :windows)
+            windows_installation = onlyoffice_docs_community_page.installer_type_block(:windows)
+            expect(onlyoffice_docs_community_page).to be_download_link_valid(windows_installation.download_xpath, :windows)
+          end
+        end
+      end
+
+      describe 'download onlyoffice workspace /download-workspace.aspx' do
+        let(:onlyoffice_workspace_page) { @site_home_page.click_link_on_toolbar(:onlyoffice_workspace) }
+
+        describe 'enterprice' do
+          it_behaves_like 'commercial_installer_download', 'Workspace_Enterprise',
+                          TestingSiteOnlyoffice::SiteDownloadData.commercial_workspace_list_type do
+            let(:installers_download_page) { onlyoffice_workspace_page }
+          end
+        end
+
+        describe 'community' do
+          let(:onlyoffice_workspace_community_page) { onlyoffice_workspace_page.site_workspace_community_download }
+
+          TestingSiteOnlyoffice::SiteDownloadData.workspace_community.each do |installer|
+            it "[Site][WorkspaceCommunity] Check `#{installer}` 'Read instructions' link /download-workspace.aspx#workspace-community" do
+              onlyoffice_workspace_community_page.read_instruction_connector(installer)
+              instruction_title = TestingSiteOnlyoffice::SiteDownloadData.open_source_bundlers_info[installer.to_s]['instruction']
+              expect(onlyoffice_workspace_community_page.check_opened_page_title).to eq(instruction_title)
+            end
+
+            it "[Site][WorkspaceCommunity] Check `#{installer}` 'Install now' link /download-workspace.aspx#workspace-community" do
+              expect(onlyoffice_workspace_community_page).to be_file_can_be_downloaded(installer)
+            end
+          end
+        end
+      end
+
+      describe 'download other products /download.aspx' do
+        let(:other_products_page) { @site_home_page..click_link_on_toolbar(:other_products) }
+
+        describe 'connectors' do
+          it_behaves_like 'connector_download', TestingSiteOnlyoffice::SiteDownloadData.connectors_list do
+            let(:connectors_page) { other_products_page }
+          end
+        end
+
+        describe 'groups' do
+          let(:other_products_groups_page) { other_products_page.site_other_products_onlyoffice_groups_download }
+
+          TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_list.each do |installer|
+            it "[Site][OtherProducts][Groups] Check `#{installer}` download link /download.aspx#groups" do
+              expect(other_products_groups_page).to be_download_link_alive(installer)
+              expect(other_products_groups_page).to be_download_link_valid(other_products_groups_page.download_xpath(installer), installer)
+            end
+
+            it "[Site][OtherProducts][Groups] Check `#{installer}`'Read instructions' link /download.aspx#groups" do
+              other_products_groups_page.click_groups_instruction_link(installer)
+              instruction_title = TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_info[installer.to_s]['instruction']
+              expect(other_products_groups_page.check_opened_page_title).to eq(instruction_title)
+            end
+          end
+        end
+
+        describe 'bundles' do
+          let(:other_products_bundles_page) { other_products_page.site_other_products_bundles_download }
+
+          TestingSiteOnlyoffice::SiteDownloadData.other_products_bundles_list.each do |installer|
+            it "[Site][OtherProducts][Bundlers] Check `#{installer}` 'Read instructions' link /download.aspx#bundles" do
+              other_products_bundles_page.read_instruction_connector(installer)
+              instruction_title = TestingSiteOnlyoffice::SiteDownloadData.open_source_bundlers_info[installer.to_s]['instruction']
+              expect(other_products_bundles_page.check_opened_page_title).to eq(instruction_title)
+            end
+
+            it "[Site][OtherProducts][Bundlers] Check `#{installer}` 'Install now' link /download.aspx#bundles" do
+              expect(other_products_bundles_page).to be_file_can_be_downloaded(installer)
+            end
+          end
+        end
+
+        describe 'document builder' do
+          let(:other_products_document_builder_page) { other_products_page.site_other_products_document_builder_download }
+
+          it_behaves_like 'document_builder_download',
+                          TestingSiteOnlyoffice::SiteDownloadData.document_builder_list do
+            let(:installers_download_page) { other_products_document_builder_page }
           end
         end
       end
@@ -217,26 +254,6 @@ describe 'SiteHourlyCheck' do
           debian_repo_response_code = HTTParty.head('http://download.onlyoffice.com/repo/debian/dists/squeeze/InRelease').response.code
           expect(debian_repo_response_code).to match(/^2\d{2}$/), 'link http://download.onlyoffice.com/repo/debian/dists/squeeze/InRelease dead' \
                                                                   "\nhead request response code: #{debian_repo_response_code}"
-        end
-      end
-
-      describe 'document builder' do
-        let(:document_builder_download_page) do
-          download_open_source_page = @site_home_page.click_link_on_toolbar(:open_source_packages)
-          download_open_source_page.open_opensource_document_builder
-        end
-
-        it_behaves_like 'document_builder_download',
-                        TestingSiteOnlyoffice::SiteDownloadData.document_builder_list do
-          let(:installers_download_page) { document_builder_download_page }
-        end
-      end
-
-      describe '#download_connectors' do
-        let(:site_connectors_page) { @site_home_page.click_link_on_toolbar(:open_source_packages).open_opensource_connectors }
-
-        it_behaves_like 'connector_download', TestingSiteOnlyoffice::SiteDownloadData.connectors_list do
-          let(:connectors_page) { site_connectors_page }
         end
       end
     end

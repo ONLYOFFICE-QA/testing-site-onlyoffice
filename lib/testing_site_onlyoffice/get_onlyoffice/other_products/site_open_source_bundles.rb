@@ -1,45 +1,19 @@
 # frozen_string_literal: true
 
 require_relative '../../modules/site_toolbar'
-require_relative 'modules/site_open_source_toolbar'
+require_relative 'modules/other_products_toolbar'
 require_relative '../modules/site_download_helper'
+require_relative '../modules/workspace_community/workspace_community_helper'
 
 module TestingSiteOnlyoffice
-  # Open Source Bundles
+  # /download.aspx#bundles
   # https://user-images.githubusercontent.com/40513035/97213564-d049ca80-17d2-11eb-9c9d-fffac028177d.png
-  class SiteOpenSourceBundles
+  class SiteOtherProductsBundles
     include PageObject
     include SiteDownloadHelper
     include SiteToolbar
-    include SiteToolbarOpenSource
-
-    bundle_download_windows = '//a[contains(@href, "Workspace_Win")]'
-    link(:site_open_source_bundles_windows, xpath: bundle_download_windows)
-    link(:site_open_source_bundles_windows_instruction,
-         xpath: "#{bundle_download_windows}/../../div/p/a[contains(@href, 'windows.aspx')]")
-
-    download_deb_element = "//h4[contains(text(), 'Debian')]/../div"
-    link(:site_open_source_bundles_deb, xpath: "#{download_deb_element}/a[contains(@href, 'workspace-install.sh')]")
-    link(:site_open_source_bundles_deb_instruction, xpath: "#{download_deb_element}/p/a[contains(@href, 'linux')]")
-
-    download_rpm_element = "//h4[contains(text(), 'CentOS')]/../div"
-    link(:site_open_source_bundles_rpm, xpath: "#{download_rpm_element}/a[contains(@href, 'workspace-install.sh')]")
-    link(:site_open_source_bundles_rpm_instruction, xpath: "#{download_rpm_element}/p/a[contains(@href, 'linux')]")
-
-    link(:site_open_source_bundles_docker_image,
-         xpath: "//h4[contains(text(), 'Docker')]/../div/a[contains(@href, 'workspace-install.sh')]")
-    link(:site_open_source_bundles_docker_image_instruction,
-         xpath: "//a[contains(@href, 'workspace-install-docker.aspx')]")
-
-    bundles_docker_compose_instruction = "//a[contains(@href, 'workspace-install-docker-compose.aspx')]"
-    link(:site_open_source_bundles_docker_compose,
-         xpath: "#{bundles_docker_compose_instruction}/../../../div/a[contains(@href, 'Docker')]")
-    link(:site_open_source_bundles_docker_compose_instruction, xpath: bundles_docker_compose_instruction)
-
-    download_digitalocean_instruction = '//a[contains(@href, "workspace-install-digitalocean")]'
-    link(:site_open_source_bundles_digitalocean,
-         xpath: "#{download_digitalocean_instruction}/../../../div/a[contains(@href, 'digitalocean')]")
-    link(:site_open_source_bundles_digitalocean_instruction, xpath: download_digitalocean_instruction)
+    include SiteOtherProductsToolbar
+    include SiteWorkspaceCommunityHelper
 
     link(:site_owncloud_docker_compose, xpath: "//a[contains(@href, 'docker-onlyoffice-owncloud')]")
     link(:site_owncloud_docker_compose_instruction, xpath: "//a[contains(@href, 'ownCloudUsingDocker')]")
@@ -95,18 +69,12 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        site_open_source_bundles_windows_element.present?
+        site_owncloud_docker_compose_element.present?
       end
     end
 
     def download_links
       {
-        workspace_windows: site_open_source_bundles_windows_element,
-        workspace_deb: site_open_source_bundles_deb_element,
-        workspace_rpm: site_open_source_bundles_rpm_element,
-        workspace_docker_image: site_open_source_bundles_docker_image_element,
-        workspace_docker_compose: site_open_source_bundles_docker_compose_element,
-        workspace_digitalocean: site_open_source_bundles_digitalocean_element,
         owncloud_docker_compose: site_owncloud_docker_compose_element,
         owncloud_vmware: site_owncloud_vmware_element,
         owncloud_vmware_esxi: site_owncloud_vmware_esxi_element,
@@ -122,12 +90,6 @@ module TestingSiteOnlyoffice
 
     def instruction_links
       {
-        workspace_windows: site_open_source_bundles_windows_instruction_element,
-        workspace_deb: site_open_source_bundles_deb_instruction_element,
-        workspace_rpm: site_open_source_bundles_rpm_instruction_element,
-        workspace_docker_image: site_open_source_bundles_docker_image_instruction_element,
-        workspace_docker_compose: site_open_source_bundles_docker_compose_instruction_element,
-        workspace_digitalocean: site_open_source_bundles_digitalocean_instruction_element,
         owncloud_docker_compose: site_owncloud_docker_compose_instruction_element,
         owncloud_vmware: site_owncloud_vmware_instruction_element,
         owncloud_vmware_esxi: site_owncloud_vmware_esxi_instruction_element,

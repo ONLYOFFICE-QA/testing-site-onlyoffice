@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
 require_relative '../../modules/site_toolbar'
-require_relative 'modules/site_open_source_toolbar'
+require_relative 'modules/other_products_toolbar'
 require_relative '../modules/site_download_helper'
 
 module TestingSiteOnlyoffice
-  # Open Source Groups
-  # https://user-images.githubusercontent.com/40513035/98349927-ab075880-202b-11eb-89b8-cf36b090830e.png
-  class SiteOpenSourceGroups
+  # /download.aspx#groups
+  # https://user-images.githubusercontent.com/40513035/131140675-36b7a7dc-f6a9-42bb-a2e9-36ff178349bc.png
+  class SiteOtherProductsGroups
     include PageObject
     include SiteDownloadHelper
     include SiteToolbar
-    include SiteToolbarOpenSource
+    include SiteOtherProductsToolbar
 
     groups_instruction_docker = "//a[contains(@href, 'groups-install-docker')]"
     link(:site_open_source_groups_docker_download,
