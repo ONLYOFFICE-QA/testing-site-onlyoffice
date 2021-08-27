@@ -192,7 +192,7 @@ describe 'SiteHourlyCheck' do
       end
 
       describe 'download other products /download.aspx' do
-        let(:other_products_page) { @site_home_page..click_link_on_toolbar(:other_products) }
+        let(:other_products_page) { @site_home_page.click_link_on_toolbar(:other_products) }
 
         describe 'connectors' do
           it_behaves_like 'connector_download', TestingSiteOnlyoffice::SiteDownloadData.connectors_list do
