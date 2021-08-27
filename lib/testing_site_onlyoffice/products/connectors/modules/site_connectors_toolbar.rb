@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../../../get_onlyoffice/commercial_packages/site_commercial_docs'
+require_relative '../../../get_onlyoffice/onlyoffice_docs/site_docs_enterprise'
 require_relative '../site_products_connectors_onlyoffice'
 require_relative '../site_products_connectors_partners'
 
@@ -26,7 +26,7 @@ module TestingSiteOnlyoffice
 
     def get_onlyoffice_docs
       get_onlyoffice_docs_element.click
-      SiteCommercialDocs.new(@instance)
+      SiteDocsEnterprise.new(@instance)
     end
   end
 end
