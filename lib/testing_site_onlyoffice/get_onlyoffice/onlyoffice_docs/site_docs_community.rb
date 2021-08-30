@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
 require_relative '../../modules/site_toolbar'
-require_relative 'modules/site_open_source_toolbar'
+require_relative 'modules/onlyoffice_docs_toolbar'
 require_relative '../modules/site_download_helper'
-require_relative 'site_installer_block_constructor'
+require_relative '../modules/open_source/site_installer_block_constructor'
 
 module TestingSiteOnlyoffice
-  # Open source packages
-  # https://user-images.githubusercontent.com/40513035/95982402-c0240980-0e28-11eb-8690-711459dae4e3.png
-  class SiteOpenSourceDocs
+  # /download-docs.aspx?from=downloadintegrationmenu#docs-community
+  # https://user-images.githubusercontent.com/40513035/131093555-b4c45fb2-a30c-48ca-a6a9-fb20d4b92045.png
+  class SiteDocsCommunity
     include PageObject
     include SiteDownloadHelper
     include SiteToolbar
-    include SiteToolbarOpenSource
+    include SiteToolbarOnlyofficeDocs
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -28,7 +28,7 @@ module TestingSiteOnlyoffice
     end
 
     def installer_type_block(type = :docker)
-      SiteBlockConstructor.new(@instance, 'docs', type.to_s)
+      SiteBlockConstructor.new(@instance, 'docs-community', type.to_s)
     end
 
     def install_button_works?(installer)

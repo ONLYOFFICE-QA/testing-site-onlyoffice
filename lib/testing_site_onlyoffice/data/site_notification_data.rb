@@ -18,8 +18,8 @@ module TestingSiteOnlyoffice
     PURCHASE_DOCS_ENTERPRISE = 'ONLYOFFICE Docs: Thanks for purchasing Enterprise Edition'
     PURCHASE_DOCS_DEVELOPER = 'ONLYOFFICE Docs: Thanks for purchasing Developer Edition'
 
-    COMMERCIAL_DEVELOPER_DOCS = 'Developer Edition Request [from: download-commercial]'
-    COMMERCIAL_ENTERPRISE_DOCS = 'Integration Edition Request [from: download-commercial]'
-    COMMERCIAL_ENTERPRISE_WORKSPACE = 'Enterprise Edition Request [from: download-commercial]'
+    COMMERCIAL_DEVELOPER_DOCS = 'Developer Edition Request [from: downloadintegrationmenu]'
+    COMMERCIAL_ENTERPRISE_DOCS = 'Integration Edition Request [from: downloadintegrationmenu]'
+    COMMERCIAL_ENTERPRISE_WORKSPACE = 'Enterprise Edition Request [from: download-workspace]'
   end
 end

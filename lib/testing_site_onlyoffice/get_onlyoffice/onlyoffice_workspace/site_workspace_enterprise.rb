@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
 require_relative '../../modules/site_toolbar'
-require_relative 'modules/site_commercial_toolbar'
 require_relative '../modules/site_download_helper'
 require_relative '../modules/site_block_constructor_helper'
-require_relative 'site_commercial_block_constructor'
-require_relative 'modules/site_commercial_download_helper'
+require_relative '../modules/commercial/site_commercial_block_constructor'
+require_relative '../modules/commercial/site_commercial_download_form'
+require_relative 'modules/onlyoffice_workspace_toolbar'
 
 module TestingSiteOnlyoffice
-  # Commercial workspace packages
-  # https://user-images.githubusercontent.com/40513035/99003720-9822e580-254f-11eb-9cd5-2b0c7a966d95.png
-  class SiteCommercialWorkspace
+  # /download-workspace.aspx#workspace-enterprise
+  # https://user-images.githubusercontent.com/40513035/131041987-ec65d0f6-c96e-43f2-b3ab-cafd8c6b9a09.png
+  class SiteWorkspaceEnterprise
     include PageObject
     include SiteBlockConstructorHelper
     include SiteDownloadHelper
     include SiteCommercialDownloadHelper
     include SiteToolbar
-    include SiteToolbarCommercial
+    include SiteToolbarOnlyofficeWorkspace
 
     def initialize(instance)
       super(instance.webdriver.driver)

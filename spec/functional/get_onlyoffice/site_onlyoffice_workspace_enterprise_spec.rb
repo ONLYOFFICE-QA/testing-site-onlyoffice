@@ -7,12 +7,12 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Commercial packages workspace download' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    download_commercial_page = site_home_page.click_link_on_toolbar(:commercial_packages)
-    @commercial_workspace_page = download_commercial_page.open_commercial_workspace
+    @workspace_enterprise_page = site_home_page.click_link_on_toolbar(:onlyoffice_workspace)
   end
 
-  it_behaves_like 'commercial_installer_download', 'Workspace', TestingSiteOnlyoffice::SiteDownloadData.commercial_workspace_list_type do
-    let(:installers_download_page) { @commercial_workspace_page }
+  it_behaves_like 'commercial_installer_download', 'Workspace_Enterprise',
+                  TestingSiteOnlyoffice::SiteDownloadData.commercial_workspace_list_type do
+    let(:installers_download_page) { @workspace_enterprise_page }
   end
 
   after do |example|

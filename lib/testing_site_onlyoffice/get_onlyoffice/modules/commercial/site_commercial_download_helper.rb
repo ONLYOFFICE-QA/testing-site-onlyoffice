@@ -9,7 +9,7 @@ module TestingSiteOnlyoffice
         installer_docs_enterprise_type_block(installer)
       when 'Docs_Developer'
         installer_docs_developer_type_block(installer)
-      when 'Workspace'
+      when 'Workspace_Enterprise'
         installer_type_block(installer)
       end
     end
@@ -20,7 +20,7 @@ module TestingSiteOnlyoffice
         SitePriceDocsEnterprise
       when 'Docs_Developer'
         SitePriceDocsDeveloper
-      when 'Workspace'
+      when 'Workspace_Enterprise'
         SitePriceServerEnterprise
       end
     end

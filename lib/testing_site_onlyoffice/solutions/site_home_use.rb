@@ -58,7 +58,7 @@ module TestingSiteOnlyoffice
 
     def download_self_hosted_productivity_apps
       download_workspace_element.click
-      SiteOpenSourceBundles.new(@instance)
+      SiteOtherProductsBundles.new(@instance)
     end
 
     def click_learn_more_hosted_productivity_apps

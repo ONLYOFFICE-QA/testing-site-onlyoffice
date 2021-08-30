@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../../get_onlyoffice/open_source_packages/document_builder/site_open_source_document_builder'
+require_relative '../../get_onlyoffice/other_products/document_builder/site_other_products_document_builder'
 
 module TestingSiteOnlyoffice
   # /document-builder.aspx
@@ -26,7 +26,7 @@ module TestingSiteOnlyoffice
 
     def click_download_now
       download_now_element.click
-      SiteOpenSourceDocumentBuilder.new(@instance)
+      SiteOtherProductsDocumentBuilder.new(@instance)
     end
   end
 end
