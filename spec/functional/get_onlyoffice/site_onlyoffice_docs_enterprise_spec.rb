@@ -4,10 +4,10 @@ require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Commercial packages Onlyoffice Docs Enterprise edition download' do
+describe 'Onlyoffice Docs Enterprise edition download' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @download_commercial_page = site_home_page.click_link_on_toolbar(:commercial_packages)
+    @download_commercial_page = site_home_page.click_link_on_toolbar(:onlyoffice_docs)
   end
 
   it_behaves_like 'commercial_installer_download', 'Docs_Enterprise',

@@ -36,7 +36,7 @@ describe 'Document Builder download' do
 
   it '[Site][HomeUse]Button "Download" works for self-hosted productivity apps' do
     download_workspace_page = @home_use_page.download_self_hosted_productivity_apps
-    expect(download_workspace_page).to be_a TestingSiteOnlyoffice::SiteOpenSourceBundles
+    expect(download_workspace_page).to be_a TestingSiteOnlyoffice::SiteOtherProductsBundles
   end
 
   it '[Site][HomeUse]Button "Learn more" works for self-hosted productivity apps' do

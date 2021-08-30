@@ -1,22 +1,22 @@
 # frozen_string_literal: true
 
 require_relative '../../modules/site_toolbar'
-require_relative 'modules/site_commercial_toolbar'
+require_relative 'modules/onlyoffice_docs_toolbar'
 require_relative '../modules/site_download_helper'
 require_relative '../modules/site_block_constructor_helper'
-require_relative 'site_commercial_block_constructor'
-require_relative 'modules/site_commercial_download_helper'
+require_relative '../modules/commercial/site_commercial_block_constructor'
+require_relative '../modules/commercial/site_commercial_download_helper'
 
 module TestingSiteOnlyoffice
-  # Commercial docs packages
-  # https://user-images.githubusercontent.com/40513035/99003524-437f6a80-254f-11eb-8e26-d94e73ea2a9c.png
-  class SiteCommercialDocs
+  # /download-docs.aspx?from=downloadintegrationmenu#docs-developer
+  # https://user-images.githubusercontent.com/40513035/130984588-cd3337ef-e4d4-47d4-9860-531ee8839e50.png
+  class SiteDocsDeveloper
     include PageObject
     include SiteBlockConstructorHelper
     include SiteDownloadHelper
     include SiteCommercialDownloadHelper
     include SiteToolbar
-    include SiteToolbarCommercial
+    include SiteToolbarOnlyofficeDocs
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -26,13 +26,9 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        docker_download_xpath = installer_docs_enterprise_type_block.download_xpath
+        docker_download_xpath = installer_docs_developer_type_block.download_xpath
         @instance.webdriver.get_element(docker_download_xpath).present?
       end
-    end
-
-    def installer_docs_enterprise_type_block(type = :docker)
-      SiteCommercialBlockConstructor.new(@instance, 'docs_enterprise', type.to_s)
     end
 
     def installer_docs_developer_type_block(type = :docker)

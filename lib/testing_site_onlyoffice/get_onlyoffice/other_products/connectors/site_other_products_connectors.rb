@@ -3,21 +3,21 @@
 require_relative '../../../modules/site_toolbar'
 require_relative '../../modules/site_download_helper'
 require_relative '../../modules/site_block_constructor_helper'
-require_relative '../modules/site_open_source_toolbar'
+require_relative '../modules/other_products_toolbar'
 require_relative 'site_connectors_constructor'
 require_relative 'site_connectors_github_data'
 require_relative 'site_connector_release_data'
 
 module TestingSiteOnlyoffice
-  # Connectors
-  # https://user-images.githubusercontent.com/40513035/96696620-a25c2480-1393-11eb-9f6b-4abba59d41b5.png
-  class SiteOpenSourceConnectors
+  # download.aspx#connectors
+  # ttps://user-images.githubusercontent.com/40513035/131140762-e7b37b74-3246-40b3-b705-6130940648bf.png
+  class SiteOtherProductsConnectors
     include PageObject
     include SiteBlockConstructorHelper
     include SiteConnectorsGithubData
     include SiteDownloadHelper
     include SiteToolbar
-    include SiteToolbarOpenSource
+    include SiteOtherProductsToolbar
 
     div(:connector_block, xpath: "//div[@class='dwn-mp-connectors']//div[@class='dwn-mp-item']")
 

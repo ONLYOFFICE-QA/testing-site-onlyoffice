@@ -58,9 +58,10 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice, xpath: '//a[@id="navitem_download"]')
     link(:site_get_onlyoffice_sign_in, xpath: '//a[@id="navitem_download_signin"]')
     link(:site_get_onlyoffice_sign_up, xpath: '//a[@id="navitem_download_signup"]')
-    link(:site_get_onlyoffice_open_source, xpath: '//a[@id="navitem_download_connectors"]')
-    link(:site_get_onlyoffice_commercial, xpath: '//a[@id="navitem_download_commercial"]')
+    link(:site_get_onlyoffice_docs, xpath: '//a[@id="navitem_download_docs"]')
+    link(:site_get_onlyoffice_install_onpremises, xpath: '//a[@id="navitem_download_onpremises"]')
     link(:site_get_onlyoffice_desktop_mobile, xpath: '//a[@id="navitem_download_desktop"]')
+    link(:site_get_onlyoffice_other_products, xpath: '//a[@id="navitem_download_products"]')
     link(:site_get_onlyoffice_compare_editions, xpath: '//a[@id="navitem_download_compare"]')
 
     # top toolbar - Partners
@@ -241,17 +242,21 @@ module TestingSiteOnlyoffice
           element: site_get_onlyoffice_sign_up_element,
           class: SiteSignUp
         },
-        open_source_packages: {
-          element: site_get_onlyoffice_open_source_element,
-          class: SiteOpenSourceDocs
+        onlyoffice_workspace: {
+          element: site_get_onlyoffice_install_onpremises_element,
+          class: SiteWorkspaceEnterprise
         },
-        commercial_packages: {
-          element: site_get_onlyoffice_commercial_element,
-          class: SiteCommercialDocs
+        onlyoffice_docs: {
+          element: site_get_onlyoffice_docs_element,
+          class: SiteDocsEnterprise
         },
         desktop_mobile_apps: {
           element: site_get_onlyoffice_desktop_mobile_element,
           class: SiteDesktopApps
+        },
+        other_products: {
+          element: site_get_onlyoffice_other_products_element,
+          class: SiteOtherProductsConnectors
         },
         compare_editions: {
           element: site_get_onlyoffice_compare_editions_element

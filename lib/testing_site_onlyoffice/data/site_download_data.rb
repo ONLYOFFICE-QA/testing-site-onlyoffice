@@ -65,6 +65,14 @@ module TestingSiteOnlyoffice
       }
     end
 
+    def self.workspace_community
+      %i[workspace_windows workspace_deb workspace_rpm workspace_docker_image workspace_docker_compose workspace_digitalocean]
+    end
+
+    def self.other_products_bundles_list
+      %i[owncloud_docker_compose owncloud_vmware owncloud_vmware_esxi owncloud_virtualbox owncloud_kvm nextcloud_docker_compose nextcloud_vmware nextcloud_vmware_esxi nextcloud_virtualbox nextcloud_kvm]
+    end
+
     def self.open_source_bundlers_info
       @open_source_bundlers_info ||= JSON.parse(File.read("#{__dir__}/site_open_source_bundles_info.json"))
     end

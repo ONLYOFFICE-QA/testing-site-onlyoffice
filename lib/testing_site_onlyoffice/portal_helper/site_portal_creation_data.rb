@@ -3,7 +3,7 @@
 module TestingSiteOnlyoffice
   # Default admin data for creating portal
   class SitePortalCreationData
-    attr_accessor :first_name, :last_name, :email, :password, :portal_name
+    attr_accessor :first_name, :last_name, :email, :password, :portal_name, :users_number
 
     def initialize(params = {})
       file_name = params.fetch(:file_name, $ARGV[0])
@@ -12,6 +12,7 @@ module TestingSiteOnlyoffice
       @email = SiteData::EMAIL_ADMIN
       @password ||= SiteData::PORTAL_PASSWORD
       @portal_name = "nctautotest-#{portal_name_timestamp}-#{file_name.split('/').last.split('.rb')[0].downcase.tr('_', '-')}"[0...50]
+      @users_number = '1-3'
     end
 
     def get_instance_hash
@@ -20,7 +21,8 @@ module TestingSiteOnlyoffice
         last_name: @last_name,
         email: @email,
         password: @password,
-        portal_name: @portal_name
+        portal_name: @portal_name,
+        users_number: @users_number
       }
     end
 
