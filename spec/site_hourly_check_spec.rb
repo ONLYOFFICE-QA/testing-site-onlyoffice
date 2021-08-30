@@ -30,11 +30,13 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check link Personal Offices' do
+      pending('Need to correct tests after site redesign')
       tour_page = @site_home_page.click_link_on_toolbar(:solutions_home_use).open_personal
       expect(tour_page.login_visible?).to be true
     end
 
     it '[Site] Check Products' do
+      pending('Need to correct tests after site redesign')
       page = @site_home_page.click_link_on_toolbar(:products_workspace)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsWorkspace
       page = @site_home_page.click_link_on_toolbar(:products_docs)
