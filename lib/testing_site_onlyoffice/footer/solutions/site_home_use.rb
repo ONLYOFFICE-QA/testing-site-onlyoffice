@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative '../modules/site_toolbar'
-require_relative '../get_onlyoffice/modules/site_download_helper'
-require_relative '../additional_products/personal_main_page'
+require_relative '../../modules/site_toolbar'
+require_relative '../../get_onlyoffice/modules/site_download_helper'
+require_relative '../../additional_products/personal_main_page'
 
 module TestingSiteOnlyoffice
   # Solutions -> Home use page
@@ -15,10 +15,10 @@ module TestingSiteOnlyoffice
     link(:download_now_desktop_editors, xpath: '//a[@href="/download-desktop.aspx?from=home-use"]')
     link(:learn_more_desktop_editors, xpath: '//a[@href="/desktop.aspx?from=home-use"]')
 
-    link(:get_it_now_document_editors, xpath: '//div[@class="homeUse_features"]//a[@href="/download-commercial.aspx"]')
+    link(:get_it_now_document_editors, xpath: '//div[@class="homeUse_features"]//a[@href="/download-docs.aspx"]')
     link(:see_all_integrations, xpath: '//a[@href="/all-connectors.aspx?from=home-use"]')
 
-    link(:download_workspace, xpath: '//a[@href="/download.aspx?from=home-use#bundles"]')
+    link(:download_workspace, xpath: '//div[@class="homeUse_features"]//a[contains(@href, "/download-workspace")]')
     link(:learn_more_workspace, xpath: '//a[@href="/workspace.aspx?from=home-use"]')
 
     link(:create_online_office, xpath: '//a[@href="https://personal.onlyoffice.com"]')
@@ -48,7 +48,7 @@ module TestingSiteOnlyoffice
 
     def get_it_now_self_hosted_editors
       get_it_now_document_editors_element.click
-      SiteCommercialDocs.new(@instance)
+      SiteDocsEnterprise.new(@instance)
     end
 
     def click_see_all_integrations
@@ -58,7 +58,7 @@ module TestingSiteOnlyoffice
 
     def download_self_hosted_productivity_apps
       download_workspace_element.click
-      SiteOtherProductsBundles.new(@instance)
+      SiteWorkspaceEnterprise.new(@instance)
     end
 
     def click_learn_more_hosted_productivity_apps
