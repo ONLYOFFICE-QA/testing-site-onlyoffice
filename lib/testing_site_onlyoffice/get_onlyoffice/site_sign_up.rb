@@ -72,6 +72,7 @@ module TestingSiteOnlyoffice
     end
 
     def fill_params(params = {})
+      set_region(params[:region])
       self.first_name = params.fetch(:first_name, SiteData::DEFAULT_ADMIN_NAME)
       self.last_name = params.fetch(:last_name, SiteData::DEFAULT_ADMIN_LASTNAME)
       self.email = params.fetch(:email, SiteData::EMAIL_ADMIN)
@@ -79,7 +80,6 @@ module TestingSiteOnlyoffice
       self.portal_name = params[:portal_name]
       self.portal_password = params.fetch(:password, SiteData::PORTAL_PASSWORD)
       set_number_of_users(params[:users_number]) if number_of_users_element.present?
-      set_region(params[:region])
       remove_recaptcha
       start_trial_element.click
     end
