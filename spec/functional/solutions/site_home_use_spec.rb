@@ -6,7 +6,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Document Builder download' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @home_use_page = site_home_page.click_link_on_toolbar(:solutions_home_use)
+    @home_use_page = site_home_page.footer_home_use
   end
 
   after do |example|
@@ -26,7 +26,7 @@ describe 'Document Builder download' do
 
   it '[Site][HomeUse]Button "Get it now" works for self-hosted editors' do
     download_editors_page = @home_use_page.get_it_now_self_hosted_editors
-    expect(download_editors_page).to be_a TestingSiteOnlyoffice::SiteCommercialDocs
+    expect(download_editors_page).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
   end
 
   it '[Site][HomeUse]Button "See all connectors" works' do
@@ -36,7 +36,7 @@ describe 'Document Builder download' do
 
   it '[Site][HomeUse]Button "Download" works for self-hosted productivity apps' do
     download_workspace_page = @home_use_page.download_self_hosted_productivity_apps
-    expect(download_workspace_page).to be_a TestingSiteOnlyoffice::SiteOtherProductsBundles
+    expect(download_workspace_page).to be_a TestingSiteOnlyoffice::SiteWorkspaceEnterprise
   end
 
   it '[Site][HomeUse]Button "Learn more" works for self-hosted productivity apps' do

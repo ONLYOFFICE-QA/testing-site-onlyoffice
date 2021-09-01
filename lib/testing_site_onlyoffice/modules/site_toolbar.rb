@@ -4,26 +4,12 @@ require_relative 'site_languages'
 
 module TestingSiteOnlyoffice
   # Top toolbar
-  # https://user-images.githubusercontent.com/40513035/95858305-90f89400-0d65-11eb-95a1-3aa66b1258d0.png
+  # https://user-images.githubusercontent.com/40513035/131658957-a3f913e1-3183-4275-b73a-ffe44b231054.png
   module SiteToolbar
     include PageObject
     include SiteLanguages
 
     link(:logo_home, xpath: '//header//div[contains(@class, "logo")]//a')
-
-    # top toolbar - Solutions
-    link(:site_solutions, xpath: '//a[@id="navitem_solutions"]')
-    link(:site_solutions_smbs, xpath: '//a[@id="navitem_solutions_smbs"]')
-    link(:site_solutions_enterprises, xpath: '//a[@id="navitem_solutions_enterprises"]')
-    link(:site_solutions_developers, xpath: '//a[@id="navitem_solutions_developers"]')
-    link(:site_solutions_hosting, xpath: '//a[@id="navitem_solutions_hosting"]')
-    link(:site_solutions_government, xpath: '//*[@id="navitem_solutions_government"]')
-    link(:site_solutions_healthcare, xpath: '//a[@id="navitem_solutions_healthcare"]')
-    link(:site_solutions_research, xpath: '//a[@id="navitem_solutions_research"]')
-    link(:site_solutions_education, xpath: '//a[@id="navitem_solutions_education"]')
-    link(:site_solutions_nonprofit, xpath: '//a[@id="navitem_solutions_nonprofit"]')
-    link(:site_solutions_home_use, xpath: '//a[@id="navitem_solutions_home_use"]')
-    link(:site_solutions_customer_stories, xpath: '//a[@id="navitem_features_cloud_service"]')
 
     # top toolbar - Products
     link(:site_products, xpath: '//a[@id="navitem_features"]')
@@ -90,46 +76,6 @@ module TestingSiteOnlyoffice
     def click_home_logo
       logo_home_element.click
       SiteHomePage.new(@instance)
-    end
-
-    def site_toolbar_solutions
-      {
-        solutions_home_use: {
-          element: site_solutions_home_use_element,
-          class: SiteHomeUse
-        },
-        solutions_nonprofits: {
-          element: site_solutions_nonprofit_element,
-          class: SiteNonProfits
-        },
-        solutions_smbs: {
-          element: site_solutions_smbs_element
-        },
-        solutions_enterprises: {
-          element: site_solutions_enterprises_element
-        },
-        solutions_developers: {
-          element: site_solutions_developers_element
-        },
-        solutions_hosting: {
-          element: site_solutions_hosting_element
-        },
-        solutions_government: {
-          element: site_solutions_government_element
-        },
-        solutions_healthcare: {
-          element: site_solutions_healthcare_element
-        },
-        solutions_research: {
-          element: site_solutions_research_element
-        },
-        solutions_education: {
-          element: site_solutions_education_element
-        },
-        solutions_customer_stories: {
-          element: site_solutions_customer_stories_element
-        }
-      }
     end
 
     def site_toolbar_products
@@ -331,12 +277,11 @@ module TestingSiteOnlyoffice
     end
 
     def all_toolbar_links_and_classes_hash
-      site_toolbar_solutions.merge(site_toolbar_products, site_toolbar_get_onlyoffice, site_toolbar_pricing,
-                                   site_toolbar_partners, site_toolbar_about)
+      site_toolbar_products.merge(site_toolbar_get_onlyoffice, site_toolbar_pricing,
+                                  site_toolbar_partners, site_toolbar_about)
     end
 
     def click_link_on_toolbar(section)
-      @instance.webdriver.move_to_element_by_locator(site_solutions_element.selector[:xpath]) if site_toolbar_solutions.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_products_element.selector[:xpath]) if site_toolbar_products.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_get_onlyoffice_element.selector[:xpath]) if site_toolbar_get_onlyoffice.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_pricing_element.selector[:xpath]) if site_toolbar_pricing.key?(section)

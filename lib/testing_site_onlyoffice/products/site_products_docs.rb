@@ -2,12 +2,12 @@
 
 module TestingSiteOnlyoffice
   # /office-suite.aspx
-  # https://user-images.githubusercontent.com/40513035/101088255-718f2200-35c4-11eb-9e24-ce43b069f4fb.png
+  # https://user-images.githubusercontent.com/40513035/131655305-0c37a9b9-8953-4443-a743-abda4caf2eb0.png
   class SiteProductsDocs
     include PageObject
     include SiteToolbar
 
-    link(:run_on_your_own_server, xpath: '//a[@href="/download-commercial.aspx?from=office-suite"]')
+    link(:run_on_your_own_server, xpath: '//div[@class="dp_header"]//a[contains(@href, "download-docs.aspx")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)

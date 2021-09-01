@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 require_relative 'site_request_free_cloud'
-require_relative '../../products/site_products_docs'
-require_relative '../../products/site_products_groups'
-require_relative '../../products/site_products_security'
-require_relative '../../products/connectors/site_products_connectors_onlyoffice'
-require_relative '../../get_onlyoffice/desktop_and_mobile/desktop/site_desktop_apps'
-require_relative '../../get_onlyoffice/modules/site_download_helper'
+require_relative '../../../products/site_products_docs'
+require_relative '../../../products/site_products_groups'
+require_relative '../../../products/site_products_security'
+require_relative '../../../products/connectors/site_products_connectors_onlyoffice'
+require_relative '../../../get_onlyoffice/desktop_and_mobile/desktop/site_desktop_apps'
+require_relative '../../../get_onlyoffice/modules/site_download_helper'
 
 module TestingSiteOnlyoffice
   # /nonprofit-organizations.aspx
@@ -19,7 +19,7 @@ module TestingSiteOnlyoffice
     link(:request_free_cloud, xpath: '//a[@href="/free-cloud.aspx?from=nonprofit"]')
 
     link(:learn_more_about_editors, xpath: '//a[@href="/office-suite.aspx?from=nonprofit"]')
-    link(:learn_more_about_collaboration_platforms, xpath: '//a[@href="/collaboration-platform.aspx?from=nonprofit"]')
+    link(:learn_more_about_collaboration_platforms, xpath: '//a[@href="/workspace.aspx?from=nonprofit"]')
     link(:learn_more_about_security, xpath: '//a[@href="/security.aspx?from=nonprofit"]')
     link(:nonprofit_download, xpath: '//a[@href="/download-desktop.aspx?from=nonprofit"]')
     link(:nonprofit_android, xpath: '//a[contains(@href,"play.google")]')
@@ -48,7 +48,7 @@ module TestingSiteOnlyoffice
 
     def click_learn_more_about_collaboration_platforms
       learn_more_about_collaboration_platforms_element.click
-      SiteProductsGroups.new(@instance)
+      SiteProductsWorkspace.new(@instance)
     end
 
     def click_learn_more_about_security

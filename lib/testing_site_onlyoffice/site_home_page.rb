@@ -21,6 +21,8 @@ require_relative 'footer/support/site_order_demo'
 require_relative 'footer/support/site_support_contact_form'
 require_relative 'footer/follow_us_on/site_subscribe'
 require_relative 'footer/follow_us_on/site_subscribe_confirmation'
+require_relative 'footer/solutions/nonprofit/site_nonprofits'
+require_relative 'footer/solutions/site_home_use'
 
 require_relative 'get_onlyoffice/other_products/connectors/site_other_products_connectors'
 require_relative 'get_onlyoffice/other_products/document_builder/site_other_products_document_builder'
@@ -71,9 +73,6 @@ require_relative 'products/site_connectors'
 require_relative 'products/site_products_security'
 
 require_relative 'search/site_search'
-
-require_relative 'solutions/nonprofit/site_nonprofits'
-require_relative 'solutions/site_home_use'
 
 require_relative 'support_chat/site_support_chat'
 

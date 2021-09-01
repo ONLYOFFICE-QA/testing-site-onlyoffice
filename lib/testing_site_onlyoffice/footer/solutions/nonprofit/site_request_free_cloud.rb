@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'site_nonprofit_banners'
-require_relative '../../get_onlyoffice/site_sign_up'
+require_relative '../../../get_onlyoffice/site_sign_up'
 
 module TestingSiteOnlyoffice
   # /free-cloud.aspx
