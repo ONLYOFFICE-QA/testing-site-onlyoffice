@@ -19,7 +19,6 @@ module TestingSiteOnlyoffice
     link(:site_products_editors_documents, xpath: '//a[@id="navitem_features_document_editor"]')
     link(:site_products_editors_spreadsheet, xpath: '//a[@id="navitem_features_spreadsheet_editor"]')
     link(:site_products_editors_presentation, xpath: '//a[@id="navitem_features_presentation_editor"]')
-    link(:site_products_connectors, xpath: '//a[@id="navitem_features_connectors"]')
     link(:site_products_for_desktop, xpath: '//a[@id="navitem_solutions_clients_apps"]')
     link(:site_products_for_ios, xpath: '//a[@id="navitem_solutions_clients_mobile_ios"]')
     link(:site_products_for_android, xpath: '//a[@id="navitem_solutions_clients_mobile_android"]')
@@ -102,10 +101,6 @@ module TestingSiteOnlyoffice
         products_presentation_editor: {
           element: site_products_editors_presentation_element,
           class: SiteProductsPresentationEditor
-        },
-        products_connectors: {
-          element: site_products_connectors_element,
-          class: SiteProductsConnectorsOnlyoffice
         },
         products_desktop: {
           element: site_products_for_desktop_element,

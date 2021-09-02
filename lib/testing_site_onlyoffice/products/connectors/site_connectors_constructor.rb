@@ -9,7 +9,7 @@ module TestingSiteOnlyoffice
     def initialize(instance, block_xpath, connector)
       @instance = instance
       @get_it_now_xpath = "#{block_xpath}//div[@class='itdn_section_button']/a[contains(@href, '#{connector}')]"
-      @more_info_xpath = "#{block_xpath}//div[@class='itdn_section_moreinfo']/a[contains(@href, '#{connector}')]"
+      @more_info_xpath = "#{block_xpath}//div[@class='itdn_section_description']/a[contains(@href, '#{connector}')]"
       @developer_website_xpath = "#{@more_info_xpath}/../..//div[@class='itdn_section_vendor_web']/a"
       wait_to_load
     end

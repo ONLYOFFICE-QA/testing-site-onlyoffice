@@ -6,7 +6,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Site products connectors ' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @products_connectors_page = site_home_page.click_link_on_toolbar(:products_connectors)
+    @products_connectors_page = site_home_page.footer_nonprofits.click_see_all_integrations
   end
 
   after do |example|
@@ -16,7 +16,7 @@ describe 'Site products connectors ' do
 
   it '[Site][Products][Connectors] Button "Get Onlyoffice Docs" works' do
     commercial_docs_page = @products_connectors_page.get_onlyoffice_docs
-    expect(commercial_docs_page).to be_a TestingSiteOnlyoffice::SiteCommercialDocs
+    expect(commercial_docs_page).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
   end
 
   TestingSiteOnlyoffice::SiteDownloadData.connectors_partners_list.each do |connector|

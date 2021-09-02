@@ -46,8 +46,6 @@ describe 'SiteHourlyCheck' do
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsSpreadsheetEditor
       page = @site_home_page.click_link_on_toolbar(:products_presentation_editor)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsPresentationEditor
-      page = @site_home_page.click_link_on_toolbar(:products_connectors)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsConnectorsOnlyoffice
       page = @site_home_page.click_link_on_toolbar(:products_desktop)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDesktop
       page = @site_home_page.click_link_on_toolbar(:products_ios)
