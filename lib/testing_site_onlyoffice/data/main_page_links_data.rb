@@ -23,12 +23,10 @@ module TestingSiteOnlyoffice
 
     def self.get_onlyoffice_main_page
       {
-        'Workspace Try in the Cloud': "(#{GET_ONLYOFFICE_BLOCK_XPATH})[1]//a[@class='button orange-button']",
-        'Workspace Deploy on your own server': "(#{GET_ONLYOFFICE_BLOCK_XPATH})[1]//a[@class='button gray-button']",
-        'Docs Get It Now': "(#{GET_ONLYOFFICE_BLOCK_XPATH})[2]//a[@class='button gray-button']",
-        'Docs Learn more': "(#{GET_ONLYOFFICE_BLOCK_XPATH})[2]//div[@class='dp-link']/a",
-        'Groups Get It Now': "(#{GET_ONLYOFFICE_BLOCK_XPATH})[3]//a[@class='button gray-button']",
-        'Groups Learn more': "(#{GET_ONLYOFFICE_BLOCK_XPATH})[3]//div[@class='dp-link']/a"
+        'OnlyOffice Docs Try Now': "(#{GET_ONLYOFFICE_BLOCK_XPATH})[2]//a[contains(@href, 'download-docs')]",
+        'OnlyOffice Docs Learn more': "(#{GET_ONLYOFFICE_BLOCK_XPATH})[2]//a[contains(@href, 'office-suite')]",
+        'OnlyOffice Workspace Use in the cloud': "(#{GET_ONLYOFFICE_BLOCK_XPATH})[3]//a[contains(@href, 'registration')]",
+        'OnlyOffice Workspace Deploy on your own server': "(#{GET_ONLYOFFICE_BLOCK_XPATH})[3]//a[contains(@href, 'download-workspace')]"
       }
     end
 
