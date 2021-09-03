@@ -35,9 +35,6 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check Products' do
-      pending('Need to correct tests after site redesign')
-      page = @site_home_page.click_link_on_toolbar(:products_workspace)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsWorkspace
       page = @site_home_page.click_link_on_toolbar(:products_docs)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocs
       page = @site_home_page.click_link_on_toolbar(:products_document_editor)
@@ -52,20 +49,18 @@ describe 'SiteHourlyCheck' do
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsIos
       page = @site_home_page.click_link_on_toolbar(:products_android)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsAndroid
-      page = @site_home_page.click_link_on_toolbar(:products_groups)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsGroups
-      page = @site_home_page.click_link_on_toolbar(:products_doc_manager)
+      page = @site_home_page.click_link_on_toolbar(:products_workspace)
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsWorkspace
+      page = @site_home_page.click_link_on_toolbar(:products_workspace_documents)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocumentManager
-      page = @site_home_page.click_link_on_toolbar(:products_mail)
+      page = @site_home_page.click_link_on_toolbar(:products_workspace_mail)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsMail
-      page = @site_home_page.click_link_on_toolbar(:products_crm)
+      page = @site_home_page.click_link_on_toolbar(:products_workspace_crm)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCRM
-      page = @site_home_page.click_link_on_toolbar(:products_projects)
+      page = @site_home_page.click_link_on_toolbar(:products_workspace_projects)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsProjects
-      page = @site_home_page.click_link_on_toolbar(:products_calendar)
+      page = @site_home_page.click_link_on_toolbar(:products_workspace_calendar)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCalendar
-      page = @site_home_page.click_link_on_toolbar(:products_community)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCommunity
     end
 
     it '[Site] Check cloud' do

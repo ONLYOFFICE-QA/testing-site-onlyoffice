@@ -13,23 +13,39 @@ module TestingSiteOnlyoffice
 
     # top toolbar - Products
     link(:site_products, xpath: '//a[@id="navitem_features"]')
-    link(:site_products_workspace, xpath: '//a[@id="navitem_solutions_clients_workspace"]')
-    link(:site_products_workspace_cloud_service, xpath: '//a[@id="navitem_features_cloud_service"]')
-    link(:site_products_editors, xpath: '//a[@id="navitem_features_editors"]')
-    link(:site_products_editors_documents, xpath: '//a[@id="navitem_features_document_editor"]')
-    link(:site_products_editors_spreadsheet, xpath: '//a[@id="navitem_features_spreadsheet_editor"]')
-    link(:site_products_editors_presentation, xpath: '//a[@id="navitem_features_presentation_editor"]')
-    link(:site_products_for_desktop, xpath: '//a[@id="navitem_solutions_clients_apps"]')
-    link(:site_products_for_ios, xpath: '//a[@id="navitem_solutions_clients_mobile_ios"]')
-    link(:site_products_for_android, xpath: '//a[@id="navitem_solutions_clients_mobile_android"]')
-    link(:site_products_groups, xpath: '//a[@id="navitem_features_comserver"]')
-    link(:site_products_groups_documents, xpath: '//a[@id="navitem_features_documents"]')
-    link(:site_products_groups_mail, xpath: '//a[@id="navitem_features_mail"]')
-    link(:site_products_groups_crm, xpath: '//a[@id="navitem_features_crm"]')
-    link(:site_products_groups_projects, xpath: '//a[@id="navitem_features_projects"]')
-    link(:site_products_groups_calendar, xpath: '//a[@id="navitem_features_calendar"]')
-    link(:site_products_groups_community, xpath: '//a[@id="navitem_features_network"]')
+    link(:site_products_docs, xpath: '//a[@id="navitem_features_editors"]')
+    link(:site_products_document_editor, xpath: '//a[@id="navitem_features_document_editor"]')
+    link(:site_products_spreadsheet_editor, xpath: '//a[@id="navitem_features_spreadsheet_editor"]')
+    link(:site_products_presentation_editor, xpath: '//a[@id="navitem_features_presentation_editor"]')
+    link(:site_products_docs_enterprise_edition, xpath: '//a[@id="navitem_features_docs_ee"]')
+    link(:site_products_docs_developer_edition, xpath: '//a[@id="navitem_features_docs_de"]')
+    link(:site_products_for_desktop, xpath: '//a[@id="navitem_features_clients_apps"]')
+    link(:site_products_for_ios, xpath: '//a[@id="navitem_features_clients_mobile_ios"]')
+    link(:site_products_for_android, xpath: '//a[@id="navitem_features_clients_mobile_android"]')
+    link(:site_products_workspace, xpath: '//a[@id="navitem_features_workspace"]')
+    link(:site_products_workspace_documents, xpath: '//a[@id="navitem_features_documents"]')
+    link(:site_products_workspace_mail, xpath: '//a[@id="navitem_features_mail"]')
+    link(:site_products_workspace_crm, xpath: '//a[@id="navitem_features_crm"]')
+    link(:site_products_workspace_projects, xpath: '//a[@id="navitem_features_projects"]')
+    link(:site_products_workspace_calendar, xpath: '//a[@id="navitem_features_calendar"]')
+    link(:site_products_workspace_cloud_edition, xpath: '//a[@id="navitem_features_cloud_service"]')
+    link(:site_products_workspace_enterprise_edition, xpath: '//a[@id="navitem_features_workspace_ee"]')
     link(:site_products_security, xpath: '//a[@id="navitem_features_security"]')
+
+    # top toolbar - Integrations
+    link(:site_integrations, xpath: '//a[@id="navitem_integrations"]')
+    link(:site_integrations_nextcloud, xpath: '//a[@id="navitem_integrations_nextcloud"]')
+    link(:site_integrations_owncloud, xpath: '//a[@id="navitem_integrations_owncloud"]')
+    link(:site_integrations_confluence, xpath: '//a[@id="navitem_integrations_confluence"]')
+    link(:site_integrations_alfresco, xpath: '//a[@id="navitem_integrations_alfresco"]')
+    link(:site_integrations_sharepoint, xpath: '//a[@id="navitem_integrations_sharepoint"]')
+    link(:site_integrations_liferay, xpath: '//a[@id="navitem_integrations_liferay"]')
+    link(:site_integrations_humhub, xpath: '//a[@id="navitem_integrations_humhub"]')
+    link(:site_integrations_plone, xpath: '//a[@id="navitem_integrations_plone"]')
+    link(:site_integrations_nuxeo, xpath: '//a[@id="navitem_integrations_nuxeo"]')
+    link(:site_integrations_chamilo, xpath: '//a[@id="navitem_integrations_chamilo"]')
+    link(:site_integrations_others, xpath: '//a[@id="navitem_integrations_others"]')
+    link(:site_integrations_for_developers, xpath: '//a[@id="navitem_integration_for_developers"]')
 
     # top toolbar - Pricing
     link(:site_pricing, xpath: '//a[@id="navitem_prices"]')
@@ -79,28 +95,27 @@ module TestingSiteOnlyoffice
 
     def site_toolbar_products
       {
-        products_workspace: {
-          element: site_products_workspace_element,
-          class: SiteProductsWorkspace
-        },
-        products_cloud_service: {
-          element: site_products_workspace_cloud_service_element
-        },
         products_docs: {
-          element: site_products_editors_element,
+          element: site_products_docs_element,
           class: SiteProductsDocs
         },
         products_document_editor: {
-          element: site_products_editors_documents_element,
+          element: site_products_document_editor_element,
           class: SiteProductsDocumentEditor
         },
         products_spreadsheet_editor: {
-          element: site_products_editors_spreadsheet_element,
+          element: site_products_spreadsheet_editor_element,
           class: SiteProductsSpreadsheetEditor
         },
         products_presentation_editor: {
-          element: site_products_editors_presentation_element,
+          element: site_products_presentation_editor_element,
           class: SiteProductsPresentationEditor
+        },
+        products_docs_enterprise_edition: {
+          element: site_products_docs_enterprise_edition_element
+        },
+        products_docs_developer_edition: {
+          element: site_products_docs_developer_edition_element
         },
         products_desktop: {
           element: site_products_for_desktop_element,
@@ -114,37 +129,80 @@ module TestingSiteOnlyoffice
           element: site_products_for_android_element,
           class: SiteProductsAndroid
         },
-        products_groups: {
-          element: site_products_groups_element,
-          class: SiteProductsGroups
+        products_workspace: {
+          element: site_products_workspace_element,
+          class: SiteProductsWorkspace
         },
-        products_doc_manager: {
-          element: site_products_groups_documents_element,
+        products_workspace_documents: {
+          element: site_products_workspace_documents_element,
           class: SiteProductsDocumentManager
         },
-        products_mail: {
-          element: site_products_groups_mail_element,
+        products_workspace_mail: {
+          element: site_products_workspace_mail_element,
           class: SiteProductsMail
         },
-        products_crm: {
-          element: site_products_groups_crm_element,
+        products_workspace_crm: {
+          element: site_products_workspace_crm_element,
           class: SiteProductsCRM
         },
-        products_projects: {
-          element: site_products_groups_projects_element,
+        products_workspace_projects: {
+          element: site_products_workspace_projects_element,
           class: SiteProductsProjects
         },
-        products_calendar: {
-          element: site_products_groups_calendar_element,
+        products_workspace_calendar: {
+          element: site_products_workspace_calendar_element,
           class: SiteProductsCalendar
         },
-        products_community: {
-          element: site_products_groups_community_element,
-          class: SiteProductsCommunity
+        products_workspace_cloud_edition: {
+          element: site_products_workspace_cloud_edition_element
+        },
+        products_workspace_enterprise_edition: {
+          element: site_products_workspace_enterprise_edition_element
         },
         security: {
           element: site_products_security_element,
           class: SiteProductsSecurity
+        }
+      }
+    end
+
+    def site_toolbar_integrations
+      {
+        integrations_nextcloud: {
+          element: site_integrations_nextcloud_element
+        },
+        integrations_owncloud: {
+          element: site_integrations_owncloud_element
+        },
+        integrations_confluence: {
+          element: site_integrations_confluence_element
+        },
+        integrations_alfresco: {
+          element: site_integrations_alfresco_element
+        },
+        integrations_sharepoint: {
+          element: site_integrations_sharepoint_element
+        },
+        integrations_liferay: {
+          element: site_integrations_liferay_element
+        },
+        integrations_humhub: {
+          element: site_integrations_humhub_element
+        },
+        integrations_plone: {
+          element: site_integrations_plone_element
+        },
+        integrations_nuxeo: {
+          element: site_integrations_nuxeo_element
+        },
+        integrations_chamilo: {
+          element: site_integrations_chamilo_element
+        },
+        integrations_others: {
+          element: site_integrations_others_element
+        },
+        integrations_for_developers: {
+          element: site_integrations_for_developers_element
         }
       }
     end
@@ -272,12 +330,13 @@ module TestingSiteOnlyoffice
     end
 
     def all_toolbar_links_and_classes_hash
-      site_toolbar_products.merge(site_toolbar_get_onlyoffice, site_toolbar_pricing,
+      site_toolbar_products.merge(site_toolbar_integrations, site_toolbar_get_onlyoffice, site_toolbar_pricing,
                                   site_toolbar_partners, site_toolbar_about)
     end
 
     def click_link_on_toolbar(section)
       @instance.webdriver.move_to_element_by_locator(site_products_element.selector[:xpath]) if site_toolbar_products.key?(section)
+      @instance.webdriver.move_to_element_by_locator(site_integrations_element.selector[:xpath]) if site_toolbar_integrations.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_get_onlyoffice_element.selector[:xpath]) if site_toolbar_get_onlyoffice.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_pricing_element.selector[:xpath]) if site_toolbar_pricing.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_partners_element.selector[:xpath]) if site_toolbar_partners.key?(section)

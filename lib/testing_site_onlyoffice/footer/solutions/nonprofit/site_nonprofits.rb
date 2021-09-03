@@ -2,7 +2,6 @@
 
 require_relative 'site_request_free_cloud'
 require_relative '../../../products/site_products_docs'
-require_relative '../../../products/site_products_groups'
 require_relative '../../../products/site_products_security'
 require_relative '../../../products/connectors/site_products_connectors_onlyoffice'
 require_relative '../../../get_onlyoffice/desktop_and_mobile/desktop/site_desktop_apps'
