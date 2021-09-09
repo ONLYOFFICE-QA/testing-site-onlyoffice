@@ -31,8 +31,6 @@ module TestingSiteOnlyoffice
       "branch: #{fetch_site_branch}, hash: #{fetch_site_hash}"
     end
 
-    private
-
     # @return [String] revision info
     def self.revision_info
       @revision_info ||= Net::HTTP.get(fetch_uri)
