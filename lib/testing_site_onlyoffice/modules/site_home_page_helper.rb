@@ -23,6 +23,8 @@ module TestingSiteOnlyoffice
 
     def rated_by_critics_element_works?(app)
       app_xpath = "//div[@class='dp-r-medals']//div[contains(@class, '#{app}')]/../.."
+      app_xpath = "//div[@class='dp-r-medals']//a[contains(@href, 'sourceforge')]" if app == 'sourceforge'
+
       xpath_success_response?(app_xpath)
     end
 

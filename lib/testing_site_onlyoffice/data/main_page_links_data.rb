@@ -12,7 +12,7 @@ module TestingSiteOnlyoffice
     end
 
     def self.rated_by_critics
-      %w[getapp capterra highperformer appvizer softwareadvicemr appstore]
+      %w[getapp capterra highperformer appvizer softwareadvicemr sourceforge]
     end
 
     def self.rated_by_users
