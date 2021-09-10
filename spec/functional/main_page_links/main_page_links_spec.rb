@@ -4,7 +4,7 @@ require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 site_home_page, test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
 blocked_high_rated_by_critics = %w[capterra highperformer getapp]
-blocked_high_rated_by_users = %w[capterra getapp softpedia]
+blocked_high_rated_by_users = %w[capterra getapp]
 
 describe 'Help center footer links' do
   after do |example|
