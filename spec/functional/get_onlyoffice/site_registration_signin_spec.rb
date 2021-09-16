@@ -89,5 +89,12 @@ describe 'Registration new portal' do
       sign_in_page.sign_in('1', '2')
       expect(sign_in_page.sign_in_error_element).to be_present
     end
+
+    TestingSiteOnlyoffice::SiteData.sign_in_with_network_list.each do |network|
+      it "Sign in with #{network} window opened" do
+        sign_in_with_page = sign_in_page.sign_in_with(network)
+        expect(sign_in_with_page).to be_indicator_element_present(network)
+      end
+    end
   end
 end

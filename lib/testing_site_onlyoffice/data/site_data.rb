@@ -96,5 +96,9 @@ module TestingSiteOnlyoffice
     def self.footer_links
       @footer_links ||= YAML.load_file("#{__dir__}/footer_links_info.yml")
     end
+
+    def self.sign_in_with_network_list
+      %i[google facebook twitter linkedin]
+    end
   end
 end

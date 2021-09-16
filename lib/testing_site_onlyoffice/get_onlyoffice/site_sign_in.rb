@@ -2,6 +2,7 @@
 
 require_relative '../modules/site_toolbar'
 require_relative '../portal_helper/portal_main_page'
+require_relative '../additional_products/sign_in/sign_in_with'
 
 module TestingSiteOnlyoffice
   # Sign in page
@@ -73,6 +74,13 @@ module TestingSiteOnlyoffice
     def register_from_sign_in
       register_sign_in_element.click
       SiteSignUp.new(@instance)
+    end
+
+    def sign_in_with(network)
+      network_xpath = "//a[@class='popup #{network}']"
+      @instance.webdriver.driver.find_element(:xpath, network_xpath).click
+      @instance.webdriver.choose_tab(2)
+      SignInWith.new(@instance, network)
     end
   end
 end
