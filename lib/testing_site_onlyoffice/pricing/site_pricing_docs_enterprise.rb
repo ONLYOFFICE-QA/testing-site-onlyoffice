@@ -13,6 +13,8 @@ module TestingSiteOnlyoffice
 
     link(:buy_now_single_server, xpath: '//a[@id= "ie-price-url-updated"]')
 
+    div(:professional_support_basic, xpath: '//div[@id="basic_support"]')
+
     def initialize(instance)
       super(instance.webdriver.driver)
       @instance = instance
@@ -22,6 +24,13 @@ module TestingSiteOnlyoffice
     def wait_to_load
       @instance.webdriver.wait_until do
         buy_now_single_server_element.present?
+      end
+    end
+
+    def choose_support_basic
+      professional_support_basic_element.click
+      @instance.webdriver.wait_until do
+        professional_support_basic_element.attribute('class').include?('selected_sp')
       end
     end
   end
