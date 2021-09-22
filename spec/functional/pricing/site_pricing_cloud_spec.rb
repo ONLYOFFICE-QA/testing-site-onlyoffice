@@ -45,7 +45,7 @@ describe 'Pricing Cloud Service' do
   describe 'business calculator check' do
     before { @pricing_cloud_page.calculate_your_price }
 
-    it 'Site][Pricing][Cloud] Calculator selector for users number works ' do
+    it '[Site][Pricing][Cloud] Calculator selector for users number works' do
       price_before_user_change = @pricing_cloud_page.current_tariff_price
       expect(@pricing_cloud_page.chooser_users_number_from_dropdown('5')).to be_truthy
       expect(price_before_user_change).not_to eq(@pricing_cloud_page.current_tariff_price)
