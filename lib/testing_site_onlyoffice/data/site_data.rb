@@ -69,6 +69,8 @@ module TestingSiteOnlyoffice
 
     def self.white_papers
       {
+        private_rooms_9_security_principles: 'private_rooms_9_security_principles.pdf',
+        docs_integration_example: 'integration_example.pdf',
         for_government_offices: 'onlyoffice_for_government_offices.pdf',
         end_to_end_document_encryption: 'end-to-end_document_encryption.pdf',
         data_encryption_at_rest_1_0: 'data_encryption_at_rest_1.0.pdf'
