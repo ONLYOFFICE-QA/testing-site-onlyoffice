@@ -44,16 +44,16 @@ describe 'White papers and datasheets' do
     expect(@white_paper_page).to be_white_paper_block_visible('onlyoffice_docs_for_owncloud')
   end
 
-  TestingSiteOnlyoffice::SiteData.white_peppers_and_datasheets.each_key do |white_pepper_datasheet|
-    it "[White papers] Check #{white_pepper_datasheet} mail request confirmation and file download" do
+  TestingSiteOnlyoffice::SiteData.white_papers_and_datasheets.each_key do |white_paper_datasheet|
+    it "[White papers] Check #{white_paper_datasheet} mail request confirmation and file download" do
       pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
-      @white_paper_page.open_and_send_request_white_paper(white_pepper_datasheet.to_s)
-      file_name = TestingSiteOnlyoffice::SiteData.white_peppers_and_datasheets[white_pepper_datasheet]
+      @white_paper_page.open_and_send_request_white_paper(white_paper_datasheet.to_s)
+      file_name = TestingSiteOnlyoffice::SiteData.white_papers_and_datasheets[white_paper_datasheet]
       expect(@white_paper_page).to be_file_downloaded(file_name)
       expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: config.language,
                                                                                    pattern: 'white_paper',
                                                                                    module: 'WebStudio',
-                                                                                   search: white_pepper_datasheet.to_s,
+                                                                                   search: white_paper_datasheet.to_s,
                                                                                    mail: partner_email,
                                                                                    move_out: true)).to be_truthy
     end

@@ -91,7 +91,7 @@ module TestingSiteOnlyoffice
       }
     end
 
-    def self.white_peppers_and_datasheets
+    def self.white_papers_and_datasheets
       white_papers.merge(datasheets)
     end
 
