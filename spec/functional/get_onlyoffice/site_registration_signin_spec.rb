@@ -47,6 +47,11 @@ describe 'Registration new portal' do
       expect(sign_up_page).to be_all_errors_visible
     end
 
+    it 'Use Email only with English letters for "Sign Up" form' do
+      sign_up_page.fill_params(email: 'rémy.rousseau@veolia.com')
+      expect(sign_up_page.email_error_element).to be_present
+    end
+
     it 'Check open "Term and conditions" link for "Sign Up' do
       sign_up_page.terms_and_conditions
       expect(sign_up_page.check_opened_file_name).to eq(TestingSiteOnlyoffice::SiteNotificationData::TERMS_OF_USE_FILE_NAME)
