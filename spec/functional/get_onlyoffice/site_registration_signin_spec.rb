@@ -48,7 +48,7 @@ describe 'Registration new portal' do
     end
 
     it 'Use Email only with English letters for "Sign Up" form' do
-      sign_up_page.fill_params(email: 'rémy.rousseau@veolia.com')
+      sign_up_page.fill_params(email: 'rémy@qamail.teamlab.info')
       expect(sign_up_page.email_error_element).to be_present
     end
 
