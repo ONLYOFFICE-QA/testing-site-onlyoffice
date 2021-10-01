@@ -69,7 +69,6 @@ module TestingSiteOnlyoffice
 
     def self.white_papers
       {
-        load_test_report: 'load_test_report.pdf',
         private_rooms_9_security_principles: 'private_rooms_9_security_principles.pdf',
         docs_integration_example: 'integration_example.pdf',
         for_government_offices: 'onlyoffice_for_government_offices.pdf',
