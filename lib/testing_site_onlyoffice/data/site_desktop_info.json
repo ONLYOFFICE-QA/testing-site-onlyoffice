@@ -14,7 +14,8 @@
     },
     "macos_10": {
       "instruction": "How to install ONLYOFFICE Desktop Editors for Mac OS? - ONLYOFFICE",
-      "download": "x86_64/distrib/ONLYOFFICE.dmg",
+      "download_intel": "x86_64/distrib/ONLYOFFICE.dmg",
+      "download_apple": "arm/distrib/ONLYOFFICE.dmg",
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
     "macos_x86": {
