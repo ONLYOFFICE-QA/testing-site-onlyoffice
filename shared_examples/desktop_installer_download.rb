@@ -12,7 +12,7 @@ shared_examples_for 'desktop_installer_download' do |installers_list|
     end
   end
 
-  installers_list[:two_download_files].each do |installer|
+  installers_list[:two_download_windows_files].each do |installer|
     describe installer.to_s do
       before { @current_installation = installers_download_page.desktop_installer_block(installer) }
 
@@ -21,6 +21,19 @@ shared_examples_for 'desktop_installer_download' do |installers_list|
         expect(installers_download_page).to be_link_alive_and_valid(@current_installation.download_xpath, download_file_x64)
         download_file_x86 = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['download_x86']
         expect(installers_download_page).to be_link_alive_and_valid(@current_installation.download_xpath_x86, download_file_x86)
+      end
+    end
+  end
+
+  installers_list[:two_download_mac_files].each do |installer|
+    describe installer.to_s do
+      before { @current_installation = installers_download_page.desktop_installer_block(installer) }
+
+      it "[Site][DownloadDesktop] download link for `#{installer}` intel and apple chips` alive /download-desktop.aspx#desktop" do
+        download_file_intel = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['download_intel']
+        expect(installers_download_page).to be_link_alive_and_valid(@current_installation.download_xpath, download_file_intel)
+        download_file_apple = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['download_apple']
+        expect(installers_download_page).to be_link_alive_and_valid(@current_installation.download_xpath_apple, download_file_apple)
       end
     end
   end
