@@ -4,7 +4,7 @@ require_relative 'site_unsubscribe_confirmation'
 
 module TestingSiteOnlyoffice
   # Go to link in mail for confirm subscribe
-  # https://user-images.githubusercontent.com/3971732/43830155-53b20eda-9b09-11e8-97fa-78a27aa53e94.png
+  # https://user-images.githubusercontent.com/40513035/136717045-3533baea-d7c1-413e-a0a3-0b127865a7d0.png
   class SiteSubscribeConfirmation
     include PageObject
 
