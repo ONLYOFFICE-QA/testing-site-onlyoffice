@@ -71,15 +71,25 @@ describe 'Registration new portal' do
   end
 
   describe 'Subscribe' do
-    it 'Subscribe to news' do
+    before do
       subscribe_popup = @site_home_page.click_subscribe_to_newsletter
       subscribe_popup.fill_subscribe_form
       mail_html = client_email.get_html_body_email_by_subject(
         { subject: TestingSiteOnlyoffice::SiteNotificationData::SUBSCRIBE_TO_NEWSLETTER }, 300
       )
       subscribe_link = TestingSiteOnlyoffice::SiteSubscribe.parse_subscribe_link(mail_html)
-      subscribe_confirm = subscribe_popup.subscribe_from_link(subscribe_link)
-      expect(subscribe_confirm).to be_wait_success_text_visible
+      @subscribe_confirm = subscribe_popup.subscribe_from_link(subscribe_link)
+    end
+
+    it 'Subscribe to news' do
+      expect(@subscribe_confirm).to be_wait_success_text_visible
+    end
+
+    it 'Unsubscribe and resubscribe to news' do
+      unsubscribe_confirm = @subscribe_confirm.news_unsubscribe
+      expect(unsubscribe_confirm).to be_resubscribe_button_present
+      unsubscribe_confirm.news_resubscribe
+      expect(unsubscribe_confirm).to be_successful_resubscribe_present
     end
   end
 
