@@ -9,6 +9,7 @@ partner_email = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::PA
 describe 'Training courses' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
+    site_home_page.set_page_language('en-US')
     @training_courses_page = site_home_page.click_link_on_toolbar(:training_courses)
   end
 
