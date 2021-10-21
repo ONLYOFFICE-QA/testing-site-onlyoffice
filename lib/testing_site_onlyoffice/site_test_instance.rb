@@ -28,7 +28,7 @@ module TestingSiteOnlyoffice
   # Instance of browser to perform actions
   class SiteTestInstance
     attr_accessor :webdriver, :doc_instance
-    # @return [String, Symbol] language, server and browser
+    # @return [TestingApiOnlyfficeCom::Config] language, server and browser
     attr_reader :config
     alias driver webdriver
     alias selenium webdriver
