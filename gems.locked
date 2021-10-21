@@ -145,7 +145,7 @@ GEM
       selenium-webdriver (>= 3.142.7)
     wrata_api (0.2.0)
     yml_reader (0.7)
-    zeitwerk (2.4.2)
+    zeitwerk (2.5.1)
 
 PLATFORMS
   ruby
