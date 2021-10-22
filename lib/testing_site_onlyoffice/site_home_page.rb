@@ -110,6 +110,8 @@ module TestingSiteOnlyoffice
       super(instance.webdriver.driver)
       @instance = instance
       wait_to_load
+      set_page_language(@instance.config.language)
+      wait_to_load
       agree_with_cookie_if_shown
       hide_support_chat_if_shown
     end

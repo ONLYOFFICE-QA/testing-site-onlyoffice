@@ -28,11 +28,14 @@ module TestingSiteOnlyoffice
   # Instance of browser to perform actions
   class SiteTestInstance
     attr_accessor :webdriver, :doc_instance
+    # @return [TestingApiOnlyfficeCom::Config] language, server and browser
+    attr_reader :config
     alias driver webdriver
     alias selenium webdriver
 
     def initialize(config)
       @webdriver = WebDriver.new(config.browser, record_video: false)
+      @config = config
       url = config.server.end_with?('teamlab.info') ? "#{config.server}?Site_Testing=4testing" : config.server
       @webdriver.open(url)
     end
