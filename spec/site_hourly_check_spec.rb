@@ -30,8 +30,6 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check link Personal Offices' do
-      # TODO: Fix it
-      skip('Personal was updated to new version 2021.10.30')
       tour_page = @site_home_page.footer_home_use.open_personal
       expect(tour_page.login_visible?).to be true
     end
