@@ -6,7 +6,7 @@ module TestingSiteOnlyoffice
   class PersonalMainPage
     include PageObject
 
-    link(:login, xpath: '//*[@id="personalLogin"]/a')
+    link(:login, xpath: '//a[@href="/sign-in"]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
