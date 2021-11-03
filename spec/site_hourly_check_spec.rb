@@ -119,7 +119,7 @@ describe 'SiteHourlyCheck' do
       end
 
       describe 'download onlyoffice docs /download-docs.aspx' do
-        let(:onlyoffice_docs_page) { @site_home_page.click_link_on_toolbar(:onlyoffice_docs) }
+        let(:onlyoffice_docs_page) { @site_home_page.click_link_on_toolbar(:onlyoffice_docs_download) }
 
         describe 'enterprise' do
           it_behaves_like 'commercial_installer_download', 'Docs_Enterprise',
