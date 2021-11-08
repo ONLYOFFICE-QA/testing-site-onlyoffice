@@ -248,7 +248,7 @@ module TestingSiteOnlyoffice
         },
         onlyoffice_docs_registration: {
           element: site_get_onlyoffice_docs_registration_element,
-          class: SiteSignUp
+          class: SiteDocSignUp
         },
         onlyoffice_docs_download: {
           element: site_get_onlyoffice_docs_download_element,
