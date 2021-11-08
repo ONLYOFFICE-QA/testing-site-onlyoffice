@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
 require_relative '../../modules/site_toolbar'
-require_relative '../../portal_helper/portal_main_page'
 
 module TestingSiteOnlyoffice
-  # /docx-registration.aspx
+  # /docs-registration.aspx
   # https://user-images.githubusercontent.com/67409742/140712725-92ea25c1-8bec-4ff9-9445-a667f208b501.png
-  class SiteDocSignUp
+  class DocsRegistrationPage
     include PageObject
     include SiteToolbar
 
