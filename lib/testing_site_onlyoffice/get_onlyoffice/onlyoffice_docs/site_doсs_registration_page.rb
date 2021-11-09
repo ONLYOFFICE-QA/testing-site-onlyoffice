@@ -14,7 +14,6 @@ module TestingSiteOnlyoffice
     text_field(:doc_last_name, xpath: '//*[@class="txtLastName"]')
     text_field(:doc_email, xpath: '//input[contains(@class,"txtEmail")]')
     text_field(:doc_phone, xpath: '//input[@id="txtPhone"]')
-    button(:button_submit_request, xpath: '//input[contains(@id,"sbmtRequest")]')
     text_field(:submit_request, xpath: '//input[@id="sbmtRequest"]')
 
     # Errors
@@ -43,9 +42,9 @@ module TestingSiteOnlyoffice
       self.doc_email = params.fetch(:email, SiteData::EMAIL_ADMIN)
       self.doc_phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       @instance.webdriver.wait_until do
-        button_submit_request_element.present?
+        submit_request_element.present?
       end
-      button_submit_request_element.click
+      submit_request_element.click
       @instance.webdriver.wait_until { request_accepted? }
     end
 
