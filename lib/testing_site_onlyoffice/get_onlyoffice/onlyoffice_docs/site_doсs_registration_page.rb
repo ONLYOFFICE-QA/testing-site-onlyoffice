@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../../modules/site_toolbar'
+require_relative 'site_docs_registration_data'
 
 module TestingSiteOnlyoffice
   # /docs-registration.aspx
@@ -36,16 +37,20 @@ module TestingSiteOnlyoffice
       end
     end
 
-    def full_params(name, params = {})
-      self.doc_first_name = name
-      self.doc_last_name = params.fetch(:last_name, SiteData::DEFAULT_ADMIN_LASTNAME)
-      self.doc_email = params.fetch(:email, SiteData::EMAIL_ADMIN)
-      self.doc_phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
+    def fill_params(registration_data)
+      registration_online_document(registration_data)
       @instance.webdriver.wait_until do
         submit_request_element.present?
       end
       submit_request_element.click
       @instance.webdriver.wait_until { request_accepted? }
+    end
+
+    def registration_online_document(registration_data)
+      self.doc_first_name = registration_data.first_name
+      self.doc_last_name = registration_data.last_name
+      self.doc_email = registration_data.doc_email
+      self.doc_phone = registration_data.doc_phone
     end
 
     def request_accepted?
