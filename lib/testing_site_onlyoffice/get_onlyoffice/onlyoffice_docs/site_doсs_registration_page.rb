@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../../modules/site_toolbar'
+require_relative 'site_doсs_registration_page/site_docs_registration_data'
 
 module TestingSiteOnlyoffice
   # /docs-registration.aspx
@@ -14,7 +15,7 @@ module TestingSiteOnlyoffice
     text_field(:doc_last_name, xpath: '//*[@class="txtLastName"]')
     text_field(:doc_email, xpath: '//input[contains(@class,"txtEmail")]')
     text_field(:doc_phone, xpath: '//input[@id="txtPhone"]')
-    button(:start_trial, xpath: '//input[contains(@class,"disabled valid")]')
+    text_field(:submit_request, xpath: '//input[@id="sbmtRequest"]')
 
     # Errors
     div(:doc_first_name_error, xpath: '//div[@class="error txtFirstName_errorArea"]')
@@ -34,6 +35,26 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until do
         doc_first_name_element.present?
       end
+    end
+
+    def fill_params(registration_data)
+      registration_online_document(registration_data)
+      @instance.webdriver.wait_until do
+        submit_request_element.present?
+      end
+      submit_request_element.click
+      @instance.webdriver.wait_until { request_accepted? }
+    end
+
+    def registration_online_document(registration_data)
+      self.doc_first_name = registration_data.first_name
+      self.doc_last_name = registration_data.last_name
+      self.doc_email = registration_data.doc_email
+      self.doc_phone = registration_data.doc_phone
+    end
+
+    def request_accepted?
+      submit_request_element.attribute('class').include?('succesfulReq')
     end
   end
 end
