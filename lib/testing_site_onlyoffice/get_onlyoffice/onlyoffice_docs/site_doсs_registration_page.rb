@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../../modules/site_toolbar'
-require_relative 'site_docs_registration_data'
+require_relative 'site_doсs_registration_page/site_docs_registration_data'
 
 module TestingSiteOnlyoffice
   # /docs-registration.aspx
