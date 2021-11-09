@@ -5,7 +5,7 @@ module TestingSiteOnlyoffice
   class DocsRegistrationData
     attr_accessor :first_name, :last_name, :doc_email, :doc_phone
 
-    def initialize(params = {})
+    def initialize
       @first_name = Faker::Name.first_name
       @last_name = Faker::Name.first_name
       @doc_email = SiteData::EMAIL_ADMIN
