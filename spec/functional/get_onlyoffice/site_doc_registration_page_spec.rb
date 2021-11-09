@@ -17,12 +17,10 @@ describe 'Doc registration page' do
   end
 
   describe 'Sign Up for cloud' do
-    describe 'Create new portal' do
-      it 'Create new portal from "Sign Up"' do
-        doc_sign_up_page = @site_home_page.click_link_on_toolbar(:onlyoffice_docs_registration)
-        doc_sign_up_page.full_params(TestingSiteOnlyoffice::SitePortalCreationData.new.get_instance_hash, name)
-        expect(partner_email.check_email_by_subject({ subject: 'Request from: docs-registration' }, 300, true)).to be true
-      end
+    it 'Sign Up online document editors' do
+      doc_sign_up_page = @site_home_page.click_link_on_toolbar(:onlyoffice_docs_registration)
+      doc_sign_up_page.full_params(TestingSiteOnlyoffice::SitePortalCreationData.new.get_instance_hash, name)
+      expect(partner_email.check_email_by_subject({ subject: 'Request from: docs-registration' }, 300, true)).to be true
     end
   end
 end
