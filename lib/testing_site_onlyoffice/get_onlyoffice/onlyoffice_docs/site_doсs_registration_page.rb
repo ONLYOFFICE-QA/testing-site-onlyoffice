@@ -21,6 +21,7 @@ module TestingSiteOnlyoffice
     div(:doc_first_name_error, xpath: '//div[@class="error txtFirstName_errorArea"]')
     div(:doc_last_name_error, xpath: '//div[@class="error txtLastName_errorArea"]')
     div(:doc_email_error, xpath: '//div[@class="error txtEmail_errorArea"]')
+    div(:doc_phone_error, xpath: '//div[@class="error txtPhone_errorArea"]')
 
     # Terms
     link(:doc_privacy_statement, xpath: '//a[contains(text(), "Privacy statement")]')
@@ -37,24 +38,29 @@ module TestingSiteOnlyoffice
       end
     end
 
-    def fill_params(registration_data)
-      registration_online_document(registration_data)
-      @instance.webdriver.wait_until do
-        submit_request_element.present?
-      end
-      submit_request_element.click
+    def submit_correct_data(registration_data)
+      submit_data(registration_data)
       @instance.webdriver.wait_until { request_accepted? }
     end
 
-    def registration_online_document(registration_data)
+    def submit_data(registration_data)
       self.doc_first_name = registration_data.first_name
       self.doc_last_name = registration_data.last_name
       self.doc_email = registration_data.doc_email
       self.doc_phone = registration_data.doc_phone
+      @instance.webdriver.wait_until do
+        submit_request_element.present?
+      end
+      submit_request_element.click
     end
 
     def request_accepted?
       submit_request_element.attribute('class').include?('succesfulReq')
+    end
+
+    def all_errors_visible?
+      doc_first_name_error_element.present? & doc_last_name_error_element.present? &
+        doc_email_error_element.present? & doc_phone_error_element.present?
     end
   end
 end
