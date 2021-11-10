@@ -21,6 +21,7 @@ module TestingSiteOnlyoffice
     div(:doc_first_name_error, xpath: '//div[@class="error txtFirstName_errorArea"]')
     div(:doc_last_name_error, xpath: '//div[@class="error txtLastName_errorArea"]')
     div(:doc_email_error, xpath: '//div[@class="error txtEmail_errorArea"]')
+    div(:doc_phone_error, xpath: '//div[@class="error txtPhone_errorArea"]')
 
     # Terms
     link(:doc_privacy_statement, xpath: '//a[contains(text(), "Privacy statement")]')
@@ -55,6 +56,12 @@ module TestingSiteOnlyoffice
 
     def request_accepted?
       submit_request_element.attribute('class').include?('succesfulReq')
+    end
+
+    def all_errors_visible?
+      submit_request_element.click
+      doc_first_name_error_element.present? & doc_last_name_error_element.present? &
+        doc_email_error_element.present? & doc_phone_error_element.present?
     end
   end
 end
