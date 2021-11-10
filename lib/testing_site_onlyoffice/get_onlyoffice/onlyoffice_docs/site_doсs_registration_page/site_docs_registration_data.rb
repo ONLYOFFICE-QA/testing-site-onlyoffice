@@ -11,5 +11,13 @@ module TestingSiteOnlyoffice
       @doc_email = SiteData::EMAIL_ADMIN
       @doc_phone = Faker::PhoneNumber.cell_phone_in_e164
     end
+
+    def generate_incorrect_data
+      @first_name = Random.new.rand(1..5)
+      @last_name = Random.new.rand(1..5)
+      @doc_email = Random.new.rand(1..5)
+      @doc_phone = ('a'..'z').to_a.sample
+      self
+    end
   end
 end
