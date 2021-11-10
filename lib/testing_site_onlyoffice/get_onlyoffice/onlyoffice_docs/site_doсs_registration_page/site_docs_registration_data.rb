@@ -3,7 +3,7 @@
 module TestingSiteOnlyoffice
   # Default online document data for sign up for cloud
   class DocsRegistrationData
-    attr_accessor :first_name, :last_name, :doc_email, :doc_phone
+    attr_reader :first_name, :last_name, :doc_email, :doc_phone
 
     def initialize
       @first_name = Faker::Name.first_name
