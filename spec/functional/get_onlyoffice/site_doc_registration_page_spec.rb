@@ -26,7 +26,7 @@ describe 'Doc registration page' do
 
     it 'Sign Up errors' do
       @doc_sign_up_page.registration_online_document(TestingSiteOnlyoffice::DocsRegistrationData.new.generate_incorrect_data)
-      expect(@doc_sign_up_page).to be_all_errors_visible
+      expect(@doc_sign_up_page).to be_any_errors_visible
     end
   end
 end

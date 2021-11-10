@@ -40,10 +40,6 @@ module TestingSiteOnlyoffice
 
     def fill_params(registration_data)
       registration_online_document(registration_data)
-      @instance.webdriver.wait_until do
-        submit_request_element.present?
-      end
-      submit_request_element.click
       @instance.webdriver.wait_until { request_accepted? }
     end
 
@@ -52,13 +48,17 @@ module TestingSiteOnlyoffice
       self.doc_last_name = registration_data.last_name
       self.doc_email = registration_data.doc_email
       self.doc_phone = registration_data.doc_phone
+      @instance.webdriver.wait_until do
+        submit_request_element.present?
+      end
+      submit_request_element.click
     end
 
     def request_accepted?
       submit_request_element.attribute('class').include?('succesfulReq')
     end
 
-    def all_errors_visible?
+    def any_errors_visible?
       submit_request_element.click
       doc_first_name_error_element.present? & doc_last_name_error_element.present? &
         doc_email_error_element.present? & doc_phone_error_element.present?
