@@ -59,7 +59,6 @@ module TestingSiteOnlyoffice
     end
 
     def any_errors_visible?
-      submit_request_element.click
       doc_first_name_error_element.present? & doc_last_name_error_element.present? &
         doc_email_error_element.present? & doc_phone_error_element.present?
     end
