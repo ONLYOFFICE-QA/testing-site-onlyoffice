@@ -79,9 +79,21 @@ module TestingSiteOnlyoffice
       self.phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.portal_name = params[:portal_name]
       self.portal_password = params.fetch(:password, SiteData::PORTAL_PASSWORD)
+      set_language_of_communication(params[:language]) if language_of_communication_element.present?
       set_number_of_users(params[:users_number]) if number_of_users_element.present?
       remove_recaptcha
       start_trial_element.click
+    end
+
+    def set_language_of_communication(language)
+      language_of_communication_element.click
+      @instance.webdriver.wait_until { dropdown_language_of_communication(language).present? }
+      dropdown_language_of_communication(language).click
+    end
+
+    def dropdown_language_of_communication(language)
+      user_number_xpath = "//li[@data-value='#{language}']"
+      @instance.webdriver.get_element(user_number_xpath)
     end
 
     def set_number_of_users(number)
