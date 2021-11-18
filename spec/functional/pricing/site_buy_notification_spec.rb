@@ -26,7 +26,6 @@ describe 'Buy Product Notification' do
   end
 
   it '[Site][PricingDocsEnterprise] Buy Docs Enterprise Edition and check notify /docs-enterprise-prices.aspx' do
-    skip('release/1.62.0 - page has been completely redesigned')
     pricing_page = @site_home_page.click_link_on_toolbar(:pricing_enterprise)
     pricing_page.choose_support_basic
     avangate = pricing_page.go_to_avangate_from_pricing_page(pricing_page.buy_now_single_server_element, test_purchase: true)
