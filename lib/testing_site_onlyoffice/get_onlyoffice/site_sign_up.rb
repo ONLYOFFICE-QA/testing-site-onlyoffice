@@ -21,6 +21,7 @@ module TestingSiteOnlyoffice
     text_field(:email, xpath: '//input[contains(@class,"txtSignUpEmail")]')
     text_field(:phone, xpath: '//input[@id="txtPhone"]')
     span(:number_of_users, xpath: '//span[contains(@class, "registNumberOfUsersSelect")]')
+    span(:language_of_communication, xpath: '//span[contains(@class, "registLangSelect")]')
     text_field(:portal_name, xpath: '//input[contains(@class,"txtSignUpPortalName")]')
     text_field(:portal_password, xpath: '//input[contains(@class,"txtSignUpPassword")]')
 
