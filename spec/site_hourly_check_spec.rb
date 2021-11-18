@@ -67,6 +67,7 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check cloud' do
+      skip('release/1.62.0 - page has been completely redesigned')
       page = @site_home_page.click_link_on_toolbar(:pricing_cloud)
       expect(page).to be_a TestingSiteOnlyoffice::SitePricingCloud
       page = @site_home_page.click_link_on_toolbar(:pricing_server)
