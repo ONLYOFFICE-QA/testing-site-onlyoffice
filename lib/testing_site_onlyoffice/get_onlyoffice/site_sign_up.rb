@@ -21,6 +21,7 @@ module TestingSiteOnlyoffice
     text_field(:email, xpath: '//input[contains(@class,"txtSignUpEmail")]')
     text_field(:phone, xpath: '//input[@id="txtPhone"]')
     span(:number_of_users, xpath: '//span[contains(@class, "registNumberOfUsersSelect")]')
+    span(:communication_language, xpath: '//span[contains(@class, "registLangSelect")]')
     text_field(:portal_name, xpath: '//input[contains(@class,"txtSignUpPortalName")]')
     text_field(:portal_password, xpath: '//input[contains(@class,"txtSignUpPassword")]')
 
@@ -79,9 +80,21 @@ module TestingSiteOnlyoffice
       self.phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.portal_name = params[:portal_name]
       self.portal_password = params.fetch(:password, SiteData::PORTAL_PASSWORD)
+      set_communication_language(params[:communication_language]) if communication_language_element.present?
       set_number_of_users(params[:users_number]) if number_of_users_element.present?
       remove_recaptcha
       start_trial_element.click
+    end
+
+    def set_communication_language(language)
+      communication_language_element.click
+      @instance.webdriver.wait_until { dropdown_communication_language(language).present? }
+      dropdown_communication_language(language).click
+    end
+
+    def dropdown_communication_language(language)
+      user_number_xpath = "//li[@data-value='#{language}']"
+      @instance.webdriver.get_element(user_number_xpath)
     end
 
     def set_number_of_users(number)
