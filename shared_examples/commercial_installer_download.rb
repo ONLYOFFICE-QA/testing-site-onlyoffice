@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 shared_examples_for 'commercial_installer_download' do |product, installers_list|
+  before do
+    skip('release/1.62.0 - page has been completely redesigned')
+  end
+
   installers_list[:without_buy_button].each do |installer|
     describe installer.to_s do
       before do
