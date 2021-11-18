@@ -24,7 +24,7 @@ module TestingSiteOnlyoffice
         password: @password,
         portal_name: @portal_name,
         users_number: @users_number,
-        language: @communication_language
+        communication_language: @communication_language
       }
     end
 
