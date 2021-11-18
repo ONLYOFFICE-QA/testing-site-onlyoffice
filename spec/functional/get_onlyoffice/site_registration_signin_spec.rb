@@ -43,12 +43,12 @@ describe 'Registration new portal' do
     end
 
     it 'Create new portal with wrong data from "Sign Up"' do
-      sign_up_page.fill_params(first_name: '1', last_name: '2', email: '3', password: '4', portal_name: '5')
+      sign_up_page.fill_params(first_name: '1', last_name: '2', email: '3', password: '4', portal_name: '5', users_number: '1-3')
       expect(sign_up_page).to be_all_errors_visible
     end
 
     it 'Use Email only with English letters for "Sign Up" form' do
-      sign_up_page.fill_params(email: 'rémy@qamail.teamlab.info')
+      sign_up_page.fill_params(email: 'rémy@qamail.teamlab.info', users_number: '1-3')
       expect(sign_up_page.email_error_element).to be_present
     end
 
