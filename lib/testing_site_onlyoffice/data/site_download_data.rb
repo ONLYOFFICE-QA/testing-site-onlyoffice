@@ -29,7 +29,7 @@ module TestingSiteOnlyoffice
 
     # Connectors
     def self.connectors_list
-      %i[alfresco chamilo confluence humhub liferay nextcloud nuxeo owncloud plone sharepoint]
+      %i[alfresco chamilo confluence humhub liferay nextcloud nuxeo owncloud plone redmine sharepoint]
     end
 
     def self.connectors_info
