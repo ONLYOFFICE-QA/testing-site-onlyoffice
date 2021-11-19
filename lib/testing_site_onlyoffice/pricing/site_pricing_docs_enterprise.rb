@@ -11,9 +11,9 @@ module TestingSiteOnlyoffice
     include SitePricingHelper
     include SiteToolbar
 
-    link(:buy_now_single_server, xpath: '//a[@id= "ie-price-url-updated"]|//div[@class="ip_main_part"]//a[@data-id="ie-price-url-updated"]')
+    link(:buy_now_single_server, xpath: '//div[@class="ee-calculator-part"]//a[@data-id="ie-price-url-updated"]')
 
-    div(:professional_support_basic, xpath: '//div[@id= "basic_support"]|//div[@class="ip_main_part"]//div[@data-id="basic_support"]')
+    div(:professional_support_basic, xpath: '//div[@class="ee-calculator-part"]//div[@class="support_switchers"]//div[@data-id="basic_support"]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
