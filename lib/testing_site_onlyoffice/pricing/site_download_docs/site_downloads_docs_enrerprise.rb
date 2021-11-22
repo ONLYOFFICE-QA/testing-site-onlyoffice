@@ -21,7 +21,7 @@ module TestingSiteOnlyoffice
       end
     end
 
-    def title_docs_enterprise
+    def page_title
       @instance.webdriver.get_text(title_docs_enterprise_element)
     end
   end

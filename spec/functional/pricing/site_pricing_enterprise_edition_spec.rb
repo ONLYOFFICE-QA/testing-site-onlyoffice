@@ -7,9 +7,6 @@ describe 'Pricing docs enterprise' do
 
   before do
     @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @mail = IredMailHelper.new(username: 'avangate-buy-product@qamail.teamlab.info',
-                               password: @test.private_data['mail_avangate-buy-product_pass'])
-    @mail.delete_all_messages
   end
 
   after do |example|
@@ -20,6 +17,6 @@ describe 'Pricing docs enterprise' do
   it '[Site][PricingDocsEnterprise] Try it free download docs' do
     pricing_page = @site_home_page.click_link_on_toolbar(:pricing_enterprise)
     connectors = pricing_page.click_try_free_button
-    expect(connectors.title_docs_enterprise).to eq('ONLYOFFICE Docs Enterprise')
+    expect(connectors.page_title).to eq('ONLYOFFICE Docs Enterprise')
   end
 end
