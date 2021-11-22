@@ -14,6 +14,7 @@ module TestingSiteOnlyoffice
     link(:buy_now_single_server, xpath: '//div[@class="ee-calculator-part"]//a[@data-id="ie-price-url-updated"]')
 
     div(:professional_support_basic, xpath: '//div[@class="ee-calculator-part"]//div[@class="support_switchers"]//div[@data-id="basic_support"]')
+    link(:try_free_button, xpath: '//div[@class="dep-part ee-business"]//div[@class="ee-text-part"]/a')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -32,6 +33,14 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until do
         professional_support_basic_element.attribute('class').include?('selected_sp')
       end
+    end
+
+    def click_try_free_button
+      @instance.webdriver.wait_until do
+        try_free_button_element.present?
+      end
+      try_free_button_element.click
+      DownloadsDocsEnterprise.new(@instance)
     end
   end
 end
