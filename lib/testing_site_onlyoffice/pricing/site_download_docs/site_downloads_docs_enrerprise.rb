@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module TestingSiteOnlyoffice
-  # Pricing for Onlyoffice Docs Developer edition
+  # Downloads connectors docs enterprise for try it free
   # https://user-images.githubusercontent.com/67409742/142833499-b3c6eb80-df8d-468b-ae34-3f5c08f7ad95.png
   class DownloadsDocsEnterprise
     include PageObject
