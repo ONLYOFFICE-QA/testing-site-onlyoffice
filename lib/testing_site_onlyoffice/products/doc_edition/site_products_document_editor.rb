@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../modules/site_editors_xpath'
-
 module TestingSiteOnlyoffice
   # docs-enterprise.aspx?from=docs-enterprise-prices
   # https://user-images.githubusercontent.com/67409742/142990092-032280ef-b02f-4329-8fc8-78328ebd654f.png
