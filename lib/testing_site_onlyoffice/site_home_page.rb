@@ -53,7 +53,6 @@ require_relative 'pricing/site_pricing_server_enterprise'
 require_relative 'pricing/price_cloud/site_pricing_cloud'
 require_relative 'pricing/site_pricing_docs_enterprise'
 require_relative 'pricing/site_pricing_docs_developer'
-require_relative 'pricing/site_download_docs/site_downloads_docs_enrerprise'
 
 require_relative 'products/connectors/site_products_connectors_onlyoffice'
 require_relative 'products/site_products_android'

@@ -40,7 +40,7 @@ module TestingSiteOnlyoffice
         try_free_button_element.present?
       end
       try_free_button_element.click
-      DownloadsDocsEnterprise.new(@instance)
+      SiteDocsEnterprise.new(@instance)
     end
   end
 end
