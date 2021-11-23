@@ -15,6 +15,7 @@ module TestingSiteOnlyoffice
 
     div(:professional_support_basic, xpath: '//div[@class="ee-calculator-part"]//div[@class="support_switchers"]//div[@data-id="basic_support"]')
     link(:try_free_button, xpath: '//div[@class="dep-part ee-business"]//div[@class="ee-text-part"]/a')
+    link(:ready_editing_tools_button, xpath: '//div[@class="ee-text-part"]/ul[@class="pp_features_list"]/li/a')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -41,6 +42,14 @@ module TestingSiteOnlyoffice
       end
       try_free_button_element.click
       SiteDocsEnterprise.new(@instance)
+    end
+
+    def click_ready_editing_tools_button
+      @instance.webdriver.wait_until do
+        ready_editing_tools_button_element.present?
+      end
+      ready_editing_tools_button_element.click
+      SiteProductsEnterpriseEdition.new(@instance)
     end
   end
 end

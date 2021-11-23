@@ -19,4 +19,9 @@ describe 'Pricing docs enterprise' do
     connectors = pricing_page.click_try_free_button
     expect(connectors.page_title).to eq('ONLYOFFICE Docs Enterprise')
   end
+
+  it '[Site][PricingDocsEnterprise] Enterprise-ready editing tools' do
+    pricing_page = @site_home_page.click_link_on_toolbar(:pricing_enterprise)
+    expect(pricing_page.click_ready_editing_tools_button).to be_a TestingSiteOnlyoffice::SiteProductsEnterpriseEdition
+  end
 end
