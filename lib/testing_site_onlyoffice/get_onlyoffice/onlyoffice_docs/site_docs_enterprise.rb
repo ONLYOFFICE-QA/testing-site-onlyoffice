@@ -18,6 +18,8 @@ module TestingSiteOnlyoffice
     include SiteToolbar
     include SiteToolbarOnlyofficeDocs
 
+    element(:title_docs_enterprise, xpath: "//div[@class='dwn-mp-docs-enterprise']/h2")
+
     def initialize(instance)
       super(instance.webdriver.driver)
       @instance = instance
@@ -33,6 +35,10 @@ module TestingSiteOnlyoffice
 
     def installer_docs_enterprise_type_block(type = :docker)
       SiteCommercialBlockConstructor.new(@instance, 'docs_enterprise', type.to_s)
+    end
+
+    def page_title
+      @instance.webdriver.get_text(title_docs_enterprise_element)
     end
   end
 end
