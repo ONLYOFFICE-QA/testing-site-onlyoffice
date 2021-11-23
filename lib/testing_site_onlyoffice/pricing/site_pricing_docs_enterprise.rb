@@ -12,10 +12,12 @@ module TestingSiteOnlyoffice
     include SiteToolbar
 
     link(:buy_now_single_server, xpath: '//div[@class="ee-calculator-part"]//a[@data-id="ie-price-url-updated"]')
+    link(:buy_now_home_server, xpath: '//div[@class="ee-text-part"]/a[@class="button red"]')
 
     div(:professional_support_basic, xpath: '//div[@class="ee-calculator-part"]//div[@class="support_switchers"]//div[@data-id="basic_support"]')
     link(:try_free_button, xpath: '//div[@class="dep-part ee-business"]//div[@class="ee-text-part"]/a')
     link(:ready_editing_tools_button, xpath: '//div[@class="ee-text-part"]/ul[@class="pp_features_list"]/li/a')
+    div(:home_tariff, xpath: '//div[@data-id="ee-home"]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -34,6 +36,10 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until do
         professional_support_basic_element.attribute('class').include?('selected_sp')
       end
+    end
+
+    def choose_home_tariff
+      home_tariff_element.click
     end
 
     def click_try_free_button

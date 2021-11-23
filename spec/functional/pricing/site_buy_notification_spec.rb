@@ -35,6 +35,16 @@ describe 'Buy Product Notification' do
                                         true)).to be_truthy
   end
 
+  it '[Site][PricingDocsEnterprise] Buy Docs Enterprise Edition for home and check notify /docs-enterprise-prices.aspx' do
+    pricing_page = @site_home_page.click_link_on_toolbar(:pricing_enterprise)
+    pricing_page.choose_home_tariff
+    avangate = pricing_page.go_to_avangate_from_pricing_page(pricing_page.buy_now_home_server_element, test_purchase: true)
+    avangate.submit_avangate_order_for_notification(email: @mail.username)
+    expect(@mail.check_email_by_subject({ subject: TestingSiteOnlyoffice::SiteNotificationData::PAYMENT_RECEIVED }, 300, true)).to be_truthy
+    expect(@mail.check_email_by_subject({ subject: TestingSiteOnlyoffice::SiteNotificationData::PURCHASE_DOCS_ENTERPRISE }, 300,
+                                        true)).to be_truthy
+  end
+
   it '[Site][PricingDocsDeveloper] Buy Docs Developer Edition and check notify /developer-edition-prices.aspx' do
     pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
     avangate = pricing_page.go_to_avangate_from_pricing_page(pricing_page.buy_now_single_server_element, test_purchase: true)
