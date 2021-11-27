@@ -60,7 +60,7 @@ GEM
     onlyoffice_file_helper (0.5.0)
       onlyoffice_logger_helper (~> 1)
       rubyzip (~> 2)
-    onlyoffice_iredmail_helper (0.2.1)
+    onlyoffice_iredmail_helper (0.3.0)
       mail (~> 2)
       onlyoffice_logger_helper (~> 1)
     onlyoffice_logger_helper (1.2.0)
@@ -176,4 +176,4 @@ DEPENDENCIES
   wrata_api
 
 BUNDLED WITH
-   2.2.29
+   2.2.32
