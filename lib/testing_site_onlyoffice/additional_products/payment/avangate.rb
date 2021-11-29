@@ -44,9 +44,11 @@ module TestingSiteOnlyoffice
     element(:avangate_logo_link, xpath: '//*[@id="avs_header"]/*[@id="logo"]')
     element(:avangate_main_continue_button, xpath: '//input[@id="checkoutSubmitBtn"]')
     element(:avangate_user_storage_link, xpath: '//*[@id="order__products"]//td[contains(@class,"item__name")]')
-    element(:avangate_total_value_price, xpath: '//*[contains(@class,"order__listing__item__total__price")]')
+    element(:avangate_current_value_price, xpath: '//*[contains(@class,"order__listing__item__total__price")]')
     element(:avangate_upsell_frame, xpath: '//*[@id="order__page__upsell_product"]')
     element(:avangate_upsell_close, xpath: '//*[@id="order__page__upsell_product"]//a')
+    element(:avangate_total_value_price, xpath: '//div[@class="products-total-row products-total order__total products-content__total"]//*[contains(@class,"order__billing__total clearfix")]')
+    element(:avangate_total_tax_value_price, xpath: '//div[@class="products-total-row products-totalvat order__sub__total products-content__totalvat"]//*[contains(@class,"order__billing__total clearfix")]')
 
     def initialize(instance, params = {})
       super(instance.webdriver.driver)
@@ -119,11 +121,26 @@ module TestingSiteOnlyoffice
       end
     end
 
-    def get_avangate_current_price_value
-      values = [avangate_total_value_price_element.text]
+    def parse_price(values)
       value = values.detect { |val| val.match(/(\d+(?:,|.))?\d+(.\d+)?/) }.to_s.sub(',', '')
       value = value[1..-1] if value[0].to_i.zero?
-      value
+      value.to_i
+    end
+
+    def current_price
+      parse_price([avangate_current_value_price_element.text])
+    end
+
+    def total_price
+      parse_price([avangate_total_value_price_element.text])
+    end
+
+    def total_tax
+      parse_price([avangate_total_tax_value_price_element.text])
+    end
+
+    def total_amount_without_tax
+      total_price - total_tax
     end
 
     def currency_selected

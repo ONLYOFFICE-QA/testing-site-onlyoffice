@@ -53,7 +53,7 @@ describe 'Site Pricing Developer Edition' do
       expect(connections_num).to eq(250)
       expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_250)
       avangate = @developer_edition_prices.click_buy_now_single_server
-      avangate_price = avangate.get_avangate_current_price_value.to_i
+      avangate_price = avangate.current_price
       expect(avangate_price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_250)
     end
 
@@ -63,7 +63,7 @@ describe 'Site Pricing Developer Edition' do
       expect(connections_num).to eq(500)
       expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_500)
       avangate = @developer_edition_prices.click_buy_now_single_server
-      avangate_price = avangate.get_avangate_current_price_value.to_i
+      avangate_price = avangate.current_price
       expect(avangate_price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_500)
     end
 
@@ -73,7 +73,7 @@ describe 'Site Pricing Developer Edition' do
       expect(connections_num).to eq(1000)
       expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_1000)
       avangate = @developer_edition_prices.click_buy_now_single_server
-      avangate_price = avangate.get_avangate_current_price_value.to_i
+      avangate_price = avangate.current_price
       expect(avangate_price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_1000)
     end
   end
@@ -83,7 +83,7 @@ describe 'Site Pricing Developer Edition' do
     expect(connections_num).to eq(20)
     expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_developer_server)
     avangate = @developer_edition_prices.click_buy_now_development_server
-    avangate_price = avangate.get_avangate_current_price_value.to_i
+    avangate_price = avangate.current_price
     expect(avangate_price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_developer_server)
   end
 
