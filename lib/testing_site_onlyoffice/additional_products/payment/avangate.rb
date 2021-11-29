@@ -121,29 +121,26 @@ module TestingSiteOnlyoffice
       end
     end
 
-    def get_avangate_current_price_value
-      values = [avangate_current_value_price_element.text]
+    def get_avangate_value(values)
       value = values.detect { |val| val.match(/(\d+(?:,|.))?\d+(.\d+)?/) }.to_s.sub(',', '')
       value = value[1..-1] if value[0].to_i.zero?
       value
     end
 
-    def get_avangate_total_price_value
-      values = [avangate_total_value_price_element.text]
-      value = values.detect { |val| val.match(/(\d+(?:,|.))?\d+(.\d+)?/) }.to_s.sub(',', '')
-      value = value[1..-1] if value[0].to_i.zero?
-      value
+    def current_price
+      [avangate_current_value_price_element.text]
     end
 
-    def get_avangate_total_tax_value
-      values = [avangate_total_tax_value_price_element.text]
-      value = values.detect { |val| val.match(/(\d+(?:,|.))?\d+(.\d+)?/) }.to_s.sub(',', '')
-      value = value[1..-1] if value[0].to_i.zero?
-      value
+    def total_price
+      [avangate_total_value_price_element.text]
+    end
+
+    def total_tax
+      [avangate_total_tax_value_price_element.text]
     end
 
     def total_amount_without_tax
-      get_avangate_total_price_value.to_i - get_avangate_total_tax_value.to_i
+      get_avangate_value(total_price).to_i - get_avangate_value(total_tax).to_i
     end
 
     def currency_selected

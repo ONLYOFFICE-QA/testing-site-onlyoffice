@@ -60,7 +60,8 @@ describe 'Pricing Cloud Service' do
   it '[Site][Pricing][Cloud] Click Buy now and check plane on Avangate page' do
     cost = @pricing_cloud_page.cost_tariff_business_3_year
     avangate_page = @pricing_cloud_page.buy_now
-    expect(avangate_page.get_avangate_current_price_value.to_i).to eq(cost.to_i)
+    value = avangate_page.current_price
+    expect(avangate_page.get_avangate_value(value).to_i).to eq(cost.to_i)
   end
 
   it '[Site][Pricing][Cloud] Check FAQ link' do
