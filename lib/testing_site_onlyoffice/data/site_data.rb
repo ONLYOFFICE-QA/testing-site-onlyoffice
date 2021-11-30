@@ -103,5 +103,9 @@ module TestingSiteOnlyoffice
     def self.sign_in_with_network_list
       %i[google facebook twitter linkedin]
     end
+
+    def self.blogs_download_app
+      %w[winodws linux MacOs GooglePlay AppStore]
+    end
   end
 end
