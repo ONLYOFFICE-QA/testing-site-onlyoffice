@@ -20,16 +20,16 @@ describe 'About blogs' do
   end
 
   it '[About blogs] Go to app GooglePlay' do
-    expect(@about_blogs_page.go_to_google_play).to be true
+    expect(@about_blogs_page.check_google_play_link).to be true
   end
 
   it '[About blogs] Go to app App Store' do
-    expect(@about_blogs_page.go_to_app_store).to be true
+    expect(@about_blogs_page.check_app_store_link).to be true
   end
 
   TestingSiteOnlyoffice::SiteData.download_desktop_apps.each do |apps|
     it "[About blogs] Go to desktop #{apps}" do
-      expect(@about_blogs_page.go_to_desktop_apps(apps)).to be_a TestingSiteOnlyoffice::SiteDesktopApps
+      expect(@about_blogs_page.check_desktop_apps_link(apps)).to be_a TestingSiteOnlyoffice::SiteDesktopApps
     end
   end
 end

@@ -30,19 +30,19 @@ module TestingSiteOnlyoffice
       apps.map { |s| s.gsub('download ', '') }
     end
 
-    def go_to_google_play
+    def check_google_play_link
       google_play_button_element.click
       @instance.webdriver.switch_to_popup
       @instance.webdriver.get_url.include?('play.google.com')
     end
 
-    def go_to_app_store
+    def check_app_store_link
       app_store_button_element.click
       @instance.webdriver.switch_to_popup
       @instance.webdriver.get_url.include?('apps.apple.com')
     end
 
-    def go_to_desktop_apps(apps)
+    def check_desktop_apps_link(apps)
       desktop = { windows: windows_button_element, linux: linux_button_element, macos: macos_button_element }
       desktop[apps].click
       @instance.webdriver.switch_to_popup
