@@ -107,5 +107,9 @@ module TestingSiteOnlyoffice
     def self.blogs_download_app
       %w[winodws linux MacOs GooglePlay AppStore]
     end
+
+    def self.download_desktop_apps
+      %i[windows linux macos]
+    end
   end
 end
