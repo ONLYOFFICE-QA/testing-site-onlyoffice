@@ -42,7 +42,7 @@ module TestingSiteOnlyoffice
       @instance.webdriver.get_url.include?('apps.apple.com')
     end
 
-    def check_desktop_apps_link(apps)
+    def go_to_desktop_apps(apps)
       desktop = { windows: windows_button_element, linux: linux_button_element, macos: macos_button_element }
       desktop[apps].click
       @instance.webdriver.switch_to_popup

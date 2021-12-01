@@ -29,7 +29,7 @@ describe 'About blogs' do
 
   TestingSiteOnlyoffice::SiteData.download_desktop_apps.each do |apps|
     it "[About blogs] Go to desktop #{apps}" do
-      expect(@about_blogs_page.check_desktop_apps_link(apps)).to be_a TestingSiteOnlyoffice::SiteDesktopApps
+      expect(@about_blogs_page.go_to_desktop_apps(apps)).to be_a TestingSiteOnlyoffice::SiteDesktopApps
     end
   end
 end
