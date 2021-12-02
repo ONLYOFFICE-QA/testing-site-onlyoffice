@@ -19,6 +19,11 @@
     "instruction": "Integration. Getting Started. Humhub - ONLYOFFICE",
     "whats_new": "onlyoffice-humhub/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-humhub · GitHub"
   },
+  "jira": {
+    "github": "GitHub - ONLYOFFICE/onlyoffice-jira: The plugin which enables the users to edit office documents from Jira using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Jira",
+    "instruction": "GitHub - ONLYOFFICE/onlyoffice-jira: The plugin which enables the users to edit office documents from Jira using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Jira",
+    "whats_new": "onlyoffice-jira/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-jira · GitHub"
+  },
   "liferay": {
     "github": "GitHub - ONLYOFFICE/onlyoffice-liferay: Plugin for integrating ONLYOFFICE online editors with Liferay",
     "instruction": "Integration. Getting Started. Liferay - ONLYOFFICE",
