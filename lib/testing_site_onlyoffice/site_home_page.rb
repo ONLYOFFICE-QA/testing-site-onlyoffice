@@ -5,6 +5,7 @@ require_relative 'about/site_customer_stories'
 require_relative 'about/training_courses/site_about_training_courses'
 require_relative 'about/white_paper_and_datasheets/site_white_papers'
 require_relative 'about/site_blog'
+require_relative 'about/site_contribute'
 
 require_relative 'additional_products/site_help_center'
 

@@ -300,7 +300,8 @@ module TestingSiteOnlyoffice
           class: SiteBlog
         },
         about_contribute: {
-          element: site_about_contribute_element
+          element: site_about_contribute_element,
+          class: SiteContribute
         },
         about_customers: {
           element: site_about_customers_element
