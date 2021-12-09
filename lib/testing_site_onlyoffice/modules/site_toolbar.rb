@@ -308,7 +308,8 @@ module TestingSiteOnlyoffice
           class: SiteCustomerStories
         },
         about_awards: {
-          element: site_about_awards_element
+          element: site_about_awards_element,
+          class: SiteAwards
         },
         about_events: {
           element: site_about_events_element
