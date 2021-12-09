@@ -304,7 +304,8 @@ module TestingSiteOnlyoffice
           class: SiteContribute
         },
         about_customers: {
-          element: site_about_customers_element
+          element: site_about_customers_element,
+          class: SiteCustomerStories
         },
         about_awards: {
           element: site_about_awards_element
