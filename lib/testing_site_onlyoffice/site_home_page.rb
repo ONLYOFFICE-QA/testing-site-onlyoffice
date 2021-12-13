@@ -7,6 +7,7 @@ require_relative 'about/white_paper_and_datasheets/site_white_papers'
 require_relative 'about/site_blog'
 require_relative 'about/site_contribute'
 require_relative 'about/site_awards'
+require_relative 'about/site_about_events'
 
 require_relative 'additional_products/site_help_center'
 

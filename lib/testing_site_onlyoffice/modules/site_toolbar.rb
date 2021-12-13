@@ -312,7 +312,8 @@ module TestingSiteOnlyoffice
           class: SiteAwards
         },
         about_events: {
-          element: site_about_events_element
+          element: site_about_events_element,
+          class: SiteAboutEvents
         },
         about_press_downloads: {
           element: site_about_press_downloads_element
