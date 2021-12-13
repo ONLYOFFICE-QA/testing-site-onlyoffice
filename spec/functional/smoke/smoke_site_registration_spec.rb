@@ -5,10 +5,6 @@ require 'timeout'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-mail = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_ADMIN)
-
-checker = { mail: mail, module: 'WebStudio' }
-
 describe 'Site Smoke' do
   after do |example|
     test_manager.add_result(example, @test)
@@ -32,17 +28,6 @@ describe 'Site Smoke' do
           expect(main_page).to be_document_module_visible
         end
 
-        it "Check welcome message for #{current_language}" do
-          TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(portal_creation_data, current_language)
-          confirmation_link = TestingSiteOnlyoffice::SiteNotificationHelper.confirmation_registration_link(checker.merge(language: current_language,
-                                                                                                                         pattern: 'subject_confirmation',
-                                                                                                                         search: portal_url))
-          @sign_in_page = TestingSiteOnlyoffice::SiteHelper.new.registration_confirmation(confirmation_link, portal_creation_data)
-          expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(checker.merge(language: current_language,
-                                                                                                     pattern: 'subject_congratulations',
-                                                                                                     search: portal_url))).to be_truthy
-        end
-
         it "Check changing to #{current_language} language" do
           main_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
           main_page.set_page_language(current_language)
@@ -55,25 +40,6 @@ describe 'Site Smoke' do
           main_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
           portal_main_page = main_page.click_link_on_toolbar(:sign_in).sign_in(portal_creation_data[:email], portal_creation_data[:password])
           expect(portal_main_page).to be_document_module_visible
-        end
-      end
-
-      describe "Open registration page #{current_language}" do
-        before do
-          @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-          @site_home_page.set_page_language(current_language)
-        end
-
-        it "Open trial form Pricing->Cloud Service page in #{current_language} language" do
-          pricing_cloud_page = @site_home_page.click_link_on_toolbar(:pricing_cloud)
-          sign_up_page = pricing_cloud_page.business_try_it_for_free
-          expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteSignUp
-        end
-
-        it "Open Sing Up page from Sign In page in #{current_language} language" do
-          sign_in_page = @site_home_page.click_link_on_toolbar(:sign_in)
-          sign_up_page = sign_in_page.register_from_sign_in
-          expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteSignUp
         end
       end
     end
