@@ -8,6 +8,7 @@ require_relative 'about/site_blog'
 require_relative 'about/site_contribute'
 require_relative 'about/site_awards'
 require_relative 'about/site_about_events'
+require_relative 'about/site_about_press_downloads'
 
 require_relative 'additional_products/site_help_center'
 
