@@ -6,9 +6,7 @@ module TestingSiteOnlyoffice
   # https://user-images.githubusercontent.com/67409742/145952088-087b405c-94fb-43b8-bdcf-7d03b767b968.png
   class SiteAboutPressDownloads
     include PageObject
-    LEFT_MENU = '//ul[@class="pdm_menu"]/li/a'
     div(:press_downloads_page, xpath: '//div[@class="InnerPage pressdownloadspage"]')
-    elements(:left_menu, xpath: LEFT_MENU)
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -20,13 +18,17 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until { press_downloads_page_element.present? }
     end
 
+    def left_menu_xpath
+      '//ul[@class="pdm_menu"]/li/a'
+    end
+
     def left_menu_count
-      @instance.webdriver.get_element_count(LEFT_MENU)
+      @instance.webdriver.get_element_count(left_menu_xpath)
     end
 
     def left_menu_list
       (1..left_menu_count).map do |index|
-        element_xpath = "(#{LEFT_MENU})[#{index}]"
+        element_xpath = "(#{left_menu_xpath})[#{index}]"
         @instance.webdriver.get_text(element_xpath)
       end
     end
