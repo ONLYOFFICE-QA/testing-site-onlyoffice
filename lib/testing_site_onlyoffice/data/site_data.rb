@@ -108,6 +108,10 @@ module TestingSiteOnlyoffice
       %w[winodws linux MacOs GooglePlay AppStore]
     end
 
+    def self.left_menu_about_press_downloads
+      ['Description', 'Logo', 'Screenshots', 'Video', 'Blog and Social Media Promotion Tiles']
+    end
+
     def self.download_desktop_apps
       %i[windows linux macos]
     end

@@ -316,7 +316,8 @@ module TestingSiteOnlyoffice
           class: SiteAboutEvents
         },
         about_press_downloads: {
-          element: site_about_press_downloads_element
+          element: site_about_press_downloads_element,
+          class: SiteAboutPressDownloads
         },
         white_papers: {
           element: site_about_white_papers_element,
