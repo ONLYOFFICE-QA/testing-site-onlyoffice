@@ -22,7 +22,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        full_name_element.present?
+        @instance.webdriver.element_present?(full_name_element)
       end
     end
 

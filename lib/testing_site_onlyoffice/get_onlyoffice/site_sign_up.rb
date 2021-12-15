@@ -46,7 +46,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        first_name_element.present?
+        @instance.webdriver.element_present?(first_name_element)
       end
     end
 
@@ -80,15 +80,15 @@ module TestingSiteOnlyoffice
       self.phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.portal_name = params[:portal_name]
       self.portal_password = params.fetch(:password, SiteData::PORTAL_PASSWORD)
-      set_communication_language(params[:communication_language]) if communication_language_element.present?
-      set_number_of_users(params[:users_number]) if number_of_users_element.present?
+      set_communication_language(params[:communication_language]) if @instance.webdriver.element_present?(communication_language_element)
+      set_number_of_users(params[:users_number]) if @instance.webdriver.element_present?(number_of_users_element)
       remove_recaptcha
       start_trial_element.click
     end
 
     def set_communication_language(language)
       communication_language_element.click
-      @instance.webdriver.wait_until { dropdown_communication_language(language).present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(dropdown_communication_language(language)) }
       dropdown_communication_language(language).click
     end
 
@@ -99,7 +99,7 @@ module TestingSiteOnlyoffice
 
     def set_number_of_users(number)
       number_of_users_element.click
-      @instance.webdriver.wait_until { dropdown_user_number_element(number).present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(dropdown_user_number_element(number)) }
       dropdown_user_number_element(number).click
     end
 
@@ -109,8 +109,8 @@ module TestingSiteOnlyoffice
     end
 
     def all_errors_visible?
-      first_name_error_element.present? & last_name_error_element.present? &
-        email_error_element.present? & portal_name_error_element.present? & password_error_element.present?
+      @instance.webdriver.element_present?(first_name_error_element) & @instance.webdriver.element_present?(last_name_error_element) &
+        @instance.webdriver.element_present?(email_error_element) & @instance.webdriver.element_present?(portal_name_error_element) & @instance.webdriver.element_present?(password_error_element)
     end
 
     def check_opened_file_name

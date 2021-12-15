@@ -16,7 +16,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { contribute_header_backgrounds_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(contribute_header_backgrounds_element) }
     end
 
     def xpath_read_api_documentation(number)

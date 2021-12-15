@@ -35,7 +35,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { first_name_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(first_name_element) }
     end
 
     def open_banners
@@ -61,7 +61,7 @@ module TestingSiteOnlyoffice
     end
 
     def request_accepted?
-      submit_request_element.attribute('class').include?('ok') && request_accepted_text_element.present?
+      submit_request_element.attribute('class').include?('ok') && @instance.webdriver.element_present?(request_accepted_text_element)
     end
 
     def fill_non_profit_request_form_with_data(params = {})
@@ -74,9 +74,9 @@ module TestingSiteOnlyoffice
     end
 
     def choose_you_are(type)
-      unless you_are_school_element.present?
+      unless @instance.webdriver.element_present?(you_are_school_element)
         you_are_selector_element.click
-        @instance.webdriver.wait_until { you_are_school_element.present? }
+        @instance.webdriver.wait_until { @instance.webdriver.element_present?(you_are_school_element) }
       end
       case type
       when :school
@@ -86,7 +86,7 @@ module TestingSiteOnlyoffice
       when :you_are_contributor
         you_are_contributor_element.click
       end
-      @instance.webdriver.wait_until { !you_are_school_element.present? }
+      @instance.webdriver.wait_until { !@instance.webdriver.element_present?(you_are_school_element) }
     end
   end
 end

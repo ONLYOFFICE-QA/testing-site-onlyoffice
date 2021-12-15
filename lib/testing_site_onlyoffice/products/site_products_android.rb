@@ -17,7 +17,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { get_it_on_google_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(get_it_on_google_element) }
     end
   end
 end

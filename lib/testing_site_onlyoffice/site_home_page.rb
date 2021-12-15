@@ -125,7 +125,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { try_in_the_cloud_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(try_in_the_cloud_element) }
     end
 
     def create_portal(params = {})

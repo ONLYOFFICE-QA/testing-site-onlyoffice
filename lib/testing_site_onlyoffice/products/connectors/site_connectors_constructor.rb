@@ -16,7 +16,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        @instance.webdriver.get_element(@get_it_now_xpath).present?
+        @instance.webdriver.element_present?(@get_it_now_xpath)
       end
     end
   end

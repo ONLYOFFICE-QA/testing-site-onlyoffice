@@ -27,7 +27,7 @@ module TestingSiteOnlyoffice
     def wait_to_load
       @instance.webdriver.wait_until do
         docker_download_xpath = installer_type_block.download_xpath
-        @instance.webdriver.get_element(docker_download_xpath).present?
+        @instance.webdriver.element_present?(docker_download_xpath)
       end
     end
 

@@ -19,7 +19,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        @instance.webdriver.get_element(@instruction_xpath).present?
+        @instance.webdriver.element_present?(@instruction_xpath)
       end
     end
 
@@ -36,7 +36,7 @@ module TestingSiteOnlyoffice
     end
 
     def github_link_visible?
-      @instance.webdriver.get_element(@github_link).present?
+      @instance.webdriver.element_present?(@github_link)
     end
   end
 end

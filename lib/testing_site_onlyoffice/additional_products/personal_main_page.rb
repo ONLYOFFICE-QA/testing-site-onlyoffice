@@ -17,7 +17,7 @@ module TestingSiteOnlyoffice
     end
 
     def login_visible?
-      login_element.present?
+      @instance.webdriver.element_present?(login_element)
     end
   end
 end

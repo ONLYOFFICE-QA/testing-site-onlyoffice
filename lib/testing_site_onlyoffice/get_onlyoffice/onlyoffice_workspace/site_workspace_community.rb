@@ -52,7 +52,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        site_open_source_bundles_windows_element.present?
+        @instance.webdriver.element_present?(site_open_source_bundles_windows_element)
       end
     end
 

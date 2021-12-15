@@ -20,7 +20,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        run_on_your_own_server_element.present? && calendar_identification_element.present?
+        @instance.webdriver.element_present?(run_on_your_own_server_element) && @instance.webdriver.element_present?(calendar_identification_element)
       end
     end
   end

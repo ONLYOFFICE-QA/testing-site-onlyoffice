@@ -19,7 +19,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { run_on_your_own_server_element.present? && spreadsheet_image_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(run_on_your_own_server_element) && @instance.webdriver.element_present?(spreadsheet_image_element) }
     end
   end
 end

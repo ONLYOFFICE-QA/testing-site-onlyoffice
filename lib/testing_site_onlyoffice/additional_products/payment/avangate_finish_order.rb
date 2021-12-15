@@ -26,10 +26,10 @@ module TestingSiteOnlyoffice
 
     def review_and_place_order
       return if @instance.webdriver.driver.current_url.include?('/order/finish')
-      return unless place_order_element.present?
+      return unless @instance.webdriver.element_present?(place_order_element)
 
       @instance.webdriver.wait_until do
-        !place_order_loader_element.present?
+        !@instance.webdriver.element_present?(place_order_loader_element)
       end
 
       place_order_element.click

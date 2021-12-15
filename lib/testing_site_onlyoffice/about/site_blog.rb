@@ -22,7 +22,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { article_blog_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(article_blog_element) }
     end
 
     def desktop_and_mobile_app

@@ -24,7 +24,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { sharepoint_connector_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(sharepoint_connector_element) }
     end
 
     def click_sharepoint_connector

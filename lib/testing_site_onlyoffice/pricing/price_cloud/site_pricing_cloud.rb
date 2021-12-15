@@ -37,18 +37,18 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { business_try_it_for_free_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(business_try_it_for_free_element) }
     end
 
     def cost_tariff_business_3_year
       business_calculate_your_price_element.click
-      @instance.webdriver.wait_until { total_price_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(total_price_element) }
       current_tariff_price
     end
 
     def click_on_faq_center
       other_questions_element.click
-      @instance.webdriver.wait_until { faq_linq_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(faq_linq_element) }
       faq_linq_element.click
       SiteFaq.new(@instance)
     end
@@ -89,7 +89,8 @@ module TestingSiteOnlyoffice
 
       @instance.webdriver.driver.find_elements(:xpath, cloud_period_price_xpath(period))[0].click
       @instance.webdriver.wait_until do
-        @instance.webdriver.driver.find_elements(:xpath, cloud_period_price_identification_xpath(period))[0].present?
+        cloud_period_price_identification = @instance.webdriver.driver.find_elements(:xpath, cloud_period_price_identification_xpath(period))[0]
+        @instance.webdriver.element_present?(cloud_period_price_identification)
       end
     end
 
@@ -104,7 +105,7 @@ module TestingSiteOnlyoffice
 
     def calculate_your_price
       business_calculate_your_price_element.click
-      @instance.webdriver.wait_until { buy_now_calculator_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(buy_now_calculator_element) }
     end
   end
 end

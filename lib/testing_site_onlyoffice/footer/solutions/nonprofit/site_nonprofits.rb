@@ -32,7 +32,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { request_free_cloud_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(request_free_cloud_element) }
     end
 
     def click_request_free_cloud

@@ -72,7 +72,7 @@ module TestingSiteOnlyoffice
     end
 
     def avangate_upsell_frame_visible?
-      avangate_upsell_frame_element.present?
+      @instance.webdriver.element_present?(avangate_upsell_frame_element)
     end
 
     def submit_avangate_order_for_notification(params = {})
@@ -100,15 +100,15 @@ module TestingSiteOnlyoffice
     end
 
     def avangate_main_continue_button_visible?
-      avangate_main_continue_button_element.present?
+      @instance.webdriver.element_present?(avangate_main_continue_button_element)
     end
 
     def avangate_logo_visible?
-      avangate_logo_link_element.present?
+      @instance.webdriver.element_present?(avangate_logo_link_element)
     end
 
     def avangate_user_storage_visible?
-      avangate_user_storage_link_element.present?
+      @instance.webdriver.element_present?(avangate_user_storage_link_element)
     end
 
     def select_avangate_usd_price

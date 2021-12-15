@@ -33,7 +33,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        buy_now_single_server_element.present?
+        @instance.webdriver.element_present?(buy_now_single_server_element)
       end
     end
 
@@ -70,7 +70,7 @@ module TestingSiteOnlyoffice
 
     def click_try_free_button
       @instance.webdriver.wait_until do
-        try_free_button_element.present?
+        @instance.webdriver.element_present?(try_free_button_element)
       end
       try_free_button_element.click
       SiteDocsEnterprise.new(@instance)
@@ -78,7 +78,7 @@ module TestingSiteOnlyoffice
 
     def click_ready_editing_tools_button
       @instance.webdriver.wait_until do
-        ready_editing_tools_button_element.present?
+        @instance.webdriver.element_present?(ready_editing_tools_button_element)
       end
       ready_editing_tools_button_element.click
       SiteProductsEnterpriseEdition.new(@instance)

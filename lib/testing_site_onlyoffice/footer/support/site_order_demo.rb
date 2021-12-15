@@ -30,7 +30,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { first_name_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(first_name_element) }
     end
 
     def send_demonstration_request(params = {})
@@ -51,7 +51,7 @@ module TestingSiteOnlyoffice
 
     def add_demo_time
       select_time_field_element.click
-      @instance.webdriver.wait_until { select_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(select_element) }
       @instance.webdriver.driver.find_element(:xpath, "(//li[@id='-10:00'])[1]").click
       @instance.webdriver.driver.find_element(:xpath, "//li[@id='1']").click
       select_element.click

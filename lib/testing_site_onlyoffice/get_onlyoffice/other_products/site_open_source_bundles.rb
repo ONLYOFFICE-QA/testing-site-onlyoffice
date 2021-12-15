@@ -69,7 +69,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        site_owncloud_docker_compose_element.present?
+        @instance.webdriver.element_present?(site_owncloud_docker_compose_element)
       end
     end
 

@@ -27,7 +27,7 @@ module TestingSiteOnlyoffice
     def wait_to_load
       @instance.webdriver.wait_until do
         chamilo_get_it_now_xpath = onlyoffice_connector_block.get_it_now_xpath
-        @instance.webdriver.get_element(chamilo_get_it_now_xpath).present?
+        @instance.webdriver.element_present?(chamilo_get_it_now_xpath)
       end
     end
 

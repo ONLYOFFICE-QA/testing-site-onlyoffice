@@ -20,7 +20,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { about_page_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(about_page_element) }
     end
 
     def opened?
@@ -28,19 +28,19 @@ module TestingSiteOnlyoffice
     end
 
     def click_onlyoffice_docs
-      @instance.webdriver.wait_until { about_onlyoffice_docs_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(about_onlyoffice_docs_element) }
       about_onlyoffice_docs_element.click
       SiteProductsDocs.new(@instance)
     end
 
     def click_registration_cloud
-      @instance.webdriver.wait_until { registration_cloud_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(registration_cloud_element) }
       registration_cloud_element.click
       SiteSignUp.new(@instance)
     end
 
     def click_customer_stories
-      @instance.webdriver.wait_until { customer_stories_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(customer_stories_element) }
       customer_stories_element.click
       SiteCustomerStories.new(@instance)
     end

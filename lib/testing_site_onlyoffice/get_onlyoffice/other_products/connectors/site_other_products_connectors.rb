@@ -30,7 +30,7 @@ module TestingSiteOnlyoffice
     def wait_to_load
       @instance.webdriver.wait_until do
         alfresco_github_xpath = installer_open_source_connector_block.get_on_github_xpath
-        @instance.webdriver.get_element(alfresco_github_xpath).present?
+        @instance.webdriver.element_present?(alfresco_github_xpath)
       end
     end
 

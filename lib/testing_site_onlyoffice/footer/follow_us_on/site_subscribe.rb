@@ -21,14 +21,14 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { first_name_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(first_name_element) }
     end
 
     def fill_subscribe_form(params = {})
       self.first_name = params.fetch(:name, Faker::Name.first_name)
       self.email = params.fetch(:email, SiteData::CLIENT_EMAIL)
       subscribe_button_element.click
-      @instance.webdriver.wait_until { subscribe_success_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(subscribe_success_element) }
     end
 
     def subscribe_from_link(link)

@@ -6,7 +6,6 @@ require_relative 'teamlab_fail_notifier'
 require_relative 'test_manger/test_manager'
 
 require 'bundler/setup'
-require 'active_support'
 require 'httparty'
 require 'faker'
 require 'nokogiri'

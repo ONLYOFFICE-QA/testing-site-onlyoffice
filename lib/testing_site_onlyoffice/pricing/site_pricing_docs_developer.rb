@@ -33,13 +33,13 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        buy_now_single_server_element.present?
+        @instance.webdriver.element_present?(buy_now_single_server_element)
       end
     end
 
     def current_single_server_price
       @instance.webdriver.wait_until do
-        single_server_price_element.present? && single_server_connections_num_element.present?
+        @instance.webdriver.element_present?(single_server_price_element) && @instance.webdriver.element_present?(single_server_connections_num_element)
       end
       price = single_server_price_element.text.to_i
       connections_num = single_server_connections_num_element.text.to_i
@@ -61,7 +61,7 @@ module TestingSiteOnlyoffice
 
     def current_development_server_price
       @instance.webdriver.wait_until do
-        development_server_price_element.present? && development_server_connections_num_element.present?
+        @instance.webdriver.element_present?(development_server_price_element) && @instance.webdriver.element_present?(development_server_connections_num_element)
       end
       price = development_server_price_element.text.scan(/\d+/)[0].to_i
       connections_num = development_server_connections_num_element.text.to_i

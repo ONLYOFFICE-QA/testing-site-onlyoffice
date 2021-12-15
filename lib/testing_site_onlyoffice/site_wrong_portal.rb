@@ -20,13 +20,13 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { email_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(email_element) }
     end
 
     def recover_address_portal(email)
       self.email = email
       recover_element.click
-      @instance.webdriver.wait_until { success_message_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(success_message_element) }
     end
   end
 end

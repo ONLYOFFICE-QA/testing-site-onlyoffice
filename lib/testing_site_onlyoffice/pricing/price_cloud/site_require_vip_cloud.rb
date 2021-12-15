@@ -22,7 +22,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { full_name_vip_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(full_name_vip_element) }
     end
 
     def fill_vip_request_fields(params = {})

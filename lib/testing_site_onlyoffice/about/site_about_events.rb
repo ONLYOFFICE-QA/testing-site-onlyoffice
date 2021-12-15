@@ -16,7 +16,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { events_page_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(events_page_element) }
     end
   end
 end

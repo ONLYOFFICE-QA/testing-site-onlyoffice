@@ -19,7 +19,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { workspace_run_on_your_own_server_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(workspace_run_on_your_own_server_element) }
     end
   end
 end

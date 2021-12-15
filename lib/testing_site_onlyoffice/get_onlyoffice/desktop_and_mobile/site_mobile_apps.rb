@@ -28,7 +28,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        site_mobile_google_play_element.present?
+        @instance.webdriver.element_present?(site_mobile_google_play_element)
       end
     end
 

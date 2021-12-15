@@ -16,11 +16,11 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { awards_page_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(awards_page_element) }
     end
 
     def click_use_cloud
-      @instance.webdriver.wait_until { awards_page_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(awards_page_element) }
       awards_page_element.click
       SiteSignUp.new(@instance)
     end

@@ -27,7 +27,7 @@ module TestingSiteOnlyoffice
     def wait_to_load
       @instance.webdriver.wait_until do
         mac_download_xpath = desktop_installer_block.download_xpath
-        @instance.webdriver.get_element(mac_download_xpath).present?
+        @instance.webdriver.element_present?(mac_download_xpath)
       end
     end
 
