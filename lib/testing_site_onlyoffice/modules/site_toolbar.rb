@@ -356,7 +356,7 @@ module TestingSiteOnlyoffice
     def click_link_on_toolbar(section)
       move_to_element_link_toolbar(section)
       link = all_toolbar_links_and_classes_hash[section][:element]
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(link).click }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(link) }
       link.click
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
     end
