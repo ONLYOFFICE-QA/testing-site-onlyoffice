@@ -22,6 +22,7 @@ module TestingSiteOnlyoffice
     link(:select, id: 'selectbtn')
 
     text_field(:send_request, xpath: '//input[@id="sendDemoRequest"]')
+    span(:demonstration_language, xpath: '//span[contains(@class, "demoRFLangSelect")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -41,12 +42,24 @@ module TestingSiteOnlyoffice
       self.website = params.fetch(:website, Faker::Internet.domain_name)
       self.company_name = params.fetch(:company_name, Faker::Company.name)
       add_demo_time
+      demonstration_language(params.fetch(:demonstration_language)) if @instance.webdriver.element_present?(demonstration_language_element)
       onlyoffice_groups_element.click if params.fetch(:docs_demo, true)
       onlyoffice_docs_element.click if params.fetch(:groups_demo, true)
       @instance.webdriver.wait_until do
         !@instance.webdriver.get_attribute(send_request_element, 'class').include?('disable')
       end
       send_request_element.click
+    end
+
+    def demonstration_language(language)
+      demonstration_language_element.click
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(dropdown_demonstration_language(language)) }
+      dropdown_demonstration_language(language).click
+    end
+
+    def dropdown_demonstration_language(language)
+      demonstration_language_xpath = "//li[@data-value='#{language}']"
+      @instance.webdriver.get_element(demonstration_language_xpath)
     end
 
     def add_demo_time

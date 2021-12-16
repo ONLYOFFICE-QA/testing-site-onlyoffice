@@ -49,7 +49,7 @@ describe 'Registration new portal' do
       pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
       demo_order_page = @site_home_page.click_order_demo
       company_name = "nctautotest #{Time.now} /demo-order.aspx"
-      demo_order_page.send_demonstration_request(company_name: company_name)
+      demo_order_page.send_demonstration_request(company_name: company_name, demonstration_language: 'en')
       expect(demo_order_page).to be_a TestingSiteOnlyoffice::SiteOrderDemo
       expect(partner_email.check_email_by_subject(
                { subject: TestingSiteOnlyoffice::SiteNotificationData::ORDER_DEMO_REQUEST, search: company_name }, 300, true
