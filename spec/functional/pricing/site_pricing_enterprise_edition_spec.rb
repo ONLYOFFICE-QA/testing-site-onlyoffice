@@ -21,14 +21,14 @@ describe 'Pricing docs enterprise' do
   end
 
   describe 'Choose tariffs docs enterprise' do
-    TestingSiteOnlyoffice::SiteDownloadData.pricing_docs_enterprise_data[:support_level].each do |support_level|
+    TestingSiteOnlyoffice::SiteDownloadData.pricing_docs_data[:support_level].each do |support_level|
       it "[Site][PricingDocsEnterprise] Choose the ONLYOFFICE Docs Enterprise Edition tariff: #{support_level}, more connection" do
         pricing_page = @site_home_page.click_link_on_toolbar(:pricing_enterprise)
         pricing_page.fill_data_price_enterprise('More', support_level)
         expect(pricing_page.total_price_upon_request).to eq('Upon request')
       end
 
-      TestingSiteOnlyoffice::SiteDownloadData.pricing_docs_enterprise_data[:number_connection].each do |number_connection|
+      TestingSiteOnlyoffice::SiteDownloadData.pricing_docs_data[:number_connection_enterprise].each do |number_connection|
         it "[Site][PricingDocsEnterprise] Choose the ONLYOFFICE Docs Enterprise Edition tariff: #{support_level}, count users: #{number_connection}" do
           pricing_page = @site_home_page.click_link_on_toolbar(:pricing_enterprise)
           pricing_page.fill_data_price_enterprise(number_connection, support_level)

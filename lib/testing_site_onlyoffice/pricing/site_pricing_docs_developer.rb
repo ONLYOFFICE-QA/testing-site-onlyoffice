@@ -2,28 +2,21 @@
 
 require_relative '../modules/site_toolbar'
 require_relative 'modules/site_pricing_helper'
+require_relative 'modules/site_pricing_docs'
 
 module TestingSiteOnlyoffice
   # Pricing for Onlyoffice Docs Developer edition
-  # https://user-images.githubusercontent.com/40513035/100148241-89bcbe00-2ead-11eb-8683-52e8eb21a710.png
+  # https://user-images.githubusercontent.com/67409742/146344533-6104101d-7965-4d00-8474-cd7182c4cc17.png
   class SitePriceDocsDeveloper
     include PageObject
     include SitePricingHelper
     include SiteToolbar
+    include SitePriceDocs
 
-    link(:buy_now_single_server, xpath: "//a[contains(@class, 'saas-price-url')]")
-    span(:single_server_price, xpath: "//span[@class='saas-price']")
-    element(:single_server_connections_num, xpath: "//div[@class='saas server_price_recommendation spr_block2']/p/b")
-    div(:single_server_connections_num_increase, xpath: "//div[@class='saas simcon_change connections_increase']")
-    div(:single_server_connections_num_decrease, xpath: "//div[@class='saas simcon_change connections_decrease']")
-
-    development_server_block = "(//div[@class='price-block'])[1]"
-    link(:buy_now_development_server, xpath: "#{development_server_block}//a[@class='button gray']")
-    div(:development_server_price, xpath: development_server_block)
-    element(:development_server_connections_num,
-            xpath: "(//div[@class='server_price_recommendation spr_block1']/p/b)[1]")
-
-    link(:get_a_quote, xpath: "//a[contains(@class, 'on-premise-price-url')]")
+    link(:buy_now_single_server, xpath: "//a[contains(@data-id, 'ie-price-url-updated')]")
+    link(:free_button, xpath: '//div[@class="dep-part ee-production ee-2"]//div[@class="ee-text-part"]/a')
+    div(:add_num_connection, xpath: '//div[@class="num-connections"]//div[@class="connections_increase simcon_change"]')
+    div(:num_connections, xpath: '//div[@class="num-connections"]//div[@data-id="ie-number-updated"]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -37,44 +30,19 @@ module TestingSiteOnlyoffice
       end
     end
 
-    def current_single_server_price
-      @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(single_server_price_element) && @instance.webdriver.element_present?(single_server_connections_num_element)
-      end
-      price = single_server_price_element.text.to_i
-      connections_num = single_server_connections_num_element.text.to_i
-      [price, connections_num]
+    def click_free_button
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(free_button_element) }
+      free_button_element.click
+      SiteDocsDeveloper.new(@instance)
     end
 
-    def increase_single_server_connections_num
-      single_server_connections_num_increase_element.click
+    def fill_data_price_developer(number_connection, support_level)
+      choose_number_connection(number_connection)
+      choose_support_level(support_level)
     end
 
-    def decrease_single_server_connections_num
-      single_server_connections_num_decrease_element.click
-    end
-
-    def click_buy_now_single_server
-      buy_now_single_server_element.click
-      Avangate.new(@instance)
-    end
-
-    def current_development_server_price
-      @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(development_server_price_element) && @instance.webdriver.element_present?(development_server_connections_num_element)
-      end
-      price = development_server_price_element.text.scan(/\d+/)[0].to_i
-      connections_num = development_server_connections_num_element.text.to_i
-      [price, connections_num]
-    end
-
-    def click_buy_now_development_server
-      buy_now_development_server_element.click
-      Avangate.new(@instance)
-    end
-
-    def cluster_quote_email
-      @instance.webdriver.get_attribute(get_a_quote_element, 'href')
+    def choose_number_connection(connection)
+      add_num_connection_element.click while @instance.webdriver.get_text(num_connections_element) != connection
     end
   end
 end
