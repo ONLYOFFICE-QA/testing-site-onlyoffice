@@ -21,7 +21,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        buy_now_enterprise_plus_element.present?
+        @instance.webdriver.element_present?(buy_now_enterprise_plus_element)
       end
     end
   end

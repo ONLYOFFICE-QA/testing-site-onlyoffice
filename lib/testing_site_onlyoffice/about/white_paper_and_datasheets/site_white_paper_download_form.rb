@@ -19,13 +19,13 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { white_paper_full_name_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(white_paper_full_name_element) }
     end
 
     def send_white_paper_request(data = {})
       fill_white_paper_form(data)
       white_paper_download_element.click
-      @instance.webdriver.wait_until { !white_paper_download_element.present? }
+      @instance.webdriver.wait_until { !@instance.webdriver.element_present?(white_paper_download_element) }
     end
 
     def fill_white_paper_form(params = {})

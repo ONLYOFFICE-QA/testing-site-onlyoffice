@@ -20,11 +20,11 @@ module TestingSiteOnlyoffice
     end
 
     def resubscribe_button_present?
-      news_resubscribe_element.present?
+      @instance.webdriver.element_present?(news_resubscribe_element)
     end
 
     def successful_resubscribe_present?
-      successful_resubscribe_element.present?
+      @instance.webdriver.element_present?(successful_resubscribe_element)
     end
 
     def news_resubscribe

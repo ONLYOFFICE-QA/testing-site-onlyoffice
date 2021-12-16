@@ -15,7 +15,7 @@ module TestingSiteOnlyoffice
     end
 
     def logo_element_present?
-      @instance.webdriver.get_element(@logo_xpath).present?
+      @instance.webdriver.element_present?(@logo_xpath)
     end
   end
 end

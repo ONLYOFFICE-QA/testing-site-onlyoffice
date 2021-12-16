@@ -23,7 +23,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        switcher_125x125_element.present?
+        @instance.webdriver.element_present?(switcher_125x125_element)
       end
     end
 

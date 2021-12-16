@@ -33,7 +33,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { download_now_desktop_editors_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(download_now_desktop_editors_element) }
     end
 
     def download_desktop_editors
@@ -83,7 +83,7 @@ module TestingSiteOnlyoffice
     end
 
     def get_marketplace_title
-      @instance.webdriver.wait_until { !download_now_desktop_editors_element.present? }
+      @instance.webdriver.wait_until { !@instance.webdriver.element_present?(download_now_desktop_editors_element) }
       @instance.webdriver.get_title_of_current_tab
     end
   end

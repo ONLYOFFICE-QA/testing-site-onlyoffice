@@ -13,7 +13,7 @@ module TestingSiteOnlyoffice
     div(:close_search, xpath: "//div[@id='close-button']")
 
     def search_field_opened?
-      search_field_element.present?
+      @instance.webdriver.element_present?(search_field_element)
     end
 
     def open_search_field

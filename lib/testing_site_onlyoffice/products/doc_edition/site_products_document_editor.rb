@@ -15,7 +15,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { enterprise_edition.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(enterprise_edition) }
     end
   end
 end

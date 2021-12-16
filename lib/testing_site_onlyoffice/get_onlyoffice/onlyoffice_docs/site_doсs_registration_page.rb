@@ -34,7 +34,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        doc_first_name_element.present?
+        @instance.webdriver.element_present?(doc_first_name_element)
       end
     end
 
@@ -49,7 +49,7 @@ module TestingSiteOnlyoffice
       self.doc_email = registration_data.doc_email
       self.doc_phone = registration_data.doc_phone
       @instance.webdriver.wait_until do
-        submit_request_element.present?
+        @instance.webdriver.element_present?(submit_request_element)
       end
       submit_request_element.click
     end
@@ -59,8 +59,8 @@ module TestingSiteOnlyoffice
     end
 
     def all_errors_visible?
-      doc_first_name_error_element.present? & doc_last_name_error_element.present? &
-        doc_email_error_element.present? & doc_phone_error_element.present?
+      @instance.webdriver.element_present?(doc_first_name_error_element) & @instance.webdriver.element_present?(doc_last_name_error_element) &
+        @instance.webdriver.element_present?(doc_email_error_element) & @instance.webdriver.element_present?(doc_phone_error_element)
     end
   end
 end

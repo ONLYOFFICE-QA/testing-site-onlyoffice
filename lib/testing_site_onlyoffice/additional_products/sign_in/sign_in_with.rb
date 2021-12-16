@@ -27,13 +27,13 @@ module TestingSiteOnlyoffice
     def indicator_element_present?(network)
       case network
       when :google
-        google_indicator_element.present?
+        @instance.webdriver.element_present?(google_indicator_element)
       when :facebook
-        facebook_indicator_element.present?
+        @instance.webdriver.element_present?(facebook_indicator_element)
       when :twitter
-        twitter_indicator_element.present?
+        @instance.webdriver.element_present?(twitter_indicator_element)
       when :linkedin
-        linkedin_indicator_element.present?
+        @instance.webdriver.element_present?(linkedin_indicator_element)
       end
     end
   end

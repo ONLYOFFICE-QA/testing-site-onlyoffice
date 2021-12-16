@@ -1,12 +1,6 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.4.1)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (>= 1.6, < 2)
-      minitest (>= 5.1)
-      tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
     ast (2.4.2)
     aws-eventstream (1.2.0)
     aws-partitions (1.541.0)
@@ -48,7 +42,6 @@ GEM
     mime-types-data (3.2021.1115)
     mini_mime (1.1.2)
     mini_portile2 (2.6.1)
-    minitest (5.14.4)
     multi_xml (0.6.0)
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
@@ -137,21 +130,17 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    tzinfo (2.0.4)
-      concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
     watir (6.19.1)
       regexp_parser (>= 1.2, < 3)
       selenium-webdriver (>= 3.142.7)
     wrata_api (0.2.0)
     yml_reader (0.7)
-    zeitwerk (2.5.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport
   faker
   httparty
   json

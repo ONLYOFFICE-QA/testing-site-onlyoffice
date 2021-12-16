@@ -17,7 +17,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { download_on_the_app_store_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(download_on_the_app_store_element) }
     end
   end
 end

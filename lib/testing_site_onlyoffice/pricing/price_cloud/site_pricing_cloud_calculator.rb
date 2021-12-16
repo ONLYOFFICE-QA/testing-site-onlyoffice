@@ -34,7 +34,9 @@ module TestingSiteOnlyoffice
 
     def open_user_number_dropdown
       user_number_element.click
-      @instance.webdriver.wait_until { @instance.webdriver.driver.find_element(:xpath, users_number_dropdown_xpath(5)).present? }
+      @instance.webdriver.wait_until do
+        @instance.webdriver.element_present?(users_number_dropdown_xpath(5))
+      end
     end
 
     def chooser_users_number_from_dropdown(user_number)

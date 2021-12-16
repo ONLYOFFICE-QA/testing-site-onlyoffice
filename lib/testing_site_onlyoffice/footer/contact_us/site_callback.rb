@@ -26,7 +26,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { first_name_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(first_name_element) }
     end
 
     def send_callback_request(data)
@@ -45,12 +45,12 @@ module TestingSiteOnlyoffice
     end
 
     def congratulation_visible?
-      congratulation_element.present?
+      @instance.webdriver.element_present?(congratulation_element)
     end
 
     def wait_calendar_visible?
       @instance.webdriver.wait_until do
-        calendar_element.present?
+        @instance.webdriver.element_present?(calendar_element)
       end
     end
 

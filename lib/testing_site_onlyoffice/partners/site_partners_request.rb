@@ -41,7 +41,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { submit_request_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(submit_request_element) }
     end
 
     def send_partners_form_random_data(params = {})
@@ -56,7 +56,7 @@ module TestingSiteOnlyoffice
       choose_marker_segment(params.fetch(:market_segment, :government))
       partner_for_other_company(params.fetch(:current_partner, :no))
       submit_request_element.click
-      @instance.webdriver.wait_until { partner_request_successful_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(partner_request_successful_element) }
     end
 
     def choose_marker_segment(segment)
@@ -86,9 +86,9 @@ module TestingSiteOnlyoffice
     def partner_for_other_company(status = :yes)
       case status
       when :yes
-        current_partner_yes_element.click unless current_partner_specify_element.present?
+        current_partner_yes_element.click unless @instance.webdriver.element_present?(current_partner_specify_element)
       when :no
-        current_partner_no_element.click if current_partner_specify_element.present?
+        current_partner_no_element.click if @instance.webdriver.element_present?(current_partner_specify_element)
       end
     end
   end

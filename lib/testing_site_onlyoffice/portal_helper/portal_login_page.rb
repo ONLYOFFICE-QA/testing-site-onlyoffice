@@ -20,7 +20,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        login_element.present?
+        @instance.webdriver.element_present?(login_element)
       end
     end
 

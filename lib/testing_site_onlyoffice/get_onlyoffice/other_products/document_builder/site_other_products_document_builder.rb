@@ -25,7 +25,7 @@ module TestingSiteOnlyoffice
     def wait_to_load
       @instance.webdriver.wait_until do
         windows_instruction_xpath = installer_document_builder_block.instruction_xpath
-        @instance.webdriver.get_element(windows_instruction_xpath).present?
+        @instance.webdriver.element_present?(windows_instruction_xpath)
       end
     end
 

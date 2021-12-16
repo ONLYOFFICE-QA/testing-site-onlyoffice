@@ -27,7 +27,7 @@ module TestingSiteOnlyoffice
     end
 
     def document_module_visible?
-      documents_link_element.present?
+      @instance.webdriver.element_present?(documents_link_element)
     end
 
     def current_user_name

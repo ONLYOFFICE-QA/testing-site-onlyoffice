@@ -24,13 +24,13 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        no_result_found_element.present? || search_result_entry_element.present?
+        @instance.webdriver.element_present?(no_result_found_element) || @instance.webdriver.element_present?(search_result_entry_element)
       end
     end
 
     # @return [Integer] found entries count
     def search_result_count
-      return 0 if no_result_found_element.present?
+      return 0 if @instance.webdriver.element_present?(no_result_found_element)
 
       @instance.webdriver.driver.find_elements(:xpath, search_result_entry_element.selector[:xpath]).count
     end

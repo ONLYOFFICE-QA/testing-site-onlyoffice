@@ -21,7 +21,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { aspnet_builder_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(aspnet_builder_element) }
     end
 
     def click_download_now

@@ -15,7 +15,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { press_downloads_page_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(press_downloads_page_element) }
     end
 
     def left_menu_xpath

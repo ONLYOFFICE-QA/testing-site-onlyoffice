@@ -21,7 +21,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { support_name_element.present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(support_name_element) }
     end
 
     def send_training_courses_request(data = {})

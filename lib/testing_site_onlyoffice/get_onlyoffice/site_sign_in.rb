@@ -38,13 +38,13 @@ module TestingSiteOnlyoffice
     end
 
     def email_sign_in_visible?
-      email_sign_in_element.present?
+      @instance.webdriver.element_present?(email_sign_in_element)
     end
 
     def click_forgot_password_from_sign_in
       forgot_password_sign_in
       @instance.webdriver.wait_until do
-        email_forgot_password_sign_in_element.present?
+        @instance.webdriver.element_present?(email_forgot_password_sign_in_element)
       end
     end
 
@@ -53,7 +53,7 @@ module TestingSiteOnlyoffice
       self.email_forgot_password_sign_in = email
       send_forgot_password_sign_in
       @instance.webdriver.wait_until 90 do
-        !send_forgot_password_sign_in_element.present?
+        !@instance.webdriver.element_present?(send_forgot_password_sign_in_element)
       end
     end
 
@@ -65,9 +65,9 @@ module TestingSiteOnlyoffice
     def sign_in(email, pwd)
       input_credentials(email, pwd)
       sign_in_button_element.click
-      return if sign_in_error_element.present?
+      return if @instance.webdriver.element_present?(sign_in_error_element)
 
-      @instance.webdriver.wait_until(100) { !email_sign_in_element.present? }
+      @instance.webdriver.wait_until(100) { !@instance.webdriver.element_present?(email_sign_in_element) }
       PortalMainPage.new(@instance)
     end
 

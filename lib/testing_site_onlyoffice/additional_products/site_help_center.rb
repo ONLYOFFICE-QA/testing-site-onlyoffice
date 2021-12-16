@@ -25,7 +25,7 @@ module TestingSiteOnlyoffice
     end
 
     def help_center_site_map_visible?
-      headers_menu_element.present?
+      @instance.webdriver.element_present?(headers_menu_element)
     end
   end
 end
