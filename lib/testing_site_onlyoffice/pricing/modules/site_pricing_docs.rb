@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 module TestingSiteOnlyoffice
-  # Pricing for Onlyoffice Docs Developer edition
-  # https://user-images.githubusercontent.com/67409742/146344533-6104101d-7965-4d00-8474-cd7182c4cc17.png
+  # Methods for changing purchase parameters
   module SitePriceDocs
     include PageObject
 
