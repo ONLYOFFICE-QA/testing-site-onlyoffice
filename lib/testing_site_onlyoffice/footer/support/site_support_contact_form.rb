@@ -47,6 +47,15 @@ module TestingSiteOnlyoffice
       self.support_name = params.fetch(:name, "NCT Test #{Faker::Name.name}")
       self.support_email = params.fetch(:email, SiteData::CLIENT_EMAIL)
       self.support_phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
+      workaround_non_active_submit
+    end
+
+    # For some reason without additional sleep
+    #   and clicking on email input sometimes (especially on `Run`)
+    #   `Submit` button is not always unlocked
+    def workaround_non_active_submit
+      sleep 3
+      @instance.webdriver.click_on_locator(support_email_element.selector[:xpath])
     end
 
     def dropdown_element_xpath(language)
