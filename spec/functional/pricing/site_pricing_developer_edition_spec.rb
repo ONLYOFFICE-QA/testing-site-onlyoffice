@@ -2,12 +2,11 @@
 
 require 'spec_helper'
 
-test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
+describe 'Pricing docs developer' do
+  test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Site Pricing Developer Edition' do
   before do
-    site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @developer_edition_prices = site_home_page.click_link_on_toolbar(:pricing_developer)
+    @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
   end
 
   after do |example|
@@ -15,79 +14,29 @@ describe 'Site Pricing Developer Edition' do
     @test.webdriver.quit
   end
 
-  describe '#developer_saas_server' do
-    it '[Pricing][Developer Edition][Single Server] `250 - 500 - 1000 - 500 - 250` check connections switcher /developer-edition-prices.aspx' do
-      price, connections_num = @developer_edition_prices.current_single_server_price
-      expect(connections_num).to eq(250)
-      expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_250)
-      @developer_edition_prices.increase_single_server_connections_num
-      price, connections_num = @developer_edition_prices.current_single_server_price
-      expect(connections_num).to eq(500)
-      expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_500)
-      @developer_edition_prices.increase_single_server_connections_num
-      price, connections_num = @developer_edition_prices.current_single_server_price
-      expect(connections_num).to eq(1000)
-      expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_1000)
-      # shouldn't go upper top border
-      @developer_edition_prices.increase_single_server_connections_num
-      price, connections_num = @developer_edition_prices.current_single_server_price
-      expect(connections_num).to eq(1000)
-      expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_1000)
-      @developer_edition_prices.decrease_single_server_connections_num
-      price, connections_num = @developer_edition_prices.current_single_server_price
-      expect(connections_num).to eq(500)
-      expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_500)
-      @developer_edition_prices.decrease_single_server_connections_num
-      price, connections_num = @developer_edition_prices.current_single_server_price
-      expect(connections_num).to eq(250)
-      expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_250)
-      # shouldn't go lower bottom border
-      @developer_edition_prices.decrease_single_server_connections_num
-      price, connections_num = @developer_edition_prices.current_single_server_price
-      expect(connections_num).to eq(250)
-      expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_250)
-    end
-
-    it '[Pricing][Developer Edition][SaaS Server] Prices on store.onlyoffice.com and onlyoffice.com are the same for 250 connections' do
-      price, connections_num = @developer_edition_prices.current_single_server_price
-      expect(connections_num).to eq(250)
-      expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_250)
-      avangate = @developer_edition_prices.click_buy_now_single_server
-      avangate_price = avangate.current_price
-      expect(avangate_price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_250)
-    end
-
-    it '[Pricing][Developer Edition][Single Server] Prices on store.onlyoffice.com and onlyoffice.com are the same for 500 connections' do
-      @developer_edition_prices.increase_single_server_connections_num
-      price, connections_num = @developer_edition_prices.current_single_server_price
-      expect(connections_num).to eq(500)
-      expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_500)
-      avangate = @developer_edition_prices.click_buy_now_single_server
-      avangate_price = avangate.current_price
-      expect(avangate_price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_500)
-    end
-
-    it '[Pricing][Developer Edition][Single Server] Prices on store.onlyoffice.com and onlyoffice.com are the same for 1000 connections' do
-      2.times { @developer_edition_prices.increase_single_server_connections_num }
-      price, connections_num = @developer_edition_prices.current_single_server_price
-      expect(connections_num).to eq(1000)
-      expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_1000)
-      avangate = @developer_edition_prices.click_buy_now_single_server
-      avangate_price = avangate.current_price
-      expect(avangate_price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_single_server_1000)
-    end
+  it '[Site][PricingDocsDeveloper] Try it free download docs' do
+    pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
+    connectors = pricing_page.click_free_button
+    expect(connectors.page_title).to eq('ONLYOFFICE Docs Developer')
   end
 
-  it '[Pricing][Developer Edition][Development Server] Prices on store.onlyoffice.com and onlyoffice.com are the same for 20 connections' do
-    price, connections_num = @developer_edition_prices.current_development_server_price
-    expect(connections_num).to eq(20)
-    expect(price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_developer_server)
-    avangate = @developer_edition_prices.click_buy_now_development_server
-    avangate_price = avangate.current_price
-    expect(avangate_price).to eq(TestingSiteOnlyoffice::SitePricesData.developer_edition_developer_server)
-  end
+  describe 'Choose tariffs docs developer' do
+    TestingSiteOnlyoffice::SiteDownloadData.pricing_docs_data[:support_level].each do |support_level|
+      it "[Site][PricingDocsDeveloper] Choose the ONLYOFFICE Docs Developer Edition tariff: #{support_level}, more connection" do
+        pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
+        pricing_page.fill_data_price_developer('More', support_level)
+        expect(pricing_page.total_price_upon_request).to eq('Upon request')
+      end
 
-  it '[Pricing][Developer Edition][Cluster] Cluster prices contains only link to email' do
-    expect(@developer_edition_prices.cluster_quote_email).to eq('mailto:sales@onlyoffice.com')
+      TestingSiteOnlyoffice::SiteDownloadData.pricing_docs_data[:number_connection_developer].each do |number_connection|
+        it "[Site][PricingDocsEnterprise] Choose the ONLYOFFICE Docs Developer Edition tariff: #{support_level}, count users: #{number_connection}" do
+          pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
+          pricing_page.fill_data_price_developer(number_connection, support_level)
+          total_price = pricing_page.total_price_number.to_i
+          avangate = pricing_page.go_to_avangate_from_pricing_page(pricing_page.buy_now_single_server_element, test_purchase: true)
+          expect(avangate.total_amount_without_tax).to eq(total_price)
+        end
+      end
+    end
   end
 end
