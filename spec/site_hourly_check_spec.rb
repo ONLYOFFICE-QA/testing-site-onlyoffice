@@ -78,7 +78,7 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check link HelpCenter' do
-      help_center_page = @site_home_page.click_help_center
+      help_center_page = @site_home_page.click_link_on_toolbar(:about_help_center)
       expect(help_center_page).to be_help_center_site_map_visible
     end
 
