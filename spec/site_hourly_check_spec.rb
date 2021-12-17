@@ -145,10 +145,12 @@ describe 'SiteHourlyCheck' do
               let(:current_installation) { onlyoffice_docs_community_page.installer_type_block(installer) }
 
               it "[Site][Docs_Community] download link for `#{installer}` alive /download-docs.aspx#docs-community" do
+                skip('https://t.me/c/1440851975/7137') if installer.to_s == 'digitalocean'
                 expect(onlyoffice_docs_community_page).to be_link_alive(current_installation.download_xpath)
               end
 
               it "[Site][Docs_Community] `#{installer}` instruction link alive /download-docs.aspx#docs-community" do
+                skip('https://t.me/c/1440851975/7137') if installer.to_s == 'digitalocean'
                 expect(onlyoffice_docs_community_page).to be_link_alive(current_installation.instruction_xpath)
               end
             end
