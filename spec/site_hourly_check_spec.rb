@@ -184,7 +184,7 @@ describe 'SiteHourlyCheck' do
             end
 
             it "[Site][WorkspaceCommunity] Check `#{installer}` 'Install now' link /download-workspace.aspx#workspace-community" do
-              skip('https://t.me/c/1440851975/7137') if installer.to_s == 'digitalocean'
+              skip('https://t.me/c/1440851975/7137') if installer.to_s == 'workspace_digitalocean'
               expect(onlyoffice_workspace_community_page).to be_file_can_be_downloaded(installer)
             end
           end
