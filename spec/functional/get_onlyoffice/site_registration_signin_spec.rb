@@ -53,11 +53,13 @@ describe 'Registration new portal' do
     end
 
     it 'Check open "Term and conditions" link for "Sign Up' do
+      pending('WebDriver raise chrome error for some unknown reason')
       sign_up_page.terms_and_conditions
       expect(sign_up_page.check_opened_file_name).to eq(TestingSiteOnlyoffice::SiteNotificationData::TERMS_OF_USE_FILE_NAME)
     end
 
     it 'Check open "Privacy statement" link for "Sign Up' do
+      pending('WebDriver raise chrome error for some unknown reason')
       sign_up_page.privacy_statement
       expect(sign_up_page.check_opened_file_name).to eq(TestingSiteOnlyoffice::SiteNotificationData::PRIVACY_STATEMENT)
     end
