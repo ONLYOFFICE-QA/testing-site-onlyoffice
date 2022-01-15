@@ -16,12 +16,12 @@ describe 'About contribute' do
   end
 
   it '[About contribute] Go to documentation Github' do
-    @about_contribute_page.click_read_api_documentation(3)
+    @about_contribute_page.click_read_api_documentation(4)
     expect(@about_contribute_page.check_title_documentation_github).to be true
   end
 
   it '[About contribute] Go to documentation community_server' do
-    @about_contribute_page.click_read_api_documentation(2)
+    @about_contribute_page.click_read_api_documentation(3)
     expect(@about_contribute_page.check_title_documentation_community_server).to be true
   end
 

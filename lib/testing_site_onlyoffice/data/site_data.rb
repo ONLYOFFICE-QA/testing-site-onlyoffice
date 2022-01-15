@@ -44,6 +44,7 @@ module TestingSiteOnlyoffice
 
     def self.courses_modules
       {
+        forms: 'Forms',
         documents: 'Documents',
         projects: 'Projects',
         crm: 'CRM',
@@ -54,6 +55,7 @@ module TestingSiteOnlyoffice
 
     def self.courses_purposes
       {
+        working_with_forms: 'Working with forms',
         office_suite: 'Office suite',
         working_with_customers: 'Working with customers',
         working_in_a_team: 'Working in a team',
