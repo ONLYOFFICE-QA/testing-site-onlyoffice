@@ -44,6 +44,7 @@ module TestingSiteOnlyoffice
 
     def self.courses_modules
       {
+        forms: 'Forms',
         documents: 'Documents',
         projects: 'Projects',
         crm: 'CRM',
@@ -54,6 +55,7 @@ module TestingSiteOnlyoffice
 
     def self.courses_purposes
       {
+        working_with_forms: 'Working with forms',
         office_suite: 'Office suite',
         working_with_customers: 'Working with customers',
         working_in_a_team: 'Working in a team',
@@ -69,6 +71,7 @@ module TestingSiteOnlyoffice
 
     def self.white_papers
       {
+        oform_specification: 'oform_specification.pdf',
         load_test_report: 'load_test_report.pdf',
         private_rooms_9_security_principles: 'private_rooms_9_security_principles.pdf',
         docs_integration_example: 'integration_example.pdf',
