@@ -32,6 +32,10 @@ module TestingSiteOnlyoffice
       @instance.webdriver.get_title_of_current_tab.include?('ONLYOFFICE · GitHub')
     end
 
+    def check_title_documentation_oforms
+      @instance.webdriver.get_title_of_current_tab.include?('OFORMS – fill out forms online for free')
+    end
+
     def check_title_documentation_community_server
       @instance.webdriver.get_title_of_current_tab.include?('ONLYOFFICE Api Documentation - Basic concepts')
     end
