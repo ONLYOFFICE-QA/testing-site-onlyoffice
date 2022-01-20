@@ -114,7 +114,7 @@ describe 'SiteHourlyCheck' do
 
         it 'Download Mobile Editors] /download-desktop.aspx: "Explore it on AppGallery" link works' do
           mobile_editors_download_page.site_mobile_appgallery
-          expect(mobile_editors_download_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_GALLERY)
+          expect(mobile_editors_download_page.check_opened_page_title).to be_include(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_GALLERY)
         end
       end
 
