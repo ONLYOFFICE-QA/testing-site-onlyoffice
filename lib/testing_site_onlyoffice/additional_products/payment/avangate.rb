@@ -86,7 +86,7 @@ module TestingSiteOnlyoffice
       self.avangate_address = PaymentData::OTHER
       self.avangate_city = PaymentData::OTHER
       self.avangate_zipcode = PaymentData::OTHER
-      avangate_country_element.select_value(PaymentData::HOLDER_COUNTRY_CODE)
+      avangate_country_element.select(PaymentData::HOLDER_COUNTRY_CODE)
       sleep 1
       wait_to_load
       self.avangate_email = params[:email]
