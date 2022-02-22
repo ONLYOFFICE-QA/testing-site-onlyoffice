@@ -49,7 +49,7 @@ module TestingSiteOnlyoffice
       self.doc_last_name = registration_data.last_name
       self.doc_email = registration_data.doc_email
       self.doc_phone = registration_data.doc_phone
-      self.number_employees = registration_data.numbers_employees if number_employees_element.visible?
+      self.number_employees = registration_data.number_employees if number_employees_element.visible?
       @instance.webdriver.wait_until do
         @instance.webdriver.element_present?(submit_request_element)
       end
