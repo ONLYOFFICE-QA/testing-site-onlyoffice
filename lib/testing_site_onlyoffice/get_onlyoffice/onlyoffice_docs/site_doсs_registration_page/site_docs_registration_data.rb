@@ -10,7 +10,7 @@ module TestingSiteOnlyoffice
       @last_name = Faker::Name.last_name
       @doc_email = SiteData::EMAIL_ADMIN
       @doc_phone = Faker::PhoneNumber.cell_phone_in_e164
-      @number_employees = params.fetch(:number_employers, 10)
+      @number_employees = params.fetch(:number_employees, 10)
     end
 
     def generate_incorrect_data
