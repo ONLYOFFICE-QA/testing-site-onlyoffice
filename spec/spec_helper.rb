@@ -19,7 +19,7 @@ RSpec.configure do |config|
   config.default_retry_count = if is_debug
                                  1
                                else
-                                 1
+                                 2
                                end
   config.verbose_retry = true
 end
