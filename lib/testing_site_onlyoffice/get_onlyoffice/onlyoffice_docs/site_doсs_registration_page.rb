@@ -16,6 +16,7 @@ module TestingSiteOnlyoffice
     text_field(:doc_email, xpath: '//input[contains(@class,"txtEmail")]')
     text_field(:doc_phone, xpath: '//input[@id="txtPhone"]')
     text_field(:submit_request, xpath: '//input[@id="sbmtRequest"]')
+    text_field(:number_employees, xpath: '//input[@id="txtEmployeesCount"]')
 
     # Errors
     div(:doc_first_name_error, xpath: '//div[@class="error txtFirstName_errorArea"]')
@@ -48,6 +49,7 @@ module TestingSiteOnlyoffice
       self.doc_last_name = registration_data.last_name
       self.doc_email = registration_data.doc_email
       self.doc_phone = registration_data.doc_phone
+      self.number_employees = registration_data.number_employees if number_employees_element.visible?
       @instance.webdriver.wait_until do
         @instance.webdriver.element_present?(submit_request_element)
       end
