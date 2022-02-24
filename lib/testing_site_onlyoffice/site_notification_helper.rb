@@ -27,6 +27,9 @@ module TestingSiteOnlyoffice
                                                   search: params[:search] },
                                                 params[:times] = params.fetch(:times, 300),
                                                 params[:move_out] = params.fetch(:move_out, true))
+
+      raise "Didn't find any messages with title `#{expected_string}`" unless mail
+
       mail[:html_body].split('href="').grep(/confirm.aspx/)[0].split('"')[0]
     end
 
