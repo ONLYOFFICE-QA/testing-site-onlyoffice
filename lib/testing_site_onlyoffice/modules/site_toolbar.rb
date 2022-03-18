@@ -329,7 +329,8 @@ module TestingSiteOnlyoffice
           class: SiteAboutTrainingCourses
         },
         about_gift_shop: {
-          element: site_about_gift_shop_element
+          element: site_about_gift_shop_element,
+          class: SiteAboutGiftShop
         },
         about_contacts: {
           element: site_about_contacts_element
@@ -363,6 +364,7 @@ module TestingSiteOnlyoffice
       link = all_toolbar_links_and_classes_hash[section][:element]
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(link) }
       link.click
+      @instance.webdriver.switch_to_popup if section == :about_gift_shop
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
     end
   end
