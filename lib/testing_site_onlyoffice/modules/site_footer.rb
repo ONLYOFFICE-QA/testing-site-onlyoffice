@@ -30,7 +30,7 @@ module TestingSiteOnlyoffice
     link(:request_a_call, xpath: '//a[@href="/call-back-form.aspx"]')
 
     # follow us on
-    label(:subscribe_to_newsletter, xpath: '//div[@class="footer_menu"]//label[@title="Subscribe to our newsletters"]')
+    label(:subscribe_to_newsletter, xpath: '//div[contains(@class,"footer_menu")]//label[@title="Subscribe to our newsletters"]')
 
     # developers
     def click_document_builder_info
