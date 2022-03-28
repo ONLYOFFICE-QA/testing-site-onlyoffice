@@ -5,6 +5,7 @@ require_relative '../../additional_products/payment/avangate'
 require_relative '../../get_onlyoffice/site_sign_up'
 require_relative 'site_pricing_cloud_calculator'
 require_relative 'site_require_vip_cloud'
+require_relative 'site_require_personal_cloud'
 
 module TestingSiteOnlyoffice
   # /saas.aspx
@@ -16,7 +17,7 @@ module TestingSiteOnlyoffice
 
     # startup
     startup = "//div[contains(@class, 'saas-cell-startup')]"
-    link(:startup_start_now, xpath: "#{startup}//a[@class='button red']")
+    link(:startup_start_now, xpath: "#{startup}//a[@class='button gray']")
     span(:startup_price_person, xpath: "#{startup}//span[contains(@class, 'price-value')]")
 
     # business
@@ -24,7 +25,8 @@ module TestingSiteOnlyoffice
     link(:business_calculate_your_price, xpath: "//a[contains(@class, 'saas-calculate')]")
 
     # vip
-    link(:vip_contact_us_top, xpath: "//div[contains(@class, 'saas-cell-vip')]//a[contains(@class, 'saas-vip-contact-us')]")
+    link(:personal_contact_us_top, xpath: "//div[contains(@class, 'saas-cell-vip')]//a[contains(@class, 'saas-vip-contact-us')]")
+    link(:vip_submit_request, xpath: "//a[@href='/order.aspx']")
 
     # faq
     list_item(:other_questions, xpath: "(//div[@class='faq_pricing_block']/ul/li)[3]")
@@ -53,8 +55,14 @@ module TestingSiteOnlyoffice
       SiteFaq.new(@instance)
     end
 
-    def vip_contact_us
-      vip_contact_us_top_element.click
+    def personal_contact_us
+      personal_contact_us_top_element.click
+      @instance.webdriver.switch_to_popup
+      SiteRequirePersonalCloud.new(@instance)
+    end
+
+    def vip_submit_request
+      vip_submit_request_element.click
       SiteRequireVIPCloud.new(@instance)
     end
 
@@ -94,13 +102,9 @@ module TestingSiteOnlyoffice
       end
     end
 
-    def vip_contact_us_works?
-      if current_price_period == :month
-        vip_contact_us_top_element.attribute('class').include?('disabled')
-      else
-        vip_contact_us_page = vip_contact_us
-        vip_contact_us_page.is_a? SiteRequireVIPCloud
-      end
+    def personal_contact_us_works?
+      personal_contact_us_page = personal_contact_us
+      personal_contact_us_page.is_a? SiteRequirePersonalCloud
     end
 
     def calculate_your_price
