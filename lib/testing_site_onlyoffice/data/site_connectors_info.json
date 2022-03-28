@@ -4,6 +4,11 @@
     "instruction": "Integration. Getting Started. Alfresco - ONLYOFFICE",
     "whats_new": "onlyoffice-alfresco/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-alfresco · GitHub"
   },
+  "moodle": {
+    "github": "GitHub - ONLYOFFICE/moodle-mod_onlyofficeeditor: Moodle ONLYOFFICE Document Server online editor integration",
+    "instruction": "GitHub - ONLYOFFICE/moodle-mod_onlyofficeeditor: Moodle ONLYOFFICE Document Server online editor integration",
+    "whats_new": "moodle-mod_onlyofficeeditor/CHANGELOG.md at master · ONLYOFFICE/moodle-mod_onlyofficeeditor · GitHub"
+  },
   "confluence": {
     "github": "GitHub - ONLYOFFICE/onlyoffice-confluence: The plugin which enables the users to edit office documents from Confluence using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Confluence",
     "instruction": "Integration. Getting Started. Confluence - ONLYOFFICE",
