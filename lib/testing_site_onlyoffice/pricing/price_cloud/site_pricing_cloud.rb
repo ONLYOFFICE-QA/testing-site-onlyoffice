@@ -5,7 +5,7 @@ require_relative '../../additional_products/payment/avangate'
 require_relative '../../get_onlyoffice/site_sign_up'
 require_relative 'site_pricing_cloud_calculator'
 require_relative 'site_require_vip_cloud'
-require_relative 'site_require_personal_cloud'
+require_relative '../../additional_products/personal_main_page'
 
 module TestingSiteOnlyoffice
   # /saas.aspx
@@ -58,7 +58,7 @@ module TestingSiteOnlyoffice
     def personal_contact_us
       personal_contact_us_top_element.click
       @instance.webdriver.switch_to_popup
-      SiteRequirePersonalCloud.new(@instance)
+      PersonalMainPage.new(@instance)
     end
 
     def vip_submit_request
@@ -104,7 +104,7 @@ module TestingSiteOnlyoffice
 
     def personal_contact_us_works?
       personal_contact_us_page = personal_contact_us
-      personal_contact_us_page.is_a? SiteRequirePersonalCloud
+      personal_contact_us_page.is_a? PersonalMainPage
     end
 
     def calculate_your_price
