@@ -21,7 +21,7 @@ module TestingSiteOnlyoffice
     link(:download_workspace, xpath: '//div[@class="homeUse_features"]//a[contains(@href, "/download-workspace")]')
     link(:learn_more_workspace, xpath: '//a[@href="/workspace.aspx?from=home-use"]')
 
-    link(:create_online_office, xpath: '//a[@href="https://personal.onlyoffice.com"]')
+    link(:create_online_office, xpath: '//div[@class="description"]//a[@href="https://personal.onlyoffice.com/"]')
 
     link(:download_on_app_store, xpath: '//a[contains(@href, "apps.apple")]')
     link(:download_on_google_play, xpath: '//a[contains(@href, "play.google")]')
