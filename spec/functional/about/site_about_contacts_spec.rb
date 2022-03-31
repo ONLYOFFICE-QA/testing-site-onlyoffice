@@ -20,6 +20,6 @@ describe 'Contacts' do
   end
 
   it '[Contacts] Check region office' do
-    expect(@awards.comparison_region_office).to be(true)
+    expect(@awards.all_offices_present?).to be(true)
   end
 end

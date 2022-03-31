@@ -24,12 +24,12 @@ module TestingSiteOnlyoffice
       @instance.webdriver.webdriver_error("The page 'About contacts' didn't load or doesn't match the title")
     end
 
-    def region_office
+    def list_of_offices_on_page
       @instance.webdriver.get_text_array(regions_office_elements)
     end
 
-    def comparison_region_office
-      region_office == ['US office', 'Latvian office', 'UK office']
+    def all_offices_present?
+      list_of_offices_on_page == ['US office', 'Latvian office', 'UK office']
     end
   end
 end
