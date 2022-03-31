@@ -333,7 +333,8 @@ module TestingSiteOnlyoffice
           class: SiteAboutGiftShop
         },
         about_contacts: {
-          element: site_about_contacts_element
+          element: site_about_contacts_element,
+          class: SiteContacts
         },
         about_latest_news: {
           element: site_about_latest_news_element
