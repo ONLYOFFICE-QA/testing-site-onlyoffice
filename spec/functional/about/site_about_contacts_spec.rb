@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Contacts' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @awards = site_home_page.click_link_on_toolbar(:about_contacts)
+    @contacts = site_home_page.click_link_on_toolbar(:about_contacts)
   end
 
   after do |example|
@@ -16,10 +16,10 @@ describe 'Contacts' do
   end
 
   it '[Contacts] Go to contacts' do
-    expect(@awards).to be_a TestingSiteOnlyoffice::SiteContacts
+    expect(@contacts).to be_a TestingSiteOnlyoffice::SiteContacts
   end
 
   it '[Contacts] Check region office' do
-    expect(@awards.all_offices_present?).to be(true)
+    expect(@contacts.all_offices_present?).to be(true)
   end
 end
