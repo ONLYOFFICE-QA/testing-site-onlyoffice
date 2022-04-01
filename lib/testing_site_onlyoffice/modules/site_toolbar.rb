@@ -89,6 +89,7 @@ module TestingSiteOnlyoffice
     link(:site_about_contacts, xpath: '//a[@id="navitem_about_contacts"]')
     link(:site_about_latest_news, xpath: '//a[@id="navitem_latest_events"]')
     link(:site_about_help_center, xpath: '//a[contains(@href,"helpcenter.onlyoffice.com/index.aspx")]')
+    link(:site_webinars, xpath: '//a[contains(@href,"webinars.aspx")]')
 
     def click_home_logo
       logo_home_element.click
@@ -342,6 +343,10 @@ module TestingSiteOnlyoffice
         about_help_center: {
           element: site_about_help_center_element,
           class: SiteHelpCenter
+        },
+        about_webinars: {
+          element: site_webinars_element,
+          class: SiteWebinars
         }
       }
     end
