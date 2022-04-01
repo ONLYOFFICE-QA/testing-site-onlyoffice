@@ -277,7 +277,8 @@ module TestingSiteOnlyoffice
           class: SitePartnersRequest
         },
         partners_affiliates: {
-          element: site_partners_affiliates_element
+          element: site_partners_affiliates_element,
+          class: SitePartnersAffiliates
         },
         partners_resellers: {
           element: site_partners_resellers_element
