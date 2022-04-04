@@ -41,7 +41,7 @@ module TestingSiteOnlyoffice
       sign_in_an_affiliates_element.click
       @instance.webdriver.switch_to_popup
       url = @instance.webdriver.get_url
-      attribute == url
+      attribute.include?(url.split('?')[0])
     end
   end
 end
