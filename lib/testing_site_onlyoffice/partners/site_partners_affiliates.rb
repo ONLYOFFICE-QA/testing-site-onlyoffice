@@ -49,17 +49,17 @@ module TestingSiteOnlyoffice
       attribute.include?(parse_url)
     end
 
-    def go_to_solution_guide
+    def check_solution_guide?
       solution_guide_element.click
       check_opened_file_name
     end
 
-    def go_to_marketing_kit
+    def check_marketing_kit?
       marketing_kit_element.click
       TestingSiteOnlyoffice::SiteAboutPressDownloads.new(@instance)
     end
 
-    def go_to_affiliate_policy
+    def check_affiliate_policy?
       affiliate_policy_element.click
       url = @instance.webdriver.get_url
       url.include?('www.avangatenetwork.com/legal/terms/')
