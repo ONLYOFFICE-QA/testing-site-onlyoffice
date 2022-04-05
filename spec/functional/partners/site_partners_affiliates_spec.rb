@@ -30,4 +30,16 @@ describe 'Partners affiliates' do
   it '[Partners affiliates] Sign in to affiliates' do
     expect(@affiliates.sign_in_to_affiliates?).to be(true)
   end
+
+  it '[Partners affiliates] Go to solution guide' do
+    expect(@affiliates.check_solution_guide?).to be(true)
+  end
+
+  it '[Partners affiliates] Go to go_to_marketing_kit' do
+    expect(@affiliates.check_marketing_kit?).to be_a TestingSiteOnlyoffice::SiteAboutPressDownloads
+  end
+
+  it '[Partners affiliates] Go to go_to_affiliate_policy' do
+    expect(@affiliates.check_affiliate_policy?).to be(true)
+  end
 end
