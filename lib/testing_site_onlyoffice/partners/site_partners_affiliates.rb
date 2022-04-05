@@ -10,6 +10,9 @@ module TestingSiteOnlyoffice
     element(:become_an_affiliates, xpath: '//a[@class="button become-affiliate"]')
     link(:register_an_affiliates, xpath: '//div[@class="aff-hts-btn-bl"]/a[contains(@href,"https://www.avangatenetwork.com/affiliates/sign-up")]')
     link(:sign_in_an_affiliates, xpath: '//div[@class="aff-hts-btn-bl"]/a[contains(@href,"https://store.onlyoffice.com/affiliates/")]')
+    link(:solution_guide, xpath: '//a[contains(@href,"https://help.onlyoffice.com/Products/Files")]')
+    link(:marketing_kit, xpath: '//a[contains(@href,"/press-downloads.aspx?from=affiliates")]')
+    link(:affiliate_policy, xpath: '//a[contains(@href,"https://www.avangatenetwork.com/legal/terms.php")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -44,6 +47,29 @@ module TestingSiteOnlyoffice
       url.fragment = url.query = nil
       parse_url = current_url.to_s
       attribute.include?(parse_url)
+    end
+
+    def go_to_solution_guide
+      solution_guide_element.click
+      check_opened_file_name
+    end
+
+    def go_to_marketing_kit
+      marketing_kit_element.click
+      TestingSiteOnlyoffice::SiteAboutPressDownloads.new(@instance)
+    end
+
+    def go_to_affiliate_policy
+      affiliate_policy_element.click
+      url = @instance.webdriver.get_url
+      url.include?('www.avangatenetwork.com/legal/terms/')
+    end
+
+    def check_opened_file_name
+      @instance.init_online_documents
+      @instance.doc_instance.management.wait_for_operation_with_round_status_canvas
+      doc_name = @instance.doc_instance.doc_editor.top_toolbar.title_row.document_name
+      doc_name.include?('ONLYOFFICE Products Guide')
     end
   end
 end
