@@ -43,8 +43,8 @@ module TestingSiteOnlyoffice
       attribute = @instance.webdriver.get_attribute(sign_in_an_affiliates_element, 'href')
       sign_in_an_affiliates_element.click
       @instance.webdriver.switch_to_popup
-      url = URI(@instance.webdriver.get_url)
-      url.fragment = url.query = nil
+      current_url = URI(@instance.webdriver.get_url)
+      current_url.fragment = current_url.query = nil
       parse_url = current_url.to_s
       attribute.include?(parse_url)
     end
