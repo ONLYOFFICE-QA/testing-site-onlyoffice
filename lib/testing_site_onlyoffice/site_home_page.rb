@@ -12,6 +12,7 @@ require_relative 'about/site_contacts'
 require_relative 'about/site_about_gift_shop'
 require_relative 'about/site_about_press_downloads'
 require_relative 'about/site_webinars'
+require_relative 'about/site_jobs'
 
 require_relative 'additional_products/site_help_center'
 
