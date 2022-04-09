@@ -26,8 +26,10 @@ module TestingSiteOnlyoffice
     # This is very actual for appimage hub page
     # And sometimes for helpcenter page
     def wait_for_long_loading_page(xpath)
-      sleep(60 * 3) if xpath.include?('appimage')
-      sleep 60 if xpath.include?('workspace_enterprise_for_centos') || xpath.include?('workspace_enterprise_for_windows') || xpath.include?(' workspace_enterprise_for_debian')
+      OnlyofficeLoggerHelper.sleep_and_log('Waiting for long loading page', 60 * 3) if xpath.include?('appimage')
+      return unless xpath.include?('workspace_enterprise_for_centos') || xpath.include?('workspace_enterprise_for_windows') || xpath.include?('workspace_enterprise_for_debian')
+
+      OnlyofficeLoggerHelper.sleep_and_log('Waiting for long loading page', 60)
     end
   end
 end

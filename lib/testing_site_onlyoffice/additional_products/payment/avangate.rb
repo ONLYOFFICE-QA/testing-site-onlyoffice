@@ -87,7 +87,7 @@ module TestingSiteOnlyoffice
       self.avangate_city = PaymentData::OTHER
       self.avangate_zipcode = PaymentData::OTHER
       avangate_country_element.select(PaymentData::HOLDER_COUNTRY_CODE)
-      sleep 1
+      OnlyofficeLoggerHelper.sleep_and_log('Waiting for applying changes', 1)
       wait_to_load
       self.avangate_email = params[:email]
       self.avangate_re_email = params[:email]
@@ -115,7 +115,7 @@ module TestingSiteOnlyoffice
       return if currency_selected == 'USD'
 
       @instance.webdriver.select_combo_box(avangate_price_select_xpath, 'USD')
-      sleep 1
+      OnlyofficeLoggerHelper.sleep_and_log('Waiting for application combobox', 1)
       @instance.webdriver.wait_until do
         currency_selected == 'USD'
       end
