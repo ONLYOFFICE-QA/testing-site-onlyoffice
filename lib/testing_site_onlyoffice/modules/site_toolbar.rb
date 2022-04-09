@@ -282,10 +282,12 @@ module TestingSiteOnlyoffice
           class: SitePartnersAffiliates
         },
         partners_resellers: {
-          element: site_partners_resellers_element
+          element: site_partners_resellers_element,
+          class: SitePartnersResellers
         },
         partners_find_partners: {
-          element: site_partners_find_partners_element
+          element: site_partners_find_partners_element,
+          class: SitePartnersFind
         },
         partners_latest_events: {
           element: site_partners_latest_events_element

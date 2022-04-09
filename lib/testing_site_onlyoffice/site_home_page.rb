@@ -58,6 +58,8 @@ require_relative 'modules/additional_methods/hourly_forgot_password_helper'
 
 require_relative 'partners/site_partners_request'
 require_relative 'partners/site_partners_affiliates'
+require_relative 'partners/site_partners_resellers'
+require_relative 'partners/site_partners_find'
 
 require_relative 'pricing/site_pricing_server_enterprise'
 require_relative 'pricing/price_cloud/site_pricing_cloud'
