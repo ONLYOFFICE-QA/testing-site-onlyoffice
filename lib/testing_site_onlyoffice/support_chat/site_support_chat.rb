@@ -23,7 +23,7 @@ module TestingSiteOnlyoffice
     end
 
     def hide_support_chat_if_shown
-      sleep 2 # support chat appears with delay
+      OnlyofficeLoggerHelper.sleep_and_log('Waiting for support chat appears with delay', 2)
       hide_support_chat if chat_window_shown?
     end
   end

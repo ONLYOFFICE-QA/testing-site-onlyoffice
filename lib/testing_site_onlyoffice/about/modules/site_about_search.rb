@@ -10,7 +10,7 @@ module TestingSiteOnlyoffice
 
     def about_search(string)
       @instance.webdriver.type_text(search_field_element.selector[:xpath], "#{string}\n")
-      sleep 1 # wait for search to end
+      OnlyofficeLoggerHelper.sleep_and_log('Waiting for search to end', 1)
     end
   end
 end

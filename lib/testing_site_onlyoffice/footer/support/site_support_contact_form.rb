@@ -54,7 +54,7 @@ module TestingSiteOnlyoffice
     #   and clicking on email input sometimes (especially on `Run`)
     #   `Submit` button is not always unlocked
     def workaround_non_active_submit
-      sleep 3
+      OnlyofficeLoggerHelper.sleep_and_log('Waiting for `Submit` button is not always unlocked', 3)
       @instance.webdriver.click_on_locator(support_email_element.selector[:xpath])
     end
 

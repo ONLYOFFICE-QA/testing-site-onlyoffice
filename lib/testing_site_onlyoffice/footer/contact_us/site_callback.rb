@@ -32,7 +32,7 @@ module TestingSiteOnlyoffice
     def send_callback_request(data)
       fill_form(data)
       click_first_active_day
-      sleep 1 # wait for closing calendar form
+      OnlyofficeLoggerHelper.sleep_and_log('Waiting for closing calendar form', 1)
       submit_element.click
       @instance.webdriver.wait_until { congratulation_visible? }
     end

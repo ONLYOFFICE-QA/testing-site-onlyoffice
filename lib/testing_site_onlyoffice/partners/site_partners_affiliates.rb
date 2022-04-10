@@ -61,7 +61,7 @@ module TestingSiteOnlyoffice
 
     def check_affiliate_policy?
       affiliate_policy_element.click
-      sleep 2 # for download page
+      OnlyofficeLoggerHelper.sleep_and_log('Waiting for download page', 2)
       url = @instance.webdriver.get_url
       url.include?('www.avangatenetwork.com/legal/terms/')
     end
