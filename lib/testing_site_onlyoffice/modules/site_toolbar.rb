@@ -266,7 +266,8 @@ module TestingSiteOnlyoffice
           class: SiteOtherProductsConnectors
         },
         compare_editions: {
-          element: site_get_onlyoffice_compare_editions_element
+          element: site_get_onlyoffice_compare_editions_element,
+          class: SiteCompareEdition
         }
       }
     end
