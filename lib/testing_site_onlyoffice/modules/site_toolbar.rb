@@ -230,7 +230,8 @@ module TestingSiteOnlyoffice
           class: SitePriceServerEnterprise
         },
         pricing_buy_from_reseller: {
-          element: site_pricing_buy_from_reseller_element
+          element: site_pricing_buy_from_reseller_element,
+          class: SitePartnersFind
         }
       }
     end
