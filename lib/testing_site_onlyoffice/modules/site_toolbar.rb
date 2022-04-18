@@ -173,7 +173,8 @@ module TestingSiteOnlyoffice
     def site_toolbar_integrations
       {
         integrations_nextcloud: {
-          element: site_integrations_nextcloud_element
+          element: site_integrations_nextcloud_element,
+          class: SiteNextcloud
         },
         integrations_owncloud: {
           element: site_integrations_owncloud_element
