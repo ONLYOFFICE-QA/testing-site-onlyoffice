@@ -18,7 +18,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(title_nextcloud_element) }
-      @instance.webdriver.get_text(title_nextcloud_element) == 'Nextcloud'
+      @instance.webdriver.wait_until { @instance.webdriver.get_text(title_nextcloud_element) == 'Nextcloud' }
     end
 
     def check_link_get_it_now
