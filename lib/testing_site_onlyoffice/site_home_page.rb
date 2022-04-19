@@ -50,6 +50,8 @@ require_relative 'get_onlyoffice/site_sign_in'
 require_relative 'get_onlyoffice/modules/site_download_helper'
 require_relative 'get_onlyoffice/compare_edition/site_compare_edition'
 
+require_relative 'integration/nextcloud/site_nextcloud'
+
 require_relative 'modules/site_toolbar'
 require_relative 'modules/site_home_page_helper'
 require_relative 'modules/cookie_window'
