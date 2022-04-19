@@ -19,6 +19,7 @@ module TestingSiteOnlyoffice
     link(:try_free_button, xpath: '//div[@class="dep-part ee-business"]//div[@class="ee-text-part"]/a')
     link(:ready_editing_tools_button, xpath: '//div[@class="ee-text-part"]/ul[@class="pp_features_list"]/li/a')
     div(:home_tariff, xpath: '//div[@data-id="ee-home"]')
+    div(:business_tariff, xpath: '//div[@data-id="ee-business"]')
     div(:num_connections, xpath: '//div[@class="num-connections"]//div[@data-id="ie-number-updated"]')
     div(:add_num_connections, xpath: '//div[@class="num-connections"]//div[@class="pp_connections_increase simcon_change"]')
 
@@ -30,7 +31,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(buy_now_single_server_element)
+        @instance.webdriver.element_present?(home_tariff_element)
       end
     end
 
@@ -65,6 +66,10 @@ module TestingSiteOnlyoffice
     def fill_data_price_enterprise(number_connection, support_level)
       choose_number_connection(number_connection)
       choose_support_level(support_level)
+    end
+
+    def check_active_tariff(tariff)
+      return true if @instance.webdriver.get_attribute("//div[@data-id='ee-#{tariff}']", 'class').include?('active')
     end
   end
 end
