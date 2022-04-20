@@ -83,7 +83,6 @@ require_relative 'products/groups/site_products_mail'
 require_relative 'products/groups/site_products_projects'
 require_relative 'products/site_products_ios'
 require_relative 'products/site_products_workspace'
-require_relative 'products/site_connectors'
 require_relative 'products/site_products_security'
 require_relative 'products/doc_edition/site_products_document_editor'
 
