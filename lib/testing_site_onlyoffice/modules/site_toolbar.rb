@@ -204,7 +204,8 @@ module TestingSiteOnlyoffice
           element: site_integrations_chamilo_element
         },
         integrations_others: {
-          element: site_integrations_others_element
+          element: site_integrations_others_element,
+          class: SiteProductsConnectorsOnlyoffice
         },
         integrations_for_developers: {
           element: site_integrations_for_developers_element
