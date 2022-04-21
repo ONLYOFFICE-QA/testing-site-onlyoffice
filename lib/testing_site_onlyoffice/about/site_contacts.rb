@@ -29,7 +29,7 @@ module TestingSiteOnlyoffice
     end
 
     def all_offices_present?
-      list_of_offices_on_page == ['US office', 'Latvian office', 'UK office', 'Armenian office', 'Singapore office']
+      list_of_offices_on_page == ['U.S.A.', 'Latvia', 'United Kingdom', 'Armenia', 'Singapore', 'Contact us']
     end
   end
 end
