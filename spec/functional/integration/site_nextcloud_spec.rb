@@ -42,18 +42,18 @@ describe 'Nextcloud' do
   end
 
   it '[Nextcloud] Go to apps_store' do
-    expect(@nextcloud.check_link_for_nextcloud?(:nextcloud_apps_store)).to be true
+    expect(@nextcloud.check_link_for_integration?(:nextcloud_apps_store)).to be true
   end
 
   it '[Nextcloud] Go to git_hub' do
-    expect(@nextcloud.check_link_for_nextcloud?(:nextcloud_git_hub)).to be true
+    expect(@nextcloud.check_link_for_integration?(:integration_git_hub)).to be true
   end
 
   it '[Nextcloud] Go to app_store' do
-    expect(@nextcloud.check_link_for_nextcloud?(:nextcloud_app_store)).to be true
+    expect(@nextcloud.check_link_for_integration?(:integration_app_store)).to be true
   end
 
   it '[Nextcloud] Go to google_play' do
-    expect(@nextcloud.check_link_for_nextcloud?(:nextcloud_google_play)).to be true
+    expect(@nextcloud.check_link_for_integration?(:integration_google_play)).to be true
   end
 end
