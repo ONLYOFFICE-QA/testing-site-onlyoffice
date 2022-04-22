@@ -19,6 +19,7 @@ module TestingSiteOnlyoffice
     include SiteToolbarOnlyofficeDocs
 
     element(:title_docs_enterprise, xpath: "//div[@class='dwn-mp-docs-enterprise']/h2")
+    element(:log_errors, xpath: "//span[@id='logEmptyDetailsDatas']")
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -39,6 +40,10 @@ module TestingSiteOnlyoffice
 
     def page_title
       @instance.webdriver.get_text(title_docs_enterprise_element)
+    end
+
+    def empty_text_log?
+      return true if @instance.webdriver.get_text(log_errors_element).empty?
     end
   end
 end

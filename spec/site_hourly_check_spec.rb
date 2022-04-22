@@ -270,5 +270,15 @@ describe 'SiteHourlyCheck' do
         expect(home_page).to be_a TestingSiteOnlyoffice::SiteHomePage
       end
     end
+
+    describe 'Сhecking for a product version logging error' do
+      before do
+        @download_commercial_page = @site_home_page.click_link_on_toolbar(:onlyoffice_docs_download)
+      end
+
+      it_behaves_like 'сhecking_logger_errors' do
+        let(:сhecking_logger_errors) { @download_commercial_page }
+      end
+    end
   end
 end
