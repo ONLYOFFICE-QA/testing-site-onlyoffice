@@ -5,11 +5,11 @@ module TestingSiteOnlyoffice
   module SitePriceDocs
     include PageObject
 
-    div(:support_basic, xpath: '//div[@class = "dep-part ee-production ee-2"]//div[@data-id="basic_support"]')
-    div(:support_plus, xpath: '//div[@class = "dep-part ee-production ee-2"]//div[@data-id="plus_support"]')
-    div(:support_premium, xpath: '//div[@class = "dep-part ee-production ee-2"]//div[@data-id="premium_support"]')
-    div(:total_price_upon_request, xpath: '//div[@class="dep-part ee-production ee-2"]//div[@data-id="ie-pp-sum-req"]')
-    span(:total_price, xpath: '//div[@class="dep-part ee-production ee-2"]//div[@class="pp_sum"]//span[@class="pp_price_number"]')
+    div(:support_basic, xpath: '//div[contains(@class, "ee-business") or contains(@class, "ee-production")]//div[@data-id="basic_support"]')
+    div(:support_plus, xpath: '//div[contains(@class, "ee-business") or contains(@class, "ee-production")]//div[@data-id="plus_support"]')
+    div(:support_premium, xpath: '//div[contains(@class, "ee-business") or contains(@class, "ee-production")]//div[@data-id="premium_support"]')
+    div(:total_price_upon_request, xpath: '//div[contains(@class, "ee-business") or contains(@class, "ee-production")]//div[@data-id="ie-pp-sum-req"]')
+    span(:total_price, xpath: '//div[contains(@class, "ee-business") or contains(@class, "ee-production")]//div[@class="pp_sum"]//span[@class="pp_price_number"]')
 
     def choose_support_level(support_level)
       choose_support_basic if support_level == 'Basic'
