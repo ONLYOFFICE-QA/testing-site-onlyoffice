@@ -44,6 +44,9 @@ module TestingSiteOnlyoffice
     link(:site_integrations_plone, xpath: '//a[@id="navitem_integrations_plone"]')
     link(:site_integrations_nuxeo, xpath: '//a[@id="navitem_integrations_nuxeo"]')
     link(:site_integrations_chamilo, xpath: '//a[@id="navitem_integrations_chamilo"]')
+    link(:site_integrations_redmine, xpath: '//a[@id="navitem_integrations_redmine"]')
+    link(:site_integrations_jira, xpath: '//a[@id="navitem_integrations_jira"]')
+    link(:site_integrations_moodle, xpath: '//a[@id="navitem_integrations_moodle"]')
     link(:site_integrations_others, xpath: '//a[@id="navitem_integrations_others"]')
     link(:site_integrations_for_developers, xpath: '//a[@id="navitem_integration_for_developers"]')
 
@@ -201,13 +204,28 @@ module TestingSiteOnlyoffice
           class: SiteHumHub
         },
         integrations_plone: {
-          element: site_integrations_plone_element
+          element: site_integrations_plone_element,
+          class: SitePlone
         },
         integrations_nuxeo: {
-          element: site_integrations_nuxeo_element
+          element: site_integrations_nuxeo_element,
+          class: SiteNuxeo
         },
         integrations_chamilo: {
-          element: site_integrations_chamilo_element
+          element: site_integrations_chamilo_element,
+          class: SiteChamilo
+        },
+        integrations_redmine: {
+          element: site_integrations_redmine_element,
+          class: SiteRedmine
+        },
+        integrations_jira: {
+          element: site_integrations_jira_element,
+          class: SiteJira
+        },
+        integrations_moodle: {
+          element: site_integrations_moodle_element,
+          class: SiteMoodle
         },
         integrations_others: {
           element: site_integrations_others_element,

@@ -4,10 +4,10 @@ require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Alfresco' do
+describe 'Redmine' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @integration = site_home_page.click_link_on_toolbar(:integrations_alfresco)
+    @integration = site_home_page.click_link_on_toolbar(:integrations_redmine)
   end
 
   after do |example|
@@ -15,8 +15,8 @@ describe 'Alfresco' do
     @test.webdriver.quit
   end
 
-  it '[Alfresco] Go to alfresco' do
-    expect(@integration).to be_a TestingSiteOnlyoffice::SiteAlfresco
+  it '[Redmine] Go to redmine' do
+    expect(@integration).to be_a TestingSiteOnlyoffice::SiteRedmine
   end
 
   describe 'Pick price' do

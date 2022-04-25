@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Nextcloud' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @nextcloud = site_home_page.click_link_on_toolbar(:integrations_nextcloud)
+    @integration = site_home_page.click_link_on_toolbar(:integrations_nextcloud)
   end
 
   after do |example|
@@ -16,44 +16,40 @@ describe 'Nextcloud' do
   end
 
   it '[Nextcloud] Go to nextcloud' do
-    expect(@nextcloud).to be_a TestingSiteOnlyoffice::SiteNextcloud
+    expect(@integration).to be_a TestingSiteOnlyoffice::SiteNextcloud
   end
 
   it '[Nextcloud] Go to get it now' do
-    expect(@nextcloud.check_link_get_it_now).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
+    expect(@integration.check_link_get_it_now).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
   end
 
   it '[Nextcloud] Go to get onlyoffice now' do
-    expect(@nextcloud.check_link_get_onlyoffice_now).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
+    expect(@integration.check_link_get_onlyoffice_now).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
   end
 
   it '[Nextcloud] Go to download for desktop' do
-    expect(@nextcloud.check_link_download_for_desktop).to be_a TestingSiteOnlyoffice::SiteProductsDesktop
-  end
-
-  it '[Nextcloud] Go to pick your price' do
-    business_price = @nextcloud.check_link_pick_your_price
-    expect(business_price.check_active_tariff?('business')).to be true
-  end
-
-  it '[Nextcloud] Go to home tariff' do
-    business_price = @nextcloud.check_link_home_tariff
-    expect(business_price.check_active_tariff?('home')).to be true
+    expect(@integration.check_link_download_for_desktop).to be_a TestingSiteOnlyoffice::SiteProductsDesktop
   end
 
   it '[Nextcloud] Go to apps_store' do
-    expect(@nextcloud.check_link_for_integration?(:nextcloud_apps_store)).to be true
+    expect(@integration.check_link_for_integration?(:nextcloud_apps_store)).to be true
   end
 
   it '[Nextcloud] Go to git_hub' do
-    expect(@nextcloud.check_link_for_integration?(:integration_git_hub)).to be true
+    expect(@integration.check_link_for_integration?(:integration_git_hub)).to be true
   end
 
   it '[Nextcloud] Go to app_store' do
-    expect(@nextcloud.check_link_for_integration?(:integration_app_store)).to be true
+    expect(@integration.check_link_for_integration?(:integration_app_store)).to be true
   end
 
   it '[Nextcloud] Go to google_play' do
-    expect(@nextcloud.check_link_for_integration?(:integration_google_play)).to be true
+    expect(@integration.check_link_for_integration?(:integration_google_play)).to be true
+  end
+
+  describe 'Pick price' do
+    it_behaves_like 'integration_pick_price' do
+      let(:integration_pick_price) { @integration }
+    end
   end
 end

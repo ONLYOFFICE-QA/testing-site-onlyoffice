@@ -7,6 +7,7 @@ module TestingSiteOnlyoffice
     attr_accessor :connector_type
 
     element(:title, xpath: '//div[@class="ct_head"]/span')
+    element(:title_chamilo, xpath: '//div[@class="ct_head"]')
 
     def initialize(instance, connector_type)
       super(instance.webdriver.driver)
@@ -15,9 +16,17 @@ module TestingSiteOnlyoffice
       wait_to_load
     end
 
+    def xpath_title_integration
+      if @connector_type.include?('Chamilo')
+        title_chamilo_element
+      else
+        title_element
+      end
+    end
+
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(title_element) }
-      @instance.webdriver.wait_until { @instance.webdriver.get_text(title_element) == @connector_type }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(xpath_title_integration) }
+      @instance.webdriver.wait_until { @instance.webdriver.get_text(xpath_title_integration) == @connector_type }
     end
 
     def check_link_pick_your_price
