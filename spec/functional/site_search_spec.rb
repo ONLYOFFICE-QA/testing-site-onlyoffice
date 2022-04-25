@@ -12,7 +12,7 @@ describe 'Site search' do
   end
 
   describe 'non-existing word' do
-    let(:result_page) { @site_home_page.search('Fakeword') }
+    let(:result_page) { @site_home_page.search('Asdfgh') }
 
     it 'Non-existing word return No results matching your query page and zero found results' do
       expect(result_page.no_result_found_element).to be_present
