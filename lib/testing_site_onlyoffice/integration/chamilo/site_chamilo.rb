@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
     include PageObject
 
     def initialize(instance)
-      super(instance, @connector_type = 'Online office for Chamilo')
+      super(instance, @connector_type = 'Chamilo')
     end
   end
 end
