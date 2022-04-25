@@ -44,6 +44,9 @@ module TestingSiteOnlyoffice
     link(:site_integrations_plone, xpath: '//a[@id="navitem_integrations_plone"]')
     link(:site_integrations_nuxeo, xpath: '//a[@id="navitem_integrations_nuxeo"]')
     link(:site_integrations_chamilo, xpath: '//a[@id="navitem_integrations_chamilo"]')
+    link(:site_integrations_redmine, xpath: '//a[@id="navitem_integrations_redmine"]')
+    link(:site_integrations_jira, xpath: '//a[@id="navitem_integrations_jira"]')
+    link(:site_integrations_moodle, xpath: '//a[@id="navitem_integrations_moodle"]')
     link(:site_integrations_others, xpath: '//a[@id="navitem_integrations_others"]')
     link(:site_integrations_for_developers, xpath: '//a[@id="navitem_integration_for_developers"]')
 
@@ -177,31 +180,52 @@ module TestingSiteOnlyoffice
           class: SiteNextcloud
         },
         integrations_owncloud: {
-          element: site_integrations_owncloud_element
+          element: site_integrations_owncloud_element,
+          class: SiteOwnCloud
         },
         integrations_confluence: {
-          element: site_integrations_confluence_element
+          element: site_integrations_confluence_element,
+          class: SiteConfluence
         },
         integrations_alfresco: {
-          element: site_integrations_alfresco_element
+          element: site_integrations_alfresco_element,
+          class: SiteAlfresco
         },
         integrations_sharepoint: {
-          element: site_integrations_sharepoint_element
+          element: site_integrations_sharepoint_element,
+          class: SiteSharePoint
         },
         integrations_liferay: {
-          element: site_integrations_liferay_element
+          element: site_integrations_liferay_element,
+          class: SiteLiferay
         },
         integrations_humhub: {
-          element: site_integrations_humhub_element
+          element: site_integrations_humhub_element,
+          class: SiteHumHub
         },
         integrations_plone: {
-          element: site_integrations_plone_element
+          element: site_integrations_plone_element,
+          class: SitePlone
         },
         integrations_nuxeo: {
-          element: site_integrations_nuxeo_element
+          element: site_integrations_nuxeo_element,
+          class: SiteNuxeo
         },
         integrations_chamilo: {
-          element: site_integrations_chamilo_element
+          element: site_integrations_chamilo_element,
+          class: SiteChamilo
+        },
+        integrations_redmine: {
+          element: site_integrations_redmine_element,
+          class: SiteRedmine
+        },
+        integrations_jira: {
+          element: site_integrations_jira_element,
+          class: SiteJira
+        },
+        integrations_moodle: {
+          element: site_integrations_moodle_element,
+          class: SiteMoodle
         },
         integrations_others: {
           element: site_integrations_others_element,
