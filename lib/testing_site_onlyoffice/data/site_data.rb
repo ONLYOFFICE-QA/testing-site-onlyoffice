@@ -16,6 +16,8 @@ module TestingSiteOnlyoffice
 
     EMAIL_FOR_SITE = 'site@qamail.teamlab.info'
 
+    FOLLOW_US_PENDING = ['Follow us on Instagram', 'Follow us on Medium'].freeze
+
     # @return [String] portal on which forgot password
     def self.site_notification_page
       if config.server.include?('.info')

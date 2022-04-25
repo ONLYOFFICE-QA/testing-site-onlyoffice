@@ -14,7 +14,7 @@ describe 'Help center footer links' do
   TestingSiteOnlyoffice::SiteData.footer_links.each do |section_title, titles|
     titles.each do |title|
       it "[Site] `#{title}` link of `#{section_title}` footer section works" do
-        pending('Link `www.instagram.com/the_onlyoffice/` and `medium.com/onlyoffice` answered with 405') if title == ('Follow us on Instagram' || 'Follow us on Medium')
+        pending('Link `www.instagram.com/the_onlyoffice/` and `medium.com/onlyoffice` answered with 405') if TestingSiteOnlyoffice::SiteData::FOLLOW_US_PENDING.include?(title)
         pending('Link `https://www.linkedin.com/company/ascensio-system-sia/` answered with 999') if title == 'Follow us on LinkedIn'
         expect(site_home_page).to be_site_footer_link_alive(section_title, title)
       end
