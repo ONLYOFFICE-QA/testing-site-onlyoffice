@@ -35,9 +35,6 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check Products' do
-      # TODO: Remove as soon as https://github.com/ONLYOFFICE/www/commit/0748127ecbd506468b0eba13779b14e7ce6d81b9
-      #   fixed
-      skip('For some reason SpreadsheetEditor page show anonymous name dialog')
       page = @site_home_page.click_link_on_toolbar(:products_docs)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocs
       page = @site_home_page.click_link_on_toolbar(:products_document_editor)
@@ -46,6 +43,8 @@ describe 'SiteHourlyCheck' do
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsSpreadsheetEditor
       page = @site_home_page.click_link_on_toolbar(:products_presentation_editor)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsPresentationEditor
+      page = @site_home_page.click_link_on_toolbar(:products_form_creator)
+      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsFormCreator
       page = @site_home_page.click_link_on_toolbar(:products_desktop)
       expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDesktop
       page = @site_home_page.click_link_on_toolbar(:products_ios)

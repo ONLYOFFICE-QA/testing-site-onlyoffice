@@ -15,7 +15,7 @@ Metrics/AbcSize:
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 # IgnoredMethods: refine
 Metrics/BlockLength:
-  Max: 230
+  Max: 231
 
 # Offense count: 3
 # Configuration parameters: CountComments, CountAsOne.
@@ -30,12 +30,12 @@ Metrics/CyclomaticComplexity:
 # Offense count: 24
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 Metrics/MethodLength:
-  Max: 70
+  Max: 74
 
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne.
 Metrics/ModuleLength:
-  Max: 380
+  Max: 385
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.
@@ -77,7 +77,7 @@ RSpec/BeforeAfterAll:
 # Offense count: 23
 # Configuration parameters: CountAsOne.
 RSpec/ExampleLength:
-  Max: 27
+  Max: 28
 
 # Offense count: 381
 # Configuration parameters: AssignmentOnly.
@@ -86,7 +86,7 @@ RSpec/InstanceVariable:
 
 # Offense count: 24
 RSpec/MultipleExpectations:
-  Max: 13
+  Max: 14
 
 # Offense count: 16
 RSpec/NestedGroups:
