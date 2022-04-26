@@ -10,7 +10,7 @@ module TestingSiteOnlyoffice
     include SiteEditorsXpath
     include SiteToolbar
 
-    div(:spreadsheet_image, xpath: "//div[@class='oses_blocks_image se']")
+    div(:spreadsheet_image, xpath: "//div[@class='ddb_examples_editors']")
 
     def initialize(instance)
       super(instance.webdriver.driver)
