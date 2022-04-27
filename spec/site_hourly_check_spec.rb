@@ -34,35 +34,76 @@ describe 'SiteHourlyCheck' do
       expect(tour_page.login_visible?).to be true
     end
 
-    it '[Site] Check Products' do
-      page = @site_home_page.click_link_on_toolbar(:products_docs)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocs
-      page = @site_home_page.click_link_on_toolbar(:products_document_editor)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocumentEditor
-      page = @site_home_page.click_link_on_toolbar(:products_spreadsheet_editor)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsSpreadsheetEditor
-      page = @site_home_page.click_link_on_toolbar(:products_presentation_editor)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsPresentationEditor
-      page = @site_home_page.click_link_on_toolbar(:products_form_creator)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsFormCreator
-      page = @site_home_page.click_link_on_toolbar(:products_desktop)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDesktop
-      page = @site_home_page.click_link_on_toolbar(:products_ios)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsIos
-      page = @site_home_page.click_link_on_toolbar(:products_android)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsAndroid
-      page = @site_home_page.click_link_on_toolbar(:products_workspace)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsWorkspace
-      page = @site_home_page.click_link_on_toolbar(:products_workspace_documents)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocumentManager
-      page = @site_home_page.click_link_on_toolbar(:products_workspace_mail)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsMail
-      page = @site_home_page.click_link_on_toolbar(:products_workspace_crm)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCRM
-      page = @site_home_page.click_link_on_toolbar(:products_workspace_projects)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsProjects
-      page = @site_home_page.click_link_on_toolbar(:products_workspace_calendar)
-      expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCalendar
+    describe '[Site] Check Products' do
+      it '[Site] Check Products docs' do
+        page = @site_home_page.click_link_on_toolbar(:products_docs)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocs
+      end
+
+      it '[Site] Check Products document editor' do
+        page = @site_home_page.click_link_on_toolbar(:products_document_editor)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocumentEditor
+      end
+
+      it '[Site] Check Products spreadsheet editor' do
+        page = @site_home_page.click_link_on_toolbar(:products_spreadsheet_editor)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsSpreadsheetEditor
+      end
+
+      it '[Site] Check Products presentation editor' do
+        page = @site_home_page.click_link_on_toolbar(:products_presentation_editor)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsPresentationEditor
+      end
+
+      it '[Site] Check Products form creator' do
+        page = @site_home_page.click_link_on_toolbar(:products_form_creator)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsFormCreator
+      end
+
+      it '[Site] Check Products desktop' do
+        page = @site_home_page.click_link_on_toolbar(:products_desktop)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDesktop
+      end
+
+      it '[Site] Check Products ios' do
+        page = @site_home_page.click_link_on_toolbar(:products_ios)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsIos
+      end
+
+      it '[Site] Check Products android' do
+        page = @site_home_page.click_link_on_toolbar(:products_android)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsAndroid
+      end
+
+      it '[Site] Check Products workspace' do
+        page = @site_home_page.click_link_on_toolbar(:products_workspace)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsWorkspace
+      end
+
+      it '[Site] Check Products workspace documents' do
+        page = @site_home_page.click_link_on_toolbar(:products_workspace_documents)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocumentManager
+      end
+
+      it '[Site] Check Products workspace mail' do
+        page = @site_home_page.click_link_on_toolbar(:products_workspace_mail)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsMail
+      end
+
+      it '[Site] Check Products workspace crm' do
+        page = @site_home_page.click_link_on_toolbar(:products_workspace_crm)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCRM
+      end
+
+      it '[Site] Check Products workspace projects' do
+        page = @site_home_page.click_link_on_toolbar(:products_workspace_projects)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsProjects
+      end
+
+      it '[Site] Check Products workspace calendar' do
+        page = @site_home_page.click_link_on_toolbar(:products_workspace_calendar)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCalendar
+      end
     end
 
     it '[Site] Check cloud' do
