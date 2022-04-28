@@ -47,14 +47,6 @@ module TestingSiteOnlyoffice
       SiteDocsEnterprise.new(@instance)
     end
 
-    def click_ready_editing_tools_button
-      @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(ready_editing_tools_button_element)
-      end
-      ready_editing_tools_button_element.click
-      SiteProductsEnterpriseEdition.new(@instance)
-    end
-
     def choose_number_connection(connection)
       add_num_connections_element.click while num_connection != connection
     end

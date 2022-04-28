@@ -30,12 +30,12 @@ Metrics/CyclomaticComplexity:
 # Offense count: 24
 # Configuration parameters: CountComments, CountAsOne, ExcludedMethods, IgnoredMethods.
 Metrics/MethodLength:
-  Max: 74
+  Max: 75
 
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne.
 Metrics/ModuleLength:
-  Max: 385
+  Max: 386
 
 # Offense count: 1
 # Configuration parameters: IgnoredMethods.
