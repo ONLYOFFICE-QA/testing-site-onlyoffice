@@ -124,7 +124,8 @@ module TestingSiteOnlyoffice
           class: SiteProductsFormCreator
         },
         products_docs_enterprise_edition: {
-          element: site_products_docs_enterprise_edition_element
+          element: site_products_docs_enterprise_edition_element,
+          class: SiteProductsEnterpriseEdition
         },
         products_docs_developer_edition: {
           element: site_products_docs_developer_edition_element
