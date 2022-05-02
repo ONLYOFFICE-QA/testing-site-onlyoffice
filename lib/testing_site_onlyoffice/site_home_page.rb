@@ -31,6 +31,8 @@ require_relative 'footer/follow_us_on/site_subscribe'
 require_relative 'footer/follow_us_on/site_subscribe_confirmation'
 require_relative 'footer/solutions/nonprofit/site_nonprofits'
 require_relative 'footer/solutions/site_home_use'
+require_relative 'footer/resources/site_compare_other_suites'
+require_relative 'footer/support/site_wopi_support'
 
 require_relative 'get_onlyoffice/other_products/connectors/site_other_products_connectors'
 require_relative 'get_onlyoffice/other_products/document_builder/site_other_products_document_builder'
@@ -98,7 +100,8 @@ require_relative 'products/groups/site_products_projects'
 require_relative 'products/site_products_ios'
 require_relative 'products/site_products_workspace'
 require_relative 'products/site_products_security'
-require_relative 'products/doc_edition/site_products_document_editor'
+require_relative 'products/doc_edition/site_products_enterprise_edition'
+require_relative 'products/doc_edition/site_products_developer_edition'
 
 require_relative 'search/site_search'
 
