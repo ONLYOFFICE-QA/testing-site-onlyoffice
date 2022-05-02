@@ -128,7 +128,8 @@ module TestingSiteOnlyoffice
           class: SiteProductsEnterpriseEdition
         },
         products_docs_developer_edition: {
-          element: site_products_docs_developer_edition_element
+          element: site_products_docs_developer_edition_element,
+          class: SiteProductsDeveloperEdition
         },
         products_desktop: {
           element: site_products_for_desktop_element,
