@@ -20,6 +20,7 @@ module TestingSiteOnlyoffice
     link(:site_products_form_creator, xpath: '//a[@id="navitem_features_form_creator"]')
     link(:site_products_docs_enterprise_edition, xpath: '//a[@id="navitem_features_docs_ee"]')
     link(:site_products_docs_developer_edition, xpath: '//a[@id="navitem_features_docs_de"]')
+    link(:site_products_docs_cloud_edition, xpath: '//a[@id="navitem_features_docs_cloud"]')
     link(:site_products_for_desktop, xpath: '//a[@id="navitem_features_clients_apps"]')
     link(:site_products_for_ios, xpath: '//a[@id="navitem_features_clients_mobile_ios"]')
     link(:site_products_for_android, xpath: '//a[@id="navitem_features_clients_mobile_android"]')
@@ -130,6 +131,10 @@ module TestingSiteOnlyoffice
         products_docs_developer_edition: {
           element: site_products_docs_developer_edition_element,
           class: SiteProductsDeveloperEdition
+        },
+        products_docs_cloud_edition: {
+          element: site_products_docs_cloud_edition_element,
+          class: SiteProductsCloudEdition
         },
         products_desktop: {
           element: site_products_for_desktop_element,

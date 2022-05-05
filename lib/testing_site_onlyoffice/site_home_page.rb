@@ -102,6 +102,7 @@ require_relative 'products/site_products_workspace'
 require_relative 'products/site_products_security'
 require_relative 'products/doc_edition/site_products_enterprise_edition'
 require_relative 'products/doc_edition/site_products_developer_edition'
+require_relative 'products/doc_edition/site_products_cloud_edition'
 
 require_relative 'search/site_search'
 
