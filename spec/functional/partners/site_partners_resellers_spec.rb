@@ -41,7 +41,7 @@ describe 'Partners resellers' do
     pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
     partnership_request = @resellers.send_become_partner_request
     company_name = "nctautotest #{Time.now} For Developers /partnership-request.aspx?requestType=1"
-    partnership_request.send_partners_form_random_data(company_name: company_name)
+    partnership_request.send_partners_form_random_data(company_name:)
     subject_message = "#{company_name} - Partner Request"
     expect(partnership_request.partner_request_successful_element).to be_present
     expect(partner_email.check_email_by_subject({ subject: subject_message }, 300, true)).to be true

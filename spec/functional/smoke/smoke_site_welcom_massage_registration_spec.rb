@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 
 mail = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_ADMIN)
 
-checker = { mail: mail, module: 'WebStudio' }
+checker = { mail:, module: 'WebStudio' }
 
 describe 'Site Smoke welcome massage' do
   after do |example|

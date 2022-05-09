@@ -24,7 +24,7 @@ shared_examples_for 'connector_download' do |connectors_list|
                                                                         date: connectors_page.get_installer_release_date_or_version(@current_installation.release_date_xpath))
         github_data = TestingSiteOnlyoffice::SiteConnectorReleaseData.new(version: connectors_page.github_version(connector),
                                                                           date: connectors_page.github_date(connector))
-        error = connectors_page.error_version_message(connector: connector, github_date: github_data.date,
+        error = connectors_page.error_version_message(connector:, github_date: github_data.date,
                                                       github_version: github_data.version, site_date: site_data.date, site_version: site_data.version)
         expect(github_data == site_data).to be_truthy, error
       end
