@@ -104,12 +104,6 @@ Style/MixinUsage:
     - 'lib/testing_site_onlyoffice/site_test_instance.rb'
 
 # Offense count: 1
-# This cop supports unsafe auto-correction (--auto-correct-all).
-Style/SlicingWithRange:
-  Exclude:
-    - 'lib/testing_site_onlyoffice/additional_products/payment/avangate.rb'
-
-# Offense count: 1
 # This cop supports safe auto-correction (--auto-correct).
 # Configuration parameters: AllowModifier.
 Style/SoleNestedConditional:
