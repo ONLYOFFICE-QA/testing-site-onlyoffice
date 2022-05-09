@@ -29,7 +29,7 @@ describe 'Request free cloud' do
   it '[Site][Nonprofits] Send free cloud request for nonprofit' do
     pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
     last_name = "nctautotest #{Time.now}"
-    @request_free_cloud_page.send_non_profit_request(last_name: last_name)
+    @request_free_cloud_page.send_non_profit_request(last_name:)
     expect(@request_free_cloud_page).to be_request_accepted
     site_admin_email = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL)
     expect(site_admin_email.check_email_by_subject(

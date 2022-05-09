@@ -36,7 +36,7 @@ describe 'Registration new portal' do
       pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
       demo_order_page = @site_home_page.click_order_demo
       company_name = "nctautotest #{Time.now} /demo-order.aspx"
-      demo_order_page.send_demonstration_request(company_name: company_name, demonstration_language: 'en')
+      demo_order_page.send_demonstration_request(company_name:, demonstration_language: 'en')
       expect(demo_order_page).to be_a TestingSiteOnlyoffice::SiteOrderDemo
       expect(partner_email.check_email_by_subject(
                { subject: TestingSiteOnlyoffice::SiteNotificationData::ORDER_DEMO_REQUEST, search: company_name }, 300, true
@@ -49,7 +49,7 @@ describe 'Registration new portal' do
       pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
       site_callback_page = @site_home_page.click_request_a_call
       last_name = "nctautotest #{Time.now} /call-back-form.aspx"
-      site_callback_page.send_callback_request(last_name: last_name)
+      site_callback_page.send_callback_request(last_name:)
       expect(site_callback_page).to be_congratulation_visible
       expect(partner_email.check_email_by_subject(
                { subject: TestingSiteOnlyoffice::SiteNotificationData::CALL_BACK_REQUEST, search: last_name }, 300, true
@@ -85,7 +85,7 @@ describe 'Registration new portal' do
       pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
       support_form_page = @site_home_page.click_support_contact_form
       name = "NCT Test #{Faker::Name.name}"
-      support_form_page.send_training_courses_request(name: name)
+      support_form_page.send_training_courses_request(name:)
       subject_message = "#{name} - Support Request [from: support-contact-form]"
       expect(partner_email.check_email_by_subject({ subject: subject_message }, 300, true)).to be_truthy
     end

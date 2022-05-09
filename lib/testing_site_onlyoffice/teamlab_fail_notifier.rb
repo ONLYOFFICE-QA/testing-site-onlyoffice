@@ -13,7 +13,7 @@ module TestingSiteOnlyoffice
       request = Net::HTTP::Post.new(uri)
       request.set_form_data(
         notification: TelegramPerks.pimp_my_message(message),
-        chat: chat
+        chat:
       )
 
       Net::HTTP.start(uri.hostname, uri.port) do |http|

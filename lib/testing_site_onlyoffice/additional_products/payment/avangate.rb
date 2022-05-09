@@ -123,7 +123,7 @@ module TestingSiteOnlyoffice
 
     def parse_price(values)
       value = values.detect { |val| val.match(/(\d+(?:,|.))?\d+(.\d+)?/) }.to_s.sub(',', '')
-      value = value[1..-1] if value[0].to_i.zero?
+      value = value[1..] if value[0].to_i.zero?
       value.to_i
     end
 
