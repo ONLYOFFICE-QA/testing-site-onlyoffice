@@ -18,6 +18,7 @@ inherit_from:
 
 AllCops:
   NewCops: enable
+  TargetRubyVersion: 3.1
 
 # We use `gems.rb` in this project
 Bundler/GemFilename:
