@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
+require_relative '../modules/site_products_methods'
+
 module TestingSiteOnlyoffice
   # /document-management.aspx
   # https://user-images.githubusercontent.com/40513035/101329886-032bb780-3883-11eb-853b-bd6945388f2b.png
   class SiteProductsDocumentManager
     include PageObject
+    include SiteProductsMethods
     include SiteToolbar
 
     root_xpath = '//div[@class="dm-fs-btn"]'

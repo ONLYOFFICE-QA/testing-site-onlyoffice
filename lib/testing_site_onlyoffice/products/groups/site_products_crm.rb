@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../modules/site_groups_xpath'
+require_relative '../modules/site_products_methods'
 
 module TestingSiteOnlyoffice
   # /crm.aspx
@@ -8,6 +9,7 @@ module TestingSiteOnlyoffice
   class SiteProductsCRM
     include PageObject
     include SiteGroupsXpath
+    include SiteProductsMethods
     include SiteToolbar
 
     div(:crm_identification, xpath: "//div[contains(@class,'collaborationcrm')]")
