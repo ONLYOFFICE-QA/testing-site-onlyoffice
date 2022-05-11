@@ -144,7 +144,7 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
-    strscan (3.0.1)
+    strscan (3.0.3)
     timeout (0.2.0)
     unicode-display_width (2.1.0)
     watir (7.1.0)
