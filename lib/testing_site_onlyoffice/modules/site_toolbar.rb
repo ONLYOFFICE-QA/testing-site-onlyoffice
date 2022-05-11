@@ -32,6 +32,7 @@ module TestingSiteOnlyoffice
     link(:site_products_workspace_calendar, xpath: '//a[@id="navitem_features_calendar"]')
     link(:site_products_workspace_cloud_edition, xpath: '//a[@id="navitem_features_cloud_service"]')
     link(:site_products_workspace_enterprise_edition, xpath: '//a[@id="navitem_features_workspace_ee"]')
+    link(:site_products_personal, xpath: '//a[@id="navitem_features_oo_personal"]')
     link(:site_products_security, xpath: '//a[@id="navitem_features_security"]')
 
     # top toolbar - Integrations
@@ -177,6 +178,10 @@ module TestingSiteOnlyoffice
         },
         products_workspace_enterprise_edition: {
           element: site_products_workspace_enterprise_edition_element
+        },
+        products_personal: {
+          element: site_products_personal_element,
+          class: PersonalMainPage
         },
         security: {
           element: site_products_security_element,
@@ -418,7 +423,7 @@ module TestingSiteOnlyoffice
       link = all_toolbar_links_and_classes_hash[section][:element]
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(link) }
       link.click
-      @instance.webdriver.switch_to_popup if section == (:about_gift_shop || :about_help_center)
+      @instance.webdriver.switch_to_popup if %i[about_gift_shop about_help_center products_personal].include?(section)
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
     end
   end
