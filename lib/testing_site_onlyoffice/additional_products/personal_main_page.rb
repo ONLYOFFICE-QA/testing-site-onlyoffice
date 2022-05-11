@@ -2,7 +2,7 @@
 
 module TestingSiteOnlyoffice
   # Personal main page
-  # https://user-images.githubusercontent.com/40513035/113815572-3e060500-9728-11eb-84ea-bc9cd885b0f9.png
+  # https://user-images.githubusercontent.com/67409742/167831504-14649f45-7ad6-4e6a-b72f-1ba490c291e6.png
   class PersonalMainPage
     include PageObject
 
