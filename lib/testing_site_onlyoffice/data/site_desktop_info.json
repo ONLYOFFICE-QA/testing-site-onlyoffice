@@ -24,17 +24,17 @@
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
     "debian_8": {
-      "instruction": "How to install Desktop Editors to Ubuntu and derivatives? - ONLYOFFICE",
+      "instruction": "Installing ONLYOFFICE Desktop Editors to Debian, Ubuntu and derivatives - ONLYOFFICE",
       "download": "onlyoffice-desktopeditors_amd64.deb",
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
     "debian_7": {
-      "instruction": "How to install Desktop Editors to Ubuntu and derivatives? - ONLYOFFICE",
+      "instruction": "Installing ONLYOFFICE Desktop Editors to Debian, Ubuntu and derivatives - ONLYOFFICE",
       "download": "onlyoffice-desktopeditors_amd64.deb",
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
     "centos": {
-      "instruction": "How to install Desktop Editors to Red Hat and derivatives? - ONLYOFFICE",
+      "instruction": "Installing ONLYOFFICE Desktop Editors to Red Hat, CentOS and derivatives - ONLYOFFICE",
       "download": "onlyoffice-desktopeditors.x86_64.rpm",
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
@@ -44,7 +44,7 @@
       "github": "GitHub - ONLYOFFICE/snap-desktopeditors: The ONLYOFFICE Desktop Editors snap package for the snap package system"
     },
     "flatpak": {
-      "instruction": "How to install ONLYOFFICE Desktop Editors for Linux to your computer using Flatpak? - ONLYOFFICE",
+      "instruction": "ONLYOFFICE - Cloud Office Applications",
       "download": "ONLYOFFICE Desktop Editors—Linux Apps on Flathub",
       "github": "GitHub - flathub/org.onlyoffice.desktopeditors"
     },
