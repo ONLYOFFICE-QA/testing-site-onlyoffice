@@ -249,7 +249,8 @@ module TestingSiteOnlyoffice
           class: SiteProductsConnectorsOnlyoffice
         },
         integrations_for_developers: {
-          element: site_integrations_for_developers_element
+          element: site_integrations_for_developers_element,
+          class: SiteProductsDeveloperEdition
         }
       }
     end
