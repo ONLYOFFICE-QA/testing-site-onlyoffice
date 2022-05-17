@@ -28,6 +28,7 @@ module TestingSiteOnlyoffice
 
     text_field(:avangate_fname, xpath: "//*[@id='fname']")
     text_field(:avangate_lname, xpath: "//*[@id='lname']")
+    text_field(:avangate_fullname, xpath: "//*[@id='fullname']")
     text_field(:avangate_address, xpath: "//*[@id='address']")
     text_field(:avangate_city, xpath: "//*[@id='city']")
     text_field(:avangate_zipcode, xpath: "//*[@id='zipcode']")
@@ -80,17 +81,25 @@ module TestingSiteOnlyoffice
       AvangateFinishOrder.new(@instance)
     end
 
-    def fill_test_payment_data_for_notify(params = {})
+    def extended_form_avangate(email)
       self.avangate_fname = Faker::Name.first_name
       self.avangate_lname = Faker::Name.last_name
       self.avangate_address = PaymentData::OTHER
       self.avangate_city = PaymentData::OTHER
       self.avangate_zipcode = PaymentData::OTHER
+      self.avangate_re_email = email
+    end
+
+    def fill_test_payment_data_for_notify(params = {})
+      if @instance.webdriver.element_present?(avangate_fname_element)
+        extended_form_avangate(params[:email])
+      else
+        self.avangate_fullname = "#{Faker::Name.first_name} #{Faker::Name.last_name}"
+      end
       avangate_country_element.select(PaymentData::HOLDER_COUNTRY_CODE)
       OnlyofficeLoggerHelper.sleep_and_log('Waiting for applying changes', 1)
       wait_to_load
       self.avangate_email = params[:email]
-      self.avangate_re_email = params[:email]
       self.avangate_tiCNumber = PaymentData::CARD_NUMBER
       self.avangate_cbExpMounth = PaymentData::MONTH
       self.avangate_cbExpYear = PaymentData::YEAR
