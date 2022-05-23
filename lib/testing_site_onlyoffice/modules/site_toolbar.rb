@@ -174,7 +174,8 @@ module TestingSiteOnlyoffice
           class: SiteProductsCalendar
         },
         products_workspace_cloud_edition: {
-          element: site_products_workspace_cloud_edition_element
+          element: site_products_workspace_cloud_edition_element,
+          class: SiteCloudEdition
         },
         products_workspace_enterprise_edition: {
           element: site_products_workspace_enterprise_edition_element
