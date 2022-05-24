@@ -35,6 +35,13 @@ module TestingSiteOnlyoffice
       SiteWrongPortal.new(@test)
     end
 
+    def branch_name
+      @test = SiteTestInstance.new(config)
+      @test.webdriver.open('https://teamlab.info/revision')
+      @test.webdriver.wait_until { @test.webdriver.driver.current_url.include? '/revision' }
+      @test.webdriver.get_text('//body')
+    end
+
     def registration_confirmation(confirmation_link, portal_data)
       @test = SiteTestInstance.new(config)
       @test.webdriver.open(confirmation_link)
