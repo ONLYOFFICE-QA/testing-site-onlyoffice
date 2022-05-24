@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../get_onlyoffice/modules/site_download_helper'
+require_relative 'site_methods_footer/site_methods_footer_developers'
 
 module TestingSiteOnlyoffice
   # Site footer
@@ -8,10 +9,9 @@ module TestingSiteOnlyoffice
   module SiteFooter
     include PageObject
     include SiteDownloadHelper
+    include SiteFooterDevelopers
 
     footer_xpath = '//div[@class="footer_menu"]'
-    # developers
-    link(:document_builder, xpath: '//a[@href="/document-builder.aspx"]')
 
     # by size
     link(:size_home_use, xpath: "#{footer_xpath}//a[contains(@href, 'home-use')]")
@@ -31,12 +31,6 @@ module TestingSiteOnlyoffice
 
     # follow us on
     label(:subscribe_to_newsletter, xpath: '//div[contains(@class,"footer_menu")]//label[@title="Subscribe to our newsletters"]')
-
-    # developers
-    def click_document_builder_info
-      document_builder_element.click
-      SiteDocumentBuilder.new(@instance)
-    end
 
     # by size
     def footer_home_use
