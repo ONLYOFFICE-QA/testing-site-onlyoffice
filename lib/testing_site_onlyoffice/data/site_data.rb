@@ -46,9 +46,9 @@ module TestingSiteOnlyoffice
 
     def self.courses_modules
       {
+        integration_nextcloud: 'Integration (Nextcloud)',
+        integration_wordpress: 'Integration (WordPress)',
         forms: 'Forms',
-        integration: 'Integration (Nextcloud)',
-        word_press: 'Integration (WordPress)',
         documents: 'Documents',
         projects: 'Projects',
         crm: 'CRM',
@@ -59,9 +59,9 @@ module TestingSiteOnlyoffice
 
     def self.courses_purposes
       {
-        working_with_forms: 'Working with forms',
         working_with_docs_in_nextcloud: 'Working with docs in Nextcloud',
-        working_with_docs_in_word_press: 'Working with docs in WordPress',
+        working_with_docs_in_wordpress: 'Working with docs in WordPress',
+        working_with_forms: 'Working with forms',
         office_suite: 'Office suite',
         working_with_customers: 'Working with customers',
         working_in_a_team: 'Working in a team',
