@@ -178,7 +178,8 @@ module TestingSiteOnlyoffice
           class: SiteCloudEdition
         },
         products_workspace_enterprise_edition: {
-          element: site_products_workspace_enterprise_edition_element
+          element: site_products_workspace_enterprise_edition_element,
+          class: SiteEnterpriseEdition
         },
         products_personal: {
           element: site_products_personal_element,
