@@ -37,7 +37,7 @@ module TestingSiteOnlyoffice
 
     def branch_name
       @test = SiteTestInstance.new(config)
-      @test.webdriver.open('https://teamlab.info/revision')
+      @test.webdriver.open("#{config.server}/revision")
       @test.webdriver.wait_until { @test.webdriver.driver.current_url.include? '/revision' }
       @test.webdriver.get_text('//body')
     end
