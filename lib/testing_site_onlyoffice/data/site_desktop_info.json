@@ -45,7 +45,7 @@
     },
     "flatpak": {
       "instruction": "ONLYOFFICE - Cloud Office Applications",
-      "download": "ONLYOFFICE Desktop Editors—Linux Apps on Flathub",
+      "download": "Flathub—An app store and build service for Linux",
       "github": "GitHub - flathub/org.onlyoffice.desktopeditors"
     },
     "appimage": {
