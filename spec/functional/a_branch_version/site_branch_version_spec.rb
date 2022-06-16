@@ -3,6 +3,7 @@
 require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
+site_helper = TestingSiteOnlyoffice::SiteHelper.new
 
 describe 'Branch version' do
   before do
@@ -15,7 +16,7 @@ describe 'Branch version' do
   end
 
   it 'Branch version' do
-    page_branch_version = TestingSiteOnlyoffice::SiteHelper.new.branch_name
-    expect(page_branch_version.include?('/release/' || '/hotfix/')).to be(true)
+    site_helper.open_sublink('revision')
+    expect(site_helper.page_body.include?('/release/' || '/hotfix/')).to be(true)
   end
 end
