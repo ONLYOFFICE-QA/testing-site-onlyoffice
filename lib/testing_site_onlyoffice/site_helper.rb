@@ -35,13 +35,13 @@ module TestingSiteOnlyoffice
       SiteWrongPortal.new(@test)
     end
 
-    def following_new_link(link)
+    def open_sublink(link)
       @test = SiteTestInstance.new(config)
       @test.webdriver.open("#{config.server}/#{link}")
       @test.webdriver.wait_until { @test.webdriver.driver.current_url.include? "/#{link}" }
     end
 
-    def text_body_page
+    def page_body
       @test.webdriver.get_text('//body')
     end
 
