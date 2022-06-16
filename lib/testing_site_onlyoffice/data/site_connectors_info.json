@@ -63,5 +63,14 @@
     "github": "GitHub - ONLYOFFICE/onlyoffice-redmine: The app which enables the users to edit office documents from Redmine using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Redmine",
     "instruction": "GitHub - ONLYOFFICE/onlyoffice-redmine: The app which enables the users to edit office documents from Redmine using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Redmine",
     "whats_new": "onlyoffice-redmine/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-redmine · GitHub"
+  },
+  "strapi": {
+    "github": "GitHub - ONLYOFFICE/onlyoffice-strapi: The app which enables the users to edit office documents from Strapi using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Strapi",
+    "instruction": "GitHub - ONLYOFFICE/onlyoffice-strapi: The app which enables the users to edit office documents from Strapi using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Strapi",
+    "whats_new": "onlyoffice-strapi/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-strapi · GitHub"
+  },
+  "wordpress": {
+    "github": "GitHub - ONLYOFFICE/onlyoffice-wordpress: The plugin which enables the users to edit office documents from WordPress using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to WordPress",
+    "whats_new": "onlyoffice-wordpress/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-wordpress · GitHub"
   }
 }
