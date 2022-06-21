@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'wrata_api'
+require 'onlyoffice_logger_helper'
 
 site_wrata_user = 'Site'
 
