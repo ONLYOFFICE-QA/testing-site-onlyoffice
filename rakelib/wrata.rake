@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'wrata_api'
+require 'onlyoffice_logger_helper'
 
 site_wrata_user = 'Site'
 
@@ -40,7 +41,7 @@ namespace(:wrata) do
     location = args[:location] || 'default'
     Rake::Task['wrata:wrata_turn_on_servers'].execute(count: 1)
     Rake::Task['wrata:add_tests_to_queue'].execute(location:, path: 'spec/functional')
-    puts('One test node is setup. Please check that test are run fine on it')
+    puts('One te/st node is setup. Please check that test are run fine on it')
     OnlyofficeLoggerHelper.sleep_and_log('Waiting for test nodes setup', 3 * 60)
     Rake::Task['wrata:wrata_turn_on_servers'].execute(count: 3)
   end
