@@ -147,7 +147,7 @@ GEM
       websocket (~> 1.0)
     strscan (3.0.3)
     timeout (0.3.0)
-    unicode-display_width (2.1.0)
+    unicode-display_width (2.2.0)
     watir (7.1.0)
       regexp_parser (>= 1.2, < 3)
       selenium-webdriver (~> 4.0)
