@@ -19,6 +19,11 @@
     "instruction": "GitHub - ONLYOFFICE/onlyoffice-chamilo: The app which enables the users to edit office documents from Chamilo using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Chamilo",
     "whats_new": "onlyoffice-chamilo/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-chamilo · GitHub"
   },
+  "drupal": {
+    "github": "GitHub - ONLYOFFICE/onlyoffice-drupal: The app which enables the users to edit office documents from Drupal using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Drupal",
+    "instruction": "GitHub - ONLYOFFICE/onlyoffice-drupal: The app which enables the users to edit office documents from Drupal using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Drupal",
+    "whats_new": "onlyoffice-drupal/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-drupal · GitHub"
+  },
   "humhub": {
     "github": "GitHub - ONLYOFFICE/onlyoffice-humhub: Plugin for integrating ONLYOFFICE online editors with HumHub",
     "instruction": "Integration. Getting Started. Humhub - ONLYOFFICE",
