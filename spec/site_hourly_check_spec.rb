@@ -11,7 +11,7 @@ describe 'SiteHourlyCheck' do
     @test&.webdriver&.quit
     WebDriver.clean_up
 
-    unless OnlyofficeFileHelper::RubyHelper.debug?
+    if TestingSiteOnlyoffice::TeamlabFailNotifier.should_be_notified?(example)
       fail = example.exception
       if fail
         message_body = "#{test_run}\n#{example.description}\n#{fail}\n#{test_manager&.testrail&.run&.url}"
