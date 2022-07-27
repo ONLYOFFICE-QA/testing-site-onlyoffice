@@ -36,4 +36,10 @@ class StripePaymentPage
       @instance.webdriver.get_url.include?('onlyoffice.com')
     end
   end
+
+  # @return [Integer] Total amount of purchase
+  def total_amount_without_tax
+    price_text = @instance.webdriver.get_text('//span[contains(@class,"ProductSummary-totalAmount")]/span')
+    price_text.scan(/\d/).join.to_i / 100.0
+  end
 end
