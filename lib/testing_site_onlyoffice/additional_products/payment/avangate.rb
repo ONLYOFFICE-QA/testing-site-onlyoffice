@@ -76,7 +76,7 @@ module TestingSiteOnlyoffice
       @instance.webdriver.element_present?(avangate_upsell_frame_element)
     end
 
-    def submit_avangate_order_for_notification(params = {})
+    def submit_order_for_notification(params = {})
       fill_test_payment_data_for_notify(params)
       AvangateFinishOrder.new(@instance)
     end
