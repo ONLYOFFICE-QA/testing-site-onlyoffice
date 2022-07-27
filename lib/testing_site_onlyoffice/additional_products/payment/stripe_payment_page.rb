@@ -8,6 +8,7 @@ class StripePaymentPage
   def initialize(instance)
     @instance = instance
     @xpath_submit_button = '//div[contains(@class,"SubmitButton-IconContainer")]'
+    @xpath_zip_input = '//*[@id="billingPostalCode"]'
     wait_to_load
   end
 
@@ -25,6 +26,7 @@ class StripePaymentPage
     @instance.webdriver.type_to_locator('//*[@id="cardExpiry"]', '1250', true, true)
     @instance.webdriver.type_to_locator('//*[@id="cardCvc"]', '111', true, true)
     @instance.webdriver.type_to_locator('//*[@id="billingName"]', 'Teamlab Ruby', true, true)
+    enter_zip
 
     @instance.webdriver.click_on_locator(@xpath_submit_button)
     wait_for_order_finish
@@ -41,5 +43,15 @@ class StripePaymentPage
   def total_amount_without_tax
     price_text = @instance.webdriver.get_text('//span[contains(@class,"ProductSummary-totalAmount")]/span')
     price_text.scan(/\d/).join.to_i / 100.0
+  end
+
+  private
+
+  # Enter zip number if Stripe asked for it
+  # @return [nil]
+  def enter_zip
+    return unless @instance.webdriver.element_visible?(@xpath_zip_input)
+
+    @instance.webdriver.type_to_locator(@xpath_zip_input, '12345', true, true)
   end
 end
