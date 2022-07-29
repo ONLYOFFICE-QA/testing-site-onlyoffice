@@ -18,6 +18,7 @@ describe 'Buy Product Notification' do
   end
 
   it '[Site][PricingWorkspace] Buy ONLYOFFICE Workspace and check notify /workspace-enterprise-prices.aspx' do
+    pending('For some reason Avangate stop sending emails. More at https://t.me/c/1440851975/8364')
     pricing_page = @site_home_page.click_link_on_toolbar(:pricing_server)
     avangate = pricing_page.go_to_avangate_from_pricing_page(pricing_page.buy_now_enterprise_plus_element, test_purchase: true)
     avangate.submit_order_for_notification(email: @mail.username)
@@ -46,6 +47,7 @@ describe 'Buy Product Notification' do
   end
 
   it '[Site][PricingDocsDeveloper] Buy Docs Developer Edition and check notify /developer-edition-prices.aspx' do
+    pending('For some reason Avangate stop sending emails. More at https://t.me/c/1440851975/8364')
     pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
     avangate = pricing_page.go_to_avangate_from_pricing_page(pricing_page.buy_now_single_server_element, test_purchase: true)
     avangate.submit_order_for_notification(email: @mail.username)
