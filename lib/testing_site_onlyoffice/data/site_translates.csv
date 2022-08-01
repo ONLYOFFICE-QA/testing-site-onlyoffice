@@ -1,8 +1,7 @@
 WebStudio,Neutral,subject_confirmation,Confirm your email
 WebStudio,de-DE,subject_confirmation,Bestätigen Sie Ihre E-Mail
 WebStudio,es-ES,subject_confirmation,Confirme su correo electrónico
-# This email has incorrect title right now
-WebStudio,fr-FR,subject_confirmation,Bienvenue dans ONLYOFFICE cloud!
+WebStudio,fr-FR,subject_confirmation,Merci de confirmer votre adresse e-mail
 WebStudio,it-IT,subject_confirmation,Conferma la tua email
 WebStudio,pt-BR,subject_confirmation,Confirme seu email
 WebStudio,ru-RU,subject_confirmation,"Пожалуйста, подтвердите свой адрес электронной почты"
