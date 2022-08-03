@@ -58,3 +58,4 @@ lib/testing_site_onlyoffice/data/private_data/data.yml
 
 # IDEA config files
 .idea/
+.rake_tasks~
