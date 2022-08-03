@@ -3,6 +3,10 @@
 module TestingApiOnlyfficeCom
   # Config of running tests
   class Config
+    # @return [String] Url of production site
+    PRODUCTION_URL = 'https://www.onlyoffice.com'
+    # @return [String] Url of staging site
+    STAGING_URL = 'https://teamlab.info'
     # @return [String] server url
     attr_reader :server
     # @return [Symbol] browser
@@ -19,13 +23,19 @@ module TestingApiOnlyfficeCom
       @browser = params.fetch(:browser, :chrome)
     end
 
+    # Convert current config to production site
+    def to_production
+      @server = PRODUCTION_URL
+      self
+    end
+
     private
 
     # @return [String] server on which test are performed
     def default_server
-      return 'https://www.onlyoffice.com' if ENV.fetch('SPEC_REGION', 'unknown').include?('com')
+      return PRODUCTION_URL if ENV.fetch('SPEC_REGION', 'unknown').include?('com')
 
-      'https://teamlab.info'
+      STAGING_URL
     end
 
     def default_language
