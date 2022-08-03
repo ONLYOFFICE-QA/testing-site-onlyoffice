@@ -17,6 +17,6 @@ describe 'Branch version' do
 
   it 'Branch version' do
     site_helper.open_sublink('revision')
-    expect(site_helper.page_body.include?('/release/' || '/hotfix/')).to be(true)
+    expect(site_helper.page_body).to match('/release/|/hotfix/')
   end
 end
