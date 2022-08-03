@@ -66,9 +66,7 @@ module TestingSiteOnlyoffice
           avangate_user_storage_visible? ||
           avangate_main_continue_button_visible?
       end
-      if close_upsell
-        avangate_upsell_close_element.click if avangate_upsell_frame_visible?
-      end
+      avangate_upsell_close_element.click if close_upsell && avangate_upsell_frame_visible?
       select_avangate_usd_price if select_usd
     end
 
