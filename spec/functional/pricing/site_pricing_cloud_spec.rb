@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-partner_email = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL)
+partner_email = OnlyofficeIredmailHelper::IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL)
 
 describe 'Pricing Cloud Service' do
   test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))

@@ -6,9 +6,9 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 
 site_helper = TestingSiteOnlyoffice::SiteHelper.new
 
-mail_site = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_FOR_SITE)
-partner_email = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL)
-client_email = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::CLIENT_EMAIL)
+mail_site = OnlyofficeIredmailHelper::IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_FOR_SITE)
+partner_email = OnlyofficeIredmailHelper::IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL)
+client_email = OnlyofficeIredmailHelper::IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::CLIENT_EMAIL)
 
 describe 'Registration new portal' do
   before do

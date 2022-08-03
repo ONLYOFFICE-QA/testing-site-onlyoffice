@@ -5,7 +5,7 @@ require 'timeout'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-mail = IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_ADMIN)
+mail = OnlyofficeIredmailHelper::IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::EMAIL_ADMIN)
 
 checker = { mail:, module: 'WebStudio', move_out: true }
 
