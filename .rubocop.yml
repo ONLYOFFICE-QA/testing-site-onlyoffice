@@ -29,3 +29,10 @@ Bundler/GemFilename:
 # and checking of one class can be split into different specs
 RSpec/DescribeClass:
   Enabled: false
+
+# By design some test require multiple expectations
+# I think we can theoretically resolve all those cases
+# But it will require a lot of time and not sure about real profits
+# So I'll leave this check disabled until better times
+RSpec/MultipleExpectations:
+  Enabled: false
