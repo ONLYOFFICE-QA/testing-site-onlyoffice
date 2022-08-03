@@ -49,15 +49,19 @@ describe 'Help center footer links' do
     expect(@site_home_page).to be_xpath_success_response(@site_home_page.webinar_news_element.selector[:xpath])
   end
 
-  TestingSiteOnlyoffice::MainPageLinksData.get_onlyoffice_main_page.each do |title, xpath|
-    it "[Site][HomePage] `#{title}` works" do
-      expect(@site_home_page).to be_xpath_success_response(xpath)
+  describe 'Get ONLYOFFICE Links' do
+    TestingSiteOnlyoffice::MainPageLinksData.get_onlyoffice_main_page.each do |title, xpath|
+      it "[Site][HomePage] `#{title}` works" do
+        expect(@site_home_page).to be_xpath_success_response(xpath)
+      end
     end
   end
 
-  TestingSiteOnlyoffice::MainPageLinksData.customers_main_page.each do |title, xpath|
-    it "[Site][HomePage] `#{title}` link of `Trusted by more than 7 000 000 users worldwide` works" do
-      expect(@site_home_page).to be_xpath_success_response(xpath)
+  describe 'Customers Links' do
+    TestingSiteOnlyoffice::MainPageLinksData.customers_main_page.each do |title, xpath|
+      it "[Site][HomePage] `#{title}` link of `Trusted by more than 7 000 000 users worldwide` works" do
+        expect(@site_home_page).to be_xpath_success_response(xpath)
+      end
     end
   end
 end
