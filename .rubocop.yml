@@ -30,6 +30,13 @@ Bundler/GemFilename:
 RSpec/DescribeClass:
   Enabled: false
 
+# We use instance variable in some test to allow better readability
+# And allow usage of some code and speedup of length operation
+# I'm not sure if this even possible to remove such variables without
+# sacrificing some of the factors
+RSpec/InstanceVariable:
+  Enabled: false
+
 # By design some test require multiple expectations
 # I think we can theoretically resolve all those cases
 # But it will require a lot of time and not sure about real profits
