@@ -5,7 +5,7 @@ module TestingSiteOnlyoffice
   module SiteDownloadHelper
     def file_downloaded?(file_name)
       path_to_downloaded_file = "#{@instance.webdriver.download_directory}/#{file_name}"
-      FileHelper.wait_file_to_download(path_to_downloaded_file)
+      OnlyofficeFileHelper::FileHelper.wait_file_to_download(path_to_downloaded_file)
       downloaded_file_size = File.size(path_to_downloaded_file)
       downloaded_file_size > if File.extname(file_name) == '.txt'
                                4
