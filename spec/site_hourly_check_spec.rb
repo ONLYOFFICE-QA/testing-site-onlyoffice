@@ -9,7 +9,6 @@ describe 'SiteHourlyCheck' do
   after do |example|
     test_manager&.add_result(example, @test)
     @test&.webdriver&.quit
-    WebDriver.clean_up
 
     if TestingSiteOnlyoffice::TeamlabFailNotifier.should_be_notified?(example)
       fail = example.exception

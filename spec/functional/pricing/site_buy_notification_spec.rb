@@ -7,8 +7,8 @@ describe 'Buy Product Notification' do
 
   before do
     @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @mail = IredMailHelper.new(username: 'avangate-buy-product@qamail.teamlab.info',
-                               password: @test.private_data['mail_avangate-buy-product_pass'])
+    @mail = OnlyofficeIredmailHelper::IredMailHelper.new(username: 'avangate-buy-product@qamail.teamlab.info',
+                                                         password: @test.private_data['mail_avangate-buy-product_pass'])
     @mail.delete_all_messages
   end
 

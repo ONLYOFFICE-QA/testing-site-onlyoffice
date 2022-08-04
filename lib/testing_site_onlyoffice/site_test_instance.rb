@@ -17,12 +17,6 @@ require 'onlyoffice_webdriver_wrapper'
 require 'onlyoffice_tcm_helper'
 require 'palladium'
 
-include OnlyofficeDocumentserverTestingFramework
-include OnlyofficeFileHelper
-include OnlyofficeIredmailHelper
-include OnlyofficeTestrailWrapper
-include OnlyofficeWebdriverWrapper
-
 module TestingSiteOnlyoffice
   # Instance of browser to perform actions
   class SiteTestInstance
@@ -33,14 +27,14 @@ module TestingSiteOnlyoffice
     alias selenium webdriver
 
     def initialize(config)
-      @webdriver = WebDriver.new(config.browser, record_video: false)
+      @webdriver = OnlyofficeWebdriverWrapper::WebDriver.new(config.browser, record_video: false)
       @config = config
       url = config.server.end_with?('teamlab.info') ? "#{config.server}?Site_Testing=4testing" : config.server
       @webdriver.open(url)
     end
 
     def init_online_documents
-      @doc_instance = TestInstanceDocs.new(webdriver: @webdriver)
+      @doc_instance = OnlyofficeDocumentserverTestingFramework::TestInstanceDocs.new(webdriver: @webdriver)
       raise 'Cannot init online documents, because browser was not initialized' if @webdriver.driver.nil?
 
       @doc_instance.selenium = @webdriver

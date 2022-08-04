@@ -5,8 +5,8 @@ module TestingSiteOnlyoffice
   module HourlyForgotPasswordHelper
     # @return [IredMailHelper] mail to send forgotten password
     def mail_for_forgotten_password
-      @mail_for_forgotten_password ||= IredMailHelper.new(username: 'portal-forgot-password@qamail.teamlab.info',
-                                                          password: @instance.private_data['mail_portal-forgot-password_pass'])
+      @mail_for_forgotten_password ||= OnlyofficeIredmailHelper::IredMailHelper.new(username: 'portal-forgot-password@qamail.teamlab.info',
+                                                                                    password: @instance.private_data['mail_portal-forgot-password_pass'])
     end
 
     def portal_for_hourly_forgotten_password
