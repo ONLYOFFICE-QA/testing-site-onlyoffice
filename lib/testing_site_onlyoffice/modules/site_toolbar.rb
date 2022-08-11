@@ -65,7 +65,6 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice, xpath: '//a[@id="navitem_download"]')
     link(:site_get_onlyoffice_sign_in, xpath: '//a[@id="navitem_download_signin"]')
     link(:site_get_onlyoffice_sign_up, xpath: '//a[@id="navitem_download_signup"]')
-    link(:site_get_onlyoffice_docs_registration, xpath: '//a[@id="navitem_download_signup_docs"]')
     link(:site_get_onlyoffice_docs_download, xpath: '//a[@id="navitem_download_onpremises_docs"] | //a[@id="navitem_download_onpremises_docs_ee"]')
     link(:site_get_onlyoffice_install_onpremises, xpath: '//a[@id="navitem_download_onpremises"]')
     link(:site_get_onlyoffice_desktop_mobile, xpath: '//a[@id="navitem_download_desktop"]')
@@ -296,10 +295,6 @@ module TestingSiteOnlyoffice
           element: site_get_onlyoffice_install_onpremises_element,
           class: SiteWorkspaceEnterprise
         },
-        onlyoffice_docs_registration: {
-          element: site_get_onlyoffice_docs_registration_element,
-          class: DocsRegistrationPage
-        },
         onlyoffice_docs_download: {
           element: site_get_onlyoffice_docs_download_element,
           class: SiteDocsEnterprise
@@ -422,12 +417,23 @@ module TestingSiteOnlyoffice
     end
 
     def click_link_on_toolbar(section)
+      return handle_docs_registration if section == :onlyoffice_docs_registration
+
       move_to_element_link_toolbar(section)
       link = all_toolbar_links_and_classes_hash[section][:element]
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(link) }
       link.click
       @instance.webdriver.switch_to_popup if %i[about_gift_shop about_help_center products_personal].include?(section)
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
+    end
+
+    private
+
+    # Since site v1.95.0 of site there is no direct link to docs registration on main page
+    # @return [Void]
+    def handle_docs_registration
+      @instance.webdriver.open("#{@instance.config.server}/docs-registration.aspx")
+      DocsRegistrationPage.new(@instance)
     end
   end
 end
