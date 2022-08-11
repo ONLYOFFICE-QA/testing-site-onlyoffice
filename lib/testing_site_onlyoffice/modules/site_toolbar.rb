@@ -430,7 +430,7 @@ module TestingSiteOnlyoffice
     private
 
     # Since site v1.95.0 of site there is no direct link to docs registration on main page
-    # @return [Void]
+    # @return [DocsRegistrationPage]
     def handle_docs_registration
       @instance.webdriver.open("#{@instance.config.server}/docs-registration.aspx")
       DocsRegistrationPage.new(@instance)
