@@ -10,10 +10,10 @@ module TestingSiteOnlyoffice
       buy_element.click
       wait_pricing_on_production
       if test_purchase
-        return StripePaymentPage.new(@instance) if @instance.webdriver.get_url.include?('stripe.com')
+        return StripePaymentPage.new(@instance) if @instance.webdriver.current_url.include?('stripe.com')
 
         Avangate.new(@instance)
-        @instance.webdriver.open("#{@instance.webdriver.get_url}&DOTEST=1")
+        @instance.webdriver.open("#{@instance.webdriver.current_url}&DOTEST=1")
       end
       Avangate.new(@instance)
     end

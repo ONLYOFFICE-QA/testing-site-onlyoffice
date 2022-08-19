@@ -33,13 +33,13 @@ module TestingSiteOnlyoffice
     def check_google_play_link
       google_play_button_element.click
       @instance.webdriver.switch_to_popup
-      @instance.webdriver.get_url.include?('play.google.com')
+      @instance.webdriver.current_url.include?('play.google.com')
     end
 
     def check_app_store_link
       app_store_button_element.click
       @instance.webdriver.switch_to_popup
-      @instance.webdriver.get_url.include?('apps.apple.com')
+      @instance.webdriver.current_url.include?('apps.apple.com')
     end
 
     def go_to_desktop_apps(apps)

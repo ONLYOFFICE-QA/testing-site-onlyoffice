@@ -35,7 +35,7 @@ class StripePaymentPage
   # After order is finished - there is redirect to site main page
   def wait_for_order_finish
     @instance.webdriver.wait_until do
-      @instance.webdriver.get_url.include?('onlyoffice.com')
+      @instance.webdriver.current_url.include?('onlyoffice.com')
     end
   end
 

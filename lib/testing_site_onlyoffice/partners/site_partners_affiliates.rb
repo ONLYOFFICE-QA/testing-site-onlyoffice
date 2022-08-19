@@ -27,7 +27,7 @@ module TestingSiteOnlyoffice
     def transition_to_affiliates?
       become_an_affiliates_element.click
       @instance.webdriver.switch_to_popup
-      url = @instance.webdriver.get_url
+      url = @instance.webdriver.current_url
       url.include?('avangatenetwork.com')
     end
 
@@ -35,7 +35,7 @@ module TestingSiteOnlyoffice
       attribute = @instance.webdriver.get_attribute(register_an_affiliates_element, 'href')
       register_an_affiliates_element.click
       @instance.webdriver.switch_to_popup
-      url = @instance.webdriver.get_url
+      url = @instance.webdriver.current_url
       attribute == url
     end
 
@@ -43,7 +43,7 @@ module TestingSiteOnlyoffice
       attribute = @instance.webdriver.get_attribute(sign_in_an_affiliates_element, 'href')
       sign_in_an_affiliates_element.click
       @instance.webdriver.switch_to_popup
-      current_url = URI(@instance.webdriver.get_url)
+      current_url = URI(@instance.webdriver.current_url)
       current_url.fragment = current_url.query = nil
       parse_url = current_url.to_s
       attribute.include?(parse_url)
@@ -62,7 +62,7 @@ module TestingSiteOnlyoffice
     def check_affiliate_policy?
       affiliate_policy_element.click
       OnlyofficeLoggerHelper.sleep_and_log('Waiting for download page', 2)
-      url = @instance.webdriver.get_url
+      url = @instance.webdriver.current_url
       url.include?('www.avangatenetwork.com/legal/terms/')
     end
 

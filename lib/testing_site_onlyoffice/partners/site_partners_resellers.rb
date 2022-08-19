@@ -41,7 +41,7 @@ module TestingSiteOnlyoffice
     def check_translations?
       translations_element.click
       @instance.webdriver.switch_to_popup
-      current_url = URI(@instance.webdriver.get_url)
+      current_url = URI(@instance.webdriver.current_url)
       current_url.fragment = current_url.query = nil
       parse_url = current_url.to_s
       parse_url.include?('https://helpcenter.onlyoffice.com/')
