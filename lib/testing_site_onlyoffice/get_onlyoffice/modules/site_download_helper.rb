@@ -60,7 +60,7 @@ module TestingSiteOnlyoffice
 
     def check_opened_page_title
       @instance.webdriver.choose_tab(2)
-      @instance.webdriver.get_title_of_current_tab
+      @instance.webdriver.title_of_current_tab
     end
   end
 end

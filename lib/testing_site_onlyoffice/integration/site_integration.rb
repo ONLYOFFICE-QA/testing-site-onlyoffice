@@ -40,7 +40,7 @@ module TestingSiteOnlyoffice
     end
 
     def parse_url
-      current_url = URI(@instance.webdriver.get_url)
+      current_url = URI(@instance.webdriver.current_url)
       current_url.fragment = current_url.query = nil
       current_url.to_s
     end
