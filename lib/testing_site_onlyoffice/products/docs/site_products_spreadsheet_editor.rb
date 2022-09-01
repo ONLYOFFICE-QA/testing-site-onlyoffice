@@ -10,7 +10,7 @@ module TestingSiteOnlyoffice
     include SiteEditorsXpath
     include SiteToolbar
 
-    div(:spreadsheet_image, xpath: "//div[@class='ddb_examples_editors']")
+    link(:formulas_link, xpath: "//article//a[contains(@href, 'spreadsheet-editor/formulas-and-functions')]")
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -19,7 +19,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(run_on_your_own_server_element) && @instance.webdriver.element_present?(spreadsheet_image_element) }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(run_on_your_own_server_element) && @instance.webdriver.element_present?(formulas_link_element) }
     end
   end
 end

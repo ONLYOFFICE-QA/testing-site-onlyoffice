@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteToolbar
 
-    div(:form_creator, xpath: "//div[@class='ddb_examples_editors']")
+    link(:open_library, xpath: "//article//a[contains(@href, 'oforms.onlyoffice.com')]")
     link(:run_on_your_own_server, xpath: "//a[@class='button red']")
 
     def initialize(instance)
@@ -17,7 +17,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(run_on_your_own_server_element) && @instance.webdriver.element_present?(form_creator_element) }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(run_on_your_own_server_element) && @instance.webdriver.element_present?(open_library_element) }
     end
   end
 end

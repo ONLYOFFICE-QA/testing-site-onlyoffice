@@ -10,7 +10,7 @@ module TestingSiteOnlyoffice
     include SiteEditorsXpath
     include SiteToolbar
 
-    div(:presentation_image, xpath: "//div[@class='ddb_examples_editors']")
+    link(:transition_effects_link, xpath: "//article//a[contains(@href, 'presentation-editor/transition-effects')]")
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -19,7 +19,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(run_on_your_own_server_element) && @instance.webdriver.element_present?(presentation_image_element) }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(run_on_your_own_server_element) && @instance.webdriver.element_present?(transition_effects_link_element) }
     end
   end
 end

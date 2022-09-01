@@ -23,6 +23,11 @@ module TestingSiteOnlyoffice
       "//div[@class='cib_container'][#{number}]//a[@class='cib_link']"
     end
 
+    def open_github
+      @instance.webdriver.click_on_locator('//article//a[contains(@href, "github.com")]')
+      @instance.webdriver.choose_tab(2)
+    end
+
     def click_read_api_documentation(number)
       @instance.webdriver.driver.find_element(:xpath, xpath_read_api_documentation(number)).click
       @instance.webdriver.choose_tab(2)
