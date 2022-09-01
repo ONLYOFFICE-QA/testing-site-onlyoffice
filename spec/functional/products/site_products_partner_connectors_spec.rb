@@ -31,7 +31,6 @@ describe 'Site products connectors' do
       end
 
       it "[Site][Products][PartnerConnectors][#{connector}] Developer website link works /all-connectors.aspx" do
-        pending('maarch site has expired certificate') if connector == :maarch
         products_connectors_partners_page.click_constructor_link(current_connector.developer_website_xpath)
         developer_website_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_partners_info[connector.to_s]['website']
         expect(products_connectors_partners_page.check_opened_page_title).to eq(developer_website_title)

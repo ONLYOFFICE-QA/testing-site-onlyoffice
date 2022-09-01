@@ -16,7 +16,7 @@ describe 'About contribute' do
   end
 
   it '[About contribute] Go to documentation Github' do
-    @about_contribute_page.click_read_api_documentation(4)
+    @about_contribute_page.open_github
     expect(@about_contribute_page.check_title_documentation_github).to be true
   end
 

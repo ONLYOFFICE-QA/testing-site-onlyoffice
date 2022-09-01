@@ -91,6 +91,7 @@ module TestingSiteOnlyoffice
       {
         onlyoffice_docs_for_nextcloud: 'onlyoffice_docs_for_nextcloud.pdf',
         onlyoffice_docs_for_owncloud: 'onlyoffice_docs_for_owncloud.pdf',
+        document_collaboration_in_education: 'onlyoffice_docs_datasheet_education.pdf',
         onlyoffice_docs: 'onlyoffice_docs.pdf',
         onlyoffice_workspace: 'onlyoffice_workspace.pdf',
         onlyoffice_private_room: 'onlyoffice_workspace_private_rooms.pdf',
