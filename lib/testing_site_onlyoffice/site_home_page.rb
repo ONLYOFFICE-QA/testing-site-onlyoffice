@@ -196,6 +196,5 @@ module TestingSiteOnlyoffice
       open_sublink('convert.aspx')
       ConvertSite.new(@instance)
     end
-
   end
 end
