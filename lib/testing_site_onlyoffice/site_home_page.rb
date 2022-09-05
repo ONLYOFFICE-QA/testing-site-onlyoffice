@@ -182,5 +182,20 @@ module TestingSiteOnlyoffice
       sign_in = click_link_on_toolbar(:sign_in)
       sign_in.send_forgot_password(email)
     end
+
+    def open_sublink(link)
+      @instance.webdriver.open("#{config.server}/#{link}")
+      @instance.webdriver.wait_until { @instance.webdriver.driver.current_url.include? "/#{link}" }
+    end
+
+    def page_body
+      @test.webdriver.get_text('//body')
+    end
+
+    def open_convert_page
+      open_sublink('convert.aspx')
+      ConvertSite.new(@instance)
+    end
+
   end
 end

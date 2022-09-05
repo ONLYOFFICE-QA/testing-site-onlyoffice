@@ -3,7 +3,6 @@
 require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
-site_helper = TestingSiteOnlyoffice::SiteHelper.new
 
 describe 'Branch version' do
   before do
@@ -16,7 +15,7 @@ describe 'Branch version' do
   end
 
   it 'Branch version' do
-    site_helper.open_sublink('revision')
-    expect(site_helper.page_body).to match('/release/|/hotfix/')
+    @site_home_page.open_sublink('revision')
+    expect(@site_home_page.page_body).to match('/release/|/hotfix/')
   end
 end
