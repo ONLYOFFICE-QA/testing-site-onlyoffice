@@ -35,16 +35,6 @@ module TestingSiteOnlyoffice
       SiteWrongPortal.new(@test)
     end
 
-    def open_sublink(link)
-      @test = SiteTestInstance.new(config)
-      @test.webdriver.open("#{config.server}/#{link}")
-      @test.webdriver.wait_until { @test.webdriver.driver.current_url.include? "/#{link}" }
-    end
-
-    def page_body
-      @test.webdriver.get_text('//body')
-    end
-
     def registration_confirmation(confirmation_link, portal_data)
       @test = SiteTestInstance.new(config)
       @test.webdriver.open(confirmation_link)
