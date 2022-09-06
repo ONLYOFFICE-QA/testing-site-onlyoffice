@@ -4,7 +4,6 @@ require_relative 'site_helper'
 require_relative '../../lib/testing_site_onlyoffice/data/formats'
 
 module TestingSiteOnlyoffice
-
   # Handles operations with convert page
   # /convert.aspx
   # https://user-images.githubusercontent.com/38238032/188140519-e3b46efa-34a9-4aad-9802-3eb6ff32c68a.png
