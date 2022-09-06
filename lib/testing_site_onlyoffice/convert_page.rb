@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'site_helper'
+require_relative '../../lib/testing_site_onlyoffice/data/formats'
 
 module TestingSiteOnlyoffice
 
@@ -13,6 +14,7 @@ module TestingSiteOnlyoffice
     file_field(:uploader, xpath: '//*[@id="fileInput"]')
 
     def initialize(instance)
+      super(instance.webdriver.driver)
       @instance = instance
       @file_input_field_xpath = '//*[@id="fileInput"]'
       @convert_error_message_xpath = "//p[contains(text(), 'The file format is not supported.')]"
@@ -29,8 +31,30 @@ module TestingSiteOnlyoffice
       @instance.webdriver.element_present?(@file_input_field_xpath)
     end
 
+    # Put the file path to the input field
+    # @param [String] file_path path of the file to be uploaded
     def upload_file(file_path)
       self.uploader = file_path
+    end
+
+    # Click on the available for conversion formats button
+    def convert_formats_button_click
+      formats_button_xpath = "//div[contains(@class, 'output_select_btn')]"
+      @instance.webdriver.click_on_locator(formats_button_xpath)
+    end
+
+    # Get all available for conversion formats from the page
+    # @return [Array<String>] array of formats
+    def file_formats_list
+      formats_xpath = "//div[contains(@class, 'output_items')]/div"
+      @instance.webdriver.get_text_of_several_elements(formats_xpath)
+    end
+
+    # Check whether popup with error message appeared or not
+    # @return [Boolean] True if appeared and False if not
+    def error_popup_appeared?
+      error_popup_xpath = "//div[contains(@class, 'error_popup')]/p[text() = 'The file format is not supported.']"
+      @instance.webdriver.element_visible?(error_popup_xpath)
     end
   end
 end
