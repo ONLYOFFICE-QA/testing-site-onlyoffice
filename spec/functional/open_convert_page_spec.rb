@@ -20,25 +20,25 @@ describe 'Convert page' do
   end
 
   it 'Upload .docx file' do
-    @convert_page.upload_file(SiteTestData::DOC_PATH)
+    @convert_page.upload_file(SiteTestData.docx_path)
     @convert_page.convert_formats_button_click
     expect(@convert_page.file_formats_list).to eq(SiteTestData::DOC_FORMATS)
   end
 
   it 'Upload .xlsx file' do
-    @convert_page.upload_file(SiteTestData::SPREADSHEET_PATH)
+    @convert_page.upload_file(SiteTestData.spreadsheet_path)
     @convert_page.convert_formats_button_click
     expect(@convert_page.file_formats_list).to eq(SiteTestData::SPREADSHEET_FORMATS)
   end
 
   it 'Upload .pptx file' do
-    @convert_page.upload_file(SiteTestData::PRESENTATION_PATH)
+    @convert_page.upload_file(SiteTestData.presentation_path)
     @convert_page.convert_formats_button_click
     expect(@convert_page.file_formats_list).to eq(SiteTestData::PRESENTATION_FORMATS)
   end
 
   it 'Upload incorrect file format' do
-    @convert_page.upload_file(SiteTestData::LOG_PATH)
+    @convert_page.upload_file(SiteTestData.log_path)
     expect(@convert_page).to be_error_popup_appeared
   end
 end
