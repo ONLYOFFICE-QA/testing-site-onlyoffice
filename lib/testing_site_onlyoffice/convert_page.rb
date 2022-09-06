@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative 'site_helper'
-require_relative '../../lib/testing_site_onlyoffice/data/site_test_data'
 
 module TestingSiteOnlyoffice
   # Handles operations with convert page
@@ -11,6 +10,10 @@ module TestingSiteOnlyoffice
     include PageObject
 
     file_field(:uploader, xpath: '//*[@id="fileInput"]')
+
+    DOC_FORMATS = %w[docm docxf dotm dotx epub fb2 html odt ott pdf pdfa rtf txt].freeze
+    SPREADSHEET_FORMATS = %w[csv ods ots pdf pdfa xlsm xltm xltx].freeze
+    PRESENTATION_FORMATS = %w[odp otp pdf pdfa potm potx pptm].freeze
 
     def initialize(instance)
       super(instance.webdriver.driver)

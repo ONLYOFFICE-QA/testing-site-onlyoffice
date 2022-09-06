@@ -117,6 +117,7 @@ require_relative 'site_helper'
 require_relative 'site_version_helper'
 require_relative 'site_wrong_portal'
 require_relative 'site_notification_helper'
+require_relative 'convert_page'
 
 module TestingSiteOnlyoffice
   # Site home page
