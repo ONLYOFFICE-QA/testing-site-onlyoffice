@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'site_helper'
-require_relative '../../lib/testing_site_onlyoffice/data/formats'
+require_relative '../../lib/testing_site_onlyoffice/data/site_test_data'
 
 module TestingSiteOnlyoffice
   # Handles operations with convert page
