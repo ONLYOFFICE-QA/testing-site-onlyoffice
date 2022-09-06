@@ -4,7 +4,7 @@ require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 main_path = "#{Dir.home}/RubymineProjects/testing-site-onlyoffice/lib/testing_site_onlyoffice/data/"
-doc_file_path = "#{main_path}testing_upload_document.docx"
+doc_file_path = "#{main_path}document_upload_testing.docx"
 spreadsheet_file_path = "#{main_path}testing_upload_spreadsheet.xls"
 presentation_file_path = "#{main_path}testing_upload_presentation.pptx"
 log_file_path = "#{main_path}testing_upload_log.log"
