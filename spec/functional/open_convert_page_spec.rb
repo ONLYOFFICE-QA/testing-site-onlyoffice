@@ -20,25 +20,25 @@ describe 'Convert page' do
   end
 
   it 'Upload .docx file' do
-    @convert_page.upload_file(SiteTestData.docx_path)
+    @convert_page.upload_file(TestingSiteOnlyoffice::TestData.docx_path)
     @convert_page.convert_formats_button_click
-    expect(@convert_page.file_formats_list).to eq(ConvertPage::DOC_FORMATS)
+    expect(@convert_page.file_formats_list).to eq(TestingSiteOnlyoffice::ConvertPage::DOC_FORMATS)
   end
 
   it 'Upload .xlsx file' do
-    @convert_page.upload_file(SiteTestData.spreadsheet_path)
+    @convert_page.upload_file(TestingSiteOnlyoffice::TestData.spreadsheet_path)
     @convert_page.convert_formats_button_click
-    expect(@convert_page.file_formats_list).to eq(ConvertPage::SPREADSHEET_FORMATS)
+    expect(@convert_page.file_formats_list).to eq(TestingSiteOnlyoffice::ConvertPage::SPREADSHEET_FORMATS)
   end
 
   it 'Upload .pptx file' do
-    @convert_page.upload_file(SiteTestData.presentation_path)
+    @convert_page.upload_file(TestingSiteOnlyoffice::TestData.presentation_path)
     @convert_page.convert_formats_button_click
-    expect(@convert_page.file_formats_list).to eq(ConvertPage::PRESENTATION_FORMATS)
+    expect(@convert_page.file_formats_list).to eq(TestingSiteOnlyoffice::ConvertPage::PRESENTATION_FORMATS)
   end
 
   it 'Upload incorrect file format' do
-    @convert_page.upload_file(SiteTestData.log_path)
+    @convert_page.upload_file(TestingSiteOnlyoffice::TestData.log_path)
     expect(@convert_page).to be_error_popup_appeared
   end
 end
