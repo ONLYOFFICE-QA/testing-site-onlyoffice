@@ -7,6 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Convert page' do
   before do
     @site_main_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
+    @convert_page = @site_main_page.open_convert_page
   end
 
   after do |example|
@@ -15,7 +16,29 @@ describe 'Convert page' do
   end
 
   it 'Open convert page' do
-    convert_page = @site_main_page.open_convert_page
-    expect(convert_page).to be_file_input_present
+    expect(@convert_page).to be_file_input_present
+  end
+
+  it 'Upload .docx file' do
+    @convert_page.upload_file(TestingSiteOnlyoffice::TestData.docx_path)
+    @convert_page.convert_formats_button_click
+    expect(@convert_page.file_formats_list).to eq(TestingSiteOnlyoffice::ConvertPage::DOC_FORMATS)
+  end
+
+  it 'Upload .xlsx file' do
+    @convert_page.upload_file(TestingSiteOnlyoffice::TestData.spreadsheet_path)
+    @convert_page.convert_formats_button_click
+    expect(@convert_page.file_formats_list).to eq(TestingSiteOnlyoffice::ConvertPage::SPREADSHEET_FORMATS)
+  end
+
+  it 'Upload .pptx file' do
+    @convert_page.upload_file(TestingSiteOnlyoffice::TestData.presentation_path)
+    @convert_page.convert_formats_button_click
+    expect(@convert_page.file_formats_list).to eq(TestingSiteOnlyoffice::ConvertPage::PRESENTATION_FORMATS)
+  end
+
+  it 'Upload incorrect file format' do
+    @convert_page.upload_file(TestingSiteOnlyoffice::TestData.log_path)
+    expect(@convert_page).to be_error_popup_appeared
   end
 end
