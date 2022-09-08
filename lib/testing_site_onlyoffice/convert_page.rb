@@ -20,6 +20,9 @@ module TestingSiteOnlyoffice
       @instance = instance
       @file_input_field_xpath = '//*[@id="fileInput"]'
       @convert_error_message_xpath = "//p[contains(text(), 'The file format is not supported.')]"
+      @formats_button_xpath = "//div[contains(@class, 'output_select_btn')]"
+      @convert_button_xpath = "//a[@id = 'convertNow']"
+      @download_button_xpath = "//a[@id = 'downloadBtn']"
       wait_to_load
     end
 
@@ -41,8 +44,7 @@ module TestingSiteOnlyoffice
 
     # Click on the available for conversion formats button
     def convert_formats_button_click
-      formats_button_xpath = "//div[contains(@class, 'output_select_btn')]"
-      @instance.webdriver.click_on_locator(formats_button_xpath)
+      @instance.webdriver.click_on_locator(@formats_button_xpath)
     end
 
     # Get all available for conversion formats from the page
@@ -57,6 +59,54 @@ module TestingSiteOnlyoffice
     def error_popup_appeared?
       error_popup_xpath = "//div[contains(@class, 'error_popup')]/p[text() = 'The file format is not supported.']"
       @instance.webdriver.element_visible?(error_popup_xpath)
+    end
+
+    # Get text of the format button
+    # @return [String] format that is selected
+    def selected_format
+      @instance.webdriver.get_text(@formats_button_xpath)
+    end
+
+    # Click on 'Convert' button
+    def convert_button_click
+      @instance.webdriver.click_on_locator(@convert_button_xpath)
+    end
+
+    # Get the name of the converted file without extension
+    # @return [String] basename of the converted file
+    def converted_file_name
+      converted_file_name_xpath = "//p[@id = 'outputFileName']"
+      name_with_dot = @instance.webdriver.get_text(converted_file_name_xpath)
+      File.basename(name_with_dot, '.*')
+    end
+
+    # Get the basename of the file from the file path
+    # @return [String] basename of the file without extension
+    def get_file_name(file_path)
+      OnlyofficeFileHelper::FileHelper.filename_from_path(file_path, keep_extension: false)
+    end
+
+    # Check whether converted file is empty or not
+    # @param [String] file_path file path to the file
+    # @return [Boolean] True if converted file is not empty and False otherwise
+    def file_downloaded?(file_path)
+      file_name = get_file_name(file_path)
+      path_to_downloaded_file = "#{@instance.webdriver.download_directory}/#{file_name}.pdf"
+      OnlyofficeFileHelper::FileHelper.wait_file_to_download(path_to_downloaded_file)
+      downloaded_file_size = File.size(path_to_downloaded_file)
+      downloaded_file_size >= 100
+    end
+
+    # Click on the 'Download' button
+    def download_button_click
+      @instance.webdriver.wait_until { download_button_visible? }
+      @instance.webdriver.click_on_locator(@download_button_xpath)
+    end
+
+    # Check whether 'Download' button is visible on the page or not
+    # @return [Boolean] True if visible and False otherwise
+    def download_button_visible?
+      @instance.webdriver.element_visible?(@download_button_xpath)
     end
   end
 end
