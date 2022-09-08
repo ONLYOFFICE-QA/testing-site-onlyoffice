@@ -97,11 +97,14 @@ module TestingSiteOnlyoffice
       downloaded_file_size >= 100
     end
 
+    # Click on the 'Download' button
     def download_button_click
-      @instance.webdriver.wait_until {download_button_visible?}
+      @instance.webdriver.wait_until { download_button_visible? }
       @instance.webdriver.click_on_locator(@download_button_xpath)
     end
 
+    # Check whether 'Download' button is visible on the page or not
+    # @return [Boolean] True if visible and False otherwise
     def download_button_visible?
       @instance.webdriver.element_visible?(@download_button_xpath)
     end
