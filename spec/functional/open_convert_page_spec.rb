@@ -48,15 +48,15 @@ describe 'Convert page' do
   end
 
   it 'converted file name is the same as original file name' do
+    pending('Not possible to check due to captcha. Waiting for developer workaround')
     @convert_page.upload_file(TestingSiteOnlyoffice::TestData.docx_path)
-    sleep 10
     @convert_page.convert_button_click
     expect(@convert_page.converted_file_name).to eq(@convert_page.get_file_name(TestingSiteOnlyoffice::TestData.docx_path))
   end
 
   it 'converted file is not empty' do
+    pending('Not possible to check due to captcha. Waiting for developer workaround')
     @convert_page.upload_file(TestingSiteOnlyoffice::TestData.docx_path)
-    sleep 10
     @convert_page.convert_button_click
     @convert_page.download_button_click
     expect(@convert_page).to be_file_downloaded(TestingSiteOnlyoffice::TestData.docx_path)
