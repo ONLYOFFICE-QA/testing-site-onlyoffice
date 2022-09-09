@@ -50,10 +50,6 @@ describe 'Enterprise Edition' do
     expect(@enterprise_edition.check_button_self_hosted?).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
   end
 
-  it '[Enterprise Edition] Go to all_connectors?' do
-    expect(@enterprise_edition.check_button_all_connectors?).to be_a TestingSiteOnlyoffice::SiteProductsConnectorsOnlyoffice
-  end
-
   it '[Enterprise Edition] Go to amazon' do
     expect(@enterprise_edition.check_link_business_platform?(:amazon)).to be true
   end
