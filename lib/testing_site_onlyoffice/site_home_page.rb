@@ -190,7 +190,7 @@ module TestingSiteOnlyoffice
     end
 
     def page_body
-      @test.webdriver.get_text('//body')
+      @instance.webdriver.get_text('//body')
     end
 
     # TODO: Replace this method as soon as link for this page will be added in main page menu
