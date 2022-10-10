@@ -78,26 +78,6 @@ describe 'SiteHourlyCheck' do
         page = @site_home_page.click_link_on_toolbar(:products_workspace)
         expect(page).to be_a TestingSiteOnlyoffice::SiteProductsWorkspace
       end
-
-      it '[Site] Check Products workspace documents' do
-        page = @site_home_page.click_link_on_toolbar(:products_workspace_documents)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocumentManager
-      end
-
-      it '[Site] Check Products workspace mail' do
-        page = @site_home_page.click_link_on_toolbar(:products_workspace_mail)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsMail
-      end
-
-      it '[Site] Check Products workspace crm' do
-        page = @site_home_page.click_link_on_toolbar(:products_workspace_crm)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCRM
-      end
-
-      it '[Site] Check Products workspace projects' do
-        page = @site_home_page.click_link_on_toolbar(:products_workspace_projects)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsProjects
-      end
     end
 
     it '[Site] Check cloud' do

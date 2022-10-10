@@ -25,10 +25,6 @@ module TestingSiteOnlyoffice
     link(:site_products_for_ios, xpath: '//a[@id="navitem_features_clients_mobile_ios"]')
     link(:site_products_for_android, xpath: '//a[@id="navitem_features_clients_mobile_android"]')
     link(:site_products_workspace, xpath: '//a[@id="navitem_features_workspace"]')
-    link(:site_products_workspace_documents, xpath: '//a[@id="navitem_features_documents"]')
-    link(:site_products_workspace_mail, xpath: '//a[@id="navitem_features_mail"]')
-    link(:site_products_workspace_crm, xpath: '//a[@id="navitem_features_crm"]')
-    link(:site_products_workspace_projects, xpath: '//a[@id="navitem_features_projects"]')
     link(:site_products_workspace_cloud_edition, xpath: '//a[@id="navitem_features_cloud_service"]')
     link(:site_products_workspace_enterprise_edition, xpath: '//a[@id="navitem_features_workspace_ee"]')
     link(:site_products_personal, xpath: '//a[@id="navitem_features_oo_personal"]')
@@ -150,22 +146,6 @@ module TestingSiteOnlyoffice
         products_workspace: {
           element: site_products_workspace_element,
           class: SiteProductsWorkspace
-        },
-        products_workspace_documents: {
-          element: site_products_workspace_documents_element,
-          class: SiteProductsDocumentManager
-        },
-        products_workspace_mail: {
-          element: site_products_workspace_mail_element,
-          class: SiteProductsMail
-        },
-        products_workspace_crm: {
-          element: site_products_workspace_crm_element,
-          class: SiteProductsCRM
-        },
-        products_workspace_projects: {
-          element: site_products_workspace_projects_element,
-          class: SiteProductsProjects
         },
         products_workspace_cloud_edition: {
           element: site_products_workspace_cloud_edition_element,
