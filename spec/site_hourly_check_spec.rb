@@ -98,11 +98,6 @@ describe 'SiteHourlyCheck' do
         page = @site_home_page.click_link_on_toolbar(:products_workspace_projects)
         expect(page).to be_a TestingSiteOnlyoffice::SiteProductsProjects
       end
-
-      it '[Site] Check Products workspace calendar' do
-        page = @site_home_page.click_link_on_toolbar(:products_workspace_calendar)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCalendar
-      end
     end
 
     it '[Site] Check cloud' do

@@ -29,7 +29,6 @@ module TestingSiteOnlyoffice
     link(:site_products_workspace_mail, xpath: '//a[@id="navitem_features_mail"]')
     link(:site_products_workspace_crm, xpath: '//a[@id="navitem_features_crm"]')
     link(:site_products_workspace_projects, xpath: '//a[@id="navitem_features_projects"]')
-    link(:site_products_workspace_calendar, xpath: '//a[@id="navitem_features_calendar"]')
     link(:site_products_workspace_cloud_edition, xpath: '//a[@id="navitem_features_cloud_service"]')
     link(:site_products_workspace_enterprise_edition, xpath: '//a[@id="navitem_features_workspace_ee"]')
     link(:site_products_personal, xpath: '//a[@id="navitem_features_oo_personal"]')
@@ -167,10 +166,6 @@ module TestingSiteOnlyoffice
         products_workspace_projects: {
           element: site_products_workspace_projects_element,
           class: SiteProductsProjects
-        },
-        products_workspace_calendar: {
-          element: site_products_workspace_calendar_element,
-          class: SiteProductsCalendar
         },
         products_workspace_cloud_edition: {
           element: site_products_workspace_cloud_edition_element,
