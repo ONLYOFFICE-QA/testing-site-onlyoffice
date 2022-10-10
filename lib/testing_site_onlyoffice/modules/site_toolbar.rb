@@ -55,10 +55,10 @@ module TestingSiteOnlyoffice
 
     # top toolbar - Pricing
     link(:site_pricing, xpath: '//a[@id="navitem_prices"]')
-    link(:site_pricing_docs_enterprise, xpath: '//a[@id="navitem_prices_server_enterprice"]')
-    link(:site_pricing_docs_developer, xpath: '//a[@id="navitem_prices_integration"]')
-    link(:site_pricing_workspace_cloud, xpath: '//a[@id="navitem_prices_saas"]')
-    link(:site_pricing_workspace_server, xpath: '//a[@id="navitem_prices_enterprise"]')
+    link(:site_pricing_docs_enterprise, xpath: '//a[@id="navitem_prices_docs_enterprice"]')
+    link(:site_pricing_docs_developer, xpath: '//a[@id="navitem_prices_docs_dev"]')
+    link(:site_pricing_workspace_cloud, xpath: '//a[@id="navitem_prices_workspace_cloud"]')
+    link(:site_pricing_workspace_server, xpath: '//a[@id="navitem_prices_workspace_onprem"]')
     link(:site_pricing_buy_from_reseller, xpath: '//a[@id="navitem_prices_reseller"]')
 
     # top toolbar - Get Onlyoffice
