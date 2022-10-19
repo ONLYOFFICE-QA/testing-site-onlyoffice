@@ -13,25 +13,25 @@ module TestingSiteOnlyoffice
 
     # top toolbar - Products
     link(:site_products, xpath: '//a[@id="navitem_features"]')
-    link(:site_products_docs, xpath: '//a[@id="navitem_features_editors"]')
+    link(:site_products_docs, xpath: '//a[@id="navitem_features_editors"]') # ?
     link(:site_products_document_editor, xpath: '//a[@id="navitem_features_document_editor"]')
     link(:site_products_spreadsheet_editor, xpath: '//a[@id="navitem_features_spreadsheet_editor"]')
     link(:site_products_presentation_editor, xpath: '//a[@id="navitem_features_presentation_editor"]')
     link(:site_products_form_creator, xpath: '//a[@id="navitem_features_form_creator"]')
-    link(:site_products_docs_enterprise_edition, xpath: '//a[@id="navitem_features_docs_ee"]')
-    link(:site_products_docs_developer_edition, xpath: '//a[@id="navitem_features_docs_de"]')
-    link(:site_products_docs_cloud_edition, xpath: '//a[@id="navitem_features_docs_cloud"]')
+    link(:site_products_docs_enterprise_edition, xpath: '//a[@id="navitem_features_docs_ee"]') # ?
+    link(:site_products_docs_developer_edition, xpath: '//a[@id="navitem_features_docs_de"]') # ?
+    link(:site_products_docs_cloud_edition, xpath: '//a[@id="navitem_features_docs_cloud"]') # ?
     link(:site_products_for_desktop, xpath: '//a[@id="navitem_features_clients_apps"]')
     link(:site_products_for_ios, xpath: '//a[@id="navitem_features_clients_mobile_ios"]')
     link(:site_products_for_android, xpath: '//a[@id="navitem_features_clients_mobile_android"]')
-    link(:site_products_workspace, xpath: '//a[@id="navitem_features_workspace"]')
-    link(:site_products_workspace_documents, xpath: '//a[@id="navitem_features_documents"]')
-    link(:site_products_workspace_mail, xpath: '//a[@id="navitem_features_mail"]')
-    link(:site_products_workspace_crm, xpath: '//a[@id="navitem_features_crm"]')
-    link(:site_products_workspace_projects, xpath: '//a[@id="navitem_features_projects"]')
-    link(:site_products_workspace_calendar, xpath: '//a[@id="navitem_features_calendar"]')
-    link(:site_products_workspace_cloud_edition, xpath: '//a[@id="navitem_features_cloud_service"]')
-    link(:site_products_workspace_enterprise_edition, xpath: '//a[@id="navitem_features_workspace_ee"]')
+    link(:site_products_workspace, xpath: '//a[@id="navitem_features_workspace"]') # ?
+    link(:site_products_workspace_documents, xpath: '//a[@id="navitem_features_documents"]') # ?
+    link(:site_products_workspace_mail, xpath: '//a[@id="navitem_features_mail"]') # ?
+    link(:site_products_workspace_crm, xpath: '//a[@id="navitem_features_crm"]') # ?
+    link(:site_products_workspace_projects, xpath: '//a[@id="navitem_features_projects"]') # ?
+    link(:site_products_workspace_calendar, xpath: '//a[@id="navitem_features_calendar"]') # ?
+    link(:site_products_workspace_cloud_edition, xpath: '//a[@id="navitem_features_cloud_service"]') # ?
+    link(:site_products_workspace_enterprise_edition, xpath: '//a[@id="navitem_features_workspace_ee"]') # ?
     link(:site_products_personal, xpath: '//a[@id="navitem_features_oo_personal"]')
     link(:site_products_security, xpath: '//a[@id="navitem_features_security"]')
 
@@ -55,20 +55,21 @@ module TestingSiteOnlyoffice
 
     # top toolbar - Pricing
     link(:site_pricing, xpath: '//a[@id="navitem_prices"]')
-    link(:site_pricing_docs_enterprise, xpath: '//a[@id="navitem_prices_server_enterprice"]')
-    link(:site_pricing_docs_developer, xpath: '//a[@id="navitem_prices_integration"]')
-    link(:site_pricing_workspace_cloud, xpath: '//a[@id="navitem_prices_saas"]')
-    link(:site_pricing_workspace_server, xpath: '//a[@id="navitem_prices_enterprise"]')
+    link(:site_pricing_docs_enterprise, xpath: '//a[@id="navitem_prices_docs_enterprice"]')
+    link(:site_pricing_docs_developer, xpath: '//a[@id="navitem_prices_docs_dev"]')
+    link(:site_pricing_workspace_cloud, xpath: '//a[@id="navitem_prices_workspace_cloud"]')
+    link(:site_pricing_workspace_server, xpath: '//a[@id="navitem_prices_workspace_onprem"]')
     link(:site_pricing_buy_from_reseller, xpath: '//a[@id="navitem_prices_reseller"]')
 
     # top toolbar - Get Onlyoffice
     link(:site_get_onlyoffice, xpath: '//a[@id="navitem_download"]')
     link(:site_get_onlyoffice_sign_in, xpath: '//a[@id="navitem_download_signin"]')
     link(:site_get_onlyoffice_sign_up, xpath: '//a[@id="navitem_download_signup"]')
-    link(:site_get_onlyoffice_docs_download, xpath: '//a[@id="navitem_download_onpremises_docs"] | //a[@id="navitem_download_onpremises_docs_ee"]')
+    link(:site_get_onlyoffice_docs_download, xpath: '//a[@id="navitem_download_docs_ee"]')
     link(:site_get_onlyoffice_install_onpremises, xpath: '//a[@id="navitem_download_onpremises"]')
-    link(:site_get_onlyoffice_desktop_mobile, xpath: '//a[@id="navitem_download_desktop"]')
-    link(:site_get_onlyoffice_other_products, xpath: '//a[@id="navitem_download_products"]')
+    link(:site_get_onlyoffice_desktop_mobile, xpath: '//a[@id="navitem_download_desktop_mob"]')
+    link(:site_get_onlyoffice_connectors, xpath: '//a[@id="navitem_download_connectors"]')
+    link(:site_get_onlyoffice_document_builder, xpath: '//a[@id="navitem_download_docs_builder"]')
     link(:site_get_onlyoffice_compare_editions, xpath: '//a[@id="navitem_download_compare"]')
 
     # top toolbar - Partners
@@ -104,10 +105,6 @@ module TestingSiteOnlyoffice
 
     def site_toolbar_products
       {
-        products_docs: {
-          element: site_products_docs_element,
-          class: SiteProductsDocs
-        },
         products_document_editor: {
           element: site_products_document_editor_element,
           class: SiteProductsDocumentEditor
@@ -303,9 +300,13 @@ module TestingSiteOnlyoffice
           element: site_get_onlyoffice_desktop_mobile_element,
           class: SiteDesktopApps
         },
-        other_products: {
-          element: site_get_onlyoffice_other_products_element,
+        onlyoffice_connectors: {
+          element: site_get_onlyoffice_connectors_element,
           class: SiteOtherProductsConnectors
+        },
+        onlyoffice_document_builder: {
+          element: site_get_onlyoffice_document_builder_element,
+          class: SiteOtherProductsDocumentBuilder
         },
         compare_editions: {
           element: site_get_onlyoffice_compare_editions_element,

@@ -34,11 +34,6 @@ describe 'SiteHourlyCheck' do
     end
 
     describe '[Site] Check Products' do
-      it '[Site] Check Products docs' do
-        page = @site_home_page.click_link_on_toolbar(:products_docs)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocs
-      end
-
       it '[Site] Check Products document editor' do
         page = @site_home_page.click_link_on_toolbar(:products_document_editor)
         expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocumentEditor
@@ -59,6 +54,11 @@ describe 'SiteHourlyCheck' do
         expect(page).to be_a TestingSiteOnlyoffice::SiteProductsFormCreator
       end
 
+      it 'Check Products security' do
+        page = @site_home_page.click_link_on_toolbar(:security)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsSecurity
+      end
+
       it '[Site] Check Products desktop' do
         page = @site_home_page.click_link_on_toolbar(:products_desktop)
         expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDesktop
@@ -72,36 +72,6 @@ describe 'SiteHourlyCheck' do
       it '[Site] Check Products android' do
         page = @site_home_page.click_link_on_toolbar(:products_android)
         expect(page).to be_a TestingSiteOnlyoffice::SiteProductsAndroid
-      end
-
-      it '[Site] Check Products workspace' do
-        page = @site_home_page.click_link_on_toolbar(:products_workspace)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsWorkspace
-      end
-
-      it '[Site] Check Products workspace documents' do
-        page = @site_home_page.click_link_on_toolbar(:products_workspace_documents)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocumentManager
-      end
-
-      it '[Site] Check Products workspace mail' do
-        page = @site_home_page.click_link_on_toolbar(:products_workspace_mail)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsMail
-      end
-
-      it '[Site] Check Products workspace crm' do
-        page = @site_home_page.click_link_on_toolbar(:products_workspace_crm)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCRM
-      end
-
-      it '[Site] Check Products workspace projects' do
-        page = @site_home_page.click_link_on_toolbar(:products_workspace_projects)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsProjects
-      end
-
-      it '[Site] Check Products workspace calendar' do
-        page = @site_home_page.click_link_on_toolbar(:products_workspace_calendar)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsCalendar
       end
     end
 
@@ -230,55 +200,51 @@ describe 'SiteHourlyCheck' do
         end
       end
 
-      describe 'download other products /download.aspx' do
-        let(:other_products_page) { @site_home_page.click_link_on_toolbar(:other_products) }
+      describe 'connectors' do
+        it_behaves_like 'connector_download', TestingSiteOnlyoffice::SiteDownloadData.connectors_list do
+          let(:connectors_page) { other_products_page }
+        end
+      end
 
-        describe 'connectors' do
-          it_behaves_like 'connector_download', TestingSiteOnlyoffice::SiteDownloadData.connectors_list do
-            let(:connectors_page) { other_products_page }
+      describe 'groups' do
+        let(:other_products_groups_page) { other_products_page.site_other_products_onlyoffice_groups_download }
+
+        TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_list.each do |installer|
+          it "[Site][OtherProducts][Groups] Check `#{installer}` download link /download.aspx#groups" do
+            expect(other_products_groups_page).to be_download_link_alive(installer)
+            expect(other_products_groups_page).to be_download_link_valid(other_products_groups_page.download_xpath(installer), installer)
+          end
+
+          it "[Site][OtherProducts][Groups] Check `#{installer}`'Read instructions' link /download.aspx#groups" do
+            other_products_groups_page.click_groups_instruction_link(installer)
+            instruction_title = TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_info[installer.to_s]['instruction']
+            expect(other_products_groups_page.check_opened_page_title).to eq(instruction_title)
           end
         end
+      end
 
-        describe 'groups' do
-          let(:other_products_groups_page) { other_products_page.site_other_products_onlyoffice_groups_download }
+      describe 'bundles' do
+        let(:other_products_bundles_page) { other_products_page.site_other_products_bundles_download }
 
-          TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_list.each do |installer|
-            it "[Site][OtherProducts][Groups] Check `#{installer}` download link /download.aspx#groups" do
-              expect(other_products_groups_page).to be_download_link_alive(installer)
-              expect(other_products_groups_page).to be_download_link_valid(other_products_groups_page.download_xpath(installer), installer)
-            end
+        TestingSiteOnlyoffice::SiteDownloadData.other_products_bundles_list.each do |installer|
+          it "[Site][OtherProducts][Bundlers] Check `#{installer}` 'Read instructions' link /download.aspx#bundles" do
+            other_products_bundles_page.read_instruction_connector(installer)
+            instruction_title = TestingSiteOnlyoffice::SiteDownloadData.open_source_bundlers_info[installer.to_s]['instruction']
+            expect(other_products_bundles_page.check_opened_page_title).to eq(instruction_title)
+          end
 
-            it "[Site][OtherProducts][Groups] Check `#{installer}`'Read instructions' link /download.aspx#groups" do
-              other_products_groups_page.click_groups_instruction_link(installer)
-              instruction_title = TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_info[installer.to_s]['instruction']
-              expect(other_products_groups_page.check_opened_page_title).to eq(instruction_title)
-            end
+          it "[Site][OtherProducts][Bundlers] Check `#{installer}` 'Install now' link /download.aspx#bundles" do
+            expect(other_products_bundles_page).to be_file_can_be_downloaded(installer)
           end
         end
+      end
 
-        describe 'bundles' do
-          let(:other_products_bundles_page) { other_products_page.site_other_products_bundles_download }
+      describe 'document builder' do
+        let(:other_products_document_builder_page) { other_products_page.site_other_products_document_builder_download }
 
-          TestingSiteOnlyoffice::SiteDownloadData.other_products_bundles_list.each do |installer|
-            it "[Site][OtherProducts][Bundlers] Check `#{installer}` 'Read instructions' link /download.aspx#bundles" do
-              other_products_bundles_page.read_instruction_connector(installer)
-              instruction_title = TestingSiteOnlyoffice::SiteDownloadData.open_source_bundlers_info[installer.to_s]['instruction']
-              expect(other_products_bundles_page.check_opened_page_title).to eq(instruction_title)
-            end
-
-            it "[Site][OtherProducts][Bundlers] Check `#{installer}` 'Install now' link /download.aspx#bundles" do
-              expect(other_products_bundles_page).to be_file_can_be_downloaded(installer)
-            end
-          end
-        end
-
-        describe 'document builder' do
-          let(:other_products_document_builder_page) { other_products_page.site_other_products_document_builder_download }
-
-          it_behaves_like 'document_builder_download',
-                          TestingSiteOnlyoffice::SiteDownloadData.document_builder_list do
-            let(:installers_download_page) { other_products_document_builder_page }
-          end
+        it_behaves_like 'document_builder_download',
+                        TestingSiteOnlyoffice::SiteDownloadData.document_builder_list do
+          let(:installers_download_page) { other_products_document_builder_page }
         end
       end
 

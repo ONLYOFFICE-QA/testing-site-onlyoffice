@@ -10,7 +10,7 @@ require_relative 'site_connector_release_data'
 
 module TestingSiteOnlyoffice
   # download.aspx#connectors
-  # ttps://user-images.githubusercontent.com/40513035/131140762-e7b37b74-3246-40b3-b705-6130940648bf.png
+  # https://user-images.githubusercontent.com/40513035/131140762-e7b37b74-3246-40b3-b705-6130940648bf.png
   class SiteOtherProductsConnectors
     include PageObject
     include SiteBlockConstructorHelper
