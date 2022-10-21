@@ -35,7 +35,7 @@ describe 'Compare edition' do
 
   describe 'Enterprise Edition' do
     it '[Enterprise Edition] Go to Enterprise Free Trial' do
-      expect(@compare_edition.check_button_enterprise_free_trial?).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
+      expect(@compare_edition.check_button_enterprise_free_trial?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
     end
 
     it '[Enterprise Edition] Go to Enterprise Edition' do
@@ -53,7 +53,7 @@ describe 'Compare edition' do
 
   describe 'Developer Edition' do
     it '[Developer Edition] Go to Developer Free Trial' do
-      expect(@compare_edition.check_button_developer_free_trial?).to be_a TestingSiteOnlyoffice::SiteDocsDeveloper
+      expect(@compare_edition.check_button_developer_free_trial?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsDeveloper
     end
 
     it '[Developer Edition] Go to Developer Edition' do

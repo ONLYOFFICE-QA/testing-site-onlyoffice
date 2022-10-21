@@ -3,7 +3,7 @@
 require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Site products workspace projects' do
+describe 'Site features workspace projects' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @projects = site_home_page.click_link_on_toolbar(:products_workspace_projects)

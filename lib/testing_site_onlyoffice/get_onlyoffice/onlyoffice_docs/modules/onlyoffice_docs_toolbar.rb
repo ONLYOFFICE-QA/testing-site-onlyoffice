@@ -12,12 +12,12 @@ module TestingSiteOnlyoffice
 
     def site_docs_enterprise_download
       site_docs_enterprise_element.click
-      SiteDocsEnterprise.new(@instance)
+      SiteGetOnlyofficeDocsEnterprise.new(@instance)
     end
 
     def site_docs_developer_download
       site_docs_developer_element.click
-      SiteDocsDeveloper.new(@instance)
+      SiteGetOnlyofficeDocsDeveloper.new(@instance)
     end
 
     def site_docs_community_download

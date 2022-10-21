@@ -19,7 +19,7 @@ describe 'Registration new portal' do
   end
 
   describe 'Sign Up' do
-    let(:sign_up_page) { @site_home_page.click_link_on_toolbar(:sign_up) }
+    let(:sign_up_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_sign_up) }
 
     describe 'Create new portal' do
       let(:portal_creation_data) { TestingSiteOnlyoffice::SitePortalCreationData.new.get_instance_hash }
@@ -64,7 +64,7 @@ describe 'Registration new portal' do
   end
 
   describe 'Sign in' do
-    let(:sign_in_page) { @site_home_page.click_link_on_toolbar(:sign_in) }
+    let(:sign_in_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_sign_in) }
 
     it '"Register" from Sign in page' do
       sign_up_page = sign_in_page.register_from_sign_in
@@ -79,7 +79,7 @@ describe 'Registration new portal' do
       sign_up_page.fill_data(portal_creation_data)
       @test.webdriver.quit
       site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-      portal_page = site_home_page.click_link_on_toolbar(:sign_in).sign_in(portal_creation_data[:email], portal_creation_data[:password])
+      portal_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_sign_in).sign_in(portal_creation_data[:email], portal_creation_data[:password])
       expect(portal_page.current_user_name).to eq(TestingSiteOnlyoffice::SiteData::DEFAULT_ADMIN_FULLNAME)
     end
 

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'site_nonprofit_banners'
-require_relative '../../../get_onlyoffice/site_sign_up'
+require_relative '../../../get_onlyoffice/site_get_onlyoffice_sign_up'
 
 module TestingSiteOnlyoffice
   # /free-cloud.aspx
@@ -45,7 +45,7 @@ module TestingSiteOnlyoffice
 
     def click_create_your_cloud_office_here
       create_your_cloud_office_here_element.click
-      SiteSignUp.new(@instance)
+      SiteGetOnlyofficeSignUp.new(@instance)
     end
 
     def click_onlyoffice_website

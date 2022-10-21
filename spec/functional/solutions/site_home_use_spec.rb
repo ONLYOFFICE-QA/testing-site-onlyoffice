@@ -16,17 +16,17 @@ describe 'Document Builder download' do
 
   it '[Site][HomeUse]Button "Download now" works for desktop editors works' do
     download_desktop_page = @home_use_page.download_desktop_editors
-    expect(download_desktop_page).to be_a TestingSiteOnlyoffice::SiteDesktopApps
+    expect(download_desktop_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDesktopApps
   end
 
   it '[Site][HomeUse]Button "Learn more" works for desktop editors works' do
     product_desktop_page = @home_use_page.click_learn_more_desktop_editors
-    expect(product_desktop_page).to be_a TestingSiteOnlyoffice::SiteProductsDesktop
+    expect(product_desktop_page).to be_a TestingSiteOnlyoffice::SiteFeaturesDesktop
   end
 
   it '[Site][HomeUse]Button "Get it now" works for self-hosted editors' do
     download_editors_page = @home_use_page.get_it_now_self_hosted_editors
-    expect(download_editors_page).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
+    expect(download_editors_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
   end
 
   it '[Site][HomeUse]Button "See all connectors" works' do
@@ -36,12 +36,12 @@ describe 'Document Builder download' do
 
   it '[Site][HomeUse]Button "Download" works for self-hosted productivity apps' do
     download_workspace_page = @home_use_page.download_self_hosted_productivity_apps
-    expect(download_workspace_page).to be_a TestingSiteOnlyoffice::SiteWorkspaceEnterprise
+    expect(download_workspace_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeWorkspaceEnterprise
   end
 
   it '[Site][HomeUse]Button "Learn more" works for self-hosted productivity apps' do
     product_workspace_page = @home_use_page.click_learn_more_hosted_productivity_apps
-    expect(product_workspace_page).to be_a TestingSiteOnlyoffice::SiteProductsWorkspace
+    expect(product_workspace_page).to be_a TestingSiteOnlyoffice::SiteForBusinessWorkspace
   end
 
   it '[Site][HomeUse]Button "Create online office" works' do

@@ -38,7 +38,7 @@ describe 'Site Smoke' do
           portal_creation_data[:email] = "qa-signin-check-#{Faker::Internet.password}@qamail.teamlab.info"
           TestingSiteOnlyoffice::SiteHelper.new.create_portal_change_language_site(portal_creation_data, current_language)
           main_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-          portal_main_page = main_page.click_link_on_toolbar(:sign_in).sign_in(portal_creation_data[:email], portal_creation_data[:password])
+          portal_main_page = main_page.click_link_on_toolbar(:get_onlyoffice_sign_in).sign_in(portal_creation_data[:email], portal_creation_data[:password])
           expect(portal_main_page).to be_document_module_visible
         end
       end

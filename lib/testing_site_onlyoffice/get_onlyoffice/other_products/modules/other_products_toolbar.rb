@@ -11,9 +11,9 @@ module TestingSiteOnlyoffice
     div(:site_other_products_bundles, xpath: '//div[@id = "bundles"]')
     div(:site_other_products_document_builder, xpath: '//div[@id = "builder"]')
 
-    def site_other_products_connectors_download
+    def site_other_products_connectors_download  # ?
       site_other_products_connectors_element.click
-      SiteOtherProductsConnectors.new(@instance)
+      SiteGetOnlyofficeConnectors.new(@instance)
     end
 
     def site_other_products_onlyoffice_groups_download
@@ -26,9 +26,9 @@ module TestingSiteOnlyoffice
       SiteOtherProductsBundles.new(@instance)
     end
 
-    def site_other_products_document_builder_download
+    def site_other_products_document_builder_download # ?
       site_other_products_document_builder_element.click
-      SiteOtherProductsDocumentBuilder.new(@instance)
+      SiteGetOnlyofficeDownloadDocBuilder.new(@instance)
     end
   end
 end

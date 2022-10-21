@@ -15,7 +15,7 @@ describe 'Developer Edition' do
   end
 
   it '[Developer Edition] Go to get it now' do
-    expect(@developer_edition.check_button_get_it_developer?).to be_a TestingSiteOnlyoffice::SiteDocsDeveloper
+    expect(@developer_edition.check_button_get_it_developer?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsDeveloper
   end
 
   it '[Developer Edition] Go to request_demo' do
@@ -23,19 +23,19 @@ describe 'Developer Edition' do
   end
 
   it '[Developer Edition] Go to document_editing' do
-    expect(@developer_edition.check_button_document_editing?).to be_a TestingSiteOnlyoffice::SiteProductsDocumentEditor
+    expect(@developer_edition.check_button_document_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesDocumentEditor
   end
 
   it '[Developer Edition] Go to spreadsheet_editing' do
-    expect(@developer_edition.check_button_spreadsheet_editing?).to be_a TestingSiteOnlyoffice::SiteProductsSpreadsheetEditor
+    expect(@developer_edition.check_button_spreadsheet_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesSpreadsheetEditor
   end
 
   it '[Developer Edition] Go to presentation_editing' do
-    expect(@developer_edition.check_button_presentation_editing?).to be_a TestingSiteOnlyoffice::SiteProductsPresentationEditor
+    expect(@developer_edition.check_button_presentation_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesPresentationEditor
   end
 
   it '[Developer Edition] Go to form_creator' do
-    expect(@developer_edition.check_button_form_creator?).to be_a TestingSiteOnlyoffice::SiteProductsFormCreator
+    expect(@developer_edition.check_button_form_creator?).to be_a TestingSiteOnlyoffice::SiteFeaturesFormCreator
   end
 
   it '[Developer Edition] Go to format_compatibility' do
@@ -63,7 +63,7 @@ describe 'Developer Edition' do
   end
 
   it '[Developer Edition] Go to check_button_easy_deployment' do
-    expect(@developer_edition.check_button_easy_deployment?).to be_a TestingSiteOnlyoffice::SiteDocsDeveloper
+    expect(@developer_edition.check_button_easy_deployment?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsDeveloper
   end
 
   it '[Developer Edition] Go to check_button_integration_api' do
@@ -71,7 +71,7 @@ describe 'Developer Edition' do
   end
 
   it '[Developer Edition] Go to check_button_highest_security' do
-    expect(@developer_edition.check_button_highest_security?).to be_a TestingSiteOnlyoffice::SiteProductsSecurity
+    expect(@developer_edition.check_button_highest_security?).to be_a TestingSiteOnlyoffice::SiteFeaturesSecurity
   end
 
   it '[Developer Edition] Go to check_button_wopi_support' do

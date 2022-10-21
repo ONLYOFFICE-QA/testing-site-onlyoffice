@@ -19,8 +19,8 @@ module TestingSiteOnlyoffice
     link(:developer_prices, xpath: '//a[contains(@href,"developer-edition-prices.aspx?")]')
     link(:enterprise_free_trial, xpath: '//a[contains(@href,"/download-docs.aspx?from=compare-editions#docs-enterprise")]')
     link(:developer_free_trial, xpath: '//a[contains(@href,"/download-docs.aspx?from=compare-editions#docs-developer")]')
-    link(:proprietary_enterprise, xpath: '//a[contains(@href,"https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=4")]')
-    link(:proprietary_developer, xpath: '//a[contains(@href,"https://help.onlyoffice.com/products/files/doceditor.aspx?fileid=55")]')
+    link(:proprietary_enterprise, xpath: '//a[contains(@href,"https://help.onlyoffice.com/features/files/doceditor.aspx?fileid=4")]')
+    link(:proprietary_developer, xpath: '//a[contains(@href,"https://help.onlyoffice.com/features/files/doceditor.aspx?fileid=55")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -60,12 +60,12 @@ module TestingSiteOnlyoffice
 
     def check_button_enterprise_free_trial?
       enterprise_free_trial_element.click
-      SiteDocsEnterprise.new(@instance)
+      SiteGetOnlyofficeDocsEnterprise.new(@instance)
     end
 
     def check_button_developer_free_trial?
       developer_free_trial_element.click
-      SiteDocsDeveloper.new(@instance)
+      SiteGetOnlyofficeDocsDeveloper.new(@instance)
     end
 
     def check_opened_enterprise_license_agreement

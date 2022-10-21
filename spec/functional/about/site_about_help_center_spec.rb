@@ -16,7 +16,7 @@ describe 'Help center' do
   end
 
   it '[Help center] Go to help center' do
-    expect(@help_center).to be_a TestingSiteOnlyoffice::SiteHelpCenter
+    expect(@help_center).to be_a TestingSiteOnlyoffice::SiteAboutHelpCenter
   end
 
   it '[Help center] Help center site map visible' do

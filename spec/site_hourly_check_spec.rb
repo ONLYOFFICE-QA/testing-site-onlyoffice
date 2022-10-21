@@ -33,45 +33,60 @@ describe 'SiteHourlyCheck' do
       expect(tour_page.login_visible?).to be true
     end
 
-    describe '[Site] Check Products' do
-      it '[Site] Check Products document editor' do
-        page = @site_home_page.click_link_on_toolbar(:products_document_editor)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDocumentEditor
+    describe '[Site] Check Features' do
+      it '[Site] Check Features document editor' do
+        page = @site_home_page.click_link_on_toolbar(:features_document_editor)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesDocumentEditor
       end
 
-      it '[Site] Check Products spreadsheet editor' do
-        page = @site_home_page.click_link_on_toolbar(:products_spreadsheet_editor)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsSpreadsheetEditor
+      it '[Site] Check Features spreadsheet editor' do
+        page = @site_home_page.click_link_on_toolbar(:features_spreadsheet_editor)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesSpreadsheetEditor
       end
 
-      it '[Site] Check Products presentation editor' do
-        page = @site_home_page.click_link_on_toolbar(:products_presentation_editor)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsPresentationEditor
+      it '[Site] Check Features presentation editor' do
+        page = @site_home_page.click_link_on_toolbar(:features_presentation_editor)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesPresentationEditor
       end
 
-      it '[Site] Check Products form creator' do
-        page = @site_home_page.click_link_on_toolbar(:products_form_creator)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsFormCreator
+      it '[Site] Check Features form creator' do
+        page = @site_home_page.click_link_on_toolbar(:features_form_creator)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesFormCreator
       end
 
-      it 'Check Products security' do
+      it '[Site] Check Features PDF reader and converter' do
+        page = @site_home_page.click_link_on_toolbar(:features_pdf_reader_converter)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesPDFReaderConverter
+      end
+
+      it 'Check Features security' do
         page = @site_home_page.click_link_on_toolbar(:security)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsSecurity
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesSecurity
       end
 
-      it '[Site] Check Products desktop' do
-        page = @site_home_page.click_link_on_toolbar(:products_desktop)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsDesktop
+      it '[Site] Check Features desktop' do
+        page = @site_home_page.click_link_on_toolbar(:features_desktop)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesDesktop
       end
 
-      it '[Site] Check Products ios' do
-        page = @site_home_page.click_link_on_toolbar(:products_ios)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsIos
+      it '[Site] Check Features ios' do
+        page = @site_home_page.click_link_on_toolbar(:features_ios)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesIos
       end
 
-      it '[Site] Check Products android' do
-        page = @site_home_page.click_link_on_toolbar(:products_android)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteProductsAndroid
+      it '[Site] Check Features android' do
+        page = @site_home_page.click_link_on_toolbar(:features_android)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesAndroid
+      end
+
+      it '[Site] Check See it in action' do
+        page = @site_home_page.click_link_on_toolbar(:features_see_it_in_action)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesSeeItInAction
+      end
+
+      it '[Site] Check Oforms' do
+        page = @site_home_page.click_link_on_toolbar(:features_oforms)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesOforms
       end
     end
 
@@ -103,7 +118,7 @@ describe 'SiteHourlyCheck' do
 
     describe 'Site Downloads' do
       describe 'download desktop editors /download-desktop.aspx' do
-        let(:desktop_app_page) { @site_home_page.click_link_on_toolbar(:desktop_mobile_apps) }
+        let(:desktop_app_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_desktop_mobile) }
 
         it_behaves_like 'desktop_installer_download', TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list_type do
           let(:installers_download_page) { desktop_app_page }
@@ -111,7 +126,7 @@ describe 'SiteHourlyCheck' do
       end
 
       describe 'download mobile editors /download-desktop.aspx' do
-        let(:mobile_editors_download_page) { @site_home_page.click_link_on_toolbar(:desktop_mobile_apps).open_mobile_apps }
+        let(:mobile_editors_download_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_desktop_mobile).open_mobile_apps }
 
         it '[Download Mobile Editors] /download-desktop.aspx: "Get it on Google play" link works' do
           expect(mobile_editors_download_page).to be_download_link_alive(:mobile_android)
@@ -128,7 +143,7 @@ describe 'SiteHourlyCheck' do
       end
 
       describe 'download onlyoffice docs /download-docs.aspx' do
-        let(:onlyoffice_docs_page) { @site_home_page.click_link_on_toolbar(:onlyoffice_docs_download) }
+        let(:onlyoffice_docs_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_enterprise) }
 
         describe 'enterprise' do
           it_behaves_like 'commercial_installer_download', 'Docs_Enterprise',
@@ -173,7 +188,7 @@ describe 'SiteHourlyCheck' do
       end
 
       describe 'download onlyoffice workspace /download-workspace.aspx' do
-        let(:onlyoffice_workspace_page) { @site_home_page.click_link_on_toolbar(:onlyoffice_workspace) }
+        let(:onlyoffice_workspace_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_workspace_on_premises) }
 
         describe 'enterprice' do
           it_behaves_like 'commercial_installer_download', 'Workspace_Enterprise',
@@ -267,7 +282,7 @@ describe 'SiteHourlyCheck' do
       let(:blog_page) { @site_home_page.click_link_on_toolbar(:about_blog) }
 
       it '[BLOG] Check click Blog link' do
-        expect(blog_page).to be_a TestingSiteOnlyoffice::SiteBlog
+        expect(blog_page).to be_a TestingSiteOnlyoffice::SiteAboutBlog
       end
 
       it '[BLOG] Check click Home logo' do
@@ -278,7 +293,7 @@ describe 'SiteHourlyCheck' do
 
     describe 'Сhecking for a product version logging error' do
       before do
-        @download_commercial_page = @site_home_page.click_link_on_toolbar(:onlyoffice_docs_download)
+        @download_commercial_page = @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_enterprise)
       end
 
       it_behaves_like 'сhecking_logger_errors' do

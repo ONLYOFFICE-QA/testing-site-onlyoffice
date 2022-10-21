@@ -36,13 +36,13 @@ module TestingSiteOnlyoffice
     def click_registration_cloud
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(registration_cloud_element) }
       registration_cloud_element.click
-      SiteSignUp.new(@instance)
+      SiteGetOnlyofficeSignUp.new(@instance)
     end
 
     def click_customer_stories
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(customer_stories_element) }
       customer_stories_element.click
-      SiteCustomerStories.new(@instance)
+      SiteAboutCustomerStories.new(@instance)
     end
   end
 end

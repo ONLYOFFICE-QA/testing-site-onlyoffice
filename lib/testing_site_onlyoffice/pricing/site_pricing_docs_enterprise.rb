@@ -44,7 +44,7 @@ module TestingSiteOnlyoffice
         @instance.webdriver.element_present?(try_free_button_element)
       end
       try_free_button_element.click
-      SiteDocsEnterprise.new(@instance)
+      SiteGetOnlyofficeDocsEnterprise.new(@instance)
     end
 
     def choose_number_connection(connection)

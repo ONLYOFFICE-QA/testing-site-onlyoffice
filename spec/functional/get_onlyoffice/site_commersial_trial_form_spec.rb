@@ -19,7 +19,7 @@ describe 'Check trial request form' do
   end
 
   it '[Download][DocsDeveloperEdition] docs developer edition request /download-commercial.aspx' do
-    commercial_docs_page = @site_home_page.click_link_on_toolbar(:onlyoffice_docs_download).site_docs_developer_download
+    commercial_docs_page = @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_enterprise).site_docs_developer_download
     company_name = "nctautotest/developer #{Time.now}"
     site_commercial_trial_form = commercial_docs_page.installer_docs_developer_type_block.click_install_button
     site_commercial_trial_form.send_trial_request(company_name:)
@@ -31,7 +31,7 @@ describe 'Check trial request form' do
   end
 
   it '[Download][DocsEnterpriseEdition] docs enterprise edition request /download-commercial.aspx' do
-    commercial_docs_page = @site_home_page.click_link_on_toolbar(:onlyoffice_docs_download)
+    commercial_docs_page = @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_enterprise)
     company_name = "nctautotest/docs_enterprise #{Time.now}"
     site_commercial_trial_form = commercial_docs_page.installer_docs_enterprise_type_block.click_install_button
     site_commercial_trial_form.send_trial_request(company_name:)
@@ -43,7 +43,7 @@ describe 'Check trial request form' do
   end
 
   it '[Download][WorkspaceEnterpriseEdition] workspace enterprise edition request /download-commercial.aspx' do
-    commercial_workspace_page = @site_home_page.click_link_on_toolbar(:onlyoffice_workspace)
+    commercial_workspace_page = @site_home_page.click_link_on_toolbar(:get_onlyoffice_workspace_on_premises)
     company_name = "nctautotest/enterprise #{Time.now}"
     site_commercial_trial_form = commercial_workspace_page.installer_type_block.click_install_button
     site_commercial_trial_form.send_trial_request(company_name:)

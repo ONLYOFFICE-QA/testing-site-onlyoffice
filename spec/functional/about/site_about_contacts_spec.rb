@@ -16,7 +16,7 @@ describe 'Contacts' do
   end
 
   it '[Contacts] Go to contacts' do
-    expect(@contacts).to be_a TestingSiteOnlyoffice::SiteContacts
+    expect(@contacts).to be_a TestingSiteOnlyoffice::SiteAboutContacts
   end
 
   it '[Contacts] Check region office' do

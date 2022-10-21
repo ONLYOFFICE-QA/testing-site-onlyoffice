@@ -21,13 +21,13 @@ describe 'Site Smoke open registration page' do
       it "Open trial form Pricing->Cloud Service page in #{current_language} language" do
         pricing_cloud_page = @site_home_page.click_link_on_toolbar(:pricing_cloud)
         sign_up_page = pricing_cloud_page.business_try_it_for_free
-        expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteSignUp
+        expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeSignUp
       end
 
       it "Open Sing Up page from Sign In page in #{current_language} language" do
-        sign_in_page = @site_home_page.click_link_on_toolbar(:sign_in)
+        sign_in_page = @site_home_page.click_link_on_toolbar(:get_onlyoffice_sign_in)
         sign_up_page = sign_in_page.register_from_sign_in
-        expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteSignUp
+        expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeSignUp
       end
     end
   end

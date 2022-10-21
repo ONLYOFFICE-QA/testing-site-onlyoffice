@@ -51,7 +51,7 @@ Naming/AccessorMethodName:
     - 'lib/testing_site_onlyoffice/get_onlyoffice/site_sign_up.rb'
     - 'lib/testing_site_onlyoffice/modules/site_languages.rb'
     - 'lib/testing_site_onlyoffice/portal_helper/site_portal_creation_data.rb'
-    - 'lib/testing_site_onlyoffice/products/connectors/modules/site_connectors_toolbar.rb'
+    - 'lib/testing_site_onlyoffice/features/connectors/modules/site_connectors_toolbar.rb'
 
 # Offense count: 13
 # Configuration parameters: EnforcedStyle, CheckMethodNames, CheckSymbols, AllowedIdentifiers, AllowedPatterns.

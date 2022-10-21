@@ -15,7 +15,7 @@ describe 'Enterprise Edition' do
   end
 
   it '[Enterprise Edition] Go to get it now' do
-    expect(@enterprise_edition.check_button_get_it_now?).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
+    expect(@enterprise_edition.check_button_get_it_now?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
   end
 
   it '[Enterprise Edition] Go to request_demo' do
@@ -23,23 +23,23 @@ describe 'Enterprise Edition' do
   end
 
   it '[Enterprise Edition] Go to document_editing' do
-    expect(@enterprise_edition.check_button_document_editing?).to be_a TestingSiteOnlyoffice::SiteProductsDocumentEditor
+    expect(@enterprise_edition.check_button_document_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesDocumentEditor
   end
 
   it '[Enterprise Edition] Go to spreadsheet_editing' do
-    expect(@enterprise_edition.check_button_spreadsheet_editing?).to be_a TestingSiteOnlyoffice::SiteProductsSpreadsheetEditor
+    expect(@enterprise_edition.check_button_spreadsheet_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesSpreadsheetEditor
   end
 
   it '[Enterprise Edition] Go to presentation_editing' do
-    expect(@enterprise_edition.check_button_presentation_editing?).to be_a TestingSiteOnlyoffice::SiteProductsPresentationEditor
+    expect(@enterprise_edition.check_button_presentation_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesPresentationEditor
   end
 
   it '[Enterprise Edition] Go to form_creator' do
-    expect(@enterprise_edition.check_button_form_creator?).to be_a TestingSiteOnlyoffice::SiteProductsFormCreator
+    expect(@enterprise_edition.check_button_form_creator?).to be_a TestingSiteOnlyoffice::SiteFeaturesFormCreator
   end
 
   it '[Enterprise Edition] Go to desktop_apps' do
-    expect(@enterprise_edition.check_button_desktop_apps?).to be_a TestingSiteOnlyoffice::SiteDesktopApps
+    expect(@enterprise_edition.check_button_desktop_apps?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDesktopApps
   end
 
   it '[Enterprise Edition] Go to mobile_apps' do
@@ -47,7 +47,7 @@ describe 'Enterprise Edition' do
   end
 
   it '[Enterprise Edition] Go to self_hosted' do
-    expect(@enterprise_edition.check_button_self_hosted?).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
+    expect(@enterprise_edition.check_button_self_hosted?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
   end
 
   it '[Enterprise Edition] Go to amazon' do

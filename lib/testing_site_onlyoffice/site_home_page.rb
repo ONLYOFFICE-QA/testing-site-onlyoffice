@@ -1,20 +1,21 @@
 # frozen_string_literal: true
 
 require_relative 'about/site_about'
-require_relative 'about/site_customer_stories'
+require_relative 'about/site_about_customer_stories'
 require_relative 'about/training_courses/site_about_training_courses'
-require_relative 'about/white_paper_and_datasheets/site_white_papers'
-require_relative 'about/site_blog'
-require_relative 'about/site_contribute'
-require_relative 'about/site_awards'
+require_relative 'about/white_paper_and_datasheets/site_about_white_papers'
+require_relative 'about/site_about_blog'
+require_relative 'about/site_about_contribute'
+require_relative 'about/site_about_awards'
 require_relative 'about/site_about_events'
-require_relative 'about/site_contacts'
+require_relative 'about/site_about_contacts'
 require_relative 'about/site_about_gift_shop'
 require_relative 'about/site_about_press_downloads'
-require_relative 'about/site_webinars'
-require_relative 'about/site_jobs'
+require_relative 'about/site_about_webinars'
+require_relative 'about/site_about_jobs'
+require_relative 'about/site_about_forum'
 
-require_relative 'additional_products/site_help_center'
+require_relative 'additional_products/site_about_help_center'
 
 require_relative 'data/site_data'
 require_relative 'data/main_page_links_data'
@@ -34,38 +35,46 @@ require_relative 'footer/solutions/site_home_use'
 require_relative 'footer/resources/site_compare_other_suites'
 require_relative 'footer/support/site_wopi_support'
 
-require_relative 'get_onlyoffice/other_products/connectors/site_other_products_connectors'
-require_relative 'get_onlyoffice/other_products/document_builder/site_other_products_document_builder'
-require_relative 'get_onlyoffice/desktop_and_mobile/desktop/site_desktop_apps'
+require_relative 'get_onlyoffice/other_products/connectors/site_get_onlyoffice_connectors'
+require_relative 'get_onlyoffice/document_builder/site_get_onlyoffice_download_doc_builder'
+require_relative 'get_onlyoffice/desktop_and_mobile/desktop/site_get_onlyoffice_desktop_apps'
 require_relative 'get_onlyoffice/desktop_and_mobile/site_mobile_apps'
 require_relative 'get_onlyoffice/other_products/site_open_source_bundles'
 require_relative 'get_onlyoffice/other_products/site_other_products_groups'
 require_relative 'get_onlyoffice/onlyoffice_docs/site_docs_community'
-require_relative 'get_onlyoffice/onlyoffice_docs/site_docs_enterprise'
-require_relative 'get_onlyoffice/onlyoffice_docs/site_docs_developer'
+require_relative 'get_onlyoffice/onlyoffice_docs/site_get_onlyoffice_docs_enterprise'
+require_relative 'get_onlyoffice/onlyoffice_docs/site_get_onlyoffice_docs_developer'
 require_relative 'get_onlyoffice/onlyoffice_docs/site_doсs_registration_page'
 require_relative 'get_onlyoffice/onlyoffice_docs/site_doсs_registration_page/site_docs_registration_data'
-require_relative 'get_onlyoffice/onlyoffice_workspace/site_workspace_enterprise'
+require_relative 'get_onlyoffice/onlyoffice_workspace/site_get_onlyoffice_workspace_enterprise'
 require_relative 'get_onlyoffice/onlyoffice_workspace/site_workspace_community'
-require_relative 'get_onlyoffice/site_sign_up'
-require_relative 'get_onlyoffice/site_sign_in'
+require_relative 'get_onlyoffice/site_get_onlyoffice_sign_up'
+require_relative 'get_onlyoffice/site_get_onlyoffice_sign_in'
 require_relative 'get_onlyoffice/modules/site_download_helper'
 require_relative 'get_onlyoffice/compare_edition/site_compare_edition'
+require_relative 'get_onlyoffice/site_get_onlyoffice_web_hosting'
 
-require_relative 'integration/site_integration'
-require_relative 'integration/nextcloud/site_nextcloud'
-require_relative 'integration/alfresco/site_alfresco'
-require_relative 'integration/confluence/site_confluence'
-require_relative 'integration/hum_hub/site_hum_hub'
-require_relative 'integration/liferay/site_liferay'
-require_relative 'integration/owncloud/site_owncloud'
-require_relative 'integration/share_point/site_share_point'
-require_relative 'integration/redmine/site_redmine'
-require_relative 'integration/jira/site_jira'
-require_relative 'integration/plone/site_plone'
-require_relative 'integration/nuxeo/site_nuxeo'
-require_relative 'integration/moodle/site_moodle'
-require_relative 'integration/chamilo/site_chamilo'
+require_relative 'for_business/site_for_business'
+require_relative 'for_business/site_for_business_docs_enterprise_edition'
+require_relative 'for_business/site_for_business_workspace'
+require_relative 'for_business/for_business_education'
+require_relative 'for_business/nextcloud/site_nextcloud'
+require_relative 'for_business/alfresco/site_alfresco'
+require_relative 'for_business/confluence/site_confluence'
+require_relative 'for_business/hum_hub/site_hum_hub'
+require_relative 'for_business/liferay/site_liferay'
+require_relative 'for_business/owncloud/site_owncloud'
+require_relative 'for_business/share_point/site_share_point'
+require_relative 'for_business/redmine/site_redmine'
+require_relative 'for_business/jira/site_jira'
+require_relative 'for_business/plone/site_plone'
+require_relative 'for_business/nuxeo/site_nuxeo'
+require_relative 'for_business/moodle/site_moodle'
+require_relative 'for_business/chamilo/site_chamilo'
+
+require_relative 'for_developers/site_for_developers_doc_dev_edition'
+require_relative 'for_developers/site_for_developers_doc_builder'
+require_relative 'for_developers/site_for_developers_api_doc'
 
 require_relative 'modules/site_toolbar'
 require_relative 'modules/site_home_page_helper'
@@ -84,27 +93,27 @@ require_relative 'pricing/price_cloud/site_pricing_cloud'
 require_relative 'pricing/site_pricing_docs_enterprise'
 require_relative 'pricing/site_pricing_docs_developer'
 
-require_relative 'products/connectors/site_products_connectors_onlyoffice'
-require_relative 'products/site_products_android'
-require_relative 'products/site_products_desktop'
-require_relative 'products/site_products_docs'
-require_relative 'products/docs/site_products_document_editor'
-require_relative 'products/docs/site_products_spreadsheet_editor'
-require_relative 'products/docs/site_products_presentation_editor'
-require_relative 'products/docs/site_products_form_creator'
-require_relative 'products/groups/site_products_calendar'
-require_relative 'products/groups/site_products_crm'
-require_relative 'products/groups/site_products_document_manager'
-require_relative 'products/groups/site_products_mail'
-require_relative 'products/groups/site_products_projects'
-require_relative 'products/site_products_ios'
-require_relative 'products/site_products_workspace'
-require_relative 'products/site_products_security'
-require_relative 'products/doc_edition/site_products_enterprise_edition'
-require_relative 'products/doc_edition/site_products_developer_edition'
-require_relative 'products/doc_edition/site_products_cloud_edition'
-require_relative 'products/workspace_edition/cloud_edition'
-require_relative 'products/workspace_edition/enterprise_edition'
+require_relative 'features/connectors/site_features_connectors_onlyoffice'
+require_relative 'features/site_features_android'
+require_relative 'features/site_features_desktop'
+require_relative 'features/site_features_docs'
+require_relative 'features/docs/site_features_document_editor'
+require_relative 'features/docs/site_features_spreadsheet_editor'
+require_relative 'features/docs/site_features_presentation_editor'
+require_relative 'features/docs/site_features_form_creator'
+require_relative 'features/site_features_pdf_reader_converter'
+require_relative 'features/site_features_see_it_in_action'
+require_relative 'features/site_features_oforms'
+require_relative 'features/groups/site_features_calendar'
+require_relative 'features/groups/site_features_crm'
+require_relative 'features/groups/site_features_document_manager'
+require_relative 'features/groups/site_features_mail'
+require_relative 'features/groups/site_features_projects'
+require_relative 'features/site_features_ios'
+require_relative 'features/site_features_security'
+require_relative 'features/doc_edition/site_features_cloud_edition'
+require_relative 'features/workspace_edition/cloud_edition'
+require_relative 'features/workspace_edition/enterprise_edition'
 
 require_relative 'search/site_search'
 
@@ -121,7 +130,7 @@ require_relative 'convert_page'
 
 module TestingSiteOnlyoffice
   # Site home page
-  # https://user-images.githubusercontent.com/40513035/120973030-42986b00-c723-11eb-81f4-94982ce056cd.png
+  # https://user-images.githubusercontent.com/38238032/196676551-39d307b2-d866-4867-820c-6045a7eddb04.png
   class SiteHomePage
     attr_accessor :instance
 
@@ -176,11 +185,11 @@ module TestingSiteOnlyoffice
     def start_registration
       OnlyofficeLoggerHelper.log('Starting registration')
       try_in_the_cloud_element.click
-      SiteSignUp.new(@instance)
+      SiteGetOnlyofficeSignUp.new(@instance)
     end
 
     def send_forgot_password_from_sign_in(email = mail_for_forgotten_password.username)
-      sign_in = click_link_on_toolbar(:sign_in)
+      sign_in = click_link_on_toolbar(:get_onlyoffice_sign_in)
       sign_in.send_forgot_password(email)
     end
 

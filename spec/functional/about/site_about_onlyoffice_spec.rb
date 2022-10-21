@@ -20,10 +20,10 @@ describe 'About onlyoffice' do
   end
 
   it '[About onlyoffice] Go to egistration_cloud' do
-    expect(@about_onlyoffice.click_registration_cloud).to be_a TestingSiteOnlyoffice::SiteSignUp
+    expect(@about_onlyoffice.click_registration_cloud).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeSignUp
   end
 
   it '[About onlyoffice] Go to customer_stories' do
-    expect(@about_onlyoffice.click_customer_stories).to be_a TestingSiteOnlyoffice::SiteCustomerStories
+    expect(@about_onlyoffice.click_customer_stories).to be_a TestingSiteOnlyoffice::SiteAboutCustomerStories
   end
 end

@@ -15,7 +15,7 @@ describe 'Integration for developer' do
     @test.webdriver.quit
   end
 
-  it '[For developer] Go to integration for developer' do
-    expect(@for_developer).to be_a TestingSiteOnlyoffice::SiteProductsDeveloperEdition
+  it '[For developer] Go to for_business for developer' do
+    expect(@for_developer).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition
   end
 end

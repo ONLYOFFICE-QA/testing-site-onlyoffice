@@ -47,7 +47,7 @@ module TestingSiteOnlyoffice
     # resources
     def click_help_center
       help_center_footer_link_element.click
-      SiteHelpCenter.new(@instance)
+      SiteAboutHelpCenter.new(@instance)
     end
 
     # support
