@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../../../get_onlyoffice/other_products/document_builder/lder'
+require_relative '../../../get_onlyoffice/document_builder/site_document_builder_constructor'
 
 module TestingSiteOnlyoffice
   # /document-builder.aspx
