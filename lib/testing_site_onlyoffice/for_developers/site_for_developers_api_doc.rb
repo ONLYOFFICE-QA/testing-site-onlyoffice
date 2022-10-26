@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 
 module TestingSiteOnlyoffice
-
   # https://api.onlyoffice.com
   # https://user-images.githubusercontent.com/38238032/197167437-10ea5aa8-51d3-46f2-bc0c-89eb125dad1f.png
   class SiteForDevelopersApiDoc
-
     include PageObject
     include SiteToolbar
 

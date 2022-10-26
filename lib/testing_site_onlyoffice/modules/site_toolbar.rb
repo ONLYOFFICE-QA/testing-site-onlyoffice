@@ -35,7 +35,7 @@ module TestingSiteOnlyoffice
     link(:site_for_business_alfresco, xpath: '//a[@id="navitem_integrations_alfresco"]')
     link(:site_for_business_moodle, xpath: '//a[@id="navitem_integrations_moodle"]')
     link(:site_for_business_all, xpath: '//a[@id="navitem_integrations_others"]')
-    link(:site_for_business_for_education, xpath:'//a[@id="navitem_features_education"]')
+    link(:site_for_business_for_education, xpath: '//a[@id="navitem_features_education"]')
 
     # top toolbar - For Developers
     link(:site_for_developers, xpath: '//a[@id="navitem_fordevelopers"]')
@@ -349,7 +349,7 @@ module TestingSiteOnlyoffice
           class: SiteAboutContacts
         },
         about_latest_news: {
-          element: site_about_latest_news_element,
+          element: site_about_latest_news_element
         },
         about_help_center: {
           element: site_about_help_center_element,

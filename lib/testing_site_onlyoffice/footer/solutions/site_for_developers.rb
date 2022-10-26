@@ -4,11 +4,9 @@ require_relative '../../get_onlyoffice/other_products/site_other_products_groups
 require_relative '../../get_onlyoffice/other_products/site_open_source_bundles'
 
 module TestingSiteOnlyoffice
-
   # /for-developers.aspx
   # https://user-images.githubusercontent.com/38238032/197989071-7a9492ea-d66d-48c5-b7c2-d929c53218b9.png
   class SiteForDevelopers
-
     include PageObject
     include SiteOtherProductsToolbar
 

@@ -4,7 +4,6 @@ module TestingSiteOnlyoffice
   # https://oforms.onlyoffice.com
   # https://user-images.githubusercontent.com/38238032/196736104-45dbc113-c01a-4138-96d3-94685686b5c7.png
   class SiteFeaturesOforms
-
     include PageObject
     include SiteToolbar
 

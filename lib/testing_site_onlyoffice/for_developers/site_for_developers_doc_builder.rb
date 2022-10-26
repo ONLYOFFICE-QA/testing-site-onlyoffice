@@ -4,7 +4,6 @@ module TestingSiteOnlyoffice
   # /document-builder.aspx
   # https://user-images.githubusercontent.com/38238032/197171586-bdfe6a84-7673-47ee-8675-8c5b0390bca0.png
   class SiteForDevelopersDocBuilder
-
     include PageObject
     include SiteToolbar
 

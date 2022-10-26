@@ -5,7 +5,6 @@ module TestingSiteOnlyoffice
   # https://user-images.githubusercontent.com/67409742/166101050-a8605bdb-d3be-4300-9376-cb57db77a93f.png
   class SiteForDevelopersDocDevEdition
     include PageObject
-
     def initialize(instance)
       super(instance.webdriver.driver)
       @instance = instance

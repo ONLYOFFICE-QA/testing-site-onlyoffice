@@ -4,7 +4,6 @@ module TestingSiteOnlyoffice
   # https://forum.onlyoffice.com
   # https://user-images.githubusercontent.com/38238032/197198489-05be7174-6328-4885-9f6b-005113f53003.png
   class SiteAboutForum
-
     include PageObject
     include SiteToolbar
 

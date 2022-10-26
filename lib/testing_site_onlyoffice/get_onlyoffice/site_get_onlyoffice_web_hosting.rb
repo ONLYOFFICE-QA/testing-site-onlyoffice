@@ -4,7 +4,6 @@ module TestingSiteOnlyoffice
   # /hosting-providers.aspx
   # https://user-images.githubusercontent.com/38238032/197181815-4744c402-62a8-4504-abc2-48d4a6a356b8.png
   class SiteGetOnlyofficeWebHosting
-
     include PageObject
     include SiteToolbar
 
