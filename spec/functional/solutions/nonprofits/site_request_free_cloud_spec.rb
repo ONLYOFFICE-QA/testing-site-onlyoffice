@@ -18,7 +18,7 @@ describe 'Request free cloud' do
 
   it '[Site][RequestFreeCloud] Check link `create your cloud office here`' do
     @sign_up_page = @request_free_cloud_page.click_create_your_cloud_office_here
-    expect(@sign_up_page).to be_a TestingSiteOnlyoffice::SiteSignUp
+    expect(@sign_up_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeSignUp
   end
 
   it '[Site][RequestFreeCloud] Check link `ONLYOFFICE website`' do

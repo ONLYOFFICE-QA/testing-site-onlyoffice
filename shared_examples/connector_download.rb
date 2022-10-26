@@ -7,20 +7,20 @@ shared_examples_for 'connector_download' do |connectors_list|
         @current_installation = connectors_page.installer_open_source_connector_block(connector)
       end
 
-      it "[Site][OtherProducts][Connectors][#{connector}] 'Get on Github' button works /download.aspx#connectors" do
+      it "[Site][Connectors][#{connector}] 'Get on Github' button works /download-connectors.aspx" do
         connectors_page.click_constructor_link(@current_installation.get_on_github_xpath)
         github_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_info[connector.to_s]['github']
         expect(connectors_page.check_opened_page_title).to eq(github_title)
       end
 
-      it "[Site][OtherProducts][Connectors][#{connector}] 'Read installation' button works /download.aspx#connectors" do
+      it "[Site][Connectors][#{connector}] 'Read installation' button works /download-connectors.aspx" do
         pending 'Connector instructions missing' if connector == :wordpress
         connectors_page.click_constructor_link(@current_installation.instruction_xpath)
         instruction_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_info[connector.to_s]['instruction']
         expect(connectors_page.check_opened_page_title).to eq(instruction_title)
       end
 
-      it "[Site][OtherProducts][Connectors][#{connector}]release info on site matches github data /download.aspx#connectors" do
+      it "[Site][Connectors][#{connector}]release info on site matches github data /download-connectors.aspx" do
         site_data = TestingSiteOnlyoffice::SiteConnectorReleaseData.new(version: connectors_page.get_installer_release_date_or_version(@current_installation.version_xpath),
                                                                         date: connectors_page.get_installer_release_date_or_version(@current_installation.release_date_xpath))
         github_data = TestingSiteOnlyoffice::SiteConnectorReleaseData.new(version: connectors_page.github_version(connector),

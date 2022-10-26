@@ -16,6 +16,6 @@ describe 'Jobs' do
   end
 
   it '[Jobs] Go to Jobs' do
-    expect(@jobs).to be_a TestingSiteOnlyoffice::SiteJobs
+    expect(@jobs).to be_a TestingSiteOnlyoffice::SiteAboutJobs
   end
 end

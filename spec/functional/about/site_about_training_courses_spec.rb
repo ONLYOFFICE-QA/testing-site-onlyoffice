@@ -9,7 +9,7 @@ partner_email = OnlyofficeIredmailHelper::IredMailHelper.new(username: TestingSi
 describe 'Training courses' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @training_courses_page = site_home_page.click_link_on_toolbar(:training_courses)
+    @training_courses_page = site_home_page.click_link_on_toolbar(:about_training_courses)
   end
 
   after do |example|

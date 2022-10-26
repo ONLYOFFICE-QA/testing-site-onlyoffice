@@ -19,19 +19,19 @@ describe 'Cloud Edition' do
   end
 
   it '[Cloud Edition] Go to document_editing' do
-    expect(@cloud_edition.check_button_document_editing?).to be_a TestingSiteOnlyoffice::SiteProductsDocumentEditor
+    expect(@cloud_edition.check_button_document_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesDocumentEditor
   end
 
   it '[Cloud Edition] Go to spreadsheet_editing' do
-    expect(@cloud_edition.check_button_spreadsheet_editing?).to be_a TestingSiteOnlyoffice::SiteProductsSpreadsheetEditor
+    expect(@cloud_edition.check_button_spreadsheet_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesSpreadsheetEditor
   end
 
   it '[Cloud Edition] Go to presentation_editing' do
-    expect(@cloud_edition.check_button_presentation_editing?).to be_a TestingSiteOnlyoffice::SiteProductsPresentationEditor
+    expect(@cloud_edition.check_button_presentation_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesPresentationEditor
   end
 
   it '[Cloud Edition] Go to form_creator' do
-    expect(@cloud_edition.check_button_form_creator?).to be_a TestingSiteOnlyoffice::SiteProductsFormCreator
+    expect(@cloud_edition.check_button_form_creator?).to be_a TestingSiteOnlyoffice::SiteFeaturesFormCreator
   end
 
   it '[Cloud Edition] Go to pre_order' do

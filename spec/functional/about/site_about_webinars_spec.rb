@@ -16,6 +16,6 @@ describe 'Webinars' do
   end
 
   it '[Webinars] Go to Webinars' do
-    expect(@webinars).to be_a TestingSiteOnlyoffice::SiteWebinars
+    expect(@webinars).to be_a TestingSiteOnlyoffice::SiteAboutWebinars
   end
 end

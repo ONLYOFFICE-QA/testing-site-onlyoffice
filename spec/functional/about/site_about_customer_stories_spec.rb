@@ -16,6 +16,6 @@ describe 'Customer stories' do
   end
 
   it '[Customer stories] Go to customer_stories' do
-    expect(@customer_stories).to be_a TestingSiteOnlyoffice::SiteCustomerStories
+    expect(@customer_stories).to be_a TestingSiteOnlyoffice::SiteAboutCustomerStories
   end
 end

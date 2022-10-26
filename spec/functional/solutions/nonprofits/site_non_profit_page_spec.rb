@@ -22,17 +22,17 @@ describe 'Site Nonprofit page links' do
 
   it '[Site][NonProfits] Check link `Learn more about collaboration platform`' do
     @products_groups = @nonprofits_page.click_learn_more_about_collaboration_platforms
-    expect(@products_groups).to be_a TestingSiteOnlyoffice::SiteProductsWorkspace
+    expect(@products_groups).to be_a TestingSiteOnlyoffice::SiteForBusinessWorkspace
   end
 
   it '[Site][NonProfits] Check link `Learn about security`' do
     @products_security = @nonprofits_page.click_learn_more_about_security
-    expect(@products_security).to be_a TestingSiteOnlyoffice::SiteProductsSecurity
+    expect(@products_security).to be_a TestingSiteOnlyoffice::SiteFeaturesSecurity
   end
 
   it '[Site][NonProfits] Check link `Download` for desktop' do
     @download_desktop = @nonprofits_page.click_download
-    expect(@download_desktop).to be_a TestingSiteOnlyoffice::SiteDesktopApps
+    expect(@download_desktop).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDesktopApps
   end
 
   it '[Site][NonProfits] Check link `Download for Android`' do

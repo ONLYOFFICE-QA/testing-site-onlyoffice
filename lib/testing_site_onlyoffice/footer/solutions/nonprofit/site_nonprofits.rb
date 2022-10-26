@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 require_relative 'site_request_free_cloud'
-require_relative '../../../products/site_products_docs'
-require_relative '../../../products/site_products_security'
-require_relative '../../../products/connectors/site_products_connectors_onlyoffice'
-require_relative '../../../get_onlyoffice/desktop_and_mobile/desktop/site_desktop_apps'
+require_relative '../../../features/site_features_docs'
+require_relative '../../../features/site_features_security'
+require_relative '../../../features/connectors/site_features_connectors_onlyoffice'
+require_relative '../../../get_onlyoffice/desktop_and_mobile/desktop/site_get_onlyoffice_desktop_apps'
 require_relative '../../../get_onlyoffice/modules/site_download_helper'
 
 module TestingSiteOnlyoffice
@@ -47,17 +47,17 @@ module TestingSiteOnlyoffice
 
     def click_learn_more_about_collaboration_platforms
       learn_more_about_collaboration_platforms_element.click
-      SiteProductsWorkspace.new(@instance)
+      SiteForBusinessWorkspace.new(@instance)
     end
 
     def click_learn_more_about_security
       learn_more_about_security_element.click
-      SiteProductsSecurity.new(@instance)
+      SiteFeaturesSecurity.new(@instance)
     end
 
     def click_download
       nonprofit_download_element.click
-      SiteDesktopApps.new(@instance)
+      SiteGetOnlyofficeDesktopApps.new(@instance)
     end
 
     def click_see_all_integrations

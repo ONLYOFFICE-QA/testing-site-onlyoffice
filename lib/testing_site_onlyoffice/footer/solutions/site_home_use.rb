@@ -38,17 +38,17 @@ module TestingSiteOnlyoffice
 
     def download_desktop_editors
       download_now_desktop_editors_element.click
-      SiteDesktopApps.new(@instance)
+      SiteGetOnlyofficeDesktopApps.new(@instance)
     end
 
     def click_learn_more_desktop_editors
       learn_more_desktop_editors_element.click
-      SiteProductsDesktop.new(@instance)
+      SiteFeaturesDesktop.new(@instance)
     end
 
     def get_it_now_self_hosted_editors
       get_it_now_document_editors_element.click
-      SiteDocsEnterprise.new(@instance)
+      SiteGetOnlyofficeDocsEnterprise.new(@instance)
     end
 
     def click_see_all_integrations
@@ -58,12 +58,12 @@ module TestingSiteOnlyoffice
 
     def download_self_hosted_productivity_apps
       download_workspace_element.click
-      SiteWorkspaceEnterprise.new(@instance)
+      SiteGetOnlyofficeWorkspaceEnterprise.new(@instance)
     end
 
     def click_learn_more_hosted_productivity_apps
       learn_more_workspace_element.click
-      SiteProductsWorkspace.new(@instance)
+      SiteForBusinessWorkspace.new(@instance)
     end
 
     def open_personal

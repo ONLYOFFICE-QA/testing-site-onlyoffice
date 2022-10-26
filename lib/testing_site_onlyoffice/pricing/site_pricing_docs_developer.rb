@@ -33,7 +33,7 @@ module TestingSiteOnlyoffice
     def click_free_button
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(free_button_element) }
       free_button_element.click
-      SiteDocsDeveloper.new(@instance)
+      SiteGetOnlyofficeDocsDeveloper.new(@instance)
     end
 
     def fill_data_price_developer(number_connection, support_level)

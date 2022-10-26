@@ -93,7 +93,7 @@ module TestingSiteOnlyoffice
         onlyoffice_docs_for_owncloud: 'onlyoffice_docs_for_owncloud.pdf',
         document_collaboration_in_education: 'onlyoffice_docs_datasheet_education.pdf',
         onlyoffice_docs: 'onlyoffice_docs.pdf',
-        onlyoffice_workspace: 'onlyoffice_workspace.pdf',
+        get_onlyoffice_workspace_on_premises: 'onlyoffice_workspace.pdf',
         onlyoffice_private_room: 'onlyoffice_workspace_private_rooms.pdf',
         onlyoffice_for_law_firms: 'onlyoffice_datasheet_for_law_firms.pdf',
         onlyoffice_for_medical_industry: 'docs_datasheet_medical_3.pdf',

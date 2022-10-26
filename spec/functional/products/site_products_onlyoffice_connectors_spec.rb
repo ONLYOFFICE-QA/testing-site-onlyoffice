@@ -3,7 +3,7 @@
 require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Site products connectors' do
+describe 'Site features connectors' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @products_connectors_page = site_home_page.footer_nonprofits.click_see_all_integrations
@@ -30,7 +30,7 @@ describe 'Site products connectors' do
 
       it "[Site][Products][OnlyofficeConnectors][#{connector}] 'Get it now' button works /all-connectors.aspx" do
         download_connectors_page = @products_connectors_page.click_get_it_now_link(current_connector.get_it_now_xpath)
-        expect(download_connectors_page).to be_a TestingSiteOnlyoffice::SiteOtherProductsConnectors
+        expect(download_connectors_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeConnectors
       end
     end
   end

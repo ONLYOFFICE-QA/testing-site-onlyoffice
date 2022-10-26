@@ -20,15 +20,15 @@ describe 'Nextcloud' do
   end
 
   it '[Nextcloud] Go to get it now' do
-    expect(@integration.check_link_get_it_now).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
+    expect(@integration.check_link_get_it_now).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
   end
 
   it '[Nextcloud] Go to get onlyoffice now' do
-    expect(@integration.check_link_get_onlyoffice_now).to be_a TestingSiteOnlyoffice::SiteDocsEnterprise
+    expect(@integration.check_link_get_onlyoffice_now).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
   end
 
   it '[Nextcloud] Go to download for desktop' do
-    expect(@integration.check_link_download_for_desktop).to be_a TestingSiteOnlyoffice::SiteProductsDesktop
+    expect(@integration.check_link_download_for_desktop).to be_a TestingSiteOnlyoffice::SiteFeaturesDesktop
   end
 
   it '[Nextcloud] Go to apps_store' do

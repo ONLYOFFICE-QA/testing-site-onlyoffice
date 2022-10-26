@@ -18,7 +18,7 @@ describe 'Pricing Cloud Service' do
 
       it "[Site][Pricing][Cloud] Startup check `Start now` button for #{period}" do
         sign_up_page = @pricing_cloud_page.startup_start_now
-        expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteSignUp
+        expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeSignUp
       end
 
       it "[Site][Pricing][Cloud] Business check `Calculate your price` button for #{period}" do
@@ -28,7 +28,7 @@ describe 'Pricing Cloud Service' do
 
       it "[Site][Pricing][Cloud] Business check `TRY IT FOR FREE` link for #{period}" do
         sign_up_page = @pricing_cloud_page.business_try_it_for_free
-        expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteSignUp
+        expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeSignUp
       end
 
       it "[Site][Pricing][Cloud] PERSONAL check `Contact us` button for #{period}" do

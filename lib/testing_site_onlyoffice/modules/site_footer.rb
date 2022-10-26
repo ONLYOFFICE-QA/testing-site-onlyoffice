@@ -18,6 +18,7 @@ module TestingSiteOnlyoffice
 
     # by industry
     link(:industry_nonprofits, xpath: "#{footer_xpath}//a[contains(@href, 'nonprofit')]")
+    link(:industry_developers, xpath: "#{footer_xpath}//a[@href = '/for-developers.aspx']")
 
     # resources
     link(:help_center_footer_link, xpath: '//a[contains(@href,"helpcenter.onlyoffice.com/index.aspx")]')
@@ -44,10 +45,15 @@ module TestingSiteOnlyoffice
       SiteNonProfits.new(@instance)
     end
 
+    def footer_developers
+      industry_developers_element.click
+      SiteForDevelopers.new(@instance)
+    end
+
     # resources
     def click_help_center
       help_center_footer_link_element.click
-      SiteHelpCenter.new(@instance)
+      SiteAboutHelpCenter.new(@instance)
     end
 
     # support

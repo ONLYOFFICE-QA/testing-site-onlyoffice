@@ -16,10 +16,10 @@ describe 'About awards' do
   end
 
   it '[Awards] Go to awards' do
-    expect(@awards).to be_a TestingSiteOnlyoffice::SiteAwards
+    expect(@awards).to be_a TestingSiteOnlyoffice::SiteAboutAwards
   end
 
   it '[Awards] Go to registration' do
-    expect(@awards.click_use_cloud).to be_a TestingSiteOnlyoffice::SiteSignUp
+    expect(@awards.click_use_cloud).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeSignUp
   end
 end

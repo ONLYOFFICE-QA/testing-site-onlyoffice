@@ -2,7 +2,7 @@
 
 require_relative '../../additional_products/site_faq'
 require_relative '../../additional_products/payment/avangate'
-require_relative '../../get_onlyoffice/site_sign_up'
+require_relative '../../get_onlyoffice/site_get_onlyoffice_sign_up'
 require_relative 'site_pricing_cloud_calculator'
 require_relative 'site_require_vip_cloud'
 require_relative '../../additional_products/personal_main_page'
@@ -68,12 +68,12 @@ module TestingSiteOnlyoffice
 
     def startup_start_now
       startup_start_now_element.click
-      SiteSignUp.new(@instance)
+      SiteGetOnlyofficeSignUp.new(@instance)
     end
 
     def business_try_it_for_free
       business_try_it_for_free_element.click
-      SiteSignUp.new(@instance)
+      SiteGetOnlyofficeSignUp.new(@instance)
     end
 
     def current_price_period

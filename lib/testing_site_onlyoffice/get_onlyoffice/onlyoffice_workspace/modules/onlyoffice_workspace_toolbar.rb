@@ -11,7 +11,7 @@ module TestingSiteOnlyoffice
 
     def site_workspace_enterprise_download
       site_workspace_enterprise_element.click
-      SiteWorkspaceEnterprise.new(@instance)
+      SiteGetOnlyofficeWorkspaceEnterprise.new(@instance)
     end
 
     def site_workspace_community_download

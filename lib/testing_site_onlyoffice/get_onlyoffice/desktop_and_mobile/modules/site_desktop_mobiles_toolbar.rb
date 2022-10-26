@@ -16,7 +16,7 @@ module TestingSiteOnlyoffice
 
     def open_desktop_apps
       site_desktop_download_element.click
-      SiteDesktopApps.new(@instance)
+      SiteGetOnlyofficeDesktopApps.new(@instance)
     end
   end
 end
