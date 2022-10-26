@@ -332,11 +332,11 @@ module TestingSiteOnlyoffice
           element: site_about_press_downloads_element,
           class: SiteAboutPressDownloads
         },
-        white_papers: {
+        about_white_papers: {
           element: site_about_white_papers_element,
           class: SiteAboutWhitePapers
         },
-        training_courses: {
+        about_training_courses: {
           element: site_about_training_courses_element,
           class: SiteAboutTrainingCourses
         },

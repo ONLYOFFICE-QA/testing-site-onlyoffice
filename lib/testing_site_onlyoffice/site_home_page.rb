@@ -25,6 +25,7 @@ require_relative 'data/site_prices_data'
 require_relative 'data/site_private_data'
 
 require_relative 'footer/developer/site_document_builder/site_document_builder'
+require_relative 'footer/solutions/site_for_developers'
 require_relative 'footer/contact_us/site_callback'
 require_relative 'footer/support/site_order_demo'
 require_relative 'footer/support/site_support_contact_form'

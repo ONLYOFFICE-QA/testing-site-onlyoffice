@@ -217,12 +217,15 @@ describe 'SiteHourlyCheck' do
 
       describe 'connectors' do
         it_behaves_like 'connector_download', TestingSiteOnlyoffice::SiteDownloadData.connectors_list do
-          let(:connectors_page) { other_products_page }
+          let(:connectors_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_connectors) }
         end
       end
 
       describe 'groups' do
-        let(:other_products_groups_page) { other_products_page.site_other_products_onlyoffice_groups_download }
+        let(:other_products_groups_page) do
+          for_developers_page = @site_home_page.footer_developers
+          for_developers_page.click_download_now_button('groups')
+        end
 
         TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_list.each do |installer|
           it "[Site][OtherProducts][Groups] Check `#{installer}` download link /download.aspx#groups" do
@@ -239,7 +242,10 @@ describe 'SiteHourlyCheck' do
       end
 
       describe 'bundles' do
-        let(:other_products_bundles_page) { other_products_page.site_other_products_bundles_download }
+        let(:other_products_bundles_page) do
+          for_developers_page = @site_home_page.footer_developers
+          for_developers_page.click_download_now_button('bundles')
+        end
 
         TestingSiteOnlyoffice::SiteDownloadData.other_products_bundles_list.each do |installer|
           it "[Site][OtherProducts][Bundlers] Check `#{installer}` 'Read instructions' link /download.aspx#bundles" do
@@ -255,7 +261,7 @@ describe 'SiteHourlyCheck' do
       end
 
       describe 'document builder' do
-        let(:other_products_document_builder_page) { other_products_page.site_other_products_document_builder_download }
+        let(:other_products_document_builder_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_document_builder) }
 
         it_behaves_like 'document_builder_download',
                         TestingSiteOnlyoffice::SiteDownloadData.document_builder_list do
