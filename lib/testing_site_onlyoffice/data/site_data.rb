@@ -77,6 +77,7 @@ module TestingSiteOnlyoffice
 
     def self.white_papers
       {
+        docs_for_developers: 'onlyoffice_docs_for_developers.pdf',
         oform_specification: 'oform_specification.pdf',
         load_test_report: 'load_test_report.pdf',
         private_rooms_9_security_principles: 'private_rooms_9_security_principles.pdf',
@@ -89,11 +90,14 @@ module TestingSiteOnlyoffice
 
     def self.datasheets
       {
+        onlyoffice_document_processing_for_banking: 'onlyoffice_for_banking.pdf',
         onlyoffice_docs_for_nextcloud: 'onlyoffice_docs_for_nextcloud.pdf',
         onlyoffice_docs_for_owncloud: 'onlyoffice_docs_for_owncloud.pdf',
         document_collaboration_in_education: 'onlyoffice_docs_datasheet_education.pdf',
+        onlyoffice_docs_cluster: 'onlyoffice_docs_in_your_cluster.pdf',
+        onlyoffice_workspace_health: 'onlyoffice_workspace_for_health_institutions.pdf',
         onlyoffice_docs: 'onlyoffice_docs.pdf',
-        get_onlyoffice_workspace_on_premises: 'onlyoffice_workspace.pdf',
+        onlyoffice_workspace: 'onlyoffice_workspace.pdf',
         onlyoffice_private_room: 'onlyoffice_workspace_private_rooms.pdf',
         onlyoffice_for_law_firms: 'onlyoffice_datasheet_for_law_firms.pdf',
         onlyoffice_for_medical_industry: 'docs_datasheet_medical_3.pdf',
