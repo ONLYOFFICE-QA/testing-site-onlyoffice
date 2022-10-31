@@ -201,8 +201,7 @@ module TestingSiteOnlyoffice
           class: SiteForDevelopersApiDoc
         },
         for_developers_github_code: {
-          element: site_for_developers_github_code,
-          class: SiteForDevelopersApiDoc # Change class to appropriate one
+          element: site_for_developers_github_code_element
         }
       }
     end
@@ -363,12 +362,13 @@ module TestingSiteOnlyoffice
 
     def all_toolbar_links_and_classes_hash
       site_toolbar_features.merge(site_toolbar_for_business, site_toolbar_get_onlyoffice, site_toolbar_pricing,
-                                  site_toolbar_partners, site_toolbar_about)
+                                  site_toolbar_partners, site_toolbar_about, site_toolbar_for_developers)
     end
 
     def move_to_element_link_toolbar(section)
       @instance.webdriver.move_to_element_by_locator(site_features_element.selector[:xpath]) if site_toolbar_features.key?(section)
-      @instance.webdriver.move_to_element_by_locator(site_integrations_element.selector[:xpath]) if site_toolbar_for_business.key?(section)
+      @instance.webdriver.move_to_element_by_locator(site_for_business_element.selector[:xpath]) if site_toolbar_for_business.key?(section)
+      @instance.webdriver.move_to_element_by_locator(site_for_developers_element.selector[:xpath]) if site_toolbar_for_developers.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_get_onlyoffice_element.selector[:xpath]) if site_toolbar_get_onlyoffice.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_pricing_element.selector[:xpath]) if site_toolbar_pricing.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_partners_element.selector[:xpath]) if site_toolbar_partners.key?(section)

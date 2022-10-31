@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Desktop apps' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @desktop_app_page = site_home_page.click_link_on_toolbar(:desktop_mobile_apps)
+    @desktop_app_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_desktop_mobile)
   end
 
   it_behaves_like 'desktop_installer_download', TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list_type do

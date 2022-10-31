@@ -1,9 +1,15 @@
 {
   "desktop": {
-    "windows_10": {
+    "windows_10_8_7_x64": {
       "instruction": "How to install Desktop Editors for Windows to your computer? - ONLYOFFICE",
-      "download_x64": "DesktopEditors_x64.exe",
-      "download_x86": "DesktopEditors_x86.exe",
+      "exe": "DesktopEditors_x64.exe",
+      "msi": "DesktopEditors_x64.msi",
+      "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
+    },
+    "windows_10_8_7_x86": {
+      "instruction": "How to install Desktop Editors for Windows to your computer? - ONLYOFFICE",
+      "exe": "DesktopEditors_x86.exe",
+      "msi": "DesktopEditors_x86.msi",
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
     "windows_xp": {

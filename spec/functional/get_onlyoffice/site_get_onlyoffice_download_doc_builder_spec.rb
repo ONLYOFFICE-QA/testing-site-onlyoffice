@@ -33,12 +33,4 @@ describe 'Open source Document builder download' do
       let(:installers_download_page) { document_builder_download_page }
     end
   end
-
-  describe 'open download page from footer' do
-    it 'Open download document builder page from footer' do
-      document_builder_info_page = @site_home_page.click_link_on_toolbar(:document)
-      document_builder_download_page = document_builder_info_page.click_download_now
-      expect(document_builder_download_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDownloadDocBuilder
-    end
-  end
 end

@@ -7,14 +7,14 @@ module TestingSiteOnlyoffice
     def self.desktop_download_list_type
       {
         download_file: %i[macos_x86 debian_8 debian_7 centos appimage],
-        two_download_windows_files: %i[windows_10 windows_xp],
+        three_download_windows_files: %i[windows_10_8_7_x64 windows_10_8_7_x86 windows_xp],
         two_download_mac_files: %i[macos_10],
         download_from_store: %i[snap flatpak]
       }
     end
 
     def self.desktop_download_list
-      desktop_download_list_type[:download_file] + desktop_download_list_type[:two_download_windows_files] + desktop_download_list_type[:download_from_store] + desktop_download_list_type[:two_download_mac_files]
+      desktop_download_list_type[:download_file] + desktop_download_list_type[:three_download_windows_files] + desktop_download_list_type[:download_from_store] + desktop_download_list_type[:two_download_mac_files]
     end
 
     def self.desktop_mobile_info
