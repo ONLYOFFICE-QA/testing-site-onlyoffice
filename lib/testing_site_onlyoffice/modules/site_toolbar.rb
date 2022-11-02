@@ -386,6 +386,27 @@ module TestingSiteOnlyoffice
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
     end
 
+    def self.integrations_list
+      {
+        for_business_nextcloud: {
+          class: SiteNextcloud
+        },
+        for_business_alfresco: {
+          class: SiteAlfresco
+        },
+        for_business_owncloud: {
+          class: SiteOwnCloud
+        },
+        for_business_confluence: {
+          class: SiteConfluence
+        },
+        for_business_moodle: {
+          class: SiteMoodle
+        }
+      }
+    end
+
+
     private
 
     # Since site v1.95.0 of site there is no direct link to docs registration on main page

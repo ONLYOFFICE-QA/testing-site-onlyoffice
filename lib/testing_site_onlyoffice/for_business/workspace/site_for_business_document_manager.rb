@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../modules/site_features_methods'
+require_relative 'modules/site_features_methods'
 
 module TestingSiteOnlyoffice
   # /document-management.aspx

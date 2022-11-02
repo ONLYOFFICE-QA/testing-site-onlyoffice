@@ -5,7 +5,7 @@ require_relative 'modules/other_products_toolbar'
 require_relative '../modules/site_download_helper'
 
 module TestingSiteOnlyoffice
-  # /download.aspx#groups
+  # /download.aspx#workspace
   # https://user-images.githubusercontent.com/40513035/131140675-36b7a7dc-f6a9-42bb-a2e9-36ff178349bc.png
   class SiteOtherProductsGroups
     include PageObject
@@ -13,28 +13,28 @@ module TestingSiteOnlyoffice
     include SiteToolbar
     include SiteOtherProductsToolbar
 
-    groups_instruction_docker = "//a[contains(@href, 'groups-install-docker')]"
+    groups_instruction_docker = "//a[contains(@href, 'workspace-install-docker')]"
     link(:site_open_source_groups_docker_download,
-         xpath: "#{groups_instruction_docker}/../../..//a[contains(@href, 'groups-install.sh')]")
+         xpath: "#{groups_instruction_docker}/../../..//a[contains(@href, 'workspace-install.sh')]")
     link(:site_open_source_groups_docker_instruction, xpath: groups_instruction_docker)
     link(:site_open_source_groups_docker_github,
          xpath: "#{groups_instruction_docker}/../../p/a[contains(@href, 'Docker-CommunityServer')]")
 
-    groups_instruction_debian = "//a[contains(@href, 'groups-install-ubuntu')]"
+    groups_instruction_debian = "//a[contains(@href, 'workspace-install-ubuntu')]"
     link(:site_open_source_groups_debian_download,
-         xpath: "#{groups_instruction_debian}/../../..//a[contains(@href, 'groups-install.sh')]")
+         xpath: "#{groups_instruction_debian}/../../..//a[contains(@href, 'workspace-install.sh')]")
     link(:site_open_source_groups_debian_instruction, xpath: groups_instruction_debian)
     link(:site_open_source_groups_debian_github,
          xpath: "#{groups_instruction_debian}/../../p/a[contains(@href, 'CommunityServer')]")
 
-    groups_instruction_centos = "//a[contains(@href, 'groups-install-centos')]"
+    groups_instruction_centos = "//a[contains(@href, 'workspace-install-centos')]"
     link(:site_open_source_groups_centos_download,
-         xpath: "#{groups_instruction_centos}/../../..//a[contains(@href, 'groups-install.sh')]")
+         xpath: "#{groups_instruction_centos}/../../..//a[contains(@href, 'workspace-install.sh')]")
     link(:site_open_source_groups_centos_instruction, xpath: groups_instruction_centos)
     link(:site_open_source_groups_centos_github,
          xpath: "#{groups_instruction_centos}/../../p/a[contains(@href, 'CommunityServer')]")
 
-    groups_instruction_windows = "//a[contains(@href, 'groups-install-windows')]"
+    groups_instruction_windows = "//a[contains(@href, 'workspace-install-windows')]"
     link(:site_open_source_groups_windows_download, xpath: "//a[contains(@href, 'Groups_Win-install.latest.exe')]")
     link(:site_open_source_groups_windows_instruction, xpath: groups_instruction_windows)
     link(:site_open_source_groups_windows_github,

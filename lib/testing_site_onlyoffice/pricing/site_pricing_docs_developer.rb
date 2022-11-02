@@ -25,9 +25,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(get_quote_button_element)
-      end
+      @instance.webdriver.wait_until { get_quote_button_present? }
     end
 
     def click_free_button
@@ -43,6 +41,10 @@ module TestingSiteOnlyoffice
 
     def choose_number_connection(connection)
       add_num_connection_element.click while @instance.webdriver.get_text(num_connections_element) != connection
+    end
+
+    def get_quote_button_present?
+      @instance.webdriver.element_present?(get_quote_button_element)
     end
   end
 end

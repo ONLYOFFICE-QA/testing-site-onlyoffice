@@ -14,7 +14,7 @@ describe 'Help center footer links' do
       it "[Site] `#{title}` link of `#{section_title}` footer section works" do
         site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
         pending('Link `https://www.linkedin.com/company/ascensio-system-sia/` answered with 999') if title == 'Follow us on LinkedIn'
-        expect(site_home_page).to be_site_footer_link_alive(section_title, title)
+        expect(site_home_page).to site_footer_link_alive?(section_title, title)
       end
     end
   end

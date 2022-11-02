@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative '../modules/site_groups_xpath'
-require_relative '../modules/site_features_methods'
+require_relative 'modules/site_features_methods'
+require_relative 'modules/site_groups_xpath'
 
 module TestingSiteOnlyoffice
   # /calendar.aspx

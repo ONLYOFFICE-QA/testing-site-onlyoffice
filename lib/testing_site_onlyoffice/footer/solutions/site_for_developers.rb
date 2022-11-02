@@ -27,7 +27,7 @@ module TestingSiteOnlyoffice
     def click_download_now_button(destination)
       @instance.webdriver.click_on_locator(download_now_button_element)
       case destination
-      when 'groups'
+      when 'workspace'
         site_other_products_onlyoffice_groups_download
       when 'bundles'
         site_other_products_bundles_download

@@ -4,10 +4,10 @@ require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Liferay' do
+describe 'Integration for developer' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @integration = site_home_page.click_link_on_toolbar(:integrations_liferay)
+    @for_developer = site_home_page.click_link_on_toolbar(:for_developers_doc_dev_edition)
   end
 
   after do |example|
@@ -15,13 +15,7 @@ describe 'Liferay' do
     @test.webdriver.quit
   end
 
-  it '[Liferay] Go to Liferay' do
-    expect(@integration).to be_a TestingSiteOnlyoffice::SiteLiferay
-  end
-
-  describe 'Pick price' do
-    it_behaves_like 'integration_pick_price' do
-      let(:integration_pick_price) { @integration }
-    end
+  it '[For developer] Go to for_business for developer' do
+    expect(@for_developer).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition
   end
 end

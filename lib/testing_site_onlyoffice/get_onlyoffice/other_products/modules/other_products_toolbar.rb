@@ -6,7 +6,7 @@ module TestingSiteOnlyoffice
   module SiteOtherProductsToolbar
     include PageObject
 
-    div(:site_other_products_onlyoffice_groups, xpath: '//div[@id = "groups"]')
+    div(:site_other_products_onlyoffice_groups, xpath: '//div[@id = "workspace"]')
     div(:site_other_products_bundles, xpath: '//div[@id = "bundles"]')
 
     def site_other_products_onlyoffice_groups_download

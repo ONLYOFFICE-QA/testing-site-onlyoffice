@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Cloud Edition' do
+describe 'Site features workspace calendar' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @cloud_edition = site_home_page.click_link_on_toolbar(:products_workspace_cloud_edition)
+    @calendar = site_home_page.click_link_on_toolbar(:for_business_workspace)
   end
 
   after do |example|
@@ -15,7 +14,7 @@ describe 'Cloud Edition' do
     @test.webdriver.quit
   end
 
-  it '[Workspace edition] Go to cloud edition' do
-    expect(@cloud_edition).to be_a TestingSiteOnlyoffice::SiteCloudEdition
+  it "[Site][Products][CRM]'Check select section calendar" do
+    expect(@calendar.check_select?('calendar')).to be true
   end
 end

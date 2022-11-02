@@ -6,7 +6,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Enterprise Edition' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @enterprise_edition = site_home_page.click_link_on_toolbar(:products_docs_enterprise_edition)
+    @enterprise_edition = site_home_page.click_link_on_toolbar(:for_business_docs_enterprise)
   end
 
   after do |example|
