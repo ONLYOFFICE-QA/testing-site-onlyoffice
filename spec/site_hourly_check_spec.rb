@@ -91,10 +91,6 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check cloud' do
-      page = @site_home_page.click_link_on_toolbar(:pricing_cloud)
-      expect(page).to be_a TestingSiteOnlyoffice::SitePricingCloud
-      page = @site_home_page.click_link_on_toolbar(:pricing_server)
-      expect(page).to be_a TestingSiteOnlyoffice::SitePriceServerEnterprise
       page = @site_home_page.click_link_on_toolbar(:pricing_enterprise)
       expect(page).to be_a TestingSiteOnlyoffice::SitePriceDocsEnterprise
       page = @site_home_page.click_link_on_toolbar(:pricing_developer)

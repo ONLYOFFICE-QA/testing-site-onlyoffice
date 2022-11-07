@@ -6,6 +6,7 @@ require_relative '../../get_onlyoffice/site_get_onlyoffice_sign_up'
 require_relative 'site_pricing_cloud_calculator'
 require_relative 'site_require_vip_cloud'
 require_relative '../../additional_products/personal_main_page'
+require_relative '../modules/site_pricing_workspace_toolbar'
 
 module TestingSiteOnlyoffice
   # /saas.aspx
