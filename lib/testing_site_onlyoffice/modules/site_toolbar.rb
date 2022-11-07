@@ -59,8 +59,7 @@ module TestingSiteOnlyoffice
     # top toolbar - Pricing
     link(:site_pricing, xpath: '//a[@id="navitem_prices"]')
     link(:site_pricing_docs_enterprise, xpath: '//a[@id="navitem_prices_docs_enterprice"]')
-    link(:site_pricing_workspace_cloud, xpath: '//a[@id="navitem_prices_workspace_cloud"]')
-    link(:site_pricing_workspace_server, xpath: '//a[@id="navitem_prices_workspace_onprem"]')
+    link(:site_pricing_workspace, xpath: '//a[@id="navitem_prices_workspace"]')
     link(:site_pricing_docs_developer, xpath: '//a[@id="navitem_prices_docs_dev"]')
     link(:site_pricing_buy_from_reseller, xpath: '//a[@id="navitem_prices_reseller"]')
 
@@ -255,17 +254,13 @@ module TestingSiteOnlyoffice
           element: site_pricing_docs_enterprise_element,
           class: SitePriceDocsEnterprise
         },
+        pricing_workspace: {
+          element: site_pricing_workspace_element,
+          class: SitePricingCloud
+        },
         pricing_developer: {
           element: site_pricing_docs_developer_element,
           class: SitePriceDocsDeveloper
-        },
-        pricing_cloud: {
-          element: site_pricing_workspace_cloud_element,
-          class: SitePricingCloud
-        },
-        pricing_server: {
-          element: site_pricing_workspace_server_element,
-          class: SitePriceServerEnterprise
         },
         pricing_buy_from_reseller: {
           element: site_pricing_buy_from_reseller_element,
