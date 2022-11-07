@@ -15,6 +15,7 @@ module TestingSiteOnlyoffice
     include PageObject
     include SitePricingCloudCalculator
     include SiteToolbar
+    include SitePricingWorkspaceToolbar
 
     # startup
     startup = "//div[contains(@class, 'saas-cell-startup')]"
