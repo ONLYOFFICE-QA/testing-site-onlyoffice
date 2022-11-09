@@ -20,40 +20,15 @@ module TestingSiteOnlyoffice
       SiteGetOnlyofficeDocsDeveloper.new(@instance)
     end
 
-    def check_button_developer_request_demo?
-      @instance.webdriver.click_on_locator("//div[@class='solutionspages_header_narrow']//a[@href='/demo-order.aspx?from=developer-edition']")
-      SiteOrderDemo.new(@instance)
-    end
-
-    def check_button_spreadsheet_editing?
-      @instance.webdriver.click_on_locator("//div[@class='shn_gb_item block1']//a[@href='/spreadsheet-editor.aspx?from=developer-edition']")
-      SiteFeaturesSpreadsheetEditor.new(@instance)
-    end
-
-    def check_button_presentation_editing?
-      @instance.webdriver.click_on_locator("//div[@class='shn_gb_item block1']//a[@href='/presentation-editor.aspx?from=developer-edition']")
-      SiteFeaturesPresentationEditor.new(@instance)
-    end
-
-    def check_button_document_editing?
-      @instance.webdriver.click_on_locator("//div[@class='shn_gb_item block1']//a[@href='/document-editor.aspx?from=developer-edition']")
-      SiteFeaturesDocumentEditor.new(@instance)
-    end
-
-    def check_button_form_creator?
-      @instance.webdriver.click_on_locator("//div[@class='shn_gb_item block1']//a[@href='/form-creator.aspx?from=developer-edition']")
-      SiteFeaturesFormCreator.new(@instance)
+    def check_button_developer_see_in_action?
+      @instance.webdriver.click_on_locator("//div[@class='solutionspages_header_narrow']//a[@href='/see-it-in-action.aspx']")
+      SiteFeaturesSeeItInAction.new(@instance)
     end
 
     def parse_url
       current_url = URI(@instance.webdriver.current_url)
       current_url.fragment = current_url.query = nil
       current_url.to_s
-    end
-
-    def check_button_format_compatibility?
-      @instance.webdriver.click_on_locator("//a[contains(@href,'https://helpcenter.onlyoffice.com/ONLYOFFICE-Editors/ONLYOFFICE-Document-Editor/HelpfulHints/SupportedFormats.aspx')]")
-      parse_url.include?('SupportedFormats')
     end
 
     def check_button_editing_functionality?

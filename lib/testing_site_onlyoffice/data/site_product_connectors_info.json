@@ -1,7 +1,7 @@
 {
   "agorum": {
     "more_info": "ONLYOFFICE Integration - Dokumente gemeinsam bearbeiten",
-    "website": "Open Source Dokumentenmanagement - Mehr auf agorum!",
+    "website": "Open Source Dokumentenmanagement | Open Source DMS",
     "get_it_now": "ONLYOFFICE Integration - Dokumente gemeinsam bearbeiten"
   },
   "communigate": {
@@ -16,13 +16,13 @@
   },
   "exoplatform": {
     "more_info": "Editing Documents Inside eXo with New OnlyOffice Add-on |eXo Platform",
-    "website": "Digital Workplace - Best Digital Workplace Software | eXo Platform",
+    "website": "Digital Workplace Software: Open Source Digital Workplace | eXo",
     "get_it_now": "GitHub - exoplatform/onlyoffice: ONLYOFFICE (http://www.onlyoffice.com/) integration for eXo Platform"
   },
   "jalios": {
-    "more_info": "Jalios Community - JX",
+    "more_info": "Jalios Community - Module OnlyOffice 1.3.1",
     "website": "Jalios Digital Workplace, Collaborative Intranet, Enterprise Social Network, Social Learning, Document Management und content management system",
-    "get_it_now": "Jalios Community - JX"
+    "get_it_now": "Jalios Community - Module OnlyOffice 1.3.1"
   },
   "liferay": {
     "more_info": "Collaborative Document",

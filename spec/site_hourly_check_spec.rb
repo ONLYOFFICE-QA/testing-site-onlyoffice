@@ -34,6 +34,11 @@ describe 'SiteHourlyCheck' do
     end
 
     describe '[Site] Check Features' do
+      it '[Site] Check Features document overview' do
+        page = @site_home_page.click_link_on_toolbar(:features_document_overview)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesDocsOverview
+      end
+
       it '[Site] Check Features document editor' do
         page = @site_home_page.click_link_on_toolbar(:features_document_editor)
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesDocumentEditor
@@ -59,7 +64,7 @@ describe 'SiteHourlyCheck' do
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesPDFReaderConverter
       end
 
-      it 'Check Features security' do
+      it '[Site] Check Features security' do
         page = @site_home_page.click_link_on_toolbar(:security)
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesSecurity
       end

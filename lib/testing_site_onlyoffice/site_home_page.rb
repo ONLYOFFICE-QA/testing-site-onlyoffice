@@ -91,6 +91,7 @@ require_relative 'pricing/site_pricing_docs_enterprise'
 require_relative 'pricing/site_pricing_docs_developer'
 
 require_relative 'features/connectors/site_features_connectors_onlyoffice'
+require_relative 'features/docs/site_features_docs_overview'
 require_relative 'features/site_features_android'
 require_relative 'features/site_features_desktop'
 require_relative 'features/site_features_docs'

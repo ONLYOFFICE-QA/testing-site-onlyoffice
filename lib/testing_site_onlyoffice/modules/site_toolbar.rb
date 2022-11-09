@@ -13,6 +13,7 @@ module TestingSiteOnlyoffice
 
     # top toolbar - Features
     link(:site_features, xpath: '//a[@id="navitem_features"]')
+    link(:site_features_docs_overview, xpath: '//a[@id="navitem_features_docs_overview"]')
     link(:site_features_document_editor, xpath: '//a[@id="navitem_features_document_editor"]')
     link(:site_features_spreadsheet_editor, xpath: '//a[@id="navitem_features_spreadsheet_editor"]')
     link(:site_features_presentation_editor, xpath: '//a[@id="navitem_features_presentation_editor"]')
@@ -98,6 +99,10 @@ module TestingSiteOnlyoffice
 
     def site_toolbar_features
       {
+        features_document_overview: {
+          element: site_features_docs_overview_element,
+          class: SiteFeaturesDocsOverview
+        },
         features_document_editor: {
           element: site_features_document_editor_element,
           class: SiteFeaturesDocumentEditor

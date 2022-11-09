@@ -19,23 +19,7 @@ describe 'Developer Edition' do
   end
 
   it '[Developer Edition] Go to request_demo' do
-    expect(@developer_edition.check_button_developer_request_demo?).to be_a TestingSiteOnlyoffice::SiteOrderDemo
-  end
-
-  it '[Developer Edition] Go to document_editing' do
-    expect(@developer_edition.check_button_document_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesDocumentEditor
-  end
-
-  it '[Developer Edition] Go to spreadsheet_editing' do
-    expect(@developer_edition.check_button_spreadsheet_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesSpreadsheetEditor
-  end
-
-  it '[Developer Edition] Go to presentation_editing' do
-    expect(@developer_edition.check_button_presentation_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesPresentationEditor
-  end
-
-  it '[Developer Edition] Go to form_creator' do
-    expect(@developer_edition.check_button_form_creator?).to be_a TestingSiteOnlyoffice::SiteFeaturesFormCreator
+    expect(@developer_edition.check_button_developer_see_in_action?).to be_a TestingSiteOnlyoffice::SiteFeaturesSeeItInAction
   end
 
   it '[Developer Edition] Go to format_compatibility' do
