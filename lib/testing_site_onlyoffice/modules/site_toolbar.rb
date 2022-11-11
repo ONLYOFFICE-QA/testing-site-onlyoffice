@@ -43,7 +43,6 @@ module TestingSiteOnlyoffice
     link(:site_for_developers_doc_dev_edition, xpath: '//a[@id="navitem_fd_docs_dev"]')
     link(:site_for_developers_doc_builder, xpath: '//a[@id="navitem_fd_doc_builder"]')
     link(:site_for_developers_api_doc, xpath: '//a[@id="navitem_fd_api_doc"]')
-    link(:site_for_developers_github_code, xpath: '//a[@id="navitem_fd_code"]')
 
     # top toolbar - Get Onlyoffice
     link(:site_get_onlyoffice, xpath: '//a[@id="navitem_download"]')
@@ -56,6 +55,7 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice_docs_developer, xpath: '//a[@id="navitem_download_docs_de"]')
     link(:site_get_onlyoffice_document_builder, xpath: '//a[@id="navitem_download_docs_builder"]')
     link(:site_get_onlyoffice_web_hosting, xpath: '//a[@id="navitem_download_hosting"]')
+    link(:site_get_onlyoffice_github_code, xpath: '//a[@id="navitem_download_code_git"]')
 
     # top toolbar - Pricing
     link(:site_pricing, xpath: '//a[@id="navitem_prices"]')
@@ -204,9 +204,6 @@ module TestingSiteOnlyoffice
         for_developers_api_doc: {
           element: site_for_developers_api_doc_element,
           class: SiteForDevelopersApiDoc
-        },
-        for_developers_github_code: {
-          element: site_for_developers_github_code_element
         }
       }
     end
@@ -248,6 +245,9 @@ module TestingSiteOnlyoffice
         get_onlyoffice_web_hosting: {
           element: site_get_onlyoffice_web_hosting_element,
           class: SiteGetOnlyofficeWebHosting
+        },
+        get_onlyoffice_github_code: {
+          element: site_get_onlyoffice_github_code_element
         }
       }
     end

@@ -4,11 +4,7 @@ module TestingSiteOnlyoffice
   # Data for links on main page
   class MainPageLinksData
     def self.free_desktop_and_mobile_apps
-      %w[for_windows for_linux for_macos google_play appstore]
-    end
-
-    def self.built_for_everyone
-      %w[SMBs Enterprises Education Developers Government Nonprofit Research Healthcare Hosting Home]
+      %w[windows linux macos google_play ios]
     end
 
     def self.rated_by_critics

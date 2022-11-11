@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Integration for developer' do
+describe 'Site For business Workspace documents' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @for_developer = site_home_page.click_link_on_toolbar(:for_developers_doc_dev_edition)
+    @workspace = site_home_page.click_link_on_toolbar(:for_business_workspace)
+    @documents = @workspace.click_on_section_link(:documents)
   end
 
   after do |example|
@@ -15,7 +15,7 @@ describe 'Integration for developer' do
     @test.webdriver.quit
   end
 
-  it '[For developer] Go to for_business for developer' do
-    expect(@for_developer).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition
+  it "[Site][Workspace][Documents]'Check select section documents" do
+    expect(@documents.check_select?('docmanage')).to be true
   end
 end

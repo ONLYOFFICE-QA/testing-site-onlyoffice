@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-require_relative 'modules/site_features_methods'
+require_relative 'modules/site_for_business_workspace_methods'
 
 module TestingSiteOnlyoffice
   # /document-management.aspx
   # https://user-images.githubusercontent.com/40513035/101329886-032bb780-3883-11eb-853b-bd6945388f2b.png
-  class SiteProductsDocumentManager
+  class SiteWorkspaceDocumentManager
     include PageObject
-    include SiteProductsMethods
+    include SiteForBusinessWorkspaceMethods
     include SiteToolbar
 
     root_xpath = '//div[@class="dm-fs-btn"]'

@@ -8,7 +8,7 @@ describe 'Open source workspace download' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     for_developers_page = site_home_page.footer_developers
-    @groups_page = for_developers_page.click_download_now_button('workspace')
+    @groups_page = for_developers_page.click_download_now_button('groups')
   end
 
   TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_list.each do |installer|

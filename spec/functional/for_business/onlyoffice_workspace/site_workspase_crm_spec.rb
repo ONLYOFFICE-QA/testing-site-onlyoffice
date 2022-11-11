@@ -3,7 +3,7 @@
 require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Site features workspace crm' do
+describe 'Site For business Workspace crm' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @crm = site_home_page.click_link_on_toolbar(:products_workspace_crm)

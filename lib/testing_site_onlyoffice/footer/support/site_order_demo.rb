@@ -13,7 +13,7 @@ module TestingSiteOnlyoffice
     text_field(:website, xpath: '//input[contains(@class,"txtWebsite")]')
     text_field(:company_name, xpath: '//input[contains(@class,"CompanyName")]')
 
-    span(:onlyoffice_groups, xpath: '//input[@id="ONLYOFFICE_Groups"]/../span')
+    span(:onlyoffice_workspace, xpath: '//input[@id="ONLYOFFICE_Workspace"]/../span')
     span(:onlyoffice_docs, xpath: '//input[@id="ONLYOFFICE_Docs"]/../span')
 
     table(:select_time_field, xpath: '//table[@class= "timetable"]')
@@ -43,8 +43,8 @@ module TestingSiteOnlyoffice
       self.company_name = params.fetch(:company_name, Faker::Company.name)
       add_demo_time
       demonstration_language(params.fetch(:demonstration_language)) if @instance.webdriver.element_present?(demonstration_language_element)
-      onlyoffice_groups_element.click if params.fetch(:docs_demo, true)
-      onlyoffice_docs_element.click if params.fetch(:groups_demo, true)
+      onlyoffice_workspace_element.click if params.fetch(:workspace_demo, true)
+      onlyoffice_docs_element.click if params.fetch(:docs_demo, true)
       @instance.webdriver.wait_until do
         !@instance.webdriver.get_attribute(send_request_element, 'class').include?('disable')
       end

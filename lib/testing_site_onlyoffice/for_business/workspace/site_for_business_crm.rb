@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 require_relative 'modules/site_groups_xpath'
-require_relative 'modules/site_features_methods'
+require_relative 'modules/site_for_business_workspace_methods'
 
 module TestingSiteOnlyoffice
   # /crm.aspx
   # https://user-images.githubusercontent.com/40513035/101342416-940a8f00-3893-11eb-9f44-727eaf88ffa8.png
-  class SiteProductsCRM
+  class SiteWorkspaceCRM
     include PageObject
     include SiteGroupsXpath
-    include SiteProductsMethods
+    include SiteForBusinessWorkspaceMethods
     include SiteToolbar
 
     div(:crm_identification, xpath: "//div[contains(@class,'collaborationcrm')]")

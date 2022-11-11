@@ -6,7 +6,8 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Site features workspace mail' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @mail = site_home_page.click_link_on_toolbar(:products_workspace_mail)
+    @workspace = site_home_page.click_link_on_toolbar(:for_business_workspace)
+    @mail = @workspace.click_on_section_link(:mail)
   end
 
   after do |example|
@@ -14,7 +15,7 @@ describe 'Site features workspace mail' do
     @test.webdriver.quit
   end
 
-  it "[Site][Products][Mail]'Check select section mail" do
+  it "[Site][Workspace][Mail]'Check select section mail" do
     expect(@mail.check_select?('mail')).to be true
   end
 end

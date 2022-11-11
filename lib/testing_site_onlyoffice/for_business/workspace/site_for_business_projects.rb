@@ -1,15 +1,15 @@
 # frozen_string_literal: true
 
 require_relative 'modules/site_groups_xpath'
-require_relative 'modules/site_features_methods'
+require_relative 'modules/site_for_business_workspace_methods'
 
 module TestingSiteOnlyoffice
   # /projects.aspx
   # https://user-images.githubusercontent.com/40513035/101334070-6f5cea00-3888-11eb-9129-6366bf1199bd.png
-  class SiteProductsProjects
+  class SiteWorkspaceProjects
     include PageObject
     include SiteGroupsXpath
-    include SiteProductsMethods
+    include SiteForBusinessWorkspaceMethods
     include SiteToolbar
 
     div(:projects_identification, xpath: "//div[contains(@class,'collaborationprojects')]")
