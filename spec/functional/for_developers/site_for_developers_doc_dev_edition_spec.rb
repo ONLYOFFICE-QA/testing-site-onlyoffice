@@ -22,18 +22,6 @@ describe 'Developer Edition' do
     expect(@developer_edition.check_button_developer_see_in_action?).to be_a TestingSiteOnlyoffice::SiteFeaturesSeeItInAction
   end
 
-  it '[Developer Edition] Go to format_compatibility' do
-    expect(@developer_edition.check_button_format_compatibility?).to be true
-  end
-
-  it '[Developer Edition] Go to editing_functionality' do
-    expect(@developer_edition.check_button_editing_functionality?).to be true
-  end
-
-  it '[Developer Edition] Go to collaborative_features' do
-    expect(@developer_edition.check_button_collaborative_features?).to be true
-  end
-
   it '[Developer Edition] Go to macros_and_plugins' do
     expect(@developer_edition.check_button_macros_and_plugins?).to be true
   end
@@ -42,20 +30,12 @@ describe 'Developer Edition' do
     expect(@developer_edition.check_button_cross_browser_compatibility?).to be_a TestingSiteOnlyoffice::SiteCompareSuites
   end
 
-  it '[Developer Edition] Go to supported_programming_languages' do
-    expect(@developer_edition.check_button_supported_programming_languages?).to be true
-  end
-
   it '[Developer Edition] Go to check_button_easy_deployment' do
     expect(@developer_edition.check_button_easy_deployment?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsDeveloper
   end
 
   it '[Developer Edition] Go to check_button_integration_api' do
     expect(@developer_edition.check_button_integration_api?).to be true
-  end
-
-  it '[Developer Edition] Go to check_button_highest_security' do
-    expect(@developer_edition.check_button_highest_security?).to be_a TestingSiteOnlyoffice::SiteFeaturesSecurity
   end
 
   it '[Developer Edition] Go to check_button_wopi_support' do
