@@ -1,22 +1,9 @@
 ---
-:Developers:
-  - Developer Edition
-  - Document Builder
-  - Groups
-  - API
-  - Code on GitHub
-:Security:
-  - Authentication and access control
-  - Data protection
-  - Data encryption
-  - Private rooms
-  - GDPR compliance
-  - HIPAA compliance
-:By size:
+:Solution by size:
   - SMBs
   - Enterprises
   - Home use
-:By industry:
+:Solution by industry:
   - Developers
   - Hosting providers
   - Government
@@ -36,6 +23,13 @@
   - Compare to other suites
   - Contribute
   - Legal notice
+:Comparison:
+  - ONLYOFFICE Docs vs MS Office Online
+  - ONLYOFFICE Docs vs Google Docs
+  - ONLYOFFICE Docs vs Zoho Docs
+  - ONLYOFFICE Docs vs LibreOffice
+  - ONLYOFFICE Docs vs WPS
+  - ONLYOFFICE Docs vs Adobe Acrobat
 :Contact Us:
   - Request a call
 :Follow us on:

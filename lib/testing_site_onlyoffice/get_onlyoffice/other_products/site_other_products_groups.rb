@@ -5,7 +5,7 @@ require_relative 'modules/other_products_toolbar'
 require_relative '../modules/site_download_helper'
 
 module TestingSiteOnlyoffice
-  # /download.aspx#groups
+  # /download.aspx#workspace
   # https://user-images.githubusercontent.com/40513035/131140675-36b7a7dc-f6a9-42bb-a2e9-36ff178349bc.png
   class SiteOtherProductsGroups
     include PageObject

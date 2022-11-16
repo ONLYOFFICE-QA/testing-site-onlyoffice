@@ -28,7 +28,7 @@ module TestingSiteOnlyoffice
       @instance.webdriver.click_on_locator(download_now_button_element)
       case destination
       when 'groups'
-        site_other_products_onlyoffice_groups_download
+        site_other_products_groups_download
       when 'bundles'
         site_other_products_bundles_download
       end

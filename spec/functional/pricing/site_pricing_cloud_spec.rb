@@ -9,7 +9,7 @@ describe 'Pricing Cloud Service' do
 
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @pricing_cloud_page = site_home_page.click_link_on_toolbar(:pricing_cloud)
+    @pricing_cloud_page = site_home_page.click_link_on_toolbar(:pricing_workspace).click_cloud
   end
 
   TestingSiteOnlyoffice::SitePricesData.cloud_services_price_periods.each do |period|
@@ -29,10 +29,6 @@ describe 'Pricing Cloud Service' do
       it "[Site][Pricing][Cloud] Business check `TRY IT FOR FREE` link for #{period}" do
         sign_up_page = @pricing_cloud_page.business_try_it_for_free
         expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeSignUp
-      end
-
-      it "[Site][Pricing][Cloud] PERSONAL check `Contact us` button for #{period}" do
-        expect(@pricing_cloud_page).to be_personal_contact_us_works
       end
     end
   end

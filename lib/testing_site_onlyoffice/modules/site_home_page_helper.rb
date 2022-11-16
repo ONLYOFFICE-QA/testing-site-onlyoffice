@@ -12,12 +12,12 @@ module TestingSiteOnlyoffice
     link(:webinar_news, xpath: "//div[@id = 'dp-webinars-slider']//a")
 
     def desktop_and_mobile_apps_element_works?(app)
-      app_xpath = "//a[contains(@class, 'mpd_#{app}')]"
+      app_xpath = "//a[contains(@class, 'platform-icon #{app}')]"
       xpath_success_response?(app_xpath)
     end
 
     def built_for_everyone_element_works?(solution)
-      solution_xpath = "//div[@class='dp-bfe']//h3[@class='#{solution}']/a"
+      solution_xpath = "//div[contains(@class,'footer_menu_item')]/div/a[text() = '#{solution}']"
       xpath_success_response?(solution_xpath)
     end
 

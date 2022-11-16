@@ -9,8 +9,8 @@ require_relative '../../additional_products/personal_main_page'
 require_relative '../modules/site_pricing_workspace_toolbar'
 
 module TestingSiteOnlyoffice
-  # /saas.aspx
-  # https://user-images.githubusercontent.com/40513035/115361865-d911cc80-a175-11eb-88da-868922b05024.png
+  # workspace-prices.aspx#workspace-cloud
+  # https://user-images.githubusercontent.com/38238032/202145995-37b62878-7d9f-4ae6-a37f-5d34c55993da.png
   class SitePricingCloud
     include PageObject
     include SitePricingCloudCalculator
@@ -27,7 +27,6 @@ module TestingSiteOnlyoffice
     link(:business_calculate_your_price, xpath: "//a[contains(@class, 'saas-calculate')]")
 
     # vip
-    link(:personal_contact_us_top, xpath: "//div[contains(@class, 'saas-cell-vip')]//a[contains(@class, 'saas-vip-contact-us')]")
     link(:vip_submit_request, xpath: "//a[@href='/order.aspx']")
 
     # faq
@@ -55,12 +54,6 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(faq_linq_element) }
       faq_linq_element.click
       SiteFaq.new(@instance)
-    end
-
-    def personal_contact_us
-      personal_contact_us_top_element.click
-      @instance.webdriver.switch_to_popup
-      PersonalMainPage.new(@instance)
     end
 
     def vip_submit_request

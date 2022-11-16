@@ -34,6 +34,11 @@ describe 'SiteHourlyCheck' do
     end
 
     describe '[Site] Check Features' do
+      it '[Site] Check Features document overview' do
+        page = @site_home_page.click_link_on_toolbar(:features_document_overview)
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesDocsOverview
+      end
+
       it '[Site] Check Features document editor' do
         page = @site_home_page.click_link_on_toolbar(:features_document_editor)
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesDocumentEditor
@@ -59,7 +64,7 @@ describe 'SiteHourlyCheck' do
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesPDFReaderConverter
       end
 
-      it 'Check Features security' do
+      it '[Site] Check Features security' do
         page = @site_home_page.click_link_on_toolbar(:security)
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesSecurity
       end
@@ -222,19 +227,19 @@ describe 'SiteHourlyCheck' do
         end
       end
 
-      describe 'groups' do
+      describe 'workspace' do
         let(:other_products_groups_page) do
           for_developers_page = @site_home_page.footer_developers
-          for_developers_page.click_download_now_button('groups')
+          for_developers_page.click_download_now_button('workspace')
         end
 
         TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_list.each do |installer|
-          it "[Site][OtherProducts][Groups] Check `#{installer}` download link /download.aspx#groups" do
+          it "[Site][OtherProducts][Groups] Check `#{installer}` download link /download.aspx#workspace" do
             expect(other_products_groups_page).to be_download_link_alive(installer)
             expect(other_products_groups_page).to be_download_link_valid(other_products_groups_page.download_xpath(installer), installer)
           end
 
-          it "[Site][OtherProducts][Groups] Check `#{installer}`'Read instructions' link /download.aspx#groups" do
+          it "[Site][OtherProducts][Groups] Check `#{installer}`'Read instructions' link /download.aspx#workspace" do
             other_products_groups_page.click_groups_instruction_link(installer)
             instruction_title = TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_info[installer.to_s]['instruction']
             expect(other_products_groups_page.check_opened_page_title).to eq(instruction_title)

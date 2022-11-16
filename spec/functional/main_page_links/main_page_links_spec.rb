@@ -21,12 +21,6 @@ describe 'Help center footer links' do
     end
   end
 
-  TestingSiteOnlyoffice::MainPageLinksData.built_for_everyone.each do |solution|
-    it "[Site][HomePage] `#{solution}` link of `Built for everyone` section works" do
-      expect(@site_home_page).to be_built_for_everyone_element_works(solution)
-    end
-  end
-
   TestingSiteOnlyoffice::MainPageLinksData.rated_by_critics.each do |app|
     it "[Site][HomePage] `#{app}` link of `Highly rated by critics` section works" do
       pending('Opening this link is blocked by third party service firewall') if blocked_high_rated_by_critics.include?(app)

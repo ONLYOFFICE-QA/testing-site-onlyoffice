@@ -12,14 +12,27 @@ shared_examples_for 'desktop_installer_download' do |installers_list|
     end
   end
 
-  installers_list[:two_download_windows_files].each do |installer|
+  installers_list[:three_download_windows_files][0..1].each do |installer|
+    describe installer.to_s do
+      before { @current_installation = installers_download_page.desktop_installer_block(installer) }
+
+      it "[Site][DownloadDesktop] download link for `#{installer}` exe and msi` alive /download-desktop.aspx#desktop" do
+        download_file_exe = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['exe']
+        expect(installers_download_page).to be_link_alive_and_valid(@current_installation.download_xpath, download_file_exe)
+        download_file_x86 = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['msi']
+        expect(installers_download_page).to be_link_alive_and_valid(@current_installation.download_xpath_x86, download_file_x86)
+      end
+    end
+  end
+
+  installers_list[:three_download_windows_files][2] do |installer|
     describe installer.to_s do
       before { @current_installation = installers_download_page.desktop_installer_block(installer) }
 
       it "[Site][DownloadDesktop] download link for `#{installer}` x64 and x86` alive /download-desktop.aspx#desktop" do
-        download_file_x64 = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['download_x64']
+        download_file_x64 = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['x64']
         expect(installers_download_page).to be_link_alive_and_valid(@current_installation.download_xpath, download_file_x64)
-        download_file_x86 = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['download_x86']
+        download_file_x86 = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['x86']
         expect(installers_download_page).to be_link_alive_and_valid(@current_installation.download_xpath_x86, download_file_x86)
       end
     end

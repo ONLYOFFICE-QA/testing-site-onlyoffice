@@ -13,6 +13,7 @@ module TestingSiteOnlyoffice
 
     # top toolbar - Features
     link(:site_features, xpath: '//a[@id="navitem_features"]')
+    link(:site_features_docs_overview, xpath: '//a[@id="navitem_features_docs_overview"]')
     link(:site_features_document_editor, xpath: '//a[@id="navitem_features_document_editor"]')
     link(:site_features_spreadsheet_editor, xpath: '//a[@id="navitem_features_spreadsheet_editor"]')
     link(:site_features_presentation_editor, xpath: '//a[@id="navitem_features_presentation_editor"]')
@@ -42,7 +43,6 @@ module TestingSiteOnlyoffice
     link(:site_for_developers_doc_dev_edition, xpath: '//a[@id="navitem_fd_docs_dev"]')
     link(:site_for_developers_doc_builder, xpath: '//a[@id="navitem_fd_doc_builder"]')
     link(:site_for_developers_api_doc, xpath: '//a[@id="navitem_fd_api_doc"]')
-    link(:site_for_developers_github_code, xpath: '//a[@id="navitem_fd_code"]')
 
     # top toolbar - Get Onlyoffice
     link(:site_get_onlyoffice, xpath: '//a[@id="navitem_download"]')
@@ -55,6 +55,7 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice_docs_developer, xpath: '//a[@id="navitem_download_docs_de"]')
     link(:site_get_onlyoffice_document_builder, xpath: '//a[@id="navitem_download_docs_builder"]')
     link(:site_get_onlyoffice_web_hosting, xpath: '//a[@id="navitem_download_hosting"]')
+    link(:site_get_onlyoffice_github_code, xpath: '//a[@id="navitem_download_code_git"]')
 
     # top toolbar - Pricing
     link(:site_pricing, xpath: '//a[@id="navitem_prices"]')
@@ -98,6 +99,10 @@ module TestingSiteOnlyoffice
 
     def site_toolbar_features
       {
+        features_document_overview: {
+          element: site_features_docs_overview_element,
+          class: SiteFeaturesDocsOverview
+        },
         features_document_editor: {
           element: site_features_document_editor_element,
           class: SiteFeaturesDocumentEditor
@@ -199,10 +204,6 @@ module TestingSiteOnlyoffice
         for_developers_api_doc: {
           element: site_for_developers_api_doc_element,
           class: SiteForDevelopersApiDoc
-        },
-        for_developers_github_code: {
-          element: site_for_developers_github_code,
-          class: SiteForDevelopersApiDoc # Change class to appropriate one
         }
       }
     end
@@ -244,6 +245,9 @@ module TestingSiteOnlyoffice
         get_onlyoffice_web_hosting: {
           element: site_get_onlyoffice_web_hosting_element,
           class: SiteGetOnlyofficeWebHosting
+        },
+        get_onlyoffice_github_code: {
+          element: site_get_onlyoffice_github_code_element
         }
       }
     end
@@ -363,12 +367,13 @@ module TestingSiteOnlyoffice
 
     def all_toolbar_links_and_classes_hash
       site_toolbar_features.merge(site_toolbar_for_business, site_toolbar_get_onlyoffice, site_toolbar_pricing,
-                                  site_toolbar_partners, site_toolbar_about)
+                                  site_toolbar_partners, site_toolbar_about, site_toolbar_for_developers)
     end
 
     def move_to_element_link_toolbar(section)
       @instance.webdriver.move_to_element_by_locator(site_features_element.selector[:xpath]) if site_toolbar_features.key?(section)
-      @instance.webdriver.move_to_element_by_locator(site_integrations_element.selector[:xpath]) if site_toolbar_for_business.key?(section)
+      @instance.webdriver.move_to_element_by_locator(site_for_business_element.selector[:xpath]) if site_toolbar_for_business.key?(section)
+      @instance.webdriver.move_to_element_by_locator(site_for_developers_element.selector[:xpath]) if site_toolbar_for_developers.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_get_onlyoffice_element.selector[:xpath]) if site_toolbar_get_onlyoffice.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_pricing_element.selector[:xpath]) if site_toolbar_pricing.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_partners_element.selector[:xpath]) if site_toolbar_partners.key?(section)

@@ -25,16 +25,14 @@ describe 'Pricing docs developer' do
       it "[Site][PricingDocsDeveloper] Choose the ONLYOFFICE Docs Developer Edition tariff: #{support_level}, more connection" do
         pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
         pricing_page.fill_data_price_developer('More', support_level)
-        expect(pricing_page.total_price_upon_request).to eq('Upon request')
+        expect(pricing_page).to be_button_get_quote_present
       end
 
       TestingSiteOnlyoffice::SiteDownloadData.pricing_docs_data[:number_connection_developer].each do |number_connection|
         it "[Site][PricingDocsEnterprise] Choose the ONLYOFFICE Docs Developer Edition tariff: #{support_level}, count users: #{number_connection}" do
           pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
           pricing_page.fill_data_price_developer(number_connection, support_level)
-          total_price = pricing_page.total_price_number.to_i
-          avangate = pricing_page.go_to_avangate_from_pricing_page(pricing_page.buy_now_single_server_element, test_purchase: true)
-          expect(avangate.total_amount_without_tax).to eq(total_price)
+          expect(pricing_page).to be_button_get_quote_present
         end
       end
     end
