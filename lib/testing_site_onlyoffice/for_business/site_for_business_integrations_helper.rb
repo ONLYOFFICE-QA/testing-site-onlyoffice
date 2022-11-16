@@ -9,7 +9,6 @@ require_relative 'owncloud/site_owncloud'
 module TestingSiteOnlyoffice
   # Helper methods for integrations specs in For Business section
   module ForBusinessIntegrationsHelper
-
     def self.integrations_list
       {
         for_business_nextcloud: {
