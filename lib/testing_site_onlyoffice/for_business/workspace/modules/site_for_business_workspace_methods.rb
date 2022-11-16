@@ -3,7 +3,6 @@
 module TestingSiteOnlyoffice
   # methods for features workspace group
   module SiteForBusinessWorkspaceMethods
-
     def xpath_section(section)
       "//div[contains(@class, 'cms_block oses_#{section} menuitem')]"
     end

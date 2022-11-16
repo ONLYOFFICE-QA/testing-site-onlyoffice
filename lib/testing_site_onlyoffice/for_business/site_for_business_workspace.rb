@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative 'workspace/modules/site_for_business_workspace_methods'
 module TestingSiteOnlyoffice
   # /workspace.aspx

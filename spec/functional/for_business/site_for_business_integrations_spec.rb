@@ -5,7 +5,7 @@ require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
 describe 'Site For business integrations' do
-  TestingSiteOnlyoffice::SiteToolbar.integrations_list.each_key do |integration|
+  TestingSiteOnlyoffice::ForBusinessIntegrationsHelper.integrations_list.each_key do |integration|
     describe integration.to_s do
       before do
         site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
@@ -17,8 +17,8 @@ describe 'Site For business integrations' do
         @test.webdriver.quit
       end
 
-      it "[#{integration.to_s}] Go to #{integration.to_s}" do
-        expect(@integration).to be_a TestingSiteOnlyoffice::SiteToolbar.integrations_list[integration][:class]
+      it "[#{integration}] Go to #{integration}" do
+        expect(@integration).to be_a TestingSiteOnlyoffice::ForBusinessIntegrationsHelper.integrations_list[integration][:class]
       end
 
       describe 'Pick price' do
