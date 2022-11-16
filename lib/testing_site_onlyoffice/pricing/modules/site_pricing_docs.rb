@@ -9,7 +9,7 @@ module TestingSiteOnlyoffice
     div(:support_basic, xpath: "#{BASE_XPATH}//div[@data-id='basic_support']")
     div(:support_plus, xpath: "#{BASE_XPATH}//div[@data-id='plus_support']")
     div(:support_premium, xpath: "#{BASE_XPATH}//div[@data-id='premium_support']")
-    link(:total_price_upon_request, xpath: "#{BASE_XPATH}//a[@data-id='ie-gaq']")
+    div(:total_price_upon_request, xpath: "#{BASE_XPATH}//a[@data-id='ie-pp-sum-req']")
     link(:total_price_get_a_quote, xpath: "#{BASE_XPATH}//a[@data-id='ie-gaq']")
     span(:total_price, xpath: "#{BASE_XPATH}//div[@class='pp_sum']//span[@class='pp_price_number']")
 
@@ -42,6 +42,13 @@ module TestingSiteOnlyoffice
 
     def total_price_number
       @instance.webdriver.get_text(total_price_element)
+    end
+
+    def total_price_upon_request
+      @instance.webdriver.wait_until do
+        total_price_upon_request_element.attribute('class').include?('pp_sum req')
+      end
+      @instance.webdriver.get_text(total_price_upon_request_element)
     end
   end
 end
