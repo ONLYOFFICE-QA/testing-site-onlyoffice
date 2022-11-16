@@ -3,7 +3,7 @@
 require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Site features workspace mail' do
+describe 'Site For Business Workspace Mail' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @workspace = site_home_page.click_link_on_toolbar(:for_business_workspace)

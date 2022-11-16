@@ -9,7 +9,7 @@ describe 'Pricing Cloud Service' do
 
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @pricing_cloud_page = site_home_page.click_link_on_toolbar(:pricing_cloud)
+    @pricing_cloud_page = site_home_page.click_link_on_toolbar(:pricing_workspace).click_cloud
   end
 
   TestingSiteOnlyoffice::SitePricesData.cloud_services_price_periods.each do |period|

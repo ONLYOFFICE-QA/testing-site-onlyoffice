@@ -3,10 +3,11 @@
 require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Site features workspace calendar' do
+describe 'Site For Business Workspace Calendar' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @calendar = site_home_page.click_link_on_toolbar(:for_business_workspace)
+    @workspace = site_home_page.click_link_on_toolbar(:for_business_workspace)
+    @calendar = @workspace.click_on_section_link(:calendar)
   end
 
   after do |example|
@@ -14,7 +15,7 @@ describe 'Site features workspace calendar' do
     @test.webdriver.quit
   end
 
-  it "[Site][Products][CRM]'Check select section calendar" do
+  it "[Site][Workspace][Calendar]'Check select section calendar" do
     expect(@calendar.check_select?('calendar')).to be true
   end
 end

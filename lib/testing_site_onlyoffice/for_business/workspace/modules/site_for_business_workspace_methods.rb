@@ -49,7 +49,8 @@ module TestingSiteOnlyoffice
       xpath = select_section[section][:xpath]
       @instance.webdriver.move_to_element_by_locator(xpath)
       @instance.webdriver.click_on_locator(xpath)
-      link = "//a[contains(@href, '#{select_section[section][:page]}')]"
+      link = "//a[contains(@href, '#{select_section[section][:page]}') and @tabindex = '0']"
+      @instance.webdriver.wait_until { @instance.webdriver.element_visible?(link) }
       @instance.webdriver.click_on_locator(link)
       select_section[section][:class].new(@instance)
     end

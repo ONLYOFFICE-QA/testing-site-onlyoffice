@@ -3,10 +3,11 @@
 require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Site features workspace projects' do
+describe 'Site For Business Workspace Projects' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @projects = site_home_page.click_link_on_toolbar(:products_workspace_projects)
+    @workspace = site_home_page.click_link_on_toolbar(:for_business_workspace)
+    @projects = @workspace.click_on_section_link(:projects)
   end
 
   after do |example|
@@ -14,7 +15,7 @@ describe 'Site features workspace projects' do
     @test.webdriver.quit
   end
 
-  it "[Site][Products][Projects]'Check select section projects" do
+  it "[Site][Workspace][Projects]'Check select section projects" do
     expect(@projects.check_select?('projects')).to be true
   end
 end
