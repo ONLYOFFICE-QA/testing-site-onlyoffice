@@ -30,10 +30,6 @@ describe 'Pricing Cloud Service' do
         sign_up_page = @pricing_cloud_page.business_try_it_for_free
         expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeSignUp
       end
-
-      it "[Site][Pricing][Cloud] PERSONAL check `Contact us` button for #{period}" do
-        expect(@pricing_cloud_page).to be_personal_contact_us_works
-      end
     end
   end
 
