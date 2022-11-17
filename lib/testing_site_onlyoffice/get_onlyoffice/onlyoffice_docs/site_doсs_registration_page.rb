@@ -2,6 +2,7 @@
 
 require_relative '../../modules/site_toolbar'
 require_relative 'site_doсs_registration_page/site_docs_registration_data'
+require_relative '../../additional_products/payment/stripe_payment_page'
 
 module TestingSiteOnlyoffice
   # /docs-registration.aspx
@@ -11,16 +12,13 @@ module TestingSiteOnlyoffice
     include SiteToolbar
 
     # form sign in
-    text_field(:doc_first_name, xpath: '//*[@class="txtFirstName"]')
-    text_field(:doc_last_name, xpath: '//*[@class="txtLastName"]')
+    text_field(:doc_full_name, xpath: '//*[@class="txtFirstName"]')
     text_field(:doc_email, xpath: '//input[contains(@class,"txtEmail")]')
     text_field(:doc_phone, xpath: '//input[@id="txtPhone"]')
     text_field(:submit_request, xpath: '//input[@id="sbmtRequest"]')
-    text_field(:number_employees, xpath: '//input[@id="txtEmployeesCount"]')
 
     # Errors
-    div(:doc_first_name_error, xpath: '//div[@class="error txtFirstName_errorArea"]')
-    div(:doc_last_name_error, xpath: '//div[@class="error txtLastName_errorArea"]')
+    div(:doc_full_name_error, xpath: '//div[@class="error txtFirstName_errorArea"]')
     div(:doc_email_error, xpath: '//div[@class="error txtEmail_errorArea"]')
     div(:doc_phone_error, xpath: '//div[@class="error txtPhone_errorArea"]')
 
@@ -35,34 +33,28 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(doc_first_name_element)
+        @instance.webdriver.element_present?(doc_full_name_element)
       end
     end
 
     def submit_correct_data(registration_data)
       submit_data(registration_data)
-      @instance.webdriver.wait_until { request_accepted? }
+      StripePaymentPage.new(@instance)
     end
 
     def submit_data(registration_data)
-      self.doc_first_name = registration_data.first_name
-      self.doc_last_name = registration_data.last_name
+      self.doc_full_name = registration_data.full_name
       self.doc_email = registration_data.doc_email
       self.doc_phone = registration_data.doc_phone
-      self.number_employees = registration_data.number_employees if number_employees_element.visible?
       @instance.webdriver.wait_until do
         @instance.webdriver.element_present?(submit_request_element)
       end
       submit_request_element.click
     end
 
-    def request_accepted?
-      submit_request_element.attribute('class').include?('succesfulReq')
-    end
-
     def all_errors_visible?
-      @instance.webdriver.element_present?(doc_first_name_error_element) & @instance.webdriver.element_present?(doc_last_name_error_element) &
-        @instance.webdriver.element_present?(doc_email_error_element) & @instance.webdriver.element_present?(doc_phone_error_element)
+      @instance.webdriver.element_present?(doc_full_name_error_element) & @instance.webdriver.element_present?(doc_email_error_element) &
+        @instance.webdriver.element_present?(doc_phone_error_element)
     end
   end
 end

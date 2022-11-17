@@ -9,7 +9,7 @@ class StripePaymentPage
     @instance = instance
     @xpath_submit_button = '//div[contains(@class,"SubmitButton-IconContainer")]'
     @xpath_zip_input = '//*[@id="billingPostalCode"]'
-    @xpath_billing_address = '//input[@id = "cardUseShippingAsBilling"]'
+    @xpath_billing_address = '//input[@id = "cardUseShippingAsBilling"]/parent::div'
     wait_to_load
   end
 
