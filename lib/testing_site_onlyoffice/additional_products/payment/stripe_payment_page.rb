@@ -16,7 +16,7 @@ class StripePaymentPage
   # Wait until page is loaded
   def wait_to_load
     @instance.webdriver.wait_until do
-      @instance.webdriver.element_visible?(@xpath_submit_button)
+      @instance.webdriver.element_present?(@xpath_submit_button)
     end
   end
 
