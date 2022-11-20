@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
   # Helper methods for pricing pages
   module SitePricingHelper
     def go_to_avangate_from_pricing_page(buy_element, test_purchase: false)
-      buy_element.click
+      @instance.webdriver.click_on_locator(buy_element)
       wait_pricing_on_production
       if test_purchase
         return StripePaymentPage.new(@instance) if @instance.webdriver.current_url.include?('stripe.com')

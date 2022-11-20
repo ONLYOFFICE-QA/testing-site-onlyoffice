@@ -21,6 +21,8 @@ module TestingSiteOnlyoffice
       self
     end
 
+    # Method that returns full name
+    # @return [String] first name + " " + last name
     def full_name
       "#{@first_name} #{@last_name}"
     end
