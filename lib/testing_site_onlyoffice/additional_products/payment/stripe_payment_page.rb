@@ -28,7 +28,7 @@ class StripePaymentPage
     @instance.webdriver.type_to_locator('//*[@id="cardCvc"]', '111', true, true)
     @instance.webdriver.wait_until { @instance.webdriver.element_present?(@xpath_billing_address) }
     @instance.webdriver.click_on_locator(@xpath_billing_address)
-    @instance.webdriver.wait_until { @instance.webdriver.element_visible?('//*[@id="billingName"]') }
+    @instance.webdriver.wait_until { billing_address_block_visible? }
     @instance.webdriver.type_to_locator('//*[@id="billingName"]', 'Teamlab Ruby', true, true)
     enter_zip
 
@@ -57,5 +57,10 @@ class StripePaymentPage
     return unless @instance.webdriver.element_visible?(@xpath_zip_input)
 
     @instance.webdriver.type_to_locator(@xpath_zip_input, '12345', true, true)
+  end
+
+  def billing_address_block_visible?
+    xpath_billing_address_block = '//div[contains(@class, "BillingAddressForm-addressInput")]'
+    @instance.webdriver.get_attribute(xpath_billing_address_block, 'aria-hidden')
   end
 end
