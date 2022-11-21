@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
   # Helper methods for pricing pages
   module SitePricingHelper
     def go_to_avangate_from_pricing_page(buy_element, test_purchase: false)
-      @instance.webdriver.click_on_locator(buy_element)
+      workaround_webdriver_hangs_on_timeout(buy_element)
       wait_pricing_on_production
       if test_purchase
         return StripePaymentPage.new(@instance) if @instance.webdriver.current_url.include?('stripe.com')
@@ -25,6 +25,15 @@ module TestingSiteOnlyoffice
       return unless config.server.include?('.com')
 
       sleep 5
+    end
+
+    # Workaround method for redirects
+    # @param [PageObject] buy_element is a PageObject element representing in this case
+    #   button that is pressed on the web page
+    # @return [nil]
+    def workaround_webdriver_hangs_on_timeout(buy_element)
+      url = @instance.webdriver.get_attribute(buy_element, 'href')
+      @instance.webdriver.open(url)
     end
   end
 end

@@ -9,7 +9,7 @@ class StripePaymentPage
     @instance = instance
     @xpath_submit_button = '//div[contains(@class,"SubmitButton-IconContainer")]'
     @xpath_zip_input = '//*[@id="billingPostalCode"]'
-    @xpath_billing_address = '//label[contains(@for, "cardUseShippingAsBilling")]'
+    @xpath_billing_address = '//div[contains(@class, "BillingAddressForm-shippingAsBillingCheckbox ")]'
     wait_to_load
   end
 
@@ -26,6 +26,7 @@ class StripePaymentPage
     @instance.webdriver.type_to_locator('//*[@id="cardNumber"]', '4242424242424242', true, true)
     @instance.webdriver.type_to_locator('//*[@id="cardExpiry"]', '1250', true, true)
     @instance.webdriver.type_to_locator('//*[@id="cardCvc"]', '111', true, true)
+    @instance.webdriver.wait_until { @instance.webdriver.element_present?(@xpath_billing_address) }
     @instance.webdriver.click_on_locator(@xpath_billing_address)
     @instance.webdriver.wait_until { @instance.webdriver.element_present?('//*[@id="billingName"]') }
     @instance.webdriver.type_to_locator('//*[@id="billingName"]', 'Teamlab Ruby', true, true)
