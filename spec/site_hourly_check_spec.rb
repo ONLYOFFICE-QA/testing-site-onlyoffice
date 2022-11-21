@@ -230,7 +230,7 @@ describe 'SiteHourlyCheck' do
       describe 'workspace' do
         let(:other_products_groups_page) do
           for_developers_page = @site_home_page.footer_developers
-          for_developers_page.click_download_now_button('workspace')
+          for_developers_page.click_download_now_button('groups')
         end
 
         TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_list.each do |installer|
