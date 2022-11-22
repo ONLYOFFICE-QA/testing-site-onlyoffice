@@ -25,10 +25,9 @@ class StripePaymentPage
   def submit_order_for_notification(params = {})
     @instance.webdriver.type_to_locator('//*[@id="email"]', params[:email], true, true)
     @instance.webdriver.type_to_locator('//*[@id = "shippingName"]', 'Teamlab Ruby', true, true)
-    @instance.webdriver.type_to_locator('//*[@id = "shippingAddressLine1"]', '5302 Dublin Ave', true, true)
+    select_address
     enter_second_address
-    @instance.webdriver.type_to_locator('//*[@id = "shippingLocality"]', 'New York', true, true)
-    enter_zip_billing
+    @instance.webdriver.type_to_locator('//*[@id="phoneNumber"]', '626-923-0527', true, true)
     @instance.webdriver.type_to_locator('//*[@id="cardNumber"]', '4242424242424242', true, true)
     @instance.webdriver.type_to_locator('//*[@id="cardExpiry"]', '1250', true, true)
     @instance.webdriver.type_to_locator('//*[@id="cardCvc"]', '111', true, true)
@@ -36,8 +35,6 @@ class StripePaymentPage
     @instance.webdriver.click_on_locator(@xpath_billing_address)
     @instance.webdriver.wait_until { billing_address_block_visible? }
     @instance.webdriver.type_to_locator('//*[@id="billingName"]', 'Teamlab Ruby', true, true)
-
-
     @instance.webdriver.click_on_locator(@xpath_submit_button)
     wait_for_order_finish
   end
@@ -87,5 +84,13 @@ class StripePaymentPage
     xpath_state = '//*[@id = "shippingAdministrativeArea"]'
     values = @instance.webdriver.get_all_combo_box_values(xpath_state)
     @instance.select_combo_box(xpath_state, values.first)
+  end
+
+  def select_address
+    xpath_shipping_address = '//*[@id = "shippingAddressLine1"]'
+    @instance.webdriver.type_to_locator(xpath_shipping_address, '4235', true, true)
+    @instance.webdriver.wait_until { @instance.webdriver.get_attribute(xpath_shipping_address, 'autocomplete').eql?('disabled') }
+    @instance.webdriver.press_key(:enter)
+    @instance.webdriver.wait_until { @instance.webdriver.get_attribute('//*[@id = "shippingLocality"]', 'class').include?('Input--empty') }
   end
 end
