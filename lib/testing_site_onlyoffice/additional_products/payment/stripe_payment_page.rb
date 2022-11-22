@@ -89,7 +89,7 @@ class StripePaymentPage
   def select_address
     xpath_shipping_address = '//*[@id = "shippingAddressLine1"]'
     @instance.webdriver.type_to_locator(xpath_shipping_address, '4235', true, true)
-    @instance.webdriver.wait_until { @instance.webdriver.get_attribute(xpath_shipping_address, 'autocomplete').eql?('disabled') }
+    # @instance.webdriver.wait_until { @instance.webdriver.get_attribute(xpath_shipping_address, 'autocomplete').eql?('disabled') }
     @instance.webdriver.press_key(:enter)
     @instance.webdriver.wait_until { @instance.webdriver.get_attribute('//*[@id = "shippingLocality"]', 'class').include?('Input--empty') }
   end
