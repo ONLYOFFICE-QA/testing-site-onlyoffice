@@ -35,6 +35,7 @@ class StripePaymentPage
     @instance.webdriver.click_on_locator(@xpath_billing_address)
     @instance.webdriver.wait_until { billing_address_block_visible? }
     @instance.webdriver.type_to_locator('//*[@id="billingName"]', 'Teamlab Ruby', true, true)
+    @instance.webdriver.type_to_locator('//*[@id="billingPostalCode"]', '11355', true, true)
     @instance.webdriver.click_on_locator(@xpath_submit_button)
     wait_for_order_finish
   end
