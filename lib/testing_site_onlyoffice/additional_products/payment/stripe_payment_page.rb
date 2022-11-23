@@ -7,7 +7,7 @@ class StripePaymentPage
 
   def initialize(instance)
     @instance = instance
-    @xpath_submit_button = '//div[contains(@class,"SubmitButton-IconContainer")]'
+    @xpath_submit_button = '//button[contains(@class, "SubmitButton")]'
     @xpath_zip_billing = '//*[@id="billingPostalCode"]'
     @xpath_zip_shipping = '//*[@id="shippingPostalCode"]'
     @xpath_billing_address = '//div[contains(@class, "BillingAddressForm-shippingAsBillingCheckbox ")]'
@@ -55,7 +55,7 @@ class StripePaymentPage
 
   private
 
-  # Enter zip number if Stripe asked for it
+  # Enter zip number for billing if Stripe asked for it
   # @return [nil]
   def enter_zip_billing
     return unless @instance.webdriver.element_visible?(@xpath_zip_billing)
@@ -63,17 +63,26 @@ class StripePaymentPage
     @instance.webdriver.type_to_locator(@xpath_zip_billing, '12345', true, true)
   end
 
+  # Enter zip number for shipping if Stripe asked for it
+  # @return [nil]
   def enter_zip_shipping
     return unless @instance.webdriver.element_visible?(@xpath_zip_shipping)
 
     @instance.webdriver.type_to_locator(@xpath_zip_shipping, '12345', true, true)
   end
 
+  # Checks whether billing block is visible or not on the page
+  # @return [Boolean] True if the block is visible and False otherwise
   def billing_address_block_visible?
     xpath_billing_address_block = '//div[contains(@class, "BillingAddressForm-addressInput")]'
-    @instance.webdriver.get_attribute(xpath_billing_address_block, 'aria-hidden')
+    state = @instance.webdriver.get_attribute(xpath_billing_address_block, 'aria-hidden')
+    return false unless state == 'true'
+
+    true
   end
 
+  # Fills the second address field if it is present
+  # @return [nil]
   def enter_second_address
     xpath_second_address_line = '//*[@id = "shippingAddressLine2"]'
     return unless @instance.webdriver.element_present?(xpath_second_address_line)
@@ -81,12 +90,8 @@ class StripePaymentPage
     @instance.webdriver.type_to_locator(xpath_second_address_line, 'Springfield, Virginia(VA)', true, true)
   end
 
-  def select_state
-    xpath_state = '//*[@id = "shippingAdministrativeArea"]'
-    values = @instance.webdriver.get_all_combo_box_values(xpath_state)
-    @instance.select_combo_box(xpath_state, values.first)
-  end
-
+  # Types 4 letters(required amount of symbols to trigger Google suggestions) and selects first option
+  # @return [nil]
   def select_address
     xpath_shipping_address = '//*[@id = "shippingAddressLine1"]'
     @instance.webdriver.type_to_locator(xpath_shipping_address, '4235', true, true)
