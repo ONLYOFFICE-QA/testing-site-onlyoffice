@@ -20,5 +20,11 @@ module TestingSiteOnlyoffice
       @doc_phone = ('a'..'z').to_a.sample
       self
     end
+
+    # Method that returns full name
+    # @return [String] first name + " " + last name
+    def full_name
+      "#{@first_name} #{@last_name}"
+    end
   end
 end
