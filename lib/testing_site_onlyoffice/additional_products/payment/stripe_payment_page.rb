@@ -10,7 +10,7 @@ class StripePaymentPage
     @xpath_submit_button = '//button[contains(@class, "SubmitButton")]'
     @xpath_zip_billing = '//*[@id="billingPostalCode"]'
     @xpath_zip_shipping = '//*[@id="shippingPostalCode"]'
-    @xpath_billing_address = '//div[contains(@class, "BillingAddressForm-shippingAsBillingCheckbox ")]'
+    @xpath_billing_address = '//div[contains(@class, "BillingAddressForm-shippingAsBillingCheckbox")]'
     wait_to_load
   end
 
@@ -27,15 +27,13 @@ class StripePaymentPage
     @instance.webdriver.type_to_locator('//*[@id = "shippingName"]', 'Teamlab Ruby', true, true)
     select_address
     enter_second_address
-    @instance.webdriver.type_to_locator('//*[@id="phoneNumber"]', '626-923-0527', true, true)
+    type_phone_number
+    type_city
     @instance.webdriver.type_to_locator('//*[@id="cardNumber"]', '4242424242424242', true, true)
     @instance.webdriver.type_to_locator('//*[@id="cardExpiry"]', '1250', true, true)
     @instance.webdriver.type_to_locator('//*[@id="cardCvc"]', '111', true, true)
     @instance.webdriver.wait_until { @instance.webdriver.element_present?(@xpath_billing_address) }
-    @instance.webdriver.click_on_locator(@xpath_billing_address)
-    @instance.webdriver.wait_until { billing_address_block_visible? }
-    @instance.webdriver.type_to_locator('//*[@id="billingName"]', 'Teamlab Ruby', true, true)
-    @instance.webdriver.type_to_locator('//*[@id="billingPostalCode"]', '11355', true, true)
+    check_same_address_for_billing
     @instance.webdriver.click_on_locator(@xpath_submit_button)
     wait_for_order_finish
   end
@@ -98,5 +96,26 @@ class StripePaymentPage
     sleep 5
     @instance.webdriver.press_key(:enter)
     @instance.webdriver.wait_until { @instance.webdriver.get_attribute('//*[@id = "shippingLocality"]', 'class').include?('Input--empty') }
+  end
+
+  # Type some phone number
+  # @return [nil]
+  def type_phone_number
+    @instance.webdriver.select_combo_box('//select[contains(@class, "PhoneNumberCountryCodeSelect-select")]', 'US')
+    @instance.webdriver.type_to_locator('//*[@id="phoneNumber"]', '626-923-0527', true, true)
+  end
+
+  # Type city name
+  # @return [nil]
+  def type_city
+    @instance.webdriver.type_to_locator('//input[contains(@placeholder, "City")]', 'Springfield', true, true)
+  end
+
+  # Check `Use same address for billing` if it's not checked
+  # @return [nil]
+  def check_same_address_for_billing
+    return if @instance.webdriver.element_present?("#{@xpath_billing_address}//div[contains(@class, 'checked')]")
+
+    @instance.webdriver.click_on_locator(@xpath_billing_address)
   end
 end
