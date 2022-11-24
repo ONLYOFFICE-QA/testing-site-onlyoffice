@@ -45,4 +45,9 @@ namespace(:wrata) do
     OnlyofficeLoggerHelper.sleep_and_log('Waiting for test nodes setup', 3 * 60)
     Rake::Task['wrata:wrata_turn_on_servers'].execute(count: 3)
   end
+
+  desc 'Run test on production server onlyoffice.com'
+  task run_tests_on_production: :ensure_user do
+    Rake::Task['wrata:run_site_tests'].execute(location: 'com us')
+  end
 end
