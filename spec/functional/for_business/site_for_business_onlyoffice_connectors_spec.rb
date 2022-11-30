@@ -14,7 +14,7 @@ describe 'Site For Business connectors' do
     @test.webdriver.quit
   end
 
-  TestingSiteOnlyoffice::SiteDownloadData.connectors_info.keys.each do |connector|
+  TestingSiteOnlyoffice::SiteDownloadData.connectors_info.each_key do |connector|
     describe connector.to_s do
       let(:current_connector) { @connectors_page.onlyoffice_connector_block(connector) }
 
