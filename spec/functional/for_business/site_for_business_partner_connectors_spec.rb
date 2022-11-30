@@ -19,7 +19,7 @@ describe 'Site For Business connectors' do
     expect(commercial_docs_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
   end
 
-  TestingSiteOnlyoffice::SiteDownloadData.connectors_partners_list.each do |connector|
+  TestingSiteOnlyoffice::SiteDownloadData.connectors_partners_info.each_key do |connector|
     describe connector.to_s do
       let(:products_connectors_partners_page) { @connectors_page.switch_to_provided_by_partners }
       let(:current_connector) { products_connectors_partners_page.partners_connector_block(connector) }

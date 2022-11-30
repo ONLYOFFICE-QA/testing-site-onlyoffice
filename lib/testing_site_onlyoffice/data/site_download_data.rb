@@ -28,20 +28,13 @@ module TestingSiteOnlyoffice
     MOBILE_IOS_CHANGELOG = 'Documents app for iOS changelog - ONLYOFFICE'
 
     # Connectors
-    def self.connectors_list
-      %i[alfresco chamilo confluence drupal humhub jira liferay nextcloud nuxeo owncloud plone redmine sharepoint moodle strapi wordpress]
-    end
-
     def self.connectors_info
       @connectors_info ||= JSON.parse(File.read("#{__dir__}/site_connectors_info.json"))
     end
 
-    def self.connectors_partners_list
-      %i[agorum communigate ecmind exoplatform jalios liferay maarch moodle openolat powerfolder pydio seafile talkspirit xwiki]
-    end
-
+    # Integrations
     def self.connectors_partners_info
-      @connectors_partners_info ||= JSON.parse(File.read("#{__dir__}/site_product_connectors_info.json"))
+      @connectors_partners_info ||= JSON.parse(File.read("#{__dir__}/site_integrations_info.json"))
     end
 
     # Open Source Bundles

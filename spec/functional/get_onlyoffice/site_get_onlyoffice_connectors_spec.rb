@@ -10,11 +10,11 @@ describe 'Connectors download' do
     @connectors_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_connectors)
   end
 
-  it_behaves_like 'connector_download', TestingSiteOnlyoffice::SiteDownloadData.connectors_list do
+  it_behaves_like 'connector_download', TestingSiteOnlyoffice::SiteDownloadData.connectors_info.keys do
     let(:connectors_page) { @connectors_page }
   end
 
-  TestingSiteOnlyoffice::SiteDownloadData.connectors_list.each do |connector|
+  TestingSiteOnlyoffice::SiteDownloadData.connectors_info.each_key do |connector|
     describe connector.to_s do
       let(:current_connector) { @connectors_page.installer_open_source_connector_block(connector) }
 
@@ -32,6 +32,6 @@ describe 'Connectors download' do
   end
 
   it "[Site][OpenSource][Connectors] Connectors number didn't change /download-connectors.aspx" do
-    expect(@connectors_page.connectors_block_number).to eq(TestingSiteOnlyoffice::SiteDownloadData.connectors_list.count)
+    expect(@connectors_page.connectors_block_number).to eq(TestingSiteOnlyoffice::SiteDownloadData.connectors_info.keys.count)
   end
 end
