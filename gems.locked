@@ -49,7 +49,7 @@ GEM
       timeout
     net-smtp (0.3.3)
       net-protocol
-    nokogiri (1.13.9)
+    nokogiri (1.13.10)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     onlyoffice_bugzilla_helper (0.6.1)
