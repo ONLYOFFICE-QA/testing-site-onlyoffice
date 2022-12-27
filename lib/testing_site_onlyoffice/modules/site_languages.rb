@@ -6,7 +6,7 @@ module TestingSiteOnlyoffice
   module SiteLanguages
     include PageObject
 
-    div(:page_language, xpath: '//div[@id="LanguageSelector"]/div[contains(@class, "title")]')
+    div(:page_language, xpath: '//div[@id="LanguageItem"]/div[contains(@class, "title")]')
     elements(:language_select, xpath: '//div[@id="LanguageSelector"]/ul/li')
 
     def get_page_language
