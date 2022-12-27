@@ -6,7 +6,7 @@ module TestingSiteOnlyoffice
   module SiteLanguages
     include PageObject
 
-    div(:page_language, xpath: '//div[@id="LanguageItem"]/div[contains(@class, "title")]')
+    div(:page_language, xpath: '//div[@id="LanguageSelector"]//div[contains(@class, "title")]')
     elements(:language_select, xpath: '//div[@id="LanguageSelector"]/ul/li')
 
     def get_page_language
@@ -26,10 +26,9 @@ module TestingSiteOnlyoffice
     end
 
     def open_list_languages_page
-      page_language_element.click
-      @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(language_select_elements[1])
-      end
+      xpath_page_languages = '//div[@id="LanguageSelector"]//div[contains(@class, "title")]'
+      @instance.webdriver.move_to_element_by_locator(xpath_page_languages)
+      page_language_element.click unless @instance.webdriver.element_present?(language_select_elements[1])
     end
 
     def get_all_language_from_site
