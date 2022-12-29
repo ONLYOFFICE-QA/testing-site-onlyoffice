@@ -28,7 +28,9 @@ module TestingSiteOnlyoffice
     def open_list_languages_page
       xpath_page_languages = '//div[@id="LanguageSelector"]//div[contains(@class, "title")]'
       @instance.webdriver.move_to_element_by_locator(xpath_page_languages)
-      page_language_element.click unless @instance.webdriver.element_present?(language_select_elements[1])
+      @instance.webdriver.wait_until do
+        @instance.webdriver.element_present?(language_select_elements[1])
+      end
     end
 
     def get_all_language_from_site
