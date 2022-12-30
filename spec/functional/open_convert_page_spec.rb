@@ -6,8 +6,8 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 
 describe 'Convert page' do
   before do
-    @site_main_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @convert_page = @site_main_page.open_convert_page
+    site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
+    @convert_page = site_home_page.click_link_on_toolbar(:features_pdf_reader_converter).open_convert_page
   end
 
   after do |example|
@@ -35,6 +35,12 @@ describe 'Convert page' do
     @convert_page.upload_file(TestingSiteOnlyoffice::TestData.presentation_path)
     @convert_page.convert_formats_button_click
     expect(@convert_page.file_formats_list).to eq(TestingSiteOnlyoffice::ConvertPage::PRESENTATION_FORMATS)
+  end
+
+  it 'Upload .pdf file' do
+    @convert_page.upload_file(TestingSiteOnlyoffice::TestData.pdf_path)
+    @convert_page.convert_formats_button_click
+    expect(@convert_page.file_formats_list).to eq(TestingSiteOnlyoffice::ConvertPage::PDF_FORMATS)
   end
 
   it 'Upload incorrect file format' do

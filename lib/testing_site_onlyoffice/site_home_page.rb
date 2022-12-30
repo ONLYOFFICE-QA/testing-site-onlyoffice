@@ -194,13 +194,5 @@ module TestingSiteOnlyoffice
     def page_body
       @instance.webdriver.get_text('//body')
     end
-
-    # TODO: Replace this method as soon as link for this page will be added in main page menu
-    # Open convert page
-    # @return [ConvertPage] instance of convert page
-    def open_convert_page
-      open_sublink('convert.aspx')
-      ConvertPage.new(@instance)
-    end
   end
 end

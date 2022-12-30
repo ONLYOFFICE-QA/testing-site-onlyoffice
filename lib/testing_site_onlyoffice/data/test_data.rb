@@ -28,5 +28,11 @@ module TestingSiteOnlyoffice
     def self.log_path
       "#{@main_path}log_upload_testing.log"
     end
+
+    # Gets the path of the sample .pdf file
+    # @return [String] the path to the .pdf file
+    def self.pdf_path
+      "#{@main_path}pdf_upload_testing.pdf"
+    end
   end
 end

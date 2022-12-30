@@ -4,16 +4,17 @@ require_relative 'site_helper'
 
 module TestingSiteOnlyoffice
   # Handles operations with convert page
-  # /convert.aspx
+  # /online-document-converter.aspx
   # https://user-images.githubusercontent.com/38238032/188140519-e3b46efa-34a9-4aad-9802-3eb6ff32c68a.png
   class ConvertPage
     include PageObject
 
     file_field(:uploader, xpath: '//*[@id="fileInput"]')
 
-    DOC_FORMATS = %w[docm docxf dotm dotx epub fb2 html odt ott pdf pdfa rtf txt].freeze
-    SPREADSHEET_FORMATS = %w[csv ods ots pdf pdfa xlsm xltm xltx].freeze
-    PRESENTATION_FORMATS = %w[odp otp pdf pdfa potm potx pptm].freeze
+    DOC_FORMATS = %w[PDF PDFA DOCX DOCXF TXT RTF EPUB FB2 HTML DOCM DOTX DOTM ODT OTT].freeze
+    SPREADSHEET_FORMATS = %w[PDF PDFA XLSX CSV ODS OTS XLTX XLTM XLSM].freeze
+    PRESENTATION_FORMATS = %w[PDF PDFA PPTX ODP OTP POTX POTM PPTM].freeze
+    PDF_FORMATS = %w[PDF PDFA DOCX DOCXF TXT RTF EPUB FB2 HTML DOCM DOTX DOTM ODT OTT].freeze
 
     def initialize(instance)
       super(instance.webdriver.driver)
