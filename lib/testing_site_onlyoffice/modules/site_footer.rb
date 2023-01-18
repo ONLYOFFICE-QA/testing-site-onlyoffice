@@ -28,7 +28,7 @@ module TestingSiteOnlyoffice
     link(:support_contact_form, xpath: '//a[@href="/support-contact-form.aspx"]')
 
     # contact us
-    link(:request_a_call, xpath: '//a[@href="/call-back-form.aspx"]')
+    link(:request_a_call, xpath: "#{footer_xpath}//a[@href='/call-back-form.aspx']")
 
     # follow us on
     label(:subscribe_to_newsletter, xpath: '//div[contains(@class,"footer_menu")]//label[@title="Subscribe to our newsletters"]')

@@ -11,13 +11,15 @@ module TestingSiteOnlyoffice
     text_field(:last_name, xpath: '//input[contains(@class,"LastName")]')
     text_field(:email, xpath: '//input[contains(@class,"Email")]')
     text_field(:phone, xpath: '//input[contains(@class,"Phone")]')
-    text_field(:date, xpath: '//input[contains(@class,"Date")]')
-    text_field(:time, xpath: '//input[contains(@class,"Time")]')
+    button(:date_button, xpath: '//button[contains(@class, "datepicker-trigger ")]')
     elements(:active_calendar_days, xpath: '//td[@data-handler="selectDay"]')
+    elements(:timezones, xpath: '//div[@class = "timezone"]//li')
+    elements(:hours, xpath: '//div[@class = "time"]//li')
     text_field(:submit, xpath: '//input[contains(@class,"sbmtCallbackForm")]')
     text_field(:congratulation, xpath: '//*[@id="callbackRequestAddSuccess"]//input')
     span(:next_month, xpath: '//span[@class="ui-icon ui-icon-circle-triangle-e"]')
     span(:calendar, xpath: '//span[@class="ui-datepicker-month"]')
+    link(:select_button, xpath: '//a[@id = "selectbtn"]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -39,7 +41,6 @@ module TestingSiteOnlyoffice
 
     def fill_form(params = {})
       self.first_name = params.fetch(:first_name, Faker::Name.first_name)
-      self.last_name = params.fetch(:last_name, Faker::Name.last_name)
       self.email = params.fetch(:email, SiteData::EMAIL_ADMIN)
       self.phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
     end
@@ -55,10 +56,13 @@ module TestingSiteOnlyoffice
     end
 
     def click_first_active_day
-      date_element.click
+      date_button_element.click
       wait_calendar_visible?
       next_month_element.click
       active_calendar_days_elements.first.click
+      timezones_elements.first.click
+      hours_elements.first.click
+      select_button_element.click
     end
   end
 end

@@ -48,11 +48,11 @@ describe 'Registration new portal' do
     it '[Site][CallBack] Check request a call /call-back-form.aspx' do
       pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
       site_callback_page = @site_home_page.click_request_a_call
-      last_name = "nctautotest #{OnlyofficeFileHelper::StringHelper.generate_random_string} from callback form"
-      site_callback_page.send_callback_request(last_name:)
+      first_name = "nctautotest #{OnlyofficeFileHelper::StringHelper.generate_random_string} from callback form"
+      site_callback_page.send_callback_request(first_name:)
       expect(site_callback_page).to be_congratulation_visible
       expect(partner_email.check_email_by_subject(
-               { subject: TestingSiteOnlyoffice::SiteNotificationData::CALL_BACK_REQUEST, search: last_name }, 300, true
+               { subject: TestingSiteOnlyoffice::SiteNotificationData::CALL_BACK_REQUEST, search: first_name }, 300, true
              )).to be true
     end
   end
