@@ -8,7 +8,7 @@ module TestingSiteOnlyoffice
 
     div(:enterprise_edition, xpath: "//div[@id='forenterprises']")
     link(:get_it, xpath: "//div[@class='fe_header_text']//a[@href='/download-docs.aspx']")
-    link(:request_demo, xpath: "//div[@class='fe_header_text']//a[@href='/demo-order.aspx?from=docs-enterprise']")
+    link(:see_it_in_action, xpath: '//a[contains(@href, "/see-it-in-action.aspx?from=docs-enterprise")]')
     link(:document_editing, xpath: "//div[@class='fe_cards']//a[@href='/document-editor.aspx']")
     link(:spreadsheet_editing, xpath: "//div[@class='fe_cards']//a[@href='/spreadsheet-editor.aspx']")
     link(:presentation_editing, xpath: "//div[@class='fe_cards']//a[@href='/presentation-editor.aspx']")
@@ -35,9 +35,9 @@ module TestingSiteOnlyoffice
       SiteGetOnlyofficeDocsEnterprise.new(@instance)
     end
 
-    def check_button_request_demo?
-      request_demo_element.click
-      SiteOrderDemo.new(@instance)
+    def check_button_see_it_in_action?
+      see_it_in_action_element.click
+      SiteFeaturesSeeItInAction.new(@instance)
     end
 
     def check_button_spreadsheet_editing?
