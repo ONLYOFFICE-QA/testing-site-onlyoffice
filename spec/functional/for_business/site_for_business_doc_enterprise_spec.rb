@@ -18,8 +18,8 @@ describe 'Enterprise Edition' do
     expect(@enterprise_edition.check_button_get_it_now?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
   end
 
-  it '[Site][For Business Enterprise Edition] Go to request_demo' do
-    expect(@enterprise_edition.check_button_request_demo?).to be_a TestingSiteOnlyoffice::SiteOrderDemo
+  it '[Site][For Business Enterprise Edition] Go to see it in action' do
+    expect(@enterprise_edition.check_button_see_it_in_action?).to be_a TestingSiteOnlyoffice::SiteFeaturesSeeItInAction
   end
 
   it '[Site][For Business Enterprise Edition] Go to document_editing' do
