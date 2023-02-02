@@ -6,7 +6,7 @@ module TestingSiteOnlyoffice
   class SiteFeaturesDocsOverview
     include PageObject
 
-    div(:youtube_video, xpath: '//div[contains(@class, "ct_video_image")]')
+    div(:youtube_video, xpath: '//div[contains(@class, "ct_new_video")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
