@@ -8,7 +8,6 @@ module TestingSiteOnlyoffice
 
     div(:youtube_video, xpath: '//div[contains(@class, "ct_new_video")]')
 
-
     def initialize(instance)
       super(instance.webdriver.driver)
       @instance = instance
