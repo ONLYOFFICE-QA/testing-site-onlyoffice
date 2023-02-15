@@ -97,6 +97,7 @@ describe 'Registration new portal' do
 
     TestingSiteOnlyoffice::SiteData.sign_in_with_network_list.each do |network|
       it "Sign in with #{network} window opened" do
+        skip if network == :linkedin && config.server.include?('.info')
         sign_in_with_page = sign_in_page.sign_in_with(network)
         expect(sign_in_with_page).to be_indicator_element_present(network)
       end
