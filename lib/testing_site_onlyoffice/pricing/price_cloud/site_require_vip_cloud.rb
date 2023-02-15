@@ -7,13 +7,12 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteToolbar
 
-    request_vip_page_xpath = "//div[@class='PreorderForm']"
-    text_field(:full_name_vip, xpath: "#{request_vip_page_xpath}//input[@id='txtFirstName']")
-    text_field(:email_vip, xpath: "#{request_vip_page_xpath}//input[@id='txtEmail']")
-    text_field(:phone_vip, xpath: "#{request_vip_page_xpath}//input[@id='txtPhone']")
-    text_field(:company_name_vip, xpath: "#{request_vip_page_xpath}//input[@id='txtCompanyName']")
-    text_field(:employees_number_vip, xpath: "#{request_vip_page_xpath}//input[@id='txtEmployeesCount']")
-    text_field(:submit_vip_request, xpath: "#{request_vip_page_xpath}//input[@id='sbmtRequest']")
+    text_field(:full_name_vip, xpath: "//input[@id='txtFirstName']")
+    text_field(:email_vip, xpath: "//input[@id='txtEmail']")
+    text_field(:phone_vip, xpath: "//input[@id='txtPhone']")
+    text_field(:company_name_vip, xpath: "//input[@id='txtCompanyName']")
+    text_field(:employees_number_vip, xpath: "//input[@id='txtEmployeesCount']")
+    text_field(:submit_vip_request, xpath: "//input[@id='sbmtRequest']")
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -31,6 +30,7 @@ module TestingSiteOnlyoffice
       self.phone_vip = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.company_name_vip = params.fetch(:company_name, Faker::Company.name)
       self.employees_number_vip = params.fetch(:employees_number, Random.new.rand(1...5000))
+      click_on_comment
     end
 
     def submit_request_button_active?

@@ -6,7 +6,7 @@ module TestingSiteOnlyoffice
   class SiteFaq
     include PageObject
 
-    div(:faq_indicator, xpath: '//div[@class="faqpage general_faq"]')
+    div(:faq_indicator, xpath: '//a[contains(@class, "leftmenu_f_a_q selected")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)

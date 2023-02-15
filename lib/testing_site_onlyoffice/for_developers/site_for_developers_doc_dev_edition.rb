@@ -47,9 +47,9 @@ module TestingSiteOnlyoffice
     end
 
     def check_button_integration_api?
-      @instance.webdriver.click_on_locator("//a[contains(@href,'api.onlyoffice.com/editors/basic')]")
+      @instance.webdriver.click_on_locator("//a[contains(@href,'api.onlyoffice.com/editors/plugins')]")
       @instance.webdriver.choose_tab(2)
-      parse_url.include?('https://api.onlyoffice.com/editors')
+      parse_url.include?('https://api.onlyoffice.com/plugins')
     end
 
     def check_button_wopi_support?
