@@ -30,7 +30,6 @@ module TestingSiteOnlyoffice
       self.phone_vip = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.company_name_vip = params.fetch(:company_name, Faker::Company.name)
       self.employees_number_vip = params.fetch(:employees_number, Random.new.rand(1...5000))
-      click_on_comment
     end
 
     def submit_request_button_active?
