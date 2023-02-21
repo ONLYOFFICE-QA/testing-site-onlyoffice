@@ -5,8 +5,8 @@
     "whats_new": "onlyoffice-alfresco/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-alfresco · GitHub"
   },
   "moodle": {
-    "github": "GitHub - ONLYOFFICE/moodle-mod_onlyofficeeditor: Moodle ONLYOFFICE Document Server online editor integration",
-    "instruction": "GitHub - ONLYOFFICE/moodle-mod_onlyofficeeditor: Moodle ONLYOFFICE Document Server online editor integration",
+    "github": "GitHub - ONLYOFFICE/moodle-mod_onlyofficeeditor: The plugin which enables users to edit and co-author office documents within the Moodle course structure using ONLYOFFICE Docs",
+    "instruction": "GitHub - ONLYOFFICE/moodle-mod_onlyofficeeditor: The plugin which enables users to edit and co-author office documents within the Moodle course structure using ONLYOFFICE Docs",
     "whats_new": "moodle-mod_onlyofficeeditor/CHANGELOG.md at master · ONLYOFFICE/moodle-mod_onlyofficeeditor · GitHub"
   },
   "confluence": {
