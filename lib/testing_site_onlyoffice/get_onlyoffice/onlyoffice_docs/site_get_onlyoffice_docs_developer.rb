@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative '../../modules/site_toolbar'
-require_relative 'modules/onlyoffice_docs_toolbar'
 require_relative '../modules/site_download_helper'
 require_relative '../modules/site_block_constructor_helper'
 require_relative '../modules/commercial/site_commercial_block_constructor'
@@ -16,7 +15,6 @@ module TestingSiteOnlyoffice
     include SiteDownloadHelper
     include SiteCommercialDownloadHelper
     include SiteToolbar
-    include SiteToolbarOnlyofficeDocs
 
     element(:title_docs_developer, xpath: "//div[@class='dwn-mp-docs-developer']/h2")
 

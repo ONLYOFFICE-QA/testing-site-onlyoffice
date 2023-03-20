@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Onlyoffice Docs Community edition download' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @docs_community_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_enterprise).site_docs_community_download
+    @docs_community_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_community)
   end
 
   TestingSiteOnlyoffice::SiteDownloadData.open_source_docs_list.each do |installer|

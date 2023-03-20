@@ -46,15 +46,16 @@ describe 'Enterprise Edition' do
     expect(@enterprise_edition.check_button_mobile_apps?).to be_a TestingSiteOnlyoffice::SiteMobileApps
   end
 
+  it '[Site][For Business Enterprise Edition] Go to docs-as-a-service' do
+    expect(@enterprise_edition.check_button_docs_registration?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsRegistration
+  end
+
   it '[Site][For Business Enterprise Edition] Go to self_hosted' do
     expect(@enterprise_edition.check_button_self_hosted?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
   end
 
   it '[Site][For Business Enterprise Edition] Go to amazon' do
-    expect(@enterprise_edition.check_link_business_platform?(:amazon)).to be true
+    expect(@enterprise_edition).to be_check_link_amazon
   end
 
-  it '[Site][For Business Enterprise Edition] Go to univention' do
-    expect(@enterprise_edition.check_link_business_platform?(:univention)).to be true
-  end
 end

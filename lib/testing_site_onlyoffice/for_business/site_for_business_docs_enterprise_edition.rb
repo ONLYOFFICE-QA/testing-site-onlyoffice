@@ -1,4 +1,10 @@
 # frozen_string_literal: true
+require_relative '../features/site_features_see_it_in_action'
+require_relative '../features/docs/site_features_document_editor'
+require_relative '../features/docs/site_features_spreadsheet_editor'
+require_relative '../features/docs/site_features_form_creator'
+require_relative '../features/docs/site_features_presentation_editor'
+require_relative '../get_onlyoffice/site_get_onlyoffice_docs_registration'
 
 module TestingSiteOnlyoffice
   # docs-enterprise.aspx?from=docs-enterprise-prices
@@ -7,7 +13,7 @@ module TestingSiteOnlyoffice
     include PageObject
 
     div(:enterprise_edition, xpath: "//div[@id='forenterprises']")
-    link(:get_it, xpath: "//div[@class='fe_header_text']//a[@href='/download-docs.aspx']")
+    link(:get_it_now, xpath: "//div[@class='fe_header_text']//a[@href='/download-docs.aspx']")
     link(:see_it_in_action, xpath: '//a[contains(@href, "/see-it-in-action.aspx?from=docs-enterprise")]')
     link(:document_editing, xpath: "//div[@class='fe_cards']//a[@href='/document-editor.aspx']")
     link(:spreadsheet_editing, xpath: "//div[@class='fe_cards']//a[@href='/spreadsheet-editor.aspx']")
@@ -17,7 +23,7 @@ module TestingSiteOnlyoffice
     link(:mobile_apps, xpath: "//div[@class='fe_tools']//a[@href='/download-desktop.aspx#mobile']")
     link(:self_hosted, xpath: "//div[@class='choice_btn']//a[@href='/download-docs.aspx']")
     link(:amazon, xpath: "//div[@class='choice_btn']//a[contains(@href,'amazon')]")
-    link(:univention, xpath: "//div[@class='choice_btn']//a[contains(@href,'univention')]")
+    link(:docs_registration, xpath: "//div[@class='choice_btn']//a[contains(@href,'docs-registration')]")
     link(:all_connectors, xpath: "//div[@class='fec_text']//a[contains(@href,'/all-connectors.aspx')]")
 
     def initialize(instance)
@@ -30,59 +36,30 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(enterprise_edition_element) }
     end
 
-    def check_button_get_it_now?
-      get_it_element.click
-      SiteGetOnlyofficeDocsEnterprise.new(@instance)
+    button_classes = {
+      get_it_now: SiteGetOnlyofficeDocsEnterprise,
+      see_it_in_action: SiteFeaturesSeeItInAction,
+      document_editing: SiteFeaturesDocumentEditor,
+      spreadsheet_editing: SiteFeaturesSpreadsheetEditor,
+      presentation_editing: SiteFeaturesPresentationEditor,
+      form_creator: SiteFeaturesFormCreator,
+      desktop_apps: SiteGetOnlyofficeDesktopApps,
+      mobile_apps: SiteMobileApps,
+      self_hosted: SiteGetOnlyofficeDocsEnterprise,
+      all_connectors: SiteProductsConnectorsOnlyoffice,
+      docs_registration: SiteGetOnlyofficeDocsRegistration
+    }
+
+    button_classes.each_key do |element|
+      define_method("check_button_#{element}?") do
+        @instance.webdriver.click_on_locator(send("#{element}_element"))
+        button_classes[element].new(@instance)
+      end
     end
 
-    def check_button_see_it_in_action?
-      see_it_in_action_element.click
-      SiteFeaturesSeeItInAction.new(@instance)
-    end
-
-    def check_button_spreadsheet_editing?
-      spreadsheet_editing_element.click
-      SiteFeaturesSpreadsheetEditor.new(@instance)
-    end
-
-    def check_button_presentation_editing?
-      presentation_editing_element.click
-      SiteFeaturesPresentationEditor.new(@instance)
-    end
-
-    def check_button_document_editing?
-      document_editing_element.click
-      SiteFeaturesDocumentEditor.new(@instance)
-    end
-
-    def check_button_form_creator?
-      form_creator_element.click
-      SiteFeaturesFormCreator.new(@instance)
-    end
-
-    def check_button_desktop_apps?
-      desktop_apps_element.click
-      SiteGetOnlyofficeDesktopApps.new(@instance)
-    end
-
-    def check_button_mobile_apps?
-      mobile_apps_element.click
-      SiteMobileApps.new(@instance)
-    end
-
-    def check_button_all_connectors?
-      all_connectors_element.click
-      SiteProductsConnectorsOnlyoffice.new(@instance)
-    end
-
-    def check_button_self_hosted?
-      self_hosted_element.click
-      SiteGetOnlyofficeDocsEnterprise.new(@instance)
-    end
-
-    def check_link_business_platform?(section)
-      attribute = @instance.webdriver.get_attribute(move_to_business_platform[section][:element], 'href')
-      @instance.webdriver.click_on_locator(move_to_business_platform[section][:element])
+    def check_link_amazon?
+      attribute = @instance.webdriver.get_attribute(amazon_element, 'href')
+      @instance.webdriver.click_on_locator(amazon_element)
       @instance.webdriver.switch_to_popup
       attribute.include?(parse_url)
     end
@@ -91,17 +68,6 @@ module TestingSiteOnlyoffice
       current_url = URI(@instance.webdriver.current_url)
       current_url.fragment = current_url.query = nil
       current_url.to_s
-    end
-
-    def move_to_business_platform
-      {
-        amazon: {
-          element: amazon_element
-        },
-        univention: {
-          element: univention_element
-        }
-      }
     end
   end
 end

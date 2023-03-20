@@ -46,13 +46,14 @@ module TestingSiteOnlyoffice
 
     # top toolbar - Get Onlyoffice
     link(:site_get_onlyoffice, xpath: '//a[@id="navitem_download"]')
-    link(:site_get_onlyoffice_docs_enterprise, xpath: '//a[@id="navitem_download_docs_ee"]')
     link(:site_get_onlyoffice_sign_in, xpath: '//a[@id="navitem_download_signin"]')
     link(:site_get_onlyoffice_sign_up, xpath: '//a[@id="navitem_download_signup"]')
     link(:site_get_onlyoffice_install_onpremises, xpath: '//a[@id="navitem_download_onpremises"]')
     link(:site_get_onlyoffice_connectors, xpath: '//a[@id="navitem_download_connectors"]')
     link(:site_get_onlyoffice_desktop_mobile, xpath: '//a[@id="navitem_download_desktop_mob"]')
     link(:site_get_onlyoffice_docs_developer, xpath: '//a[@id="navitem_download_docs_de"]')
+    link(:site_get_onlyoffice_docs_enterprise, xpath: '//a[@id="navitem_docs_onpremises"]')
+    link(:site_get_onlyoffice_docs_community, xpath: '//a[@id="navitem_download_docs_ce"]')
     link(:site_get_onlyoffice_document_builder, xpath: '//a[@id="navitem_download_docs_builder"]')
     link(:site_get_onlyoffice_web_hosting, xpath: '//a[@id="navitem_download_hosting"]')
     link(:site_get_onlyoffice_github_code, xpath: '//a[@id="navitem_download_code_git"]')
@@ -210,10 +211,6 @@ module TestingSiteOnlyoffice
 
     def site_toolbar_get_onlyoffice
       {
-        get_onlyoffice_docs_enterprise: {
-          element: site_get_onlyoffice_docs_enterprise_element,
-          class: SiteGetOnlyofficeDocsEnterprise
-        },
         get_onlyoffice_sign_in: {
           element: site_get_onlyoffice_sign_in_element,
           class: SiteGetOnlyofficeSignIn
@@ -237,6 +234,14 @@ module TestingSiteOnlyoffice
         get_onlyoffice_docs_developer: {
           element: site_get_onlyoffice_docs_developer_element,
           class: SiteGetOnlyofficeDocsDeveloper
+        },
+        get_onlyoffice_docs_enterprise: {
+          element: site_get_onlyoffice_docs_enterprise_element,
+          class: SiteGetOnlyofficeDocsEnterprise
+        },
+        get_onlyoffice_docs_community: {
+          element: site_get_onlyoffice_docs_community_element,
+          class: SiteGetOnlyofficeDocsCommunity
         },
         get_onlyoffice_document_builder: {
           element: site_get_onlyoffice_document_builder_element,
