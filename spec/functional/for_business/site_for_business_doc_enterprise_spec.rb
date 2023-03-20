@@ -57,5 +57,4 @@ describe 'Enterprise Edition' do
   it '[Site][For Business Enterprise Edition] Go to amazon' do
     expect(@enterprise_edition).to be_check_link_amazon
   end
-
 end

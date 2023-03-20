@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative '../features/site_features_see_it_in_action'
 require_relative '../features/docs/site_features_document_editor'
 require_relative '../features/docs/site_features_spreadsheet_editor'

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 module TestingSiteOnlyoffice
-
   # /docs-registration.aspx
   # https://user-images.githubusercontent.com/38238032/226367145-02686762-6975-42d8-aff0-766e6b063d7a.jpg
   class SiteGetOnlyofficeDocsRegistration
@@ -19,4 +18,3 @@ module TestingSiteOnlyoffice
     end
   end
 end
-
