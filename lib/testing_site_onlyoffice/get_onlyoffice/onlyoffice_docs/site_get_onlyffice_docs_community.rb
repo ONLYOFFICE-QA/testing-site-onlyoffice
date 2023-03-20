@@ -1,18 +1,16 @@
 # frozen_string_literal: true
 
 require_relative '../../modules/site_toolbar'
-require_relative 'modules/onlyoffice_docs_toolbar'
 require_relative '../modules/site_download_helper'
 require_relative '../modules/open_source/site_installer_block_constructor'
 
 module TestingSiteOnlyoffice
   # /download-docs.aspx?from=downloadintegrationmenu#docs-community
   # https://user-images.githubusercontent.com/40513035/131093555-b4c45fb2-a30c-48ca-a6a9-fb20d4b92045.png
-  class SiteDocsCommunity
+  class SiteGetOnlyofficeDocsCommunity
     include PageObject
     include SiteDownloadHelper
     include SiteToolbar
-    include SiteToolbarOnlyofficeDocs
 
     def initialize(instance)
       super(instance.webdriver.driver)

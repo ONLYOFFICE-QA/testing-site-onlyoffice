@@ -55,7 +55,7 @@
       "github": "GitHub - flathub/org.onlyoffice.desktopeditors"
     },
     "appimage": {
-      "instruction": "ONLYOFFICE – AppImages",
+      "instruction": "Running ONLYOFFICE Desktop Editors via AppImage - ONLYOFFICE",
       "download": "DesktopEditors-x86_64.AppImage",
       "github": "GitHub - ONLYOFFICE/appimage-desktopeditors: Portable version of ONLYOFFICE Desktop Editors"
     },
