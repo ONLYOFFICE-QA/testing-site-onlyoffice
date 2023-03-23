@@ -149,17 +149,17 @@ describe 'SiteHourlyCheck' do
       end
 
       describe 'download onlyoffice docs /download-docs.aspx' do
-        let(:onlyoffice_docs_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_enterprise) }
+        let(:onlyoffice_docs_enterprise_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_enterprise) }
 
         describe 'enterprise' do
           it_behaves_like 'commercial_installer_download', 'Docs_Enterprise',
                           TestingSiteOnlyoffice::SiteDownloadData.commercial_enterprise_docs_list_type do
-            let(:installers_download_page) { onlyoffice_docs_page }
+            let(:installers_download_page) { onlyoffice_docs_enterprise_page }
           end
         end
 
         describe 'developer' do
-          let(:onlyoffice_docs_developer_page) { onlyoffice_docs_page.site_docs_developer_download }
+          let(:onlyoffice_docs_developer_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_developer) }
 
           it_behaves_like 'commercial_installer_download', 'Docs_Developer',
                           TestingSiteOnlyoffice::SiteDownloadData.commercial_developer_docs_list_type do
@@ -168,7 +168,7 @@ describe 'SiteHourlyCheck' do
         end
 
         describe 'community' do
-          let(:onlyoffice_docs_community_page) { onlyoffice_docs_page.site_docs_community_download }
+          let(:onlyoffice_docs_community_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_community) }
 
           TestingSiteOnlyoffice::SiteDownloadData.open_source_docs_list.each do |installer|
             describe installer.to_s do
