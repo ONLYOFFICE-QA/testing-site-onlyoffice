@@ -48,11 +48,12 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice, xpath: '//a[@id="navitem_download"]')
     link(:site_get_onlyoffice_sign_in, xpath: '//a[@id="navitem_download_signin"]')
     link(:site_get_onlyoffice_sign_up, xpath: '//a[@id="navitem_download_signup"]')
+    link(:site_get_onlyoffice_docs_registration, xpath: '//a[@id="navitem_docs_signup"]')
     link(:site_get_onlyoffice_install_onpremises, xpath: '//a[@id="navitem_download_onpremises"]')
     link(:site_get_onlyoffice_connectors, xpath: '//a[@id="navitem_download_connectors"]')
     link(:site_get_onlyoffice_desktop_mobile, xpath: '//a[@id="navitem_download_desktop_mob"]')
     link(:site_get_onlyoffice_docs_developer, xpath: '//a[@id="navitem_download_docs_de"]')
-    link(:site_get_onlyoffice_docs_enterprise, xpath: '//a[@id="navitem_download_docs_ee"]')
+    link(:site_get_onlyoffice_docs_enterprise, xpath: '//a[@id="navitem_docs_onpremises"]')
     link(:site_get_onlyoffice_docs_community, xpath: '//a[@id="navitem_download_docs_ce"]')
     link(:site_get_onlyoffice_document_builder, xpath: '//a[@id="navitem_download_docs_builder"]')
     link(:site_get_onlyoffice_web_hosting, xpath: '//a[@id="navitem_download_hosting"]')
@@ -218,6 +219,10 @@ module TestingSiteOnlyoffice
         get_onlyoffice_sign_up: {
           element: site_get_onlyoffice_sign_up_element,
           class: SiteGetOnlyofficeSignUp
+        },
+        get_onlyoffice_docs_registration: {
+          element: site_get_onlyoffice_docs_registration_element,
+          class: DocsRegistrationPage
         },
         get_onlyoffice_workspace_on_premises: {
           element: site_get_onlyoffice_install_onpremises_element,
@@ -386,23 +391,12 @@ module TestingSiteOnlyoffice
     end
 
     def click_link_on_toolbar(section)
-      return handle_docs_registration if section == :onlyoffice_docs_registration
-
       move_to_element_link_toolbar(section)
       link = all_toolbar_links_and_classes_hash[section][:element]
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(link) }
       link.click
       @instance.webdriver.switch_to_popup if %i[about_gift_shop about_help_center features_see_it_in_action features_oforms].include?(section)
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
-    end
-
-    private
-
-    # Since site v1.95.0 of site there is no direct link to docs registration on main page
-    # @return [DocsRegistrationPage]
-    def handle_docs_registration
-      @instance.webdriver.open("#{@instance.config.server}/docs-registration.aspx")
-      DocsRegistrationPage.new(@instance)
     end
   end
 end
