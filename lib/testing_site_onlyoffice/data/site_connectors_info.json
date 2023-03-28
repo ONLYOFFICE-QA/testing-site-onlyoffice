@@ -76,6 +76,7 @@
   },
   "wordpress": {
     "github": "GitHub - ONLYOFFICE/onlyoffice-wordpress: The plugin which enables the users to edit office documents from WordPress using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to WordPress",
+    "instruction": "Integration Guides - WordPress - ONLYOFFICE",
     "whats_new": "onlyoffice-wordpress/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-wordpress · GitHub"
   },
   "mattermost": {
