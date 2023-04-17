@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
       portal_domain_region = if config.server.include?('teamlab')
                                'teamlab.info'
                              elsif config.server.include?('onlyoffice') && config.region == 'us'
-                               'onlyoffice.com'
+                               'onlyoffice.co'
                              elsif config.server.include?('onlyoffice') && config.region != 'us'
                                "onlyoffice.#{config.region}"
                              end

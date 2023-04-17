@@ -12,7 +12,7 @@ module TestingSiteOnlyoffice
     def portal_for_hourly_forgotten_password
       case config.region
       when 'us'
-        'https://nctautotest-site-forgot-password-us.onlyoffice.com'
+        'https://nctautotest-site-forgot-password-us.onlyoffice.co'
       when 'eu'
         'https://nctautotest-site-forgot-password.onlyoffice.eu'
       when 'sg'
