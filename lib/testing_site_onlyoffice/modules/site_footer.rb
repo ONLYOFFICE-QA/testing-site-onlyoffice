@@ -33,6 +33,9 @@ module TestingSiteOnlyoffice
     # follow us on
     label(:subscribe_to_newsletter, xpath: '//div[contains(@class,"footer_menu")]//label[@title="Subscribe to our newsletters"]')
 
+    # pdf reader & converter
+    link(:pdf_reader_converter, xpath: "#{footer_xpath}//a[@href = '/pdf-reader.aspx']")
+
     # by size
     def footer_home_use
       size_home_use_element.click
@@ -77,6 +80,11 @@ module TestingSiteOnlyoffice
     def click_subscribe_to_newsletter
       subscribe_to_newsletter_element.click
       SiteSubscribe.new(@instance)
+    end
+
+    def click_pdf_reader_converter
+      pdf_reader_converter_element.click
+      SitePDFReaderConverter.new(@instance)
     end
 
     def site_footer_link_alive?(section_title, title)

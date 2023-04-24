@@ -123,7 +123,7 @@ module TestingSiteOnlyoffice
         },
         features_pdf_reader_converter: {
           element: site_features_pdf_reader_converter_element,
-          class: SiteFeaturesPDFReaderConverter
+          class: SitePDFReaderConverter
         },
         features_desktop: {
           element: site_features_for_desktop_element,

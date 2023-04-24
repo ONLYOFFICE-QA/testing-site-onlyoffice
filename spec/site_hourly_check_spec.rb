@@ -61,7 +61,7 @@ describe 'SiteHourlyCheck' do
 
       it '[Site] Check Features PDF reader and converter' do
         page = @site_home_page.click_link_on_toolbar(:features_pdf_reader_converter)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesPDFReaderConverter
+        expect(page).to be_a TestingSiteOnlyoffice::SitePDFReaderConverter
       end
 
       it '[Site] Check Features security' do

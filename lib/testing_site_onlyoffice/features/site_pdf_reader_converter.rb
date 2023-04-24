@@ -5,7 +5,7 @@ require_relative '../convert_page'
 module TestingSiteOnlyoffice
   # /pdf-reader.aspx
   # https://user-images.githubusercontent.com/38238032/196688860-a0e3bf90-d959-4e1c-8b26-e2d7de607e3a.png
-  class SiteFeaturesPDFReaderConverter
+  class SitePDFReaderConverter
     include PageObject
     include SiteToolbar
 
