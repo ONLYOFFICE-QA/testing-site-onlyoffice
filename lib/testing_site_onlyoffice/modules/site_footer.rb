@@ -11,7 +11,7 @@ module TestingSiteOnlyoffice
     include SiteDownloadHelper
     include SiteFooterDevelopers
 
-    footer_xpath = '//div[@class="footer_menu"]'
+    footer_xpath = '//div[@class="footer_menu_item"]'
 
     # by size
     link(:size_home_use, xpath: "#{footer_xpath}//a[contains(@href, 'home-use')]")
