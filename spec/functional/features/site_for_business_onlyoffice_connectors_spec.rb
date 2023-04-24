@@ -6,7 +6,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Site For Business connectors' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @connectors_page = site_home_page.click_link_on_toolbar(:for_business_all)
+    @connectors_page = site_home_page.click_link_on_toolbar(:features_connectors)
   end
 
   after do |example|

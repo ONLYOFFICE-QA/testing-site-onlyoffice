@@ -51,7 +51,7 @@ module TestingSiteOnlyoffice
 
     def check_button_other_connectors?
       other_connectors_element.click
-      SiteProductsConnectorsOnlyoffice.new(@instance)
+      SiteFeaturesConnectorsOnlyoffice.new(@instance)
     end
   end
 end

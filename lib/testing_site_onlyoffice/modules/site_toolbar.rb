@@ -13,6 +13,7 @@ module TestingSiteOnlyoffice
 
     # top toolbar - Features
     link(:site_features, xpath: '//a[@id="navitem_features"]')
+    link(:site_features_connectors, xpath: '//a[@id="navitem_features_connectors"]')
     link(:site_features_docs_overview, xpath: '//a[@id="navitem_features_docs_overview"]')
     link(:site_features_document_editor, xpath: '//a[@id="navitem_features_document_editor"]')
     link(:site_features_spreadsheet_editor, xpath: '//a[@id="navitem_features_spreadsheet_editor"]')
@@ -27,7 +28,7 @@ module TestingSiteOnlyoffice
     link(:site_features_oforms, xpath: '//a[@id="navitem_features_oforms"]')
 
     # top toolbar - For Business
-    link(:site_for_business, xpath: '//a[@id="navitem_forbusiness"]')
+    link(:site_for_enterprises, xpath: '//a[@id = "navitem_forbusiness"]')
     link(:site_for_business_docs_enterprise, xpath: '//a[@id="navitem_fb_docs_ee"]')
     link(:site_for_business_workspace, xpath: '//a[@id="navitem_fb_workspace"]')
     link(:site_for_business_nextcloud, xpath: '//a[@id="navitem_integrations_nextcloud"]')
@@ -101,6 +102,10 @@ module TestingSiteOnlyoffice
 
     def site_toolbar_features
       {
+        features_connectors: {
+          element: site_features_connectors_element,
+          class: SiteFeaturesConnectorsOnlyoffice
+        },
         features_document_overview: {
           element: site_features_docs_overview_element,
           class: SiteFeaturesDocsOverview
@@ -154,41 +159,9 @@ module TestingSiteOnlyoffice
 
     def site_toolbar_for_business
       {
-        for_business_docs_enterprise: {
-          element: site_for_business_docs_enterprise_element,
-          class: SiteForBusinessDocsEnterpriseEdition
-        },
-        for_business_workspace: {
-          element: site_for_business_workspace_element,
-          class: SiteForBusinessWorkspace
-        },
-        for_business_nextcloud: {
-          element: site_for_business_nextcloud_element,
-          class: SiteNextcloud
-        },
-        for_business_owncloud: {
-          element: site_for_business_owncloud_element,
-          class: SiteOwnCloud
-        },
-        for_business_confluence: {
-          element: site_for_business_confluence_element,
-          class: SiteConfluence
-        },
-        for_business_alfresco: {
-          element: site_for_business_alfresco_element,
-          class: SiteAlfresco
-        },
-        for_business_moodle: {
-          element: site_for_business_moodle_element,
-          class: SiteMoodle
-        },
-        for_business_all: {
-          element: site_for_business_all_element,
-          class: SiteProductsConnectorsOnlyoffice
-        },
-        for_business_for_education: {
-          element: site_for_business_for_education_element,
-          class: SiteForBusinessEducation
+        for_enterprises: {
+          element: site_for_enterprises_element,
+          class: SiteEnterprise
         }
       }
     end
@@ -382,7 +355,7 @@ module TestingSiteOnlyoffice
 
     def move_to_element_link_toolbar(section)
       @instance.webdriver.move_to_element_by_locator(site_features_element.selector[:xpath]) if site_toolbar_features.key?(section)
-      @instance.webdriver.move_to_element_by_locator(site_for_business_element.selector[:xpath]) if site_toolbar_for_business.key?(section)
+      @instance.webdriver.move_to_element_by_locator(site_for_enterprises_element.selector[:xpath]) if site_toolbar_for_business.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_for_developers_element.selector[:xpath]) if site_toolbar_for_developers.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_get_onlyoffice_element.selector[:xpath]) if site_toolbar_get_onlyoffice.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_pricing_element.selector[:xpath]) if site_toolbar_pricing.key?(section)

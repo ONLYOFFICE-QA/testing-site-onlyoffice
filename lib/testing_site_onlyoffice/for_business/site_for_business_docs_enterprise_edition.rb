@@ -8,7 +8,7 @@ require_relative '../features/docs/site_features_presentation_editor'
 require_relative '../get_onlyoffice/site_get_onlyoffice_docs_registration'
 
 module TestingSiteOnlyoffice
-  # docs-enterprise.aspx?from=docs-enterprise-prices
+  # /docs-enterprise.aspx
   # https://user-images.githubusercontent.com/67409742/142990092-032280ef-b02f-4329-8fc8-78328ebd654f.png
   class SiteForBusinessDocsEnterpriseEdition
     include PageObject
@@ -47,7 +47,7 @@ module TestingSiteOnlyoffice
       desktop_apps: SiteGetOnlyofficeDesktopApps,
       mobile_apps: SiteMobileApps,
       self_hosted: SiteGetOnlyofficeDocsEnterprise,
-      all_connectors: SiteProductsConnectorsOnlyoffice,
+      all_connectors: SiteFeaturesConnectorsOnlyoffice,
       docs_registration: SiteGetOnlyofficeDocsRegistration
     }
 

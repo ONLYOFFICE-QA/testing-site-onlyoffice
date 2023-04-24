@@ -11,7 +11,7 @@ require_relative '../../site_home_page'
 module TestingSiteOnlyoffice
   # /all-connectors.aspx for developed by onlyoffice
   # https://user-images.githubusercontent.com/40513035/116680142-2e14c600-a960-11eb-8c87-746906a7db86.png
-  class SiteProductsConnectorsOnlyoffice
+  class SiteFeaturesConnectorsOnlyoffice
     include PageObject
     include SiteConnectorsToolbar
     include SiteBlockConstructorHelper

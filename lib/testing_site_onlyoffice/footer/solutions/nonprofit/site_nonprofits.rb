@@ -62,7 +62,7 @@ module TestingSiteOnlyoffice
 
     def click_see_all_integrations
       see_all_integrations_element.click
-      SiteProductsConnectorsOnlyoffice.new(@instance)
+      SiteFeaturesConnectorsOnlyoffice.new(@instance)
     end
   end
 end
