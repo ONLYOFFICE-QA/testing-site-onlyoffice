@@ -3,7 +3,7 @@
 module TestingSiteOnlyoffice
   # /docspace-registration.aspx
   # https://user-images.githubusercontent.com/38238032/234256489-08d104ea-ceed-4735-a394-e30fd991bb2f.jpg
-  class DocSpaceRegistration
+  class SiteDocSpaceRegistration
     include PageObject
 
     div(:signup_form, xpath: '//div[contains(@class, "signuppageform")]')

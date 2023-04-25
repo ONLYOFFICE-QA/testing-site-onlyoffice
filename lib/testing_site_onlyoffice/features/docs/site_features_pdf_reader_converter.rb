@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require_relative '../convert_page'
+require_relative '../../convert_page'
 
 module TestingSiteOnlyoffice
   # /pdf-reader.aspx
   # https://user-images.githubusercontent.com/38238032/196688860-a0e3bf90-d959-4e1c-8b26-e2d7de607e3a.png
-  class SitePDFReaderConverter
+  class SiteFeaturesPDFReaderConverter
     include PageObject
     include SiteToolbar
 

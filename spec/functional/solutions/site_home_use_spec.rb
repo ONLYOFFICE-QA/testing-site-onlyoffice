@@ -46,7 +46,7 @@ describe 'Document Builder download' do
 
   it '[Site][HomeUse]Button "Create online office" works' do
     personal_page = @home_use_page.open_docspace_registration
-    expect(personal_page).to be_a TestingSiteOnlyoffice::DocSpaceRegistration
+    expect(personal_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceRegistration
   end
 
   it '[Site][HomeUse]Button "Download on the App Store" works' do

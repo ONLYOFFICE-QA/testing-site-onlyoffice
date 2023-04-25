@@ -68,7 +68,7 @@ module TestingSiteOnlyoffice
 
     def open_docspace_registration
       create_docspace_element.click
-      DocSpaceRegistration.new(@instance)
+      SiteDocSpaceRegistration.new(@instance)
     end
 
     def click_download_on_app_store

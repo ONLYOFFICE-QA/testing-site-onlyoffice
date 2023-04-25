@@ -33,58 +33,31 @@ module TestingSiteOnlyoffice
     # follow us on
     label(:subscribe_to_newsletter, xpath: '//div[contains(@class,"footer_menu")]//label[@title="Subscribe to our newsletters"]')
 
-    # pdf reader & converter
+    # editors
+    link(:document_editor, xpath: "#{footer_xpath}//a[@href = '/document-editor.aspx']")
+    link(:spreadsheet_editor, xpath: "#{footer_xpath}//a[@href = '/spreadsheet-editor.aspx']")
+    link(:presentation_editor, xpath: "#{footer_xpath}//a[@href = '/presentation-editor.aspx']")
+    link(:form_creator, xpath: "#{footer_xpath}//a[@href = '/form-creator.aspx']")
     link(:pdf_reader_converter, xpath: "#{footer_xpath}//a[@href = '/pdf-reader.aspx']")
 
-    # by size
-    def footer_home_use
-      size_home_use_element.click
-      SiteHomeUse.new(@instance)
-    end
+    footer_links = { size_home_use: SiteHomeUse,
+                     industry_nonprofits: SiteNonProfits,
+                     industry_developers: SiteForDevelopers,
+                     help_center_footer_link: SiteAboutHelpCenter,
+                     order_demo: SiteOrderDemo,
+                     support_contact_form: SiteSupportContactForm,
+                     request_a_call: SiteCallback,
+                     subscribe_to_newsletter: SiteSubscribe,
+                     doc_editor: SiteFeaturesDocumentEditor,
+                     spreadsheet_editor: SiteFeaturesSpreadsheetEditor,
+                     presentation_editor: SiteFeaturesPresentationEditor,
+                     pdf_reader_converter: SiteFeaturesPDFReaderConverter }
 
-    # by industry
-    def footer_nonprofits
-      industry_nonprofits_element.click
-      SiteNonProfits.new(@instance)
-    end
-
-    def footer_developers
-      industry_developers_element.click
-      SiteForDevelopers.new(@instance)
-    end
-
-    # resources
-    def click_help_center
-      help_center_footer_link_element.click
-      SiteAboutHelpCenter.new(@instance)
-    end
-
-    # support
-    def click_order_demo
-      order_demo_element.click
-      SiteOrderDemo.new(@instance)
-    end
-
-    def click_support_contact_form
-      support_contact_form_element.click
-      SiteSupportContactForm.new(@instance)
-    end
-
-    # contact us
-    def click_request_a_call
-      request_a_call_element.click
-      SiteCallback.new(@instance)
-    end
-
-    # follow us on
-    def click_subscribe_to_newsletter
-      subscribe_to_newsletter_element.click
-      SiteSubscribe.new(@instance)
-    end
-
-    def click_pdf_reader_converter
-      pdf_reader_converter_element.click
-      SitePDFReaderConverter.new(@instance)
+    footer_links.each_key do |link|
+      define_method("click_#{link}") do
+        @instance.webdriver.click_on_locator(send("#{link}_element"))
+        footer_links[link].new(@instance)
+      end
     end
 
     def site_footer_link_alive?(section_title, title)

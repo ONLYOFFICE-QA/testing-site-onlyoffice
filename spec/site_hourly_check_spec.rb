@@ -29,13 +29,14 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check link Personal Offices' do
-      tour_page = @site_home_page.footer_home_use.open_personal
-      expect(tour_page.login_visible?).to be true
+      docspace_main_page = @site_home_page.click_link_on_toolbar(:features_docspace)
+      docspace_registration_page = docspace_main_page.click_registration_button
+      expect(docspace_registration_page).to be_a SiteDocSpaceRegistration
     end
 
     describe '[Site] Check Features' do
       it '[Site] Check Features document overview' do
-        page = @site_home_page.click_link_on_toolbar(:features_document_overview)
+        page = @site_home_page.click_document_editor
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesDocsOverview
       end
 
@@ -61,7 +62,7 @@ describe 'SiteHourlyCheck' do
 
       it '[Site] Check Features PDF reader and converter' do
         page = @site_home_page.click_link_on_toolbar(:features_pdf_reader_converter)
-        expect(page).to be_a TestingSiteOnlyoffice::SitePDFReaderConverter
+        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesPDFReaderConverter
       end
 
       it '[Site] Check Features security' do
