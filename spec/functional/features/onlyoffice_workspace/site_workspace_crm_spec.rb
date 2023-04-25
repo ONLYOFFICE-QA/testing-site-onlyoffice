@@ -3,11 +3,11 @@
 require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Site For business Workspace documents' do
+describe 'Site For Business Workspace CRM' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @workspace = site_home_page.click_link_on_toolbar(:for_business_workspace)
-    @documents = @workspace.click_on_section_link(:documents)
+    @workspace = site_home_page.click_link_on_toolbar(:features_workspace)
+    @crm = @workspace.click_on_section_link(:crm)
   end
 
   after do |example|
@@ -15,7 +15,7 @@ describe 'Site For business Workspace documents' do
     @test.webdriver.quit
   end
 
-  it "[Site][Workspace][Documents]'Check select section documents" do
-    expect(@documents.check_select?('docmanage')).to be true
+  it "[Site][Workspace][CRM]'Check select section crm" do
+    expect(@crm.check_select?('crm')).to be true
   end
 end

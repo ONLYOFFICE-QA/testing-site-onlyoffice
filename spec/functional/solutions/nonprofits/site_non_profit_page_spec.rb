@@ -22,7 +22,7 @@ describe 'Site Nonprofit page links' do
 
   it '[Site][NonProfits] Check link `Learn more about collaboration platform`' do
     @products_groups = @nonprofits_page.click_learn_more_about_collaboration_platforms
-    expect(@products_groups).to be_a TestingSiteOnlyoffice::SiteForBusinessWorkspace
+    expect(@products_groups).to be_a TestingSiteOnlyoffice::SiteFeaturesWorkspace
   end
 
   it '[Site][NonProfits] Check link `Learn about security`' do

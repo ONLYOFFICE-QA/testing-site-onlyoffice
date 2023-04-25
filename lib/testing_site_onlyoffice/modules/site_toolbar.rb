@@ -14,6 +14,7 @@ module TestingSiteOnlyoffice
     # top toolbar - Features
     link(:site_features, xpath: '//a[@id="navitem_features"]')
     link(:site_features_connectors, xpath: '//a[@id="navitem_features_connectors"]')
+    link(:site_features_workspace, xpath: '//a[@id="navitem_features_workspace"]')
     link(:site_features_docs_overview, xpath: '//a[@id="navitem_features_docs_overview"]')
     link(:site_features_document_editor, xpath: '//a[@id="navitem_features_document_editor"]')
     link(:site_features_spreadsheet_editor, xpath: '//a[@id="navitem_features_spreadsheet_editor"]')
@@ -105,6 +106,10 @@ module TestingSiteOnlyoffice
         features_connectors: {
           element: site_features_connectors_element,
           class: SiteFeaturesConnectorsOnlyoffice
+        },
+        features_workspace: {
+          element: site_features_workspace_element,
+          class: SiteFeaturesWorkspace
         },
         features_document_overview: {
           element: site_features_docs_overview_element,

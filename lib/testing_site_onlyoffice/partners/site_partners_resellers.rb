@@ -35,7 +35,7 @@ module TestingSiteOnlyoffice
 
     def check_about_workspace?
       about_workspace_element.click
-      SiteForBusinessWorkspace.new(@instance)
+      SiteFeaturesWorkspace.new(@instance)
     end
 
     def check_translations?

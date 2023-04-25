@@ -47,7 +47,7 @@ module TestingSiteOnlyoffice
 
     def click_learn_more_about_collaboration_platforms
       learn_more_about_collaboration_platforms_element.click
-      SiteForBusinessWorkspace.new(@instance)
+      SiteFeaturesWorkspace.new(@instance)
     end
 
     def click_learn_more_about_security

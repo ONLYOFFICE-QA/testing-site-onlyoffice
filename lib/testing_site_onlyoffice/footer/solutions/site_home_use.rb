@@ -63,7 +63,7 @@ module TestingSiteOnlyoffice
 
     def click_learn_more_hosted_productivity_apps
       learn_more_workspace_element.click
-      SiteForBusinessWorkspace.new(@instance)
+      SiteFeaturesWorkspace.new(@instance)
     end
 
     def open_docspace_registration

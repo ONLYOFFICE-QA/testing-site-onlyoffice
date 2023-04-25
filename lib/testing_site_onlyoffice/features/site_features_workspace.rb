@@ -4,7 +4,7 @@ require_relative 'workspace/modules/site_for_business_workspace_methods'
 module TestingSiteOnlyoffice
   # /workspace.aspx
   # https://user-images.githubusercontent.com/40513035/100944239-e48a9100-350f-11eb-8259-2039d8176454.png
-  class SiteForBusinessWorkspace
+  class SiteFeaturesWorkspace
     include PageObject
     include SiteToolbar
     include SiteForBusinessWorkspaceMethods

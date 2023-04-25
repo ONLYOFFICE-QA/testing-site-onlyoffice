@@ -41,7 +41,7 @@ describe 'Document Builder download' do
 
   it '[Site][HomeUse]Button "Learn more" works for self-hosted productivity apps' do
     product_workspace_page = @home_use_page.click_learn_more_hosted_productivity_apps
-    expect(product_workspace_page).to be_a TestingSiteOnlyoffice::SiteForBusinessWorkspace
+    expect(product_workspace_page).to be_a TestingSiteOnlyoffice::SiteFeaturesWorkspace
   end
 
   it '[Site][HomeUse]Button "Create online office" works' do
