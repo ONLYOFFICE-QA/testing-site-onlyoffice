@@ -2,6 +2,7 @@
 
 require_relative '../features/site_features_see_it_in_action'
 require_relative '../features/docs/site_features_document_editor'
+require_relative '../features/docs/site_features_pdf_reader_converter'
 require_relative '../features/docs/site_features_spreadsheet_editor'
 require_relative '../features/docs/site_features_form_creator'
 require_relative '../features/docs/site_features_presentation_editor'
