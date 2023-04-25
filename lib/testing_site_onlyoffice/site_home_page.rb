@@ -16,6 +16,7 @@ require_relative 'about/site_about_jobs'
 require_relative 'about/site_about_forum'
 
 require_relative 'additional_products/site_about_help_center'
+require_relative 'features/site_features_docspace_main_page'
 
 require_relative 'data/site_data'
 require_relative 'data/main_page_links_data'
@@ -36,6 +37,7 @@ require_relative 'footer/solutions/site_home_use'
 require_relative 'footer/resources/site_compare_other_suites'
 require_relative 'footer/support/site_wopi_support'
 
+require_relative 'get_onlyoffice/site_docspace_registration'
 require_relative 'get_onlyoffice/other_products/connectors/site_get_onlyoffice_connectors'
 require_relative 'get_onlyoffice/document_builder/site_get_onlyoffice_download_doc_builder'
 require_relative 'get_onlyoffice/desktop_and_mobile/desktop/site_get_onlyoffice_desktop_apps'
@@ -92,6 +94,7 @@ require_relative 'pricing/price_cloud/site_pricing_cloud'
 require_relative 'pricing/site_pricing_docs_enterprise'
 require_relative 'pricing/site_pricing_docs_developer'
 
+require_relative 'features/site_features_docspace_main_page'
 require_relative 'features/connectors/site_features_connectors_onlyoffice'
 require_relative 'features/docs/site_features_docs_overview'
 require_relative 'features/site_features_android'
