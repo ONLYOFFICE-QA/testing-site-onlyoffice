@@ -27,7 +27,7 @@ module TestingSiteOnlyoffice
     link(:site_features_for_android, xpath: '//a[@id="navitem_features_clients_mobile_android"]')
     link(:site_features_security, xpath: '//a[@id="navitem_features_security"]')
     link(:site_features_see_it_in_action, xpath: '//a[@id="navitem_features_see_it"]')
-    link(:site_features_oforms, xpath: '//a[@id="navitem_features_oforms"]')
+    link(:site_features_oforms, xpath: '//a[@id="navitem_features_fill_forms"]')
 
     # top toolbar - For Business
     link(:site_for_enterprises, xpath: '//a[@id = "navitem_forbusiness"]')

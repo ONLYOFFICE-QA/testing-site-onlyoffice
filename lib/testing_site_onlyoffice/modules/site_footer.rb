@@ -17,8 +17,8 @@ module TestingSiteOnlyoffice
     link(:size_home_use, xpath: "#{footer_xpath}//a[contains(@href, 'home-use')]")
 
     # by industry
-    link(:industry_nonprofits, xpath: "#{footer_xpath}//a[contains(@href, 'nonprofit')]")
-    link(:industry_developers, xpath: "#{footer_xpath}//a[@href = '/for-developers.aspx']")
+    link(:nonprofits, xpath: "#{footer_xpath}//a[contains(@href, 'nonprofit')]")
+    link(:developers, xpath: "#{footer_xpath}//a[@href = '/for-developers.aspx']")
 
     # resources
     link(:help_center_footer_link, xpath: '//a[contains(@href,"helpcenter.onlyoffice.com/index.aspx")]')
@@ -41,8 +41,8 @@ module TestingSiteOnlyoffice
     link(:pdf_reader_converter, xpath: "#{footer_xpath}//a[@href = '/pdf-reader.aspx']")
 
     footer_links = { size_home_use: SiteHomeUse,
-                     industry_nonprofits: SiteNonProfits,
-                     industry_developers: SiteForDevelopers,
+                     nonprofits: SiteNonProfits,
+                     developers: SiteForDevelopers,
                      help_center_footer_link: SiteAboutHelpCenter,
                      order_demo: SiteOrderDemo,
                      support_contact_form: SiteSupportContactForm,
