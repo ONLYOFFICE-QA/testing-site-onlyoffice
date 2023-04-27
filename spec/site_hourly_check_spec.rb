@@ -31,7 +31,7 @@ describe 'SiteHourlyCheck' do
     it '[Site] Check link Personal Offices' do
       docspace_main_page = @site_home_page.click_link_on_toolbar(:features_docspace)
       docspace_registration_page = docspace_main_page.click_registration_button
-      expect(docspace_registration_page).to be_a SiteDocSpaceRegistration
+      expect(docspace_registration_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceRegistration
     end
 
     describe '[Site] Check Features' do
@@ -41,7 +41,7 @@ describe 'SiteHourlyCheck' do
       end
 
       it '[Site] Check Features document editor' do
-        page = @site_home_page.click_doc_editor
+        page = @site_home_page.click_document_editor
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesDocumentEditor
       end
 
