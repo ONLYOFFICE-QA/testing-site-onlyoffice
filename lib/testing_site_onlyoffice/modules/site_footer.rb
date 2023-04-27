@@ -52,7 +52,7 @@ module TestingSiteOnlyoffice
                      spreadsheet_editor: SiteFeaturesSpreadsheetEditor,
                      presentation_editor: SiteFeaturesPresentationEditor,
                      pdf_reader_converter: SiteFeaturesPDFReaderConverter,
-                     form_creator: SiteFeaturesFormCreator}
+                     form_creator: SiteFeaturesFormCreator }
 
     footer_links.each_key do |link|
       define_method("click_#{link}") do
