@@ -48,10 +48,11 @@ module TestingSiteOnlyoffice
                      support_contact_form: SiteSupportContactForm,
                      request_a_call: SiteCallback,
                      subscribe_to_newsletter: SiteSubscribe,
-                     doc_editor: SiteFeaturesDocumentEditor,
+                     document_editor: SiteFeaturesDocumentEditor,
                      spreadsheet_editor: SiteFeaturesSpreadsheetEditor,
                      presentation_editor: SiteFeaturesPresentationEditor,
-                     pdf_reader_converter: SiteFeaturesPDFReaderConverter }
+                     pdf_reader_converter: SiteFeaturesPDFReaderConverter,
+                     form_creator: SiteFeaturesFormCreator}
 
     footer_links.each_key do |link|
       define_method("click_#{link}") do

@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
   class SiteDocSpaceMainPage
     include PageObject
 
-    button(:docspace_registration_button, xpath: '//div[contains(@class, "contentConteiner")]//a[@href = "/docspace-registration.aspx"]')
+    link(:docspace_registration_button, xpath: '//div[contains(@class, "contentConteiner")]//a[@href = "/docspace-registration.aspx"]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
