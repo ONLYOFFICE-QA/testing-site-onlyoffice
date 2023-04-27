@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../convert_page'
+require_relative '../../convert_page'
 
 module TestingSiteOnlyoffice
   # /pdf-reader.aspx

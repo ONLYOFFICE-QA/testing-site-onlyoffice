@@ -6,7 +6,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Site For Business Workspace Calendar' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @workspace = site_home_page.click_link_on_toolbar(:for_business_workspace)
+    @workspace = site_home_page.click_link_on_toolbar(:features_workspace)
     @calendar = @workspace.click_on_section_link(:calendar)
   end
 

@@ -31,7 +31,7 @@ describe 'Document Builder download' do
 
   it '[Site][HomeUse]Button "See all connectors" works' do
     download_editors_page = @home_use_page.click_see_all_integrations
-    expect(download_editors_page).to be_a TestingSiteOnlyoffice::SiteProductsConnectorsOnlyoffice
+    expect(download_editors_page).to be_a TestingSiteOnlyoffice::SiteFeaturesConnectorsOnlyoffice
   end
 
   it '[Site][HomeUse]Button "Download" works for self-hosted productivity apps' do
@@ -41,12 +41,12 @@ describe 'Document Builder download' do
 
   it '[Site][HomeUse]Button "Learn more" works for self-hosted productivity apps' do
     product_workspace_page = @home_use_page.click_learn_more_hosted_productivity_apps
-    expect(product_workspace_page).to be_a TestingSiteOnlyoffice::SiteForBusinessWorkspace
+    expect(product_workspace_page).to be_a TestingSiteOnlyoffice::SiteFeaturesWorkspace
   end
 
   it '[Site][HomeUse]Button "Create online office" works' do
-    personal_page = @home_use_page.open_personal
-    expect(personal_page).to be_login_visible
+    personal_page = @home_use_page.open_docspace_registration
+    expect(personal_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceRegistration
   end
 
   it '[Site][HomeUse]Button "Download on the App Store" works' do

@@ -11,14 +11,14 @@ module TestingSiteOnlyoffice
     include SiteDownloadHelper
     include SiteFooterDevelopers
 
-    footer_xpath = '//div[@class="footer_menu"]'
+    footer_xpath = '//div[@class="footer_menu_item"]'
 
     # by size
     link(:size_home_use, xpath: "#{footer_xpath}//a[contains(@href, 'home-use')]")
 
     # by industry
-    link(:industry_nonprofits, xpath: "#{footer_xpath}//a[contains(@href, 'nonprofit')]")
-    link(:industry_developers, xpath: "#{footer_xpath}//a[@href = '/for-developers.aspx']")
+    link(:nonprofits, xpath: "#{footer_xpath}//a[contains(@href, 'nonprofit')]")
+    link(:developers, xpath: "#{footer_xpath}//a[@href = '/for-developers.aspx']")
 
     # resources
     link(:help_center_footer_link, xpath: '//a[contains(@href,"helpcenter.onlyoffice.com/index.aspx")]')
@@ -33,50 +33,31 @@ module TestingSiteOnlyoffice
     # follow us on
     label(:subscribe_to_newsletter, xpath: '//div[contains(@class,"footer_menu")]//label[@title="Subscribe to our newsletters"]')
 
-    # by size
-    def footer_home_use
-      size_home_use_element.click
-      SiteHomeUse.new(@instance)
-    end
+    # editors
+    link(:document_editor, xpath: "#{footer_xpath}//a[@href = '/document-editor.aspx']")
+    link(:spreadsheet_editor, xpath: "#{footer_xpath}//a[@href = '/spreadsheet-editor.aspx']")
+    link(:presentation_editor, xpath: "#{footer_xpath}//a[@href = '/presentation-editor.aspx']")
+    link(:form_creator, xpath: "#{footer_xpath}//a[@href = '/form-creator.aspx']")
+    link(:pdf_reader_converter, xpath: "#{footer_xpath}//a[@href = '/pdf-reader.aspx']")
 
-    # by industry
-    def footer_nonprofits
-      industry_nonprofits_element.click
-      SiteNonProfits.new(@instance)
-    end
+    footer_links = { size_home_use: SiteHomeUse,
+                     nonprofits: SiteNonProfits,
+                     developers: SiteForDevelopers,
+                     help_center_footer_link: SiteAboutHelpCenter,
+                     order_demo: SiteOrderDemo,
+                     support_contact_form: SiteSupportContactForm,
+                     request_a_call: SiteCallback,
+                     subscribe_to_newsletter: SiteSubscribe,
+                     doc_editor: SiteFeaturesDocumentEditor,
+                     spreadsheet_editor: SiteFeaturesSpreadsheetEditor,
+                     presentation_editor: SiteFeaturesPresentationEditor,
+                     pdf_reader_converter: SiteFeaturesPDFReaderConverter }
 
-    def footer_developers
-      industry_developers_element.click
-      SiteForDevelopers.new(@instance)
-    end
-
-    # resources
-    def click_help_center
-      help_center_footer_link_element.click
-      SiteAboutHelpCenter.new(@instance)
-    end
-
-    # support
-    def click_order_demo
-      order_demo_element.click
-      SiteOrderDemo.new(@instance)
-    end
-
-    def click_support_contact_form
-      support_contact_form_element.click
-      SiteSupportContactForm.new(@instance)
-    end
-
-    # contact us
-    def click_request_a_call
-      request_a_call_element.click
-      SiteCallback.new(@instance)
-    end
-
-    # follow us on
-    def click_subscribe_to_newsletter
-      subscribe_to_newsletter_element.click
-      SiteSubscribe.new(@instance)
+    footer_links.each_key do |link|
+      define_method("click_#{link}") do
+        @instance.webdriver.click_on_locator(send("#{link}_element"))
+        footer_links[link].new(@instance)
+      end
     end
 
     def site_footer_link_alive?(section_title, title)

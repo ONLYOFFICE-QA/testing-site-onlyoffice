@@ -29,8 +29,9 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check link Personal Offices' do
-      tour_page = @site_home_page.footer_home_use.open_personal
-      expect(tour_page.login_visible?).to be true
+      docspace_main_page = @site_home_page.click_link_on_toolbar(:features_docspace)
+      docspace_registration_page = docspace_main_page.click_registration_button
+      expect(docspace_registration_page).to be_a SiteDocSpaceRegistration
     end
 
     describe '[Site] Check Features' do
@@ -40,33 +41,28 @@ describe 'SiteHourlyCheck' do
       end
 
       it '[Site] Check Features document editor' do
-        page = @site_home_page.click_link_on_toolbar(:features_document_editor)
+        page = @site_home_page.click_doc_editor
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesDocumentEditor
       end
 
       it '[Site] Check Features spreadsheet editor' do
-        page = @site_home_page.click_link_on_toolbar(:features_spreadsheet_editor)
+        page = @site_home_page.click_spreadsheet_editor
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesSpreadsheetEditor
       end
 
       it '[Site] Check Features presentation editor' do
-        page = @site_home_page.click_link_on_toolbar(:features_presentation_editor)
+        page = @site_home_page.click_presentation_editor
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesPresentationEditor
       end
 
       it '[Site] Check Features form creator' do
-        page = @site_home_page.click_link_on_toolbar(:features_form_creator)
+        page = @site_home_page.click_form_creator
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesFormCreator
       end
 
       it '[Site] Check Features PDF reader and converter' do
-        page = @site_home_page.click_link_on_toolbar(:features_pdf_reader_converter)
+        page = @site_home_page.click_pdf_reader_converter
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesPDFReaderConverter
-      end
-
-      it '[Site] Check Features security' do
-        page = @site_home_page.click_link_on_toolbar(:security)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesSecurity
       end
 
       it '[Site] Check Features desktop' do
@@ -82,11 +78,6 @@ describe 'SiteHourlyCheck' do
       it '[Site] Check Features android' do
         page = @site_home_page.click_link_on_toolbar(:features_android)
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesAndroid
-      end
-
-      it '[Site] Check See it in action' do
-        page = @site_home_page.click_link_on_toolbar(:features_see_it_in_action)
-        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesSeeItInAction
       end
 
       it '[Site] Check Oforms' do
@@ -229,7 +220,7 @@ describe 'SiteHourlyCheck' do
 
       describe 'workspace' do
         let(:other_products_groups_page) do
-          for_developers_page = @site_home_page.footer_developers
+          for_developers_page = @site_home_page.click_developers
           for_developers_page.click_download_now_button('groups')
         end
 
@@ -249,7 +240,7 @@ describe 'SiteHourlyCheck' do
 
       describe 'bundles' do
         let(:other_products_bundles_page) do
-          for_developers_page = @site_home_page.footer_developers
+          for_developers_page = @site_home_page.click_developers
           for_developers_page.click_download_now_button('bundles')
         end
 

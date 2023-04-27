@@ -16,7 +16,7 @@ module TestingSiteOnlyoffice
 
     def switch_to_developed_by_onlyoffice
       developed_by_onlyoffice_element.click
-      SiteProductsConnectorsOnlyoffice.new(@instance)
+      SiteFeaturesConnectorsOnlyoffice.new(@instance)
     end
 
     def switch_to_provided_by_partners

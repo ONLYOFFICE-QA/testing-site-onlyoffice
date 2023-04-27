@@ -21,7 +21,7 @@ module TestingSiteOnlyoffice
     link(:download_workspace, xpath: '//div[@class="homeUse_features"]//a[contains(@href, "/download-workspace")]')
     link(:learn_more_workspace, xpath: '//a[@href="/workspace.aspx?from=home-use"]')
 
-    link(:create_online_office, xpath: '//div[@class="description"]//a[@href="https://personal.onlyoffice.com/"]')
+    link(:create_docspace, xpath: '//div[@class="description"]//a[@href="/docspace-registration.aspx"]')
 
     link(:download_on_app_store, xpath: '//a[contains(@href, "apps.apple")]')
     link(:download_on_google_play, xpath: '//a[contains(@href, "play.google")]')
@@ -53,7 +53,7 @@ module TestingSiteOnlyoffice
 
     def click_see_all_integrations
       see_all_integrations_element.click
-      SiteProductsConnectorsOnlyoffice.new(@instance)
+      SiteFeaturesConnectorsOnlyoffice.new(@instance)
     end
 
     def download_self_hosted_productivity_apps
@@ -63,13 +63,12 @@ module TestingSiteOnlyoffice
 
     def click_learn_more_hosted_productivity_apps
       learn_more_workspace_element.click
-      SiteForBusinessWorkspace.new(@instance)
+      SiteFeaturesWorkspace.new(@instance)
     end
 
-    def open_personal
-      create_online_office_element.click
-      @instance.webdriver.choose_tab(2)
-      PersonalMainPage.new(@instance)
+    def open_docspace_registration
+      create_docspace_element.click
+      SiteDocSpaceRegistration.new(@instance)
     end
 
     def click_download_on_app_store

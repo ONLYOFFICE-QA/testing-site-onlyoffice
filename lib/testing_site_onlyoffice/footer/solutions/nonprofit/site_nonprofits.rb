@@ -47,7 +47,7 @@ module TestingSiteOnlyoffice
 
     def click_learn_more_about_collaboration_platforms
       learn_more_about_collaboration_platforms_element.click
-      SiteForBusinessWorkspace.new(@instance)
+      SiteFeaturesWorkspace.new(@instance)
     end
 
     def click_learn_more_about_security
@@ -62,7 +62,7 @@ module TestingSiteOnlyoffice
 
     def click_see_all_integrations
       see_all_integrations_element.click
-      SiteProductsConnectorsOnlyoffice.new(@instance)
+      SiteFeaturesConnectorsOnlyoffice.new(@instance)
     end
   end
 end
