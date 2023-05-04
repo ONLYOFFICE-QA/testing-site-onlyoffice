@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Other Products Bundles download' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    for_developers_page = site_home_page.footer_developers
+    for_developers_page = site_home_page.click_developers
     @bundles_page = for_developers_page.click_download_now_button('bundles')
   end
 
