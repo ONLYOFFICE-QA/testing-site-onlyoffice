@@ -9,7 +9,7 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteLanguages
 
-    link(:logo_home, xpath: '//header//div[contains(@class, "logo")]//a')
+    link(:logo_home, xpath: '//header//span[contains(@class, "logo")]//a')
 
     # top toolbar - Features
     link(:site_features, xpath: '//a[@id="navitem_features"]')

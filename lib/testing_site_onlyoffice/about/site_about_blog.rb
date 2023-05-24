@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteToolbar
 
-    link(:article_blog, xpath: '(//*[contains(@id,"post-")]//a)[1]|//div[contains(@class, "postThemeGridBox")]//a')
+    div(:article_blog, xpath: '//div[contains(@class, "main-post")]')
     elements(:desktop_mobile_app, xpath: '//div[@class="download-button"]/a')
     link(:google_play_button, xpath: '//div[@class="download-button"]/a[@class="download GooglePlay"]')
     link(:app_store_button, xpath: '//div[@class="download-button"]/a[@class="download AppStore"]')
