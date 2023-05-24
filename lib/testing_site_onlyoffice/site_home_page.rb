@@ -142,7 +142,7 @@ module TestingSiteOnlyoffice
     include SiteSupportChatPopup
     include SiteToolbar
 
-    link(:try_in_the_cloud, xpath: '//article//a[contains(@href,"registration")]')
+    link(:try_in_the_cloud, xpath: '//a[@href = "/see-it-in-action.aspx?from=default"]')
 
     link(:download_desktop_windows, xpath: '//a[contains(@class,"mpd_for_windows")]')
     link(:download_desktop_linux, xpath: '//a[contains(@class,"mpd_for_linux")]')
