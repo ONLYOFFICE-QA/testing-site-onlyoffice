@@ -142,7 +142,7 @@ module TestingSiteOnlyoffice
     include SiteSupportChatPopup
     include SiteToolbar
 
-    link(:try_in_the_cloud, xpath: '//article//a[contains(@href,"registration")]')
+    link(:see_it_in_action, xpath: '//a[@href = "/see-it-in-action.aspx?from=default"]')
 
     link(:download_desktop_windows, xpath: '//a[contains(@class,"mpd_for_windows")]')
     link(:download_desktop_linux, xpath: '//a[contains(@class,"mpd_for_linux")]')
@@ -161,7 +161,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(try_in_the_cloud_element) }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(see_it_in_action_element) }
     end
 
     def create_portal(params = {})
