@@ -23,7 +23,7 @@ module TestingSiteOnlyoffice
     span(:startup_price_person, xpath: "#{startup}//span[contains(@class, 'price-value')]")
 
     # business
-    link(:business_try_it_for_free, xpath: "//a[@class='saas-try-free']")
+    link(:business_try_it_for_free, xpath: "//a[@href = '/download-workspace.aspx?from=workspace-enterprise-prices']")
     link(:business_calculate_your_price, xpath: "//a[contains(@class, 'saas-calculate')]")
 
     # vip
