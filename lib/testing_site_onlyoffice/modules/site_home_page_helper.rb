@@ -11,11 +11,6 @@ module TestingSiteOnlyoffice
     link(:blog_news, xpath: "//div[@id = 'dp-blog-slider']/a")
     link(:webinar_news, xpath: "//div[@id = 'dp-webinars-slider']//a")
 
-    def desktop_and_mobile_apps_element_works?(app)
-      app_xpath = "//a[contains(@class, 'platform-icon #{app}')]"
-      xpath_success_response?(app_xpath)
-    end
-
     def built_for_everyone_element_works?(solution)
       solution_xpath = "//div[contains(@class,'footer_menu_item')]/div/a[text() = '#{solution}']"
       xpath_success_response?(solution_xpath)
