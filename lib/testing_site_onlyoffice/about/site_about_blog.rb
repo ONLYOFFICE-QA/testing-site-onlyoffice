@@ -7,13 +7,14 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteToolbar
 
+    download_block_xpath = "//div[@class='download-block-btns']"
     div(:article_blog, xpath: '//div[contains(@class, "main-post")]')
-    elements(:desktop_mobile_app, xpath: '//div[@class="download-button"]/a')
-    link(:google_play_button, xpath: '//div[@class="download-button"]/a[@class="download GooglePlay"]')
-    link(:app_store_button, xpath: '//div[@class="download-button"]/a[@class="download AppStore"]')
-    link(:windows_button, xpath: '//div[@class="download-button"]/a[@class="download winodws"]')
-    link(:linux_button, xpath: '//div[@class="download-button"]/a[@class="download linux"]')
-    link(:macos_button, xpath: '//div[@class="download-button"]/a[@class="download MacOs"]')
+    elements(:desktop_mobile_app, xpath: "#{download_block_xpath}/a/span")
+    link(:google_play_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn google-play')]")
+    link(:app_store_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn app-store')]")
+    link(:windows_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn windows')]")
+    link(:linux_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn linux')]")
+    link(:macos_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn mac-os')]")
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -26,8 +27,7 @@ module TestingSiteOnlyoffice
     end
 
     def desktop_and_mobile_app
-      apps = desktop_mobile_app_elements.map { |app| app.attribute('class') }
-      apps.map { |s| s.gsub('download ', '') }
+      apps = desktop_mobile_app_elements.map(&:text)
     end
 
     def check_google_play_link

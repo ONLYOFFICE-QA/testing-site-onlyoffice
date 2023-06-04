@@ -3,7 +3,6 @@
 module TestingSiteOnlyoffice
   # Data for links on main page
   class MainPageLinksData
-
     def self.rated_by_critics
       %w[getapp capterra highperformer cloudinsider softwareadvicemr sourceforge]
     end
