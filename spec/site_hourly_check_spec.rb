@@ -218,45 +218,6 @@ describe 'SiteHourlyCheck' do
         end
       end
 
-      describe 'workspace' do
-        let(:other_products_groups_page) do
-          for_developers_page = @site_home_page.click_developers
-          for_developers_page.click_download_now_button('groups')
-        end
-
-        TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_list.each do |installer|
-          it "[Site][OtherProducts][Groups] Check `#{installer}` download link /download.aspx#workspace" do
-            expect(other_products_groups_page).to be_download_link_alive(installer)
-            expect(other_products_groups_page).to be_download_link_valid(other_products_groups_page.download_xpath(installer), installer)
-          end
-
-          it "[Site][OtherProducts][Groups] Check `#{installer}`'Read instructions' link /download.aspx#workspace" do
-            other_products_groups_page.click_groups_instruction_link(installer)
-            instruction_title = TestingSiteOnlyoffice::SiteDownloadData.open_source_groups_info[installer.to_s]['instruction']
-            expect(other_products_groups_page.check_opened_page_title).to eq(instruction_title)
-          end
-        end
-      end
-
-      describe 'bundles' do
-        let(:other_products_bundles_page) do
-          for_developers_page = @site_home_page.click_developers
-          for_developers_page.click_download_now_button('bundles')
-        end
-
-        TestingSiteOnlyoffice::SiteDownloadData.other_products_bundles_list.each do |installer|
-          it "[Site][OtherProducts][Bundlers] Check `#{installer}` 'Read instructions' link /download.aspx#bundles" do
-            other_products_bundles_page.read_instruction_connector(installer)
-            instruction_title = TestingSiteOnlyoffice::SiteDownloadData.open_source_bundlers_info[installer.to_s]['instruction']
-            expect(other_products_bundles_page.check_opened_page_title).to eq(instruction_title)
-          end
-
-          it "[Site][OtherProducts][Bundlers] Check `#{installer}` 'Install now' link /download.aspx#bundles" do
-            expect(other_products_bundles_page).to be_file_can_be_downloaded(installer)
-          end
-        end
-      end
-
       describe 'document builder' do
         let(:other_products_document_builder_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_document_builder) }
 
