@@ -27,7 +27,7 @@ module TestingSiteOnlyoffice
     end
 
     def desktop_and_mobile_app
-      apps = desktop_mobile_app_elements.map(&:text)
+      desktop_mobile_app_elements.map(&:text)
     end
 
     def check_google_play_link

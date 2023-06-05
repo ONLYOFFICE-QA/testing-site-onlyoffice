@@ -31,6 +31,7 @@ module TestingSiteOnlyoffice
 
     # top toolbar - For Business
     link(:site_for_enterprises, xpath: '//a[@id = "navitem_forbusiness"]')
+    link(:site_for_enterprises_overview, xpath: '//a[@id = "navitem_fb_business"]')
     link(:site_for_business_docs_enterprise, xpath: '//a[@id="navitem_fb_docs_ee"]')
     link(:site_for_business_workspace, xpath: '//a[@id="navitem_fb_workspace"]')
     link(:site_for_business_nextcloud, xpath: '//a[@id="navitem_integrations_nextcloud"]')
@@ -169,9 +170,13 @@ module TestingSiteOnlyoffice
 
     def site_toolbar_for_business
       {
-        for_enterprises: {
-          element: site_for_enterprises_element,
+        for_enterprises_overview: {
+          element: site_for_enterprises_overview_element,
           class: SiteEnterprise
+        },
+        for_enterprises_docs: {
+          element: site_for_business_docs_enterprise_element,
+          class: SiteForBusinessDocsEnterpriseEdition
         }
       }
     end
