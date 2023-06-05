@@ -25,7 +25,7 @@ module TestingSiteOnlyoffice
 
     # support
     link(:order_demo, xpath: "//div[@class = 'footer_menu_item no_tablet_view']//a[@href = '/demo-order.aspx']")
-    link(:support_contact_form, xpath: '//a[@href="/support-contact-form.aspx"]')
+    link(:support_contact_form, xpath: "//div[@class = 'footer_menu_item no_tablet_view']//a[@href='/support-contact-form.aspx']")
 
     # contact us
     link(:request_a_call, xpath: "#{footer_xpath}//a[@href='/call-back-form.aspx']")

@@ -15,7 +15,7 @@ module TestingSiteOnlyoffice
     include SiteDownloadHelper
 
     div(:request_free_cloud_top, xpath: '//div[@id="godown"]')
-    link(:request_free_cloud, xpath: '//a[@href="/free-cloud.aspx?from=nonprofit"]')
+    link(:request_free_cloud, xpath: '//a[@href="mailto:sales@onlyoffice.com?subject=Request%20a%20discount%20for%20a%20non-profit"]')
 
     link(:learn_more_about_editors, xpath: '//a[@href="/office-suite.aspx?from=nonprofit"]')
     link(:learn_more_about_collaboration_platforms, xpath: '//a[@href="/workspace.aspx?from=nonprofit"]')
