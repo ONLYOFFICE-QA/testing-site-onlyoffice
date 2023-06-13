@@ -10,7 +10,7 @@ module TestingSiteOnlyoffice
 
     div(:about_page, xpath: '//div[@class="wwd_header_narrow max-width-1"]')
     link(:about_onlyoffice_docs, xpath: '//div[@class="wwdfn_text_block"]/a')
-    link(:registration_cloud, xpath: '//div[@class="wwdon_text_block"]/a')
+    link(:workspace_link, xpath: '//div[@class="wwdon_text_block"]/a')
     link(:customer_stories, xpath: '//div[@class="wwd_home_block2"]/a')
 
     def initialize(instance)
@@ -33,10 +33,10 @@ module TestingSiteOnlyoffice
       SiteProductsDocs.new(@instance)
     end
 
-    def click_registration_cloud
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(registration_cloud_element) }
-      registration_cloud_element.click
-      SiteGetOnlyofficeSignUp.new(@instance)
+    def click_workspace
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(workspace_link_element) }
+      workspace_link_element.click
+      SiteFeaturesWorkspace.new(@instance)
     end
 
     def click_customer_stories

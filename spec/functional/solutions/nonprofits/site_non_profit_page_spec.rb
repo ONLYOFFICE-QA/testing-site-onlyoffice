@@ -16,8 +16,8 @@ describe 'Site Nonprofit page links' do
   end
 
   it '[Site][NonProfits] Check link `Learn more about the editors`' do
-    @products_docs = @nonprofits_page.click_learn_more_about_editors
-    expect(@products_docs).to be_a TestingSiteOnlyoffice::SiteProductsDocs
+    @products_docs = @nonprofits_page.click_learn_about_docspace
+    expect(@products_docs).to be_a TestingSiteOnlyoffice::SiteDocSpaceMainPage
   end
 
   it '[Site][NonProfits] Check link `Learn more about collaboration platform`' do
@@ -28,11 +28,6 @@ describe 'Site Nonprofit page links' do
   it '[Site][NonProfits] Check link `Learn about security`' do
     @products_security = @nonprofits_page.click_learn_more_about_security
     expect(@products_security).to be_a TestingSiteOnlyoffice::SiteFeaturesSecurity
-  end
-
-  it '[Site][NonProfits] Check link `Download` for desktop' do
-    @download_desktop = @nonprofits_page.click_download
-    expect(@download_desktop).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDesktopApps
   end
 
   it '[Site][NonProfits] Check link `Download for Android`' do
@@ -53,5 +48,14 @@ describe 'Site Nonprofit page links' do
   it '[Site][NonProfits] Check button `Request free cloud`' do
     @request_free_cloud_page = @nonprofits_page.click_request_free_cloud
     expect(@request_free_cloud_page).to be_a TestingSiteOnlyoffice::SiteRequestFreeCloud
+  end
+
+  describe 'Download desktop' do
+    %w[windows linux macos].each do |platform|
+      it "Check #{platform}" do
+        @downloads_page = @nonprofits_page.click_download_desktop(platform)
+        expect(@downloads_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDesktopApps
+      end
+    end
   end
 end

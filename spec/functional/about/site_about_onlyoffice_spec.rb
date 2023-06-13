@@ -19,8 +19,8 @@ describe 'About onlyoffice' do
     expect(@about_onlyoffice.click_onlyoffice_docs).to be_a TestingSiteOnlyoffice::SiteProductsDocs
   end
 
-  it '[About onlyoffice] Go to egistration_cloud' do
-    expect(@about_onlyoffice.click_registration_cloud).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeSignUp
+  it '[About onlyoffice] Go to WorkSpace page' do
+    expect(@about_onlyoffice.click_workspace).to be_a TestingSiteOnlyoffice::SiteFeaturesWorkspace
   end
 
   it '[About onlyoffice] Go to customer_stories' do

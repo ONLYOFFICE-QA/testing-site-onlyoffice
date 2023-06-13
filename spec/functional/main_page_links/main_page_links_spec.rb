@@ -29,7 +29,7 @@ describe 'Help center footer links' do
     end
   end
 
-  it '[Site][HomePage] Block news link works' do
+  it '[Site][HomePage] Blog news link works' do
     expect(@site_home_page).to be_xpath_success_response(@site_home_page.blog_news_element.selector[:xpath])
   end
 
