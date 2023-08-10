@@ -119,7 +119,7 @@ module TestingSiteOnlyoffice
     end
 
     def self.blogs_download_app
-      %w[winodws linux MacOs GooglePlay AppStore]
+      ['For Windows', 'For Linux', 'For Mac OS']
     end
 
     def self.left_menu_about_press_downloads

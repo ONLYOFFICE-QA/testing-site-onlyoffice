@@ -15,7 +15,7 @@ module TestingSiteOnlyoffice
     include PageObject
 
     div(:enterprise_edition, xpath: "//div[@id='forenterprises']")
-    link(:get_it_now, xpath: "//div[@class='fe_header_text']//a[@href='/download-docs.aspx']")
+    link(:get_it_now, xpath: '//a[contains(@href, "/see-it-in-action.aspx?from=docs-enterprise")]//preceding-sibling::a')
     link(:see_it_in_action, xpath: '//a[contains(@href, "/see-it-in-action.aspx?from=docs-enterprise")]')
     link(:document_editing, xpath: "//div[@class='fe_cards']//a[@href='/document-editor.aspx']")
     link(:spreadsheet_editing, xpath: "//div[@class='fe_cards']//a[@href='/spreadsheet-editor.aspx']")

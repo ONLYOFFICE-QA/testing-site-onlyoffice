@@ -142,7 +142,7 @@ module TestingSiteOnlyoffice
     include SiteSupportChatPopup
     include SiteToolbar
 
-    link(:see_it_in_action, xpath: '//a[@href = "/see-it-in-action.aspx?from=default"]')
+    link(:see_it_in_action, xpath: '//a[@id = "seeItInAction_Default"]')
 
     link(:download_desktop_windows, xpath: '//a[contains(@class,"mpd_for_windows")]')
     link(:download_desktop_linux, xpath: '//a[contains(@class,"mpd_for_linux")]')

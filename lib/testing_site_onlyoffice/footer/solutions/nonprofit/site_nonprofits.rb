@@ -15,15 +15,19 @@ module TestingSiteOnlyoffice
     include SiteDownloadHelper
 
     div(:request_free_cloud_top, xpath: '//div[@id="godown"]')
-    link(:request_free_cloud, xpath: '//a[@href="/free-cloud.aspx?from=nonprofit"]')
+    link(:request_free_cloud, xpath: '//a[@href="mailto:sales@onlyoffice.com?subject=Request%20a%20discount%20for%20a%20non-profit"]')
 
-    link(:learn_more_about_editors, xpath: '//a[@href="/office-suite.aspx?from=nonprofit"]')
+    link(:learn_more_about_docspace, xpath: "//a[@href='/docspace.aspx?from=nonprofit']")
+    link(:docspace_registration, xpath: "//a[@href = '/docspace-registration.aspx' and text() = 'Try now']")
     link(:learn_more_about_collaboration_platforms, xpath: '//a[@href="/workspace.aspx?from=nonprofit"]')
     link(:learn_more_about_security, xpath: '//a[@href="/security.aspx?from=nonprofit"]')
-    link(:nonprofit_download, xpath: '//a[@href="/download-desktop.aspx?from=nonprofit"]')
+    link(:nonprofit_download_workspace, xpath: "//a[@href='/download-workspace.aspx' and text() = 'Get it now']")
     link(:nonprofit_android, xpath: '//a[contains(@href,"play.google")]')
     link(:nonprofit_ios, xpath: '//a[contains(@href,"apps.apple")]')
     link(:see_all_integrations, xpath: '//a[@href="/all-connectors.aspx?from=nonprofit"]')
+    link(:desktop_windows, xpath: '//a[contains(@class, "download_for_windows")]')
+    link(:desktop_linux, xpath: '//a[contains(@class, "download_for_linux")]')
+    link(:desktop_macos, xpath: '//a[contains(@class, "download_for_macos")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -40,11 +44,6 @@ module TestingSiteOnlyoffice
       SiteRequestFreeCloud.new(@instance)
     end
 
-    def click_learn_more_about_editors
-      learn_more_about_editors_element.click
-      SiteProductsDocs.new(@instance)
-    end
-
     def click_learn_more_about_collaboration_platforms
       learn_more_about_collaboration_platforms_element.click
       SiteFeaturesWorkspace.new(@instance)
@@ -55,14 +54,29 @@ module TestingSiteOnlyoffice
       SiteFeaturesSecurity.new(@instance)
     end
 
-    def click_download
-      nonprofit_download_element.click
-      SiteGetOnlyofficeDesktopApps.new(@instance)
+    def click_download_workspace
+      nonprofit_download_workspace_element.click
+      SiteGetOnlyofficeWorkspaceEnterprise.new(@instance)
     end
 
     def click_see_all_integrations
       see_all_integrations_element.click
       SiteFeaturesConnectorsOnlyoffice.new(@instance)
+    end
+
+    def click_learn_about_docspace
+      learn_about_docspace_element_click
+      SiteDocSpaceMainPage.new(@instance)
+    end
+
+    def click_docspace_registration
+      docspace_registration_element.click
+      SiteDocSpaceRegistration.new(@instance)
+    end
+
+    def click_download_desktop(platform)
+      @instance.webdriver.click_on_locator(send("desktop_#{platform}_element"))
+      SiteGetOnlyofficeDesktopApps.new(@instance)
     end
   end
 end

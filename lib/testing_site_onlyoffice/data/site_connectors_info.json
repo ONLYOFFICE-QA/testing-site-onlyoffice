@@ -81,6 +81,11 @@
   },
   "mattermost": {
     "github": "GitHub - ONLYOFFICE/onlyoffice-mattermost: The app which enables the users to edit office documents from Mattermost using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Mattermost",
+    "instruction": "Integration Guides - Mattermost - ONLYOFFICE",
     "whats_new": "onlyoffice-mattermost/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-mattermost · GitHub"
+  },
+  "odoo": {
+    "github": "GitHub - ONLYOFFICE/onlyoffice_odoo: The app which enables the users to edit office documents from Odoo using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Odoo",
+    "whats_new": "onlyoffice_odoo/CHANGELOG.md at master · ONLYOFFICE/onlyoffice_odoo · GitHub"
   }
 }
