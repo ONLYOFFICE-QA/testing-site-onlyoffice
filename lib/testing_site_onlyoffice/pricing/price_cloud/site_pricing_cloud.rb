@@ -6,16 +6,16 @@ require_relative '../../get_onlyoffice/site_get_onlyoffice_sign_up'
 require_relative 'site_pricing_cloud_calculator'
 require_relative 'site_require_vip_cloud'
 require_relative '../../additional_products/personal_main_page'
-require_relative '../modules/site_pricing_workspace_toolbar'
+require_relative '../modules/site_pricing_docspace_toolbar'
 
 module TestingSiteOnlyoffice
-  # workspace-prices.aspx#workspace-cloud
-  # https://user-images.githubusercontent.com/38238032/202145995-37b62878-7d9f-4ae6-a37f-5d34c55993da.png
+  # /docspace-prices.aspx#docspace-cloud
+  # https://github.com/ONLYOFFICE-QA/testing-site-onlyoffice/assets/38238032/13a3aa4f-d48a-4e2a-a410-b10dd20c4316
   class SitePricingCloud
     include PageObject
     include SitePricingCloudCalculator
     include SiteToolbar
-    include SitePricingWorkspaceToolbar
+    include SitePricingDocSpaceToolbar
 
     # startup
     startup = "//div[contains(@class, 'saas-cell-startup')]"
@@ -63,7 +63,7 @@ module TestingSiteOnlyoffice
 
     def startup_start_now
       startup_start_now_element.click
-      SiteGetOnlyofficeSignUp.new(@instance)
+      SiteDocSpaceRegistration.new(@instance)
     end
 
     def business_try_it_for_free

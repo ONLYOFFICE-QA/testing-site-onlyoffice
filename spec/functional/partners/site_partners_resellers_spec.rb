@@ -25,8 +25,8 @@ describe 'Partners resellers' do
     expect(@resellers.check_about_docs?).to be_a TestingSiteOnlyoffice::SiteProductsDocs
   end
 
-  it '[Partners resellers] Go to about_workspace' do
-    expect(@resellers.check_about_workspace?).to be_a TestingSiteOnlyoffice::SiteFeaturesWorkspace
+  it '[Partners resellers] Go to about_docspace' do
+    expect(@resellers.check_about_docspace?).to be_a TestingSiteOnlyoffice::SiteDocSpaceMainPage
   end
 
   it '[Partners resellers] Go to translations' do

@@ -2,7 +2,7 @@
 
 require_relative '../modules/site_toolbar'
 require_relative 'modules/site_pricing_helper'
-require_relative 'modules/site_pricing_workspace_toolbar'
+require_relative 'modules/site_pricing_docspace_toolbar'
 
 module TestingSiteOnlyoffice
   # Pricing for Enterprice edition

@@ -58,8 +58,8 @@ module TestingSiteOnlyoffice
       link_success_response?((instruction_links[product].attribute('href')))
     end
 
-    def check_opened_page_title
-      @instance.webdriver.choose_tab(2)
+    def check_opened_page_title(switch_tab: true)
+      @instance.webdriver.choose_tab(2) if switch_tab
       @instance.webdriver.title_of_current_tab
     end
   end

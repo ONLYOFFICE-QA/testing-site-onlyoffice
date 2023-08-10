@@ -8,8 +8,8 @@ module TestingSiteOnlyoffice
     include SiteToolbar
 
     link(:become_partner, xpath: '//div[@class="ds-first-screen-right-img"]//a[contains(@href,"/partnership-request.aspx")]')
-    link(:about_docs, xpath: '//div[@class="ds-one-of-two bg-light-gray"]//a[contains(@href,"/office-suite.aspx")]')
-    link(:about_workspace, xpath: '//div[@class="ds-one-of-two bg-mid-gray"]//a[contains(@href,"/workspace.aspx")]')
+    link(:about_docs, xpath: '//a[@href = "/office-suite.aspx?from=resellers"]')
+    link(:about_docspace, xpath: '//a[@href = "/docspace.aspx?from=resellers"]')
     link(:translations, xpath: '//a[contains(@href,"helpcenter.onlyoffice.com/tipstricks")]')
     link(:submit_request, xpath: '//div[@class="ds-layer-div ds-contact-us-block"]//a[contains(@href,"/partnership-request.aspx")]')
 
@@ -33,9 +33,9 @@ module TestingSiteOnlyoffice
       SiteProductsDocs.new(@instance)
     end
 
-    def check_about_workspace?
-      about_workspace_element.click
-      SiteFeaturesWorkspace.new(@instance)
+    def check_about_docspace?
+      about_docspace_element.click
+      SiteDocSpaceMainPage.new(@instance)
     end
 
     def check_translations?
