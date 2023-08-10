@@ -14,7 +14,7 @@ shared_examples_for 'connector_download' do |connectors_list|
       end
 
       it "[Site][Connectors][#{connector}] 'Read installation' button works /download-connectors.aspx" do
-        pending 'Connector instructions missing' if connector == 'mattermost'
+        pending 'Connector instructions missing' if connector == 'odoo'
         connectors_page.click_constructor_link(@current_installation.instruction_xpath)
         instruction_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_info[connector.to_s]['instruction']
         expect(connectors_page.check_opened_page_title).to eq(instruction_title)
