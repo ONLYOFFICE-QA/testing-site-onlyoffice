@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'site_commercial_download_form'
-require_relative '../../../pricing/modules/site_pricing_docspace_toolbar'
+require_relative '../../../pricing/modules/site_pricing_workspace_toolbar'
 
 module TestingSiteOnlyoffice
   # Get install, instruction, buy or what's new xpath of current commercial packages installer block
@@ -10,7 +10,7 @@ module TestingSiteOnlyoffice
     attr_accessor :instance, :instruction_xpath, :download_xpath, :version_xpath, :release_date_xpath
 
     include PageObject
-    include SitePricingDocSpaceToolbar
+    include SitePricingWorkspaceToolbar
 
     def initialize(instance, product, installer)
       super(instance.webdriver.driver)
