@@ -262,7 +262,7 @@ module TestingSiteOnlyoffice
           class: SitePricingCloud
         },
         pricing_docspace: {
-          element: site_pricing_docspace_element,
+          element: site_pricing_docspace_element
         },
         pricing_developer: {
           element: site_pricing_docs_developer_element,
