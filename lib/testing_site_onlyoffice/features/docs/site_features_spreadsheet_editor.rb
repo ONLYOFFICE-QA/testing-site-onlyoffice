@@ -4,7 +4,7 @@ require_relative '../modules/site_editors_xpath'
 
 module TestingSiteOnlyoffice
   # /spreadsheet-editor.aspx
-  # https://user-images.githubusercontent.com/40513035/101167017-4d762400-364a-11eb-9590-d80819942f57.png
+  # https://github.com/ONLYOFFICE-QA/testing-site-onlyoffice/assets/53475320/fddd303c-678d-44dc-8159-d277bf04db4e
   class SiteFeaturesSpreadsheetEditor
     include PageObject
     include SiteEditorsXpath
@@ -19,7 +19,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(run_on_your_own_server_element) && @instance.webdriver.element_present?(formulas_link_element) }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(docspace_registration_button_element) && @instance.webdriver.element_present?(formulas_link_element) }
     end
   end
 end

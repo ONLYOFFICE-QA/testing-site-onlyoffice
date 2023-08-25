@@ -1,14 +1,16 @@
 # frozen_string_literal: true
 
+require_relative '../modules/site_editors_xpath'
+
 module TestingSiteOnlyoffice
   # /form-creator.aspx
-  # https://user-images.githubusercontent.com/67409742/165291126-5292bafa-d11a-4c87-93b5-3c604080ac5d.png
+  # https://github.com/ONLYOFFICE-QA/testing-site-onlyoffice/assets/53475320/eb029258-6e31-44e5-add1-2327186b5d09
   class SiteFeaturesFormCreator
     include PageObject
+    include SiteEditorsXpath
     include SiteToolbar
 
     link(:open_library, xpath: "//article//a[contains(@href, 'oforms.onlyoffice.com')]")
-    link(:run_on_your_own_server, xpath: "//a[@class='button red']")
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -17,7 +19,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(run_on_your_own_server_element) && @instance.webdriver.element_present?(open_library_element) }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(docspace_registration_button_element) && @instance.webdriver.element_present?(open_library_element) }
     end
   end
 end
