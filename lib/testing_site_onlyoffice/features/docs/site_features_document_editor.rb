@@ -4,7 +4,7 @@ require_relative '../modules/site_editors_xpath'
 
 module TestingSiteOnlyoffice
   # /document-editor.aspx
-  # https://user-images.githubusercontent.com/40513035/101095370-e10a0f00-35ce-11eb-94df-968041d32462.png
+  # https://github.com/ONLYOFFICE-QA/testing-site-onlyoffice/assets/53475320/98ec2a73-5f71-4b55-83ea-3b73c87ec9a3
   class SiteFeaturesDocumentEditor
     include PageObject
     include SiteEditorsXpath
@@ -19,7 +19,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(run_on_your_own_server_element) && @instance.webdriver.element_present?(documents_image_element) }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(docspace_registration_button_element) && @instance.webdriver.element_present?(documents_image_element) }
     end
   end
 end

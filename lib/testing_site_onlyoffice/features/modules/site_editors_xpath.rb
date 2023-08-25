@@ -6,8 +6,6 @@ module TestingSiteOnlyoffice
   module SiteEditorsXpath
     include PageObject
 
-    root_xpath = '//div[@class="oh_buttons"]'
-    link(:run_on_your_own_server, xpath: "#{root_xpath}/a[contains(@href,'download')]")
-    link(:try_in_the_cloud, xpath: "#{root_xpath}/a[contains(@href,'registration')]")
+    link(:docspace_registration_button, xpath: '//a[@id = "account-btn" and @href = "/docspace-registration.aspx"]')
   end
 end
