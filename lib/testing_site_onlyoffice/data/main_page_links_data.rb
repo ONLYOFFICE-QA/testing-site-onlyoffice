@@ -4,7 +4,7 @@ module TestingSiteOnlyoffice
   # Data for links on main page
   class MainPageLinksData
     def self.rated_by_critics
-      %w[getapp capterra highperformer cloudinsider softwareadvicemr sourceforge]
+      %w[getapp capterra highperformer cloudinsider omr sourceforge]
     end
 
     def self.rated_by_users
@@ -16,13 +16,15 @@ module TestingSiteOnlyoffice
 
     def self.get_onlyoffice_main_page
       {
-        'OnlyOffice Docs Get It Now': "(#{GET_ONLYOFFICE_BUTTONS_XPATH})//a[contains(@href, 'download-docs')]",
-        'OnlyOffice See it in action': "(#{GET_ONLYOFFICE_BUTTONS_XPATH})//a[contains(@href, 'see-it-in-action')]",
+        'OnlyOffice Docs Get It Now': "#{GET_ONLYOFFICE_BUTTONS_XPATH}//a[contains(@href, '/download-docs.aspx')]",
+        'OnlyOffice See it in action': "#{GET_ONLYOFFICE_BUTTONS_XPATH}//a[contains(@href, '/docspace-registration.aspx')]",
         'OnlyOffice Docs Learn more': "//div[contains(@class,'dp-m-inside')]//a[contains(@href, 'office-suite')]",
-        'OnlyOffice DocSpace Learn more': "(#{CHOOSE_SOLUTION_XPATH})//a[contains(@href, '/docspace.aspx')]",
-        'OnlyOffice Docs Developer Edition': "(#{CHOOSE_SOLUTION_XPATH})//a[contains(@href, '/developer-edition.aspx')]",
-        'OnlyOffice Desktop apps': "(#{CHOOSE_SOLUTION_XPATH})//a[contains(@href, '/download-desktop.aspx')]",
-        'OnlyOffice Mobile apps': "(#{CHOOSE_SOLUTION_XPATH})//a[contains(@href, '/download-desktop.aspx#mobile')]"
+        'OnlyOffice Docs Security': "//div[contains(@class,'dp-m-inside')]//a[contains(@href, '/security.aspx')]",
+        'OnlyOffice DocSpace Registration': "#{CHOOSE_SOLUTION_XPATH}//a[contains(@href, '/docspace-registration.aspx')]",
+        'OnlyOffice Docs Download': "#{CHOOSE_SOLUTION_XPATH}////a[contains(@href, '/download-docs.aspx')]",
+        'OnlyOffice Docs Developer Edition': "#{CHOOSE_SOLUTION_XPATH}//a[contains(@href, '/developer-edition.aspx')]",
+        'OnlyOffice Desktop apps': "#{CHOOSE_SOLUTION_XPATH}//a[contains(@href, '/download-desktop.aspx')]",
+        'OnlyOffice Mobile apps': "#{CHOOSE_SOLUTION_XPATH}//a[contains(@href, '/download-desktop.aspx#mobile')]"
       }
     end
 
