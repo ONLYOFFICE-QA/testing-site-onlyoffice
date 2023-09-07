@@ -6,6 +6,6 @@ module TestingSiteOnlyoffice
   module SiteEditorsXpath
     include PageObject
 
-    link(:docspace_registration_button, xpath: '//a[@id = "account-btn" and @href = "/docspace-registration.aspx"]')
+    link(:docspace_registration_button, xpath: '//a[@id = "account-btn" and contains(@href, "/docspace-registration")]')
   end
 end
