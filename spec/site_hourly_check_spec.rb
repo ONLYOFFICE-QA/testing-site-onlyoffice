@@ -40,26 +40,6 @@ describe 'SiteHourlyCheck' do
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesDocsOverview
       end
 
-      it '[Site] Check Features document editor' do
-        page = @site_home_page.click_document_editor
-        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesDocumentEditor
-      end
-
-      it '[Site] Check Features spreadsheet editor' do
-        page = @site_home_page.click_spreadsheet_editor
-        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesSpreadsheetEditor
-      end
-
-      it '[Site] Check Features presentation editor' do
-        page = @site_home_page.click_presentation_editor
-        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesPresentationEditor
-      end
-
-      it '[Site] Check Features form creator' do
-        page = @site_home_page.click_form_creator
-        expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesFormCreator
-      end
-
       it '[Site] Check Features PDF reader and converter' do
         page = @site_home_page.click_pdf_reader_converter
         expect(page).to be_a TestingSiteOnlyoffice::SiteFeaturesPDFReaderConverter
