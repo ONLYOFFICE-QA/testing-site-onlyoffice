@@ -11,7 +11,7 @@ module TestingSiteOnlyoffice
     # Sleep is added to wait until scroll is finished
     # @param [String] xpath - xpath of the link
     # @param [String] os - installer being tested(e.g. 'macos_10')
-    def click_constructor_link(xpath, os)
+    def click_constructor_link(xpath, os = 'linux')
       if os.include?('windows')
         @instance.webdriver.execute_javascript("$('html, body').animate({ 'scrollTop': $('.windows-new-icon').offset().top - topOffset }, 400)")
       elsif os.include?('macos')
