@@ -1,9 +1,8 @@
 ---
-:Solution by size:
+:Solutions:
   - SMBs
   - Enterprises
   - Home use
-:Solution by industry:
   - Developers
   - Hosting providers
   - Government
@@ -11,17 +10,44 @@
   - Research
   - Education
   - Nonprofits
-:Support:
-  - Support contact form
+:Features:
+  - Document Editor
+  - Spreadsheet Editor
+  - Presentation Editor
+  - Form Creator
+  - PDF reader & converter
+  - Security
+  - Accessibility
+  - AI helper
+  - App directory
+:Connectors:
+  - NextCloud
+  - Moodle
+  - Odoo
+  - WordPress
+  - Others
+:About Us:
+  - Company
+  - Customers
+  - Success stories
+  - Awards
+  - Events
+  - Press downloads
+  - Gift shop
+  - Contacts
+:Collaborate:
+  - For contributors
+  - For translators
+  - For influencers
+  - Vacancies
+:Get news:
+  - Blog
+:Get help:
   - Forum
-  - Order demo
-  - Webinars
-  - Training courses
-:Resources:
   - Help Center
-  - App Directory
-  - Contribute
-  - Legal notice
+  - Training courses
+  - Webinars
+  - White papers
 :Comparison:
   - ONLYOFFICE Docs vs MS Office Online
   - ONLYOFFICE Docs vs Google Docs
@@ -41,3 +67,5 @@
   - Follow us on Instagram
   - Follow us on GitHub
   - Follow us on Fosstodon
+  - Follow us on TikTok
+  - Follow us on Telegram

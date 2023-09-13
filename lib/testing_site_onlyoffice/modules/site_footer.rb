@@ -13,12 +13,35 @@ module TestingSiteOnlyoffice
 
     footer_xpath = '//div[@class="footer_menu_item"]'
 
-    # by size
+    # solutions
+    link(:smbs, xpath: "#{footer_xpath}//a[contains(@href, 'for-small-business')]")
+    link(:enterprises, xpath: "#{footer_xpath}//a[contains(@href, 'for-enterprises')]")
     link(:size_home_use, xpath: "#{footer_xpath}//a[contains(@href, 'home-use')]")
+    link(:for_developers, xpath: "#{footer_xpath}//a[contains(@href, 'for-developers')]")
+    link(:for_hosting_providers, xpath: "#{footer_xpath}//a[contains(@href, 'for-hosting-providers')]")
+    link(:for_government, xpath: "#{footer_xpath}//a[contains(@href, 'for-government')]")
+    link(:healthcare, xpath: "#{footer_xpath}//a[contains(@href, 'healthcare')]")
+    link(:for_research, xpath: "#{footer_xpath}//a[contains(@href, 'for-research')]")
+    link(:education, xpath: "#{footer_xpath}//a[contains(@href, 'education')]")
+    link(:nonprofits, xpath: "#{footer_xpath}//a[contains(@href, 'nonprofit-organizations')]")
 
-    # by industry
-    link(:nonprofits, xpath: "#{footer_xpath}//a[contains(@href, 'nonprofit')]")
-    link(:developers, xpath: "#{footer_xpath}//a[@href = '/for-developers.aspx']")
+    # features
+    link(:document_editor, xpath: "#{footer_xpath}//a[@href = '/document-editor.aspx']")
+    link(:spreadsheet_editor, xpath: "#{footer_xpath}//a[@href = '/spreadsheet-editor.aspx']")
+    link(:presentation_editor, xpath: "#{footer_xpath}//a[@href = '/presentation-editor.aspx']")
+    link(:form_creator, xpath: "#{footer_xpath}//a[@href = '/form-creator.aspx']")
+    link(:pdf_reader_converter, xpath: "#{footer_xpath}//a[@href = '/pdf-reader.aspx']")
+    link(:security, xpath: "#{footer_xpath}//a[contains(@href, 'security')]")
+    link(:accessibility, xpath: "#{footer_xpath}//a[contains(@href, 'accessibility')]")
+    link(:ai_helper, xpath: "#{footer_xpath}//a[contains(@href, '/app-directory/chatgpt')]")
+    link(:app_directory, xpath: "#{footer_xpath}//a[@href = '/app-directory']")
+
+    # connectors
+    link(:nextcloud, xpath: "#{footer_xpath}//a[contains(@href, 'nextcloud')]")
+    link(:moodle, xpath: "#{footer_xpath}//a[contains(@href, 'moodle')]")
+    link(:odoo, xpath: "#{footer_xpath}//a[contains(@href, 'odoo')]")
+    link(:wordpress, xpath: "#{footer_xpath}//a[contains(@href, 'wordpress')]")
+    link(:all_connectors, xpath: "#{footer_xpath}//a[contains(@href, 'all-connectors')]")
 
     # resources
     link(:help_center_footer_link, xpath: '//a[contains(@href,"helpcenter.onlyoffice.com/index.aspx")]')
@@ -32,14 +55,6 @@ module TestingSiteOnlyoffice
 
     # follow us on
     label(:subscribe_to_newsletter, xpath: '//div[contains(@class,"footer_menu")]//label[@title="Subscribe to our newsletters"]')
-
-    # editors
-    link(:document_editor, xpath: "#{footer_xpath}//a[@href = '/document-editor.aspx']")
-    link(:spreadsheet_editor, xpath: "#{footer_xpath}//a[@href = '/spreadsheet-editor.aspx']")
-    link(:presentation_editor, xpath: "#{footer_xpath}//a[@href = '/presentation-editor.aspx']")
-    link(:form_creator, xpath: "#{footer_xpath}//a[@href = '/form-creator.aspx']")
-    link(:pdf_reader_converter, xpath: "#{footer_xpath}//a[@href = '/pdf-reader.aspx']")
-
     footer_links = { size_home_use: SiteHomeUse,
                      nonprofits: SiteNonProfits,
                      developers: SiteForDevelopers,
