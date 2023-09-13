@@ -59,7 +59,6 @@ module TestingSiteOnlyoffice
                      nonprofits: SiteNonProfits,
                      developers: SiteForDevelopers,
                      help_center_footer_link: SiteAboutHelpCenter,
-                     order_demo: SiteOrderDemo,
                      support_contact_form: SiteSupportContactForm,
                      request_a_call: SiteCallback,
                      subscribe_to_newsletter: SiteSubscribe,
