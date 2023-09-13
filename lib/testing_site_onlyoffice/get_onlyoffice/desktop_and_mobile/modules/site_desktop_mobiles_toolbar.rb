@@ -10,6 +10,8 @@ module TestingSiteOnlyoffice
     div(:site_mobile_download, xpath: '//div[@id = "mobile"]')
 
     def open_mobile_apps
+      @instance.webdriver.execute_javascript("$('html, body').animate({ 'scrollTop': $('.btn-mobile').offset().top - topOffset }, 400)")
+      sleep 2
       site_mobile_download_element.click
       SiteMobileApps.new(@instance)
     end
