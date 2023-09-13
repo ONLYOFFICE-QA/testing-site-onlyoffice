@@ -19,13 +19,13 @@ describe 'Desktop apps' do
       let(:current_installation) { @desktop_app_page.desktop_installer_block(installer) }
 
       it "[Site][DownloadDesktop] 'Github' link works for `#{installer}`/download-desktop.aspx#desktop" do
-        @desktop_app_page.click_constructor_link(current_installation.github_link)
+        @desktop_app_page.click_constructor_link(current_installation.github_link, installer.to_s)
         github_title = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['github']
         expect(@desktop_app_page.check_opened_page_title).to eq(github_title)
       end
 
       it "[Site][DownloadDesktop] 'Whats new' link works for `#{installer}`/download-desktop.aspx#desktop" do
-        @desktop_app_page.click_constructor_link(current_installation.whats_new_link)
+        @desktop_app_page.click_constructor_link(current_installation.whats_new_link, installer.to_s)
         whats_new_title = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop']['whats_new']
         expect(@desktop_app_page.check_opened_page_title).to eq(whats_new_title)
       end

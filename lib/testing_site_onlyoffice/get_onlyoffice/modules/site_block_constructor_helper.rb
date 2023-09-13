@@ -3,7 +3,21 @@
 module TestingSiteOnlyoffice
   # Helper methods for constructor block installers
   module SiteBlockConstructorHelper
-    def click_constructor_link(xpath)
+    # Method that clicks the link on the block.
+    # The page /download-desktop.aspx#desktop will automatically scroll to the section with
+    # downloads provided for your device's OS, in our case to the Linux section.
+    # In order to avoid "click intercepted" error, JS methods here will scroll to the needed sections
+    # depending on the installer being tested.
+    # Sleep is added to wait until scroll is finished
+    # @param [String] xpath - xpath of the link
+    # @param [String] os - installer being tested(e.g. 'macos_10')
+    def click_constructor_link(xpath, os)
+      if os.include?('windows')
+        @instance.webdriver.execute_javascript("$('html, body').animate({ 'scrollTop': $('.windows-new-icon').offset().top - topOffset }, 400)")
+      elsif os.include?('macos')
+        @instance.webdriver.execute_javascript("$('html, body').animate({ 'scrollTop': $('.dwn-mp-desktop .macos-icon').offset().top - topOffset }, 400)")
+      end
+      sleep 2
       @instance.webdriver.get_element(xpath).click
       wait_for_long_loading_page(xpath)
     end

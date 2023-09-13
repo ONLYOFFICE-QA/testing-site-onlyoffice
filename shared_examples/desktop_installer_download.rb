@@ -56,7 +56,7 @@ shared_examples_for 'desktop_installer_download' do |installers_list|
       before { @current_installation = installers_download_page.desktop_installer_block(installer) }
 
       it "[Site][DownloadDesktop] download link for `#{installer}` alive /download-desktop.aspx#desktop" do
-        installers_download_page.click_constructor_link(@current_installation.download_xpath)
+        installers_download_page.click_constructor_link(@current_installation.download_xpath, installer.to_s)
         marketplace_title = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['download']
         expect(installers_download_page.check_opened_page_title).to eq(marketplace_title)
       end
@@ -68,7 +68,7 @@ shared_examples_for 'desktop_installer_download' do |installers_list|
       before { @current_installation = installers_download_page.desktop_installer_block(installer) }
 
       it "[Site][DownloadDesktop] 'Read instructions' works for `#{installer}`/download-desktop.aspx#desktop" do
-        installers_download_page.click_constructor_link(@current_installation.instruction_xpath)
+        installers_download_page.click_constructor_link(@current_installation.instruction_xpath, installer.to_s)
         instruction_title = TestingSiteOnlyoffice::SiteDownloadData.desktop_mobile_info['desktop'][installer.to_s]['instruction']
         expect(installers_download_page.check_opened_page_title).to eq(instruction_title)
       end
