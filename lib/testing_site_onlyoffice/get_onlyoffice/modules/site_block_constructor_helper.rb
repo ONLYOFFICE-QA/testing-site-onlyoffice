@@ -3,7 +3,6 @@
 module TestingSiteOnlyoffice
   # Helper methods for constructor block installers
   module SiteBlockConstructorHelper
-
     # Method that clicks the link on the block.
     # The page /download-desktop.aspx#desktop will automatically scroll to the section with
     # downloads provided for your device's OS, in our case to the Linux section.

@@ -11,7 +11,7 @@ describe 'Desktop apps' do
   end
 
   it_behaves_like 'desktop_installer_download', TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list_type do
-   let(:installers_download_page) { @desktop_app_page }
+    let(:installers_download_page) { @desktop_app_page }
   end
 
   TestingSiteOnlyoffice::SiteDownloadData.desktop_download_list.each do |installer|
