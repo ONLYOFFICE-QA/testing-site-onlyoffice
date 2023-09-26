@@ -34,11 +34,6 @@
       "download": "onlyoffice-desktopeditors_amd64.deb",
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
-    "debian_7": {
-      "instruction": "Installing ONLYOFFICE Desktop Editors to Debian, Ubuntu and derivatives - ONLYOFFICE",
-      "download": "onlyoffice-desktopeditors_amd64.deb",
-      "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
-    },
     "centos": {
       "instruction": "Installing ONLYOFFICE Desktop Editors to Red Hat, CentOS and derivatives - ONLYOFFICE",
       "download": "onlyoffice-desktopeditors.x86_64.rpm",
