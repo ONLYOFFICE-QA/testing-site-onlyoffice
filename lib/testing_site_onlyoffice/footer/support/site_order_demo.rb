@@ -15,6 +15,7 @@ module TestingSiteOnlyoffice
 
     span(:onlyoffice_workspace, xpath: '//input[@id="ONLYOFFICE_Workspace"]/../span')
     span(:onlyoffice_docs, xpath: '//input[@id="ONLYOFFICE_Docs"]/../span')
+    span(:onlyoffice_docspace, xpath: '//input[@id="ONLYOFFICE_DocSpace"]/../span')
 
     table(:select_time_field, xpath: '//table[@class= "timetable"]')
     span(:time_zone, id: 'tmzone')
@@ -45,6 +46,7 @@ module TestingSiteOnlyoffice
       demonstration_language(params.fetch(:demonstration_language)) if @instance.webdriver.element_present?(demonstration_language_element)
       onlyoffice_workspace_element.click if params.fetch(:workspace_demo, true)
       onlyoffice_docs_element.click if params.fetch(:docs_demo, true)
+      onlyoffice_docspace_element.click if params.fetch(:docspace_demo, true)
       @instance.webdriver.wait_until do
         !@instance.webdriver.get_attribute(send_request_element, 'class').include?('disable')
       end
