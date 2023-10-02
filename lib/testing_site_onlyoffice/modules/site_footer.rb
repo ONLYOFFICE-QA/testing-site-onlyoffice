@@ -47,8 +47,8 @@ module TestingSiteOnlyoffice
     link(:help_center_footer_link, xpath: '//a[contains(@href,"helpcenter.onlyoffice.com/index.aspx")]')
 
     # support
-    link(:order_demo, xpath: "//div[@class = 'footer_menu_item no_tablet_view']//a[@href = '/demo-order.aspx']")
-    link(:support_contact_form, xpath: "//div[@class = 'footer_menu_item no_tablet_view']//a[@href='/support-contact-form.aspx']")
+    link(:order_demo, xpath: "#{footer_xpath}//a[@href = '/demo-order.aspx']")
+    link(:support_contact_form, xpath: "#{footer_xpath}//a[@href='/support-contact-form.aspx']")
 
     # contact us
     link(:request_a_call, xpath: "#{footer_xpath}//a[@href='/call-back-form.aspx']")
@@ -60,6 +60,7 @@ module TestingSiteOnlyoffice
                      developers: SiteForDevelopers,
                      help_center_footer_link: SiteAboutHelpCenter,
                      support_contact_form: SiteSupportContactForm,
+                     order_demo: SiteOrderDemo,
                      request_a_call: SiteCallback,
                      subscribe_to_newsletter: SiteSubscribe,
                      document_editor: SiteFeaturesDocumentEditor,

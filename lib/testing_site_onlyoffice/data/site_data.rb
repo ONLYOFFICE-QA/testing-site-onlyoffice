@@ -59,6 +59,9 @@ module TestingSiteOnlyoffice
 
     def self.courses_purposes
       {
+        administrating_docspace: 'Administrating ONLYOFFICE DocSpace',
+        editing_documents_docspace: 'Editing documents in ONLYOFFICE DocSpace',
+        custom_tech_focused_training: 'Custom tech-focused training',
         working_with_docs_in_nextcloud: 'Working with docs in Nextcloud',
         working_with_docs_in_wordpress: 'Working with docs in WordPress',
         working_with_forms: 'Working with forms',
