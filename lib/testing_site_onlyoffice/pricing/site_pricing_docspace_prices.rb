@@ -20,5 +20,4 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(home_tariff_element) }
     end
   end
-
 end
