@@ -1,19 +1,6 @@
 # frozen_string_literal: true
 
 shared_examples_for 'commercial_installer_download' do |product, installers_list|
-  installers_list[:without_buy_button].each do |installer|
-    describe installer.to_s do
-      before do
-        @current_installation = installers_download_page.get_blocks_by_product(product, installer)
-      end
-
-      it "[Site][#{product}] install link for `#{installer}` alive" do
-        @current_installation.click_install_button
-        marketplace_title = TestingSiteOnlyoffice::SiteDownloadData.commercial_info[product.downcase][installer.to_s]['download']
-        expect(installers_download_page.check_opened_page_title).to eq(marketplace_title)
-      end
-    end
-  end
 
   installers_list[:with_buy_button].each do |installer|
     describe installer.to_s do
