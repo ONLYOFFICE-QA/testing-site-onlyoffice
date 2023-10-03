@@ -46,7 +46,6 @@ module TestingSiteOnlyoffice
       @instance.webdriver.get_element(@buy_xpath).click
       case @product
       when 'workspace_enterprise'
-        click_enterprise
         SitePriceServerEnterprise.new(@instance)
       when 'docs_enterprise'
         SitePriceDocsEnterprise.new(@instance)
