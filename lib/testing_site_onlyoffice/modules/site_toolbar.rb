@@ -50,10 +50,10 @@ module TestingSiteOnlyoffice
 
     # top toolbar - Get Onlyoffice
     link(:site_get_onlyoffice, xpath: '//a[@id="navitem_download"]')
-    link(:site_get_onlyoffice_sign_in, xpath: '//a[@id="navitem_download_signin"]')
-    link(:site_get_onlyoffice_sign_up, xpath: '//a[@id="navitem_download_signup"]')
     link(:site_get_onlyoffice_docs_registration, xpath: '//a[@id="navitem_docs_signup"]')
     link(:site_get_onlyoffice_install_onpremises, xpath: '//a[@id="navitem_download_onpremises"]')
+    link(:site_get_onlyoffice_docspace_sign_in, xpath: '//a[@id = "navitem_docspace_signin"]')
+    link(:site_get_onlyoffice_docspace_sign_up, xpath: '//a[@id = "navitem_docspace_signup"]')
     link(:site_get_onlyoffice_connectors, xpath: '//a[@id="navitem_download_connectors"]')
     link(:site_get_onlyoffice_desktop_mobile, xpath: '//a[@id="navitem_download_desktop_mob"]')
     link(:site_get_onlyoffice_docs_developer, xpath: '//a[@id="navitem_docs_de_onpremises"]')
@@ -201,14 +201,6 @@ module TestingSiteOnlyoffice
 
     def site_toolbar_get_onlyoffice
       {
-        get_onlyoffice_sign_in: {
-          element: site_get_onlyoffice_sign_in_element,
-          class: SiteGetOnlyofficeSignIn
-        },
-        get_onlyoffice_sign_up: {
-          element: site_get_onlyoffice_sign_up_element,
-          class: SiteGetOnlyofficeSignUp
-        },
         get_onlyoffice_docs_registration: {
           element: site_get_onlyoffice_docs_registration_element,
           class: DocsRegistrationPage
@@ -216,6 +208,10 @@ module TestingSiteOnlyoffice
         get_onlyoffice_workspace_on_premises: {
           element: site_get_onlyoffice_install_onpremises_element,
           class: SiteGetOnlyofficeWorkspaceEnterprise
+        },
+        get_onlyoffice_docspace_sign_in: {
+          element: site_get_onlyoffice_docspace_sign_in_element,
+          class: SiteDocSpaceSignIn
         },
         get_onlyoffice_connectors: {
           element: site_get_onlyoffice_connectors_element,
@@ -262,7 +258,8 @@ module TestingSiteOnlyoffice
           class: SitePricingCloud
         },
         pricing_docspace: {
-          element: site_pricing_docspace_element
+          element: site_pricing_docspace_element,
+          class: SitePricingDocSpacePrices
         },
         pricing_developer: {
           element: site_pricing_docs_developer_element,

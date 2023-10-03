@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../get_onlyoffice/site_docspace_registration'
+require_relative '../get_onlyoffice/site_docspace_sign_up'
 module TestingSiteOnlyoffice
   # /docspace.aspx
   # https://user-images.githubusercontent.com/38238032/234249398-9516b541-d981-4801-9600-e4b61baa049f.jpg
@@ -21,7 +21,7 @@ module TestingSiteOnlyoffice
 
     def click_registration_button
       docspace_registration_button_element.click
-      SiteDocSpaceRegistration.new(@instance)
+      SiteDocSpaceSignUp.new(@instance)
     end
   end
 end

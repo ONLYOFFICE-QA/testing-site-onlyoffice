@@ -73,7 +73,7 @@ module TestingSiteOnlyoffice
 
     def register_from_sign_in
       register_sign_in_element.click
-      SiteGetOnlyofficeSignUp.new(@instance)
+      SiteDocSpaceSignUp.new(@instance)
     end
 
     def sign_in_with(network)

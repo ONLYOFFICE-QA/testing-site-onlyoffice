@@ -71,7 +71,7 @@ module TestingSiteOnlyoffice
 
     def click_docspace_registration
       docspace_registration_element.click
-      SiteDocSpaceRegistration.new(@instance)
+      SiteDocSpaceSignUp.new(@instance)
     end
 
     def click_download_desktop(platform)
