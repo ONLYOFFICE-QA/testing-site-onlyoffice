@@ -6,7 +6,7 @@ require_relative '../../get_onlyoffice/site_get_onlyoffice_sign_up'
 require_relative 'site_pricing_cloud_calculator'
 require_relative 'site_require_vip_cloud'
 require_relative '../../additional_products/personal_main_page'
-require_relative '../modules/site_pricing_workspace_toolbar'
+require_relative '../modules/site_pricing_docspace_toolbar'
 
 module TestingSiteOnlyoffice
   # /docspace-prices.aspx#docspace-cloud
@@ -15,15 +15,14 @@ module TestingSiteOnlyoffice
     include PageObject
     include SitePricingCloudCalculator
     include SiteToolbar
-    include SitePricingWorkspaceToolbar
+    include SitePricingDocSpaceToolbar
 
     # startup
-    startup = "//div[contains(@class, 'saas-cell-startup')]"
-    link(:startup_start_now, xpath: "#{startup}//a[@class='button gray']")
-    span(:startup_price_person, xpath: "#{startup}//span[contains(@class, 'price-value')]")
+    link(:startup_start_now, xpath: '//div[contains(@class, "pp_price_block")]//a[@href = "/docspace-registration.aspx"]')
+    span(:startup_price_person, xpath: "//span[contains(@class, 'price-value')]")
 
     # business
-    link(:business_try_it_for_free, xpath: "//a[@href = '/download-workspace.aspx?from=workspace-enterprise-prices']")
+    link(:business_try_it_for_free, xpath: "//a[@href = '/download-docspace.aspx?from=docspace-enterprise-prices']")
     link(:business_calculate_your_price, xpath: "//a[contains(@class, 'saas-calculate')]")
 
     # vip
@@ -40,7 +39,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(business_try_it_for_free_element) }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(startup_start_now_element) }
     end
 
     def cost_tariff_business_3_year
@@ -63,7 +62,7 @@ module TestingSiteOnlyoffice
 
     def startup_start_now
       startup_start_now_element.click
-      SiteDocSpaceRegistration.new(@instance)
+      SiteDocSpaceSignUp.new(@instance)
     end
 
     def business_try_it_for_free
