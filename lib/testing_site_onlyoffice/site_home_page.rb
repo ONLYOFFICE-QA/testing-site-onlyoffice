@@ -93,6 +93,7 @@ require_relative 'pricing/site_pricing_server_enterprise'
 require_relative 'pricing/price_cloud/site_pricing_cloud'
 require_relative 'pricing/site_pricing_docs_enterprise'
 require_relative 'pricing/site_pricing_docs_developer'
+require_relative 'pricing/site_pricing_workspace'
 
 require_relative 'features/site_features_docspace_main_page'
 require_relative 'features/site_features_workspace'

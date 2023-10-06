@@ -3,9 +3,6 @@
 module TestingSiteOnlyoffice
   # Site pricing data
   class SitePricesData
-    def self.cloud_services_price_periods
-      %i[month year-1]
-    end
 
     def self.developer_edition_single_server_250
       return 5_875 if config.language == 'ru-RU'

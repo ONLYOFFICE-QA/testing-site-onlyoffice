@@ -260,7 +260,7 @@ module TestingSiteOnlyoffice
         },
         pricing_workspace: {
           element: site_pricing_workspace_element,
-          class: SitePricingCloud
+          class: SitePricingWorkSpace
         },
         pricing_docspace: {
           element: site_pricing_docspace_element,

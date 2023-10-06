@@ -48,8 +48,8 @@ module TestingSiteOnlyoffice
     element(:avangate_current_value_price, xpath: '//*[contains(@class,"order__listing__item__total__price")]')
     element(:avangate_upsell_frame, xpath: '//*[@id="order__page__upsell_product"]')
     element(:avangate_upsell_close, xpath: '//*[@id="order__page__upsell_product"]//a')
-    element(:avangate_total_value_price, xpath: '//div[@class="features-total-row features-total order__total features-content__total"]//*[contains(@class,"order__billing__total clearfix")]')
-    element(:avangate_total_tax_value_price, xpath: '//div[@class="features-total-row features-totalvat order__sub__total features-content__totalvat"]//*[contains(@class,"order__billing__total clearfix")]')
+    span(:avangate_total_value_price, xpath: '//div[contains(@class, "order__total")]//span[contains(@class, "order__billing__total ")]')
+    span(:avangate_total_tax_value_price, xpath: '//div[contains(@class, "products-totalvat ")]//span[contains(@class, "order__billing__total ")]')
 
     def initialize(instance, params = {})
       super(instance.webdriver.driver)
