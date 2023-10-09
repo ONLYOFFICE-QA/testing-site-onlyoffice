@@ -110,6 +110,8 @@ module TestingSiteOnlyoffice
       @instance.webdriver.element_present?(avangate_main_continue_button_element)
     end
 
+    alias payment_page_opened? avangate_main_continue_button_visible?
+
     def avangate_logo_visible?
       @instance.webdriver.element_present?(avangate_logo_link_element)
     end

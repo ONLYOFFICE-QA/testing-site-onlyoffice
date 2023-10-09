@@ -17,9 +17,7 @@ module TestingSiteOnlyoffice
 
     # Wait until page is loaded
     def wait_to_load
-      @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(@xpath_submit_button)
-      end
+      @instance.webdriver.wait_until { submit_button_visible? }
     end
 
     # Submit order for notification
@@ -51,6 +49,12 @@ module TestingSiteOnlyoffice
       price_text = @instance.webdriver.get_text('//span[contains(@class,"ProductSummary-totalAmount")]/span')
       price_text.scan(/\d/).join.to_i / 100.0
     end
+
+    def submit_button_visible?
+      @instance.webdriver.element_present?(@xpath_submit_button)
+    end
+
+    alias payment_page_opened? submit_button_visible?
 
     private
 

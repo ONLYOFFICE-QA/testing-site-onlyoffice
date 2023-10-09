@@ -14,6 +14,11 @@ describe 'Pricing DocSpace' do
     @test.webdriver.quit
   end
 
+  it 'Try it free' do
+    pricing_page = @site_home_page.click_link_on_toolbar(:pricing_docspace)
+    expect(pricing_page.click_try_free_button).to be_a TestingSiteOnlyoffice::SiteDocSpaceDownloadEnterprise
+  end
+
   it_behaves_like 'pricing_buy_page', 'PricingDocSpace',
                   TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:support_level],
                   TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:number_connection_docspace] do

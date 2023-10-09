@@ -2,6 +2,7 @@
 
 require_relative '../modules/site_toolbar'
 require_relative 'modules/site_pricing_helper'
+require_relative '../additional_products/payment/stripe_payment_page'
 
 module TestingSiteOnlyoffice
   # Pricing for Onlyoffice Docs Enterprice edition
@@ -12,7 +13,6 @@ module TestingSiteOnlyoffice
     include SiteToolbar
 
     link(:buy_now_home_server, xpath: '//div[@class="ee-text-part"]/a[@class="button red"]')
-
     link(:try_free_button, xpath: '//div[@class="dep-part ee-business"]//div[@class="ee-text-part"]/a')
 
     def initialize(instance)
