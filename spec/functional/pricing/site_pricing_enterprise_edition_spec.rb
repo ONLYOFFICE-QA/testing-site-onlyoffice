@@ -20,23 +20,9 @@ describe 'Pricing docs enterprise' do
     expect(connectors.page_title).to eq('ONLYOFFICE Docs Enterprise')
   end
 
-  describe 'Choose tariffs docs enterprise' do
-    TestingSiteOnlyoffice::SiteDownloadData.pricing_docs_data[:support_level].each do |support_level|
-      it "[Site][PricingDocsEnterprise] Choose the ONLYOFFICE Docs Enterprise Edition tariff: #{support_level}, more connection" do
-        pricing_page = @site_home_page.click_link_on_toolbar(:pricing_enterprise)
-        pricing_page.fill_data_price_enterprise('More', support_level)
-        expect(pricing_page.total_price_upon_request).to eq('Upon request')
-      end
-
-      TestingSiteOnlyoffice::SiteDownloadData.pricing_docs_data[:number_connection_enterprise].each do |number_connection|
-        it "[Site][PricingDocsEnterprise] Choose the ONLYOFFICE Docs Enterprise Edition tariff: #{support_level}, count users: #{number_connection}" do
-          pricing_page = @site_home_page.click_link_on_toolbar(:pricing_enterprise)
-          pricing_page.fill_data_price_enterprise(number_connection, support_level)
-          total_price = pricing_page.total_price_number.to_i
-          avangate = pricing_page.go_to_avangate_from_pricing_page(pricing_page.buy_now_single_server_element, test_purchase: true)
-          expect(avangate.total_amount_without_tax).to eq(total_price)
-        end
-      end
-    end
+  it_behaves_like 'pricing_buy_page', 'PricingDocsEnterprise',
+                  TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:support_level],
+                  TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:number_connection_enterprise] do
+    let(:pricing_page) { @site_home_page.click_link_on_toolbar(:pricing_enterprise) }
   end
 end

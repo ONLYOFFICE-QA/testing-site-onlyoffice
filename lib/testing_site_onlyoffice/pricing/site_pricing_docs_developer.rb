@@ -2,7 +2,6 @@
 
 require_relative '../modules/site_toolbar'
 require_relative 'modules/site_pricing_helper'
-require_relative 'modules/site_pricing_docs'
 
 module TestingSiteOnlyoffice
   # Pricing for Onlyoffice Docs Developer edition
@@ -11,7 +10,6 @@ module TestingSiteOnlyoffice
     include PageObject
     include SitePricingHelper
     include SiteToolbar
-    include SitePriceDocs
 
     link(:get_quote_button, xpath: "//div[@class='dep-part ee-production ee-2']//a[contains(@data-id, 'ie-gaq')]")
     link(:free_button, xpath: '//div[@class="dep-part ee-production ee-2"]//div[@class="ee-text-part"]/a')

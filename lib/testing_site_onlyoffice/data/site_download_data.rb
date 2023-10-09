@@ -140,9 +140,10 @@ module TestingSiteOnlyoffice
       @document_builder_info ||= JSON.parse(File.read("#{__dir__}/site_document_builder_info.json"))
     end
 
-    def self.pricing_docs_data
+    def self.pricing_page_data
       {
         support_level: %w[Basic Plus Premium],
+        number_connection_docspace: %w[100 250 500 1000],
         number_connection_enterprise: %w[50 100 200],
         number_connection_developer: %w[250 500 1000]
       }
