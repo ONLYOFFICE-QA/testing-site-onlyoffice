@@ -19,5 +19,4 @@ describe 'Pricing WorkSpace' do
     workspace_download_page = @pricing_workspace_page.click_try_free
     expect(workspace_download_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeWorkspaceEnterprise
   end
-
 end
