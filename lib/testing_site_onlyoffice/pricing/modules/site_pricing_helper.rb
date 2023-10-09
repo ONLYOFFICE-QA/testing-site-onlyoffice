@@ -8,12 +8,13 @@ module TestingSiteOnlyoffice
   module SitePricingHelper
     include PageObject
 
-    div(:support_basic, xpath: "//div[@data-id='basic_support']")
-    div(:support_plus, xpath: "//div[@data-id='plus_support']")
-    div(:support_premium, xpath: "//div[@data-id='premium_support']")
-    div(:total_price_upon_request, xpath: "//div[@data-id='ie-pp-sum-req']")
-    link(:total_price_get_a_quote, xpath: "//a[@data-id='ie-gaq']")
-    span(:total_price, xpath: "//div[@data-id = 'ie-pp-sum']//span[@class='pp_price_number']")
+    BASE_XPATH = '//div[contains(@class, "ee-business") or contains(@class, "ee-production")]'
+    div(:support_basic, xpath: "#{BASE_XPATH}//div[@data-id='basic_support']")
+    div(:support_plus, xpath: "#{BASE_XPATH}//div[@data-id='plus_support']")
+    div(:support_premium, xpath: "#{BASE_XPATH}//div[@data-id='premium_support']")
+    div(:total_price_upon_request, xpath: "#{BASE_XPATH}//div[@data-id='ie-pp-sum-req']")
+    link(:total_price_get_a_quote, xpath: "#{BASE_XPATH}//a[@data-id='ie-gaq']")
+    span(:total_price, xpath: "#{BASE_XPATH}//div[@class='pp_sum']//span[@class='pp_price_number']")
     div(:home_tariff, xpath: '//div[@data-id="ee-home"]')
     div(:business_tariff, xpath: '//div[@data-id="ee-business"]')
     div(:num_connections, xpath: '//div[@class="num-connections"]//div[@data-id="ie-number-updated"]')
