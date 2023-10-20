@@ -95,6 +95,10 @@ module TestingSiteOnlyoffice
       @instance.webdriver.get_text(total_price_upon_request_element)
     end
 
+    def button_get_quote_present?
+      @instance.webdriver.element_present?(total_price_get_a_quote_element)
+    end
+
     def choose_home_tariff
       home_tariff_element.click
     end
