@@ -22,6 +22,10 @@ describe 'Pricing DocSpace' do
   it_behaves_like 'pricing_buy_page', 'PricingDocSpace',
                   TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:support_level],
                   TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:number_connection_docspace] do
-    let(:pricing_page) { @site_home_page.click_link_on_toolbar(:pricing_docspace) }
+    let(:pricing_page) do
+      pricing_docspace_page = @site_home_page.click_link_on_toolbar(:pricing_docspace)
+      pricing_docspace_page.click_enterprise_on_premises
+      pricing_docspace_page
+    end
   end
 end

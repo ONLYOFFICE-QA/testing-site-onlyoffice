@@ -11,8 +11,8 @@ module TestingSiteOnlyoffice
     include SitePricingDocSpaceToolbar
     include SitePricingHelper
 
-    div(:home_tariff, xpath: '//div[@data-id="ee-home"]')
-    link(:try_free_button, xpath: '//div[@class="dep-part ee-business"]//div[@class="ee-text-part"]/a')
+    link(:try_free_button, xpath: '//a[@href = "/download-docspace.aspx?from=docspace-enterprise-prices"]')
+    link(:docspace_on_premises, xpath: '//a[contains(@class, "docspace-on-premises")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -21,7 +21,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(home_tariff_element) }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(try_free_button_element) }
     end
 
     def click_try_free_button
@@ -30,6 +30,10 @@ module TestingSiteOnlyoffice
       end
       try_free_button_element.click
       SiteDocSpaceDownloadEnterprise.new(@instance)
+    end
+
+    def click_enterprise_on_premises
+      docspace_on_premises_element.click
     end
   end
 end
