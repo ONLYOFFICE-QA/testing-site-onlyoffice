@@ -36,7 +36,7 @@ module TestingSiteOnlyoffice
     end
 
     def check_active_tariff?(tariff)
-      return true if @instance.webdriver.get_attribute("//div[@data-id='ee-#{tariff}']", 'class').include?('active')
+      true if @instance.webdriver.get_attribute("//div[@data-id='ee-#{tariff}']", 'class').include?('active')
     end
   end
 end

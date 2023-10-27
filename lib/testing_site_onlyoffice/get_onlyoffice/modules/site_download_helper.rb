@@ -55,7 +55,7 @@ module TestingSiteOnlyoffice
     end
 
     def instruction_link_alive?(product)
-      link_success_response?((instruction_links[product].attribute('href')))
+      link_success_response?(instruction_links[product].attribute('href'))
     end
 
     def check_opened_page_title(switch_tab: true)
