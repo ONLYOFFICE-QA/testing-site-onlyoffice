@@ -41,7 +41,7 @@ module TestingSiteOnlyoffice
     end
 
     def empty_text_log?
-      return true if @instance.webdriver.get_text(log_errors_element).empty?
+      true if @instance.webdriver.get_text(log_errors_element).empty?
     end
   end
 end
