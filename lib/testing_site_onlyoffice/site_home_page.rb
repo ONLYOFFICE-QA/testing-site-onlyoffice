@@ -72,6 +72,7 @@ require_relative 'for_business/alfresco/site_alfresco'
 require_relative 'for_business/confluence/site_confluence'
 require_relative 'for_business/owncloud/site_owncloud'
 require_relative 'for_business/moodle/site_moodle'
+require_relative 'for_business/docspace_enterprise'
 
 require_relative 'for_developers/site_for_developers_doc_dev_edition'
 require_relative 'for_developers/site_for_developers_doc_builder'

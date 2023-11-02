@@ -41,6 +41,7 @@ module TestingSiteOnlyoffice
     link(:site_for_business_moodle, xpath: '//a[@id="navitem_integrations_moodle"]')
     link(:site_for_business_all, xpath: '//a[@id="navitem_integrations_others"]')
     link(:site_for_business_for_education, xpath: '//a[@id="navitem_features_education"]')
+    link(:site_docspace_enterprise, xpath: '//a[@id="navitem_fb_docspace_ee"]')
 
     # top toolbar - For Developers
     link(:site_for_developers, xpath: '//a[@id="navitem_fordevelopers"]')
@@ -179,6 +180,10 @@ module TestingSiteOnlyoffice
         for_enterprises_docs: {
           element: site_for_business_docs_enterprise_element,
           class: SiteForBusinessDocsEnterpriseEdition
+        },
+        docspace_enterprise: {
+          element: site_docspace_enterprise_element,
+          class: SiteDocSpaceEnterprise
         }
       }
     end
