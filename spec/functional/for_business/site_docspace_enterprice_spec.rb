@@ -65,7 +65,6 @@ describe 'DocSpace enterprise' do
   end
 
   describe 'DocSpace Enterprise pricing block' do
-
     it 'Enterprise plan link' do
       docspace_enterprise = @site_home_page.click_link_on_toolbar(:docspace_enterprise)
       pricing_docspace = docspace_enterprise.click_enterprise_plan
@@ -85,6 +84,3 @@ describe 'DocSpace enterprise' do
     end
   end
 end
-
-
-
