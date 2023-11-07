@@ -30,7 +30,7 @@ module TestingSiteOnlyoffice
     link(:spreadsheet_editor, xpath: "#{footer_xpath}//a[@href = '/spreadsheet-editor.aspx']")
     link(:presentation_editor, xpath: "#{footer_xpath}//a[@href = '/presentation-editor.aspx']")
     link(:form_creator, xpath: "#{footer_xpath}//a[@href = '/form-creator.aspx']")
-    link(:pdf_reader_converter, xpath: "#{footer_xpath}//a[@href = '/pdf-reader.aspx']")
+    link(:pdf_reader_converter, xpath: "#{footer_xpath}//a[@href = '/pdf-editor.aspx']")
     link(:security, xpath: "#{footer_xpath}//a[contains(@href, 'security')]")
     link(:accessibility, xpath: "#{footer_xpath}//a[contains(@href, 'accessibility')]")
     link(:ai_helper, xpath: "#{footer_xpath}//a[contains(@href, '/app-directory/chatgpt')]")
