@@ -15,7 +15,6 @@ module TestingSiteOnlyoffice
     link(:docspace_on_premises, xpath: '//a[contains(@class, "docspace-on-premises")]')
     link(:startup_cloud_button, xpath: '//div[@class = "pp_button"]/a')
 
-
     def initialize(instance)
       super(instance.webdriver.driver)
       @instance = instance
