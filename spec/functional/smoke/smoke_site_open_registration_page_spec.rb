@@ -19,8 +19,8 @@ describe 'Site Smoke open registration page' do
       end
 
       it "Open trial form Pricing->Cloud Service page in #{current_language} language" do
-        pricing_cloud_page = @site_home_page.click_link_on_toolbar(:pricing_docspace).click_cloud
-        sign_up_page = pricing_cloud_page.startup_start_now
+        pricing_cloud_page = @site_home_page.click_link_on_toolbar(:pricing_docspace)
+        sign_up_page = pricing_cloud_page.click_startup_cloud
         expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp
       end
 

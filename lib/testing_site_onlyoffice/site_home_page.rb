@@ -92,7 +92,6 @@ require_relative 'partners/site_partners_find'
 
 require_relative 'pricing/site_pricing_docspace_prices'
 require_relative 'pricing/site_pricing_server_enterprise'
-require_relative 'pricing/price_cloud/site_pricing_cloud'
 require_relative 'pricing/site_pricing_docs_enterprise'
 require_relative 'pricing/site_pricing_docs_developer'
 require_relative 'pricing/site_pricing_workspace'
