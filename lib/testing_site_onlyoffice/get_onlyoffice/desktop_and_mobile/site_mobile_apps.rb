@@ -38,5 +38,10 @@ module TestingSiteOnlyoffice
         mobile_ios: site_mobile_app_store_element
       }
     end
+
+    def open_mobile_app_gallery
+      site_mobile_appgallery_element.click
+      sleep 10
+    end
   end
 end
