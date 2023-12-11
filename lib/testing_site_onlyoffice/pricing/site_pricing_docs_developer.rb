@@ -12,6 +12,7 @@ module TestingSiteOnlyoffice
     include SiteToolbar
 
     link(:get_quote_button, xpath: "//div[@class='dep-part ee-production ee-2']//a[contains(@data-id, 'ie-gaq')]")
+    link(:buy_now_button, xpath: '//a[@data-id = "ie-price-url-updated"]')
     link(:free_button, xpath: '//div[@class="dep-part ee-production ee-2"]//div[@class="ee-text-part"]/a')
     div(:add_num_connection, xpath: '//div[@class="num-connections"]//div[@class="connections_increase simcon_change"]')
     div(:num_connections, xpath: '//div[@class="dep-part ee-production ee-2"]//div[@data-id="ie-number-updated"]')
@@ -23,7 +24,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { button_get_quote_present? }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(buy_now_button_element) }
     end
 
     def click_free_button

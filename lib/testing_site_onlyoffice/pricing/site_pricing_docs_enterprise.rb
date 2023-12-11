@@ -13,7 +13,7 @@ module TestingSiteOnlyoffice
     include SiteToolbar
 
     link(:buy_now_home_server, xpath: '//div[@class="ee-text-part"]/a[@class="button red"]')
-    link(:try_free_button, xpath: '//div[@class="dep-part ee-business"]//div[@class="ee-text-part"]/a')
+    link(:try_free_button, xpath: '//a[contains(@class, "not-shown-cloud")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
