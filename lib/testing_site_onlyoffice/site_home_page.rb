@@ -185,7 +185,7 @@ module TestingSiteOnlyoffice
 
     def start_registration
       OnlyofficeLoggerHelper.log('Starting registration')
-      try_in_the_cloud_element.click
+      see_it_action_element.click
       SiteGetOnlyofficeSignUp.new(@instance)
     end
 
