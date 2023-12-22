@@ -75,7 +75,7 @@ module TestingSiteOnlyoffice
     end
 
     def click_download_desktop(platform)
-      @instance.webdriver.click_on_locator(send("desktop_#{platform}_element"))
+      @instance.webdriver.click_on_locator(send(:"desktop_#{platform}_element"))
       SiteGetOnlyofficeDesktopApps.new(@instance)
     end
   end

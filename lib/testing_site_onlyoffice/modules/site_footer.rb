@@ -70,8 +70,8 @@ module TestingSiteOnlyoffice
                      form_creator: SiteFeaturesFormCreator }
 
     footer_links.each_key do |link|
-      define_method("click_#{link}") do
-        @instance.webdriver.click_on_locator(send("#{link}_element"))
+      define_method(:"click_#{link}") do
+        @instance.webdriver.click_on_locator(send(:"#{link}_element"))
         footer_links[link].new(@instance)
       end
     end

@@ -53,8 +53,8 @@ module TestingSiteOnlyoffice
     }
 
     button_classes.each_key do |element|
-      define_method("check_button_#{element}?") do
-        @instance.webdriver.click_on_locator(send("#{element}_element"))
+      define_method(:"check_button_#{element}?") do
+        @instance.webdriver.click_on_locator(send(:"#{element}_element"))
         button_classes[element].new(@instance)
       end
     end
