@@ -48,15 +48,15 @@ module TestingSiteOnlyoffice
     end
 
     def add_user_number(number, tariff)
-      @instance.webdriver.click_on_locator(send("add_user_num_#{tariff}_element")) while number != connections_number(tariff)
+      @instance.webdriver.click_on_locator(send(:"add_user_num_#{tariff}_element")) while number != connections_number(tariff)
     end
 
     def connections_number(tariff)
-      @instance.webdriver.get_text(send("connections_number_#{tariff}_element"))
+      @instance.webdriver.get_text(send(:"connections_number_#{tariff}_element"))
     end
 
     def buy_now_button(tariff)
-      send("buy_button_#{tariff}_element")
+      send(:"buy_button_#{tariff}_element")
     end
 
     def button_get_quote_present?(tariff)
@@ -64,14 +64,14 @@ module TestingSiteOnlyoffice
     end
 
     def total_price_sum(tariff)
-      @instance.webdriver.get_text(send("total_price_#{tariff}_element"))
+      @instance.webdriver.get_text(send(:"total_price_#{tariff}_element"))
     end
 
     def total_price_upon_request(tariff)
       @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(send("total_price_upon_req_#{tariff}_element"))
+        @instance.webdriver.element_present?(send(:"total_price_upon_req_#{tariff}_element"))
       end
-      @instance.webdriver.get_text(send("total_price_upon_req_#{tariff}_element"))
+      @instance.webdriver.get_text(send(:"total_price_upon_req_#{tariff}_element"))
     end
   end
 end
