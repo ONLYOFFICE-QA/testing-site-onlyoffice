@@ -19,7 +19,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until do
+      @instance.webdriver.wait_until(wait_js: false) do
         help_center_site_map_visible?
       end
     end
