@@ -29,7 +29,7 @@ describe 'Site search' do
     search_string = 'calendar'
     result_page = @site_home_page.search(search_string)
     expect(result_page.search_result_count).to be > 0
-    expect(result_page.search_results.first.snippet_text).to be_include(search_string)
+    expect(result_page.search_results.first.snippet_text).to include(search_string)
   end
 
   it 'xss injection return No results matching your query page' do
