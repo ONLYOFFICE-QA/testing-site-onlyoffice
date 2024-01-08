@@ -9,7 +9,8 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteLanguages
 
-    link(:logo_home, xpath: '//header//span[contains(@class, "logo")]//a')
+    # This xpath for logo is only applicable for Blog
+    link(:logo_home, xpath: '//header//div[contains(@class, "navbar")]/a')
 
     # top toolbar - Features
     link(:site_features, xpath: '//a[@id="navitem_features"]')
