@@ -9,7 +9,7 @@ shared_examples_for 'document_builder_download' do |installers_list|
 
       it "[Site][DownloadDocumentBuilder][#{installer}] 'Download' button for`#{installer}`/download.aspx#builder" do
         expected_download_file = TestingSiteOnlyoffice::SiteDownloadData.document_builder_info[installer.to_s]['download']
-        expect(installers_download_page).to be_link_alive_and_valid(@current_installation.download_xpath, expected_download_file)
+        expect(installers_download_page).to be_link_alive_and_valid(@current_installation.download_xpath, expected_download_file, doc_builder: true)
       end
 
       it "[Site][DownloadDocumentBuilder][#{installer}] 'Read installation instructions' works for`#{installer}`/download.aspx#builder" do
