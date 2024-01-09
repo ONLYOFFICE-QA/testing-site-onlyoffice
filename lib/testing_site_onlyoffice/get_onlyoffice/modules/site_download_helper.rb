@@ -27,8 +27,12 @@ module TestingSiteOnlyoffice
       link_success_response?(install_button_element.attribute('href'))
     end
 
-    def link_alive_and_valid?(xpath, expected_link)
-      install_link = @instance.webdriver.get_element(xpath).attribute('data-download')
+    def link_alive_and_valid?(xpath, expected_link, doc_builder: false)
+      install_link = if doc_builder
+                       @instance.webdriver.get_element(xpath).attribute('data-download')
+                     else
+                       @instance.webdriver.get_element(xpath).attribute('href')
+                     end
       link_success_response?(install_link) && install_link.include?(expected_link)
     end
 
