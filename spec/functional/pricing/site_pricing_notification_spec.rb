@@ -7,8 +7,7 @@ describe 'Pricing Get a quote notification email' do
 
   before do
     @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @mail = OnlyofficeIredmailHelper::IredMailHelper.new(username: 'partners@qamail.teamlab.info',
-                                                         password: TestingSiteOnlyoffice::SitePrivateData::PARTNERS_PASSWORD)
+    @mail = OnlyofficeIredmailHelper::IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL)
   end
 
   after do |example|

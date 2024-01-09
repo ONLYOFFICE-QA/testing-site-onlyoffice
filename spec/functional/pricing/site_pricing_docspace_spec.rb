@@ -7,8 +7,6 @@ describe 'Pricing DocSpace' do
 
   before do
     @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @mail = OnlyofficeIredmailHelper::IredMailHelper.new(username: 'partners@qamail.teamlab.info',
-                                                         password: TestingSiteOnlyoffice::SitePrivateData::PARTNERS_PASSWORD)
   end
 
   after do |example|
@@ -19,18 +17,6 @@ describe 'Pricing DocSpace' do
   it 'Try it free' do
     pricing_page = @site_home_page.click_link_on_toolbar(:pricing_docspace)
     expect(pricing_page.click_try_free_button).to be_a TestingSiteOnlyoffice::SiteDocSpaceDownloadEnterprise
-  end
-
-  describe 'Check email notification' do
-    TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:support_level].each do |level|
-      it "Send notification email for #{level} support, More connections" do
-        pricing_page = @site_home_page.click_link_on_toolbar(:pricing_docspace)
-        pricing_page.click_enterprise_on_premises
-        pricing_page.fill_data_pricing_page('More', level)
-        pricing_page.complete_pricing_page_form
-
-      end
-    end
   end
 
   it_behaves_like 'pricing_buy_page', 'PricingDocSpace',

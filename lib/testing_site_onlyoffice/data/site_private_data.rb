@@ -5,7 +5,6 @@ require 'yaml'
 module TestingSiteOnlyoffice
   # Class for storing config parameters
   class SitePrivateData
-    PARTNERS_PASSWORD = "123456"
     def initialize(file: "#{Dir.pwd}/lib/testing_site_onlyoffice/data/private_data/data.yml.gpg",
                    pass_file: "#{Dir.home}/.config/onlyoffice/qa-testing-site-onlyoffice.yml")
       @file = file
