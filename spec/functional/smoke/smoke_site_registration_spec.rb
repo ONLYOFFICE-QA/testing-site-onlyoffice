@@ -11,7 +11,6 @@ describe 'Site Smoke' do
   end
 
   describe 'Site' do
-
     after do
       @test.webdriver.quit
     end
@@ -23,7 +22,6 @@ describe 'Site Smoke' do
 
     TestingSiteOnlyoffice::SiteData.site_languages.each do |current_language|
       describe "Registration #{current_language}" do
-
         after do
           @test.webdriver.quit
         end

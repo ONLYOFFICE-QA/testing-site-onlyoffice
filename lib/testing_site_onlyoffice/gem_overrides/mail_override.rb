@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module OnlyofficeIredmailHelper
   # Additional method to work with IredMailHelper class
   class IredMailHelper
