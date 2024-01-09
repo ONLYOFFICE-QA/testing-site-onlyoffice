@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
-require 'timeout'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
@@ -12,6 +11,10 @@ describe 'Site Smoke' do
   end
 
   describe 'Site' do
+    after do
+      @test.webdriver.quit
+    end
+
     it '[Site] Check exists languages' do
       site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
       expect(site_home_page.get_all_language_from_site.sort).to eq(TestingSiteOnlyoffice::SiteData.site_languages.sort)
@@ -19,6 +22,10 @@ describe 'Site Smoke' do
 
     TestingSiteOnlyoffice::SiteData.site_languages.each do |current_language|
       describe "Registration #{current_language}" do
+        after do
+          @test.webdriver.quit
+        end
+
         let(:portal_creation_data) { TestingSiteOnlyoffice::SitePortalCreationData.new.get_instance_hash }
         let(:portal_url) { TestingSiteOnlyoffice::PortalHelper.new.get_full_portal_name(portal_creation_data[:portal_name]) }
 
