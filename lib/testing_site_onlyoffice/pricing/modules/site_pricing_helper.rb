@@ -30,6 +30,9 @@ module TestingSiteOnlyoffice
     button(:submit_button, xpath: '//input[@id = "sbmtRequest"]')
     span(:support_multi_server, xpath: '//input[@id = "multi-server-deployment"]/following-sibling::span')
     span(:training_courses, xpath: '//input[@id = "training-courses"]/following-sibling::span')
+    span(:support_disaster_recovery, xpath: '//input[@id = "disaster-recovery"]/following-sibling::span')
+    div(:one_year_license, xpath: '//div[@data-id = "de-1-year"]')
+    div(:lifetime_license, xpath: '//div[@data-id = "de-lifetime"]')
 
     def go_to_payment_from_pricing_page(buy_element, test_purchase: false)
       workaround_webdriver_hangs_on_timeout(buy_element)
@@ -124,9 +127,14 @@ module TestingSiteOnlyoffice
       @instance.webdriver.get_text(num_connections_element)
     end
 
-    def fill_data_pricing_page(number_connection, support_level, support_multi: false, training_course: false)
+    def activate_license(duration)
+      send(:"#{duration}_license_element").click
+    end
+
+    def fill_data_pricing_page(number_connection, support_level, support_recovery: false, support_multi: false, training_course: false)
       choose_number_connection(number_connection)
       choose_support_level(support_level)
+      support_disaster_recovery_element.click if support_recovery
       support_multi_server_element.click if support_multi
       training_courses_element.click if training_course
     end
