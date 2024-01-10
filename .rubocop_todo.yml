@@ -67,7 +67,7 @@ Naming/VariableNumber:
 # Offense count: 21
 # Configuration parameters: CountAsOne.
 RSpec/ExampleLength:
-  Max: 10
+  Max: 17
 
 # Offense count: 13
 # Configuration parameters: AllowedGroups.
