@@ -25,14 +25,14 @@ describe 'Pricing Get a quote notification email' do
         company_name = Faker::Company.name
         mail_subject = "#{company_name} - DocSpace Enterprise Request [from: docspace-prices]"
         pricing_page.complete_pricing_page_form(phone_number:, company_name:)
-        expect(@mail.check_pricing_docspace_mail_by_body(subject: mail_subject,
-                                                         phone_number:,
-                                                         company_name:,
-                                                         level:,
-                                                         users_number: 'More',
-                                                         support_multi: true,
-                                                         training_course: true,
-                                                         move_out: true)).to be_truthy
+        expect(@mail.check_pricing_docspace_mail_body(subject: mail_subject,
+                                                      phone_number:,
+                                                      company_name:,
+                                                      level:,
+                                                      users_number: 'More',
+                                                      support_multi: true,
+                                                      training_course: true,
+                                                      move_out: true)).to be_truthy
       end
 
       it "Send notification email for #{level} support, More connections" do
@@ -43,12 +43,12 @@ describe 'Pricing Get a quote notification email' do
         company_name = Faker::Company.name
         mail_subject = "#{company_name} - DocSpace Enterprise Request [from: docspace-prices]"
         pricing_page.complete_pricing_page_form(phone_number:, company_name:)
-        expect(@mail.check_pricing_docspace_mail_by_body(subject: mail_subject,
-                                                         phone_number:,
-                                                         company_name:,
-                                                         level:,
-                                                         users_number: 'More',
-                                                         move_out: true)).to be_truthy
+        expect(@mail.check_pricing_docspace_mail_body(subject: mail_subject,
+                                                      phone_number:,
+                                                      company_name:,
+                                                      level:,
+                                                      users_number: 'More',
+                                                      move_out: true)).to be_truthy
       end
     end
   end
@@ -64,16 +64,16 @@ describe 'Pricing Get a quote notification email' do
           company_name = Faker::Company.name
           mail_subject = "#{company_name} - Docs Enterprise Request (On-premises) [from: docs-enterprise-prices]"
           pricing_page.complete_pricing_page_form(phone_number:, company_name:)
-          expect(@mail.check_pricing_enterprise_mail_by_body(subject: mail_subject,
-                                                             phone_number:,
-                                                             company_name:,
-                                                             level:,
-                                                             duration:,
-                                                             users_number: 'More',
-                                                             support_recovery: true,
-                                                             support_multi: true,
-                                                             training_course: true,
-                                                             move_out: true)).to be_truthy
+          expect(@mail.check_pricing_enterprise_mail_body(subject: mail_subject,
+                                                          phone_number:,
+                                                          company_name:,
+                                                          level:,
+                                                          duration:,
+                                                          users_number: 'More',
+                                                          support_recovery: true,
+                                                          support_multi: true,
+                                                          training_course: true,
+                                                          move_out: true)).to be_truthy
         end
 
         it "Send notification email for #{duration} #{level} support, More connections" do
@@ -84,13 +84,36 @@ describe 'Pricing Get a quote notification email' do
           company_name = Faker::Company.name
           mail_subject = "#{company_name} - Docs Enterprise Request (On-premises) [from: docs-enterprise-prices]"
           pricing_page.complete_pricing_page_form(phone_number:, company_name:)
-          expect(@mail.check_pricing_enterprise_mail_by_body(subject: mail_subject,
-                                                             phone_number:,
-                                                             company_name:,
-                                                             level:,
-                                                             duration:,
-                                                             users_number: 'More',
-                                                             move_out: true)).to be_truthy
+          expect(@mail.check_pricing_enterprise_mail_body(subject: mail_subject,
+                                                          phone_number:,
+                                                          company_name:,
+                                                          level:,
+                                                          duration:,
+                                                          users_number: 'More',
+                                                          move_out: true)).to be_truthy
+        end
+      end
+    end
+    describe 'Check Docs Enterprise cloud notification' do
+      TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:docs_enterprise_cloud_type].each do |type|
+        TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:support_level].each do |level|
+          it "Send notification email for #{type} #{level} support, Training courses" do
+            pricing_page = @site_home_page.click_link_on_toolbar(:pricing_enterprise)
+            pricing_page.click_cloud
+            pricing_page.fill_data_pricing_page(level, training_course: true)
+            pricing_page.choose_cloud_type(type)
+            phone_number = Faker::PhoneNumber.cell_phone_in_e164
+            company_name = Faker::Company.name
+            mail_subject = "#{company_name} - Docs Enterprise Request (Cloud) [from: docs-enterprise-prices]"
+            pricing_page.complete_pricing_page_form(phone_number:, company_name:)
+            expect(@mail.check_pricing_enterprise_cloud_mail_body(subject: mail_subject,
+                                                                  phone_number:,
+                                                                  company_name:,
+                                                                  level:,
+                                                                  type:,
+                                                                  training_course: true,
+                                                                  move_out: true)).to be_truthy
+          end
         end
       end
     end
