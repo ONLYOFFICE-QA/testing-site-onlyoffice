@@ -15,6 +15,10 @@ module TestingSiteOnlyoffice
     link(:buy_now_home_server, xpath: '//div[@class="ee-text-part"]/a[@class="button red"]')
     link(:try_free_button, xpath: '//a[contains(@class, "not-shown-cloud")]')
 
+    # Switch between cloud and on-premises
+    div(:cloud, xpath: '//div[@data-id = "dd-cloud"]')
+    div(:on_premises, xpath: '//div[@data-id = "dd-on-premises"]')
+
     def initialize(instance)
       super(instance.webdriver.driver)
       @instance = instance
@@ -37,6 +41,14 @@ module TestingSiteOnlyoffice
 
     def check_active_tariff?(tariff)
       true if @instance.webdriver.get_attribute("//div[@data-id='ee-#{tariff}']", 'class').include?('active')
+    end
+
+    def click_cloud
+      cloud_element.click
+    end
+
+    def click_on_premises
+      on_premises_element.click
     end
   end
 end

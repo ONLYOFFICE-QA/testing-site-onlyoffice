@@ -33,6 +33,8 @@ module TestingSiteOnlyoffice
     span(:support_disaster_recovery, xpath: '//input[@id = "disaster-recovery"]/following-sibling::span')
     div(:one_year_license, xpath: '//div[@data-id = "de-1-year"]')
     div(:lifetime_license, xpath: '//div[@data-id = "de-lifetime"]')
+    div(:cloud_type_business, xpath: '//div[@data-id = "de-business"]')
+    div(:cloud_type_vip, xpath: '//div[@data-id = "de-vip"]')
 
     def go_to_payment_from_pricing_page(buy_element, test_purchase: false)
       workaround_webdriver_hangs_on_timeout(buy_element)
@@ -131,8 +133,12 @@ module TestingSiteOnlyoffice
       send(:"#{duration}_license_element").click
     end
 
-    def fill_data_pricing_page(number_connection, support_level, support_recovery: false, support_multi: false, training_course: false)
-      choose_number_connection(number_connection)
+    def choose_cloud_type(type)
+      send(:"cloud_type_#{type.downcase}_element").click
+    end
+
+    def fill_data_pricing_page(support_level, number_connection = nil, support_recovery: false, support_multi: false, training_course: false)
+      choose_number_connection(number_connection) unless number_connection.nil?
       choose_support_level(support_level)
       support_disaster_recovery_element.click if support_recovery
       support_multi_server_element.click if support_multi

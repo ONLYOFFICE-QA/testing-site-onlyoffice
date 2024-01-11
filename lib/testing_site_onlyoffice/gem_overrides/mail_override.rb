@@ -3,24 +3,44 @@
 module OnlyofficeIredmailHelper
   # Additional method to work with IredMailHelper class
   class IredMailHelper
-    def check_pricing_docspace_mail_by_body(params = {})
-      email_body = get_text_body_email_by_subject(params)
-      number = parse_phone_number(email_body)
-      email_body.sub!(number, number.delete(' '))
-      body = split_email_body(email_body)
-      basic_email_content_check(body, params) && multi_server_deployment?(params[:support_multi], body) && training_courses?(params[:training_course], body)
+    def check_pricing_docspace_mail_body(params = {})
+      body = parse_email_body(params)
+      basic_email_content_check(body, params) &&
+        multi_server_deployment?(params[:support_multi], body) &&
+        training_courses?(params[:training_course], body)
     end
 
-    def check_pricing_enterprise_mail_by_body(params = {})
-      email_body = get_text_body_email_by_subject(params)
-      number = parse_phone_number(email_body)
-      email_body.sub!(number, number.delete(' '))
-      body = split_email_body(email_body)
+    def check_pricing_enterprise_mail_body(params = {})
+      body = parse_email_body(params)
       basic_email_content_check(body, params) &&
         recovery_support?(params[:support_recovery], body) &&
         multi_server_deployment?(params[:support_multi], body) &&
         training_courses?(params[:training_course], body) &&
         license_activated?(params[:duration], body)
+    end
+
+    def check_pricing_enterprise_cloud_mail_body(params = {})
+      body = parse_email_body(params)
+      full_name_match?(params.fetch(:full_name, TestingSiteOnlyoffice::SiteData::DEFAULT_ADMIN_FULLNAME), body) &&
+        email_match?(params.fetch(:email, TestingSiteOnlyoffice::SiteData::EMAIL_ADMIN), body) &&
+        phone_number_match?(params[:phone_number], body) &&
+        company_name_match?(params[:company_name], body) &&
+        support_level_match?(params[:level], body) &&
+        training_courses?(params[:training_course], body) &&
+        cloud_type_match?(params[:type], body)
+    end
+
+    # Method that parses email body and returns it in array
+    # 1. Get the email body in a single string
+    # 2. Get the phone number from the string and replace it without any 'space' characters to match the E.164 format
+    # 3. Split the email body into array of strings
+    # @param [Hash] params hash containing all parameters
+    # @return [Array] array of strings
+    def parse_email_body(params)
+      email_body = get_text_body_email_by_subject(params)
+      number = parse_phone_number(email_body)
+      email_body.sub!(number, number.delete(' '))
+      split_email_body(email_body)
     end
 
     # Split email body string into an array of strings without "space" character
@@ -108,6 +128,10 @@ module OnlyofficeIredmailHelper
       elsif duration == 'lifetime'
         (license == 'Lifetime') && (support == '3')
       end
+    end
+
+    def cloud_type_match?(type, body)
+      type == body[body.find_index('type') + 1]
     end
 
     # Get the value of a phone number from the email body.
