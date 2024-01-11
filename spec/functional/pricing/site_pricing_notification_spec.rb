@@ -118,8 +118,4 @@ describe 'Pricing Get a quote notification email' do
       end
     end
   end
-
-  describe 'Check Docs Developer' do
-    
-  end
 end
