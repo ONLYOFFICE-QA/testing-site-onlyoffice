@@ -28,13 +28,34 @@ module TestingSiteOnlyoffice
     text_field(:phone_number, xpath: '//input[@id = "txtPhone"]')
     text_field(:company_name, xpath: '//input[@id = "txtCompanyName"]')
     button(:submit_button, xpath: '//input[@id = "sbmtRequest"]')
+
+    # Scalability radio buttons
     span(:support_multi_server, xpath: '//input[@id = "multi-server-deployment"]/following-sibling::span')
     span(:training_courses, xpath: '//input[@id = "training-courses"]/following-sibling::span')
     span(:support_disaster_recovery, xpath: '//input[@id = "disaster-recovery"]/following-sibling::span')
+
+    # Licensing buttons
     div(:one_year_license, xpath: '//div[@data-id = "de-1-year"]')
     div(:lifetime_license, xpath: '//div[@data-id = "de-lifetime"]')
+
+    # Switches
     div(:cloud_type_business, xpath: '//div[@data-id = "de-business"]')
     div(:cloud_type_vip, xpath: '//div[@data-id = "de-vip"]')
+
+    # Servers radio buttons
+    span(:development, xpath: '//input[@id = "development"]/following-sibling::span')
+    span(:production, xpath: '//input[@id = "production"]/following-sibling::span')
+    span(:non_production, xpath: '//input[@id = "non-production"]/following-sibling::span')
+
+    # Servers number of connections fields
+    text_field(:connections_development, xpath: '//input[@id = "dd-development-servers"]')
+    text_field(:connections_production, xpath: '//input[@id = "dd-production-servers"]')
+    text_field(:connections_non_production, xpath: '//input[@id = "dd-non-production-servers"]')
+    div(:add_connections_production, xpath: '//div[contains(@class, "dd-production-conns")]/div[contains(@class, "connections_increase")]')
+
+    # Branding (Standard, White Labeled)
+    div(:standard_branding, xpath: '//div[@data-id = "de-standard-branding"]')
+    div(:white_labeled_branding, xpath: '//div[@data-id = "de-white-label"]')
 
     def go_to_payment_from_pricing_page(buy_element, test_purchase: false)
       workaround_webdriver_hangs_on_timeout(buy_element)
@@ -135,6 +156,24 @@ module TestingSiteOnlyoffice
 
     def choose_cloud_type(type)
       send(:"cloud_type_#{type.downcase}_element").click
+    end
+
+    def activate_servers(number_servers, number_connections, servers = [])
+      return if servers.empty?
+
+      servers.each do |server|
+        @instance.webdriver.wait_until { @instance.webdriver.element_present?(send(:"#{server}_element")) }
+        send(:"#{server}_element").click unless server == 'development'
+        self.send(:"connections_#{server}=", number_servers)
+      end
+      return unless servers.include?('production')
+
+      choose_number_connection(number_connections)
+
+    end
+
+    def choose_branding(brand)
+      send(:"#{brand.downcase}_branding_element").click
     end
 
     def fill_data_pricing_page(support_level, number_connection = nil, support_recovery: false, support_multi: false, training_course: false)

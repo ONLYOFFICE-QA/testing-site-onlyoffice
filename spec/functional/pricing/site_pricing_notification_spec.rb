@@ -118,4 +118,25 @@ describe 'Pricing Get a quote notification email' do
       end
     end
   end
+
+  describe 'Check Docs Developer notification' do
+    TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:docs_developer_branding].each do |branding|
+      TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:support_level].each do |level|
+        it "Send notification #{branding} #{level} support with Scalability and Additional tools" do
+          pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
+          pricing_page.fill_data_pricing_page(level, support_recovery: true, support_multi: true)
+          servers_number = Faker::Number.within(range: 1..9999)
+          pricing_page.activate_servers(servers_number, 'More', %w[development production non_production])
+          pricing_page.choose_branding(branding)
+          expect(@mail.check_pricing_enterprise_cloud_mail_body(subject: mail_subject,
+                                                                phone_number:,
+                                                                company_name:,
+                                                                level:,
+                                                                type:,
+                                                                training_course: true,
+                                                                move_out: true)).to be_truthy
+        end
+      end
+    end
+  end
 end
