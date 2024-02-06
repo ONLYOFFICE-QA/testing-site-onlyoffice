@@ -137,7 +137,7 @@ module TestingSiteOnlyoffice
       send(:"cloud_type_#{type.downcase}_element").click
     end
 
-    def fill_data_pricing_page(support_level, number_connection = nil, support_recovery: false, support_multi: false, training_course: false)
+    def fill_data_pricing_page(support_level, number_connection: nil, support_recovery: false, support_multi: false, training_course: false)
       choose_number_connection(number_connection) unless number_connection.nil?
       choose_support_level(support_level)
       support_disaster_recovery_element.click if support_recovery
