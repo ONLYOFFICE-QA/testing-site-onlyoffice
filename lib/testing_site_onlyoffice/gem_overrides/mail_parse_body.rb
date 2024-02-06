@@ -4,7 +4,6 @@ require_relative 'mail_helper'
 require 'onlyoffice_iredmail_helper'
 
 module OnlyofficeIredmailHelper
-
   # Class that holds email body which is parsed into array of strings
   class MailParseBody < IredMailHelper
     include MailHelper

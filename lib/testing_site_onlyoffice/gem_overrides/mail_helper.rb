@@ -3,10 +3,8 @@
 require_relative '../data/site_data'
 
 module OnlyofficeIredmailHelper
-
   # Module with methods to work with email body
   module MailHelper
-
     # Check whether full name from parameters is equal to the name from an email.
     # Find an index of the word that comes before the name and take the next word as name.
     # E.g. 'Full', 'name', 'Andrew', 'Johnson' -> 'name' is the key word here so the next word is the actual name -> 'Andrew'
