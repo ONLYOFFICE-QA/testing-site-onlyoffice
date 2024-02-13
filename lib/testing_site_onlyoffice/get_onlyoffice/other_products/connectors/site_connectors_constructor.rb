@@ -12,7 +12,7 @@ module TestingSiteOnlyoffice
       super(instance.webdriver.driver)
       @instance = instance
       @installer = installer
-      @get_on_github_xpath = "//a[@id='onlyoffice_connectors_for_#{installer}']"
+      @get_on_github_xpath = "//a[@id='#{installer}_button']"
       @instruction_xpath = "(#{@get_on_github_xpath}/../..//a)[2]"
       @whats_new_xpath = "#{@get_on_github_xpath}/../..//a[contains(@href,'CHANGELOG')]"
       @version_xpath = "#{@get_on_github_xpath}/../../div/p[1]"
