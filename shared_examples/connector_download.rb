@@ -10,7 +10,7 @@ shared_examples_for 'connector_download' do |connectors_list|
       it "[Site][Connectors][#{connector}] 'Get on Github' button works /download-connectors.aspx" do
         connectors_page.click_constructor_link(@current_installation.get_on_github_xpath)
         github_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_info[connector.to_s]['github']
-        expect(connectors_page.check_opened_page_title(switch_tab: false)).to eq(github_title)
+        expect(connectors_page.check_opened_page_title).to eq(github_title)
       end
     end
   end
