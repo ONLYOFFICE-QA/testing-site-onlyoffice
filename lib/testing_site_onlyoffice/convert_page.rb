@@ -11,10 +11,10 @@ module TestingSiteOnlyoffice
 
     file_field(:uploader, xpath: '//*[@id="fileInput"]')
 
-    DOC_FORMATS = %w[PDF PDFA DOCX DOCXF TXT RTF EPUB FB2 HTML DOCM DOTX DOTM ODT OTT].freeze
-    SPREADSHEET_FORMATS = %w[PDF PDFA XLSX CSV ODS OTS XLTX XLTM XLSM].freeze
-    PRESENTATION_FORMATS = %w[PDF PDFA PPTX ODP OTP POTX POTM PPTM].freeze
-    PDF_FORMATS = %w[PDF PDFA DOCX DOCXF TXT RTF EPUB FB2 HTML DOCM DOTX DOTM ODT OTT].freeze
+    DOC_FORMATS = Set.new(%w[PDF PDFA DOCX DOCXF TXT RTF EPUB FB2 HTML DOCM DOTX DOTM ODT OTT PNG JPG BMP GIF]).freeze
+    SPREADSHEET_FORMATS = Set.new(%w[PDF PDFA XLSX CSV ODS OTS XLTX XLTM XLSM PNG JPG BMP GIF]).freeze
+    PRESENTATION_FORMATS = Set.new(%w[PDF PDFA PPTX ODP OTP POTX POTM PPTM PPSM PPSX PNG JPG BMP GIF]).freeze
+    PDF_FORMATS = Set.new(%w[PDF PDFA DOCX DOCXF TXT RTF EPUB FB2 HTML DOCM DOTX DOTM ODT OTT PNG JPG BMP GIF]).freeze
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -52,7 +52,8 @@ module TestingSiteOnlyoffice
     # @return [Array<String>] array of formats
     def file_formats_list
       formats_xpath = "//div[contains(@class, 'output_items')]/div"
-      @instance.webdriver.get_text_of_several_elements(formats_xpath)
+      formats_array = @instance.webdriver.get_text_of_several_elements(formats_xpath)
+      formats_array.to_set
     end
 
     # Check whether popup with error message appeared or not
