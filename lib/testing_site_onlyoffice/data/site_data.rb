@@ -11,6 +11,7 @@ module TestingSiteOnlyoffice
     CLIENT_EMAIL = 'client@qamail.teamlab.info'
     EMAIL_ADMIN = 'admin@qamail.teamlab.info'
     PARTNERS_EMAIL = 'partners@qamail.teamlab.info'
+    EMAIL_FOR_BYPASSING_CAPTCHA = 'teamlab.ruby@gmail.com'
 
     NON_PROFIT_PORTAL_NAME = 'qateamlab-non-profit-portal'
 
