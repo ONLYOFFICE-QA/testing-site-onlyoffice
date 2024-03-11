@@ -45,7 +45,6 @@ module TestingSiteOnlyoffice
       self.uploader = file_path
     end
 
-    # Shows the email input field on the page.
     # Uses JavaScript to change the element's class, making it visible for bypassing captcha
     def show_email_field
       @instance.webdriver.execute_javascript("document.getElementById('emailInput').className = 'display';")
@@ -53,8 +52,8 @@ module TestingSiteOnlyoffice
 
     # Sends a predefined email address and simulates pressing the Enter key for bypassing captcha
     def send_email
-      email=SiteData::EMAIL_FOR_BYPASSING_CAPTCHA
-      self.email_hidden_field_element.send_keys(email, :enter)
+      email = SiteData::EMAIL_FOR_BYPASSING_CAPTCHA
+      email_hidden_field_element.send_keys(email, :enter)
     end
 
     # Click on the available for conversion formats button
