@@ -12,7 +12,6 @@ module TestingSiteOnlyoffice
     file_field(:uploader, xpath: '//*[@id="fileInput"]')
     text_field(:email_hidden_field, id: 'emailInput')
 
-
     DOC_FORMATS = Set.new(%w[PDF PDFA DOCX DOCXF TXT RTF EPUB FB2 HTML DOCM DOTX DOTM ODT OTT PNG JPG BMP GIF]).freeze
     SPREADSHEET_FORMATS = Set.new(%w[PDF PDFA XLSX CSV ODS OTS XLTX XLTM XLSM PNG JPG BMP GIF]).freeze
     PRESENTATION_FORMATS = Set.new(%w[PDF PDFA PPTX ODP OTP POTX POTM PPTM PPSM PPSX PNG JPG BMP GIF]).freeze
