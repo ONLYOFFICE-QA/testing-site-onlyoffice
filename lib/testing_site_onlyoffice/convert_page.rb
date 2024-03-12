@@ -10,11 +10,12 @@ module TestingSiteOnlyoffice
     include PageObject
 
     file_field(:uploader, xpath: '//*[@id="fileInput"]')
+    text_field(:email_hidden_field, id: 'emailInput')
 
-    DOC_FORMATS = %w[PDF PDFA DOCX DOCXF TXT RTF EPUB FB2 HTML DOCM DOTX DOTM ODT OTT].freeze
-    SPREADSHEET_FORMATS = %w[PDF PDFA XLSX CSV ODS OTS XLTX XLTM XLSM].freeze
-    PRESENTATION_FORMATS = %w[PDF PDFA PPTX ODP OTP POTX POTM PPTM].freeze
-    PDF_FORMATS = %w[PDF PDFA DOCX DOCXF TXT RTF EPUB FB2 HTML DOCM DOTX DOTM ODT OTT].freeze
+    DOC_FORMATS = Set.new(%w[PDF PDFA DOCX DOCXF TXT RTF EPUB FB2 HTML DOCM DOTX DOTM ODT OTT PNG JPG BMP GIF]).freeze
+    SPREADSHEET_FORMATS = Set.new(%w[PDF PDFA XLSX CSV ODS OTS XLTX XLTM XLSM PNG JPG BMP GIF]).freeze
+    PRESENTATION_FORMATS = Set.new(%w[PDF PDFA PPTX ODP OTP POTX POTM PPTM PPSM PPSX PNG JPG BMP GIF]).freeze
+    PDF_FORMATS = Set.new(%w[PDF PDFA DOCX DOCXF TXT RTF EPUB FB2 HTML DOCM DOTX DOTM ODT OTT PNG JPG BMP GIF]).freeze
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -43,16 +44,28 @@ module TestingSiteOnlyoffice
       self.uploader = file_path
     end
 
+    # Uses JavaScript to change the element's class, making it visible for bypassing captcha
+    def show_email_field
+      @instance.webdriver.execute_javascript("document.getElementById('emailInput').className = 'display';")
+    end
+
+    # Sends a predefined email address and simulates pressing the Enter key for bypassing captcha
+    def send_email
+      email = SiteData::EMAIL_FOR_BYPASSING_CAPTCHA
+      email_hidden_field_element.send_keys(email, :enter)
+    end
+
     # Click on the available for conversion formats button
     def convert_formats_button_click
       @instance.webdriver.click_on_locator(@formats_button_xpath)
     end
 
     # Get all available for conversion formats from the page
-    # @return [Array<String>] array of formats
+    # @return [Set<String>] set of formats
     def file_formats_list
       formats_xpath = "//div[contains(@class, 'output_items')]/div"
-      @instance.webdriver.get_text_of_several_elements(formats_xpath)
+      formats_array = @instance.webdriver.get_text_of_several_elements(formats_xpath)
+      formats_array.to_set
     end
 
     # Check whether popup with error message appeared or not
