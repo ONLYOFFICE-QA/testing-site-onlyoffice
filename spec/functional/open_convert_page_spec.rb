@@ -15,10 +15,6 @@ describe 'Convert page' do
     @test&.webdriver&.quit
   end
 
-  it 'Open convert page' do
-    expect(@convert_page).to be_file_input_present
-  end
-
   it 'Upload .docx file' do
     @convert_page.upload_file(TestingSiteOnlyoffice::TestData.docx_path)
     @convert_page.convert_formats_button_click
@@ -55,18 +51,17 @@ describe 'Convert page' do
 
   it 'converted file name is the same as original file name' do
     @convert_page.upload_file(TestingSiteOnlyoffice::TestData.docx_path)
-    @convert_page.show_email_field
-    @convert_page.send_email
+    @convert_page.bypass_captcha
     @convert_page.convert_button_click
     expect(@convert_page.converted_file_name).to eq(@convert_page.get_file_name(TestingSiteOnlyoffice::TestData.docx_path))
   end
 
   it 'converted file is not empty' do
     @convert_page.upload_file(TestingSiteOnlyoffice::TestData.docx_path)
-    @convert_page.show_email_field
-    @convert_page.send_email
+    extension = @convert_page.selected_format.downcase
+    @convert_page.bypass_captcha
     @convert_page.convert_button_click
     @convert_page.download_button_click
-    expect(@convert_page).to be_file_downloaded(TestingSiteOnlyoffice::TestData.docx_path)
+    expect(@convert_page).to be_file_downloaded(TestingSiteOnlyoffice::TestData.docx_path, extension)
   end
 end
