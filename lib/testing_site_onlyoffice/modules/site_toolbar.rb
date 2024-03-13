@@ -29,6 +29,10 @@ module TestingSiteOnlyoffice
     link(:site_features_security, xpath: '//a[@id="navitem_features_security"]')
     link(:site_features_see_it_in_action, xpath: '//a[@id="navitem_features_see_it"]')
     link(:site_features_oforms, xpath: '//a[@id="navitem_features_fill_forms"]')
+    link(:site_features_text_converter, xpath: '//a[@id="navitem_features_convert_text"]')
+    link(:site_features_spreadsheet_converter, xpath: '//a[@id="navitem_features_convert_speadsheets"]')
+    link(:site_features_presentation_converter, xpath: '//a[@id="navitem_features_convert_presentations"]')
+    link(:site_features_pdf_converter, xpath: '//a[@id="navitem_features_convert_pdf"]')
 
     # top toolbar - For Business
     link(:site_for_enterprises, xpath: '//a[@id = "navitem_forbusiness"]')
@@ -168,7 +172,24 @@ module TestingSiteOnlyoffice
         features_oforms: {
           element: site_features_oforms_element,
           class: SiteFeaturesOforms
+        },
+        site_features_text_converter: {
+          element: site_features_text_converter_element,
+          class: ConvertPage
+        },
+        site_features_spreadsheet_converter: {
+          element: site_features_spreadsheet_converter_element,
+          class: ConvertPage
+        },
+        site_features_presentation_converter: {
+          element: site_features_presentation_converter_element,
+          class: ConvertPage
+        },
+        site_features_pdf_converter: {
+          element: site_features_pdf_converter_element,
+          class: ConvertPage
         }
+
       }
     end
 
