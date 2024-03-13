@@ -26,7 +26,7 @@ module TestingSiteOnlyoffice
     link(:conversion_api_button, xpath: "//a[contains(@href, '/editors/conversionapi')]")
     div(:convert_error_message, xpath: "//p[contains(text(), 'The file format is not supported.')]")
     div(:formats_button, xpath: "//div[contains(@class, 'output_select_btn')]")
-    text_field(:email_hidden_field, id: "emailInput")
+    text_field(:email_hidden_field, id: 'emailInput')
 
     DOC_FORMATS = Set.new(%w[PDF PDFA DOCX DOCXF TXT RTF EPUB FB2 HTML DOCM DOTX DOTM ODT OTT PNG JPG BMP GIF]).freeze
     SPREADSHEET_FORMATS = Set.new(%w[PDF PDFA XLSX CSV ODS OTS XLTX XLTM XLSM PNG JPG BMP GIF]).freeze

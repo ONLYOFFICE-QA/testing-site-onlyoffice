@@ -15,7 +15,7 @@ describe 'convert pages in top toolbar' do
     @test&.webdriver&.quit
   end
 
-  context 'text files conversion' do
+  context 'with text files conversion' do
     before do
       @text_convert_page = @site_home_page.click_link_on_toolbar(:site_features_text_converter)
     end
@@ -45,7 +45,7 @@ describe 'convert pages in top toolbar' do
     end
   end
 
-  context 'spreadsheet conversion' do
+  context 'with spreadsheet conversion' do
     before do
       @spreadsheet_convert_page = @site_home_page.click_link_on_toolbar(:site_features_spreadsheet_converter)
     end
@@ -75,7 +75,7 @@ describe 'convert pages in top toolbar' do
     end
   end
 
-  context 'presentation conversion' do
+  context 'with presentation conversion' do
     before do
       @presentation_convert_page = @site_home_page.click_link_on_toolbar(:site_features_presentation_converter)
     end
@@ -105,7 +105,7 @@ describe 'convert pages in top toolbar' do
     end
   end
 
-  context 'PDF conversion' do
+  context 'with PDF conversion' do
     before do
       @pdf_convert_page = @site_home_page.click_link_on_toolbar(:site_features_pdf_converter)
     end
@@ -135,7 +135,3 @@ describe 'convert pages in top toolbar' do
     end
   end
 end
-
-
-
-
