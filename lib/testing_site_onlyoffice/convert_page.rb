@@ -73,7 +73,7 @@ module TestingSiteOnlyoffice
     # Check whether popup with error message appeared or not
     # @return [Boolean] True if appeared and False if not
     def error_popup_appeared?
-      @instance.webdriver.element_visible?(convert_error_message_element)
+      @instance.webdriver.element_present?(convert_error_message_element)
     end
 
     # Get text of the format button
@@ -115,14 +115,14 @@ module TestingSiteOnlyoffice
 
     # Click on the 'Download' button
     def download_button_click
-      @instance.webdriver.wait_until { download_button_visible? }
+      @instance.webdriver.wait_until { download_button_present? }
       @instance.webdriver.click_on_locator(download_button_element)
     end
 
     # Check whether 'Download' button is visible on the page or not
     # @return [Boolean] True if visible and False otherwise
-    def download_button_visible?
-      @instance.webdriver.element_visible?(download_button_element)
+    def download_button_present?
+      @instance.webdriver.element_present?(download_button_element)
     end
 
     # Click on the 'Sign UP' button

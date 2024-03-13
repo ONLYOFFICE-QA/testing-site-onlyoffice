@@ -5,7 +5,7 @@ require 'spec_helper'
 CONVERSION_API_TITLE = 'ONLYOFFICE Api Documentation - Conversion API'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'convert pages in top toolbar' do
+describe 'text files conversion' do
   before do
     @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
   end
@@ -15,7 +15,7 @@ describe 'convert pages in top toolbar' do
     @test&.webdriver&.quit
   end
 
-  context 'with text files conversion' do
+  describe 'text files conversion' do
     before do
       @text_convert_page = @site_home_page.click_link_on_toolbar(:site_features_text_converter)
     end
@@ -45,7 +45,7 @@ describe 'convert pages in top toolbar' do
     end
   end
 
-  context 'with spreadsheet conversion' do
+  describe 'spreadsheet conversion' do
     before do
       @spreadsheet_convert_page = @site_home_page.click_link_on_toolbar(:site_features_spreadsheet_converter)
     end
@@ -75,7 +75,7 @@ describe 'convert pages in top toolbar' do
     end
   end
 
-  context 'with presentation conversion' do
+  describe 'presentation conversion' do
     before do
       @presentation_convert_page = @site_home_page.click_link_on_toolbar(:site_features_presentation_converter)
     end
@@ -105,7 +105,7 @@ describe 'convert pages in top toolbar' do
     end
   end
 
-  context 'with PDF conversion' do
+  describe 'PDF conversion' do
     before do
       @pdf_convert_page = @site_home_page.click_link_on_toolbar(:site_features_pdf_converter)
     end
