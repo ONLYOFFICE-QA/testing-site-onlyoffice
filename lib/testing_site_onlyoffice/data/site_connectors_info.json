@@ -4,7 +4,7 @@
     "instruction": "Integration Guides - Alfresco - ONLYOFFICE",
     "whats_new": "onlyoffice-alfresco/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-alfresco · GitHub"
   },
-  "moodle_oo": {
+  "moodle": {
     "github": "GitHub - ONLYOFFICE/moodle-mod_onlyofficeeditor: The plugin which enables users to edit and co-author office documents within the Moodle course structure using ONLYOFFICE Docs",
     "instruction": "Integration Guides - Moodle - ONLYOFFICE",
     "whats_new": "moodle-mod_onlyofficeeditor/CHANGELOG.md at master · ONLYOFFICE/moodle-mod_onlyofficeeditor · GitHub"
@@ -24,7 +24,7 @@
     "instruction": "GitHub - ONLYOFFICE/onlyoffice-drupal: The app which enables the users to edit office documents from Drupal using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Drupal",
     "whats_new": "onlyoffice-drupal/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-drupal · GitHub"
   },
-  "humhub_oo": {
+  "humhub": {
     "github": "GitHub - ONLYOFFICE/onlyoffice-humhub: Plugin for integrating ONLYOFFICE online editors with HumHub",
     "instruction": "Integration Guides - HumHub - ONLYOFFICE",
     "whats_new": "onlyoffice-humhub/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-humhub · GitHub"
@@ -34,7 +34,7 @@
     "instruction": "Integration Guides - Jira - ONLYOFFICE",
     "whats_new": "onlyoffice-jira/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-jira · GitHub"
   },
-  "liferay_oo": {
+  "liferay": {
     "github": "GitHub - ONLYOFFICE/onlyoffice-liferay: Plugin for integrating ONLYOFFICE online editors with Liferay",
     "instruction": "Integration Guides - Liferay - ONLYOFFICE",
     "whats_new": "onlyoffice-liferay/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-liferay · GitHub"

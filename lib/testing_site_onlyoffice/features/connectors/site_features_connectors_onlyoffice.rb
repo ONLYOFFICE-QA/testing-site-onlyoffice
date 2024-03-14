@@ -32,7 +32,7 @@ module TestingSiteOnlyoffice
     end
 
     def onlyoffice_connector_block(connector = :chamilo)
-      block_xpath = "//div[@class='integration_own_downloads']"
+      block_xpath = "//div[@class='itdn_block']"
       SiteProductsConnectorConstructor.new(@instance, block_xpath, connector.to_s)
     end
 
