@@ -15,13 +15,18 @@ describe 'Connectors download' do
   end
 
   TestingSiteOnlyoffice::SiteDownloadData.connectors_info.each_key do |connector|
-    describe connector.to_s do
-      let(:current_connector) { @connectors_page.installer_open_source_connector_block(connector) }
 
-      it "[Site][OOtherProducts][Connectors][#{connector}] 'Whats new' link works /download-connectors.aspx" do
-        @connectors_page.click_constructor_link(current_connector.whats_new_xpath)
-        whats_new_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_info[connector.to_s]['whats_new']
-        expect(@connectors_page.check_opened_page_title).to eq(whats_new_title)
+    describe connector.to_s do
+      let(:current_connector) { @connectors_page.onlyoffice_connector_block(connector) }
+
+      it "[Site][Get Onlyoffice][OnlyofficeConnectors][#{connector}] 'More info' link works" do
+        connector_info_page = @connectors_page.click_more_info_link(current_connector.more_info_xpath, connector.to_s)
+        expect(connector_info_page).to be_logo_element_present
+      end
+
+      it "[Site][Get Onlyoffice][OnlyofficeConnectors][#{connector}] 'Developer website link' works" do
+        @connectors_page.click_constructor_link(current_connector.developer_website_xpath)
+        expect(@connectors_page).to be_onlyoffice_opened
       end
     end
   end
@@ -31,7 +36,13 @@ describe 'Connectors download' do
     @test.webdriver.quit
   end
 
-  it "[Site][OpenSource][Connectors] Connectors number didn't change /download-connectors.aspx" do
+  it "[Site][Get Onlyoffice][Connectors] Connectors number didn't change /download-connectors.aspx" do
     expect(@connectors_page.connectors_block_number).to eq(TestingSiteOnlyoffice::SiteDownloadData.connectors_info.keys.count)
+  end
+
+  it '[Site][Get Onlyoffice][Connectors] Filter by developers works /all-connectors.aspx' do
+    @connectors_page.select_onlyoffice_developers
+    expect(@connectors_page.verify_elements_hidden).to be_truthy
+
   end
 end
