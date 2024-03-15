@@ -41,6 +41,6 @@ describe 'Connectors download' do
 
   it '[Site][Get Onlyoffice][Connectors] Filter by developers works /all-connectors.aspx' do
     @connectors_page.select_onlyoffice_developers
-    expect(@connectors_page.verify_elements_hidden).to be_truthy
+    expect(@connectors_page.verify_elements_hidden(:onlyoffice)).to be_truthy
   end
 end

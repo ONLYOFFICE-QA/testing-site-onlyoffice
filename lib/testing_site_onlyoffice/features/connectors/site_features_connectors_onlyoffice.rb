@@ -56,8 +56,12 @@ module TestingSiteOnlyoffice
       @instance.webdriver.click_on_locator(onlyoffice_developers_xpath)
     end
 
-    def verify_elements_hidden
-      xpath = "//div[@data-dev='partners_devs']//div[@class='itdn_section_description']"
+    def verify_elements_hidden(filter_option)
+      xpath = if filter_option == :partners
+                "//div[@data-dev='oo_devs']//div[@class='itdn_section_description']"
+              elsif filter_option == :onlyoffice
+                "//div[@data-dev='partners_devs']//div[@class='itdn_section_description']"
+              end
       @instance.webdriver.wait_until { @instance.webdriver.get_element_count(xpath, true).zero? }
     end
 
