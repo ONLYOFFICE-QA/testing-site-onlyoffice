@@ -24,7 +24,6 @@ module TestingSiteOnlyoffice
     link(:download_button, xpath: "//a[@id = 'downloadBtn']")
     link(:sign_up_button, xpath: "//p[contains(@class, 'sub_info_text')]/a")
     link(:conversion_api_button, xpath: "//a[contains(@href, '/editors/conversionapi')]")
-    div(:convert_error_message, xpath: "//p[contains(text(), 'The file format is not supported.')]")
     div(:formats_button, xpath: "//div[contains(@class, 'output_select_btn')]")
     text_field(:email_hidden_field, id: 'emailInput')
 
@@ -73,7 +72,8 @@ module TestingSiteOnlyoffice
     # Check whether popup with error message appeared or not
     # @return [Boolean] True if appeared and False if not
     def error_popup_appeared?
-      @instance.webdriver.element_present?(convert_error_message_element)
+      convert_error_message_xpath = "//p[contains(text(), 'The file format is not supported.')]"
+      @instance.webdriver.element_visible?(convert_error_message_xpath)
     end
 
     # Get text of the format button
