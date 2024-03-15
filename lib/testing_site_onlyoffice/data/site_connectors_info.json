@@ -1,91 +1,86 @@
 {
   "alfresco": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-alfresco: The package which enables the users to edit office documents from Alfresco using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Alfresco",
-    "instruction": "Integration Guides - Alfresco - ONLYOFFICE",
-    "whats_new": "onlyoffice-alfresco/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-alfresco · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-alfresco: The package which enables the users to edit office documents from Alfresco using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Alfresco",
+    "instruction": "Integration Guides - Alfresco - ONLYOFFICE"
   },
-  "moodle_oo": {
-    "github": "GitHub - ONLYOFFICE/moodle-mod_onlyofficeeditor: The plugin which enables users to edit and co-author office documents within the Moodle course structure using ONLYOFFICE Docs",
-    "instruction": "Integration Guides - Moodle - ONLYOFFICE",
-    "whats_new": "moodle-mod_onlyofficeeditor/CHANGELOG.md at master · ONLYOFFICE/moodle-mod_onlyofficeeditor · GitHub"
+  "moodle": {
+    "website": "GitHub - ONLYOFFICE/moodle-mod_onlyofficeeditor: The plugin which enables users to edit and co-author office documents within the Moodle course structure using ONLYOFFICE Docs",
+    "instruction": "Integration Guides - Moodle - ONLYOFFICE"
   },
   "confluence": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-confluence: The plugin which enables the users to edit office documents from Confluence using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Confluence",
-    "instruction": "Integration Guides - Confluence - ONLYOFFICE",
-    "whats_new": "onlyoffice-confluence/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-confluence · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-confluence: The plugin which enables the users to edit office documents from Confluence using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Confluence",
+    "instruction": "Integration Guides - Confluence - ONLYOFFICE"
   },
   "chamilo": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-chamilo: The app which enables the users to edit office documents from Chamilo using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Chamilo",
-    "instruction": "Integration Guides - Chamilo - ONLYOFFICE",
-    "whats_new": "onlyoffice-chamilo/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-chamilo · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-chamilo: The app which enables the users to edit office documents from Chamilo using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Chamilo",
+    "instruction": "Integration Guides - Chamilo - ONLYOFFICE"
   },
   "drupal": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-drupal: The app which enables the users to edit office documents from Drupal using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Drupal",
-    "instruction": "GitHub - ONLYOFFICE/onlyoffice-drupal: The app which enables the users to edit office documents from Drupal using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Drupal",
-    "whats_new": "onlyoffice-drupal/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-drupal · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-drupal: The app which enables the users to edit office documents from Drupal using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Drupal",
+    "instruction": "GitHub - ONLYOFFICE/onlyoffice-drupal: The app which enables the users to edit office documents from Drupal using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Drupal"
   },
-  "humhub_oo": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-humhub: Plugin for integrating ONLYOFFICE online editors with HumHub",
-    "instruction": "Integration Guides - HumHub - ONLYOFFICE",
-    "whats_new": "onlyoffice-humhub/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-humhub · GitHub"
+  "humhub": {
+    "website": "GitHub - ONLYOFFICE/onlyoffice-humhub: Plugin for integrating ONLYOFFICE online editors with HumHub",
+    "instruction": "Integration Guides - HumHub - ONLYOFFICE"
   },
   "jira": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-jira: The plugin which enables the users to edit office documents from Jira using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Jira",
-    "instruction": "Integration Guides - Jira - ONLYOFFICE",
-    "whats_new": "onlyoffice-jira/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-jira · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-jira: The plugin which enables the users to edit office documents from Jira using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Jira",
+    "instruction": "Integration Guides - Jira - ONLYOFFICE"
   },
-  "liferay_oo": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-liferay: Plugin for integrating ONLYOFFICE online editors with Liferay",
-    "instruction": "Integration Guides - Liferay - ONLYOFFICE",
-    "whats_new": "onlyoffice-liferay/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-liferay · GitHub"
+  "liferay": {
+    "website": "GitHub - ONLYOFFICE/onlyoffice-liferay: Plugin for integrating ONLYOFFICE online editors with Liferay",
+    "instruction": "Integration Guides - Liferay - ONLYOFFICE"
   },
   "nextcloud": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-nextcloud: The app which enables the users to edit office documents from Nextcloud using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Nextcloud",
-    "instruction": "Integration Guides - Nextcloud - ONLYOFFICE",
-    "whats_new": "onlyoffice-nextcloud/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-nextcloud · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-nextcloud: The app which enables the users to edit office documents from Nextcloud using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Nextcloud",
+    "instruction": "Integration Guides - Nextcloud - ONLYOFFICE"
   },
   "nuxeo": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-nuxeo: Plugin for integrating ONLYOFFICE online editors with Nuxeo",
-    "instruction": "Integration Guides - Nuxeo - ONLYOFFICE",
-    "whats_new": "onlyoffice-nuxeo/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-nuxeo · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-nuxeo: Plugin for integrating ONLYOFFICE online editors with Nuxeo",
+    "instruction": "Integration Guides - Nuxeo - ONLYOFFICE"
   },
   "owncloud": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-owncloud: The app which enables the users to edit office documents from ownCloud using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to ownCloud",
-    "instruction": "Integration Guides - ownCloud - ONLYOFFICE",
-    "whats_new": "onlyoffice-owncloud/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-owncloud · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-owncloud: The app which enables the users to edit office documents from ownCloud using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to ownCloud",
+    "instruction": "Integration Guides - ownCloud - ONLYOFFICE"
   },
   "plone": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-plone: Plugin for integrating ONLYOFFICE online editors with Plone",
-    "instruction": "Integration Guides - Plone - ONLYOFFICE",
-    "whats_new": "onlyoffice-plone/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-plone · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-plone: Plugin for integrating ONLYOFFICE online editors with Plone",
+    "instruction": "Integration Guides - Plone - ONLYOFFICE"
   },
   "sharepoint": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-sharepoint: The solution which enables the users to edit office documents from SharePoint using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to SharePoint",
-    "instruction": "Integration Guides - SharePoint - ONLYOFFICE",
-    "whats_new": "onlyoffice-sharepoint/CHANGELOG.md at master · ONLYOFFICE/onlyoffice-sharepoint · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-sharepoint: The solution which enables the users to edit office documents from SharePoint using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to SharePoint",
+    "instruction": "Integration Guides - SharePoint - ONLYOFFICE"
   },
   "redmine": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-redmine: The app which enables the users to edit office documents from Redmine using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Redmine",
-    "instruction": "Integration Guides - Redmine - ONLYOFFICE",
-    "whats_new": "onlyoffice-redmine/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-redmine · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-redmine: The app which enables the users to edit office documents from Redmine using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Redmine",
+    "instruction": "Integration Guides - Redmine - ONLYOFFICE"
   },
   "strapi": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-strapi: The app which enables the users to edit office documents from Strapi using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Strapi",
-    "instruction": "Integration Guides - Strapi - ONLYOFFICE",
-    "whats_new": "onlyoffice-strapi/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-strapi · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-strapi: The app which enables the users to edit office documents from Strapi using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Strapi",
+    "instruction": "Integration Guides - Strapi - ONLYOFFICE"
   },
   "wordpress": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-wordpress: The plugin which enables the users to edit office documents from WordPress using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to WordPress",
-    "instruction": "Integration Guides - WordPress - ONLYOFFICE",
-    "whats_new": "onlyoffice-wordpress/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-wordpress · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-wordpress: The plugin which enables the users to edit office documents from WordPress using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to WordPress",
+    "instruction": "Integration Guides - WordPress - ONLYOFFICE"
   },
   "mattermost": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice-mattermost: The app which enables the users to edit office documents from Mattermost using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Mattermost",
-    "instruction": "Integration Guides - Mattermost - ONLYOFFICE",
-    "whats_new": "onlyoffice-mattermost/CHANGELOG.md at main · ONLYOFFICE/onlyoffice-mattermost · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice-mattermost: The app which enables the users to edit office documents from Mattermost using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Mattermost",
+    "instruction": "Integration Guides - Mattermost - ONLYOFFICE"
   },
   "odoo": {
-    "github": "GitHub - ONLYOFFICE/onlyoffice_odoo: The app which enables the users to edit office documents from Odoo using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Odoo",
-    "whats_new": "onlyoffice_odoo/CHANGELOG.md at master · ONLYOFFICE/onlyoffice_odoo · GitHub"
+    "website": "GitHub - ONLYOFFICE/onlyoffice_odoo: The app which enables the users to edit office documents from Odoo using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Odoo"
+  },
+  "zoom": {
+    "website": "App Marketplace"
+  },
+  "suitecrm": {
+    "website": "GitHub - ONLYOFFICE/onlyoffice-suitecrm: The app which enables the users to edit office documents from SuiteCRM using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to SuiteCRM"
+  },
+  "pipedrive": {
+    "website": "GitHub - ONLYOFFICE/onlyoffice-pipedrive: The app which enables the users to edit office documents from Pipedrive using ONLYOFFICE Docs, allows multiple users to collaborate in real time and to save back those changes to Pipedrive"
+
+  },
+  "box": {
+    "website": "ONLYOFFICE Docs | Box App Centre"
   }
 }

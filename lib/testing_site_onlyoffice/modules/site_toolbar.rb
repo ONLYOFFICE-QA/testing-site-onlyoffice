@@ -247,7 +247,7 @@ module TestingSiteOnlyoffice
         },
         get_onlyoffice_connectors: {
           element: site_get_onlyoffice_connectors_element,
-          class: SiteGetOnlyofficeConnectors
+          class: SiteFeaturesConnectorsOnlyoffice
         },
         get_onlyoffice_desktop_mobile: {
           element: site_get_onlyoffice_desktop_mobile_element,
