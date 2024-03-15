@@ -5,7 +5,6 @@ require_relative 'site_connectors_constructor'
 require_relative 'site_connectors_more_info'
 require_relative '../../get_onlyoffice/modules/site_block_constructor_helper'
 require_relative '../../get_onlyoffice/modules/site_download_helper'
-require_relative '../../get_onlyoffice/other_products/connectors/site_get_onlyoffice_connectors'
 require_relative '../../site_home_page'
 
 module TestingSiteOnlyoffice

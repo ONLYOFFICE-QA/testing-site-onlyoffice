@@ -15,7 +15,6 @@ describe 'Connectors download' do
   end
 
   TestingSiteOnlyoffice::SiteDownloadData.connectors_info.each_key do |connector|
-
     describe connector.to_s do
       let(:current_connector) { @connectors_page.onlyoffice_connector_block(connector) }
 
@@ -43,6 +42,5 @@ describe 'Connectors download' do
   it '[Site][Get Onlyoffice][Connectors] Filter by developers works /all-connectors.aspx' do
     @connectors_page.select_onlyoffice_developers
     expect(@connectors_page.verify_elements_hidden).to be_truthy
-
   end
 end
