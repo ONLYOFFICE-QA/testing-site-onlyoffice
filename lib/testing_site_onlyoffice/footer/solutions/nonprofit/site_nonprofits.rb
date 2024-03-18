@@ -3,7 +3,7 @@
 require_relative 'site_request_free_cloud'
 require_relative '../../../features/site_features_docs'
 require_relative '../../../features/site_features_security'
-require_relative '../../../features/connectors/site_features_connectors_onlyoffice'
+require_relative '../../../features/connectors/site_connectors_onlyoffice'
 require_relative '../../../get_onlyoffice/desktop_and_mobile/desktop/site_get_onlyoffice_desktop_apps'
 require_relative '../../../get_onlyoffice/modules/site_download_helper'
 
@@ -61,7 +61,7 @@ module TestingSiteOnlyoffice
 
     def click_see_all_integrations
       see_all_integrations_element.click
-      SiteFeaturesConnectorsOnlyoffice.new(@instance)
+      SiteConnectorsOnlyoffice.new(@instance)
     end
 
     def click_learn_about_docspace

@@ -115,7 +115,7 @@ module TestingSiteOnlyoffice
       {
         features_connectors: {
           element: site_features_connectors_element,
-          class: SiteFeaturesConnectorsOnlyoffice
+          class: SiteConnectorsOnlyoffice
         },
         features_workspace: {
           element: site_features_workspace_element,
@@ -247,7 +247,7 @@ module TestingSiteOnlyoffice
         },
         get_onlyoffice_connectors: {
           element: site_get_onlyoffice_connectors_element,
-          class: SiteFeaturesConnectorsOnlyoffice
+          class: SiteConnectorsOnlyoffice
         },
         get_onlyoffice_desktop_mobile: {
           element: site_get_onlyoffice_desktop_mobile_element,

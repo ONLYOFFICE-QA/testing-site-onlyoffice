@@ -48,7 +48,7 @@ module TestingSiteOnlyoffice
       desktop_apps: SiteGetOnlyofficeDesktopApps,
       mobile_apps: SiteMobileApps,
       self_hosted: SiteGetOnlyofficeDocsEnterprise,
-      all_connectors: SiteFeaturesConnectorsOnlyoffice,
+      all_connectors: SiteConnectorsOnlyoffice,
       docs_registration: SiteGetOnlyofficeDocsRegistration
     }
 

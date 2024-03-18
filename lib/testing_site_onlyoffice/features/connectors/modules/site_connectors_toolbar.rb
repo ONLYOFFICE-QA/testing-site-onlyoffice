@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../../../get_onlyoffice/onlyoffice_docs/site_get_onlyoffice_docs_enterprise'
-require_relative '../site_features_connectors_onlyoffice'
+require_relative '../site_connectors_onlyoffice'
 require_relative '../site_features_connectors_partners'
 
 module TestingSiteOnlyoffice
@@ -16,7 +16,7 @@ module TestingSiteOnlyoffice
 
     def switch_to_developed_by_onlyoffice
       developed_by_onlyoffice_element.click
-      SiteFeaturesConnectorsOnlyoffice.new(@instance)
+      SiteConnectorsOnlyoffice.new(@instance)
     end
 
     def switch_to_provided_by_partners

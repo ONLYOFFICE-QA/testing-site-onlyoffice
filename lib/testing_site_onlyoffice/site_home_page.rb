@@ -97,7 +97,7 @@ require_relative 'pricing/site_pricing_workspace'
 
 require_relative 'features/site_features_docspace_main_page'
 require_relative 'features/site_features_workspace'
-require_relative 'features/connectors/site_features_connectors_onlyoffice'
+require_relative 'features/connectors/site_connectors_onlyoffice'
 require_relative 'features/site_features_android'
 require_relative 'features/site_features_desktop'
 require_relative 'features/site_features_docs'

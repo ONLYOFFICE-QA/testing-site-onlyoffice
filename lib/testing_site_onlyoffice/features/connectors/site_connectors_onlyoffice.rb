@@ -10,7 +10,7 @@ require_relative '../../site_home_page'
 module TestingSiteOnlyoffice
   # /all-connectors.aspx for developed by onlyoffice
   # https://github.com/ONLYOFFICE-QA/testing-site-onlyoffice/assets/99170537/e519cfa4-eb11-4c5a-b321-761276fce00f
-  class SiteFeaturesConnectorsOnlyoffice
+  class SiteConnectorsOnlyoffice
     include PageObject
     include SiteConnectorsToolbar
     include SiteBlockConstructorHelper

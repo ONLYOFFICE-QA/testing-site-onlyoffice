@@ -31,7 +31,7 @@ describe 'Document Builder download' do
 
   it '[Site][HomeUse]Button "See all connectors" works' do
     download_editors_page = @home_use_page.click_see_all_integrations
-    expect(download_editors_page).to be_a TestingSiteOnlyoffice::SiteFeaturesConnectorsOnlyoffice
+    expect(download_editors_page).to be_a TestingSiteOnlyoffice::SiteConnectorsOnlyoffice
   end
 
   it '[Site][HomeUse]Button "Download" works for self-hosted productivity apps' do
