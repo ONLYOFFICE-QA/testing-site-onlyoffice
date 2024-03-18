@@ -16,7 +16,8 @@ module TestingSiteOnlyoffice
     include SiteBlockConstructorHelper
     include SiteDownloadHelper
     include SiteToolbar
-    div(:connector_block, xpath: "//div[@data-dev='oo_devs']//div[@class='itdn_section_description']")
+    divs(:connectors_block, xpath: "//div[@data-dev='oo_devs']//div[@class='itdn_section_description']")
+    divs(:connectors_partners_block, xpath: "//div[@data-dev='partners_devs']//div[@class='itdn_section_description']")
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -32,8 +33,13 @@ module TestingSiteOnlyoffice
     end
 
     def onlyoffice_connector_block(connector = :chamilo)
-      block_xpath = "//div[@class='itdn_block']"
+      block_xpath = "//div[contains(@class, 'itdn_block') and @data-dev='oo_devs']"
       SiteProductsConnectorConstructor.new(@instance, block_xpath, connector.to_s)
+    end
+
+    def connectors_partners_block(connector = :chamilo)
+      partners_block_xpath = "//div[contains(@class, 'itdn_block') and @data-dev='partners_devs']"
+      SiteProductsConnectorConstructor.new(@instance, partners_block_xpath, connector.to_s)
     end
 
     def click_on_filter
@@ -56,18 +62,12 @@ module TestingSiteOnlyoffice
       @instance.webdriver.click_on_locator(onlyoffice_developers_xpath)
     end
 
-    def verify_elements_hidden(filter_option)
-      xpath = if filter_option == :partners
-                "//div[@data-dev='oo_devs']//div[@class='itdn_section_description']"
-              elsif filter_option == :onlyoffice
-                "//div[@data-dev='partners_devs']//div[@class='itdn_section_description']"
-              end
-      @instance.webdriver.wait_until { @instance.webdriver.get_element_count(xpath, true).zero? }
-    end
-
     def select_partners_developers
-      filter_xpath = "//li[@id='partners_devs']"
-      @instance.webdriver.get_element(filter_xpath).click
+      click_on_filter
+      click_on_developer_option
+      partners_developers_xpath = "//li[@id='partners_devs']"
+      @instance.webdriver.wait_until_element_visible(partners_developers_xpath)
+      @instance.webdriver.get_element(partners_developers_xpath).click
     end
 
     def click_get_it_now_link(xpath)
@@ -79,8 +79,25 @@ module TestingSiteOnlyoffice
       SiteConnectorsMoreInfo.new(@instance, connector)
     end
 
-    def connectors_block_number
-      @instance.webdriver.driver.find_elements(:xpath, connector_block_element.selector[:xpath]).count
+    def click_partners_more_info_link(xpath)
+      @instance.webdriver.get_element(xpath).click
+    end
+
+    def click_developers_site_link(xpath)
+      @instance.webdriver.get_element(xpath).click
+    end
+
+    def connectors_block_number(developer_type)
+      developer_type == :onlyoffice ? connectors_block_elements.count : connectors_partners_block_elements.count
+    end
+
+    def verify_elements_hidden(filter_option)
+      xpath = if filter_option == :onlyoffice
+                "//div[@data-dev='oo_devs']//div[@class='itdn_section_description']"
+              elsif filter_option == :partners
+                "//div[@data-dev='partners_devs']//div[@class='itdn_section_description']"
+              end
+      @instance.webdriver.wait_until { @instance.webdriver.get_element_count(xpath, true).zero? }
     end
 
     def onlyoffice_opened?

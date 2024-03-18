@@ -24,7 +24,7 @@ describe 'Connectors download' do
       end
 
       it "[Site][Get Onlyoffice][OnlyofficeConnectors][#{connector}] 'Developer website link' works" do
-        @connectors_page.click_constructor_link(current_connector.developer_website_xpath)
+        @connectors_page.click_developers_site_link(current_connector.developer_website_xpath)
         expect(@connectors_page).to be_onlyoffice_opened
       end
     end
@@ -36,11 +36,11 @@ describe 'Connectors download' do
   end
 
   it "[Site][Get Onlyoffice][Connectors] Connectors number didn't change /download-connectors.aspx" do
-    expect(@connectors_page.connectors_block_number).to eq(TestingSiteOnlyoffice::SiteDownloadData.connectors_info.keys.count)
+    expect(@connectors_page.connectors_block_number(:onlyoffice)).to eq(TestingSiteOnlyoffice::SiteDownloadData.connectors_info.keys.count)
   end
 
   it '[Site][Get Onlyoffice][Connectors] Filter by developers works /all-connectors.aspx' do
     @connectors_page.select_onlyoffice_developers
-    expect(@connectors_page.verify_elements_hidden(:onlyoffice)).to be_truthy
+    expect(@connectors_page.verify_elements_hidden(:partners)).to be_truthy
   end
 end

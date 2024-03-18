@@ -1,7 +1,7 @@
 {
   "agorum": {
     "more_info": "ONLYOFFICE Integration - Dokumente gemeinsam bearbeiten",
-    "website": "Open-Source DMS von agorum® | Dokumentenmanagement",
+    "website": "Open Source DMS von agorum® | Dokumentenmanagement",
     "get_it_now": "ONLYOFFICE Integration - Dokumente gemeinsam bearbeiten"
   },
   "communigate": {
@@ -20,13 +20,13 @@
     "get_it_now": "GitHub - exoplatform/onlyoffice: ONLYOFFICE (http://www.onlyoffice.com/) integration for eXo Platform"
   },
   "jalios": {
-    "more_info": "Community - Portail application - JPortal - Jalios Community",
+    "more_info": "Portail application - Jalios Community",
     "website": "Jalios Digital Workplace, Collaborative Intranet, Enterprise Social Network, Social Learning, Document Management und content management system",
-    "get_it_now": "Community - Portail application - JPortal - Jalios Community"
+    "get_it_now": "Portail application - Jalios Community"
   },
   "liferay": {
     "more_info": "Collaborative Document",
-    "website": "Homepage | SMC DGS Company - Liferay",
+    "website": "Homepage | SMC DGS Company",
     "get_it_now": "Collaborative Document"
   },
   "maarch": {
@@ -50,9 +50,9 @@
     "get_it_now": "ONLYOFFICE Setup Guide - PowerFolder - Confluence"
   },
   "pydio": {
-    "more_info": "[ED] Only office | Pydio",
-    "website": "Pydio | Enterprise File Sharing & Sync Platform",
-    "get_it_now": "[ED] Only office | Pydio"
+    "more_info": "Pydio | [ED] Only office",
+    "website": "Pydio | Enterprise Document Sharing, Collaboration & Management Platform",
+    "get_it_now": "Pydio | [ED] Only office"
   },
   "seafile": {
     "more_info": "OnlyOffice Integration - Seafile Admin Manual",
@@ -68,5 +68,50 @@
     "more_info": "OnlyOffice Connector Application - XWiki Store",
     "website": "Your information organized - XWiki",
     "get_it_now": "OnlyOffice Connector Application - XWiki Store"
+  },
+  "flinkiso": {
+    "more_info": "Document Version Control | Integrated with ONLYOFFICE™",
+    "website": "Free Open Source QMS",
+    "get_it_now": "Document Version Control | Integrated with ONLYOFFICE™"
+  },
+  "neo": {
+    "more_info": "ENT NEO collège lycée : le 1er réseau collaboratif",
+    "website": "ENT NEO collège lycée : le 1er réseau collaboratif",
+    "get_it_now": "Textbook, Messaging... Apps on our platform"
+  },
+  "pintexx": {
+    "more_info": "Workplace WP Office",
+    "website": "Pintexx GmbH Software Solutions",
+    "get_it_now": "Workplace WP Office"
+  },
+  "quasaro": {
+    "more_info": "Seite wurde nicht gefunden. - Quasaro",
+    "website": "IT-Dienstleister Riedstadt - Groß-Gerau | IT-Service",
+    "get_it_now": "Seite wurde nicht gefunden. - Quasaro"
+  },
+  "webweaver": {
+    "more_info": "WebWeaver® - ONLYOFFICE: Im Team zusammenarbeiten und kollaborativ lernen",
+    "website": "DigiOnline GmbH",
+    "get_it_now": "WebWeaver® - ONLYOFFICE: Im Team zusammenarbeiten und kollaborativ lernen"
+  },
+  "wedoc": {
+    "more_info": "",
+    "website": "Jamespot - Enterprise Social Network and collaborative platform",
+    "get_it_now": ""
+  },
+  "openkm": {
+    "more_info": "OpenKM Knowledge Center",
+    "website": "Document Management System Software | OpenKM",
+    "get_it_now": "OpenKM Knowledge Center"
+  },
+  "filecloud": {
+    "more_info": "OnlyOffice Integration",
+    "website": "FileCloud – Hyper-Secure Enterprise File Sharing and Sync (EFSS)",
+    "get_it_now": "OnlyOffice Integration"
+  },
+  "one": {
+    "more_info": "ENT ONE école primaire : espace sécurisé et pédagogique",
+    "website": "ENT ONE école primaire : espace sécurisé et pédagogique",
+    "get_it_now": "ONE Pocket, the app for schools and parents"
   }
 }
