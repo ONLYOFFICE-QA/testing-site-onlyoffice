@@ -17,44 +17,13 @@ describe 'Developer Edition' do
     @test.webdriver.quit
   end
 
-  it '[Developer Edition] Go to text document editing / learn more' do
-    expect(@developer_edition.click_text_document_editing).to be_a TestingSiteOnlyoffice::SiteFeaturesDocumentEditor
-  end
-
-  it '[Developer Edition] Go to get it now' do
-    expect(@developer_edition.check_button_get_it_developer?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsDeveloper
-  end
-
-  it '[Developer Edition] Go to see it in action' do
-    expect(@developer_edition.check_button_developer_see_in_action?).to be_a TestingSiteOnlyoffice::SiteFeaturesSeeItInAction
-  end
-
-  it '[Developer Edition] Go to spreadsheet editing / learn more' do
-    expect(@developer_edition.click_spreadsheet_editing).to be_a TestingSiteOnlyoffice::SiteFeaturesSpreadsheetEditor
-  end
-
-  it '[Developer Edition] Go to digital form building / learn more' do
-    expect(@developer_edition.click_digital_form_building).to be_a TestingSiteOnlyoffice::SiteFeaturesFormCreator
-  end
-
-  it '[Developer Edition] Go to presentation editing / learn more' do
-    expect(@developer_edition.click_presentation_editing).to be_a TestingSiteOnlyoffice::SiteFeaturesPresentationEditor
-  end
-
-  it '[Developer Edition] Go to pdf editing / learn more' do
-    expect(@developer_edition.click_pdf_editing_and_filling).to be_a TestingSiteOnlyoffice::SiteFeaturesPDFReaderConverter
-  end
-
-  it '[Developer Edition] Go to document building / learn more' do
-    expect(@developer_edition.click_document_building).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocBuilder
-  end
-
-  it '[Developer Edition] Go to document conversion / learn more' do
-    expect(@developer_edition.click_document_conversion).to be_a TestingSiteOnlyoffice::SiteForDevelopersConversionAPI
-  end
-
-  it '[Developer Edition] Go to e-book creation / learn more' do
-    expect(@developer_edition.click_e_book_creation).to be_a TestingSiteOnlyoffice::SiteFeaturesEBookCreator
+  describe 'Feature blocks' do
+    TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition::FEATURES_LINKS.each do |feature_key, feature_info|
+      it "[Developer Edition] Go to #{feature_key.to_s.tr('_', ' ')} / learn more" do
+        result_page = @developer_edition.click_link_by_feature(feature_key)
+        expect(result_page).to be_a(feature_info[:class])
+      end
+    end
   end
 
   it '[Developer Edition] Go to macros_and_plugins' do
