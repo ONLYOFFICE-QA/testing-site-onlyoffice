@@ -27,6 +27,10 @@ module TestingSiteOnlyoffice
     MOBILE_APP_STORE = 'ONLYOFFICE Documents on the App Store'
     MOBILE_IOS_CHANGELOG = 'Documents app for iOS changelog - ONLYOFFICE'
 
+    # Onlyoffice API
+    EXTERNAL_ACCES_API_ONLYOFFICE_TITLE = 'ONLYOFFICE Api Documentation - External access to the document editing'
+    OVERVIEW_API_ONLYOFFICE_TITLE = 'ONLYOFFICE Api Documentation - Overview'
+
     # Connectors
     def self.connectors_info
       @connectors_info ||= JSON.parse(File.read("#{__dir__}/site_connectors_info.json"))
