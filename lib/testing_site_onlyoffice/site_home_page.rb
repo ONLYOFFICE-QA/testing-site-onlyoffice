@@ -79,6 +79,7 @@ require_relative 'for_developers/site_for_developers_api_doc'
 require_relative 'for_developers/site_for_developers_conversion_api'
 
 require_relative 'modules/site_toolbar'
+require_relative 'modules/site_for_developers_dev_docs'
 require_relative 'modules/site_home_page_helper'
 require_relative 'modules/cookie_window'
 require_relative 'modules/site_footer'

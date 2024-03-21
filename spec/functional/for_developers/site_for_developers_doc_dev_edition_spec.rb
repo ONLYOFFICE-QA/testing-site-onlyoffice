@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-AWS_MARKETPLACE_TITLE = 'AWS Marketplace: Ascensio Systems Inc'
-ALIBABA_MARKETPLACE_TITLE = 'Ascensio System Ltd. - Alibaba Cloud'
 require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
@@ -54,11 +52,11 @@ describe 'Developer Edition' do
 
   it '[Developer Edition] Go to get started / Amazone machine' do
     @developer_edition.click_button_get_started_amazone_machine
-    expect(@developer_edition.check_opened_page_title).to eq(AWS_MARKETPLACE_TITLE)
+    expect(@developer_edition.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::AWS_MARKETPLACE_TITLE)
   end
 
   it '[Developer Edition] Go to get started / Alibaba image' do
     @developer_edition.click_button_get_started_alibaba_image
-    expect(@developer_edition.check_opened_page_title).to eq(ALIBABA_MARKETPLACE_TITLE)
+    expect(@developer_edition.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::ALIBABA_MARKETPLACE_TITLE)
   end
 end
