@@ -5,14 +5,15 @@ module TestingSiteOnlyoffice
   # https://user-images.githubusercontent.com/67409742/161255725-e5fb6a6b-7a77-41a5-9966-9b6553324fa6.png
   class SitePartnersAffiliates
     include PageObject
+    include SiteDownloadHelper
     include SiteToolbar
 
     element(:become_an_affiliates, xpath: '//a[@class="button become-affiliate"]')
-    link(:register_an_affiliates, xpath: '//div[@class="aff-hts-btn-bl"]/a[contains(@href,"https://www.avangatenetwork.com/affiliates/sign-up")]')
-    link(:sign_in_an_affiliates, xpath: '//div[@class="aff-hts-btn-bl"]/a[contains(@href,"https://store.onlyoffice.com/affiliates/")]')
-    link(:solution_guide, xpath: '//a[contains(@href,"https://help.onlyoffice.com/Products/Files")]')
+    link(:register_an_affiliates, xpath: '//div[@class="aff-hts-btn-bl"]/a[contains(@href,"getrewardful.com")]')
+    link(:learn_more_docspace, xpath: '//p[@class="solvefloating"]//a[contains(@href,"/docspace.aspx")]')
+    link(:product_guide, xpath: '//a[contains(@href,"/images/whitepapers/pdf/onlyoffice_secure_cloud_space.pdf")]')
     link(:marketing_kit, xpath: '//a[contains(@href,"/press-downloads.aspx?from=affiliates")]')
-    link(:affiliate_policy, xpath: '//a[contains(@href,"https://www.avangatenetwork.com/legal/terms.php")]')
+    link(:affiliate_policy, xpath: '//a[contains(@href,"rewardful.com/terms")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -24,53 +25,31 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(become_an_affiliates_element) }
     end
 
-    def transition_to_affiliates?
-      become_an_affiliates_element.click
-      @instance.webdriver.switch_to_popup
-      url = @instance.webdriver.current_url
-      url.include?('avangatenetwork.com')
+    def click_become_an_affiliates_button
+      @instance.webdriver.click_on_locator(become_an_affiliates_element)
     end
 
-    def registration_to_affiliates?
-      attribute = @instance.webdriver.get_attribute(register_an_affiliates_element, 'href')
-      register_an_affiliates_element.click
-      @instance.webdriver.switch_to_popup
-      url = @instance.webdriver.current_url
-      attribute == url
+    def click_registration_to_affiliates_button
+      @instance.webdriver.click_on_locator(register_an_affiliates_element)
     end
 
-    def sign_in_to_affiliates?
-      attribute = @instance.webdriver.get_attribute(sign_in_an_affiliates_element, 'href')
-      sign_in_an_affiliates_element.click
-      @instance.webdriver.switch_to_popup
-      current_url = URI(@instance.webdriver.current_url)
-      current_url.fragment = current_url.query = nil
-      parse_url = current_url.to_s
-      attribute.include?(parse_url)
+    def click_learn_more_docspace
+      @instance.webdriver.click_on_locator(learn_more_docspace_element)
+      TestingSiteOnlyoffice::SiteDocSpaceMainPage.new(@instance)
     end
 
-    def check_solution_guide?
-      solution_guide_element.click
-      check_opened_file_name
+    def click_product_guide
+      @instance.webdriver.click_on_locator(product_guide_element)
+      @instance.webdriver.wait_file_for_download('onlyoffice_secure_cloud_space.pdf')
     end
 
-    def check_marketing_kit?
-      marketing_kit_element.click
+    def click_marketing_kit
+      @instance.webdriver.click_on_locator(marketing_kit_element)
       TestingSiteOnlyoffice::SiteAboutPressDownloads.new(@instance)
     end
 
-    def check_affiliate_policy?
-      affiliate_policy_element.click
-      OnlyofficeLoggerHelper.sleep_and_log('Waiting for download page', 2)
-      url = @instance.webdriver.current_url
-      url.include?('www.avangatenetwork.com/legal/terms/')
-    end
-
-    def check_opened_file_name
-      @instance.init_online_documents
-      @instance.doc_instance.management.wait_for_operation_with_round_status_canvas
-      doc_name = @instance.doc_instance.doc_editor.top_toolbar.title_row.document_name
-      doc_name.include?('ONLYOFFICE Products Guide')
+    def click_affiliates_policy_button
+      @instance.webdriver.click_on_locator(affiliate_policy_element)
     end
   end
 end
