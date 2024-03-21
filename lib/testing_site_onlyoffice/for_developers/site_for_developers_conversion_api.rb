@@ -20,5 +20,3 @@ module TestingSiteOnlyoffice
     end
   end
 end
-
-
