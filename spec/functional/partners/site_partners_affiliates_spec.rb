@@ -36,11 +36,11 @@ describe 'Partners affiliates' do
     expect(@affiliates).to be_file_downloaded('onlyoffice_secure_cloud_space.pdf')
   end
 
-  it '[Partners affiliates] Go to marketing_kit' do
+  it '[Partners affiliates] Go to Marketing kit' do
     expect(@affiliates.click_marketing_kit).to be_a TestingSiteOnlyoffice::SiteAboutPressDownloads
   end
 
-  it '[Partners affiliates] Go to affiliate policy' do
+  it '[Partners affiliates] Go to Affiliate policy' do
     @affiliates.click_affiliates_policy_button
     expected_title = 'Terms of Service'
     expect(@affiliates.check_opened_page_title(switch_tab: false)).to eq(expected_title)
