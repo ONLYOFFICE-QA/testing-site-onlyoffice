@@ -15,31 +15,34 @@ describe 'Partners affiliates' do
     @test.webdriver.quit
   end
 
-  it '[Partners affiliates] Go to partners affiliates' do
-    expect(@affiliates).to be_a TestingSiteOnlyoffice::SitePartnersAffiliates
+  it '[Partners affiliates] Go to Become an affiliate' do
+    @affiliates.click_become_an_affiliates_button
+    expected_title = 'Ascensio Systems Pte. Ltd | Sign up'
+    expect(@affiliates.check_opened_page_title).to eq(expected_title)
   end
 
-  it '[Partners affiliates] Transition to affiliates' do
-    expect(@affiliates.transition_to_affiliates?).to be(true)
+  it '[Partners affiliates] Go to Registration to affiliates' do
+    @affiliates.click_registration_to_affiliates_button
+    expected_title = 'Ascensio Systems Pte. Ltd | Sign up'
+    expect(@affiliates.check_opened_page_title).to eq(expected_title)
   end
 
-  it '[Partners affiliates] Registration to affiliates' do
-    expect(@affiliates.registration_to_affiliates?).to be(true)
+  it '[Partners affiliates] Go to Learn more about ONLYOFFICE DocSpace' do
+    expect(@affiliates.click_learn_more_docspace).to be_a TestingSiteOnlyoffice::SiteDocSpaceMainPage
   end
 
-  it '[Partners affiliates] Sign in to affiliates' do
-    expect(@affiliates.sign_in_to_affiliates?).to be(true)
+  it '[Partners affiliates] Go to Solution guide and download file' do
+    @affiliates.click_product_guide
+    expect(@affiliates).to be_file_downloaded('onlyoffice_secure_cloud_space.pdf')
   end
 
-  it '[Partners affiliates] Go to solution guide' do
-    expect(@affiliates.check_solution_guide?).to be(true)
+  it '[Partners affiliates] Go to marketing_kit' do
+    expect(@affiliates.click_marketing_kit).to be_a TestingSiteOnlyoffice::SiteAboutPressDownloads
   end
 
-  it '[Partners affiliates] Go to go_to_marketing_kit' do
-    expect(@affiliates.check_marketing_kit?).to be_a TestingSiteOnlyoffice::SiteAboutPressDownloads
-  end
-
-  it '[Partners affiliates] Go to go_to_affiliate_policy' do
-    expect(@affiliates.check_affiliate_policy?).to be(true)
+  it '[Partners affiliates] Go to affiliate policy' do
+    @affiliates.click_affiliates_policy_button
+    expected_title = 'Terms of Service'
+    expect(@affiliates.check_opened_page_title(switch_tab: false)).to eq(expected_title)
   end
 end
