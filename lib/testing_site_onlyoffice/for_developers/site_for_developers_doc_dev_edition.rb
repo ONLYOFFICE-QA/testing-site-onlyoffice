@@ -3,7 +3,7 @@
 require_relative '../for_developers/site_for_developers_doc_builder'
 require_relative '../for_developers/site_for_developers_conversion_api'
 require_relative '../features/docs/site_features_e_book_creator'
-require_relative '../modules/site_for_developers_dev_docs'
+require_relative '../modules/site_dev_docs_helper'
 
 module TestingSiteOnlyoffice
   # developer-edition.aspx
@@ -11,7 +11,7 @@ module TestingSiteOnlyoffice
   class SiteForDevelopersDocDevEdition
     include PageObject
     include SiteDownloadHelper
-    include SiteForDevelopersDevDocs
+    include SiteDevDocsHelper
 
     def initialize(instance)
       super(instance.webdriver.driver)

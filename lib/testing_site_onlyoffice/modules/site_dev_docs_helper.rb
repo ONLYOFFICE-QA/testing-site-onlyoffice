@@ -2,7 +2,7 @@
 
 module TestingSiteOnlyoffice
   # Helper for checking feature blocks links
-  module SiteForDevelopersDevDocs
+  module SiteDevDocsHelper
     FEATURES_LINKS =
       {
         text_document_editing: {
