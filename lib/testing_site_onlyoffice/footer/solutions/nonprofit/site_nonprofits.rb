@@ -14,17 +14,14 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteDownloadHelper
 
-    div(:request_free_cloud_top, xpath: '//div[@id="godown"]')
-    link(:request_free_cloud, xpath: '//a[@href="mailto:sales@onlyoffice.com?subject=Request%20a%20discount%20for%20a%20non-profit"]')
-
     link(:learn_more_about_docspace, xpath: "//a[@href='/docspace.aspx?from=nonprofit']")
     link(:docspace_registration, xpath: "//a[@href = '/docspace-registration.aspx' and text() = 'Try now']")
     link(:learn_more_about_collaboration_platforms, xpath: '//a[@href="/workspace.aspx?from=nonprofit"]')
     link(:learn_more_about_security, xpath: '//a[@href="/security.aspx?from=nonprofit"]')
     link(:nonprofit_download_workspace, xpath: "//a[@href='/download-workspace.aspx' and text() = 'Get it now']")
+    link(:nonprofit_download_docs, xpath: "//a[@href='/download-docs.aspx#docs-enterprise']")
     link(:nonprofit_android, xpath: '//a[contains(@href,"play.google")]')
-    link(:nonprofit_ios, xpath: '//a[contains(@href,"apps.apple")]')
-    link(:see_all_integrations, xpath: '//a[@href="/all-connectors.aspx?from=nonprofit"]')
+    link(:nonprofit_ios, xpath: '//a[contains(@href,"apple.com/us/app/onlyoffice")]')
     link(:desktop_windows, xpath: '//a[contains(@class, "download_for_windows")]')
     link(:desktop_linux, xpath: '//a[contains(@class, "download_for_linux")]')
     link(:desktop_macos, xpath: '//a[contains(@class, "download_for_macos")]')
@@ -54,18 +51,18 @@ module TestingSiteOnlyoffice
       SiteFeaturesSecurity.new(@instance)
     end
 
+    def click_download_docs
+      nonprofit_download_docs_element.click
+      SiteGetOnlyofficeDocsEnterprise.new(@instance)
+    end
+
     def click_download_workspace
       nonprofit_download_workspace_element.click
       SiteGetOnlyofficeWorkspaceEnterprise.new(@instance)
     end
 
-    def click_see_all_integrations
-      see_all_integrations_element.click
-      SiteConnectorsOnlyoffice.new(@instance)
-    end
-
     def click_learn_about_docspace
-      learn_about_docspace_element_click
+      learn_more_about_docspace_element.click
       SiteDocSpaceMainPage.new(@instance)
     end
 

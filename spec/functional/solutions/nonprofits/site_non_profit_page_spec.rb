@@ -15,9 +15,24 @@ describe 'Site Nonprofit page links' do
     @test.webdriver.quit
   end
 
-  it '[Site][NonProfits] Check link `Learn more about the editors`' do
+  it '[Site][NonProfits] Check link `Learn more about docspace' do
     @products_docs = @nonprofits_page.click_learn_about_docspace
     expect(@products_docs).to be_a TestingSiteOnlyoffice::SiteDocSpaceMainPage
+  end
+
+  it '[Site][NonProfits] Check link `Try now / docspace' do
+    @products_docs = @nonprofits_page.click_docspace_registration
+    expect(@products_docs).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp
+  end
+
+  it '[Site][NonProfits] Check link `Get it now / workspace' do
+    @products_docs = @nonprofits_page.click_download_workspace
+    expect(@products_docs).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeWorkspaceEnterprise
+  end
+
+  it '[Site][NonProfits] Check link `Get it now / docs' do
+    @products_docs = @nonprofits_page.click_download_docs
+    expect(@products_docs).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
   end
 
   it '[Site][NonProfits] Check link `Learn more about collaboration platform`' do
@@ -38,16 +53,6 @@ describe 'Site Nonprofit page links' do
   it '[Site][NonProfits] Check link `Download for IOS`' do
     @nonprofits_page.nonprofit_ios
     expect(@nonprofits_page.check_opened_page_title(switch_tab: false)).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_STORE)
-  end
-
-  it '[Site][NonProfits] Check button `See all integrations`' do
-    @connectors_page = @nonprofits_page.click_see_all_integrations
-    expect(@connectors_page).to be_a TestingSiteOnlyoffice::SiteConnectorsOnlyoffice
-  end
-
-  it '[Site][NonProfits] Check button `Request free cloud`' do
-    @request_free_cloud_page = @nonprofits_page.click_request_free_cloud
-    expect(@request_free_cloud_page).to be_a TestingSiteOnlyoffice::SiteRequestFreeCloud
   end
 
   describe 'Download desktop' do
