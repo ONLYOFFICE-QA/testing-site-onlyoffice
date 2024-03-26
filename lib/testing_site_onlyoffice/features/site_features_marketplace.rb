@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
   class SiteFeaturesMarketplace
     include PageObject
 
-    element(:plugins_header, xpath: '//h3[text()="Plugins"]')
+    element(:all_plugins_filter, xpath: '//button[contains(@class, "filter-btn") and contains(., "plugins")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -16,7 +16,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(plugins_header_element) }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(all_plugins_filter_element) }
     end
   end
 end
