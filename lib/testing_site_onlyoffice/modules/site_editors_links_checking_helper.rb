@@ -3,7 +3,6 @@
 module TestingSiteOnlyoffice
   # Helper for checking editors links
   module SiteEditorsLinksCheckingHelper
-
     FEATURES_LINKS =
       {
         text_document_editing: {
