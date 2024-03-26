@@ -4,7 +4,6 @@ module TestingSiteOnlyoffice
   # Helper for storing additional methods of the class SiteFeaturesDocsOverview
   # Contains methods for working with the "choose where to work" block.
   module SiteFeaturesDocsOverviewHelper
-
     def click_docspace_start_free
       xpath = '//*[@id="office_suite_docspace_registration_start_with_your_free_account"]'
       @instance.webdriver.move_to_element_by_locator(xpath)
