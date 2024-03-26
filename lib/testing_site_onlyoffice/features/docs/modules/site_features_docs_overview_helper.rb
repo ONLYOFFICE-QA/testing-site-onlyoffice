@@ -3,7 +3,6 @@
 module TestingSiteOnlyoffice
   # Helper for storing additional methods of the class SiteFeaturesDocsOverview
   module SiteFeaturesDocsOverviewHelper
-
     def click_get_it_now_top
       @instance.webdriver.click_on_locator(get_it_now_top_element)
       SiteGetOnlyofficeDocsEnterprise.new(@instance)
