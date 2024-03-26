@@ -2,36 +2,35 @@
 
 module TestingSiteOnlyoffice
   # Helper for checking editors links
-  module EditorsLinksCheckingHelper
+  module SiteEditorsLinksCheckingHelper
 
     FEATURES_LINKS =
       {
         text_document_editing: {
-          xpath: '//div[contains(@class, "ca_text")]/a[contains(@href, "document-editor.aspx")]',
+          xpath: '(//a[contains(@href, "/document-editor.aspx")])[1]',
           class: SiteFeaturesDocumentEditor
         },
         spreadsheet_editing: {
-          xpath: '//div[contains(@class, "ca_text")]/a[contains(@href, "spreadsheet-editor.aspx")]',
+          xpath: '(//a[contains(@href, "spreadsheet-editor.aspx")])[1]',
           class: SiteFeaturesSpreadsheetEditor
         },
         digital_form_building: {
-          xpath: '//div[contains(@class, "ca_text")]/a[contains(@href, "form-creator.aspx")]',
+          xpath: '(//a[contains(@href, "form-creator.aspx")])[1]',
           class: SiteFeaturesFormCreator
         },
         presentation_editing: {
-          xpath: '//div[contains(@class, "ca_text")]/a[contains(@href, "presentation-editor.aspx")]',
+          xpath: '(//a[contains(@href, "presentation-editor.aspx")])[1]',
           class: SiteFeaturesPresentationEditor
         },
         pdf_editing_and_filling: {
-          xpath: '//div[contains(@class, "ca_text")]/a[contains(@href, "pdf-editor")]',
+          xpath: '(//a[contains(@href, "pdf-editor")])[1]',
           class: SiteFeaturesPDFReaderConverter
         },
         e_book_creation: {
-          xpath: '//div[contains(@class, "ca_text")]/a[contains(@href, "e-book.aspx")]',
+          xpath: '(//a[contains(@href, "e-book.aspx")])[1]',
           class: SiteFeaturesEBookCreator
-        },
+        }
       }.freeze
-
 
     def click_link_by_feature(feature_key)
       feature_info = FEATURES_LINKS[feature_key]

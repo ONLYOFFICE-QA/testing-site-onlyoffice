@@ -12,7 +12,7 @@ describe 'Site Products Docs' do
 
   after do |example|
     test_manager.add_result(example, @test)
-    @test.webdriver.quit
+    @test&.webdriver&.quit
   end
 
   TestingSiteOnlyoffice::SiteFeaturesDocsOverview::FEATURES_LINKS.each do |feature_key, feature_info|
