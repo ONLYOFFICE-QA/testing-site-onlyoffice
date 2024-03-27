@@ -12,7 +12,6 @@ module TestingSiteOnlyoffice
     include SiteEditorsLinksCheckingHelper
     include PageObject
 
-
     link(:get_it_now_top, xpath: '//a[contains(@href, "download-docs.aspx") and contains(@class, "button")]')
     link(:see_it_in_action, xpath: '//a[contains(@href, "see-it-in-action.aspx") and contains(@class, "button")]')
 

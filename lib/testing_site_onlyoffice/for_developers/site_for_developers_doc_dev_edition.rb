@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require_relative '../features/docs/site_features_document_editor'
 require_relative '../features/docs/site_features_e_book_creator'
 require_relative '../modules/site_editors_links_checking_helper'

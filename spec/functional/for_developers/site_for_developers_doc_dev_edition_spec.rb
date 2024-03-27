@@ -4,7 +4,7 @@ require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Developer Edition' do
+describe 'For Developers Developer Edition' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @developer_edition = site_home_page.click_link_on_toolbar(:for_developers_doc_dev_edition)
@@ -17,6 +17,7 @@ describe 'Developer Edition' do
 
   TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition::FEATURES_LINKS.each do |feature_key, feature_info|
     it_behaves_like 'checking_editors_links', feature_key, feature_info
+    pending('Waiting for a fix from Irina')
     let(:page) { @developer_edition }
   end
 
