@@ -8,9 +8,9 @@ module TestingSiteOnlyoffice
   # /office-suite.aspx
   # https://user-images.githubusercontent.com/38238032/200776135-b199c1ad-2fa1-44fd-915c-ce256f4fe7ac.png
   class SiteFeaturesDocsOverview
-    include PageObject
     include SiteFeaturesDocsOverviewHelper
     include SiteEditorsLinksCheckingHelper
+    include PageObject
 
     link(:get_it_now_top, xpath: '//a[contains(@href, "download-docs.aspx") and contains(@class, "button")]')
     link(:see_it_in_action, xpath: '//a[contains(@href, "see-it-in-action.aspx") and contains(@class, "button")]')

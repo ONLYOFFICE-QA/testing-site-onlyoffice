@@ -4,7 +4,7 @@ require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Developer Edition' do
+describe 'For Developers Developer Edition' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @developer_edition = site_home_page.click_link_on_toolbar(:for_developers_doc_dev_edition)
@@ -12,16 +12,21 @@ describe 'Developer Edition' do
 
   after do |example|
     test_manager.add_result(example, @test)
-    @test.webdriver.quit
+    @test&.webdriver&.quit
   end
 
-  describe 'Feature blocks' do
-    TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition::FEATURES_LINKS.each do |feature_key, feature_info|
-      it "[Developer Edition] Go to #{feature_key.to_s.tr('_', ' ')} / learn more" do
-        result_page = @developer_edition.click_link_by_feature(feature_key)
-        expect(result_page).to be_a(feature_info[:class])
-      end
-    end
+  TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition::FEATURES_LINKS.each do |feature_key, feature_info|
+    it_behaves_like 'checking_editors_links', feature_key, feature_info
+    pending('Waiting for a fix from Irina')
+    let(:page) { @developer_edition }
+  end
+
+  it '[Developer Edition] Go to Docbuilder' do
+    expect(@developer_edition.click_document_builder).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocBuilder
+  end
+
+  it '[Developer Edition] Go to Conversion API' do
+    expect(@developer_edition.click_document_conversion).to be_a TestingSiteOnlyoffice::SiteForDevelopersConversionAPI
   end
 
   it '[Developer Edition] Go to macros_and_plugins' do
