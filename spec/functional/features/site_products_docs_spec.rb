@@ -17,6 +17,7 @@ describe 'Site Products Docs' do
 
   TestingSiteOnlyoffice::SiteFeaturesDocsOverview::FEATURES_LINKS.each do |feature_key, feature_info|
     it_behaves_like 'checking_editors_links', feature_key, feature_info
+    let(:page) { @docs_page }
   end
 
   it '[Site Products] [Docs] "Get it now" button works' do

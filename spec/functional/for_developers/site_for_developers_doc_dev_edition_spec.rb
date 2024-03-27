@@ -12,16 +12,20 @@ describe 'Developer Edition' do
 
   after do |example|
     test_manager.add_result(example, @test)
-    @test.webdriver.quit
+    @test&.webdriver&.quit
   end
 
-  describe 'Feature blocks' do
-    TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition::FEATURES_LINKS.each do |feature_key, feature_info|
-      it "[Developer Edition] Go to #{feature_key.to_s.tr('_', ' ')} / learn more" do
-        result_page = @developer_edition.click_link_by_feature(feature_key)
-        expect(result_page).to be_a(feature_info[:class])
-      end
-    end
+  TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition::FEATURES_LINKS.each do |feature_key, feature_info|
+    it_behaves_like 'checking_editors_links', feature_key, feature_info
+    let(:page) { @developer_edition }
+  end
+
+  it '[Developer Edition] Go to Docbuilder' do
+    expect(@developer_edition.click_document_builder).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocBuilder
+  end
+
+  it '[Developer Edition] Go to Conversion API' do
+    expect(@developer_edition.click_document_conversion).to be_a TestingSiteOnlyoffice::SiteForDevelopersConversionAPI
   end
 
   it '[Developer Edition] Go to macros_and_plugins' do

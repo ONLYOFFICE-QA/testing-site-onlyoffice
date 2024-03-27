@@ -34,7 +34,6 @@ module TestingSiteOnlyoffice
     def click_link_by_feature(feature_key)
       feature_info = FEATURES_LINKS[feature_key]
       @instance.webdriver.move_to_element_by_locator(feature_info[:xpath])
-      @instance.webdriver.wait_until { @instance.webdriver.element_visible?(feature_info[:xpath]) }
       @instance.webdriver.click_on_locator(feature_info[:xpath])
       feature_info[:class].new(@instance)
     end
