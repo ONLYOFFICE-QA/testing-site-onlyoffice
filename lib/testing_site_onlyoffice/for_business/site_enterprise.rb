@@ -26,7 +26,6 @@ module TestingSiteOnlyoffice
     link(:mobile_ios_learn_more, xpath: '//a[@href = "/office-for-ios.aspx?from=for-enterprises"]')
     link(:mobile_android_learn_more, xpath: '//a[@href = "/office-for-android.aspx?from=for-enterprises"]')
 
-
     def initialize(instance)
       super(instance.webdriver.driver)
       @instance = instance

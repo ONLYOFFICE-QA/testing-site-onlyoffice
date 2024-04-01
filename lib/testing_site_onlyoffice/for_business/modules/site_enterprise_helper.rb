@@ -3,7 +3,6 @@
 module TestingSiteOnlyoffice
   # Helper for storing additional methods of the class SiteEnterprise
   module SiteEnterpriseHelper
-
     def click_docspace_use_for_free
       docspace_use_for_free_link_element.click
       SiteDocSpaceSignUp.new(@instance)
