@@ -159,5 +159,9 @@ module TestingSiteOnlyoffice
         docs_enterprise_cloud_type: %w[Business VIP]
       }
     end
+
+    def self.marketplace_plugins_info
+      @marketplace_plugins_info ||= JSON.parse(File.read("#{__dir__}/site_marketplace_plugins_info.json"))
+    end
   end
 end

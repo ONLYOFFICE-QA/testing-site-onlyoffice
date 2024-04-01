@@ -1,0 +1,104 @@
+{
+  "apertium": {
+    "get_it_now_title": "Apertium | ONLYOFFICE"
+  },
+  "autocomplete": {
+    "get_it_now_title": "Autocomplete | ONLYOFFICE"
+  },
+  "openai": {
+    "get_it_now_title": "ChatGPT | ONLYOFFICE"
+  },
+  "chess": {
+    "get_it_now_title": "Chess | ONLYOFFICE"
+  },
+  "deepl": {
+    "get_it_now_title": "DeepL | ONLYOFFICE"
+  },
+  "doc2md": {
+    "get_it_now_title": "Doc2md | ONLYOFFICE"
+  },
+  "drawio": {
+    "get_it_now_title": "draw.io | ONLYOFFICE"
+  },
+  "drawio-docspace": {
+    "get_it_now_title": "draw.io | ONLYOFFICE"
+  },
+  "glavred": {
+    "get_it_now_title": "Glavred | ONLYOFFICE"
+  },
+  "grammalecte": {
+    "get_it_now_title": "Grammalecte | ONLYOFFICE"
+  },
+  "highlightcode": {
+    "get_it_now_title": "Highlight code | ONLYOFFICE"
+  },
+  "html": {
+    "get_it_now_title": "HTML | ONLYOFFICE"
+  },
+  "jitsi": {
+    "get_it_now_title": "Jitsi | ONLYOFFICE"
+  },
+  "languagetool": {
+    "get_it_now_title": "LanguageTool | ONLYOFFICE"
+  },
+  "macros": {
+    "get_it_now_title": "Macros | ONLYOFFICE"
+  },
+  "mendeley": {
+    "get_it_now_title": "Mendeley | ONLYOFFICE"
+  },
+  "ocr": {
+    "get_it_now_title": "OCR | ONLYOFFICE"
+  },
+  "pdf-converter": {
+    "get_it_now_title": "PDF Converter | ONLYOFFICE"
+  },
+  "photoeditor": {
+    "get_it_now_title": "Photo Editor | ONLYOFFICE"
+  },
+  "rainbow": {
+    "get_it_now_title": "Rainbow | ONLYOFFICE"
+  },
+  "send": {
+    "get_it_now_title": "Send | ONLYOFFICE"
+  },
+  "speech": {
+    "get_it_now_title": "Speech | ONLYOFFICE"
+  },
+  "speechrecognition": {
+    "get_it_now_title": "Speech input | ONLYOFFICE"
+  },
+  "speech-to-text": {
+    "get_it_now_title": "Speech-to-text | ONLYOFFICE"
+  },
+  "telegram": {
+    "get_it_now_title": "Telegram | ONLYOFFICE"
+  },
+  "termef": {
+    "get_it_now_title": "TerMef | ONLYOFFICE"
+  },
+  "thesaurus": {
+    "get_it_now_title": "Thesaurus | ONLYOFFICE"
+  },
+  "translator": {
+    "get_it_now_title": "Translator | ONLYOFFICE"
+  },
+  "typograf": {
+    "get_it_now_title": "Typograf | ONLYOFFICE"
+  },
+  "wordscounter": {
+    "get_it_now_title": "Word counter | ONLYOFFICE"
+  },
+  "wordpress": {
+    "get_it_now_title": "WordPress | ONLYOFFICE"
+  },
+  "youtube": {
+    "get_it_now_title": "YouTube | ONLYOFFICE"
+  },
+  "zhipu": {
+    "get_it_now_title": "ZhiPu Copilot | ONLYOFFICE"
+  },
+  "zotero": {
+    "get_it_now_title": "Zotero | ONLYOFFICE"
+  }
+}

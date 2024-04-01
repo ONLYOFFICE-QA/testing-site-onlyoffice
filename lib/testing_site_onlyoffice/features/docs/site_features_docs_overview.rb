@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../site_features_marketplace'
+require_relative '../marketplace/site_features_marketplace'
 require_relative '../../modules/site_editors_links_checking_helper'
 require_relative 'modules/site_features_docs_overview_helper'
 
