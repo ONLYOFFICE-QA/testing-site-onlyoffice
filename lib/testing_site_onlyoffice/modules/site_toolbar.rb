@@ -17,6 +17,7 @@ module TestingSiteOnlyoffice
     link(:site_features_connectors, xpath: '//a[@id="navitem_features_connectors"]')
     link(:site_features_docspace, xpath: '//a[@id="navitem_features_docspace"]')
     link(:site_features_workspace, xpath: '//a[@id="navitem_features_workspace"]')
+    link(:site_features_marketplace, xpath: '//a[@id="navitem_features_marketplace"]')
     link(:site_features_docs_overview, xpath: '//a[@id="navitem_features_docs_overview"]')
     link(:site_features_document_editor, xpath: '//a[@id="navitem_features_document_editor"]')
     link(:site_features_spreadsheet_editor, xpath: '//a[@id="navitem_features_spreadsheet_editor"]')
@@ -124,6 +125,10 @@ module TestingSiteOnlyoffice
         features_docspace: {
           element: site_features_docspace_element,
           class: SiteDocSpaceMainPage
+        },
+        features_marketplace: {
+          element: site_features_marketplace_element,
+          class: SiteFeaturesMarketplace
         },
         features_document_overview: {
           element: site_features_docs_overview_element,
