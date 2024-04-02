@@ -57,7 +57,7 @@ require_relative 'get_onlyoffice/modules/site_download_helper'
 require_relative 'get_onlyoffice/site_get_onlyoffice_web_hosting'
 require_relative 'get_onlyoffice/site_get_onlyoffice_docs_registration'
 
-require_relative 'for_business/site_enterprise'
+require_relative 'for_business/site_enterprise_overview'
 require_relative 'for_business/site_for_business'
 require_relative 'for_business/site_for_business_docs_enterprise_edition'
 require_relative 'features/workspace/site_for_business_calendar'
