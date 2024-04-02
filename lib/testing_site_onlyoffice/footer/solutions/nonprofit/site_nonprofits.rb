@@ -14,6 +14,7 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteDownloadHelper
 
+    link(:request_discount, xpath: '//a[contains(@class, "get_in")]')
     link(:learn_more_about_docspace, xpath: "//a[@href='/docspace.aspx?from=nonprofit']")
     link(:docspace_registration, xpath: "//a[@href = '/docspace-registration.aspx' and text() = 'Try now']")
     link(:learn_more_about_collaboration_platforms, xpath: '//a[@href="/workspace.aspx?from=nonprofit"]')
@@ -33,7 +34,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(request_free_cloud_element) }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(request_discount_element) }
     end
 
     def click_request_free_cloud
