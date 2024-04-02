@@ -6,7 +6,7 @@ require_relative 'modules/site_enterprise_helper'
 module TestingSiteOnlyoffice
   # for-enterprises.aspx
   # https://user-images.githubusercontent.com/38238032/233962616-6ebf0024-1da6-4335-91cf-77ae686e6317.jpg
-  class SiteEnterprise
+  class SiteEnterpriseOverview
     include PageObject
     include SiteEnterpriseHelper
 

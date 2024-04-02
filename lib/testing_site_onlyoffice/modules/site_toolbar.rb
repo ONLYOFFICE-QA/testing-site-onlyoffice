@@ -202,7 +202,7 @@ module TestingSiteOnlyoffice
       {
         for_enterprises_overview: {
           element: site_for_enterprises_overview_element,
-          class: SiteEnterprise
+          class: SiteEnterpriseOverview
         },
         for_enterprises_docs: {
           element: site_for_business_docs_enterprise_element,
