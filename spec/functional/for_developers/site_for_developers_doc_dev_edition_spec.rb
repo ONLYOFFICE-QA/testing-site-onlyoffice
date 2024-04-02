@@ -18,7 +18,6 @@ describe 'For Developers Developer Edition' do
   describe 'Editors pending due to issue', pending: 'Waiting for fix from Irina' do
     TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition::FEATURES_LINKS.each do |feature_key, feature_info|
       it_behaves_like 'checking_editors_links', feature_key, feature_info do
-        pending 'Waiting for fix from Irina'
         let(:page) { @developer_edition }
       end
     end
