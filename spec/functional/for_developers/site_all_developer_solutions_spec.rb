@@ -26,13 +26,13 @@ describe 'Developers - All Developer Solutions' do
 
   it '[Developers] [All Developer Solutions] Docspace "Integration tutorial" link works' do
     @all_developer_solutions.click_docspace_check_tutorial
-    expected_title = "Integrating ONLYOFFICE DocSpace into a Single Page Application | ONLYOFFICE Blog"
+    expected_title = 'Integrating ONLYOFFICE DocSpace into a Single Page Application | ONLYOFFICE Blog'
     expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
   end
 
   it '[Developers] [All Developer Solutions] Docs "Integration examples" link works' do
     @all_developer_solutions.click_docs_integration_examples
-    expected_title = "ONLYOFFICE Api Documentation - Language-specific examples"
+    expected_title = 'ONLYOFFICE Api Documentation - Language-specific examples'
     expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
   end
 
@@ -54,7 +54,7 @@ describe 'Developers - All Developer Solutions' do
 
   it '[Developers] [All Developer Solutions] Docbuilder "Source code" link works' do
     @all_developer_solutions.click_docbuilder_source_code
-    expected_title = "GitHub - ONLYOFFICE/DocumentBuilder: ONLYOFFICE Document Builder is powerful text, spreadsheet, presentation and PDF generating tool"
+    expected_title = 'GitHub - ONLYOFFICE/DocumentBuilder: ONLYOFFICE Document Builder is powerful text, spreadsheet, presentation and PDF generating tool'
     expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
   end
 
@@ -69,7 +69,7 @@ describe 'Developers - All Developer Solutions' do
 
   it '[Developers] [All Developer Solutions] Workspace "Find out more" link works' do
     @all_developer_solutions.click_workspace_find_out_more
-    expected_title = "ONLYOFFICE Api Documentation - Basic concepts"
+    expected_title = 'ONLYOFFICE Api Documentation - Basic concepts'
     expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
   end
 end
