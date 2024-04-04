@@ -53,6 +53,7 @@ module TestingSiteOnlyoffice
     link(:site_for_developers, xpath: '//a[@id="navitem_fordevelopers"]')
     link(:site_for_developers_all_solutions, xpath: '//a[@id="navitem_fd_dev_solutions"]')
     link(:site_for_developers_doc_dev_edition, xpath: '//a[@id="navitem_fd_docs_dev"]')
+    link(:site_for_developers_conversion_api, xpath: '//a[@id="navitem_fd_conversion_api"]')
     link(:site_for_developers_doc_builder, xpath: '//a[@id="navitem_fd_doc_builder"]')
     link(:site_for_developers_api_doc, xpath: '//a[@id="navitem_fd_api_doc"]')
 
@@ -225,6 +226,10 @@ module TestingSiteOnlyoffice
         for_developers_all_solutions: {
           element: site_for_developers_all_solutions_element,
           class: SiteForDevelopers
+        },
+        for_developers_conversion_api: {
+          element: site_for_developers_conversion_api_element,
+          class: SiteForDevelopersConversionAPI
         },
         for_developers_document_builder: {
           element: site_for_developers_doc_builder_element,

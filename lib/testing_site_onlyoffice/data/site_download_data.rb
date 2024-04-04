@@ -30,6 +30,7 @@ module TestingSiteOnlyoffice
     # Onlyoffice API
     EXTERNAL_ACCES_API_ONLYOFFICE_TITLE = 'ONLYOFFICE Api Documentation - External access to the document editing'
     OVERVIEW_API_ONLYOFFICE_TITLE = 'ONLYOFFICE Api Documentation - Overview'
+    CONVERSION_API_ONLYOFFICE_TITLE = 'ONLYOFFICE Api Documentation - Conversion API'
 
     # Onlyoffice on marketplaces
     AWS_MARKETPLACE_TITLE = 'AWS Marketplace: Ascensio Systems Inc'
