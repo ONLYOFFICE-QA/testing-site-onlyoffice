@@ -12,8 +12,9 @@ module TestingSiteOnlyoffice
       docspace_api_element.click
     end
 
-    def click_docspace_check_tutorial
-      docspace_check_tutorial_element.click
+    def click_available_plugins
+      available_plugins_element.click
+      TestingSiteOnlyoffice::SiteFeaturesMarketplace.new(@instance)
     end
 
     def click_docs_try_now
@@ -48,9 +49,11 @@ module TestingSiteOnlyoffice
       docbuilder_check_examples_element.click
     end
 
-    def click_available_plugins
-      available_plugins_element.click
-      TestingSiteOnlyoffice::SiteFeaturesMarketplace.new(@instance)
+    # Explicitly switches to the second tab due to the forced context change required after opening a new tab
+    def click_docspace_check_tutorial
+      docspace_check_tutorial_element.click
+      @instance.webdriver.choose_tab(2)
+      TestingSiteOnlyoffice::SiteAboutBlog.new(@instance)
     end
 
     def click_workspace_find_out_more

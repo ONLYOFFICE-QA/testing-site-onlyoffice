@@ -25,9 +25,8 @@ describe 'Developers - All Developer Solutions' do
   end
 
   it '[Developers] [All Developer Solutions] Docspace "Integration tutorial" link works' do
-    @all_developer_solutions.click_docspace_check_tutorial
-    expected_title = 'Integrating ONLYOFFICE DocSpace into a Single Page Application | ONLYOFFICE Blog'
-    expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
+    blog_page = @all_developer_solutions.click_docspace_check_tutorial
+    expect(blog_page).to be_a TestingSiteOnlyoffice::SiteAboutBlog
   end
 
   it '[Developers] [All Developer Solutions] Docs "Integration examples" link works' do
