@@ -30,27 +30,27 @@ module TestingSiteOnlyoffice
 
     def click_online_converter_link
       online_converter_link_element.click
-      TestingSiteOnlyoffice::ConvertPage.new(@instance)
+      ConvertPage.new(@instance)
     end
 
     def click_security_measures_link
       security_measures_link_element.click
-      TestingSiteOnlyoffice::SiteFeaturesSecurity.new(@instance)
+      SiteFeaturesSecurity.new(@instance)
     end
 
     def click_download_docs_link
       download_docs_link_element.click
-      TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise.new(@instance)
+      SiteGetOnlyofficeDocsEnterprise.new(@instance)
     end
 
     def click_download_desktop_link
       download_desktop_link_element.click
-      TestingSiteOnlyoffice::SiteGetOnlyofficeDesktopApps.new(@instance)
+      SiteGetOnlyofficeDesktopApps.new(@instance)
     end
 
     def click_download_mobile_link
       download_mobile_link_element.click
-      TestingSiteOnlyoffice::SiteMobileApps.new(@instance)
+      SiteMobileApps.new(@instance)
     end
   end
 end
