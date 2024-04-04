@@ -1,0 +1,74 @@
+# frozen_string_literal: true
+
+require 'spec_helper'
+
+test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
+
+describe 'Developers - All Developer Solutions' do
+  before do
+    site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
+    @all_developer_solutions = site_home_page.click_link_on_toolbar(:for_developers_all_solutions)
+  end
+
+  after do |example|
+    test_manager.add_result(example, @test)
+    @test&.webdriver&.quit
+  end
+
+  it '[Developers] [All Developer Solutions] Docspace "learn more" link works' do
+    expect(@all_developer_solutions.click_docspace_learn_more).to be_a TestingSiteOnlyoffice::SiteDocSpaceMainPage
+  end
+
+  it '[Developers] [All Developer Solutions] Docspace "API" link works' do
+    @all_developer_solutions.click_docspace_api
+    expect(@all_developer_solutions.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::OVERVIEW_API_ONLYOFFICE_TITLE)
+  end
+
+  it '[Developers] [All Developer Solutions] Docspace "Integration tutorial" link works' do
+    blog_page = @all_developer_solutions.click_docspace_check_tutorial
+    expect(blog_page).to be_a TestingSiteOnlyoffice::SiteAboutBlog
+  end
+
+  it '[Developers] [All Developer Solutions] Docs "Integration examples" link works' do
+    @all_developer_solutions.click_docs_integration_examples
+    expected_title = 'ONLYOFFICE Api Documentation - Language-specific examples'
+    expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
+  end
+
+  it '[Developers] [All Developer Solutions] Docs "Compare api and wopi" link works' do
+    expect(@all_developer_solutions.click_docs_compare_api_wopi).to be_a TestingSiteOnlyoffice::SiteWOPIComparison
+  end
+
+  it '[Developers] [All Developer Solutions] Docs "Try now" link works' do
+    expect(@all_developer_solutions.click_docs_try_now).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsDeveloper
+  end
+
+  it '[Developers] [All Developer Solutions] Docs "learn more" link works' do
+    expect(@all_developer_solutions.click_docs_learn_more).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition
+  end
+
+  it '[Developers] [All Developer Solutions] Docbuilder "Download Now" link works' do
+    expect(@all_developer_solutions.click_docbuilder_download_now).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsDeveloper
+  end
+
+  it '[Developers] [All Developer Solutions] Docbuilder "Source code" link works' do
+    @all_developer_solutions.click_docbuilder_source_code
+    expected_title = 'GitHub - ONLYOFFICE/DocumentBuilder: ONLYOFFICE Document Builder is powerful text, spreadsheet, presentation and PDF generating tool'
+    expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
+  end
+
+  it '[Developers] [All Developer Solutions] Docbuilder "Check examples" link works' do
+    @all_developer_solutions.click_docbuilder_check_examples
+    expect(@all_developer_solutions.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::OVERVIEW_API_ONLYOFFICE_TITLE)
+  end
+
+  it '[Developers] [All Developer Solutions] "Available plugins" link works' do
+    expect(@all_developer_solutions.click_available_plugins).to be_a TestingSiteOnlyoffice::SiteFeaturesMarketplace
+  end
+
+  it '[Developers] [All Developer Solutions] Workspace "Find out more" link works' do
+    @all_developer_solutions.click_workspace_find_out_more
+    expected_title = 'ONLYOFFICE Api Documentation - Basic concepts'
+    expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
+  end
+end
