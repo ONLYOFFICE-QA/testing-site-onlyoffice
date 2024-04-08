@@ -81,8 +81,8 @@ module TestingSiteOnlyoffice
 
     def self.white_papers
       {
+        docs_7_2_2_stress_test_report: 'docs_7_2_2_stress_test_report.pdf',
         docs_for_developers: 'onlyoffice_docs_for_developers.pdf',
-        oform_specification: 'oform_specification.pdf',
         load_test_report: 'load_test_report.pdf',
         private_rooms_9_security_principles: 'private_rooms_9_security_principles.pdf',
         docs_integration_example: 'integration_example.pdf',
@@ -94,6 +94,7 @@ module TestingSiteOnlyoffice
 
     def self.datasheets
       {
+        onlyoffice_secure_cloud_space: 'onlyoffice_secure_cloud_space.pdf',
         onlyoffice_document_processing_for_banking: 'onlyoffice_for_banking.pdf',
         onlyoffice_docs_for_nextcloud: 'onlyoffice_docs_for_nextcloud.pdf',
         onlyoffice_docs_for_owncloud: 'onlyoffice_docs_for_owncloud.pdf',
