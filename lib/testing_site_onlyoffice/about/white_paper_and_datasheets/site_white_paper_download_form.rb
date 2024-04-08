@@ -10,7 +10,7 @@ module TestingSiteOnlyoffice
     text_field(:white_paper_company_name, xpath: "//input[@id='txtCompanyName']")
     text_field(:white_paper_email, xpath: "//input[@id='txtEmail']")
 
-    link(:white_paper_download, xpath: "//a[@id='request-button']")
+    link(:white_paper_download, xpath: "//input[@id='request-button']")
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -24,8 +24,7 @@ module TestingSiteOnlyoffice
 
     def send_white_paper_request(data = {})
       fill_white_paper_form(data)
-      white_paper_download_element.click
-      @instance.webdriver.wait_until { !@instance.webdriver.element_present?(white_paper_download_element) }
+      white_paper_email_element.send_keys(:enter)
     end
 
     def fill_white_paper_form(params = {})

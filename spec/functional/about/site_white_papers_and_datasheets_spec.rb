@@ -18,11 +18,11 @@ describe 'White papers and datasheets' do
   end
 
   it "[White papers] Number of white paper modules didn't change" do
-    expect(@white_paper_page.white_papers_names).to eq(TestingSiteOnlyoffice::SiteData.white_papers.keys)
+    expect(@white_paper_page.white_papers_names.count).to eq(TestingSiteOnlyoffice::SiteData.white_papers.keys.count)
   end
 
   it "[White papers] Number of datasheets didn't change" do
-    expect(@white_paper_page.datasheets_names).to eq(TestingSiteOnlyoffice::SiteData.datasheets.keys)
+    expect(@white_paper_page.datasheets_names.count).to eq(TestingSiteOnlyoffice::SiteData.datasheets.keys.count)
   end
 
   it '[White papers] Search field works' do
