@@ -56,6 +56,7 @@ require_relative 'get_onlyoffice/site_get_onlyoffice_sign_in'
 require_relative 'get_onlyoffice/modules/site_download_helper'
 require_relative 'get_onlyoffice/site_get_onlyoffice_web_hosting'
 require_relative 'get_onlyoffice/site_get_onlyoffice_docs_registration'
+require_relative 'get_onlyoffice/onlyoffice_docs/site_docs_sign_in_page'
 
 require_relative 'for_business/site_enterprise_overview'
 require_relative 'for_business/site_for_business'
