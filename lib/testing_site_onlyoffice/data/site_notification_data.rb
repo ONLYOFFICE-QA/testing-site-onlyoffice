@@ -4,6 +4,7 @@ module TestingSiteOnlyoffice
   class SiteNotificationData
     TERMS_OF_USE_FILE_NAME = 'ONLYOFFICE Terms of Service (Workspace Cloud).docx'
     PRIVACY_STATEMENT = 'Privacy Statement.docx'
+    SERVICE_LEGAL_AGREEMENT = 'SLA.docx'
 
     NON_PROFIT_REQUEST = 'New non-profit request'
     CALL_BACK_REQUEST = 'New callback request'
