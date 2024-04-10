@@ -82,7 +82,7 @@ module TestingSiteOnlyoffice
 
     def self.white_papers
       {
-        docs_7_2_2_stress_test_report: 'docs_7_2_2_stress_test_report.pdf',
+        docs_7_2_2_stress_test_report: 'stress_test_onlyoffice_7.2.2.pdf',
         docs_for_developers: 'onlyoffice_docs_for_developers.pdf',
         load_test_report: 'load_test_report.pdf',
         private_rooms_9_security_principles: 'private_rooms_9_security_principles.pdf',
