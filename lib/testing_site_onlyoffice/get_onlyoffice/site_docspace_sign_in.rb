@@ -19,7 +19,6 @@ module TestingSiteOnlyoffice
     link(:forgot_password, xpath: '//a[@id = "passRestorelink"]')
     text_field(:email_for_restoring_password, id: 'passwordRestoreInput')
 
-
     def initialize(instance)
       super(instance.webdriver.driver)
       @instance = instance

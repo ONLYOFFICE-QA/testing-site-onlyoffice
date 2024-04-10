@@ -31,6 +31,6 @@ describe '[Site][Get Onlyoffice][Docspace Sign in]' do
   it '[Site][Get Onlyoffice][Docspace Sign in] Restore password works' do
     pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
     @docspace_sign_in.restore_password_from_sign_in(docspace_client_email)
-    expect(client_email_to_check.check_email_by_subject({ subject: 'ONLYOFFICE Password Reminder'}, 300, true)).to be true
+    expect(client_email_to_check.check_email_by_subject({ subject: 'ONLYOFFICE Password Reminder' }, 300, true)).to be true
   end
 end
