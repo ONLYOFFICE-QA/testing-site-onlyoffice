@@ -7,6 +7,7 @@ module TestingSiteOnlyoffice
     DEFAULT_ADMIN_LASTNAME = 'admin-zero'
     DEFAULT_ADMIN_FULLNAME = 'admin-zero admin-zero'
     PORTAL_PASSWORD = '12345678'
+    DOCSPACE_PASSWORD = '12345678a'
 
     CLIENT_EMAIL = 'client@qamail.teamlab.info'
     EMAIL_ADMIN = 'admin@qamail.teamlab.info'
