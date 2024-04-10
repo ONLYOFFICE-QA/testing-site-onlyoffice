@@ -5,6 +5,7 @@ module TestingSiteOnlyoffice
   # https://github.com/ONLYOFFICE-QA/testing-site-onlyoffice/assets/99170537/37df6529-ac77-484d-ba31-3354ddd478b3
   class SiteDocsSignInPage
     include PageObject
+    include SiteDownloadHelper
 
     text_field(:docs_cloud_email_input, xpath: '//input[@id = "txtSignInEmail"]')
     element(:send_email, xpath: '//input[@id = "signIn"]')
@@ -37,13 +38,6 @@ module TestingSiteOnlyoffice
 
     def email_error_visible?
       @instance.webdriver.element_visible?('//div[@id = "divSigninEmailError"]')
-    end
-
-    def check_opened_file_name
-      @instance.webdriver.choose_tab(2)
-      @instance.init_online_documents
-      @instance.doc_instance.management.wait_for_operation_with_round_status_canvas
-      @instance.doc_instance.doc_editor.top_toolbar.title_row.document_name
     end
   end
 end

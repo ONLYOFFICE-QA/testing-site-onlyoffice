@@ -66,5 +66,12 @@ module TestingSiteOnlyoffice
       @instance.webdriver.choose_tab(2) if switch_tab
       @instance.webdriver.title_of_current_tab
     end
+
+    def check_opened_file_name
+      @instance.webdriver.choose_tab(2)
+      @instance.init_online_documents
+      @instance.doc_instance.management.wait_for_operation_with_round_status_canvas
+      @instance.doc_instance.doc_editor.top_toolbar.title_row.document_name
+    end
   end
 end

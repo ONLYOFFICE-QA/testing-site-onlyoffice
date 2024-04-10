@@ -265,6 +265,10 @@ module TestingSiteOnlyoffice
           element: site_get_onlyoffice_docspace_sign_in_element,
           class: SiteDocSpaceSignIn
         },
+        get_onlyoffice_docspace_sign_up: {
+          element: site_get_onlyoffice_docspace_sign_up_element,
+          class: SiteDocSpaceSignUp
+        },
         get_onlyoffice_connectors: {
           element: site_get_onlyoffice_connectors_element,
           class: SiteConnectorsOnlyoffice

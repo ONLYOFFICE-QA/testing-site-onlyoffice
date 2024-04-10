@@ -5,6 +5,7 @@ module TestingSiteOnlyoffice
   # https://user-images.githubusercontent.com/38238032/234256489-08d104ea-ceed-4735-a394-e30fd991bb2f.jpg
   class SiteDocSpaceSignUp
     include PageObject
+    include SiteDownloadHelper
 
     div(:sign_up_form, xpath: "//div[contains(@class, 'signuppageform')]")
     div(:portal_region, xpath: "//div[contains(@class, 'signUpBaseDomainValue')]")
@@ -16,6 +17,9 @@ module TestingSiteOnlyoffice
     text_field(:portal_name, xpath: "//input[@id = 'txtSignUpPortalName']")
     text_field(:password, xpath: "//input[@id = 'txtSignUpPassword']")
     text_field(:submit_button, xpath: "//input[contains(@class, 'sbmtSignUp')]")
+
+    link(:terms_and_conditions, xpath: '//a[contains(text(), "Terms and conditions")]')
+    link(:privacy_statement, xpath: '//a[contains(text(), "Privacy statement")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
