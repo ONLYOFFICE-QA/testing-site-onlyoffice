@@ -16,7 +16,6 @@ describe 'Mobile apps' do
   end
 
   describe 'ONLYOFFICE Documents mobile App' do
-
     it '[Mobile][ONLYOFFICE Documents for Android] Check "Get it on Google play" button' do
       @mobile_app_page.oo_documents_google_play
       expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_GOOGLE)
@@ -44,7 +43,6 @@ describe 'Mobile apps' do
   end
 
   describe 'ONLYOFFICE Projects mobile Apps' do
-
     it '[Mobile][ONLYOFFICE Projects for Android] Check "Get it on Google play" button' do
       @mobile_app_page.oo_projects_google_play
       expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_PROJECTS_GOOGLE)
