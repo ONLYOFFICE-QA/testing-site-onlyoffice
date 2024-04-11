@@ -16,7 +16,7 @@ module TestingSiteOnlyoffice
     include SiteToolbarDesktopMobiles
     include SiteToolbar
 
-    div(:desktop_block, xpath: "//div[@class='dwn-mp-desktop']//div[@class='dwn-mp-item']")
+    div(:desktop_editor_installer_block, xpath: "//div[@class='dwn-mp-desktop']//div[@class='dwn-mp-item']")
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -31,12 +31,17 @@ module TestingSiteOnlyoffice
       end
     end
 
-    def desktop_block_number
-      @instance.webdriver.driver.find_elements(:xpath, desktop_block_element.selector[:xpath]).count
+    def desktop_editor_installer_block_number
+      @instance.webdriver.driver.find_elements(:xpath, desktop_editor_installer_block_element.selector[:xpath]).count
     end
 
     def desktop_installer_block(type = :mac)
       SiteDesktopConstructor.new(@instance, type.to_s)
+    end
+
+    def click_learn_more_on_website(id)
+      site_link_xpath = "//a[@id='#{id}']"
+      @instance.webdriver.click_on_locator(site_link_xpath)
     end
   end
 end

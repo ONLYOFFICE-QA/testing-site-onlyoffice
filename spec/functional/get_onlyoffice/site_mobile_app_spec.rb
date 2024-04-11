@@ -4,7 +4,7 @@ require 'spec_helper'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Desktop apps' do
+describe 'Mobile apps' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @mobile_app_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_desktop_mobile).open_mobile_apps
@@ -15,25 +15,47 @@ describe 'Desktop apps' do
     @test.webdriver.quit
   end
 
-  it '[Mobile][Android]Check "Get it on Google play" button' do
-    @mobile_app_page.site_mobile_google_play
-    expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_GOOGLE)
-  end
-
-  it '[Mobile][Huawei]Check "Explore it on AppGallery" button' do
-    @mobile_app_page.site_mobile_appgallery
-    expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_GALLERY)
-  end
-
-  describe 'IOS' do
-    it '[Mobile][iOS]Check "Download on the app store" button' do
-      @mobile_app_page.site_mobile_app_store
-      expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_STORE)
+  describe 'ONLYOFFICE Documents mobile App' do
+    it '[Mobile][ONLYOFFICE Documents for Android] Check "Get it on Google play" button' do
+      @mobile_app_page.oo_documents_google_play
+      expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_GOOGLE)
     end
 
-    it '[Mobile][iOS]Check "Whats new" link' do
-      @mobile_app_page.site_mobile_ios_whats_new
-      expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_IOS_CHANGELOG)
+    it '[Mobile][ONLYOFFICE Documents for Huawei] Check "Explore it on AppGallery" button' do
+      @mobile_app_page.oo_documents_appgallery
+      expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_APP_GALLERY)
+    end
+
+    it '[Mobile][ONLYOFFICE Documents for Galaxy] Check "Available on Galaxy Store" button' do
+      @mobile_app_page.oo_documents_galaxy_store
+      expect(@mobile_app_page.check_opened_page_title).to include(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_GALAXY_STORE)
+    end
+
+    it '[Mobile][ONLYOFFICE Documents for iOS] Check "Download on the app store" button' do
+      @mobile_app_page.oo_documents_app_store
+      expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_APP_STORE)
+    end
+
+    it '[Mobile][ONLYOFFICE Documents for iOS] Check "Whats new" link' do
+      @mobile_app_page.oo_documents_ios_whats_new
+      expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_IOS_CHANGELOG)
+    end
+  end
+
+  describe 'ONLYOFFICE Projects mobile Apps' do
+    it '[Mobile][ONLYOFFICE Projects for Android] Check "Get it on Google play" button' do
+      @mobile_app_page.oo_projects_google_play
+      expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_PROJECTS_GOOGLE)
+    end
+
+    it '[Mobile][ONLYOFFICE Projects for Huawei] Check "Explore it on AppGallery" button' do
+      @mobile_app_page.oo_projects_appgallery
+      expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_PROJECTS_APP_GALLERY)
+    end
+
+    it '[Mobile][ONLYOFFICE Projects for iOS] Check "Download on the app store" button' do
+      @mobile_app_page.oo_projects_app_store
+      expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_PROJECTS_APP_STORE)
     end
   end
 end
