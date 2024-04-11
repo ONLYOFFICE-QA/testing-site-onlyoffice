@@ -21,11 +21,17 @@ module TestingSiteOnlyoffice
       @desktop_mobile_info ||= JSON.parse(File.read("#{__dir__}/site_desktop_info.json"))
     end
 
-    # Mobile
-    MOBILE_GOOGLE = 'ONLYOFFICE Documents - Apps on Google Play'
-    MOBILE_APP_GALLERY = 'AppGallery'
-    MOBILE_APP_STORE = 'ONLYOFFICE Documents on the App Store'
-    MOBILE_IOS_CHANGELOG = 'Documents app for iOS changelog - ONLYOFFICE'
+    # Onlyoffice Documents mobile apps
+    MOBILE_DOCUMENTS_GOOGLE = 'ONLYOFFICE Documents - Apps on Google Play'
+    MOBILE_DOCUMENTS_APP_GALLERY = 'AppGallery'
+    MOBILE_DOCUMENTS_GALAXY_STORE = 'ONLYOFFICE Documents'
+    MOBILE_DOCUMENTS_APP_STORE = 'ONLYOFFICE Documents on the App Store'
+    MOBILE_DOCUMENTS_IOS_CHANGELOG = 'Documents app for iOS changelog - ONLYOFFICE'
+
+    # Onlyoffice Projects mobile apps
+    MOBILE_PROJECTS_GOOGLE = 'ONLYOFFICE Projects - Apps on Google Play'
+    MOBILE_PROJECTS_APP_GALLERY = 'AppGallery'
+    MOBILE_PROJECTS_APP_STORE = 'ONLYOFFICE Projects on the App Store'
 
     # Onlyoffice API
     EXTERNAL_ACCES_API_ONLYOFFICE_TITLE = 'ONLYOFFICE Api Documentation - External access to the document editing'
@@ -163,6 +169,10 @@ module TestingSiteOnlyoffice
 
     def self.marketplace_plugins_info
       @marketplace_plugins_info ||= JSON.parse(File.read("#{__dir__}/site_marketplace_plugins_info.json"))
+    end
+
+    def self.editors_preinstalled_and_available
+      @editors_preinstalled_and_available ||= JSON.parse(File.read("#{__dir__}/desktop_editors_preinstalled_and_available.json"))
     end
   end
 end

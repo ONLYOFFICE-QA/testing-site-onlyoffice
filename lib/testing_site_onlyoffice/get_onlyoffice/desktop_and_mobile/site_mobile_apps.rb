@@ -13,12 +13,15 @@ module TestingSiteOnlyoffice
     include SiteToolbar
     include SiteToolbarDesktopMobiles
 
-    link(:site_mobile_google_play, xpath: '//a[contains(@href, "google")]')
+    link(:oo_documents_google_play, xpath: '//a[@id="onlyoffice_documents_for_android"]')
+    link(:oo_documents_appgallery, xpath: '//a[@id="onlyoffice_documents_for_huawei_app_gallery"]')
+    link(:oo_documents_app_store, xpath: '//a[@id="onlyoffice_documents_for_ios"]')
+    link(:oo_documents_galaxy_store, xpath: '//a[@id="onlyoffice_documents_for_galaxy_store"]')
+    link(:oo_documents_ios_whats_new, xpath: '//a[contains(@href, "apple")]/../..//a[contains(@href, "changelog")]')
 
-    link(:site_mobile_appgallery, xpath: '//a[contains(@href, "appgallery")]')
-
-    link(:site_mobile_app_store, xpath: '//a[contains(@href, "apple")]')
-    link(:site_mobile_ios_whats_new, xpath: '//a[contains(@href, "apple")]/../..//a[contains(@href, "changelog")]')
+    link(:oo_projects_google_play, xpath: '//a[@id="onlyoffice_projects_for_android"]')
+    link(:oo_projects_app_store, xpath: '//a[@id="onlyoffice_projects_for_ios"]')
+    link(:oo_projects_appgallery, xpath: '//a[@id="onlyoffice_projects_for_huawei_app_gallery"]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -28,7 +31,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(site_mobile_google_play_element)
+        @instance.webdriver.element_present?(oo_documents_google_play_element)
       end
     end
 

@@ -1,0 +1,58 @@
+{
+  "br_os": {
+    "block_id": "onlyoffice_desktop_editors_for_br_os",
+    "website": "Br OS – Simples, Fácil e Nacional."
+  },
+  "escuelas_linux": {
+    "block_id": "onlyoffice_desktop_editors_for_escuelas_linux",
+    "website": "Escuelas Linux"
+  },
+  "linkat": {
+    "block_id": "onlyoffice_desktop_editors_for_linkat",
+    "website": "Linkat :: GNU Linux"
+  },
+  "linspire": {
+    "block_id": "onlyoffice_desktop_editors_for_linspire",
+    "website": "Linspire - The easiest Desktop Linux"
+  },
+  "linuxfx": {
+    "block_id": "onlyoffice_desktop_editors_for_linuxfx",
+    "website": "Linuxfx Operating System"
+  },
+  "pamac": {
+    "block_id": "onlyoffice_desktop_editors_for_pamac",
+    "website": "Packages"
+  },
+  "risios": {
+    "block_id": "onlyoffice_desktop_editors_for_risi",
+    "website": "risiOS"
+  },
+  "sparkylinux": {
+    "block_id": "onlyoffice_desktop_editors_for_SparkyLinux",
+    "website": "SparkyLinux Repository"
+  },
+  "mauna_linux": {
+    "block_id": "onlyoffice_desktop_editors_for_Mauna_Linux",
+    "website": "Página inicial - Mauna Linux"
+  },
+  "freespire": {
+    "block_id": "onlyoffice_desktop_editors_for_freespire",
+    "website": "Freespire"
+  },
+  "linux_mint": {
+    "block_id": "onlyoffice_desktop_editors_for_linux_mint_software_store",
+    "website": "Home - Linux Mint"
+  },
+  "zorin_os": {
+    "block_id": "onlyoffice_desktop_editors_for_zorin_os_software_store",
+    "website": "Zorin OS - Make your computer better."
+  },
+  "deepin": {
+    "block_id": "onlyoffice_desktop_editors_for_deepin_app_store",
+    "website": "deepin - deepin Linux Operating System"
+  },
+  "openkylin": {
+    "block_id": "onlyoffice_desktop_editors_for_openkylin_software",
+    "website": "ISO download-openKylin 开放麒麟社区官网 | 开源聚力，共创未来"
+  }
+}
