@@ -27,15 +27,11 @@ module TestingSiteOnlyoffice
     end
 
     def white_papers_names
-      white_papers_names = []
-      white_paper_block_elements.each { |element| white_papers_names << element.attribute('id').to_sym }
-      white_papers_names
+      white_paper_block_elements.map { |element| element.attribute('id').to_sym }
     end
 
     def datasheets_names
-      datasheets_names = []
-      datasheet_block_elements.each { |element| datasheets_names << element.attribute('id').to_sym }
-      datasheets_names
+      datasheet_block_elements.map { |element| element.attribute('id').to_sym }
     end
 
     def white_paper_xpath(block_id)
