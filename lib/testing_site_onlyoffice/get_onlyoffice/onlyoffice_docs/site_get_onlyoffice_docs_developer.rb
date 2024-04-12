@@ -38,5 +38,10 @@ module TestingSiteOnlyoffice
     def page_title
       @instance.webdriver.get_text(title_docs_developer_element)
     end
+
+    def developer_installers_block_number
+      installer_block_xpath = "(//div[@class='dwn-mp-block'])[2]/div[@class='dwn-mp-item']"
+      @instance.webdriver.get_element_count(installer_block_xpath)
+    end
   end
 end

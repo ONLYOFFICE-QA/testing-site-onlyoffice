@@ -57,6 +57,10 @@
     "amazon_machine": {
       "instruction": "Deploying ONLYOFFICE Docs Developer Edition using AMI - ONLYOFFICE",
       "download": "AWS Marketplace: Ascensio Systems Inc"
+    },
+    "alibaba_cloud": {
+      "instruction": "Deploying ONLYOFFICE Docs Developer Edition on Alibaba Cloud - ONLYOFFICE",
+      "download": "Ascensio System Ltd. - Alibaba Cloud"
     }
   }
 }
