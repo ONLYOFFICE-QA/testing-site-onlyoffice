@@ -125,7 +125,7 @@ module TestingSiteOnlyoffice
     end
 
     def self.commercial_packages_without_download_form
-      %i[amazon_machine ovhcloud univention]
+      %i[amazon_machine ovhcloud univention alibaba_cloud]
     end
 
     # Commercial Enterprise Docs

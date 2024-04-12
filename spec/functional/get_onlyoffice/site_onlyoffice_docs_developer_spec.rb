@@ -10,13 +10,17 @@ describe 'Onlyoffice Docs Developer edition download' do
     @download_onlyoffice_docs_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_developer)
   end
 
+  after do |example|
+    test_manager.add_result(example, @test)
+    @test.webdriver.quit
+  end
+
   it_behaves_like 'commercial_installer_download', 'Docs_Developer',
                   TestingSiteOnlyoffice::SiteDownloadData.commercial_developer_docs_list_type do
     let(:installers_download_page) { @download_onlyoffice_docs_page }
   end
 
-  after do |example|
-    test_manager.add_result(example, @test)
-    @test.webdriver.quit
+  it "[Site][GetOnlyoffice][Docs Developer] Installers number didn't change" do
+    expect(@download_onlyoffice_docs_page.developer_installers_block_number).to eq(TestingSiteOnlyoffice::SiteDownloadData.commercial_info['docs_developer'].count)
   end
 end
