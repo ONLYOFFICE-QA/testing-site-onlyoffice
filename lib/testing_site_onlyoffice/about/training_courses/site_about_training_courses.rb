@@ -28,15 +28,11 @@ module TestingSiteOnlyoffice
     end
 
     def courses_modules_names
-      courses_modules_names = []
-      courses_module_block_elements.each { |element| courses_modules_names << element.text }
-      courses_modules_names
+      courses_module_block_elements.map(&:text)
     end
 
     def courses_purpose_names
-      courses_purpose_names = []
-      courses_purpose_block_elements.each { |element| courses_purpose_names << element.text }
-      courses_purpose_names
+      courses_purpose_block_elements.map(&:text)
     end
 
     def courses_submit_request_xpath(course)
