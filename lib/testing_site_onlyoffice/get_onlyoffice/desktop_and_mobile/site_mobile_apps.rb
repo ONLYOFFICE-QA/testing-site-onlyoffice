@@ -37,13 +37,13 @@ module TestingSiteOnlyoffice
 
     def download_links
       {
-        mobile_android: site_mobile_google_play_element,
-        mobile_ios: site_mobile_app_store_element
+        mobile_android: oo_documents_google_play_element,
+        mobile_ios: oo_documents_app_store_element
       }
     end
 
     def open_mobile_app_gallery
-      site_mobile_appgallery_element.click
+      oo_documents_appgallery_element.click
       sleep 10
     end
   end
