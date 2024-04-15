@@ -5,12 +5,10 @@ require_relative '../modules/site_download_helper'
 require_relative '../modules/open_source/site_installer_block_constructor'
 
 module TestingSiteOnlyoffice
-  # /download-docs.aspx?from=downloadintegrationmenu#docs-community
+  # /download-docs.aspx#docs-community
   # https://user-images.githubusercontent.com/40513035/131093555-b4c45fb2-a30c-48ca-a6a9-fb20d4b92045.png
   class SiteGetOnlyofficeDocsCommunity
-    include PageObject
-    include SiteDownloadHelper
-    include SiteToolbar
+    include SiteOtherProductsBundles
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -37,6 +35,21 @@ module TestingSiteOnlyoffice
         @instance.webdriver.wait_until { !check_opened_page_title.empty? } # Digitalocean title loading timeout
         check_opened_page_title == downloaded_installer
       end
+    end
+
+    def community_installers_block_number
+      installer_block_xpath = "(//div[@class='dwn-mp-block'])[3]/div[@class='dwn-mp-item']"
+      @instance.webdriver.get_element_count(installer_block_xpath)
+    end
+
+    def owncloud_bundles_block_number
+      bundle_block_xpath = "(//div[@class='dwn-mp-block'])[4]/div[@class='dwn-mp-item']"
+      @instance.webdriver.get_element_count(bundle_block_xpath)
+    end
+
+    def nextcloud_bundles_block_number
+      bundle_block_xpath = "(//div[@class='dwn-mp-block'])[5]/div[@class='dwn-mp-item']"
+      @instance.webdriver.get_element_count(bundle_block_xpath)
     end
   end
 end

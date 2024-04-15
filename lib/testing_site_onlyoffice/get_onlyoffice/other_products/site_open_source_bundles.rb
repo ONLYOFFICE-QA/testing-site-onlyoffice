@@ -8,7 +8,7 @@ require_relative '../modules/workspace_community/workspace_community_helper'
 module TestingSiteOnlyoffice
   # /download.aspx#bundles
   # https://user-images.githubusercontent.com/40513035/97213564-d049ca80-17d2-11eb-9c9d-fffac028177d.png
-  class SiteOtherProductsBundles
+  module SiteOtherProductsBundles
     include PageObject
     include SiteDownloadHelper
     include SiteToolbar
@@ -60,18 +60,6 @@ module TestingSiteOnlyoffice
     link(:site_nextcloud_kvm, xpath: nextcloud_kvm_download)
     link(:site_nextcloud_kvm_instruction,
          xpath: "#{nextcloud_kvm_download}/../../div/p/a[contains(@href, 'NextcloudUsingUCS')]")
-
-    def initialize(instance)
-      super(instance.webdriver.driver)
-      @instance = instance
-      wait_to_load
-    end
-
-    def wait_to_load
-      @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(site_owncloud_docker_compose_element)
-      end
-    end
 
     def download_links
       {

@@ -78,7 +78,7 @@ module TestingSiteOnlyoffice
       %i[workspace_windows workspace_deb workspace_rpm workspace_docker_image workspace_docker_compose workspace_digitalocean]
     end
 
-    def self.other_products_bundles_list
+    def self.docs_community_bundles_list
       %i[owncloud_docker_compose owncloud_vmware owncloud_vmware_esxi owncloud_virtualbox owncloud_kvm nextcloud_docker_compose nextcloud_vmware nextcloud_vmware_esxi nextcloud_virtualbox nextcloud_kvm]
     end
 
@@ -99,7 +99,7 @@ module TestingSiteOnlyoffice
     def self.open_source_docs_list_type
       {
         with_github: %i[docker ubuntu centos windows snap],
-        without_github: %i[digitalocean Cloudron UCS]
+        without_github: %i[digitalocean Cloudron UCS vultr linode]
       }
     end
 
