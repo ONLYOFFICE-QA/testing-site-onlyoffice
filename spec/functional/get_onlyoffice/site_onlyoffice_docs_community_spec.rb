@@ -10,6 +10,11 @@ describe 'Onlyoffice Docs Community edition download' do
     @docs_community_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_community)
   end
 
+  after do |example|
+    test_manager.add_result(example, @test)
+    @test.webdriver.quit
+  end
+
   TestingSiteOnlyoffice::SiteDownloadData.open_source_docs_list.each do |installer|
     describe installer.to_s do
       let(:current_installation) { @docs_community_page.installer_type_block(installer) }
@@ -43,8 +48,7 @@ describe 'Onlyoffice Docs Community edition download' do
     end
   end
 
-  after do |example|
-    test_manager.add_result(example, @test)
-    @test.webdriver.quit
+  it "[Site][GetOnlyoffice][Docs Community] Installers number didn't change" do
+    expect(@docs_community_page.community_installers_block_number).to eq(TestingSiteOnlyoffice::SiteDownloadData.open_source_docs_list.count)
   end
 end

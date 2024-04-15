@@ -24,6 +24,10 @@
     "download": "Installing ONLYOFFICE Docs for Linux from snap package - ONLYOFFICE",
     "github": "GitHub - ONLYOFFICE/snap-documentserver: The ONLYOFFICE Document Server snap package for the snap package system"
   },
+  "UCS": {
+    "instruction": "Integration. Getting Started. Nextcloud - ONLYOFFICE",
+    "download": "ONLYOFFICE Docs - Univention App Center"
+  },
   "digitalocean": {
     "instruction": "Deploying ONLYOFFICE Docs in DigitalOcean - ONLYOFFICE",
     "download": "ONLYOFFICE Docs | DigitalOcean Marketplace 1-Click App"
@@ -32,8 +36,12 @@
     "instruction": "Integration. Getting Started. Cloudron - ONLYOFFICE",
     "download": "ONLYOFFICE Docs on Cloudron"
   },
-  "UCS": {
-    "instruction": "Integration. Getting Started. Nextcloud - ONLYOFFICE",
-    "download": "ONLYOFFICE Docs - Univention App Center"
+  "vultr": {
+    "instruction": "Deploying ONLYOFFICE Docs in Vultr - ONLYOFFICE",
+    "download": "ONLYOFFICE Docs | Vultr Marketplace One-Click Application - Vultr.com"
+  },
+  "linode": {
+    "instruction": "ONLYOFFICE Docs Open Source Business Software | Akamai",
+    "download": "ONLYOFFICE Docs Open Source Business Software | Akamai"
   }
 }
