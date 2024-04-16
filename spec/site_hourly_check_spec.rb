@@ -166,7 +166,9 @@ describe 'SiteHourlyCheck' do
 
               it "[Site][Docs_Community] download link for `#{installer}` alive /download-docs.aspx#docs-community" do
                 skip 'waiting for fixing link for linode' if installer == :linode
-                expect(onlyoffice_docs_community_page).to be_link_alive(current_installation.download_xpath)
+                skip 'due to excessively long file download time' if installer == :windows
+                current_installation.click_install_button
+                expect(onlyoffice_docs_community_page).to be_install_button_works(installer)
               end
 
               it "[Site][Docs_Community] `#{installer}` instruction link alive /download-docs.aspx#docs-community" do
