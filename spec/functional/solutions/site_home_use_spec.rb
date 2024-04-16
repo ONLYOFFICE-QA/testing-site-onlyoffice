@@ -51,11 +51,11 @@ describe 'Document Builder download' do
 
   it '[Site][HomeUse]Button "Download on the App Store" works' do
     page_title = @home_use_page.click_download_on_app_store
-    expect(page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_STORE)
+    expect(page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_APP_STORE)
   end
 
   it '[Site][HomeUse]Button "Get it on Google Play" works' do
     page_title = @home_use_page.click_download_on_google_play
-    expect(page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_GOOGLE)
+    expect(page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_GOOGLE)
   end
 end

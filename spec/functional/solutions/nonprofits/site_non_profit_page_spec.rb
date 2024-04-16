@@ -47,12 +47,12 @@ describe 'Site Nonprofit page links' do
 
   it '[Site][NonProfits] Check link `Download for Android`' do
     @nonprofits_page.nonprofit_android
-    expect(@nonprofits_page.check_opened_page_title(switch_tab: false)).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_GOOGLE)
+    expect(@nonprofits_page.check_opened_page_title(switch_tab: false)).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_GOOGLE)
   end
 
   it '[Site][NonProfits] Check link `Download for IOS`' do
     @nonprofits_page.nonprofit_ios
-    expect(@nonprofits_page.check_opened_page_title(switch_tab: false)).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_APP_STORE)
+    expect(@nonprofits_page.check_opened_page_title(switch_tab: false)).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_APP_STORE)
   end
 
   describe 'Download desktop' do
