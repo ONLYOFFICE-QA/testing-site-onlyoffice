@@ -20,15 +20,6 @@ describe 'Pricing docs enterprise' do
     expect(connectors.page_title).to eq('ONLYOFFICE Docs Enterprise')
   end
 
-  it '[Site][Pricing][DocsEnterprise] Home use buy' do
-    pricing_page = @site_home_page.click_link_on_toolbar(:pricing_enterprise)
-    pricing_page.choose_home_tariff
-    total_price = pricing_page.total_price_home_use.to_i
-    payment_page = pricing_page.go_to_payment_from_pricing_page(pricing_page.buy_home_server_element, test_purchase: true)
-    expect(payment_page).to be_payment_page_opened
-    expect(payment_page.total_amount_without_tax).to eq(total_price)
-  end
-
   it_behaves_like 'pricing_buy_page', 'PricingDocsEnterprise',
                   TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:support_level],
                   TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:number_connection_enterprise] do

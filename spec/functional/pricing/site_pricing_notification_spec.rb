@@ -129,4 +129,31 @@ describe 'Pricing Get a quote notification email' do
       end
     end
   end
+
+  describe 'Check email notification for Docs Developer Cloud' do
+    TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:support_level].each do |level|
+      it "Send notification email for #{level} support and all additional tools selected" do
+        skip 'Cannot test email notifications in production' if config.server.include?('.com')
+        pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
+        pricing_page.choose_hosting_on_cloud
+        pricing_page.fill_data_pricing_developer_cloud(level, { training_course: true, access_to_api: true, live_viewer: true, mobile_apps: true, desktop_apps: true })
+        phone_number = Faker::PhoneNumber.cell_phone_in_e164
+        company_name = Faker::Company.name
+        mail_subject = "#{company_name} - Docs Developer Request (Cloud) [from: developer-edition-prices]"
+        pricing_page.complete_pricing_page_form(phone_number:, company_name:)
+        expect(@mail.check_pricing_docs_developers_cloud_mail_body(username: @username,
+                                                                   subject: mail_subject,
+                                                                   phone_number:,
+                                                                   company_name:,
+                                                                   level:,
+                                                                   training_course: true,
+                                                                   access_to_api: true,
+                                                                   live_viewer: true,
+                                                                   mobile_apps: true,
+                                                                   desktop_apps: true,
+                                                                   move_out: true)).to be_truthy
+      end
+    end
+  end
 end
+
