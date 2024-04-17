@@ -156,4 +156,3 @@ describe 'Pricing Get a quote notification email' do
     end
   end
 end
-
