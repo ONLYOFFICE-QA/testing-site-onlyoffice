@@ -330,7 +330,7 @@ module TestingSiteOnlyoffice
         pricing_docs_home_server: {
           element: site_pricing_docs_home_server_element,
           class: SitePricingHomeUse
-      },
+        },
         pricing_docspace_family_pack: {
           element: site_pricing_docspace_family_pack_element,
           class: SitePricingHomeUse

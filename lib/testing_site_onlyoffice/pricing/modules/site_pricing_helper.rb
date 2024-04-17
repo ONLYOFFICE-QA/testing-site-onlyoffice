@@ -40,7 +40,6 @@ module TestingSiteOnlyoffice
     span(:mobile_apps, xpath: '//input[@id = "native-mobile-apps"]/following-sibling::span')
     span(:desktop_apps, xpath: '//input[@id = "desktop-apps"]/following-sibling::span')
 
-
     def go_to_payment_from_pricing_page(buy_element, test_purchase: false)
       workaround_webdriver_hangs_on_timeout(buy_element)
       wait_pricing_on_production
@@ -158,7 +157,6 @@ module TestingSiteOnlyoffice
       mobile_apps_element.click if options[:mobile_apps]
       desktop_apps_element.click if options[:desktop_apps]
     end
-
 
     # Press 'Get a Quote' button to open up a form
     # Fill out the form and press 'Submit request' button
