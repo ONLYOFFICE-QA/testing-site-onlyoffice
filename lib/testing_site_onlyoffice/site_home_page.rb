@@ -97,6 +97,7 @@ require_relative 'pricing/site_pricing_server_enterprise'
 require_relative 'pricing/site_pricing_docs_enterprise'
 require_relative 'pricing/site_pricing_docs_developer'
 require_relative 'pricing/site_pricing_workspace'
+require_relative 'pricing/site_pricing_home_use'
 
 require_relative 'features/site_features_docspace_main_page'
 require_relative 'features/site_features_workspace'

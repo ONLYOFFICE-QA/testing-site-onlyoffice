@@ -31,5 +31,19 @@ module OnlyofficeIredmailHelper
         body.training_courses? &&
         body.cloud_type_match?
     end
+
+    def check_pricing_docs_developers_cloud_mail_body(params = {})
+      body = MailParseBody.new(params)
+      body.full_name_match? &&
+        body.email_match? &&
+        body.phone_number_match? &&
+        body.company_name_match? &&
+        body.support_level_match? &&
+        body.access_to_api? &&
+        body.live_viewer? &&
+        body.mobile_apps? &&
+        body.desktop_apps? &&
+        body.training_courses?
+    end
   end
 end

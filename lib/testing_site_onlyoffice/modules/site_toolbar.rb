@@ -81,6 +81,8 @@ module TestingSiteOnlyoffice
     link(:site_pricing_docspace, xpath: '//a[@id="navitem_prices_docspace"]')
     link(:site_pricing_docs_developer, xpath: '//a[@id="navitem_prices_docs_dev"]')
     link(:site_pricing_buy_from_reseller, xpath: '//a[@id="navitem_prices_reseller"]')
+    link(:site_pricing_docs_home_server, xpath: '//a[@id="navitem_prices_home_server"]')
+    link(:site_pricing_docspace_family_pack, xpath: '//a[@id="navitem_prices_family_pack"]')
 
     # top toolbar - Partners
     link(:site_partners, xpath: '//a[@id="navitem_partners"]')
@@ -324,6 +326,14 @@ module TestingSiteOnlyoffice
         pricing_buy_from_reseller: {
           element: site_pricing_buy_from_reseller_element,
           class: SitePartnersFind
+        },
+        pricing_docs_home_server: {
+          element: site_pricing_docs_home_server_element,
+          class: SitePricingHomeUse
+        },
+        pricing_docspace_family_pack: {
+          element: site_pricing_docspace_family_pack_element,
+          class: SitePricingHomeUse
         }
       }
     end

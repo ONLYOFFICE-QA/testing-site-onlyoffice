@@ -60,6 +60,46 @@ module OnlyofficeIredmailHelper
                  end
     end
 
+    def access_to_api?
+      status = @params[:access_to_api]
+      support = @body[@body.find_index('API') + 1]
+      support == if status
+                   'Selected'
+                 else
+                   'Not'
+                 end
+    end
+
+    def live_viewer?
+      status = @params[:live_viewer]
+      support = @body[@body.find_index('viewer') + 1]
+      support == if status
+                   'Selected'
+                 else
+                   'Not'
+                 end
+    end
+
+    def mobile_apps?
+      status = @params[:mobile_apps]
+      support = @body[@body.find_index('mobile') + 2]
+      support == if status
+                   'Selected'
+                 else
+                   'Not'
+                 end
+    end
+
+    def desktop_apps?
+      status = @params[:desktop_apps]
+      support = @body[@body.find_index('Desktop') + 2]
+      support == if status
+                   'Selected'
+                 else
+                   'Not'
+                 end
+    end
+
     def training_courses?
       status = @params[:training_course]
       support = @body[@body.find_index('courses') + 1]

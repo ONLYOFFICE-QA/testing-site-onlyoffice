@@ -13,9 +13,11 @@ module TestingSiteOnlyoffice
 
     link(:get_quote_button, xpath: "//div[@class='dep-part ee-production ee-2']//a[contains(@data-id, 'ie-gaq')]")
     link(:buy_now_button, xpath: '//a[@data-id = "ie-price-url-updated"]')
-    link(:free_button, xpath: '//div[@class="dep-part ee-production ee-2"]//div[@class="ee-text-part"]/a')
+    link(:free_button, xpath: "//a[@href='/download-docs.aspx?from=developer-edition-prices#docs-developer']")
     div(:add_num_connection, xpath: '//div[@class="num-connections"]//div[@class="connections_increase simcon_change"]')
     div(:num_connections, xpath: '//div[@class="dep-part ee-production ee-2"]//div[@data-id="ie-number-updated"]')
+    div(:hosting_on_cloud, xpath: '//div[@data-id = "dd-cloud"]')
+    div(:hosting_on_premises, xpath: '//div[@data-id = "dd-on-premises"]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -33,6 +35,11 @@ module TestingSiteOnlyoffice
       SiteGetOnlyofficeDocsDeveloper.new(@instance)
     end
 
+    def click_buy_now_docs_developers
+      buy_now_button_element.click
+      StripePaymentPage.new(@instance)
+    end
+
     def fill_data_price_developer(number_connection, support_level)
       choose_number_connection(number_connection)
       choose_support_level(support_level)
@@ -42,8 +49,16 @@ module TestingSiteOnlyoffice
       add_num_connection_element.click while @instance.webdriver.get_text(num_connections_element) != connection
     end
 
-    def button_get_quote_present?
+    def button_get_quote_developers_present?
       @instance.webdriver.element_present?(get_quote_button_element)
+    end
+
+    def choose_hosting_on_cloud
+      hosting_on_cloud_element.click
+    end
+
+    def choose_hosting_on_premises
+      hosting_on_premises_element.click
     end
   end
 end

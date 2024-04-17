@@ -35,6 +35,10 @@ module TestingSiteOnlyoffice
     div(:lifetime_license, xpath: '//div[@data-id = "de-lifetime"]')
     div(:cloud_type_business, xpath: '//div[@data-id = "de-business"]')
     div(:cloud_type_vip, xpath: '//div[@data-id = "de-vip"]')
+    span(:access_to_api, xpath: '//input[@id = "access-to-automation-api"]/following-sibling::span')
+    span(:live_viewer, xpath: '//input[@id = "live-viewer"]/following-sibling::span')
+    span(:mobile_apps, xpath: '//input[@id = "native-mobile-apps"]/following-sibling::span')
+    span(:desktop_apps, xpath: '//input[@id = "desktop-apps"]/following-sibling::span')
 
     def go_to_payment_from_pricing_page(buy_element, test_purchase: false)
       workaround_webdriver_hangs_on_timeout(buy_element)
@@ -143,6 +147,15 @@ module TestingSiteOnlyoffice
       support_disaster_recovery_element.click if support_recovery
       support_multi_server_element.click if support_multi
       training_courses_element.click if training_course
+    end
+
+    def fill_data_pricing_developer_cloud(support_level, options = {})
+      choose_support_level(support_level)
+      training_courses_element.click if options[:training_course]
+      access_to_api_element.click if options[:access_to_api]
+      live_viewer_element.click if options[:live_viewer]
+      mobile_apps_element.click if options[:mobile_apps]
+      desktop_apps_element.click if options[:desktop_apps]
     end
 
     # Press 'Get a Quote' button to open up a form
