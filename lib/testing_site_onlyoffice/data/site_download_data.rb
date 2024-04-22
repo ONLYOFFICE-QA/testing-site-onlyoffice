@@ -164,7 +164,7 @@ module TestingSiteOnlyoffice
         number_connection_developer: %w[250 500 1000],
         docs_enterprise_license_duration: %w[one_year lifetime],
         docs_enterprise_cloud_type: %w[Business VIP],
-        docs_developers_branding_type: %w[Standard White],
+        docs_developers_branding_type: %w[Standard White]
       }
     end
 

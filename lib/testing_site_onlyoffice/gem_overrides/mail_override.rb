@@ -44,10 +44,7 @@ module OnlyofficeIredmailHelper
 
     def check_pricing_docs_developers_premises_mail_body(params = {})
       body = MailParseBody.new(params)
-      body.full_name_match? &&
-        body.email_match? &&
-        body.phone_number_match? &&
-        body.company_name_match? &&
+      body.contact_information_check &&
         body.support_level_match? &&
         body.all_licensing_conditions_check &&
         body.multi_tenancy_support? &&

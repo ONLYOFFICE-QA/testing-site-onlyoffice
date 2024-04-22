@@ -50,6 +50,13 @@ module OnlyofficeIredmailHelper
         users_number_match?
     end
 
+    def contact_information_check
+      full_name_match? &&
+        email_match? &&
+        phone_number_match? &&
+        company_name_match?
+    end
+
     def all_additional_tools_check
       access_to_api? &&
         live_viewer? &&
