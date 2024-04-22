@@ -50,6 +50,14 @@ module OnlyofficeIredmailHelper
         users_number_match?
     end
 
+    def all_additional_tools_check
+      access_to_api? &&
+        live_viewer? &&
+        mobile_apps? &&
+        desktop_apps? &&
+        training_courses?
+    end
+
     def multi_server_deployment?
       status = @params[:support_multi]
       support = @body[@body.find_index('deployment') + 1]
@@ -134,6 +142,55 @@ module OnlyofficeIredmailHelper
     def cloud_type_match?
       type = @params[:type]
       type == @body[@body.find_index('type') + 1]
+    end
+
+    def multi_tenancy_support?
+      status = @params[:support_multi_tenancy]
+      support = @body[@body.find_index('multi-tenancy') + 1]
+      support == if status
+                   'Selected'
+                 else
+                   'Not'
+                 end
+    end
+
+    def development_license?
+      status = @params[:licence_development]
+      license = @body[@body.find_index('Development') + 1]
+      license == if status
+                   'Selected'
+                 else
+                   'Not'
+                 end
+    end
+
+    def production_license?
+      status = @params[:licence_production]
+      license = @body[@body.find_index('Production') + 1]
+      license == if status
+                   'Selected'
+                 else
+                   'Not'
+                 end
+    end
+
+    def non_production_license?
+      status = @params[:licence_non_production]
+      license = @body[@body.find_index('Non-production') + 1]
+      license == if status
+                   'Selected'
+                 else
+                   'Not'
+                 end
+    end
+
+    def all_licensing_conditions_check
+      development_license? && production_license? && non_production_license?
+    end
+
+    def branding_type_match?
+      branding_type = @params[:branding_type]
+      branding_type == @body[@body.find_index('Branding') + 1]
     end
   end
 end

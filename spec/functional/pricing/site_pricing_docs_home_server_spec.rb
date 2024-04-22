@@ -19,4 +19,10 @@ describe 'Pricing docs home server' do
     result_page = @pricing_docs_home.click_try_free_docs
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
   end
+
+  it '[Site][Pricing][Docs Home server] Buy now button works' do
+    total_price = @pricing_docs_home.total_price_number.to_i
+    payment_page = @pricing_docs_home.go_to_payment_from_pricing_page(@pricing_docs_home.buy_now_button_element, test_purchase: true)
+    expect(payment_page.total_amount_without_tax).to eq(total_price)
+  end
 end

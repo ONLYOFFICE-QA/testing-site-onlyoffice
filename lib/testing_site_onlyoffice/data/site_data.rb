@@ -135,5 +135,19 @@ module TestingSiteOnlyoffice
     def self.download_desktop_apps
       %i[windows linux macos]
     end
+
+    def self.all_pricing_developers_options
+      {
+        licences: { licence_development: true, licence_production: true, licence_non_production: true },
+        scalability: { support_multi_tenancy: true, support_recovery: true, support_multi: true },
+        additional_tools: {
+          training_course: true,
+          access_to_api: true,
+          live_viewer: true,
+          mobile_apps: true,
+          desktop_apps: true
+        }
+      }
+    end
   end
 end

@@ -5,6 +5,7 @@ module TestingSiteOnlyoffice
   # https://github.com/ONLYOFFICE-QA/testing-site-onlyoffice/assets/99170537/82f41f41-b188-4d29-936c-05f3bd0f9f70
   class SitePricingHomeUse
     include PageObject
+    include SitePricingHelper
 
     link(:buy_now_button, xpath: "//a[@data-id = 'ie-price-url-updated']")
     link(:try_free_docs, xpath: "//a[@href='/download-docs.aspx?from=homeserver#docs-enterprise']")

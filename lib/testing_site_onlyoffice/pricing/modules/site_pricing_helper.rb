@@ -39,6 +39,12 @@ module TestingSiteOnlyoffice
     span(:live_viewer, xpath: '//input[@id = "live-viewer"]/following-sibling::span')
     span(:mobile_apps, xpath: '//input[@id = "native-mobile-apps"]/following-sibling::span')
     span(:desktop_apps, xpath: '//input[@id = "desktop-apps"]/following-sibling::span')
+    div(:branding_type_standard, xpath: '//div[@data-id = "de-standard-branding"]')
+    div(:branding_type_white, xpath: '//div[@data-id = "de-white-label"]')
+    span(:support_multi_tenancy, xpath: '//input[@id = "multi-tenancy"]/following-sibling::span')
+    span(:licence_development, xpath: '//input[@id = "development"]/following-sibling::span')
+    span(:licence_production, xpath: '//input[@id = "production"]/following-sibling::span')
+    span(:licence_non_production, xpath: '//input[@id = "non-production"]/following-sibling::span')
 
     def go_to_payment_from_pricing_page(buy_element, test_purchase: false)
       workaround_webdriver_hangs_on_timeout(buy_element)
@@ -74,6 +80,11 @@ module TestingSiteOnlyoffice
       choose_support_basic if support_level == 'Basic'
       choose_support_plus if support_level == 'Plus'
       choose_support_premium if support_level == 'Premium'
+    end
+
+    def choose_branding_type(branding_type)
+      branding_type_standard_element.click if branding_type == 'Standard'
+      branding_type_white_element.click if branding_type == 'White'
     end
 
     def choose_support_basic
@@ -151,11 +162,29 @@ module TestingSiteOnlyoffice
 
     def fill_data_pricing_developer_cloud(support_level, options = {})
       choose_support_level(support_level)
-      training_courses_element.click if options[:training_course]
+      select_all_additional_tools(options)
+    end
+
+    # The licence_development_element is selected by default on the page,
+    # so we do not need to click it unless changing the state.
+    def fill_data_pricing_developer_premises(support_level, branding_type, options = {})
+      licence_production_element.click if options[:licence_production]
+      @instance.webdriver.wait_until { licence_non_production_element.visible? }
+      licence_non_production_element.click if options[:licence_non_production]
+      choose_branding_type(branding_type)
+      support_multi_tenancy_element.click if options[:support_multi_tenancy]
+      support_disaster_recovery_element.click if options[:support_recovery]
+      support_multi_server_element.click if options[:support_multi]
+      choose_support_level(support_level)
+      select_all_additional_tools(options)
+    end
+
+    def select_all_additional_tools(options)
       access_to_api_element.click if options[:access_to_api]
       live_viewer_element.click if options[:live_viewer]
       mobile_apps_element.click if options[:mobile_apps]
       desktop_apps_element.click if options[:desktop_apps]
+      training_courses_element.click if options[:training_course]
     end
 
     # Press 'Get a Quote' button to open up a form

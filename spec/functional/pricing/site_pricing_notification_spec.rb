@@ -136,7 +136,8 @@ describe 'Pricing Get a quote notification email' do
         skip 'Cannot test email notifications in production' if config.server.include?('.com')
         pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
         pricing_page.choose_hosting_on_cloud
-        pricing_page.fill_data_pricing_developer_cloud(level, { training_course: true, access_to_api: true, live_viewer: true, mobile_apps: true, desktop_apps: true })
+        additional_tools = TestingSiteOnlyoffice::SiteData.all_pricing_developers_options[:additional_tools]
+        pricing_page.fill_data_pricing_developer_cloud(level, additional_tools)
         phone_number = Faker::PhoneNumber.cell_phone_in_e164
         company_name = Faker::Company.name
         mail_subject = "#{company_name} - Docs Developer Request (Cloud) [from: developer-edition-prices]"
@@ -146,12 +147,36 @@ describe 'Pricing Get a quote notification email' do
                                                                    phone_number:,
                                                                    company_name:,
                                                                    level:,
-                                                                   training_course: true,
-                                                                   access_to_api: true,
-                                                                   live_viewer: true,
-                                                                   mobile_apps: true,
-                                                                   desktop_apps: true,
+                                                                   **additional_tools,
                                                                    move_out: true)).to be_truthy
+      end
+    end
+  end
+
+  describe 'Check email notification for Docs Developer On-premises' do
+    TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:support_level].each do |level|
+      TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:docs_developers_branding_type].each do |type|
+        it "Send notification email for #{type} branding, #{level} support, all licensing purposes and all additional tools selected" do
+          skip 'Cannot test email notifications in production' if config.server.include?('.com')
+          pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
+          all_options = TestingSiteOnlyoffice::SiteData.all_pricing_developers_options.values.reduce(:merge)
+          pricing_page.choose_hosting_on_premises
+          pricing_page.fill_data_pricing_developer_premises(level, type, all_options)
+          phone_number = Faker::PhoneNumber.cell_phone_in_e164
+          company_name = Faker::Company.name
+          mail_subject = "#{company_name} - Docs Developer Request (On-premises) [from: developer-edition-prices]"
+          pricing_page.complete_pricing_page_form(phone_number:, company_name:)
+          expect(@mail.check_pricing_docs_developers_premises_mail_body(
+                   username: @username,
+                   subject: mail_subject,
+                   phone_number:,
+                   company_name:,
+                   level:,
+                   branding_type: type,
+                   **all_options,
+                   move_out: true
+                 )).to be_truthy
+        end
       end
     end
   end
