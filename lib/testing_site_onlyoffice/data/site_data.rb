@@ -136,18 +136,15 @@ module TestingSiteOnlyoffice
       %i[windows linux macos]
     end
 
-    def self.all_pricing_developers_options
-      {
-        licences: { licence_development: true, licence_production: true, licence_non_production: true },
-        scalability: { support_multi_tenancy: true, support_recovery: true, support_multi: true },
-        additional_tools: {
-          training_course: true,
-          access_to_api: true,
-          live_viewer: true,
-          mobile_apps: true,
-          desktop_apps: true
-        }
-      }
+    def self.pricing_dev_option_keys
+      %i[licence_development licence_production licence_non_production support_multi_tenancy support_recovery support_multi training_course access_to_api live_viewer mobile_apps desktop_apps]
+    end
+
+    # Method to generate all available options with default values set to true,
+    # allowing for exceptions to be specified to toggle specific options to false.
+    def self.pricing_dev_all_available_options_selected(exceptions = {})
+      default_values = pricing_dev_option_keys.product([true]).to_h
+      default_values.merge(exceptions)
     end
   end
 end

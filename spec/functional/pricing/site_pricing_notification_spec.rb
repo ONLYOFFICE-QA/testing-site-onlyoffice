@@ -136,8 +136,7 @@ describe 'Pricing Get a quote notification email' do
         skip 'Cannot test email notifications in production' if config.server.include?('.com')
         pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
         pricing_page.choose_hosting_on_cloud
-        additional_tools = TestingSiteOnlyoffice::SiteData.all_pricing_developers_options[:additional_tools]
-        pricing_page.fill_data_pricing_developer_cloud(level, additional_tools)
+        pricing_page.fill_data_pricing_developer_cloud(level, { training_course: true, access_to_api: true, live_viewer: true, mobile_apps: true, desktop_apps: true })
         phone_number = Faker::PhoneNumber.cell_phone_in_e164
         company_name = Faker::Company.name
         mail_subject = "#{company_name} - Docs Developer Request (Cloud) [from: developer-edition-prices]"
@@ -147,9 +146,30 @@ describe 'Pricing Get a quote notification email' do
                                                                    phone_number:,
                                                                    company_name:,
                                                                    level:,
-                                                                   **additional_tools,
+                                                                   training_course: true,
+                                                                   access_to_api: true,
+                                                                   live_viewer: true,
+                                                                   mobile_apps: true,
+                                                                   desktop_apps: true,
                                                                    move_out: true)).to be_truthy
       end
+    end
+
+    it 'Send a notification email for default support level with no additional tools are selected' do
+      skip 'Cannot test email notifications in production' if config.server.include?('.com')
+      pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
+      pricing_page.choose_hosting_on_cloud
+      level = 'Plus'
+      phone_number = Faker::PhoneNumber.cell_phone_in_e164
+      company_name = Faker::Company.name
+      mail_subject = "#{company_name} - Docs Developer Request (Cloud) [from: developer-edition-prices]"
+      pricing_page.complete_pricing_page_form(phone_number:, company_name:)
+      expect(@mail.check_pricing_docs_developers_cloud_mail_body(username: @username,
+                                                                 subject: mail_subject,
+                                                                 phone_number:,
+                                                                 company_name:,
+                                                                 level:,
+                                                                 move_out: true)).to be_truthy
     end
   end
 
@@ -159,7 +179,7 @@ describe 'Pricing Get a quote notification email' do
         it "Send notification email for #{type} branding, #{level} support, all licensing purposes and all additional tools selected" do
           skip 'Cannot test email notifications in production' if config.server.include?('.com')
           pricing_page = @site_home_page.click_link_on_toolbar(:pricing_developer)
-          all_options = TestingSiteOnlyoffice::SiteData.all_pricing_developers_options.values.reduce(:merge)
+          all_options = TestingSiteOnlyoffice::SiteData.pricing_dev_all_available_options_selected
           pricing_page.choose_hosting_on_premises
           pricing_page.fill_data_pricing_developer_premises(level, type, all_options)
           phone_number = Faker::PhoneNumber.cell_phone_in_e164
