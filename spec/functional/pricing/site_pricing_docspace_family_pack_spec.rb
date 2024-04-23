@@ -19,4 +19,10 @@ describe 'Pricing Docspace Family pack' do
     result_page = @pricing_docspace_family_page.click_try_free_docspace
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceDownloadEnterprise
   end
+
+  it '[Site][Pricing][DocSpace Family Pack] Buy now button works' do
+    total_price = @pricing_docspace_family_page.total_price_number.to_i
+    payment_page = @pricing_docspace_family_page.go_to_payment_from_pricing_page(@pricing_docspace_family_page.buy_now_button_element, test_purchase: true)
+    expect(payment_page.total_amount_without_tax).to eq(total_price)
+  end
 end

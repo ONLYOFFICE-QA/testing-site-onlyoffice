@@ -39,11 +39,19 @@ module OnlyofficeIredmailHelper
         body.phone_number_match? &&
         body.company_name_match? &&
         body.support_level_match? &&
-        body.access_to_api? &&
-        body.live_viewer? &&
-        body.mobile_apps? &&
-        body.desktop_apps? &&
-        body.training_courses?
+        body.all_additional_tools_check
+    end
+
+    def check_pricing_docs_developers_premises_mail_body(params = {})
+      body = MailParseBody.new(params)
+      body.contact_information_check &&
+        body.support_level_match? &&
+        body.all_licensing_conditions_check &&
+        body.multi_tenancy_support? &&
+        body.recovery_support? &&
+        body.branding_type_match? &&
+        body.multi_server_deployment? &&
+        body.all_additional_tools_check
     end
   end
 end

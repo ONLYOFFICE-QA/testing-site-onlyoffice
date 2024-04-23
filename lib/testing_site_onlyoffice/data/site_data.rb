@@ -135,5 +135,16 @@ module TestingSiteOnlyoffice
     def self.download_desktop_apps
       %i[windows linux macos]
     end
+
+    def self.pricing_dev_option_keys
+      %i[licence_development licence_production licence_non_production support_multi_tenancy support_recovery support_multi training_course access_to_api live_viewer mobile_apps desktop_apps]
+    end
+
+    # Method to generate all available options with default values set to true,
+    # allowing for exceptions to be specified to toggle specific options to false.
+    def self.pricing_dev_all_available_options_selected(exceptions = {})
+      default_values = pricing_dev_option_keys.product([true]).to_h
+      default_values.merge(exceptions)
+    end
   end
 end

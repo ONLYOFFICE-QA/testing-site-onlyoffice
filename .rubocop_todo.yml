@@ -20,7 +20,7 @@ Metrics/BlockLength:
 # Offense count: 4
 # Configuration parameters: CountComments, CountAsOne.
 Metrics/ClassLength:
-  Max: 129
+  Max: 130
 
 # Offense count: 2
 # Configuration parameters: AllowedMethods, AllowedPatterns.
