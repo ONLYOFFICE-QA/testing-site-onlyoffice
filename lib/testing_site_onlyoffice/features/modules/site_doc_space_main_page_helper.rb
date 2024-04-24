@@ -28,9 +28,7 @@ module TestingSiteOnlyoffice
     end
 
     def click_business_check_prices
-      xpath = '//div[@class="choice_item"]//a[contains(@href, "docspace-prices.aspx")]'
-      @instance.webdriver.move_to_element_by_locator(xpath)
-      @instance.webdriver.click_on_locator(xpath)
+      business_check_prices_element.click
       SitePricingDocSpacePrices.new(@instance)
     end
 

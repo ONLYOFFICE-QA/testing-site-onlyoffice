@@ -36,7 +36,7 @@ describe 'Site Products DocSpace' do
     expect(@docspace_page.click_free_cloud_startups).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp
   end
 
-  it '[Site Products] [DocsSpace] For business "check prices" button works' do
+  it '[Site Products] [DocsSpace] Business cloud "check prices" button works' do
     expect(@docspace_page.click_business_check_prices).to be_a TestingSiteOnlyoffice::SitePricingDocSpacePrices
   end
 

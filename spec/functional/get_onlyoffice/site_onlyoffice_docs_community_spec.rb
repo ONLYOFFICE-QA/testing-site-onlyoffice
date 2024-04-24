@@ -26,6 +26,7 @@ describe 'Onlyoffice Docs Community edition download' do
       end
 
       it "[Site][Docs_Community] Check `#{installer}` 'Install now' link /download-docs.aspx#docs-community" do
+        skip 'due to API protections causing a 403 error' if installer == :vultr
         current_installation.click_install_button
         expect(@docs_community_page).to be_install_button_works(installer)
       end

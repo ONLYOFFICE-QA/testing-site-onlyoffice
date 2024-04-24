@@ -13,9 +13,9 @@ module TestingSiteOnlyoffice
     include SiteDocSpaceMainPageHelper
 
     link(:docspace_registration_button, xpath: '//a[@id = "account-btn" and @href = "/docspace-registration.aspx"]')
-    link(:startups_free_cloud, xpath: '//a[@class = "choice_item" and @href = "/docspace-registration.aspx"]')
-    link(:business_check_prices, xpath: '//div[@class="choice_item"]//a[contains(@href, "docspace-prices.aspx")]')
-    link(:enterprise_get_it_now, xpath: '//a[@class = "choice_item" and @href = "/download-docspace.aspx#docspace-enterprise"]')
+    link(:startups_free_cloud, xpath: '//a[@class = "third-icon choice_item" and @href = "/docspace-registration.aspx"]')
+    link(:business_check_prices, xpath: '//a[@class="first-icon choice_item" and @href = "/docspace-prices.aspx#docspace-cloud"]')
+    link(:enterprise_get_it_now, xpath: '//a[@class = "second-icon choice_item" and @href = "/download-docspace.aspx#docspace-enterprise"]')
     link(:start_free_cloud, xpath: '//a[@id = "docspace_docspace_registration_start_with_your_free_account"]')
     link(:download_pc, xpath: "((//div[contains(@class, 's_block')])[4]")
     link(:install_mobile, xpath: "((//div[contains(@class, 's_block')])[5]")
