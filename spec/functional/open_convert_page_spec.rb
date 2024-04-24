@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Convert page' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @convert_page = site_home_page.click_pdf_reader_converter.open_convert_page
+    @convert_page = site_home_page.click_link_on_toolbar(:features_pdf_reader_converter).open_convert_page
   end
 
   after do |example|
