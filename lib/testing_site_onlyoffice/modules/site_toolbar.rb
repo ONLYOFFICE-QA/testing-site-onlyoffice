@@ -34,10 +34,10 @@ module TestingSiteOnlyoffice
     link(:site_features_security, xpath: '//a[@id="navitem_features_security"]')
     link(:site_features_see_it_in_action, xpath: '//a[@id="navitem_features_see_it"]')
     link(:site_features_oforms, xpath: '(//a[@id="navitem_features_fill_forms"])[2]')
-    link(:site_features_text_converter, xpath: '//a[@id="navitem_features_convert_text"]')
-    link(:site_features_spreadsheet_converter, xpath: '//a[@id="navitem_features_convert_speadsheets"]')
-    link(:site_features_presentation_converter, xpath: '//a[@id="navitem_features_convert_presentations"]')
-    link(:site_features_pdf_converter, xpath: '//a[@id="navitem_features_convert_pdf"]')
+    link(:site_features_text_converter, xpath: '(//a[@id="navitem_features_convert_text"])[2]')
+    link(:site_features_spreadsheet_converter, xpath: '(//a[@id="navitem_features_convert_speadsheets"])[2]')
+    link(:site_features_presentation_converter, xpath: '(//a[@id="navitem_features_convert_presentations"])[2]')
+    link(:site_features_pdf_converter, xpath: '(//a[@id="navitem_features_convert_pdf"])[2]')
 
     # top toolbar - For Business
     link(:site_for_enterprises, xpath: '//a[@id = "navitem_forbusiness"]')
