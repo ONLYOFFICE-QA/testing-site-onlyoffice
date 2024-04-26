@@ -91,6 +91,7 @@ require_relative 'partners/site_partners_request'
 require_relative 'partners/site_partners_affiliates'
 require_relative 'partners/site_partners_resellers'
 require_relative 'partners/site_partners_find'
+require_relative 'partners/site_partners_technology'
 
 require_relative 'pricing/site_pricing_docspace_prices'
 require_relative 'pricing/site_pricing_server_enterprise'
