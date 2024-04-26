@@ -15,7 +15,7 @@ module TestingSiteOnlyoffice
       wait_to_load
     end
 
-    def wait_load
+    def wait_to_load
       @instance.webdriver.wait_until do
         @instance.webdriver.element_present?(forum_rules_link_element)
       end

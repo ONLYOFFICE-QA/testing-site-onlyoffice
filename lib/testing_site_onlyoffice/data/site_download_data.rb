@@ -175,5 +175,13 @@ module TestingSiteOnlyoffice
     def self.editors_preinstalled_and_available
       @editors_preinstalled_and_available ||= JSON.parse(File.read("#{__dir__}/desktop_editors_preinstalled_and_available.json"))
     end
+
+    def self.partners_os_distributions_list
+      %i[kylin-os br-os mauna-linux risios sparkylinux linuxfx linkat escuelas-linux]
+    end
+
+    def self.partners_marketplaces_list
+      %i[alibaba-marketplace ovhcloud-marketplace amazon-marketplace digitalocean vultr univention]
+    end
   end
 end

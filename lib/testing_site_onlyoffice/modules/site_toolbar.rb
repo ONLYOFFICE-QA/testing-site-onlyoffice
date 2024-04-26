@@ -75,7 +75,6 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice_docs_enterprise, xpath: '//a[@id="navitem_docs_onpremises"]')
     link(:site_get_onlyoffice_docs_community, xpath: '//a[@id="navitem_download_docs_ce"]')
     link(:site_get_onlyoffice_document_builder, xpath: '//a[@id="navitem_download_docs_builder"]')
-    link(:site_get_onlyoffice_web_hosting, xpath: '//a[@id="navitem_download_hosting"]')
     link(:site_get_onlyoffice_github_code, xpath: '//a[@id="navitem_download_code_git"]')
 
     # top toolbar - Pricing
@@ -93,6 +92,8 @@ module TestingSiteOnlyoffice
     link(:site_partners_affiliates, xpath: '//a[@id="navitem_hosters"]')
     link(:site_partners_resellers, xpath: '//a[@id="navitem_resellers"]')
     link(:site_partners_find_partners, xpath: '//a[@id="navitem_find_partners"]')
+    link(:site_partners_hosting, xpath: '//a[@id="navitem_hosting_providers"]')
+    link(:site_partners_technology, xpath: '//a[@id="navitem_technology_partners"]')
     link(:site_partners_submit_request, xpath: '//a[@id="navitem_submit_request"]')
     link(:site_partners_latest_events, xpath: '//a[@id="navitem_latest_events"]')
 
@@ -303,10 +304,6 @@ module TestingSiteOnlyoffice
           element: site_get_onlyoffice_document_builder_element,
           class: SiteGetOnlyofficeDownloadDocBuilder
         },
-        get_onlyoffice_web_hosting: {
-          element: site_get_onlyoffice_web_hosting_element,
-          class: SiteGetOnlyofficeWebHosting
-        },
         get_onlyoffice_github_code: {
           element: site_get_onlyoffice_github_code_element
         }
@@ -363,6 +360,14 @@ module TestingSiteOnlyoffice
         partners_find_partners: {
           element: site_partners_find_partners_element,
           class: SitePartnersFind
+        },
+        partners_hosting_providers: {
+          element: site_partners_hosting_element,
+          class: SiteGetOnlyofficeWebHosting
+        },
+        partners_technology: {
+          element: site_partners_technology_element,
+          class: SitePartnersTechnology
         },
         partners_latest_events: {
           element: site_partners_latest_events_element

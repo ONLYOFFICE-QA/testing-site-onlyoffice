@@ -51,7 +51,7 @@ module TestingSiteOnlyoffice
       self.email_partner = params.fetch(:email, SiteData::EMAIL_ADMIN)
       self.phone_partner = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       self.company_name_partner = params.fetch(:company_name, Faker::Company.name)
-      self.company_website_partner = params.fetch(:website, Faker::Internet.domain_name)
+      self.company_website_partner = params.fetch(:website, Faker::Internet.url)
       self.company_number_employees = params.fetch(:number_of_employees, Faker::Number.decimal_part(digits: 2))
       choose_marker_segment(params.fetch(:market_segment, :government))
       partner_for_other_company(params.fetch(:current_partner, :no))

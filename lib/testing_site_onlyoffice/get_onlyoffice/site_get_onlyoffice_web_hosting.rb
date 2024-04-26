@@ -8,6 +8,7 @@ module TestingSiteOnlyoffice
     include SiteToolbar
 
     link(:docs_enterprise_link, xpath: '//a[@id = "linkid_docs_ee"]')
+    link(:feedback_on_forum, xpath: '//a[contains(@href, "/forum.onlyoffice") and contains(@class, "link")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -19,6 +20,11 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until do
         @instance.webdriver.element_present?(docs_enterprise_link_element)
       end
+    end
+
+    def click_feedback_on_forum
+      feedback_on_forum_element.click
+      SiteAboutForum.new(@instance)
     end
   end
 end
