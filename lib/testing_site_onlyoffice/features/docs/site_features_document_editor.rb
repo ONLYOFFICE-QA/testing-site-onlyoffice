@@ -19,7 +19,12 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(docspace_registration_button_element) && @instance.webdriver.element_present?(documents_image_element) }
+      @instance.webdriver.wait_until do
+        documents_image_present = @instance.webdriver.element_present?(documents_image_element)
+        button_present = @instance.webdriver.element_present?(docspace_registration_button_element) ||
+                         @instance.webdriver.element_present?(docs_get_it_now_button_element)
+        documents_image_present && button_present
+      end
     end
   end
 end
