@@ -32,8 +32,8 @@
     "instruction": "Deploying ONLYOFFICE Docs in DigitalOcean - ONLYOFFICE",
     "download": "ONLYOFFICE Docs | DigitalOcean Marketplace 1-Click App"
   },
-  "Cloudron": {
-    "instruction": "Integration. Getting Started. Cloudron - ONLYOFFICE",
+  "cloudron": {
+    "instruction": "Deploying ONLYOFFICE Docs in Cloudron - ONLYOFFICE",
     "download": "ONLYOFFICE Docs on Cloudron"
   },
   "vultr": {
@@ -41,7 +41,7 @@
     "download": "ONLYOFFICE Docs | Vultr Marketplace One-Click Application - Vultr.com"
   },
   "linode": {
-    "instruction": "ONLYOFFICE Docs Open Source Business Software | Akamai",
+    "instruction": "Deploying ONLYOFFICE Docs in Linode - ONLYOFFICE",
     "download": "ONLYOFFICE Docs Open Source Business Software | Akamai"
   }
 }
