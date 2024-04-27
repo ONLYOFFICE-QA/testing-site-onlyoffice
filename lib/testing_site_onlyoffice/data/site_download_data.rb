@@ -99,7 +99,7 @@ module TestingSiteOnlyoffice
     def self.open_source_docs_list_type
       {
         with_github: %i[docker ubuntu centos windows snap],
-        without_github: %i[digitalocean Cloudron UCS vultr linode]
+        without_github: %i[digitalocean cloudron UCS vultr linode]
       }
     end
 
