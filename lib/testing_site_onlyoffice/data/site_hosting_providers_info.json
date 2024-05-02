@@ -1,0 +1,12 @@
+{
+  "alibaba_cloud": ["linkid_docs_ee", "linkid_docs_de", "linkid_workspace_ee"],
+  "aws": ["linkid_docs_ee", "linkid_docs_ee_arm", "linkid_docs_de", "linkid_docs_de_arm", "linkid_workspace_ee"],
+  "atera": ["linkid_docs_ce", "linkid_docs_ee"],
+  "digitalocean": ["linkid_docs_ce", "linkid_workspace_ce"],
+  "hostingsolutions": ["linkid_docs_ce", "linkid_docs_ee", "linkid_docs_de", "linkid_docs_ce_arm", "linkid_docs_ee_arm", "linkid_docs_de_arm"],
+  "linode": ["linkid_docs_ce"],
+  "netexplorer": ["linkid_docs_ee", "linkid_docs_de"],
+  "ovhcloud": ["linkid_workspace_ee"],
+  "yourownnet": ["linkid_docs_ce", "linkid_docs_ee"],
+  "wolkli": ["linkid_docs_ce", "linkid_docs_ee", "linkid_docs_de", "linkid_docs_ce_arm", "linkid_docs_ee_arm", "linkid_docs_de_arm", "linkid_workspace_ce", "linkid_workspace_ee"]
+}

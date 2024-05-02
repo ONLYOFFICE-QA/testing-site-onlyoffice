@@ -363,7 +363,7 @@ module TestingSiteOnlyoffice
         },
         partners_hosting_providers: {
           element: site_partners_hosting_element,
-          class: SiteGetOnlyofficeWebHosting
+          class: SitePartnersWebHosting
         },
         partners_technology: {
           element: site_partners_technology_element,
