@@ -183,5 +183,9 @@ module TestingSiteOnlyoffice
     def self.partners_marketplaces_list
       %i[alibaba-marketplace ovhcloud-marketplace amazon-marketplace digitalocean vultr univention]
     end
+
+    def self.partners_hosting_providers
+      @partners_hosting_providers ||= JSON.parse(File.read("#{__dir__}/site_hosting_providers_info.json"))
+    end
   end
 end
