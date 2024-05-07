@@ -103,6 +103,9 @@ module TestingSiteOnlyoffice
     link(:site_about_blog, xpath: '//a[@id="navitem_about_blog"]')
     link(:site_about_forum, xpath: '//a[@id="navitem_about_forum"]')
     link(:site_about_contribute, xpath: '//a[@id="navitem_about_contribute"]')
+    link(:site_about_influencers, xpath: '//a[@id="navitem_about_for_influencers"]')
+    link(:site_about_translators, xpath: '//a[@id="navitem_about_for_translators"]')
+    link(:site_about_certificates, xpath: '//a[@id="navitem_about_certificates"]')
     link(:site_about_customers, xpath: '//a[@id="navitem_about_customers"]')
     link(:site_about_awards, xpath: '//a[@id="navitem_about_awards"]')
     link(:site_about_events, xpath: '//a[@id="navitem_about_events"]')
@@ -393,6 +396,14 @@ module TestingSiteOnlyoffice
           element: site_about_contribute_element,
           class: SiteAboutContribute
         },
+        about_influencers: {
+          element: site_about_influencers_element,
+          class: SiteAboutForInfluencers
+        },
+        about_translators: {
+          element: site_about_translators_element,
+          class: SiteAboutHelpCenter
+        },
         about_customers: {
           element: site_about_customers_element,
           class: SiteAboutCustomerStories
@@ -400,6 +411,10 @@ module TestingSiteOnlyoffice
         about_awards: {
           element: site_about_awards_element,
           class: SiteAboutAwards
+        },
+        about_certificates: {
+          element: site_about_certificates_element,
+          class: SiteAboutCertificates
         },
         about_events: {
           element: site_about_events_element,
@@ -467,7 +482,7 @@ module TestingSiteOnlyoffice
         sub_link = all_toolbar_links_and_classes_hash[section][:sub_element]
         sub_link.click
       end
-      @instance.webdriver.switch_to_popup if %i[about_gift_shop about_help_center features_see_it_in_action features_oforms about_blog].include?(section)
+      @instance.webdriver.switch_to_popup if %i[about_gift_shop about_help_center features_see_it_in_action features_oforms about_blog about_forum].include?(section)
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
     end
   end

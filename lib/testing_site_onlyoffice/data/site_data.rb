@@ -61,6 +61,7 @@ module TestingSiteOnlyoffice
 
     def self.courses_purposes
       {
+        using_in_educational_organizations: 'Using ONLYOFFICE Docs in educational organizations',
         administrating_docspace: 'Administrating ONLYOFFICE DocSpace',
         editing_documents_docspace: 'Editing documents in ONLYOFFICE DocSpace',
         custom_tech_focused_training: 'Custom tech-focused training',

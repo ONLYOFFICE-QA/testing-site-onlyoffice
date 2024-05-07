@@ -15,12 +15,24 @@ describe 'About onlyoffice' do
     @test.webdriver.quit
   end
 
+  it '[About onlyoffice] Go to become a contributor' do
+    expect(@about_onlyoffice.click_become_contributor).to be_a TestingSiteOnlyoffice::SiteAboutContribute
+  end
+
+  it '[About onlyoffice] Go to job openings' do
+    expect(@about_onlyoffice.click_job_openings).to be_a TestingSiteOnlyoffice::SiteAboutJobs
+  end
+
   it '[About onlyoffice] Go to onlyoffice docs' do
     expect(@about_onlyoffice.click_onlyoffice_docs).to be_a TestingSiteOnlyoffice::SiteProductsDocs
   end
 
   it '[About onlyoffice] Go to WorkSpace page' do
     expect(@about_onlyoffice.click_workspace).to be_a TestingSiteOnlyoffice::SiteFeaturesWorkspace
+  end
+
+  it '[About onlyoffice] Go to DocSpace page' do
+    expect(@about_onlyoffice.click_docspace).to be_a TestingSiteOnlyoffice::SiteDocSpaceMainPage
   end
 
   it '[About onlyoffice] Go to customer_stories' do

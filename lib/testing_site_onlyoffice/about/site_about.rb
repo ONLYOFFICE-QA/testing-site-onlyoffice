@@ -11,6 +11,9 @@ module TestingSiteOnlyoffice
     div(:about_page, xpath: '//div[@class="wwd_header_narrow max-width-1"]')
     link(:about_onlyoffice_docs, xpath: '//div[@class="wwdfn_text_block"]/a')
     link(:workspace_link, xpath: '//div[@class="wwdon_text_block"]/a')
+    link(:docspace_link, xpath: '//a[contains(@class, "wwdds_link")]')
+    link(:become_contributor, xpath: '//div[contains(@class, "wwd_description_text")]//a[@href="/contribute.aspx"]')
+    link(:job_openings, xpath: '//div[contains(@class, "wwd_description_text")]//a[@href="/vacancies.aspx"]')
     link(:customer_stories, xpath: '//div[@class="wwd_home_block2"]/a')
 
     def initialize(instance)
@@ -39,10 +42,28 @@ module TestingSiteOnlyoffice
       SiteFeaturesWorkspace.new(@instance)
     end
 
+    def click_docspace
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(docspace_link_element) }
+      docspace_link_element.click
+      SiteDocSpaceMainPage.new(@instance)
+    end
+
     def click_customer_stories
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(customer_stories_element) }
       customer_stories_element.click
       SiteAboutCustomerStories.new(@instance)
+    end
+
+    def click_become_contributor
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(become_contributor_element) }
+      become_contributor_element.click
+      SiteAboutContribute.new(@instance)
+    end
+
+    def click_job_openings
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(job_openings_element) }
+      job_openings_element.click
+      SiteAboutJobs.new(@instance)
     end
   end
 end
