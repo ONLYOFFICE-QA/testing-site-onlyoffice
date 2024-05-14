@@ -15,10 +15,6 @@ describe 'About blogs' do
     @test.webdriver.quit
   end
 
-  it '[About blogs] Names of download buttons' do
-    expect(@about_blogs_page.desktop_and_mobile_app).to eq(TestingSiteOnlyoffice::SiteData.blogs_download_app)
-  end
-
   it '[About blogs] Go to app GooglePlay' do
     expect(@about_blogs_page.check_google_play_link).to be true
   end

@@ -44,6 +44,9 @@
   "macros": {
     "get_it_now_title": "Macros | ONLYOFFICE"
   },
+  "markdown": {
+    "get_it_now_title": "Markdown | ONLYOFFICE"
+  },
   "mendeley": {
     "get_it_now_title": "Mendeley | ONLYOFFICE"
   },
@@ -55,6 +58,9 @@
   },
   "photoeditor": {
     "get_it_now_title": "Photo Editor | ONLYOFFICE"
+  },
+  "pixabay": {
+    "get_it_now_title": "Pixabay | ONLYOFFICE"
   },
   "rainbow": {
     "get_it_now_title": "Rainbow | ONLYOFFICE"
