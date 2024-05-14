@@ -21,7 +21,7 @@ module TestingSiteOnlyoffice
         'OnlyOffice Docs Learn more': "//div[contains(@class,'dp-m-inside')]//a[contains(@href, 'office-suite')]",
         'OnlyOffice Docs Security': "//div[contains(@class,'dp-m-inside')]//a[contains(@href, '/security.aspx')]",
         'OnlyOffice DocSpace Registration': "#{CHOOSE_SOLUTION_XPATH}//a[contains(@href, '/docspace-registration.aspx')]",
-        'OnlyOffice Docs Download': "#{CHOOSE_SOLUTION_XPATH}////a[contains(@href, '/download-docs.aspx')]",
+        'OnlyOffice Docs Download': "#{CHOOSE_SOLUTION_XPATH}//a[contains(@href, '/download-docs.aspx')]",
         'OnlyOffice Docs Developer Edition': "#{CHOOSE_SOLUTION_XPATH}//a[contains(@href, '/developer-edition.aspx')]",
         'OnlyOffice Desktop apps': "#{CHOOSE_SOLUTION_XPATH}//a[contains(@href, '/download-desktop.aspx')]",
         'OnlyOffice Mobile apps': "#{CHOOSE_SOLUTION_XPATH}//a[contains(@href, '/download-desktop.aspx#mobile')]"

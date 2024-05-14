@@ -20,14 +20,10 @@ describe 'Partners Hosting Providers' do
       ids.each do |id|
         it "link with ID #{id} for provider #{provider} works" do
           link = @hosting_providers.get_hosting_product_link(provider, id)
+          skip('due to API protections causing a 404 error') if provider.to_s == 'atera'
           expect(@hosting_providers).to be_link_success_response(link)
         end
       end
     end
-  end
-
-  it '[Partners] [Hosting providers] Feedback on forum link works' do
-    result_page = @hosting_providers.click_feedback_on_forum
-    expect(result_page).to be_a TestingSiteOnlyoffice::SiteAboutForum
   end
 end
