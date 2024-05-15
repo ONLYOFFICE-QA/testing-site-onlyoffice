@@ -19,15 +19,9 @@ module TestingSiteOnlyoffice
     link(:site_features_workspace, xpath: '//a[@id="navitem_features_workspace"]')
     link(:site_features_marketplace, xpath: '//a[@id="navitem_features_marketplace"]')
     link(:site_features_docs_overview, xpath: '//a[@id="navitem_features_docs_overview"]')
-    link(:site_features_document_editor, xpath: '//a[@id="navitem_features_submenu_doced"]')
-    link(:site_features_spreadsheet_editor, xpath: '//a[@id="navitem_features_submenu_spreaded"]')
-    link(:site_features_presentation_editor, xpath: '//a[@id="navitem_features_submenu_presed"]')
-    link(:site_features_form_creator, xpath: '//a[@id="navitem_features_submenu_formed"]')
-    link(:site_features_pdf_reader_converter, xpath: '//a[@id="navitem_features_submenu_pdfed"]')
     link(:site_features_for_desktop, xpath: '//a[@id="navitem_features_clients_apps"]')
     link(:site_features_for_ios, xpath: '//a[@id="navitem_features_clients_mobile_ios"]')
     link(:site_features_for_android, xpath: '//a[@id="navitem_features_clients_mobile_android"]')
-    link(:site_features_security, xpath: '//a[@id="navitem_features_security"]')
     link(:site_features_see_it_in_action, xpath: '//a[@id="navitem_features_see_it"]')
     link(:site_features_oforms, xpath: '//a[@id="navitem_features_fill_forms"]')
     link(:site_features_text_converter, xpath: '//a[@id="navitem_features_convert_text"]')
@@ -143,26 +137,6 @@ module TestingSiteOnlyoffice
           element: site_features_docs_overview_element,
           class: SiteFeaturesDocsOverview
         },
-        features_document_editor: {
-          element: site_features_document_editor_element,
-          class: SiteFeaturesDocumentEditor
-        },
-        features_spreadsheet_editor: {
-          element: site_features_spreadsheet_editor_element,
-          class: SiteFeaturesSpreadsheetEditor
-        },
-        features_presentation_editor: {
-          element: site_features_presentation_editor_element,
-          class: SiteFeaturesPresentationEditor
-        },
-        features_form_creator: {
-          element: site_features_form_creator_element,
-          class: SiteFeaturesFormCreator
-        },
-        features_pdf_reader_converter: {
-          element: site_features_pdf_reader_converter_element,
-          class: SiteFeaturesPDFReaderConverter
-        },
         features_desktop: {
           element: site_features_for_desktop_element,
           class: SiteFeaturesDesktop
@@ -174,10 +148,6 @@ module TestingSiteOnlyoffice
         features_android: {
           element: site_features_for_android_element,
           class: SiteFeaturesAndroid
-        },
-        security: {
-          element: site_features_security_element,
-          class: SiteFeaturesSecurity
         },
         features_see_it_in_action: {
           element: site_features_see_it_in_action_element,

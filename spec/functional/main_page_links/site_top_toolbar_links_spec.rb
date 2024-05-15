@@ -6,7 +6,7 @@ site_home_page, test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_o
 toolbar_links = site_home_page.all_toolbar_links_and_classes_hash
 test.webdriver.quit
 
-describe 'Help center top toolbar links' do
+describe 'Site top toolbar links' do
   before do
     site_home_page, test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
   end

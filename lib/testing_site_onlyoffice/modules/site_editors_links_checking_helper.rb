@@ -6,27 +6,27 @@ module TestingSiteOnlyoffice
     FEATURES_LINKS =
       {
         text_document_editing: {
-          xpath: '(//a[contains(@href, "/document-editor.aspx")])[3]',
+          xpath: '(//a[contains(@href, "/document-editor.aspx")])[1]',
           class: SiteFeaturesDocumentEditor
         },
         spreadsheet_editing: {
-          xpath: '(//a[contains(@href, "spreadsheet-editor.aspx")])[3]',
+          xpath: '(//a[contains(@href, "spreadsheet-editor.aspx")])[1]',
           class: SiteFeaturesSpreadsheetEditor
         },
         digital_form_building: {
-          xpath: '(//a[contains(@href, "form-creator.aspx")])[3]',
+          xpath: '(//a[contains(@href, "form-creator.aspx")])[1]',
           class: SiteFeaturesFormCreator
         },
         presentation_editing: {
-          xpath: '(//a[contains(@href, "presentation-editor.aspx")])[3]',
+          xpath: '(//a[contains(@href, "presentation-editor.aspx")])[1]',
           class: SiteFeaturesPresentationEditor
         },
         pdf_editing_and_filling: {
-          xpath: '(//a[contains(@href, "pdf-editor")])[3]',
+          xpath: '(//a[contains(@href, "pdf-editor")])[1]',
           class: SiteFeaturesPDFReaderConverter
         },
         e_book_creation: {
-          xpath: '(//a[contains(@href, "e-book.aspx")])[3]',
+          xpath: '(//a[contains(@href, "e-book.aspx")])[1]',
           class: SiteFeaturesEBookCreator
         }
       }.freeze
