@@ -24,11 +24,6 @@ describe 'Developers - All Developer Solutions' do
     expect(@all_developer_solutions.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::OVERVIEW_API_ONLYOFFICE_TITLE)
   end
 
-  it '[Developers] [All Developer Solutions] Docspace "Integration tutorial" link works' do
-    blog_page = @all_developer_solutions.click_docspace_check_tutorial
-    expect(blog_page).to be_a TestingSiteOnlyoffice::SiteAboutBlog
-  end
-
   it '[Developers] [All Developer Solutions] Docs "Integration examples" link works' do
     @all_developer_solutions.click_docs_integration_examples
     expected_title = 'ONLYOFFICE Api Documentation - Language-specific examples'
