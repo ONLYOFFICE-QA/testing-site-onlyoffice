@@ -27,7 +27,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(download_kylin_os_button_element)
+        @instance.webdriver.element_present?(products_kylin_os_element)
       end
     end
 

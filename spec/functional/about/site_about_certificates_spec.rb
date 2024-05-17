@@ -25,11 +25,6 @@ describe 'Certificates' do
       result_page = @about_certificates.click_product_kylin_os
       expect(result_page).to be_a TestingSiteOnlyoffice::SiteForBusinessDocsEnterpriseEdition
     end
-
-    it '[Resources] [Certificates] Downloads Kylin OS certificate' do
-      @about_certificates.download_kylin_os_button
-      expect(@about_certificates).to be_file_downloaded('compatibility_certificate_with_kylin_os.png')
-    end
   end
 
   describe 'for OpenKylin OS' do
@@ -41,11 +36,6 @@ describe 'Certificates' do
     it '[Resources] [Certificates] Products link for OpenKylin works' do
       result_page = @about_certificates.click_product_openkylin
       expect(result_page).to be_a TestingSiteOnlyoffice::SiteFeaturesDesktop
-    end
-
-    it '[Resources] [Certificates] Downloads OpenKylin OS certificate' do
-      @about_certificates.download_openkylin_button
-      expect(@about_certificates).to be_file_downloaded('compatibility_certificate_with_openkylin.png')
     end
   end
 
