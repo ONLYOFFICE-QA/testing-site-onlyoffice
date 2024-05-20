@@ -10,7 +10,7 @@ module TestingSiteOnlyoffice
 
     element(:become_an_affiliates, xpath: '//a[@class="button become-affiliate"]')
     link(:register_an_affiliates, xpath: '//div[@class="aff-hts-btn-bl"]/a[contains(@href,"getrewardful.com")]')
-    link(:learn_more_docspace, xpath: '//p[@class="solvefloating"]//a[contains(@href,"/docspace.aspx")]')
+    link(:learn_more_docspace, xpath: '//p[@class="aff-text-one"]//a[contains(@href,"/docspace.aspx")]')
     link(:product_guide, xpath: '//a[contains(@href,"/images/whitepapers/pdf/onlyoffice_secure_cloud_space.pdf")]')
     link(:marketing_kit, xpath: '//a[contains(@href,"/press-downloads.aspx?from=affiliates")]')
     link(:affiliate_policy, xpath: '//a[contains(@href,"rewardful.com/terms")]')
