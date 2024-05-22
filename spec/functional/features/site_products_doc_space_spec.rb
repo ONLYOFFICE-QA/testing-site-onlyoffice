@@ -21,7 +21,6 @@ describe 'Site Products DocSpace' do
   end
 
   describe 'DocSpace Features Carousel' do
-
     it '[DocSpace Features Carousel] Collaboration rooms' do
       expect(@docspace_page.click_collaboration_rooms_learn_more).to be_a TestingSiteOnlyoffice::DocspaceCollaborationRooms
     end
