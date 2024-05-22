@@ -8,6 +8,6 @@
   "centos": {
     "download": "onlyoffice-documentbuilder.x86_64.rpm"
   },
-  "instruction": "ONLYOFFICE Api Documentation - Overview",
+  "instruction": "Overview - ONLYOFFICE Api Documentation",
   "whats_new": "DocumentBuilder/CHANGELOG.md at master · ONLYOFFICE/DocumentBuilder · GitHub"
 }
