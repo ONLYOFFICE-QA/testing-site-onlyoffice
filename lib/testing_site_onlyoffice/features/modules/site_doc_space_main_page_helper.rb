@@ -1,18 +1,41 @@
 # frozen_string_literal: true
 
 module TestingSiteOnlyoffice
-  # Helper for storing methods of the class SiteFeaturesDocsOverview
+  # Helper for storing methods of the class SiteDocSpaceMainPage
   module SiteDocSpaceMainPageHelper
     def click_registration_button
       docspace_registration_button_element.click
       SiteDocSpaceSignUp.new(@instance)
     end
 
-    def click_zoom_collaboration_learn_more
+    def click_collaboration_rooms_learn_more
+      collaboration_rooms_learn_more_element.click
+      DocspaceCollaborationRooms.new(@instance)
+    end
+
+    def click_meetings_room_learn_more
       xpath = '//a[@class = "ds-ta-link" and @href = "/office-for-zoom.aspx"]'
       @instance.webdriver.move_to_element_by_locator(xpath)
       @instance.webdriver.click_on_locator(xpath)
       SiteConnectorsZoom.new(@instance)
+    end
+
+    def click_public_rooms_learn_more
+      public_rooms_element.click
+      public_rooms_learn_more_element.click
+      DocspacePublicRooms.new(@instance)
+    end
+
+    def click_custom_rooms_learn_more
+      custom_rooms_element.click
+      custom_rooms_learn_more_element.click
+      DocspaceCustomRooms.new(@instance)
+    end
+
+    def click_private_rooms_learn_more
+      private_rooms_element.click
+      private_rooms_learn_more_element.click
+      DocspacePrivateRooms.new(@instance)
     end
 
     def click_security_learn_more

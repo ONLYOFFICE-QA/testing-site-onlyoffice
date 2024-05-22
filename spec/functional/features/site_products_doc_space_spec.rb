@@ -20,12 +20,30 @@ describe 'Site Products DocSpace' do
     let(:page) { @docspace_page }
   end
 
-  it '[Site Products] [DocsSpace] Create account button works' do
-    expect(@docspace_page.click_registration_button).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp
+  describe 'DocSpace Features Carousel' do
+    it '[DocSpace Features Carousel] Collaboration rooms' do
+      expect(@docspace_page.click_collaboration_rooms_learn_more).to be_a TestingSiteOnlyoffice::DocspaceCollaborationRooms
+    end
+
+    it '[DocSpace Features Carousel] Meeting rooms' do
+      expect(@docspace_page.click_meetings_room_learn_more).to be_a TestingSiteOnlyoffice::SiteConnectorsZoom
+    end
+
+    it '[DocSpace Features Carousel] Public rooms' do
+      expect(@docspace_page.click_public_rooms_learn_more).to be_a TestingSiteOnlyoffice::DocspacePublicRooms
+    end
+
+    it '[DocSpace Features Carousel] Custom rooms' do
+      expect(@docspace_page.click_custom_rooms_learn_more).to be_a TestingSiteOnlyoffice::DocspaceCustomRooms
+    end
+
+    it '[DocSpace Features Carousel] Private rooms' do
+      expect(@docspace_page.click_private_rooms_learn_more).to be_a TestingSiteOnlyoffice::DocspacePrivateRooms
+    end
   end
 
-  it '[Site Products] [DocsSpace] "Zoom collaboration / learn more" button works' do
-    expect(@docspace_page.click_zoom_collaboration_learn_more).to be_a TestingSiteOnlyoffice::SiteConnectorsZoom
+  it '[Site Products] [DocsSpace] Create account button works' do
+    expect(@docspace_page.click_registration_button).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp
   end
 
   it '[Site Products] [DocsSpace] "Security / learn more" button works' do
