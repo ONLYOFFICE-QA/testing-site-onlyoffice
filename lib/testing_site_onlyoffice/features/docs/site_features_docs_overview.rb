@@ -14,6 +14,7 @@ module TestingSiteOnlyoffice
 
     link(:get_it_now_top, xpath: '//a[contains(@href, "download-docs.aspx") and contains(@class, "button")]')
     link(:see_it_in_action, xpath: '//a[contains(@href, "see-it-in-action.aspx") and contains(@class, "button")]')
+    link(:start_free_account, xpath: '//div[contains(@class, "sb_docspace")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
