@@ -46,7 +46,7 @@ module TestingSiteOnlyoffice
     end
 
     def check_title_documentation_plagins
-      @instance.webdriver.title_of_current_tab.include?('ONLYOFFICE Api Documentation - Overview')
+      @instance.webdriver.title_of_current_tab.include?('Overview - ONLYOFFICE Api Documentation')
     end
 
     def check_title_documentation_connectors
