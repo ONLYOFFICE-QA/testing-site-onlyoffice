@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-CONVERSION_API_TITLE = 'ONLYOFFICE Api Documentation - Conversion API'
+CONVERSION_API_TITLE = 'Conversion API - ONLYOFFICE Api Documentation'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
 describe 'text files conversion' do

@@ -26,7 +26,7 @@ describe 'Developers - All Developer Solutions' do
 
   it '[Developers] [All Developer Solutions] Docs "Integration examples" link works' do
     @all_developer_solutions.click_docs_integration_examples
-    expected_title = 'ONLYOFFICE Api Documentation - Language-specific examples'
+    expected_title = 'Language-specific examples - ONLYOFFICE Api Documentation'
     expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
   end
 
@@ -63,7 +63,7 @@ describe 'Developers - All Developer Solutions' do
 
   it '[Developers] [All Developer Solutions] Workspace "Find out more" link works' do
     @all_developer_solutions.click_workspace_find_out_more
-    expected_title = 'ONLYOFFICE Api Documentation - Basic concepts'
+    expected_title = 'Basic concepts - ONLYOFFICE Api Documentation'
     expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
   end
 end

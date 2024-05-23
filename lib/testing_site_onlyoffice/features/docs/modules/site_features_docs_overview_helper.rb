@@ -28,29 +28,25 @@ module TestingSiteOnlyoffice
     end
 
     def click_download_pc
-      xpath = '//*[@id="office_suite_download_desktop_download_now"]'
-      @instance.webdriver.move_to_element_by_locator(xpath)
+      xpath = '//div[contains(@class, "sb_from_pc")]'
       @instance.webdriver.click_on_locator(xpath)
       SiteGetOnlyofficeDesktopApps.new(@instance)
     end
 
     def click_install_mobile
-      xpath = '//*[@id="office_suite_download_desktop_mobile_install_now"]'
-      @instance.webdriver.move_to_element_by_locator(xpath)
+      xpath = '//div[contains(@class, "sb_from_mobile")]'
       @instance.webdriver.click_on_locator(xpath)
       SiteMobileApps.new(@instance)
     end
 
     def click_docspace_start_free
-      xpath = '//*[@id="office_suite_docspace_registration_start_with_your_free_account"]'
-      @instance.webdriver.move_to_element_by_locator(xpath)
+      xpath = '//div[contains(@class, "sb_docspace")]'
       @instance.webdriver.click_on_locator(xpath)
       SiteDocSpaceSignUp.new(@instance)
     end
 
     def click_ready_integrations
-      xpath = '//div[contains(@class, "sb_text")]/a[contains(@href, "all-connectors.aspx")]'
-      @instance.webdriver.move_to_element_by_locator(xpath)
+      xpath = '//div[contains(@class, "sb_connectors")]'
       @instance.webdriver.click_on_locator(xpath)
       SiteConnectorsOnlyoffice.new(@instance)
     end
@@ -63,8 +59,7 @@ module TestingSiteOnlyoffice
     end
 
     def click_integrate_learn_more
-      xpath = '//*[@id="office_suite_download_docs_de_get_it_now"]'
-      @instance.webdriver.move_to_element_by_locator(xpath)
+      xpath = '//div[contains(@class, "sb_developers")]'
       @instance.webdriver.click_on_locator(xpath)
       SiteForDevelopersDocDevEdition.new(@instance)
     end
