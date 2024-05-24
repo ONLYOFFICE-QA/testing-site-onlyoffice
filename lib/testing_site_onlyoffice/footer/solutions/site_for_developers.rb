@@ -15,7 +15,7 @@ module TestingSiteOnlyoffice
 
     link(:download_now_button, xpath: '//a[@href = "/download.aspx?from=for-developers"]')
     link(:docspace_learn_more, xpath: '//a[@href = "/docspace.aspx?from=for-developers"]')
-    link(:docspace_api, xpath: '//a[@href = "https://api.onlyoffice.com/docspace/basic"]')
+    link(:docspace_api, xpath: '//a[contains(@href, "api.onlyoffice.com/docspace")]')
     link(:docspace_check_tutorial, xpath: '//a[contains(@href, "integrating-onlyoffice-docspace-into-a-single-page-application")]')
     link(:docs_integration_examples, xpath: '//a[@href = "https://api.onlyoffice.com/editors/demopreview"]')
     link(:docs_compare_api_wopi, xpath: '//a[@href = "/wopi-comparison.aspx"]')
@@ -25,7 +25,7 @@ module TestingSiteOnlyoffice
     link(:docbuilder_download_now, xpath: '//a[@href = "/download.aspx?from=for-developers"]')
     link(:docbuilder_source_code, xpath: '//a[@href = "https://github.com/ONLYOFFICE/DocumentBuilder"]')
     link(:available_plugins, xpath: '//a[contains(@href, "/app-directory") and @class="button tr"]')
-    link(:workspace_find_out_more, xpath: '//a[@href = "https://api.onlyoffice.com/portals/basic"]')
+    link(:workspace_find_out_more, xpath: '//a[contains(@href, "api.onlyoffice.com/portals/workspaceapi")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
