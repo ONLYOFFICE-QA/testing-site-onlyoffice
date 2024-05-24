@@ -42,7 +42,7 @@ module TestingSiteOnlyoffice
     end
 
     def check_title_documentation_community_server
-      @instance.webdriver.title_of_current_tab.include?('Basic concepts - ONLYOFFICE Api Documentation')
+      @instance.webdriver.title_of_current_tab.include?('API Backend - ONLYOFFICE Api Documentation')
     end
 
     def check_title_documentation_plagins
