@@ -103,7 +103,6 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check notify about forgot password' do
-      pending('awaiting the fix of test mailboxes')
       @site_home_page.send_forgot_password_from_sign_in
       expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: config.language,
                                                                                    pattern: 'teamlab_pwd_reminder',
