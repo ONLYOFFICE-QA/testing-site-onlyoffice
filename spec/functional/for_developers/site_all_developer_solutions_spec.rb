@@ -63,7 +63,7 @@ describe 'Developers - All Developer Solutions' do
 
   it '[Developers] [All Developer Solutions] Workspace "Find out more" link works' do
     @all_developer_solutions.click_workspace_find_out_more
-    expected_title = 'Basic concepts - ONLYOFFICE Api Documentation'
+    expected_title = 'API Backend - ONLYOFFICE Api Documentation'
     expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
   end
 end
