@@ -5,7 +5,7 @@ require 'timeout'
 
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Site Smoke open registration page' do
+describe 'Site Smoke open docspace registration page' do
   after do |example|
     test_manager.add_result(example, @test)
     @test&.webdriver&.quit

@@ -23,6 +23,9 @@ module TestingSiteOnlyoffice
       open_list_languages_page unless @instance.webdriver.element_present?(language_select_elements[1])
       xpath_of_lang = "//li[@class='option #{lang_to_set}']/a"
       @instance.webdriver.click_on_locator xpath_of_lang
+      @instance.webdriver.wait_until do
+        get_page_language == lang_to_set
+      end
     end
 
     def open_list_languages_page
