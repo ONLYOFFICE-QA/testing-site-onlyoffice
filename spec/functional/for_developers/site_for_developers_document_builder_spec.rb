@@ -53,13 +53,13 @@ describe 'Developers - Document Builder' do
   end
 
   it '[Developers] [Document Builder] "Read documentaion" link at top block works' do
-    expected_title = TestingSiteOnlyoffice::SiteDownloadData::OVERVIEW_API_ONLYOFFICE_TITLE
+    expected_title = 'Overview - ONLYOFFICE Api Documentation'
     @document_builder.read_documentaion_top
     expect(@document_builder.check_opened_page_title).to eq(expected_title)
   end
 
   it '[Developers] [Document Builder] "Read documentaion" link at bottom block works' do
-    expected_title = TestingSiteOnlyoffice::SiteDownloadData::OVERVIEW_API_ONLYOFFICE_TITLE
+    expected_title = 'Overview - ONLYOFFICE Api Documentation'
     @document_builder.read_documentaion_bottom
     expect(@document_builder.check_opened_page_title).to eq(expected_title)
   end

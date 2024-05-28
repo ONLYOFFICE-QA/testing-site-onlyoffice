@@ -33,7 +33,8 @@ describe 'Site Products Marketplace' do
 
   it "[Site][Products][Marketplace] 'Visit API' button works" do
     @marketplace_page.click_visit_api_button
-    expect(@marketplace_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::OVERVIEW_API_ONLYOFFICE_TITLE)
+    expected_title = 'Overview - ONLYOFFICE Api Documentation'
+    expect(@marketplace_page.check_opened_page_title).to eq(expected_title)
   end
 
   it "[Site][Products][Marketplace] Plugins number didn't change" do
