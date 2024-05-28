@@ -54,7 +54,8 @@ describe 'Developers - All Developer Solutions' do
 
   it '[Developers] [All Developer Solutions] Docbuilder "Check examples" link works' do
     @all_developer_solutions.click_docbuilder_check_examples
-    expect(@all_developer_solutions.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::OVERVIEW_API_ONLYOFFICE_TITLE)
+    expected_title = 'Overview - ONLYOFFICE Api Documentation'
+    expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
   end
 
   it '[Developers] [All Developer Solutions] "Available plugins" link works' do

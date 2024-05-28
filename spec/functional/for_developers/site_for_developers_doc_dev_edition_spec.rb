@@ -33,7 +33,8 @@ describe 'For Developers Developer Edition' do
 
   it '[Developer Edition] Go to macros_and_plugins' do
     @developer_edition.click_button_macros_and_plugins
-    expect(@developer_edition.check_opened_page_title(switch_tab: false)).to eq(TestingSiteOnlyoffice::SiteDownloadData::OVERVIEW_API_ONLYOFFICE_TITLE)
+    expected_title = 'Overview - ONLYOFFICE Api Documentation'
+    expect(@developer_edition.check_opened_page_title(switch_tab: false)).to eq(expected_title)
   end
 
   it '[Developer Edition] Go to cross_browser_compatibility' do
