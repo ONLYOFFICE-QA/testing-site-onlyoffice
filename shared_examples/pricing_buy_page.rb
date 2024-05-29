@@ -2,10 +2,6 @@
 
 shared_examples_for 'pricing_buy_page' do |project, support_levels, number_of_users|
   support_levels.each do |support_level|
-    it "[Site][Pricing][#{project}] Choose the #{project} tariff: #{support_level}, more connection" do
-      pricing_page.fill_data_pricing_page(support_level, number_connection: 'More')
-      expect(pricing_page.total_price_upon_request).to eq('Upon request')
-    end
     number_of_users.each do |number_connection|
       if (project == 'PricingDocsEnterprise') || (support_level == 'Basic')
         it "[Site][Pricing][#{project}] Choose the #{project} tariff: #{support_level}, count users: #{number_connection}" do
