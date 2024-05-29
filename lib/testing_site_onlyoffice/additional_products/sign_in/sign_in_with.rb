@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
 
     include PageObject
 
-    element(:google_indicator, xpath: "(//a[contains(@href, 'google')])[1]/../../../..//input[@type='email']")
+    element(:google_indicator, xpath: "//div[contains(text(),'Google')]")
     element(:facebook_indicator, xpath: "//form[contains(@action, 'facebook')]")
     element(:twitter_indicator, xpath: "//form[contains(@action, 'twitter')]")
     element(:linkedin_indicator, xpath: "(//*[@type='linkedin-logo'])[1]/../../form[@class='login__form']")
