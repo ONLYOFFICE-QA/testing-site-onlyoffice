@@ -84,7 +84,8 @@ module TestingSiteOnlyoffice
                      presentations_converter: ConvertPage,
                      PDFs_converter: ConvertPage,
                      find_pdf_form_templates: SiteFeaturesOforms,
-                     fill_out_pdf_forms_online: SiteFeaturesOforms }
+                     fill_out_pdf_forms_online: SiteFeaturesOforms,
+                     enterprises: SiteEnterpriseOverview }
 
     footer_links.each_key do |link|
       define_method(:"click_#{link}") do
