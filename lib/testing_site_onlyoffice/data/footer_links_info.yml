@@ -9,23 +9,14 @@
   - Research
   - Education
   - Nonprofits
-:Features:
-  - Document Editor
-  - Spreadsheet Editor
-  - Presentation Editor
-  - Form creator
-  - PDF Editor
-  - Security
-  - Accessibility
-  - AI helper
-  - Marketplace
-:Connectors:
-  - Nextcloud
-  - Moodle
-  - Odoo
-  - WordPress
-  - Zoom
-  - Others
+:Converters:
+  - Convert text files
+  - Convert spreadsheets
+  - Convert presentations
+  - Convert PDFs
+:Templates:
+  - Find PDF form templates
+  - Fill out PDF forms online
 :About Us:
   - Company
   - Customers

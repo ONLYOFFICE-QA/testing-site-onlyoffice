@@ -14,24 +14,27 @@ module TestingSiteOnlyoffice
 
     # top toolbar - Features
     link(:site_features, xpath: '//a[@id="navitem_features"]')
-    link(:site_features_connectors, xpath: '//a[@id="navitem_features_connectors"]')
-    link(:site_features_docspace, xpath: '//a[@id="navitem_features_docspace"]')
-    link(:site_features_workspace, xpath: '//a[@id="navitem_features_workspace"]')
+    link(:site_features_connectors, xpath: '//a[@id="navitem_features_connectors_docs"]')
+    div(:site_features_docspace, xpath: '//div[@id="navitem_features_docspace"]')
+    link(:site_features_overview_docspace, xpath: '//a[@id="feature_overview_docspace"]')
+    div(:site_features_workspace, xpath: '//div[@id="navitem_features_workspace"]')
+    link(:site_features_overview_workspace, xpath: '//a[@id="feature_overview_workspace"]')
     link(:site_features_marketplace, xpath: '//a[@id="navitem_features_marketplace"]')
-    link(:site_features_docs_overview, xpath: '//a[@id="navitem_features_docs_overview"]')
-    link(:site_features_for_desktop, xpath: '//a[@id="navitem_features_clients_apps"]')
-    link(:site_features_for_ios, xpath: '//a[@id="navitem_features_clients_mobile_ios"]')
-    link(:site_features_for_android, xpath: '//a[@id="navitem_features_clients_mobile_android"]')
+    link(:site_features_docs_overview, xpath: '//a[@id="feature_overview_docs"]')
+    link(:site_features_for_desktop_windows, xpath: '//a[contains(@class,"win")]')
+    link(:site_features_for_ios, xpath: '//a[contains(@class,"ios")]')
+    link(:site_features_for_android, xpath: '//a[contains(@class,"android")]')
     link(:site_features_see_it_in_action, xpath: '//a[@id="navitem_features_see_it"]')
     link(:site_features_oforms, xpath: '//a[@id="navitem_features_fill_forms"]')
-    link(:site_features_text_converter, xpath: '//a[@id="navitem_features_convert_text"]')
-    link(:site_features_spreadsheet_converter, xpath: '//a[@id="navitem_features_convert_speadsheets"]')
-    link(:site_features_presentation_converter, xpath: '//a[@id="navitem_features_convert_presentations"]')
-    link(:site_features_pdf_converter, xpath: '//a[@id="navitem_features_convert_pdf"]')
+    link(:site_features_doc_editor, xpath: '//a[@id="navitem_features_submenu_doced"]')
+    link(:site_features_spreadsheets_editor, xpath: '//a[@id="navitem_features_submenu_spreaded"]')
+    link(:site_features_presentation_editor, xpath: '//a[@id="navitem_features_submenu_presed"]')
+    link(:site_features_pdf_editor, xpath: '//a[@id="navitem_features_submenu_pdfed"]')
+    link(:site_features_form_creator, xpath: '//a[@id="navitem_features_submenu_formed"]')
 
     # top toolbar - For Business
     link(:site_for_enterprises, xpath: '//a[@id = "navitem_forbusiness"]')
-    link(:site_for_enterprises_overview, xpath: '//a[@id = "navitem_fb_business"]')
+    link(:site_for_enterprises_overview, xpath: '//a[@id = "navitem_fb_docs_ee"]')
     link(:site_for_business_docs_enterprise, xpath: '//a[@id="navitem_fb_docs_ee"]')
     link(:site_for_business_workspace, xpath: '//a[@id="navitem_fb_workspace"]')
     link(:site_for_business_nextcloud, xpath: '//a[@id="navitem_integrations_nextcloud"]')
@@ -123,10 +126,12 @@ module TestingSiteOnlyoffice
         },
         features_workspace: {
           element: site_features_workspace_element,
+          sub_element: site_features_overview_workspace_element,
           class: SiteFeaturesWorkspace
         },
         features_docspace: {
           element: site_features_docspace_element,
+          sub_element: site_features_overview_docspace_element,
           class: SiteDocSpaceMainPage
         },
         features_marketplace: {
@@ -138,7 +143,7 @@ module TestingSiteOnlyoffice
           class: SiteFeaturesDocsOverview
         },
         features_desktop: {
-          element: site_features_for_desktop_element,
+          element: site_features_for_desktop_windows_element,
           class: SiteFeaturesDesktop
         },
         features_ios: {
@@ -153,25 +158,25 @@ module TestingSiteOnlyoffice
           element: site_features_see_it_in_action_element,
           class: SiteFeaturesSeeItInAction
         },
-        features_oforms: {
-          element: site_features_oforms_element,
-          class: SiteFeaturesOforms
+        site_features_form_creator: {
+          element: site_features_form_creator_element,
+          class: SiteFeaturesFormCreator
         },
-        site_features_text_converter: {
-          element: site_features_text_converter_element,
-          class: ConvertPage
+        site_features_doc_editor: {
+          element: site_features_doc_editor_element,
+          class: SiteFeaturesDocumentEditor
         },
-        site_features_spreadsheet_converter: {
-          element: site_features_spreadsheet_converter_element,
-          class: ConvertPage
+        site_features_spreadsheets_editor: {
+          element: site_features_spreadsheets_editor_element,
+          class: SiteFeaturesSpreadsheetEditor
         },
-        site_features_presentation_converter: {
-          element: site_features_presentation_converter_element,
-          class: ConvertPage
+        site_features_presentation_editor: {
+          element: site_features_presentation_editor_element,
+          class: SiteFeaturesPresentationEditor
         },
-        site_features_pdf_converter: {
-          element: site_features_pdf_converter_element,
-          class: ConvertPage
+        site_features_pdf_editor: {
+          element: site_features_pdf_editor_element,
+          class: SiteFeaturesPDFReaderConverter
         }
 
       }
@@ -440,6 +445,10 @@ module TestingSiteOnlyoffice
       link = all_toolbar_links_and_classes_hash[section][:element]
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(link) }
       link.click
+      if %i[features_workspace features_docspace].include?(section)
+        sub_link = all_toolbar_links_and_classes_hash[section][:sub_element]
+        sub_link.click
+      end
       @instance.webdriver.switch_to_popup if %i[about_gift_shop about_help_center features_see_it_in_action features_oforms about_blog about_forum].include?(section)
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
     end

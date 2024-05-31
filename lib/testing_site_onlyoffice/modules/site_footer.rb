@@ -2,6 +2,7 @@
 
 require_relative '../get_onlyoffice/modules/site_download_helper'
 require_relative 'site_methods_footer/site_methods_footer_developers'
+require_relative '../features/site_features_oforms'
 
 module TestingSiteOnlyoffice
   # Site footer
@@ -43,6 +44,16 @@ module TestingSiteOnlyoffice
     link(:wordpress, xpath: "#{footer_xpath}//a[contains(@href, 'wordpress')]")
     link(:all_connectors, xpath: "#{footer_xpath}//a[contains(@href, 'all-connectors')]")
 
+    # converters
+    link(:text_converter, xpath: "#{footer_xpath}//a[contains(@href, 'text-file-converter.aspx')]")
+    link(:spreadsheets_converter, xpath: "#{footer_xpath}//a[contains(@href, 'spreadsheet-converter.aspx')]")
+    link(:presentations_converter, xpath: "#{footer_xpath}//a[contains(@href, 'presentation-converter.aspx')]")
+    link(:PDFs_converter, xpath: "#{footer_xpath}//a[contains(@href, 'pdf-converter.aspx')]")
+
+    # templates
+    link(:find_pdf_form_templates, xpath: "#{footer_xpath}//a[contains(@href, 'oforms.onlyoffice.com')]")
+    link(:fill_out_pdf_forms_online, xpath: "#{footer_xpath}//a[contains(@href, 'oforms.onlyoffice.com')]")
+
     # resources
     link(:help_center_footer_link, xpath: '//a[contains(@href,"helpcenter.onlyoffice.com/index.aspx")]')
 
@@ -67,7 +78,13 @@ module TestingSiteOnlyoffice
                      spreadsheet_editor: SiteFeaturesSpreadsheetEditor,
                      presentation_editor: SiteFeaturesPresentationEditor,
                      pdf_reader_converter: SiteFeaturesPDFReaderConverter,
-                     form_creator: SiteFeaturesFormCreator }
+                     form_creator: SiteFeaturesFormCreator,
+                     text_converter: ConvertPage,
+                     spreadsheets_converter: ConvertPage,
+                     presentations_converter: ConvertPage,
+                     PDFs_converter: ConvertPage,
+                     find_pdf_form_templates: SiteFeaturesOforms,
+                     fill_out_pdf_forms_online: SiteFeaturesOforms }
 
     footer_links.each_key do |link|
       define_method(:"click_#{link}") do

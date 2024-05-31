@@ -17,7 +17,7 @@ describe 'text files conversion' do
 
   describe 'text files conversion' do
     before do
-      @text_convert_page = @site_home_page.click_link_on_toolbar(:site_features_text_converter)
+      @text_convert_page = @site_home_page.click_text_converter
     end
 
     it 'converted file is not empty' do
@@ -47,7 +47,7 @@ describe 'text files conversion' do
 
   describe 'spreadsheet conversion' do
     before do
-      @spreadsheet_convert_page = @site_home_page.click_link_on_toolbar(:site_features_spreadsheet_converter)
+      @spreadsheet_convert_page = @site_home_page.click_spreadsheets_converter
     end
 
     it 'converted file is not empty' do
@@ -77,7 +77,7 @@ describe 'text files conversion' do
 
   describe 'presentation conversion' do
     before do
-      @presentation_convert_page = @site_home_page.click_link_on_toolbar(:site_features_presentation_converter)
+      @presentation_convert_page = @site_home_page.click_presentations_converter
     end
 
     it 'converted file is not empty' do
@@ -107,7 +107,7 @@ describe 'text files conversion' do
 
   describe 'PDF conversion' do
     before do
-      @pdf_convert_page = @site_home_page.click_link_on_toolbar(:site_features_pdf_converter)
+      @pdf_convert_page = @site_home_page.click_PDFs_converter
     end
 
     it 'converted file is not empty' do
