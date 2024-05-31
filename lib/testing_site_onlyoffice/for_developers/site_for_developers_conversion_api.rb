@@ -11,7 +11,7 @@ module TestingSiteOnlyoffice
     link(:formats_link, xpath: "//a[contains(@href, 'api.onlyoffice.com/editors/conversionapi#text-matrix')]")
     link(:api_documentation_link, xpath: "//a[contains(@href, 'api.onlyoffice.com/editors/conversionapi#request')]")
     link(:online_converter_link, xpath: "//a[contains(@href, '/online-document-converter.aspx')]")
-    link(:security_measures_link, xpath: "(//div/a[contains(@href, '/security.aspx')])[1]")
+    link(:security_measures_link, xpath: "(//div/a[contains(@href, '/security.aspx')])[2]")
     link(:download_docs_link, xpath: "//a[@id = 'docs_link']")
     link(:download_desktop_link, xpath: "//a[@id = 'desktop_link']")
     link(:download_mobile_link, xpath: "//a[@id = 'mobile_link']")
