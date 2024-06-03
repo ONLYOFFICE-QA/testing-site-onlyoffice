@@ -69,7 +69,7 @@ module TestingSiteOnlyoffice
 
     def check_opened_page_title_and_wait_until_not_empty(switch_tab: true)
       @instance.webdriver.choose_tab(2) if switch_tab
-      @instance.webdriver.wait_until { @instance.webdriver.title_of_current_tab != '' }
+      @instance.webdriver.wait_until { !@instance.webdriver.title_of_current_tab.empty? }
       @instance.webdriver.title_of_current_tab
     end
 
