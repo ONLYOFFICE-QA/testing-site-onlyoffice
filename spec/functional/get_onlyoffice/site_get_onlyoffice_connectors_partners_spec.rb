@@ -30,19 +30,19 @@ describe 'Connectors partners download' do
       it "[Site][Get Onlyoffice][PartnerConnectors][#{connector}] 'More info' link works /all-connectors.aspx" do
         @connectors_page.click_partners_more_info_link(current_connector.more_info_xpath)
         more_info_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_partners_info[connector.to_s]['more_info']
-        expect(@connectors_page.check_opened_page_title).to eq(more_info_title)
+        expect(@connectors_page.check_opened_page_title_and_wait_until_not_empty).to eq(more_info_title)
       end
 
       it "[Site][Get Onlyoffice][PartnerConnectors][#{connector}] Developer website link works /all-connectors.aspx" do
         @connectors_page.click_developers_site_link(current_connector.developer_website_xpath)
         developer_website_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_partners_info[connector.to_s]['website']
-        expect(@connectors_page.check_opened_page_title).to eq(developer_website_title)
+        expect(@connectors_page.check_opened_page_title_and_wait_until_not_empty).to eq(developer_website_title)
       end
 
       it "[Site][Connectors][#{connector}] 'Get it now' button works /all-connectors.aspx" do
         @connectors_page.click_get_it_now_link(current_connector.get_it_now_xpath)
-        git_it_now_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_partners_info[connector.to_s]['get_it_now']
-        expect(@connectors_page.check_opened_page_title).to eq(git_it_now_title)
+        get_it_now_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_partners_info[connector.to_s]['get_it_now']
+        expect(@connectors_page.check_opened_page_title_and_wait_until_not_empty).to eq(get_it_now_title)
       end
     end
   end

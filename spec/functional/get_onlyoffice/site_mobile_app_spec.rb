@@ -23,7 +23,7 @@ describe 'Mobile apps' do
 
     it '[Mobile][ONLYOFFICE Documents for Huawei] Check "Explore it on AppGallery" button' do
       @mobile_app_page.oo_documents_appgallery
-      expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_APP_GALLERY)
+      expect(@mobile_app_page.check_opened_page_title_and_wait_until_not_empty).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_APP_GALLERY)
     end
 
     it '[Mobile][ONLYOFFICE Documents for Galaxy] Check "Available on Galaxy Store" button' do
@@ -50,7 +50,7 @@ describe 'Mobile apps' do
 
     it '[Mobile][ONLYOFFICE Projects for Huawei] Check "Explore it on AppGallery" button' do
       @mobile_app_page.oo_projects_appgallery
-      expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_PROJECTS_APP_GALLERY)
+      expect(@mobile_app_page.check_opened_page_title_and_wait_until_not_empty).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_PROJECTS_APP_GALLERY)
     end
 
     it '[Mobile][ONLYOFFICE Projects for iOS] Check "Download on the app store" button' do

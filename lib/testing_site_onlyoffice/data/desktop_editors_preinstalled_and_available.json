@@ -39,6 +39,10 @@
     "block_id": "onlyoffice_desktop_editors_for_freespire",
     "website": "Freespire"
   },
+  "regata_os": {
+    "block_id": "onlyoffice_desktop_editors_for_regataos",
+    "website": "Get to know the Regata OS operating system"
+  },
   "linux_mint": {
     "block_id": "onlyoffice_desktop_editors_for_linux_mint_software_store",
     "website": "Home - Linux Mint"

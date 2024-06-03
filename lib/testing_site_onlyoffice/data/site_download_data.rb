@@ -177,7 +177,7 @@ module TestingSiteOnlyoffice
     end
 
     def self.partners_os_distributions_list
-      %i[kylin-os br-os mauna-linux risios sparkylinux linuxfx linkat escuelas-linux]
+      %i[kylin-os br-os mauna-linux risios sparkylinux linuxfx linkat escuelas-linux deepin]
     end
 
     def self.partners_marketplaces_list
