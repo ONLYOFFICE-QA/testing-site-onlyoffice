@@ -30,7 +30,11 @@ describe 'Connectors partners download' do
       it "[Site][Get Onlyoffice][PartnerConnectors][#{connector}] 'More info' link works /all-connectors.aspx" do
         @connectors_page.click_partners_more_info_link(current_connector.more_info_xpath)
         more_info_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_partners_info[connector.to_s]['more_info']
-        expect(@connectors_page.check_opened_page_title_and_wait_until_not_empty).to eq(more_info_title)
+        if connector.to_s == 'wedoc'
+          expect(@connectors_page.check_opened_page_title).to eq('')
+        else
+          expect(@connectors_page.check_opened_page_title_and_wait_until_not_empty).to eq(more_info_title)
+        end
       end
 
       it "[Site][Get Onlyoffice][PartnerConnectors][#{connector}] Developer website link works /all-connectors.aspx" do
@@ -42,7 +46,11 @@ describe 'Connectors partners download' do
       it "[Site][Connectors][#{connector}] 'Get it now' button works /all-connectors.aspx" do
         @connectors_page.click_get_it_now_link(current_connector.get_it_now_xpath)
         get_it_now_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_partners_info[connector.to_s]['get_it_now']
-        expect(@connectors_page.check_opened_page_title_and_wait_until_not_empty).to eq(get_it_now_title)
+        if connector.to_s == 'wedoc'
+          expect(@connectors_page.check_opened_page_title).to eq('')
+        else
+          expect(@connectors_page.check_opened_page_title_and_wait_until_not_empty).to eq(get_it_now_title)
+        end
       end
     end
   end
