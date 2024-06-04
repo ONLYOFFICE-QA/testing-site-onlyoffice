@@ -30,7 +30,13 @@ describe 'Connectors partners download' do
       it "[Site][Get Onlyoffice][PartnerConnectors][#{connector}] 'More info' link works /all-connectors.aspx" do
         @connectors_page.click_partners_more_info_link(current_connector.more_info_xpath)
         more_info_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_partners_info[connector.to_s]['more_info']
-        expect(@connectors_page.check_opened_page_title_and_wait_until_not_empty).to eq(more_info_title)
+        # Added a status code check for the WeDoc connector due to an empty page title
+        if connector.to_s == 'wedoc'
+          wedoc_more_info_link = @connectors_page.get_connector_info_link(current_connector.more_info_xpath)
+          expect(@connectors_page).to be_link_success_response(wedoc_more_info_link)
+        else
+          expect(@connectors_page.check_opened_page_title_and_wait_until_not_empty).to eq(more_info_title)
+        end
       end
 
       it "[Site][Get Onlyoffice][PartnerConnectors][#{connector}] Developer website link works /all-connectors.aspx" do
@@ -42,7 +48,13 @@ describe 'Connectors partners download' do
       it "[Site][Connectors][#{connector}] 'Get it now' button works /all-connectors.aspx" do
         @connectors_page.click_get_it_now_link(current_connector.get_it_now_xpath)
         get_it_now_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_partners_info[connector.to_s]['get_it_now']
-        expect(@connectors_page.check_opened_page_title_and_wait_until_not_empty).to eq(get_it_now_title)
+        # Added a status code check for the WeDoc connector due to an empty page title
+        if connector.to_s == 'wedoc'
+          wedoc_get_it_now_link = @connectors_page.get_connector_info_link(current_connector.get_it_now_xpath)
+          expect(@connectors_page).to be_link_success_response(wedoc_get_it_now_link)
+        else
+          expect(@connectors_page.check_opened_page_title_and_wait_until_not_empty).to eq(get_it_now_title)
+        end
       end
     end
   end
