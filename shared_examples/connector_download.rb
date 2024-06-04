@@ -11,7 +11,7 @@ shared_examples_for 'connector_download' do |connectors_list|
           expect(possible_titles).to include(connectors_page.check_opened_page_title)
         else
           github_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_info[connector.to_s]['get_it_now']
-          expect(connectors_page.check_opened_page_title).to eq(github_title)
+          expect(connectors_page.check_opened_page_title_and_wait_until_not_empty).to eq(github_title)
         end
       end
     end
