@@ -87,6 +87,10 @@ module TestingSiteOnlyoffice
       @instance.webdriver.get_element(xpath).click
     end
 
+    def get_connector_info_link(xpath)
+      @instance.webdriver.get_attribute(xpath, 'href')
+    end
+
     def connectors_block_number(developer_type)
       developer_type == :onlyoffice ? connectors_block_elements.count : connectors_partners_block_elements.count
     end
