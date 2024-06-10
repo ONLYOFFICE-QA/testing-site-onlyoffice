@@ -13,7 +13,7 @@ module TestingSiteOnlyoffice
     BASE_XPATH = '//div[@id ="pp_button_desktop"]'
     link(:try_free, xpath: '//a[contains(@href, "/download-workspace.aspx") and text() = "Try free for 30 days"]')
     link(:buy_button_basic, xpath: "#{BASE_XPATH}//a[@class = 'button gray basicBuyButton']")
-    link(:buy_button_standard, xpath: "#{BASE_XPATH}//a[@class = 'button gray standartBuyButton']")
+    link(:buy_button_standard, xpath: "#{BASE_XPATH}//a[@class = 'button red standartBuyButton']")
     link(:buy_button_premium, xpath: "#{BASE_XPATH}//a[@class = 'button gray premiumBuyButton']")
 
     div(:add_user_num_basic, xpath: '//div[contains(@class,"pp_connections_increase simcon_change basicSelectors" )]')
