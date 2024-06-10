@@ -25,6 +25,7 @@ module TestingSiteOnlyoffice
     link(:site_features_for_ios, xpath: '//a[contains(@class,"ios")]')
     link(:site_features_for_android, xpath: '//a[contains(@class,"android")]')
     link(:site_features_see_it_in_action, xpath: '//a[@id="navitem_features_see_it"]')
+    link(:site_features_accessibility, xpath: '//a[@id="navitem_features_accessibility"]')
     link(:site_features_oforms, xpath: '//a[@id="navitem_features_fill_forms"]')
     link(:site_features_doc_editor, xpath: '//a[@id="navitem_features_submenu_doced"]')
     link(:site_features_spreadsheets_editor, xpath: '//a[@id="navitem_features_submenu_spreaded"]')
@@ -157,6 +158,10 @@ module TestingSiteOnlyoffice
         features_see_it_in_action: {
           element: site_features_see_it_in_action_element,
           class: SiteFeaturesSeeItInAction
+        },
+        features_accessibility: {
+          element: site_features_accessibility_element,
+          class: SiteProductsAccessibility
         },
         site_features_form_creator: {
           element: site_features_form_creator_element,

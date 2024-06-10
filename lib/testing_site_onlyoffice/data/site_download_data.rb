@@ -38,6 +38,9 @@ module TestingSiteOnlyoffice
     OVERVIEW_API_ONLYOFFICE_TITLE = 'Index - ONLYOFFICE Api Documentation'
     CONVERSION_API_ONLYOFFICE_TITLE = 'Conversion API - ONLYOFFICE Api Documentation'
 
+    # Helpcenter - accessibility
+    HELPCENTER_ONLYOFFICE_ACCESSIBILITY = 'Accessibility of ONLYOFFICE editors - ONLYOFFICE'
+
     # Onlyoffice on marketplaces
     AWS_MARKETPLACE_TITLE = 'AWS Marketplace: Ascensio Systems Inc'
     ALIBABA_MARKETPLACE_TITLE = 'Ascensio System Ltd. - Alibaba Cloud'
