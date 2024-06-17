@@ -7,6 +7,7 @@ require_relative '../uninstall_feedback/site_registration_canceled'
 
 module TestingSiteOnlyoffice
   # Helper methods for opening uninstall feedback pages
+  # These methods use the URLs of the test site because emails are not tested on the production environment
   module SiteUninstallFeedbackOpeningPages
     def open_install_canceled
       @instance.webdriver.open('https://teamlab.info/install-canceled.aspx?Site_Testing=4testing')
