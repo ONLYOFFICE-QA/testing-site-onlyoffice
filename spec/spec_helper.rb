@@ -16,7 +16,7 @@ require 'rspec/retry'
 
 # @return [TestingApiOnlyfficeCom::Config] config of test run
 def config
-  @config ||= TestingApiOnlyfficeCom::Config.new
+  @config ||= TestingApiOnlyfficeCom::Config.new.to_production
 end
 
 RSpec.configure do |config|
