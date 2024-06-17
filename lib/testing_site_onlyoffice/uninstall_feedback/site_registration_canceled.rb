@@ -6,7 +6,6 @@ module TestingSiteOnlyoffice
   # /registration-canceled.aspx
   # https://github.com/ONLYOFFICE-QA/testing-site-onlyoffice/assets/99170537/db574321-3332-4a8a-8f78-3b1628dd4bb8
   class SiteRegistrationCanceled
-
     include PageObject
     include SiteUninstallFeedbackHelper
 

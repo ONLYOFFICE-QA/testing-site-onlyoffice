@@ -3,7 +3,6 @@
 module TestingSiteOnlyoffice
   # Helper methods for testing uninstall feedback pages
   module SiteUninstallFeedbackHelper
-
     include PageObject
 
     text_area(:message_field, xpath: '//textarea[@id="nctautotest-ignore-captcha"]')

@@ -6,7 +6,6 @@ module TestingSiteOnlyoffice
   # /install-canceled.aspx
   # https://github.com/ONLYOFFICE-QA/testing-site-onlyoffice/assets/99170537/a9dcf6ac-e902-468d-87ad-93a453d628ab
   class SiteInstallCanceledPage
-
     include PageObject
     include SiteUninstallFeedbackHelper
 
@@ -16,7 +15,6 @@ module TestingSiteOnlyoffice
     element(:necessary_features, xpath: '//input[@id="checkbox3"]/following-sibling::span')
     element(:legal_violation, xpath: '//input[@id="checkbox4"]/following-sibling::span')
     element(:rarely_use, xpath: '//input[@id="checkbox5"]/following-sibling::span')
-
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -35,6 +33,7 @@ module TestingSiteOnlyoffice
       legal_violation_element.click if legal_violation
       rarely_use_element.click if rarely_use
     end
+
     def send_feedback_email_install_canceled
       select_all_options_install_canceled
       bypass_captcha_by_phrase

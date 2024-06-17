@@ -6,7 +6,6 @@ module TestingSiteOnlyoffice
   # /account-canceled.aspx
   # # https://github.com/ONLYOFFICE-QA/testing-site-onlyoffice/assets/99170537/74ff17b8-12a7-420c-91fc-6c9469ddd006
   class SiteAccountCanceled
-
     include PageObject
     include SiteUninstallFeedbackHelper
 

@@ -8,7 +8,6 @@ require_relative '../uninstall_feedback/site_registration_canceled'
 module TestingSiteOnlyoffice
   # Helper methods for opening uninstall feedback pages
   module SiteUninstallFeedbackOpeningPages
-
     def open_install_canceled
       @instance.webdriver.open('https://teamlab.info/install-canceled.aspx?Site_Testing=4testing')
       SiteInstallCanceledPage.new(@instance)

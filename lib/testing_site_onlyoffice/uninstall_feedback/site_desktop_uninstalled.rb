@@ -6,7 +6,6 @@ module TestingSiteOnlyoffice
   # /desktop-uninstalled.aspx
   # https://github.com/ONLYOFFICE-QA/testing-site-onlyoffice/assets/99170537/7d148086-8c00-4250-9cad-39d142477b68
   class SiteDesktopUninstalled
-
     include PageObject
     include SiteUninstallFeedbackHelper
 
