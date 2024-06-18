@@ -3,7 +3,7 @@
 require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
-describe 'Install canceled feedback page' do
+describe 'Uninstall feedback pages' do
   before do
     @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
     @username = TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL
