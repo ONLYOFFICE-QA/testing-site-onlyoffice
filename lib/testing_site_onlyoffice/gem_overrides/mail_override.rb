@@ -64,7 +64,7 @@ module OnlyofficeIredmailHelper
     end
 
     def check_account_canceled_mail_body(params = {})
-      body = MailParseBody.new(params, split_method: :extended)
+      body = MailParseBody.new(params)
       body.technical_problems_match? &&
         body.storage_space_match? &&
         body.necessary_features_match? &&
@@ -73,7 +73,7 @@ module OnlyofficeIredmailHelper
     end
 
     def check_desktop_uninstalled_mail_body(params = {})
-      body = MailParseBody.new(params, split_method: :extended)
+      body = MailParseBody.new(params)
       body.technical_problems_match? &&
         body.another_desktop_software_match? &&
         body.necessary_features_match? &&
@@ -82,7 +82,7 @@ module OnlyofficeIredmailHelper
     end
 
     def check_registration_canceled_mail_body(params = {})
-      body = MailParseBody.new(params, split_method: :extended)
+      body = MailParseBody.new(params)
       body.switched_on_premises_match? &&
         body.switched_to_personal_match? &&
         body.technical_problems_match? &&

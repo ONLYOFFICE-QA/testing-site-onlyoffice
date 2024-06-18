@@ -8,12 +8,10 @@ module OnlyofficeIredmailHelper
   class MailParseBody < IredMailHelper
     include MailHelper
 
-    def initialize(params, split_method: :default)
+    def initialize(params)
       super(username: params[:username])
       @params = params
-      @split_method = split_method
       @body = parse_email_body(params)
-      puts "Parsed email body array: #{@body.inspect}"
     end
 
     # Method that parses email body and returns it in array
@@ -24,29 +22,16 @@ module OnlyofficeIredmailHelper
     # @return [Array] array of strings
     def parse_email_body(params)
       email_body = get_text_body_email_by_subject(params)
-      puts("before split #{email_body}")
       number = parse_phone_number(email_body)
       email_body.sub!(number, number.delete(' '))
-      if @split_method == :extended
-        split_email_body_extended(email_body)
-      else
-        split_email_body_default(email_body)
-      end
+      split_email_body(email_body)
     end
 
     # Split email body string into an array of strings without "space" character
     # @param [String] body - email content string
     # @return [Array] split values of an email body
-    def split_email_body_default(body)
-      body.split(/[\s\:]/)
-    end
-
-    # Split email body string into an array of strings using extended method
-    # This method was created because the default method does not work for all email formats
-    # @param [String] body - email content string
-    # @return [Array] split values of an email body
-    def split_email_body_extended(body)
-      body.split(/[\s,:?.]+/)
+    def split_email_body(body)
+      body.split(/[\s,\:]/)
     end
 
     # Get the value of a phone number from the email body.
