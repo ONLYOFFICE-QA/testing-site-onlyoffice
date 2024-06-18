@@ -26,7 +26,7 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(install_canceled_form_element) }
     end
 
-    def select_all_options_desktop_uninstalled(technical_problems: false, another_desktop_software: false, necessary_features: false, legal_violation: false, rarely_use: false)
+    def select_options_desktop_uninstalled(technical_problems: false, another_desktop_software: false, necessary_features: false, legal_violation: false, rarely_use: false)
       technical_problems_element.click if technical_problems
       another_desktop_software_element.click if another_desktop_software
       necessary_features_element.click if necessary_features
@@ -35,7 +35,7 @@ module TestingSiteOnlyoffice
     end
 
     def send_feedback_email_desktop_uninstalled
-      select_all_options_desktop_uninstalled
+      select_options_desktop_uninstalled
       bypass_captcha_by_phrase
       click_send_feedback
     end

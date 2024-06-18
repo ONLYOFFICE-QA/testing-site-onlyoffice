@@ -26,7 +26,7 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(install_canceled_form_element) }
     end
 
-    def select_all_options_install_canceled(cloud_version: false, technical_problems: false, necessary_features: false, legal_violation: false, rarely_use: false)
+    def select_options_install_canceled(cloud_version: false, technical_problems: false, necessary_features: false, legal_violation: false, rarely_use: false)
       cloud_version_element.click if cloud_version
       technical_problems_element.click if technical_problems
       necessary_features_element.click if necessary_features
@@ -35,7 +35,7 @@ module TestingSiteOnlyoffice
     end
 
     def send_feedback_email_install_canceled
-      select_all_options_install_canceled
+      select_options_install_canceled
       bypass_captcha_by_phrase
       enter_client_email
       click_send_feedback

@@ -13,6 +13,7 @@ module OnlyofficeIredmailHelper
       @params = params
       @split_method = split_method
       @body = parse_email_body(params)
+      puts "Parsed email body array: #{@body.inspect}"
     end
 
     # Method that parses email body and returns it in array
@@ -23,6 +24,7 @@ module OnlyofficeIredmailHelper
     # @return [Array] array of strings
     def parse_email_body(params)
       email_body = get_text_body_email_by_subject(params)
+      puts("before split #{email_body}")
       number = parse_phone_number(email_body)
       email_body.sub!(number, number.delete(' '))
       if @split_method == :extended

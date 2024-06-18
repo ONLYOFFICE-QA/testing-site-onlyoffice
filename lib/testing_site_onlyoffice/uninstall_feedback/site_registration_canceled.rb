@@ -27,7 +27,7 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(install_canceled_form_element) }
     end
 
-    def select_all_options_registration_canceled(options = {})
+    def select_options_registration_canceled(options = {})
       switched_on_premises_element.click if options[:switched_on_premises]
       switched_to_personal_element.click if options[:switched_to_personal]
       technical_problems_element.click if options[:technical_problems]
@@ -37,7 +37,7 @@ module TestingSiteOnlyoffice
     end
 
     def send_feedback_email_registration_canceled
-      select_all_options_registration_canceled
+      select_options_registration_canceled
       bypass_captcha_by_phrase
       enter_client_email
       click_send_feedback

@@ -55,7 +55,7 @@ module OnlyofficeIredmailHelper
     end
 
     def check_install_canceled_mail_body(params = {})
-      body = MailParseBody.new(params, split_method: :extended)
+      body = MailParseBody.new(params)
       body.switched_to_the_cloud_match? &&
         body.technical_problems_match? &&
         body.necessary_features_match? &&
