@@ -199,5 +199,55 @@ module OnlyofficeIredmailHelper
       branding_type = @params[:branding_type]
       branding_type == @body[@body.find_index('Branding') + 1]
     end
+
+    def switched_to_the_cloud_match?
+      cloud_version = @params[:cloud_version]
+      cloud_version == (@body[@body.find_index('cloud') + 1] == 'version')
+    end
+
+    def technical_problems_match?
+      technical_problems = @params[:technical_problems]
+      technical_problems == (@body[@body.find_index('technical') + 1] == 'problems')
+    end
+
+    def necessary_features_match?
+      necessary_features = @params[:necessary_features]
+      necessary_features == (@body[@body.find_index('necessary') + 1] == 'features')
+    end
+
+    def legal_violation_match?
+      legal_violation = @params[:legal_violation]
+      legal_violation == (@body[@body.find_index('concerns/Legal') + 1] == 'violation')
+    end
+
+    def rarely_use_match?
+      rarely_use = @params[:rarely_use]
+      rarely_use == (@body[@body.find_index('rarely') + 1] == 'use')
+    end
+
+    def storage_space_match?
+      storage_space = @params[:storage_space]
+      storage_space == (@body[@body.find_index('storage') + 1] == 'space')
+    end
+
+    def rarely_work_match?
+      rarely_work = @params[:rarely_work]
+      rarely_work == (@body[@body.find_index('rarely') + 1] == 'work')
+    end
+
+    def another_desktop_software_match?
+      another_software = @params[:another_desktop_software]
+      another_software == (@body[@body.find_index('another') + 1] == 'desktop')
+    end
+
+    def switched_on_premises_match?
+      switched_on_premises = @params[:switched_on_premises]
+      switched_on_premises == (@body[@body.find_index('on-premises') - 2] == 'Switched')
+    end
+
+    def switched_to_personal_match?
+      switched_to_personal = @params[:switched_to_personal]
+      switched_to_personal == (@body[@body.find_index('Personal') - 3] == 'Switched')
+    end
   end
 end

@@ -88,6 +88,7 @@ require_relative 'modules/site_footer'
 require_relative 'modules/site_languages'
 require_relative 'modules/additional_methods/hourly_forgot_password_helper'
 require_relative 'modules/site_editors_links_checking_helper'
+require_relative 'modules/site_uninstall_feedback_opening_pages'
 
 require_relative 'partners/site_partners_request'
 require_relative 'partners/site_partners_affiliates'
@@ -137,6 +138,7 @@ require_relative 'site_version_helper'
 require_relative 'site_wrong_portal'
 require_relative 'site_notification_helper'
 require_relative 'convert_page'
+require_relative 'uninstall_feedback/site_install_canceled_page'
 
 module TestingSiteOnlyoffice
   # Site home page
@@ -155,6 +157,7 @@ module TestingSiteOnlyoffice
     include SiteSupportChatPopup
     include SiteToolbar
     include SiteToolbarActions
+    include SiteUninstallFeedbackOpeningPages
 
     link(:see_it_in_action, xpath: '//a[@id = "seeItInAction_Default"]')
 

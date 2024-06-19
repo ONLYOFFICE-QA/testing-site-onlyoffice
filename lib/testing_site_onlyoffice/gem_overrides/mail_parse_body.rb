@@ -18,6 +18,7 @@ module OnlyofficeIredmailHelper
     # 1. Get the email body in a single string
     # 2. Get the phone number from the string and replace it without any 'space' characters to match the E.164 format
     # 3. Split the email body into array of strings
+    # 4. The split method is chosen based on the value of @split_method
     # @return [Array] array of strings
     def parse_email_body(params)
       email_body = get_text_body_email_by_subject(params)
@@ -30,7 +31,7 @@ module OnlyofficeIredmailHelper
     # @param [String] body - email content string
     # @return [Array] split values of an email body
     def split_email_body(body)
-      body.split(/[\s\:]/)
+      body.split(/[\s,\:]/)
     end
 
     # Get the value of a phone number from the email body.

@@ -53,5 +53,42 @@ module OnlyofficeIredmailHelper
         body.multi_server_deployment? &&
         body.all_additional_tools_check
     end
+
+    def check_install_canceled_mail_body(params = {})
+      body = MailParseBody.new(params)
+      body.switched_to_the_cloud_match? &&
+        body.technical_problems_match? &&
+        body.necessary_features_match? &&
+        body.legal_violation_match? &&
+        body.rarely_use_match?
+    end
+
+    def check_account_canceled_mail_body(params = {})
+      body = MailParseBody.new(params)
+      body.technical_problems_match? &&
+        body.storage_space_match? &&
+        body.necessary_features_match? &&
+        body.legal_violation_match? &&
+        body.rarely_work_match?
+    end
+
+    def check_desktop_uninstalled_mail_body(params = {})
+      body = MailParseBody.new(params)
+      body.technical_problems_match? &&
+        body.another_desktop_software_match? &&
+        body.necessary_features_match? &&
+        body.legal_violation_match? &&
+        body.rarely_use_match?
+    end
+
+    def check_registration_canceled_mail_body(params = {})
+      body = MailParseBody.new(params)
+      body.switched_on_premises_match? &&
+        body.switched_to_personal_match? &&
+        body.technical_problems_match? &&
+        body.necessary_features_match? &&
+        body.legal_violation_match? &&
+        body.rarely_use_match?
+    end
   end
 end
