@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteToolbar
 
-    button(:forms_open_button, xpath: '//div[contains(@class, "box-info-content")]//button')
+    div(:info_editors_block, xpath: '//div[contains(@class, "info-editors")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -17,7 +17,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(forms_open_button_element)
+        @instance.webdriver.element_present?(info_editors_block_element)
       end
     end
   end
