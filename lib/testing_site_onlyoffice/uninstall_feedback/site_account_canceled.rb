@@ -8,6 +8,7 @@ module TestingSiteOnlyoffice
   class SiteAccountCanceled
     include PageObject
     include SiteUninstallFeedbackHelper
+    include SiteDownloadHelper
 
     div(:install_canceled_form, xpath: '//div[@class = "ic_form"]')
     element(:technical_problems, xpath: '//input[@id="checkbox2"]/following-sibling::span')
