@@ -37,7 +37,8 @@ describe 'Developers - Document Builder' do
 
   it '[Developers] [Document Builder] Live demo for Form works' do
     @document_builder.click_form_building_and_download_file
-    expect(@document_builder).to be_file_downloaded('sampleform.docxf')
+    expected_form_title = 'sampleform.pdf'
+    expect(@document_builder.opened_file_url).to include(expected_form_title)
   end
 
   it '[Developers] [Document Builder] Live demo for PDF works' do
