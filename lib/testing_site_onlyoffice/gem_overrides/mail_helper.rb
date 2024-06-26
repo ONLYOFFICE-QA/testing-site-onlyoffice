@@ -207,47 +207,65 @@ module OnlyofficeIredmailHelper
 
     def technical_problems_match?
       technical_problems = @params[:technical_problems]
-      technical_problems == (@body[@body.find_index('technical') + 1] == 'problems')
+      actual_technical_problems = @body.include?('technical') && @body.include?('problems')
+
+      technical_problems == actual_technical_problems
     end
 
     def necessary_features_match?
       necessary_features = @params[:necessary_features]
-      necessary_features == (@body[@body.find_index('necessary') + 1] == 'features')
+      actual_necessary_features = @body.include?('necessary') && @body.include?('features')
+
+      necessary_features == actual_necessary_features
     end
 
     def legal_violation_match?
       legal_violation = @params[:legal_violation]
-      legal_violation == (@body[@body.find_index('concerns/Legal') + 1] == 'violation')
+      actual_legal_violation = @body.include?('violation')
+
+      legal_violation == actual_legal_violation
     end
 
     def rarely_use_match?
       rarely_use = @params[:rarely_use]
-      rarely_use == (@body[@body.find_index('rarely') + 1] == 'use')
+      actual_rarely_use = @body.include?('rarely') && @body.include?('use')
+
+      rarely_use == actual_rarely_use
     end
 
     def storage_space_match?
       storage_space = @params[:storage_space]
-      storage_space == (@body[@body.find_index('storage') + 1] == 'space')
+      actual_storage_space = @body.include?('storage') && @body.include?('space')
+
+      storage_space == actual_storage_space
     end
 
     def rarely_work_match?
       rarely_work = @params[:rarely_work]
-      rarely_work == (@body[@body.find_index('rarely') + 1] == 'work')
+      actual_rarely_work = @body.include?('rarely') && @body.include?('work')
+
+      rarely_work == actual_rarely_work
     end
 
     def another_desktop_software_match?
       another_software = @params[:another_desktop_software]
-      another_software == (@body[@body.find_index('another') + 1] == 'desktop')
+      actual_another_software = @body.include?('another') && @body.include?('desktop')
+
+      another_software == actual_another_software
     end
 
     def switched_on_premises_match?
       switched_on_premises = @params[:switched_on_premises]
-      switched_on_premises == (@body[@body.find_index('on-premises') - 2] == 'Switched')
+      actual_switched_on_premises = @body.include?('Switched') && @body.include?('on-premises')
+
+      switched_on_premises == actual_switched_on_premises
     end
 
     def switched_to_personal_match?
       switched_to_personal = @params[:switched_to_personal]
-      switched_to_personal == (@body[@body.find_index('Personal') - 3] == 'Switched')
+      actual_switched_to_personal = @body.include?('Switched') && @body.include?('Personal')
+
+      switched_to_personal == actual_switched_to_personal
     end
   end
 end
