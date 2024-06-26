@@ -16,7 +16,7 @@ describe 'Registration canceled feedback page' do
     @test.webdriver.quit
   end
 
-  it 'Check e-mail from Registration canceled feedback page /registration-canceled.aspx' do
+  it 'Check e-mail from Registration canceled with all options selected /registration-canceled.aspx' do
     skip 'Cannot test email notifications in production' if config.server.include?('.com')
     @registration_canceled_page.select_options_registration_canceled(switched_on_premises: true, switched_to_personal: true, technical_problems: true, necessary_features: true, legal_violation: true, rarely_use: true)
     @registration_canceled_page.send_feedback_email_registration_canceled
@@ -29,6 +29,22 @@ describe 'Registration canceled feedback page' do
                                                        necessary_features: true,
                                                        legal_violation: true,
                                                        rarely_use: true,
+                                                       move_out: true)).to be_truthy
+  end
+
+  it 'Check e-mail from Registration canceled with one default option selected/registration-canceled.aspx' do
+    skip 'Cannot test email notifications in production' if config.server.include?('.com')
+    @registration_canceled_page.select_options_registration_canceled(switched_on_premises: false, switched_to_personal: false, technical_problems: false, necessary_features: false, legal_violation: false, rarely_use: false)
+    @registration_canceled_page.send_feedback_email_registration_canceled
+    mail_subject = 'Request from: registration-canceled'
+    expect(@mail.check_registration_canceled_mail_body(username: @username,
+                                                       subject: mail_subject,
+                                                       switched_on_premises: false,
+                                                       switched_to_personal: false,
+                                                       technical_problems: false,
+                                                       necessary_features: false,
+                                                       legal_violation: false,
+                                                       rarely_use: false,
                                                        move_out: true)).to be_truthy
   end
 

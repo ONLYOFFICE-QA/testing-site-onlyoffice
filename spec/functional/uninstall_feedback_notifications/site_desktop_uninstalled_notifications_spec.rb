@@ -16,7 +16,7 @@ describe 'Desktop uninstall feedback page' do
     @test.webdriver.quit
   end
 
-  it 'Check e-mail from Desktop uninstalled feedback page /desktop-uninstalled.aspx' do
+  it 'Check e-mail from Desktop uninstalled with all options selected /desktop-uninstalled.aspx' do
     skip 'Cannot test email notifications in production' if config.server.include?('.com')
     @desktop_uninstalled_page.select_options_desktop_uninstalled(technical_problems: true, another_desktop_software: true, necessary_features: true, legal_violation: true, rarely_use: true)
     @desktop_uninstalled_page.send_feedback_email_desktop_uninstalled
@@ -28,6 +28,21 @@ describe 'Desktop uninstall feedback page' do
                                                      necessary_features: true,
                                                      legal_violation: true,
                                                      rarely_use: true,
+                                                     move_out: true)).to be_truthy
+  end
+
+  it 'Check e-mail from Desktop uninstalled with one default option selected /desktop-uninstalled.aspx' do
+    skip 'Cannot test email notifications in production' if config.server.include?('.com')
+    @desktop_uninstalled_page.select_options_desktop_uninstalled(technical_problems: false, another_desktop_software: false, necessary_features: false, legal_violation: false, rarely_use: false)
+    @desktop_uninstalled_page.send_feedback_email_desktop_uninstalled
+    mail_subject = 'Request from: desktop-uninstalled'
+    expect(@mail.check_desktop_uninstalled_mail_body(username: @username,
+                                                     subject: mail_subject,
+                                                     technical_problems: false,
+                                                     another_desktop_software: false,
+                                                     necessary_features: false,
+                                                     legal_violation: false,
+                                                     rarely_use: false,
                                                      move_out: true)).to be_truthy
   end
 

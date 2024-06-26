@@ -16,7 +16,7 @@ module TestingSiteOnlyoffice
     end
 
     def enter_client_email
-      email_field_element.send_keys(TestingSiteOnlyoffice::SiteData::CLIENT_EMAIL)
+      email_field_element.send_keys(TestingSiteOnlyoffice::SiteData::CLIENT_EMAIL, :enter)
     end
 
     def click_send_feedback

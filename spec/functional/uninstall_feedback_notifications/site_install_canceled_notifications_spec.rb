@@ -16,7 +16,7 @@ describe 'Install canceled feedback page' do
     @test.webdriver.quit
   end
 
-  it 'Check e-mail from Install canceled feedback page /install-canceled.aspx' do
+  it 'Check e-mail from Install canceled with all options selected /install-canceled.aspx' do
     skip 'Cannot test email notifications in production' if config.server.include?('.com')
     @install_canceled_page.select_options_install_canceled(cloud_version: true, technical_problems: true, necessary_features: true, legal_violation: true, rarely_use: true)
     @install_canceled_page.send_feedback_email_install_canceled
@@ -28,6 +28,21 @@ describe 'Install canceled feedback page' do
                                                   necessary_features: true,
                                                   legal_violation: true,
                                                   rarely_use: true,
+                                                  move_out: true)).to be_truthy
+  end
+
+  it 'Check e-mail from Install canceled with one default option selected /install-canceled.aspx' do
+    skip 'Cannot test email notifications in production' if config.server.include?('.com')
+    @install_canceled_page.select_options_install_canceled(cloud_version: false, technical_problems: false, necessary_features: false, legal_violation: false, rarely_use: false)
+    @install_canceled_page.send_feedback_email_install_canceled
+    mail_subject = 'Request from: install-canceled'
+    expect(@mail.check_install_canceled_mail_body(username: @username,
+                                                  subject: mail_subject,
+                                                  cloud_version: false,
+                                                  technical_problems: false,
+                                                  necessary_features: false,
+                                                  legal_violation: false,
+                                                  rarely_use: false,
                                                   move_out: true)).to be_truthy
   end
 
