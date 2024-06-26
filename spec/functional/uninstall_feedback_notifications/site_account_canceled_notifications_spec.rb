@@ -46,7 +46,6 @@ describe 'Account canceled page' do
                                                   move_out: true)).to be_truthy
   end
 
-
   describe 'Checks SLA and Privacy links' do
     let(:page) { @account_canceled_page }
 
