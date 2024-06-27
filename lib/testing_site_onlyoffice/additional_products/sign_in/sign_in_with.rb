@@ -9,7 +9,7 @@ module TestingSiteOnlyoffice
 
     element(:google_indicator, xpath: "//div[contains(text(),'Google')]")
     element(:facebook_indicator, xpath: "//form[contains(@action, 'facebook')]")
-    element(:twitter_indicator, xpath: "//form[contains(@action, 'twitter')]")
+    element(:twitter_indicator, xpath: "//form[@id = 'oauth_form']")
     element(:linkedin_indicator, xpath: "(//*[@type='linkedin-logo'])[1]/../../form[@class='login__form']")
 
     def initialize(instance, network)
