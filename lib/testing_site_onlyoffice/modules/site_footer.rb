@@ -61,6 +61,15 @@ module TestingSiteOnlyoffice
     link(:order_demo, xpath: "#{footer_xpath}//a[@href = '/demo-order.aspx']")
     link(:support_contact_form, xpath: "#{footer_xpath}//a[@href='/support-contact-form.aspx']")
 
+    # comparison
+    link(:oo_docs_vs_ms_office, xpath: "#{footer_xpath}//a[contains(@href, 'best-microsoft-office-alternative.aspx')]")
+    link(:oo_docs_vs_google_docs, xpath: "#{footer_xpath}//a[contains(@href, 'best-google-docs-alternative.aspx')]")
+    link(:oo_docs_vs_zoho_docs, xpath: "#{footer_xpath}//a[contains(@href, 'best-zoho-docs-alternative.aspx')]")
+    link(:oo_docs_vs_libre_office, xpath: "#{footer_xpath}//a[contains(@href, 'best-libreoffice-alternative.aspx')]")
+    link(:oo_docs_vs_wps, xpath: "#{footer_xpath}//a[contains(@href, 'best-wps-alternative.aspx')]")
+    link(:oo_docs_vs_adobe_acrobat, xpath: "#{footer_xpath}//a[contains(@href, 'best-adobe-alternative.aspx')]")
+    link(:oo_docs_vs_hancom, xpath: "#{footer_xpath}//a[contains(@href, 'best-hancom-alternative.aspx')]")
+
     # contact us
     link(:request_a_call, xpath: "#{footer_xpath}//a[@href='/call-back-form.aspx']")
 
