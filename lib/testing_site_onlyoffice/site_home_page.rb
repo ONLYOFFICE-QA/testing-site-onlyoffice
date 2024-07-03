@@ -139,6 +139,7 @@ require_relative 'site_wrong_portal'
 require_relative 'site_notification_helper'
 require_relative 'convert_page'
 require_relative 'uninstall_feedback/site_install_canceled_page'
+require_relative 'comparison_pages/comparison_ms_office'
 
 module TestingSiteOnlyoffice
   # Site home page
