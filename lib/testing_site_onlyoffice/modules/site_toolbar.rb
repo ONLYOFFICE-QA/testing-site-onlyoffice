@@ -68,6 +68,8 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice_docs_developer, xpath: '//a[@id="navitem_docs_de_onpremises"]')
     link(:site_get_onlyoffice_docs_enterprise, xpath: '//a[@id="navitem_docs_onpremises"]')
     link(:site_get_onlyoffice_docs_community, xpath: '//a[@id="navitem_download_docs_ce"]')
+    link(:site_get_onlyoffice_docs_community, xpath: '//a[@id="navitem_docs_onpremises"]')
+    div(:site_get_onlyoffice_docs_community_tab, xpath: "//div[contains(@class, 'dwn-four-btns-icon') and contains(@class, 'docs-community')]")
     link(:site_get_onlyoffice_document_builder, xpath: '//a[@id="navitem_download_docs_builder"]')
     link(:site_get_onlyoffice_github_code, xpath: '//a[@id="navitem_download_code_git"]')
 
@@ -273,6 +275,7 @@ module TestingSiteOnlyoffice
         },
         get_onlyoffice_docs_community: {
           element: site_get_onlyoffice_docs_community_element,
+          sub_element: site_get_onlyoffice_docs_community_tab_element,
           class: SiteGetOnlyofficeDocsCommunity
         },
         get_onlyoffice_document_builder: {
@@ -449,12 +452,19 @@ module TestingSiteOnlyoffice
       move_to_element_link_toolbar(section)
       link = all_toolbar_links_and_classes_hash[section][:element]
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(link) }
-      link.click
-      if %i[features_workspace features_docspace].include?(section)
+      if %i[get_onlyoffice_docs_community].include?(section)
+        link.click
         sub_link = all_toolbar_links_and_classes_hash[section][:sub_element]
         sub_link.click
+      elsif %i[features_workspace features_docspace].include?(section)
+        sub_link = all_toolbar_links_and_classes_hash[section][:sub_element]
+        sub_link.click
+      elsif %i[about_gift_shop about_help_center features_see_it_in_action features_oforms about_blog about_forum].include?(section)
+        link.click
+        @instance.webdriver.switch_to_popup
+      else
+        link.click
       end
-      @instance.webdriver.switch_to_popup if %i[about_gift_shop about_help_center features_see_it_in_action features_oforms about_blog about_forum].include?(section)
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
     end
   end
