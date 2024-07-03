@@ -34,17 +34,17 @@ module TestingSiteOnlyoffice
 
     def click_get_onlyoffice_docs
       get_onlyoffice_docs_element.click
-      SiteGetOnlyofficeDocsEnterprise
+      SiteGetOnlyofficeDocsEnterprise.new(@instance)
     end
 
     def click_try_in_the_cloud
       try_in_the_cloud_element.click
-      SiteDocSpaceSignUp
+      SiteDocSpaceSignUp.new(@instance)
     end
 
     def click_private_room
       private_room_element.click
-      DocspacePrivateRooms
+      DocspacePrivateRooms.new(@instance)
     end
   end
 end
