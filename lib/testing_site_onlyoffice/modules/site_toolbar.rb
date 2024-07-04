@@ -452,18 +452,13 @@ module TestingSiteOnlyoffice
       move_to_element_link_toolbar(section)
       link = all_toolbar_links_and_classes_hash[section][:element]
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(link) }
-      if %i[get_onlyoffice_docs_community].include?(section)
-        link.click
-        sub_link = all_toolbar_links_and_classes_hash[section][:sub_element]
-        sub_link.click
-      elsif %i[features_workspace features_docspace].include?(section)
+      sections_with_sub_links = %i[get_onlyoffice_docs_community features_workspace features_docspace]
+      link.click
+      if sections_with_sub_links.include?(section)
         sub_link = all_toolbar_links_and_classes_hash[section][:sub_element]
         sub_link.click
       elsif %i[about_gift_shop about_help_center features_see_it_in_action features_oforms about_blog about_forum].include?(section)
-        link.click
         @instance.webdriver.switch_to_popup
-      else
-        link.click
       end
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
     end
