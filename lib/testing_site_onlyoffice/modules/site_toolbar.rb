@@ -64,7 +64,7 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice_docspace_sign_in, xpath: '//a[@id = "navitem_docspace_signin"]')
     link(:site_get_onlyoffice_docspace_sign_up, xpath: '//a[@id = "navitem_docspace_signup"]')
     link(:site_get_onlyoffice_connectors, xpath: '//a[@id="navitem_download_connectors"]')
-    link(:site_get_onlyoffice_desktop_mobile, xpath: '//a[@id="navitem_download_desktop_mob"]')
+    link(:site_get_onlyoffice_desktop_mobile, xpath: "//a[contains(@class, 'footer_apps_item') and contains(@class, 'for_windows')]")
     link(:site_get_onlyoffice_docs_developer, xpath: '//a[@id="navitem_docs_de_onpremises"]')
     link(:site_get_onlyoffice_docs_enterprise, xpath: '//a[@id="navitem_docs_onpremises"]')
     link(:site_get_onlyoffice_docs_community, xpath: '//a[@id="navitem_download_docs_ce"]')
