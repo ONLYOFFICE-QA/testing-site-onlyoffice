@@ -22,20 +22,10 @@ describe 'Enterprise Edition' do
     expect(@enterprise_edition.check_button_see_it_in_action?).to be_a TestingSiteOnlyoffice::SiteFeaturesSeeItInAction
   end
 
-  it '[Site][For Business Enterprise Edition] Go to document_editing' do
-    expect(@enterprise_edition.check_button_document_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesDocumentEditor
-  end
-
-  it '[Site][For Business Enterprise Edition] Go to spreadsheet_editing' do
-    expect(@enterprise_edition.check_button_spreadsheet_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesSpreadsheetEditor
-  end
-
-  it '[Site][For Business Enterprise Edition] Go to presentation_editing' do
-    expect(@enterprise_edition.check_button_presentation_editing?).to be_a TestingSiteOnlyoffice::SiteFeaturesPresentationEditor
-  end
-
-  it '[Site][For Business Enterprise Edition] Go to form_creator' do
-    expect(@enterprise_edition.check_button_form_creator?).to be_a TestingSiteOnlyoffice::SiteFeaturesFormCreator
+  TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition::FEATURES_LINKS.each do |feature_key, feature_info|
+    it_behaves_like 'checking_editors_links', feature_key, feature_info do
+      let(:page) { @enterprise_edition }
+    end
   end
 
   it '[Site][For Business Enterprise Edition] Go to desktop_apps' do
