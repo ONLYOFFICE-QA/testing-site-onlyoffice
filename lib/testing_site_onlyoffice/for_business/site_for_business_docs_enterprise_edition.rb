@@ -7,12 +7,15 @@ require_relative '../features/docs/site_features_spreadsheet_editor'
 require_relative '../features/docs/site_features_form_creator'
 require_relative '../features/docs/site_features_presentation_editor'
 require_relative '../get_onlyoffice/site_get_onlyoffice_docs_registration'
+require_relative '../features/docs/site_features_e_book_creator'
+require_relative '../modules/site_editors_links_checking_helper'
 
 module TestingSiteOnlyoffice
   # /docs-enterprise.aspx
   # https://user-images.githubusercontent.com/67409742/142990092-032280ef-b02f-4329-8fc8-78328ebd654f.png
   class SiteForBusinessDocsEnterpriseEdition
     include PageObject
+    include SiteEditorsLinksCheckingHelper
 
     div(:enterprise_edition, xpath: "//div[@id='forenterprises']")
     link(:get_it_now, xpath: '//a[contains(@href, "/see-it-in-action.aspx?from=docs-enterprise")]//preceding-sibling::a')
