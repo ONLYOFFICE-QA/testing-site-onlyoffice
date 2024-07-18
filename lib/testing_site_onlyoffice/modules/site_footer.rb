@@ -4,6 +4,7 @@ require_relative '../get_onlyoffice/modules/site_download_helper'
 require_relative 'site_methods_footer/site_methods_footer_developers'
 require_relative '../features/site_features_oforms'
 require_relative '../comparison_pages/comparison_ms_office'
+require_relative '../comparison_pages/comparison_google'
 
 module TestingSiteOnlyoffice
   # Site footer
@@ -96,7 +97,8 @@ module TestingSiteOnlyoffice
                      find_pdf_form_templates: SiteFeaturesOforms,
                      fill_out_pdf_forms_online: SiteFeaturesOforms,
                      enterprises: SiteEnterpriseOverview,
-                     oo_docs_vs_ms_office: ComparisonMSOffice }
+                     oo_docs_vs_ms_office: ComparisonMSOffice,
+                     oo_docs_vs_google_docs: ComparisonGoogle }
 
     footer_links.each_key do |link|
       define_method(:"click_#{link}") do
