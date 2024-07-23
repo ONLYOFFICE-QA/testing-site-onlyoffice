@@ -38,7 +38,7 @@ module TestingSiteOnlyoffice
     end
 
     def check_title_documentation_oforms
-      @instance.webdriver.title_of_current_tab.include?('OFORMS – fill out forms online for free')
+      @instance.webdriver.title_of_current_tab.include?('ONLYOFFICE templates')
     end
 
     def check_title_documentation_community_server
