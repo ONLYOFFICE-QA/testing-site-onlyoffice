@@ -10,7 +10,7 @@ shared_examples_for 'connector_download' do |connectors_list|
           possible_titles = ['App Marketplace', 'ONLYOFFICE DocSpace']
           expect(possible_titles).to include(connectors_page.check_opened_page_title)
         elsif connector.to_s == 'box'
-          possible_titles = ['ONLYOFFICE Docs | Box App Center', 'ONLYOFFICE Docs | Box App Center | Powered by Box']
+          possible_titles = ['ONLYOFFICE Docs | Box App Center', 'ONLYOFFICE Docs | Box App Center | Powered by Box', 'Box | Simple Online Collaboration']
           expect(possible_titles).to include(connectors_page.check_opened_page_title)
         else
           github_title = TestingSiteOnlyoffice::SiteDownloadData.connectors_info[connector.to_s]['get_it_now']
