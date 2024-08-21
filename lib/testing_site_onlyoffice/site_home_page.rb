@@ -204,7 +204,7 @@ module TestingSiteOnlyoffice
     end
 
     def send_forgot_password_from_sign_in(email = mail_for_forgotten_password.username)
-      sign_in = click_link_on_toolbar(:get_onlyoffice_sign_in)
+      sign_in = click_login_workspace_cloud
       sign_in.send_forgot_password(email)
     end
 
