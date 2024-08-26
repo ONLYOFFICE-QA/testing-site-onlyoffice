@@ -22,6 +22,6 @@ module TestingSiteOnlyoffice
     COMMERCIAL_DEVELOPER_DOCS = 'Developer Edition Request [from: downloadintegrationmenu]'
     COMMERCIAL_ENTERPRISE_DOCS = 'Integration Edition Request [from: downloadintegrationmenu]'
     COMMERCIAL_ENTERPRISE_WORKSPACE = 'Enterprise Edition Request [from: download-workspace]'
-    DOCSPACE_TERMS = 'ONLYOFFICE DocSpace Enterprise.docx'
+    DOCSPACE_TERMS = 'Terms of Use (DocSpace).docx'
   end
 end
