@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteToolbar
 
-    div(:info_editors_block, xpath: '//div[contains(@class, "info-editors")]')
+    div(:info_editors_block, xpath: '//div[contains(@class, "category-nav")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
