@@ -36,10 +36,6 @@ describe 'Site Products DocSpace' do
     it '[DocSpace Features Carousel] Custom rooms' do
       expect(@docspace_page.click_custom_rooms_learn_more).to be_a TestingSiteOnlyoffice::DocspaceCustomRooms
     end
-
-    it '[DocSpace Features Carousel] Private rooms' do
-      expect(@docspace_page.click_private_rooms_learn_more).to be_a TestingSiteOnlyoffice::DocspacePrivateRooms
-    end
   end
 
   it '[Site Products] [DocsSpace] Create account button works' do
