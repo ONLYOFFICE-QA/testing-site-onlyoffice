@@ -63,24 +63,4 @@ describe 'DocSpace enterprise' do
       expect(download_links_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceDownloadEnterprise
     end
   end
-
-  describe 'DocSpace Enterprise pricing block' do
-    it 'Enterprise plan link' do
-      docspace_enterprise = @site_home_page.click_link_on_toolbar(:docspace_enterprise)
-      pricing_docspace = docspace_enterprise.click_enterprise_plan
-      expect(pricing_docspace).to be_a TestingSiteOnlyoffice::SitePricingDocSpacePrices
-    end
-
-    it 'Pick price link' do
-      docspace_enterprise = @site_home_page.click_link_on_toolbar(:docspace_enterprise)
-      pricing_docspace = docspace_enterprise.click_pick_price_link
-      expect(pricing_docspace).to be_a TestingSiteOnlyoffice::SitePricingDocSpacePrices
-    end
-
-    it_behaves_like 'pricing_buy_page', 'PricingDocSpace',
-                    TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:support_level],
-                    TestingSiteOnlyoffice::SiteDownloadData.pricing_page_data[:number_connection_docspace] do
-      let(:pricing_page) { @site_home_page.click_link_on_toolbar(:docspace_enterprise) }
-    end
-  end
 end

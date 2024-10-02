@@ -19,7 +19,7 @@ module TestingSiteOnlyoffice
     link(:try_in_cloud_button, xpath: '//a[contains(@id, "try-it-free-in-the-cloud")]')
     link(:get_it_now_button, xpath: '//a[contains(@id, "try-it-free-in-the-cloud")]/preceding-sibling::a')
     link(:desktop_apps, xpath: '//a[contains(@href, "/download-desktop.aspx#desktop")]')
-    link(:mobile_apps, xpath: '//a[contains(@href, "/download-desktop.aspx#mobile")]')
+    link(:mobile_apps, xpath: '(//a[contains(@href, "/download-desktop.aspx#mobile")])[3]')
     link(:security_link, xpath: '//div[contains(@class, "security")]//a')
     link(:download_link_cloud, xpath: "#{CHOICE_XPATH}//a[@href = '/docspace-registration.aspx']")
     link(:download_link_linux, xpath: "#{CHOICE_XPATH}//a[@href = '/download-docspace.aspx'][1]")
