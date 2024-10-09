@@ -24,10 +24,6 @@ module TestingSiteOnlyoffice
         pdf_editing_and_filling: {
           xpath: '(//a[contains(@href, "pdf-editor")])[3]',
           class: SiteFeaturesPDFReaderConverter
-        },
-        e_book_creation: {
-          xpath: '(//a[contains(@href, "e-book.aspx")])[3]',
-          class: SiteFeaturesEBookCreator
         }
       }.freeze
 
