@@ -161,7 +161,7 @@ module TestingSiteOnlyoffice
     def self.pricing_page_data
       {
         support_level: %w[Basic Plus Premium],
-        support_level_workspace: %w[basic standard premium],
+        support_level_workspace: %w[basic premium],
         number_connection_docspace: %w[100 250 500 1000],
         number_connection_enterprise: %w[50 100 200],
         number_connection_developer: %w[250 500 1000],
