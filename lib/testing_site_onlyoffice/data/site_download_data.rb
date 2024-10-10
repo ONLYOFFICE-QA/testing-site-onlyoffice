@@ -135,7 +135,7 @@ module TestingSiteOnlyoffice
     def self.commercial_enterprise_docs_list_type
       {
         with_buy_button: %i[docker debian centos windows],
-        without_buy_button: %i[amazon_machine univention],
+        without_buy_button: %i[amazon_machine],
         with_instruction: %i[windows docker debian centos amazon_machine]
       }
     end
