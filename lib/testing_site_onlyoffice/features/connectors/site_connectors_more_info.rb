@@ -6,7 +6,7 @@ module TestingSiteOnlyoffice
   class SiteConnectorsMoreInfo
     def initialize(instance, connector)
       @instance = instance
-      @logo_xpath = "//div[contains(@class, '#{connector}_logo')]"
+      @logo_xpath = "//div[contains(@class, '#{connector}') and contains(@class, 'logo')]"
       wait_to_load
     end
 
