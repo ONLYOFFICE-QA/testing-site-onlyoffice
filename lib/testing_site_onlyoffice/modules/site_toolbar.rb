@@ -60,7 +60,6 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice_docs_registration, xpath: '//a[@id="navitem_docs_signup"]')
     link(:site_get_onlyoffice_docs_sign_in, xpath: '//a[@id="navitem_docs_signin"]')
     link(:site_get_onlyoffice_install_onpremises, xpath: '//a[@id="navitem_download_onpremises"]')
-    link(:site_get_onlyoffice_sign_in, xpath: '//a[@id="navitem_download_signin"]')
     link(:site_get_onlyoffice_docspace_sign_in, xpath: '//a[@id = "navitem_docspace_signin"]')
     link(:site_get_onlyoffice_docspace_sign_up, xpath: '//a[@id = "navitem_docspace_signup"]')
     link(:site_get_onlyoffice_connectors, xpath: '//a[@id="navitem_download_connectors"]')
@@ -244,10 +243,6 @@ module TestingSiteOnlyoffice
         get_onlyoffice_workspace_on_premises: {
           element: site_get_onlyoffice_install_onpremises_element,
           class: SiteGetOnlyofficeWorkspaceEnterprise
-        },
-        get_onlyoffice_sign_in: {
-          element: site_get_onlyoffice_sign_in_element,
-          class: SiteGetOnlyofficeSignIn
         },
         get_onlyoffice_docspace_sign_in: {
           element: site_get_onlyoffice_docspace_sign_in_element,

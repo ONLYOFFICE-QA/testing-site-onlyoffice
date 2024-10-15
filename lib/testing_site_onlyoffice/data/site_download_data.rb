@@ -184,7 +184,7 @@ module TestingSiteOnlyoffice
     end
 
     def self.partners_marketplaces_list
-      %i[alibaba-marketplace ovhcloud-marketplace amazon-marketplace digitalocean vultr univention]
+      %i[alibaba-marketplace ovhcloud-marketplace amazon-marketplace digitalocean vultr]
     end
 
     def self.partners_hosting_providers
