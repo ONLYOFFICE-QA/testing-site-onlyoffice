@@ -194,7 +194,6 @@ module TestingSiteOnlyoffice
       press_button_get_quote
       self.full_name = user_data.fetch(:full_name, TestingSiteOnlyoffice::SiteData::DEFAULT_ADMIN_FULLNAME)
       self.email = user_data.fetch(:email, TestingSiteOnlyoffice::SiteData::EMAIL_ADMIN)
-      self.phone_number = user_data[:phone_number]
       self.company_name = user_data[:company_name]
       press_button_submit
     end

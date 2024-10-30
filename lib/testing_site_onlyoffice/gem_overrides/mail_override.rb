@@ -25,7 +25,6 @@ module OnlyofficeIredmailHelper
       body = MailParseBody.new(params)
       body.full_name_match? &&
         body.email_match? &&
-        body.phone_number_match? &&
         body.company_name_match? &&
         body.support_level_match? &&
         body.training_courses? &&
@@ -36,7 +35,6 @@ module OnlyofficeIredmailHelper
       body = MailParseBody.new(params)
       body.full_name_match? &&
         body.email_match? &&
-        body.phone_number_match? &&
         body.company_name_match? &&
         body.support_level_match? &&
         body.all_additional_tools_check
