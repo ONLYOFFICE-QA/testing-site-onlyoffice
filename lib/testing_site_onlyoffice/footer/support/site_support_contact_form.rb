@@ -46,7 +46,6 @@ module TestingSiteOnlyoffice
       change_subject(subject)
       self.support_name = params.fetch(:name, "NCT Test #{Faker::Name.name}")
       self.support_email = params.fetch(:email, SiteData::CLIENT_EMAIL)
-      self.support_phone = params.fetch(:phone, Faker::PhoneNumber.cell_phone_in_e164)
       workaround_non_active_submit
     end
 

@@ -44,7 +44,6 @@ module OnlyofficeIredmailHelper
     def basic_email_content_check
       full_name_match? &&
         email_match? &&
-        phone_number_match? &&
         company_name_match? &&
         support_level_match? &&
         users_number_match?
@@ -53,7 +52,6 @@ module OnlyofficeIredmailHelper
     def contact_information_check
       full_name_match? &&
         email_match? &&
-        phone_number_match? &&
         company_name_match?
     end
 
