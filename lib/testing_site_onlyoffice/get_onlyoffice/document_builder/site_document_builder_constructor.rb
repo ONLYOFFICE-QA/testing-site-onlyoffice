@@ -13,7 +13,7 @@ module TestingSiteOnlyoffice
       @instance = instance
       @installer = installer
       @download_xpath = "//a[contains(@id,'onlyoffice_document_builder_for_#{installer}')]"
-      @instruction_xpath = "#{@download_xpath}/../..//a[contains(@href,'gettingstarted')]"
+      @instruction_xpath = "#{@download_xpath}/../..//a[contains(@href,'/get-started/overview/')]"
       @whats_new_xpath = "#{@download_xpath}/../..//a[contains(@href,'CHANGELOG')]"
       @version_xpath = "#{@download_xpath}/../../div/p[1]"
       @release_date_xpath = "#{@download_xpath}/../../div/p[2]"

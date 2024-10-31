@@ -151,7 +151,7 @@ module TestingSiteOnlyoffice
 
     # Document Builder
     def self.document_builder_list
-      %i[windows debian centos]
+      %i[windows_10_8_1_8_7 debian_ubuntu_and_derivatives centos_rhel_and_derivatives]
     end
 
     def self.document_builder_info
