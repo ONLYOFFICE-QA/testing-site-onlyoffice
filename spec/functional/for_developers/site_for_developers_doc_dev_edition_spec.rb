@@ -33,7 +33,7 @@ describe 'For Developers Developer Edition' do
 
   it '[Developer Edition] Go to macros_and_plugins' do
     @developer_edition.click_button_macros_and_plugins
-    expected_title = 'Overview - ONLYOFFICE Api Documentation'
+    expected_title = 'Overview'
     expect(@developer_edition.check_opened_page_title(switch_tab: false)).to eq(expected_title)
   end
 

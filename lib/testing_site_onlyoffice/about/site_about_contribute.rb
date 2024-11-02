@@ -42,17 +42,17 @@ module TestingSiteOnlyoffice
     end
 
     def check_title_documentation_community_server
-      @instance.webdriver.title_of_current_tab.include?('API Backend - ONLYOFFICE Api Documentation')
+      @instance.webdriver.title_of_current_tab.include?('Basic concepts')
     end
 
     def check_title_documentation_plagins
-      @instance.webdriver.title_of_current_tab.include?('Overview - ONLYOFFICE Api Documentation')
+      @instance.webdriver.title_of_current_tab.include?('Overview')
     end
 
     def check_title_documentation_connectors
       ready_to_use_connectors_element.click
       @instance.webdriver.choose_tab(2)
-      @instance.webdriver.title_of_current_tab.include?('Ready-to-use connectors - ONLYOFFICE Api Documentation')
+      @instance.webdriver.title_of_current_tab.include?('Ready-to-use connectors')
     end
   end
 end
