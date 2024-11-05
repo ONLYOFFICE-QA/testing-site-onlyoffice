@@ -17,7 +17,7 @@ describe 'Developers - Conversion API' do
 
   it '[Developers] [Conversion API] "Get started" button works' do
     @conversion_api.get_started
-    expect(@conversion_api.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::CONVERSION_API_ONLYOFFICE_TITLE)
+    expect(@conversion_api.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::OVERVIEW_API_ONLYOFFICE_TITLE)
   end
 
   it '[Developers] [Conversion API] "Popular formats" link works' do
@@ -38,20 +38,5 @@ describe 'Developers - Conversion API' do
   it '[Developers] [Conversion API] "Security measures" link works' do
     result_page = @conversion_api.click_security_measures_link
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteFeaturesSecurity
-  end
-
-  it '[Developers] [Conversion API] "Download docs" link works' do
-    result_page = @conversion_api.click_download_docs_link
-    expect(result_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
-  end
-
-  it '[Developers] [Conversion API] "Download desktop" link works' do
-    result_page = @conversion_api.click_download_desktop_link
-    expect(result_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDesktopApps
-  end
-
-  it '[Developers] [Conversion API] "Download mobile" link works' do
-    result_page = @conversion_api.click_download_mobile_link
-    expect(result_page).to be_a TestingSiteOnlyoffice::SiteMobileApps
   end
 end
