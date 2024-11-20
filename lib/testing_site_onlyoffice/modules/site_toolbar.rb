@@ -15,15 +15,15 @@ module TestingSiteOnlyoffice
     # top toolbar - Features
     link(:site_features, xpath: '//a[@id="navitem_features"]')
     link(:site_features_connectors, xpath: '//a[@id="navitem_features_connectors_docs"]')
-    div(:site_features_docspace, xpath: '//div[@id="navitem_features_docspace"]')
+    link(:site_features_docspace, xpath: '//a[@id="navitem_features_docspace_menu"]')
     link(:site_features_overview_docspace, xpath: '//a[@id="feature_overview_docspace"]')
-    div(:site_features_workspace, xpath: '//div[@id="navitem_features_workspace"]')
+    link(:site_features_workspace, xpath: '//a[@id="navitem_features_workspace_menu"]')
     link(:site_features_overview_workspace, xpath: '//a[@id="feature_overview_workspace"]')
     link(:site_features_marketplace, xpath: '//a[@id="navitem_features_marketplace"]')
-    link(:site_features_docs_overview, xpath: '//a[@id="feature_overview_docs"]')
-    link(:site_features_for_desktop_windows, xpath: '//a[contains(@class,"win")]')
-    link(:site_features_for_ios, xpath: '//a[contains(@class,"ios")]')
-    link(:site_features_for_android, xpath: '//a[contains(@class,"android")]')
+    link(:site_features_docs_overview, xpath: '//a[@id="navitem_features_docs_overview_menu"]')
+    link(:site_features_for_desktop_windows, xpath: '//a[@id="navitem_features_desktop_editors"]')
+    link(:site_features_for_ios, xpath: '//a[@id="navitem_features_submenu_ios"]')
+    link(:site_features_for_android, xpath: '//a[@id="navitem_features_submenu_android"]')
     link(:site_features_see_it_in_action, xpath: '//a[@id="navitem_features_see_it"]')
     link(:site_features_accessibility, xpath: '//a[@id="navitem_features_accessibility"]')
     link(:site_features_oforms, xpath: '//a[@id="navitem_features_fill_forms"]')
@@ -447,7 +447,7 @@ module TestingSiteOnlyoffice
       move_to_element_link_toolbar(section)
       link = all_toolbar_links_and_classes_hash[section][:element]
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(link) }
-      sections_with_sub_links = %i[get_onlyoffice_docs_community features_workspace features_docspace]
+      sections_with_sub_links = %i[get_onlyoffice_docs_community]
       link.click
       if sections_with_sub_links.include?(section)
         sub_link = all_toolbar_links_and_classes_hash[section][:sub_element]
