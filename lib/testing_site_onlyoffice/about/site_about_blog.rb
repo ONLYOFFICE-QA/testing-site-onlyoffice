@@ -15,6 +15,7 @@ module TestingSiteOnlyoffice
     link(:windows_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn windows')]")
     link(:linux_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn linux')]")
     link(:macos_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn mac-os')]")
+    element(:create_account_window, xpath: '//*[contains(text(), "ONLYOFFICE account")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -23,7 +24,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?("//input[contains(@class, 'search_input')]") }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?("//div[contains(@class, 'category-topics')]") }
     end
 
     def desktop_and_mobile_app
