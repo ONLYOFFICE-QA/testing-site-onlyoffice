@@ -15,14 +15,6 @@ describe 'About blogs' do
     @test.webdriver.quit
   end
 
-  it '[About blogs] Go to app GooglePlay' do
-    expect(@about_blogs_page.check_google_play_link).to be true
-  end
-
-  it '[About blogs] Go to app App Store' do
-    expect(@about_blogs_page.check_app_store_link).to be true
-  end
-
   TestingSiteOnlyoffice::SiteData.download_desktop_apps.each do |apps|
     it "[About blogs] Go to desktop #{apps}" do
       expect(@about_blogs_page.go_to_desktop_apps(apps)).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDesktopApps

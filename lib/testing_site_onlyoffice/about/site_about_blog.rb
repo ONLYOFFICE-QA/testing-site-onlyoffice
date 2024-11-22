@@ -12,9 +12,9 @@ module TestingSiteOnlyoffice
     elements(:desktop_mobile_app, xpath: "#{download_block_xpath}/a/span")
     link(:google_play_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn google-play')]")
     link(:app_store_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn app-store')]")
-    link(:windows_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn windows')]")
-    link(:linux_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn linux')]")
-    link(:macos_button, xpath: "#{download_block_xpath}/a[contains(@class, 'download-block-btn mac-os')]")
+    link(:windows_button, xpath: "//a[contains(@class, 'oo-fm-apps-item--windows')]")
+    link(:linux_button, xpath: "//a[contains(@class, 'oo-fm-apps-item--linux')]")
+    link(:macos_button, xpath: "//a[contains(@class, 'oo-fm-apps-item--macos')]")
     element(:create_account_window, xpath: '//*[contains(text(), "ONLYOFFICE account")]')
 
     def initialize(instance)
@@ -24,7 +24,7 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?("//div[contains(@class, 'category-topics')]") }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?("//div[contains(@class, 'docspace_block_icons')]") }
     end
 
     def desktop_and_mobile_app
