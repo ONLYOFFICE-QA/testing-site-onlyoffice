@@ -214,7 +214,7 @@ describe 'SiteHourlyCheck' do
 
       describe 'connectors' do
         it_behaves_like 'connector_download', TestingSiteOnlyoffice::SiteDownloadData.connectors_info.keys do
-          let(:connectors_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_connectors) }
+          let(:connectors_page) { @site_home_page.click_link_on_toolbar(:features_connectors) }
         end
       end
 

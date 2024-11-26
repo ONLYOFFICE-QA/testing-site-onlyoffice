@@ -9,11 +9,15 @@ module TestingSiteOnlyoffice
   # https://user-images.githubusercontent.com/40513035/131093555-b4c45fb2-a30c-48ca-a6a9-fb20d4b92045.png
   class SiteGetOnlyofficeDocsCommunity
     include SiteOtherProductsBundles
+    include PageObject
+
+    div(:docs_community_tab, xpath: '//div[@id="docs-community"]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
       @instance = instance
       wait_to_load
+      switch_to_docs_community_tab
     end
 
     def wait_to_load
@@ -21,6 +25,10 @@ module TestingSiteOnlyoffice
         docker_instruction_xpath = installer_type_block.instruction_xpath
         @instance.webdriver.element_present?(docker_instruction_xpath)
       end
+    end
+
+    def switch_to_docs_community_tab
+      docs_community_tab_element.click
     end
 
     def installer_type_block(type = :docker)

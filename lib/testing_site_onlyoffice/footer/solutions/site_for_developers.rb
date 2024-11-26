@@ -13,7 +13,7 @@ module TestingSiteOnlyoffice
     include SiteDownloadHelper
     include SiteForDevelopersHelper
 
-    link(:download_now_button, xpath: '//a[@href = "/download.aspx?from=for-developers"]')
+    div(:top_banner, xpath: '//div[@class = "dev_header"]')
     link(:docspace_learn_more, xpath: '//a[@href = "/docspace.aspx?from=for-developers"]')
     link(:docspace_api, xpath: '//a[contains(@href, "api.onlyoffice.com/docspace")]')
     link(:docspace_check_tutorial, xpath: '//a[contains(@href, "integrating-onlyoffice-docspace-into-a-single-page-application")]')
@@ -35,7 +35,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(download_now_button_element)
+        @instance.webdriver.element_present?(top_banner_element)
       end
     end
   end
