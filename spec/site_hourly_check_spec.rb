@@ -122,7 +122,7 @@ describe 'SiteHourlyCheck' do
       end
 
       describe 'download mobile editors /download-desktop.aspx' do
-        let(:mobile_editors_download_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_desktop_mobile).open_mobile_apps }
+        let(:mobile_editors_download_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_mobile_apps) }
 
         it '[Download Mobile Editors] /download-desktop.aspx: "Get it on Google play" link works' do
           expect(mobile_editors_download_page).to be_download_link_alive(:mobile_android)
