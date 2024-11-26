@@ -14,7 +14,7 @@ module TestingSiteOnlyoffice
 
     # top toolbar - Features
     link(:site_features, xpath: '//a[@id="navitem_features"]')
-    link(:site_features_connectors, xpath: '//a[@id="navitem_features_connectors_docs"]')
+    link(:site_features_docs_connectors, xpath: '//a[@id="navitem_docs_connectors"]')
     link(:site_features_docspace, xpath: '//a[@id="navitem_features_docspace_menu"]')
     link(:site_features_overview_docspace, xpath: '//a[@id="feature_overview_docspace"]')
     link(:site_features_workspace, xpath: '//a[@id="navitem_features_workspace_menu"]')
@@ -49,7 +49,7 @@ module TestingSiteOnlyoffice
 
     # top toolbar - For Developers
     link(:site_for_developers, xpath: '//a[@id="navitem_fordevelopers"]')
-    link(:site_for_developers_all_solutions, xpath: '//a[@id="navitem_fd_dev_solutions"]')
+    link(:site_for_developers_all_solutions, xpath: '//a[@id="navitem_fd_all_solution"]')
     link(:site_for_developers_doc_dev_edition, xpath: '//a[@id="navitem_fd_docs_dev"]')
     link(:site_for_developers_conversion_api, xpath: '//a[@id="navitem_fd_conversion_api"]')
     link(:site_for_developers_doc_builder, xpath: '//a[@id="navitem_fd_doc_builder"]')
@@ -62,15 +62,15 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice_install_onpremises, xpath: '//a[@id="navitem_download_onpremises"]')
     link(:site_get_onlyoffice_docspace_sign_in, xpath: '//a[@id = "navitem_docspace_signin"]')
     link(:site_get_onlyoffice_docspace_sign_up, xpath: '//a[@id = "navitem_docspace_signup"]')
-    link(:site_get_onlyoffice_connectors, xpath: '//a[@id="navitem_download_connectors"]')
     link(:site_get_onlyoffice_desktop_mobile, xpath: "//a[contains(@class, 'footer_apps_item') and contains(@class, 'for_windows')]")
-    link(:site_get_onlyoffice_docs_developer, xpath: '//a[@id="navitem_docs_de_onpremises"]')
+    link(:site_get_onlyoffice_docs_developer, xpath: '//a[@id="navitem_download_docs_de"]')
     link(:site_get_onlyoffice_docs_enterprise, xpath: '//a[@id="navitem_docs_onpremises"]')
     link(:site_get_onlyoffice_docs_community, xpath: '//a[@id="navitem_download_docs_ce"]')
     link(:site_get_onlyoffice_docs_community, xpath: '//a[@id="navitem_docs_onpremises"]')
-    div(:site_get_onlyoffice_docs_community_tab, xpath: "//div[contains(@class, 'dwn-four-btns-icon') and contains(@class, 'docs-community')]")
+    link(:site_get_onlyoffice_docspace_community, xpath: "//a[@id= 'navitem_download_docspace_ce']")
     link(:site_get_onlyoffice_document_builder, xpath: '//a[@id="navitem_download_docs_builder"]')
     link(:site_get_onlyoffice_github_code, xpath: '//a[@id="navitem_download_code_git"]')
+    link(:site_get_onlyoffice_mobile_apps, xpath: '//a[contains(@class, "icon_link android")]')
 
     # top toolbar - Pricing
     link(:site_pricing, xpath: '//a[@id="navitem_prices"]')
@@ -123,7 +123,7 @@ module TestingSiteOnlyoffice
     def site_toolbar_features
       {
         features_connectors: {
-          element: site_features_connectors_element,
+          element: site_features_docs_connectors_element,
           class: SiteConnectorsOnlyoffice
         },
         features_workspace: {
@@ -184,7 +184,6 @@ module TestingSiteOnlyoffice
           element: site_features_pdf_editor_element,
           class: SiteFeaturesPDFReaderConverter
         }
-
       }
     end
 
@@ -252,13 +251,13 @@ module TestingSiteOnlyoffice
           element: site_get_onlyoffice_docspace_sign_up_element,
           class: SiteDocSpaceSignUp
         },
-        get_onlyoffice_connectors: {
-          element: site_get_onlyoffice_connectors_element,
-          class: SiteConnectorsOnlyoffice
-        },
         get_onlyoffice_desktop_mobile: {
           element: site_get_onlyoffice_desktop_mobile_element,
           class: SiteGetOnlyofficeDesktopApps
+        },
+        get_onlyoffice_mobile_apps: {
+          element: site_get_onlyoffice_mobile_apps_element,
+          class: SiteMobileApps
         },
         get_onlyoffice_docs_developer: {
           element: site_get_onlyoffice_docs_developer_element,
@@ -269,8 +268,7 @@ module TestingSiteOnlyoffice
           class: SiteGetOnlyofficeDocsEnterprise
         },
         get_onlyoffice_docs_community: {
-          element: site_get_onlyoffice_docs_community_element,
-          sub_element: site_get_onlyoffice_docs_community_tab_element,
+          element: site_get_onlyoffice_docspace_community_element,
           class: SiteGetOnlyofficeDocsCommunity
         },
         get_onlyoffice_document_builder: {
@@ -447,14 +445,8 @@ module TestingSiteOnlyoffice
       move_to_element_link_toolbar(section)
       link = all_toolbar_links_and_classes_hash[section][:element]
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(link) }
-      sections_with_sub_links = %i[get_onlyoffice_docs_community]
       link.click
-      if sections_with_sub_links.include?(section)
-        sub_link = all_toolbar_links_and_classes_hash[section][:sub_element]
-        sub_link.click
-      elsif %i[about_gift_shop about_help_center features_see_it_in_action features_oforms about_blog about_forum].include?(section)
-        @instance.webdriver.switch_to_popup
-      end
+      @instance.webdriver.switch_to_popup if %i[about_gift_shop about_help_center features_see_it_in_action features_oforms about_blog about_forum].include?(section)
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
     end
   end
