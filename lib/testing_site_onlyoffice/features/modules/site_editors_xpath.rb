@@ -7,6 +7,6 @@ module TestingSiteOnlyoffice
     include PageObject
 
     link(:docspace_registration_button, xpath: '//a[@id = "account-btn" and contains(@href, "/docspace-registration")]')
-    link(:docs_get_it_now_button, xpath: '//div[@class="docs-button"]/a[contains(@href, "download-docs")]')
+    link(:docs_get_it_now_button, xpath: '//div[@class="docs-button"]/a[contains(@href, "download.aspx#docs-enterprise")]')
   end
 end
