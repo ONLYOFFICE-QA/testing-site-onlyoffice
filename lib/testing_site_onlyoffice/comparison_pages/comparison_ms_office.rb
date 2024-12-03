@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteDownloadHelper
 
-    link(:get_docs_top, xpath: '//a[contains(@href, "/download-docs.aspx?from=comparison")]')
+    link(:get_docs_top, xpath: '//a[contains(@href, "download.aspx?from=comparison#docs-enterprise")]')
     div(:watch_presentation, xpath: '//div[contains(@class, "ecp_presentation_block")]')
     link(:read_instruction, xpath: '//a[contains(@class, "ecp_link_to_instruction")]')
     link(:get_onlyoffice_docs, xpath: "//a[contains(@class, 'button red') and @href='/download-docs.aspx']")

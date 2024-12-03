@@ -8,8 +8,8 @@ module TestingSiteOnlyoffice
     include SitePricingHelper
 
     link(:buy_now_button, xpath: "//a[@data-id = 'ie-price-url-updated']")
-    link(:try_free_docs, xpath: "//a[@href='/download-docs.aspx?from=homeserver#docs-enterprise']")
-    link(:try_free_docspace, xpath: "//a[@href='/download-docspace.aspx?from=familypack#docspace-enterprise']")
+    link(:try_free_docs, xpath: "//a[@href='/download.aspx?from=homeserver#docs-enterprise']")
+    link(:try_free_docspace, xpath: "//a[@href='/download.aspx?from=familypack#docspace-enterprise']")
 
     def initialize(instance)
       super(instance.webdriver.driver)

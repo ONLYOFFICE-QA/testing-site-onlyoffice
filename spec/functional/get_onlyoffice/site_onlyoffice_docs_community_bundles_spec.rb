@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Get Onlyoffice - Docs Community Bundles' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @docs_community_bundles_page = site_home_page.click_link_on_toolbar(:site_get_onlyoffice_docspace_community)
+    @docs_community_bundles_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_community)
   end
 
   after do |example|
