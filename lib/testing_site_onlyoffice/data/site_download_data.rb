@@ -43,7 +43,7 @@ module TestingSiteOnlyoffice
 
     # Onlyoffice on marketplaces
     AWS_MARKETPLACE_TITLE = 'AWS Marketplace: Ascensio Systems Inc'
-    ALIBABA_MARKETPLACE_TITLE = 'Ascensio System Ltd. - Alibaba Cloud'
+    ALIBABA_MARKETPLACE_TITLE = 'Ascensio Systems Pte. Ltd - Alibaba Cloud'
 
     # Connectors
     def self.connectors_info
