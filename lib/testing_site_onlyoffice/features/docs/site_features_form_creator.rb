@@ -10,7 +10,7 @@ module TestingSiteOnlyoffice
     include SiteEditorsXpath
     include SiteToolbar
 
-    link(:open_library, xpath: "//article//a[contains(@href, 'oforms.onlyoffice.com')]")
+    link(:open_library, xpath: "(//a[contains(@href, 'templates.onlyoffice.com')])[2]")
 
     def initialize(instance)
       super(instance.webdriver.driver)

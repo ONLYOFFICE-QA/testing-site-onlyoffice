@@ -54,7 +54,7 @@ module TestingSiteOnlyoffice
 
     # templates
     link(:find_pdf_form_templates, xpath: "#{footer_xpath}//a[contains(@href, 'oforms.onlyoffice.com')]")
-    link(:fill_out_pdf_forms_online, xpath: "#{footer_xpath}//a[contains(@href, 'oforms.onlyoffice.com')]")
+    link(:fill_out_pdf_forms_online, xpath: "#{footer_xpath}//a[contains(@href, 'templates.onlyoffice.com/pdf-form-templates')]")
 
     # resources
     link(:help_center_footer_link, xpath: '//a[contains(@href,"helpcenter.onlyoffice.com/index.aspx")]')
