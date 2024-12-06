@@ -45,7 +45,8 @@ module TestingSiteOnlyoffice
     def submit_data(registration_data)
       self.doc_full_name = registration_data.full_name
       self.doc_email = registration_data.doc_email
-      self.doc_phone = registration_data.doc_phone
+      # Press :enter in the doc_email field to activate the submit_request button
+      doc_email_element.send_keys(:enter)
       @instance.webdriver.wait_until do
         @instance.webdriver.element_present?(submit_request_element)
       end
