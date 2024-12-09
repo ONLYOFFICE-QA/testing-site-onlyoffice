@@ -31,14 +31,14 @@ module TestingSiteOnlyoffice
     end
 
     def check_button_easy_deployment?
-      xpath = "//a[contains(@href,'/download-docs.aspx') and text() = 'Try now for free']"
+      xpath = "//a[contains(@href,'/download-developer.aspx') and text() = 'Try now for free']"
       @instance.webdriver.move_to_element_by_locator(xpath)
       @instance.webdriver.click_on_locator(xpath)
       SiteGetOnlyofficeDocsDeveloper.new(@instance)
     end
 
     def click_button_external_access
-      xpath = "//a[contains(@href,'api.onlyoffice.com/editors/interactingoutside')]"
+      xpath = "//a[contains(@href,'api.onlyoffice.com/docs/docs-api/get-started/external-access-to-the-document-editing')]"
       @instance.webdriver.move_to_element_by_locator(xpath)
       @instance.webdriver.click_on_locator(xpath)
     end
@@ -51,7 +51,7 @@ module TestingSiteOnlyoffice
     end
 
     def check_button_get_started_self_hosted?
-      xpath = "//div[contains(@class, 'choice')]//a[@href='/download-docs.aspx']"
+      xpath = "//div[contains(@class, 'choice')]//a[contains(@href, '/download-developer.aspx')]"
       @instance.webdriver.move_to_element_by_locator(xpath)
       @instance.webdriver.click_on_locator(xpath)
       SiteGetOnlyofficeDocsDeveloper.new(@instance)

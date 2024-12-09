@@ -11,7 +11,7 @@ module TestingSiteOnlyoffice
     include PageObject
     include SitePricingHelper
 
-    link(:try_free_button, xpath: '(//a[contains(@href, "/docspace-registration.aspx") and contains(text(), "Start now")])[1]')
+    link(:try_free_button, xpath: '//a[contains(@href, "/docspace-registration.aspx") and contains(@class, "button gray")]')
     link(:docspace_on_premises, xpath: '//a[contains(@class, "docspace-on-premises")]')
     link(:startup_cloud_button, xpath: '//div[@class = "pp_button"]/a')
 
