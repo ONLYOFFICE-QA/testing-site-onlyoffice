@@ -18,7 +18,7 @@ describe 'Doc registration page' do
   end
 
   describe 'Sign Up for cloud' do
-    it 'Sign Up online document editors' do
+    it 'Open Stripe page from /docs-registration.aspx and check the e-mail' do
       pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
       payment_page = @doc_sign_up_page.submit_correct_data(registration_data)
       expect(payment_page).to be_a TestingSiteOnlyoffice::StripePaymentPage
