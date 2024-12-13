@@ -6,7 +6,7 @@ module TestingSiteOnlyoffice
   class SiteOrderDemo
     include PageObject
 
-    text_field(:first_name, xpath: '//input[contains(@class,"FirstName")]')
+    text_field(:full_name, xpath: '//input[@id="txtFullName"]')
     text_field(:last_name, xpath: '//input[contains(@class,"LastName")]')
     text_field(:email, xpath: '//input[contains(@class,"Email")]')
     text_field(:phone, xpath: '//input[contains(@class,"Phone")]')
@@ -32,12 +32,11 @@ module TestingSiteOnlyoffice
     end
 
     def wait_to_load
-      @instance.webdriver.wait_until { @instance.webdriver.element_present?(first_name_element) }
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(full_name_element) }
     end
 
     def send_demonstration_request(params = {})
-      self.first_name = params.fetch(:first_name, Faker::Name.first_name)
-      self.last_name = params.fetch(:last_name, Faker::Name.last_name)
+      self.full_name = params.fetch(:first_name, Faker::Name.first_name)
       self.email = params.fetch(:email, SiteData::EMAIL_ADMIN)
       self.website = params.fetch(:website, "#{Faker::Internet.domain_word}.#{Faker::Internet.domain_suffix}")
       self.company_name = params.fetch(:company_name, Faker::Company.name)

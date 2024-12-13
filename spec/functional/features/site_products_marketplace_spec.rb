@@ -33,7 +33,7 @@ describe 'Site Products Marketplace' do
 
   it "[Site][Products][Marketplace] 'Visit API' button works" do
     @marketplace_page.click_visit_api_button
-    expected_title = 'Overview - ONLYOFFICE Api Documentation'
+    expected_title = 'Overview'
     expect(@marketplace_page.check_opened_page_title).to eq(expected_title)
   end
 

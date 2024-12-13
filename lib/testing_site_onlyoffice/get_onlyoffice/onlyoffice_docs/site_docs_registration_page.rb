@@ -54,8 +54,7 @@ module TestingSiteOnlyoffice
     end
 
     def all_errors_visible?
-      @instance.webdriver.element_present?(doc_full_name_error_element) & @instance.webdriver.element_present?(doc_email_error_element) &
-        @instance.webdriver.element_present?(doc_phone_error_element)
+      @instance.webdriver.element_present?(doc_full_name_error_element) & @instance.webdriver.element_present?(doc_email_error_element)
     end
   end
 end
