@@ -15,27 +15,18 @@ describe 'Developers - All Developer Solutions' do
     @test&.webdriver&.quit
   end
 
-  it '[Developers] [All Developer Solutions] Docspace "learn more" link works' do
-    expect(@all_developer_solutions.click_docspace_learn_more).to be_a TestingSiteOnlyoffice::SiteDocSpaceMainPage
-  end
-
   it '[Developers] [All Developer Solutions] Docspace "API" link works' do
     @all_developer_solutions.click_docspace_api
+    expect(@all_developer_solutions.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DOCSPACE_API_TITLE)
+  end
+
+  it '[Developers] [All Developer Solutions] Docs "Open wopi support" link works' do
+    expect(@all_developer_solutions.click_docs_open_wopi).to be_a TestingSiteOnlyoffice::SiteWOPIComparison
+  end
+
+  it '[Developers] [All Developer Solutions] Docs "Open api support" link works' do
+    @all_developer_solutions.click_docs_open_api
     expect(@all_developer_solutions.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::OVERVIEW_API_ONLYOFFICE_TITLE)
-  end
-
-  it '[Developers] [All Developer Solutions] Docs "Integration examples" link works' do
-    @all_developer_solutions.click_docs_integration_examples
-    expected_title = 'Language-specific examples - ONLYOFFICE Api Documentation'
-    expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
-  end
-
-  it '[Developers] [All Developer Solutions] Docs "Compare api and wopi" link works' do
-    expect(@all_developer_solutions.click_docs_compare_api_wopi).to be_a TestingSiteOnlyoffice::SiteWOPIComparison
-  end
-
-  it '[Developers] [All Developer Solutions] Docs "Try now" link works' do
-    expect(@all_developer_solutions.click_docs_try_now).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsDeveloper
   end
 
   it '[Developers] [All Developer Solutions] Docs "learn more" link works' do

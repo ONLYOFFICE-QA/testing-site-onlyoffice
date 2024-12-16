@@ -18,7 +18,7 @@ module TestingSiteOnlyoffice
     include SiteEditorsLinksCheckingHelper
 
     div(:enterprise_edition, xpath: "//div[@id='forenterprises']")
-    link(:get_it_now, xpath: '//a[contains(@href, "/see-it-in-action.aspx?from=docs-enterprise")]//preceding-sibling::a')
+    link(:get_it_now, xpath: '(//a[contains(@href, "/download.aspx#docs-enterprise")])[2]')
     link(:see_it_in_action, xpath: '//a[contains(@href, "/see-it-in-action.aspx?from=docs-enterprise")]')
     link(:document_editing, xpath: "//div[@class='fe_cards']//a[@href='/document-editor.aspx']")
     link(:spreadsheet_editing, xpath: "//div[@class='fe_cards']//a[@href='/spreadsheet-editor.aspx']")

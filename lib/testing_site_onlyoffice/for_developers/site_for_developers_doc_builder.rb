@@ -8,11 +8,11 @@ module TestingSiteOnlyoffice
     include SiteToolbar
     include SiteDownloadHelper
 
-    link(:download_now_top, xpath: '//div[@class="dbl-header-button-area"]//a[@href="/download-builder.aspx"]')
+    link(:get_started_top, xpath: "//a[@class='button red' and contains(@href, '/docs/document-builder/get-started/overview/')]")
     link(:code_download_link, xpath: '//a[contains(@class, "code_download_link")]')
     link(:github_open_source, xpath: '//a[contains(@href, "github.com/ONLYOFFICE/DocumentBuilder")]')
-    link(:read_documentaion_top, xpath: '(//a[@class="dbldb_block_link" and @href="https://api.onlyoffice.com/docbuilder/basic"])[1]')
-    link(:read_documentaion_bottom, xpath: '(//a[@class="dbldb_block_link" and @href="https://api.onlyoffice.com/docbuilder/basic"])[2]')
+    link(:read_documentaion_top, xpath: "(//a[contains(@href, '/docs/document-builder/get-started/overview/')])[2]")
+    link(:read_documentaion_bottom, xpath: "(//a[contains(@href, '/docs/document-builder/get-started/overview/')])[3]")
     link(:download_now_bottom, xpath: '//div[@class="dbldb_block_download_button"]//a[@href="/download-builder.aspx"]')
     link(:docs_developer, xpath: '//p//a[contains(@href, "/developer-edition.aspx")]')
     link(:buy_now, xpath: '//div[@class="dbldisc_block_contact_button"]//a[@href="/developer-edition-prices.aspx"]')
@@ -44,8 +44,8 @@ module TestingSiteOnlyoffice
       end
     end
 
-    def click_download_now_top
-      download_now_top_element.click
+    def click_get_started_top
+      get_started_top_element.click
       SiteGetOnlyofficeDownloadDocBuilder.new(@instance)
     end
 

@@ -31,9 +31,13 @@ module TestingSiteOnlyoffice
       TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition.new(@instance)
     end
 
-    def click_docs_compare_api_wopi
-      docs_compare_api_wopi_element.click
+    def click_docs_open_wopi
+      docs_open_wopi_element.click
       TestingSiteOnlyoffice::SiteWOPIComparison.new(@instance)
+    end
+
+    def click_docs_open_api
+      docs_open_api_element.click
     end
 
     def click_docbuilder_download_now
