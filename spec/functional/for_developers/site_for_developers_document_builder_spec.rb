@@ -16,7 +16,7 @@ describe 'Developers - Document Builder' do
   end
 
   it '[Developers] [Document Builder] "Download now" button at top block works' do
-    result_page = @document_builder.click_download_now_top
+    result_page = @document_builder.click_get_started_top
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDownloadDocBuilder
   end
 
@@ -73,10 +73,5 @@ describe 'Developers - Document Builder' do
   it '[Developers] [Document Builder] "Docs developer" link works' do
     result_page = @document_builder.click_docs_developer
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition
-  end
-
-  it '[Developers] [Document Builder] "Buy now" button works' do
-    result_page = @document_builder.click_buy_now
-    expect(result_page).to be_a TestingSiteOnlyoffice::SitePriceDocsDeveloper
   end
 end
