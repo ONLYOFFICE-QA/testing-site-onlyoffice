@@ -7,7 +7,7 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteToolbar
 
-    link(:run_on_your_own_server, xpath: '//div[@class="dp_header"]//a[contains(@href, "download-docs.aspx")]')
+    link(:run_on_your_own_server, xpath: '//div[@class="dp_header"]//a[contains(@href, "download.aspx")]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
