@@ -23,7 +23,7 @@ describe 'Doc registration page' do
       end
 
       it "Open Stripe page in #{current_language} language from /docs-registration.aspx" do
-        pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
+        skip('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
         payment_page = @doc_sign_up_page.submit_correct_data(registration_data)
         expect(payment_page).to be_a TestingSiteOnlyoffice::StripePaymentPage
       end
