@@ -52,7 +52,7 @@ GEM
     mini_portile2 (2.8.8)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
-    net-imap (0.5.1)
+    net-imap (0.5.2)
       date
       net-protocol
     net-pop (0.1.2)
@@ -156,7 +156,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    timeout (0.4.2)
+    timeout (0.4.3)
     unicode-display_width (3.1.2)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
