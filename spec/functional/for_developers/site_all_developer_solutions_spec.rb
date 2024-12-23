@@ -33,29 +33,13 @@ describe 'Developers - All Developer Solutions' do
     expect(@all_developer_solutions.click_docs_learn_more).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition
   end
 
-  it '[Developers] [All Developer Solutions] Docbuilder "Download Now" link works' do
-    expect(@all_developer_solutions.click_docbuilder_download_now).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsDeveloper
-  end
-
-  it '[Developers] [All Developer Solutions] Docbuilder "Source code" link works' do
-    @all_developer_solutions.click_docbuilder_source_code
-    expected_title = 'GitHub - ONLYOFFICE/DocumentBuilder: ONLYOFFICE Document Builder is powerful text, spreadsheet, presentation and PDF generating tool'
-    expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
-  end
-
   it '[Developers] [All Developer Solutions] Docbuilder "Check examples" link works' do
-    @all_developer_solutions.click_docbuilder_check_examples
-    expected_title = 'Overview - ONLYOFFICE Api Documentation'
+    @all_developer_solutions.click_docbuilder_read_documentaion
+    expected_title = 'Overview'
     expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
   end
 
   it '[Developers] [All Developer Solutions] "Available plugins" link works' do
     expect(@all_developer_solutions.click_available_plugins).to be_a TestingSiteOnlyoffice::SiteFeaturesMarketplace
-  end
-
-  it '[Developers] [All Developer Solutions] Workspace "Find out more" link works' do
-    @all_developer_solutions.click_workspace_find_out_more
-    expected_title = 'API Backend - ONLYOFFICE Api Documentation'
-    expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
   end
 end

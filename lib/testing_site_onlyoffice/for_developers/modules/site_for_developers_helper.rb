@@ -49,8 +49,8 @@ module TestingSiteOnlyoffice
       docbuilder_source_code_element.click
     end
 
-    def click_docbuilder_check_examples
-      docbuilder_check_examples_element.click
+    def click_docbuilder_read_documentaion
+      docbuilder_read_documentaion_element.click
     end
 
     # Explicitly switches to the second tab due to the forced context change required after opening a new tab
