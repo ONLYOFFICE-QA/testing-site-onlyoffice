@@ -103,6 +103,7 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check notify about forgot password' do
+      skip 'the login page was temporarily hidden'
       @site_home_page.send_forgot_password_from_sign_in
       expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: config.language,
                                                                                    pattern: 'teamlab_pwd_reminder',
@@ -139,7 +140,7 @@ describe 'SiteHourlyCheck' do
       end
 
       describe 'download onlyoffice docs /download-docs.aspx' do
-        let(:onlyoffice_docs_enterprise_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_enterprise) }
+        let(:onlyoffice_docs_enterprise_page) { @site_home_page.click_link_on_toolbar(:download_docs_enterprise) }
 
         describe 'enterprise' do
           it_behaves_like 'commercial_installer_download', 'Docs_Enterprise',
@@ -149,7 +150,7 @@ describe 'SiteHourlyCheck' do
         end
 
         describe 'developer' do
-          let(:onlyoffice_docs_developer_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_developer) }
+          let(:onlyoffice_docs_developer_page) { @site_home_page.click_link_on_toolbar(:download_docs_developer) }
 
           it_behaves_like 'commercial_installer_download', 'Docs_Developer',
                           TestingSiteOnlyoffice::SiteDownloadData.commercial_developer_docs_list_type do
@@ -157,7 +158,7 @@ describe 'SiteHourlyCheck' do
           end
         end
 
-        describe 'community' do
+        describe 'community', skip: 'the docs-community page was hidden from menu' do
           let(:onlyoffice_docs_community_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_community) }
 
           TestingSiteOnlyoffice::SiteDownloadData.open_source_docs_list.each do |installer|
@@ -184,7 +185,7 @@ describe 'SiteHourlyCheck' do
         end
       end
 
-      describe 'download onlyoffice workspace /download-workspace.aspx' do
+      describe 'download onlyoffice workspace /download-workspace.aspx', skip: 'the download onlyoffice workspace page was hidden from menu' do
         let(:onlyoffice_workspace_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_workspace_on_premises) }
 
         describe 'enterprice' do
