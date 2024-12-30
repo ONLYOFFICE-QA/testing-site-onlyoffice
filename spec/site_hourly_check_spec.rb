@@ -219,7 +219,7 @@ describe 'SiteHourlyCheck' do
         end
       end
 
-      describe 'document builder' do
+      describe 'document builder', skip: 'the download document builder page was hidden from menu' do
         let(:other_products_document_builder_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_document_builder) }
 
         it_behaves_like 'document_builder_download',
@@ -258,7 +258,7 @@ describe 'SiteHourlyCheck' do
 
     describe 'Сhecking for a product version logging error' do
       before do
-        @download_commercial_page = @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_enterprise)
+        @download_commercial_page = @site_home_page.click_link_on_toolbar(:download_docs_enterprise)
       end
 
       it_behaves_like 'сhecking_logger_errors' do
