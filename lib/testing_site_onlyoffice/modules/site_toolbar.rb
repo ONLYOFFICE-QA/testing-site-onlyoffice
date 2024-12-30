@@ -59,18 +59,21 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice, xpath: '//a[@id="navitem_download"]')
     link(:site_get_onlyoffice_docs_registration, xpath: '//a[@id="navitem_docs_signup"]')
     link(:site_get_onlyoffice_docs_sign_in, xpath: '//a[@id="navitem_docs_signin"]')
+    link(:site_docs_log_in, xpath: '//a[@id="navitem_sign_in_docs_cloud"]')
     link(:site_get_onlyoffice_install_onpremises, xpath: '//a[@id="navitem_download_onpremises"]')
     link(:site_get_onlyoffice_docspace_sign_in, xpath: '//a[@id = "navitem_docspace_signin"]')
     link(:site_get_onlyoffice_docspace_sign_up, xpath: '//a[@id = "navitem_docspace_signup"]')
     link(:site_get_onlyoffice_desktop_mobile, xpath: "//a[contains(@class, 'footer_apps_item') and contains(@class, 'for_windows')]")
     link(:site_get_onlyoffice_docs_developer, xpath: '//a[@id="navitem_download_docs_de"]')
+    link(:download_docs_developer, xpath: '//a[@id="navitem_download_developer_servers"]')
     link(:site_get_onlyoffice_docs_enterprise, xpath: '//a[@id="navitem_docs_onpremises"]')
+    link(:download_docs_enterprise, xpath: '//a[@id="navitem_download_enterprise_servers"]')
     link(:site_get_onlyoffice_docs_community, xpath: '//a[@id="navitem_download_docs_ce"]')
     link(:site_get_onlyoffice_docs_community, xpath: '//a[@id="navitem_docs_onpremises"]')
     link(:site_get_onlyoffice_docspace_community, xpath: "//a[@id= 'navitem_download_docspace_ce']")
     link(:site_get_onlyoffice_document_builder, xpath: '//a[@id="navitem_download_docs_builder"]')
     link(:site_get_onlyoffice_github_code, xpath: '//a[@id="navitem_download_code_git"]')
-    link(:site_get_onlyoffice_mobile_apps, xpath: '//a[contains(@class, "icon_link android")]')
+    link(:site_get_onlyoffice_mobile_apps, xpath: '//a[contains(@class, "footer_apps_item for_android")]')
 
     # top toolbar - Pricing
     link(:site_pricing, xpath: '//a[@id="navitem_prices"]')
@@ -263,8 +266,12 @@ module TestingSiteOnlyoffice
           element: site_get_onlyoffice_docs_developer_element,
           class: SiteGetOnlyofficeDocsDeveloper
         },
-        get_onlyoffice_docs_enterprise: {
-          element: site_get_onlyoffice_docs_enterprise_element,
+        download_docs_developer: {
+          element: download_docs_developer_element,
+          class: SiteGetOnlyofficeDocsDeveloper
+        },
+        download_docs_enterprise: {
+          element: download_docs_enterprise_element,
           class: SiteGetOnlyofficeDocsEnterprise
         },
         get_onlyoffice_docs_community: {
