@@ -19,7 +19,7 @@ describe 'Smoke site tests for sign in and sign up Docspace' do
 
   describe '[Site][Docspace Sign in Page] /docspace-signin.aspx' do
     before do
-      @docspace_sign_in = @site_home_page.click_link_on_toolbar(:get_onlyoffice_docspace_sign_in)
+      @docspace_sign_in = @site_home_page.click_link_on_toolbar(:site_get_onlyoffice_docspace_sign_up).log_in_from_register_page
     end
 
     it '[Site][Docspace Sign in] Successful login to DocSpace' do
@@ -41,7 +41,7 @@ describe 'Smoke site tests for sign in and sign up Docspace' do
 
   describe '[Site][Docspace Sign up Page] /docspace-registration.aspx' do
     before do
-      @docspace_sign_up = @site_home_page.click_link_on_toolbar(:get_onlyoffice_docspace_sign_up)
+      @docspace_sign_up = @site_home_page.click_link_on_toolbar(:site_get_onlyoffice_docspace_sign_up)
     end
 
     it '[Site][Docspace Sign up] Terms and conditions link works' do

@@ -59,10 +59,8 @@ module TestingSiteOnlyoffice
     link(:site_get_onlyoffice, xpath: '//a[@id="navitem_download"]')
     link(:site_get_onlyoffice_docs_registration, xpath: '//a[@id="navitem_docs_signup"]')
     link(:site_get_onlyoffice_docs_sign_in, xpath: '//a[@id="navitem_docs_signin"]')
-    link(:site_docs_log_in, xpath: '//a[@id="navitem_sign_in_docs_cloud"]')
     link(:site_get_onlyoffice_install_onpremises, xpath: '//a[@id="navitem_download_onpremises"]')
-    link(:site_get_onlyoffice_docspace_sign_in, xpath: '//a[@id = "navitem_docspace_signin"]')
-    link(:site_get_onlyoffice_docspace_sign_up, xpath: '//a[@id = "navitem_docspace_signup"]')
+    link(:site_get_onlyoffice_docspace_sign_in, xpath: '//a[@id = "navitem_docspace_signup"]')
     link(:site_get_onlyoffice_desktop_mobile, xpath: "//a[contains(@class, 'footer_apps_item') and contains(@class, 'for_windows')]")
     link(:site_get_onlyoffice_docs_developer, xpath: '//a[@id="navitem_download_docs_de"]')
     link(:download_docs_developer, xpath: '//a[@id="navitem_download_developer_servers"]')
@@ -94,6 +92,11 @@ module TestingSiteOnlyoffice
     link(:site_partners_technology, xpath: '//a[@id="navitem_technology_partners"]')
     link(:site_partners_submit_request, xpath: '//a[@id="navitem_submit_request"]')
     link(:site_partners_latest_events, xpath: '//a[@id="navitem_latest_events"]')
+
+    # top toolbar - Log in / Sign Up
+    link(:site_log_in, xpath: '//a[@id = "navitem_sign_in_header"]')
+    link(:site_get_onlyoffice_docspace_sign_up, xpath: '//a[@id = "navitem_sign_in_docspace"]')
+    link(:site_docs_log_in, xpath: '//a[@id="navitem_sign_in_docs_cloud"]')
 
     # top toolbar - About
     link(:site_about, xpath: '//a[@id="navitem_about"]')
@@ -232,27 +235,24 @@ module TestingSiteOnlyoffice
       }
     end
 
+    def site_toolbar_log_in
+      {
+        site_get_onlyoffice_docspace_sign_up: {
+          element: site_get_onlyoffice_docspace_sign_up_element,
+          class: SiteDocSpaceSignUp
+        }
+      }
+    end
+
     def site_toolbar_get_onlyoffice
       {
         get_onlyoffice_docs_registration: {
           element: site_get_onlyoffice_docs_registration_element,
           class: DocsRegistrationPage
         },
-        get_onlyoffice_docs_sign_in: {
-          element: site_get_onlyoffice_docs_sign_in_element,
-          class: SiteDocsSignInPage
-        },
         get_onlyoffice_workspace_on_premises: {
           element: site_get_onlyoffice_install_onpremises_element,
           class: SiteGetOnlyofficeWorkspaceEnterprise
-        },
-        get_onlyoffice_docspace_sign_in: {
-          element: site_get_onlyoffice_docspace_sign_in_element,
-          class: SiteDocSpaceSignIn
-        },
-        get_onlyoffice_docspace_sign_up: {
-          element: site_get_onlyoffice_docspace_sign_up_element,
-          class: SiteDocSpaceSignUp
         },
         get_onlyoffice_desktop_mobile: {
           element: site_get_onlyoffice_desktop_mobile_element,
@@ -435,7 +435,7 @@ module TestingSiteOnlyoffice
 
     def all_toolbar_links_and_classes_hash
       site_toolbar_features.merge(site_toolbar_for_business, site_toolbar_get_onlyoffice, site_toolbar_pricing,
-                                  site_toolbar_partners, site_toolbar_about, site_toolbar_for_developers)
+                                  site_toolbar_partners, site_toolbar_about, site_toolbar_for_developers, site_toolbar_log_in)
     end
 
     def move_to_element_link_toolbar(section)
@@ -446,6 +446,7 @@ module TestingSiteOnlyoffice
       @instance.webdriver.move_to_element_by_locator(site_pricing_element.selector[:xpath]) if site_toolbar_pricing.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_partners_element.selector[:xpath]) if site_toolbar_partners.key?(section)
       @instance.webdriver.move_to_element_by_locator(site_about_element.selector[:xpath]) if site_toolbar_about.key?(section)
+      @instance.webdriver.move_to_element_by_locator(site_log_in_element.selector[:xpath]) if site_toolbar_log_in.key?(section)
     end
 
     def click_link_on_toolbar(section)
