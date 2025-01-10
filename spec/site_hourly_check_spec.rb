@@ -103,7 +103,6 @@ describe 'SiteHourlyCheck' do
     end
 
     it '[Site] Check notify about forgot password' do
-      skip 'the login page was temporarily hidden'
       @site_home_page.send_forgot_password_from_sign_in
       expect(TestingSiteOnlyoffice::SiteNotificationHelper.check_site_notification(language: config.language,
                                                                                    pattern: 'teamlab_pwd_reminder',
@@ -158,8 +157,8 @@ describe 'SiteHourlyCheck' do
           end
         end
 
-        describe 'community', skip: 'the docs-community page was hidden from menu' do
-          let(:onlyoffice_docs_community_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_community) }
+        describe 'community' do
+          let(:onlyoffice_docs_community_page) { @site_home_page.open_community_download_page }
 
           TestingSiteOnlyoffice::SiteDownloadData.open_source_docs_list.each do |installer|
             describe installer.to_s do
@@ -185,8 +184,8 @@ describe 'SiteHourlyCheck' do
         end
       end
 
-      describe 'download onlyoffice workspace /download-workspace.aspx', skip: 'the download onlyoffice workspace page was hidden from menu' do
-        let(:onlyoffice_workspace_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_workspace_on_premises) }
+      describe 'download onlyoffice workspace /download-workspace.aspx' do
+        let(:onlyoffice_workspace_page) { @site_home_page.open_download_workspace_enterprise_page }
 
         describe 'enterprice' do
           it_behaves_like 'commercial_installer_download', 'Workspace_Enterprise',
@@ -219,8 +218,8 @@ describe 'SiteHourlyCheck' do
         end
       end
 
-      describe 'document builder', skip: 'the download document builder page was hidden from menu' do
-        let(:other_products_document_builder_page) { @site_home_page.click_link_on_toolbar(:get_onlyoffice_document_builder) }
+      describe 'document builder' do
+        let(:other_products_document_builder_page) { @site_home_page.open_download_docbuilder_page }
 
         it_behaves_like 'document_builder_download',
                         TestingSiteOnlyoffice::SiteDownloadData.document_builder_list do

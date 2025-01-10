@@ -9,6 +9,7 @@ module TestingSiteOnlyoffice
 
     div(:sign_up_form, xpath: "//div[contains(@class, 'signuppageform')]")
     div(:portal_region, xpath: "//div[contains(@class, 'signUpBaseDomainValue')]")
+    link(:sign_in_from_register_page, xpath: '//a[@id = "toSignIn"]')
 
     text_field(:first_name, xpath: "//input[@id = 'txtSignUpFirstName']")
     text_field(:last_name, xpath: "//input[@id = 'txtSignUpLastName']")
@@ -48,6 +49,11 @@ module TestingSiteOnlyoffice
     def complete_registration_form(params)
       fill_out_form(params)
       click_signup_submit
+    end
+
+    def log_in_from_register_page
+      sign_in_from_register_page_element.click
+      SiteDocSpaceSignIn.new(@instance)
     end
   end
 end

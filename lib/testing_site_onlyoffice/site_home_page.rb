@@ -140,6 +140,8 @@ require_relative 'site_notification_helper'
 require_relative 'convert_page'
 require_relative 'uninstall_feedback/site_install_canceled_page'
 require_relative 'comparison_pages/comparison_ms_office'
+require_relative 'open_pages/open_workspace_sign_in'
+require_relative 'open_pages/open_download_pages'
 
 module TestingSiteOnlyoffice
   # Site home page
@@ -159,6 +161,8 @@ module TestingSiteOnlyoffice
     include SiteToolbar
     include SiteToolbarActions
     include SiteUninstallFeedbackOpeningPages
+    include OpenWorkspaceSignIn
+    include OpenDownloadPages
 
     link(:see_it_in_action, xpath: '//a[@id = "seeItInAction_Default"]')
 
@@ -204,7 +208,7 @@ module TestingSiteOnlyoffice
     end
 
     def send_forgot_password_from_sign_in(email = mail_for_forgotten_password.username)
-      sign_in = click_login_workspace_cloud
+      sign_in = open_workspace_sign_in_page
       sign_in.send_forgot_password(email)
     end
 
