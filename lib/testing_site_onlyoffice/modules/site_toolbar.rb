@@ -96,7 +96,7 @@ module TestingSiteOnlyoffice
     # top toolbar - Log in / Sign Up
     link(:site_log_in, xpath: '//a[@id = "navitem_sign_in_header"]')
     link(:site_get_onlyoffice_docspace_sign_up, xpath: '//a[@id = "navitem_sign_in_docspace"]')
-    link(:site_docs_log_in, xpath: '//a[@id="navitem_sign_in_docs_cloud"]')
+    link(:site_docs_registration, xpath: '//a[@id="navitem_sign_in_docs_cloud"]')
 
     # top toolbar - About
     link(:site_about, xpath: '//a[@id="navitem_about"]')
@@ -240,16 +240,16 @@ module TestingSiteOnlyoffice
         site_get_onlyoffice_docspace_sign_up: {
           element: site_get_onlyoffice_docspace_sign_up_element,
           class: SiteDocSpaceSignUp
+        },
+        site_docs_registration: {
+          element: site_docs_registration_element,
+          class: DocsRegistrationPage
         }
       }
     end
 
     def site_toolbar_get_onlyoffice
       {
-        get_onlyoffice_docs_registration: {
-          element: site_get_onlyoffice_docs_registration_element,
-          class: DocsRegistrationPage
-        },
         get_onlyoffice_workspace_on_premises: {
           element: site_get_onlyoffice_install_onpremises_element,
           class: SiteGetOnlyofficeWorkspaceEnterprise

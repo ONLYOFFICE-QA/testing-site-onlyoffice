@@ -21,6 +21,7 @@ module TestingSiteOnlyoffice
     div(:doc_full_name_error, xpath: '//div[@class="error txtFirstName_errorArea"]')
     div(:doc_email_error, xpath: '//div[@class="error txtEmail_errorArea"]')
     div(:doc_phone_error, xpath: '//div[@class="error txtPhone_errorArea"]')
+    element(:log_in_link, xpath: '//a[@id = "toSignIn"]')
 
     # Terms
     link(:doc_privacy_statement, xpath: '//a[contains(text(), "Privacy statement")]')
@@ -55,6 +56,11 @@ module TestingSiteOnlyoffice
 
     def all_errors_visible?
       @instance.webdriver.element_present?(doc_full_name_error_element) & @instance.webdriver.element_present?(doc_email_error_element)
+    end
+
+    def open_login_page_from_registration_page
+      log_in_link_element.click
+      SiteDocsSignInPage.new(@instance)
     end
   end
 end
