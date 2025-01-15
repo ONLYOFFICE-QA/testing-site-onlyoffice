@@ -21,7 +21,7 @@ describe 'Smoke site tests for sign_in and sign_up to Docs Cloud' do
   # Tests for successful login to docs_cloud will be added after the implementation of API methods in the project
   describe '[Site][Docs Cloud Sign In Page] /docs-cloud-signin.aspx' do
     before do
-      @docs_sign_in_page = @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_sign_in)
+      @docs_sign_in_page = @site_home_page.click_link_on_toolbar(:site_docs_registration).open_login_page_from_registration_page
     end
 
     it 'Failed login to Docs cloud with incorrect e-mail' do
@@ -47,7 +47,7 @@ describe 'Smoke site tests for sign_in and sign_up to Docs Cloud' do
 
   describe '[Site][Docs Cloud Sign Up Page] /docs-registration.aspx' do
     before do
-      @docs_cloud_sign_up_page = @site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_registration)
+      @docs_cloud_sign_up_page = @site_home_page.click_link_on_toolbar(:site_docs_registration)
     end
 
     it 'Sign Up online document editors' do

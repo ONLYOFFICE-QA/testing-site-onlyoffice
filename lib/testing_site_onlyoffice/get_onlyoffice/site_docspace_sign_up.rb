@@ -32,13 +32,12 @@ module TestingSiteOnlyoffice
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(sign_up_form_element) }
     end
 
-    def fill_out_form(params)
-      self.first_name = params.custom_user_list[0].first_name
-      self.last_name = params.custom_user_list[0].last_name
-      self.email = params.custom_user_list[0].mail
-      self.phone = Faker::PhoneNumber.cell_phone_in_e164
-      self.portal_name = params.portal_name
-      self.password = params.custom_user_list[0].password
+    def fill_out_form
+      self.first_name = Faker::Name.first_name
+      self.last_name = Faker::Name.last_name
+      self.email = 'client@qamail.teamlab.info'
+      self.portal_name = "#{Faker::Internet.domain_word}-portal"
+      self.password = Faker::Internet.password(min_length: 8)
     end
 
     def click_signup_submit
@@ -46,9 +45,10 @@ module TestingSiteOnlyoffice
       @instance.webdriver.click_on_locator(submit_button_element)
     end
 
-    def complete_registration_form(params)
-      fill_out_form(params)
+    def complete_registration_form
+      fill_out_form
       click_signup_submit
+      DocSpaceMainPage.new(@instance)
     end
 
     def log_in_from_register_page
