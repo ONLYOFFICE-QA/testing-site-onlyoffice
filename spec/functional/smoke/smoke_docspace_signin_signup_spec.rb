@@ -3,7 +3,6 @@
 require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 docspace_client_email = TestingSiteOnlyoffice::SiteData::CLIENT_EMAIL
-docspace_client_password = TestingSiteOnlyoffice::SiteData::DOCSPACE_PASSWORD
 client_email_to_check = OnlyofficeIredmailHelper::IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::CLIENT_EMAIL)
 
 describe 'Smoke site tests for sign in and sign up Docspace' do
@@ -48,6 +47,7 @@ describe 'Smoke site tests for sign in and sign up Docspace' do
     end
 
     it '[Site][Docspace Sign in] Successful sign up and log in to DocSpace' do
+      skip 'Cannot test email notifications in production' if config.server.include?('.com')
       result_page = @docspace_sign_up.complete_registration_form
       expect(result_page).to be_a TestingSiteOnlyoffice::DocSpaceMainPage
       expect(client_email_to_check.check_email_by_subject({ subject: 'Welcome to ONLYOFFICE DocSpace!' }, 300, true)).to be true
