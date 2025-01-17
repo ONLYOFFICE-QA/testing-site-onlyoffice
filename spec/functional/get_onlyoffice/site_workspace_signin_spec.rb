@@ -9,7 +9,7 @@ checker = { language: config.language, module: 'WebStudio' }
 describe 'Workspace sign in' do
   before do
     @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @workspace_sign_in_page = @site_home_page.click_login_workspace_cloud
+    @workspace_sign_in_page = @site_home_page.open_workspace_sign_in_page
   end
 
   after do |example|
