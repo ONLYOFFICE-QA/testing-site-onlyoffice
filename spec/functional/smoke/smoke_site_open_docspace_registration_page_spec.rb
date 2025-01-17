@@ -25,7 +25,7 @@ describe 'Site Smoke open docspace registration page' do
       end
 
       it "Open Sign Up page from Sign In page in #{current_language} language" do
-        sign_in_page = @site_home_page.click_link_on_toolbar(:get_onlyoffice_docspace_sign_in)
+        sign_in_page = @site_home_page.click_link_on_toolbar(:site_get_onlyoffice_docspace_sign_up)
         sign_up_page = sign_in_page.register_from_sign_in
         expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp
       end

@@ -16,7 +16,7 @@ describe 'Open source Document builder download' do
 
   describe 'open download page from top toolbar' do
     let(:document_builder_download_page) do
-      @site_home_page.click_link_on_toolbar(:get_onlyoffice_document_builder)
+      @site_home_page.open_download_docbuilder_page
     end
 
     TestingSiteOnlyoffice::SiteDownloadData.document_builder_list.each do |installer|
