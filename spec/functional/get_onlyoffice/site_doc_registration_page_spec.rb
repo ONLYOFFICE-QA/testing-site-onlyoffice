@@ -9,7 +9,7 @@ registration_data = TestingSiteOnlyoffice::DocsRegistrationData.new
 describe 'Doc registration page' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @doc_sign_up_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_registration)
+    @doc_sign_up_page = site_home_page.click_link_on_toolbar(:site_docs_registration)
   end
 
   after do |example|

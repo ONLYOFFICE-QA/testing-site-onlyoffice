@@ -19,7 +19,7 @@ describe 'Doc registration page' do
     describe "Open registration page #{current_language}" do
       before do
         @site_home_page.set_page_language(current_language)
-        @doc_sign_up_page = @site_home_page.click_link_on_toolbar(:site_get_onlyoffice_docspace_sign_up)
+        @doc_sign_up_page = @site_home_page.click_link_on_toolbar(:site_docs_registration)
       end
 
       it "Open Stripe page in #{current_language} language from /docs-registration.aspx" do
