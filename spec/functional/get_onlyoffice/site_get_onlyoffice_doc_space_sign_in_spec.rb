@@ -9,7 +9,7 @@ client_email_to_check = OnlyofficeIredmailHelper::IredMailHelper.new(username: T
 describe '[Site][Get Onlyoffice][Docspace Sign in]' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @docspace_sign_in = site_home_page.click_link_on_toolbar(:get_onlyoffice_docspace_sign_in)
+    @docspace_sign_in = site_home_page.click_link_on_toolbar(:site_get_onlyoffice_docspace_sign_up).log_in_from_register_page
   end
 
   after do |example|

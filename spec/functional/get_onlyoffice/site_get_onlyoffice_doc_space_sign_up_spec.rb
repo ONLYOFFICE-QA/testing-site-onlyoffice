@@ -6,7 +6,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe '[Site][Get Onlyoffice][Docspace Sign up]' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @docspace_sign_up = site_home_page.click_link_on_toolbar(:get_onlyoffice_docspace_sign_up)
+    @docspace_sign_up = site_home_page.click_link_on_toolbar(:site_get_onlyoffice_docspace_sign_up)
   end
 
   after do |example|
