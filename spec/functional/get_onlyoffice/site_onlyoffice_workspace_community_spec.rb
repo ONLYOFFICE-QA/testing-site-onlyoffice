@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Onlyoffice Workspace Community edition download' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @workspace_community_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_workspace_on_premises).site_workspace_community_download
+    @workspace_community_page = site_home_page.open_download_workspace_enterprise_page.site_workspace_community_download
   end
 
   TestingSiteOnlyoffice::SiteDownloadData.workspace_community.each do |installer|

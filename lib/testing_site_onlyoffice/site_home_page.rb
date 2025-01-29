@@ -142,6 +142,7 @@ require_relative 'uninstall_feedback/site_install_canceled_page'
 require_relative 'comparison_pages/comparison_ms_office'
 require_relative 'open_pages/open_workspace_sign_in'
 require_relative 'open_pages/open_download_pages'
+require_relative 'open_pages/open_all_enterprise_page'
 
 module TestingSiteOnlyoffice
   # Site home page
@@ -163,6 +164,7 @@ module TestingSiteOnlyoffice
     include SiteUninstallFeedbackOpeningPages
     include OpenWorkspaceSignIn
     include OpenDownloadPages
+    include OpenAllEnterprisePage
 
     link(:see_it_in_action, xpath: '//a[@id = "seeItInAction_Default"]')
 

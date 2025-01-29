@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'All enterprise solutions' do
   before do
     @site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @all_enterprise_solutions = @site_home_page.click_enterprises
+    @all_enterprise_solutions = @site_home_page.open_for_enterprise_page
   end
 
   after do |example|
