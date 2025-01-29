@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Onlyoffice Docs Developer edition download' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @download_onlyoffice_docs_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_developer)
+    @download_onlyoffice_docs_page = site_home_page.click_link_on_toolbar(:download_docs_developer)
   end
 
   after do |example|
