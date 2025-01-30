@@ -10,7 +10,7 @@ module TestingSiteOnlyoffice
 
     div(:software_tab, xpath: '//div[@id = "part-software"]')
     link(:become_partner_button, xpath: '//div[@class="first-screen-part"]/a[@href="/partnership-request.aspx"]')
-    link(:docs_dev_try_now, xpath: '//a[@href="/download-docs.aspx#docs-developer"]')
+    link(:docs_dev_try_now, xpath: '//a[@href="/download-developer.aspx#docs-developer"]')
     link(:doc_builder_download, xpath: '//a[@href="/download-builder.aspx" and @class="button red"]')
 
     def initialize(instance)
