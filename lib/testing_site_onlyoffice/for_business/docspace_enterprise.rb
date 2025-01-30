@@ -22,8 +22,8 @@ module TestingSiteOnlyoffice
     link(:mobile_apps, xpath: '(//a[contains(@href, "/download-desktop.aspx#mobile")])[3]')
     link(:security_link, xpath: '//div[contains(@class, "security")]//a')
     link(:download_link_cloud, xpath: "#{CHOICE_XPATH}//a[@href = '/docspace-registration.aspx']")
-    link(:download_link_linux, xpath: "#{CHOICE_XPATH}//a[@href = '/download-docspace.aspx'][1]")
-    link(:download_link_windows, xpath: "#{CHOICE_XPATH}//a[@href = '/download-docspace.aspx'][2]")
+    link(:download_link_linux, xpath: "#{CHOICE_XPATH}//a[@href = '/download.aspx#docspace-enterprise'][1]")
+    link(:download_link_windows, xpath: "#{CHOICE_XPATH}//a[@href = '/download.aspx#docspace-enterprise'][2]")
     link(:enterprise_plan_link, xpath: '//div[@class = "dep-part ee-business"]/preceding-sibling::div/a')
     link(:pick_price_link, xpath: '//div[@class = "ds-item"]/a')
 
