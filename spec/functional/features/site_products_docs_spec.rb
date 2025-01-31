@@ -60,12 +60,12 @@ describe 'Site Products Docs' do
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition
   end
 
-  it '[Site Products] [Docs] "Download desktop" button works' do
+  it '[Site Products] [Docs] "Download" button works' do
     result_page = @docs_page.click_download_pc
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDesktopApps
   end
 
-  it '[Site Products] [Docs] "Install mobile" button works' do
+  it '[Site Products] [Docs] "Install" button works' do
     result_page = @docs_page.click_install_mobile
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteMobileApps
   end
