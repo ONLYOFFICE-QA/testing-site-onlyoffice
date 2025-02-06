@@ -7,7 +7,7 @@ test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(
 describe 'Сhecking for a product version logging error' do
   before do
     site_home_page, @test = TestingSiteOnlyoffice::SiteHelper.new.open_page_teamlab_office(config)
-    @download_commercial_page = site_home_page.click_link_on_toolbar(:get_onlyoffice_docs_enterprise)
+    @download_commercial_page = site_home_page.click_link_on_toolbar(:download_docs_enterprise)
   end
 
   after do |example|
