@@ -95,7 +95,7 @@ module TestingSiteOnlyoffice
 
     # top toolbar - Log in / Sign Up
     link(:site_log_in, xpath: '//a[@id = "navitem_sign_in_header"]')
-    link(:site_get_onlyoffice_docspace_sign_up, xpath: '//a[@id = "navitem_sign_in_docspace"]')
+    link(:site_get_onlyoffice_docspace_sign_up, xpath: '//a[@id = "navitem_sign_in_header"]')
     link(:site_docs_registration, xpath: '//a[@id="navitem_sign_in_docs_cloud"]')
 
     # top toolbar - About
