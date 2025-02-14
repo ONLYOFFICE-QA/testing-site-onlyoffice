@@ -8,6 +8,6 @@
   "centos_rhel_and_derivatives": {
     "download": "onlyoffice-documentbuilder.x86_64.rpm"
   },
-  "instruction": "Overview",
+  "instruction": "ONLYOFFICE",
   "whats_new": "DocumentBuilder/CHANGELOG.md at master · ONLYOFFICE/DocumentBuilder · GitHub"
 }
