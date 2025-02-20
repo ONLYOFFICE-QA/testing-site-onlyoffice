@@ -54,7 +54,7 @@ module TestingSiteOnlyoffice
       new_describer << { title: 'Comment', value: describer.split('Page address')[0] }
       new_describer << { value: describer.split('Page address: ')[1],
                          title: 'Page address' }
-      new_describer << { value: (describer.split('Error screenshot: ')[1]).to_s,
+      new_describer << { value: describer.split('Error screenshot: ')[1].to_s,
                          title: 'Error screenshot',
                          type: :image }
       result_message['describer'] = new_describer
