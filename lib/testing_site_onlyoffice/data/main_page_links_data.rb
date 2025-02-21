@@ -16,9 +16,9 @@ module TestingSiteOnlyoffice
 
     def self.get_onlyoffice_main_page
       {
-        'OnlyOffice Docs Get It Now': "#{GET_ONLYOFFICE_BUTTONS_XPATH}//a[contains(@href, '/download-docs.aspx')]",
+        'OnlyOffice Docs Get It Now': "//a[@id= 'getItNow_Default']",
         'OnlyOffice See it in action': "#{GET_ONLYOFFICE_BUTTONS_XPATH}//a[contains(@href, '/docspace-registration.aspx')]",
-        'OnlyOffice Docs Learn more': "//div[contains(@class,'dp-m-inside')]//a[contains(@href, 'office-suite')]",
+        'OnlyOffice Docs Learn more': "//a[contains(@href, 'office-suite') and contains(@class, 'lm-link')]",
         'OnlyOffice Docs Security': "//div[contains(@class,'dp-m-inside')]//a[contains(@href, '/security.aspx')]",
         'OnlyOffice DocSpace Registration': "#{CHOOSE_SOLUTION_XPATH}//a[contains(@href, '/docspace-registration.aspx')]",
         'OnlyOffice Docs Download': "#{CHOOSE_SOLUTION_XPATH}//a[contains(@href, '/download-docs.aspx')]",
