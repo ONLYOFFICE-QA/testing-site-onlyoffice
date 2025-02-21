@@ -1,7 +1,7 @@
 {
   "br_os": {
     "block_id": "onlyoffice_desktop_editors_for_br_os",
-    "website": "Br OS – Simples, Fácil e Nacional."
+    "website": "Br OS – Simples, fácil e nacional"
   },
   "escuelas_linux": {
     "block_id": "onlyoffice_desktop_editors_for_escuelas_linux",
@@ -29,7 +29,7 @@
   },
   "sparkylinux": {
     "block_id": "onlyoffice_desktop_editors_for_SparkyLinux",
-    "website": "SparkyLinux Repository"
+    "website": "SparkyLinux Main Repository"
   },
   "mauna_linux": {
     "block_id": "onlyoffice_desktop_editors_for_Mauna_Linux",
