@@ -18,6 +18,7 @@ module TestingSiteOnlyoffice
 
     element(:title_docs_enterprise, xpath: "//div[@class='dwn-mp-docs-enterprise']/h2")
     element(:log_errors, xpath: "//span[@id='logEmptyDetailsDatas']")
+    link(:sign_up_docs, xpath: "//a[@id='onlyoffice_docs_enterprise_for_docs_as_a_service']")
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -42,6 +43,11 @@ module TestingSiteOnlyoffice
 
     def empty_text_log?
       true if @instance.webdriver.get_text(log_errors_element).empty?
+    end
+
+    def go_to_sign_up_docs
+      sign_up_docs_element.click
+      DocsRegistrationPage.new(@instance)
     end
   end
 end
