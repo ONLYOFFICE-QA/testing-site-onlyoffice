@@ -21,7 +21,8 @@ describe 'Smoke site tests for sign_in and sign_up to Docs Cloud' do
   # Tests for successful login to docs_cloud will be added after the implementation of API methods in the project
   describe '[Site][Docs Cloud Sign In Page] /docs-cloud-signin.aspx' do
     before do
-      @docs_sign_in_page = @site_home_page.click_link_on_toolbar(:site_docs_registration).open_login_page_from_registration_page
+      docs_sign_up_page = @site_home_page.click_link_on_toolbar(:download_docs_enterprise).go_to_sign_up_docs
+      @docs_sign_in_page = docs_sign_up_page.open_login_page_from_registration_page
     end
 
     it 'Failed login to Docs cloud with incorrect e-mail' do
@@ -47,13 +48,14 @@ describe 'Smoke site tests for sign_in and sign_up to Docs Cloud' do
 
   describe '[Site][Docs Cloud Sign Up Page] /docs-registration.aspx' do
     before do
-      @docs_cloud_sign_up_page = @site_home_page.click_link_on_toolbar(:site_docs_registration)
+      @docs_cloud_sign_up_page = @site_home_page.click_link_on_toolbar(:download_docs_enterprise).go_to_sign_up_docs
     end
 
-    it 'Sign Up online document editors' do
-      pending('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
+    it 'Sign Up online document editors - Business Tarif' do
+      skip('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
       @docs_cloud_sign_up_page.submit_correct_data(registration_data)
       expect(partner_email.check_email_by_subject({ subject: "#{registration_data.full_name} - Docs Registration Request [from: docs-registration]" }, 300, true)).to be true
+      expect(partner_email.check_email_by_subject({ subject: 'ONLYOFFICE Docs Cloud: Your free trial is activated' }, 300, true)).to be true
     end
 
     it 'Sign Up errors' do

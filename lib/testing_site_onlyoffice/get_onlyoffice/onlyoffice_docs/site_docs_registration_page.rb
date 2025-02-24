@@ -26,6 +26,8 @@ module TestingSiteOnlyoffice
     # Terms
     link(:doc_privacy_statement, xpath: '//a[contains(text(), "Privacy statement")]')
 
+    div(:check_email_modal, xpath: '//div[@id = "modalPopup"]')
+
     def initialize(instance)
       super(instance.webdriver.driver)
       @instance = instance
@@ -40,7 +42,9 @@ module TestingSiteOnlyoffice
 
     def submit_correct_data(registration_data)
       submit_data(registration_data)
-      StripePaymentPage.new(@instance)
+      @instance.webdriver.wait_until do
+        @instance.webdriver.element_present?('//div[@id = "modalPopup"]')
+      end
     end
 
     def submit_data(registration_data)
