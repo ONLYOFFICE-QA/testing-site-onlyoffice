@@ -55,7 +55,7 @@ describe 'Smoke site tests for sign_in and sign_up to Docs Cloud' do
       skip('https://bugzilla.onlyoffice.com/show_bug.cgi?id=43150') if config.server.include?('.com')
       @docs_cloud_sign_up_page.submit_correct_data(registration_data)
       expect(partner_email.check_email_by_subject({ subject: "#{registration_data.full_name} - Docs Registration Request [from: docs-registration]" }, 300, true)).to be true
-      expect(partner_email.check_email_by_subject({ subject: "ONLYOFFICE Docs Cloud: Your free trial is activated" }, 300, true)).to be true
+      expect(partner_email.check_email_by_subject({ subject: 'ONLYOFFICE Docs Cloud: Your free trial is activated' }, 300, true)).to be true
     end
 
     it 'Sign Up errors' do
