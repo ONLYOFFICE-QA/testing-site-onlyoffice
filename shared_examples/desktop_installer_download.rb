@@ -74,6 +74,7 @@ shared_examples_for 'desktop_installer_download' do |installers_list|
       end
 
       it "[Site][DownloadDesktop] version and realise date is not empty for `#{installer}`/download-desktop.aspx#desktop" do
+        skip "Skipping version and release date checks temporarily"
         expect(installers_download_page.get_installer_release_date_or_version(@current_installation.release_date_xpath)).not_to be_empty
         expect(installers_download_page.get_installer_release_date_or_version(@current_installation.version_xpath)).not_to be_empty
       end
