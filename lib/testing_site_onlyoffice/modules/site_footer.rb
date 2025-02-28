@@ -103,9 +103,7 @@ module TestingSiteOnlyoffice
     footer_links.each_key do |link|
       define_method(:"click_#{link}") do
         @instance.webdriver.click_on_locator(send(:"#{link}_element"))
-        if link == :fill_out_pdf_forms_online
-          @instance.webdriver.choose_tab(2)
-        end
+        @instance.webdriver.choose_tab(2) if link == :fill_out_pdf_forms_online
         footer_links[link].new(@instance)
       end
     end
