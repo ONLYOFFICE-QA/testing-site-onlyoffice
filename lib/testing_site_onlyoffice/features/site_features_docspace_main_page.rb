@@ -16,7 +16,7 @@ module TestingSiteOnlyoffice
     include SiteEditorsLinksCheckingHelper
     include SiteDocSpaceMainPageHelper
 
-    link(:docspace_registration_button, xpath: '//a[@id = "account-btn" and @href = "/docspace-registration.aspx"]')
+    link(:docspace_registration_button, xpath: '//a[@id = "email-btn" and @href = "/docspace-registration.aspx"]')
     link(:startups_free_cloud, xpath: '//a[@class = "third-icon choice_item" and @href = "/docspace-registration.aspx"]')
     link(:business_check_prices, xpath: '//a[@class="first-icon choice_item" and @href = "/docspace-prices.aspx#docspace-cloud"]')
     link(:enterprise_get_it_now, xpath: '//a[@class = "second-icon choice_item" and @href = "/download.aspx#docspace-enterprise"]')
