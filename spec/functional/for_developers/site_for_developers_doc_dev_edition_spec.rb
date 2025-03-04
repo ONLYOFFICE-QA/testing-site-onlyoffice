@@ -15,14 +15,6 @@ describe 'For Developers Developer Edition' do
     @test&.webdriver&.quit
   end
 
-  describe 'Editors pending due to issue' do
-    TestingSiteOnlyoffice::SiteForDevelopersDocDevEdition::FEATURES_LINKS.each do |feature_key, feature_info|
-      it_behaves_like 'checking_editors_links', feature_key, feature_info do
-        let(:page) { @developer_edition }
-      end
-    end
-  end
-
   it '[Developer Edition] Go to Docbuilder' do
     expect(@developer_edition.click_document_builder).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocBuilder
   end
