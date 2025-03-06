@@ -50,7 +50,7 @@ describe 'text files conversion' do
       @spreadsheet_convert_page = @site_home_page.click_spreadsheets_converter
     end
 
-    it 'converted spreadsheet file is not empty ' do
+    it 'converted spreadsheet file is not empty' do
       @spreadsheet_convert_page.upload_file(TestingSiteOnlyoffice::TestData.spreadsheet_path)
       extension = @spreadsheet_convert_page.selected_format.downcase
       @spreadsheet_convert_page.bypass_captcha
