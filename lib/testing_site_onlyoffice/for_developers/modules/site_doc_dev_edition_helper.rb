@@ -18,7 +18,7 @@ module TestingSiteOnlyoffice
     end
 
     def click_button_macros_and_plugins
-      xpath = "//a[contains(@href,'api.onlyoffice.com/plugin/basic')]"
+      xpath = "//a[contains(@href,'/plugin-and-macros/')]"
       @instance.webdriver.move_to_element_by_locator(xpath)
       @instance.webdriver.click_on_locator(xpath)
     end
@@ -44,7 +44,7 @@ module TestingSiteOnlyoffice
     end
 
     def check_button_wopi_support?
-      xpath = "//a[contains(@href,'/wopi-comparison.aspx')]"
+      xpath = "//a[contains(@href,'//api.onlyoffice.com/editors/basic')]"
       @instance.webdriver.move_to_element_by_locator(xpath)
       @instance.webdriver.click_on_locator(xpath)
       SiteWOPIComparison.new(@instance)
