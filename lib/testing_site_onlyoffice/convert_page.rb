@@ -23,7 +23,7 @@ module TestingSiteOnlyoffice
     link(:convert_button, xpath: "//a[@id = 'convertNow']")
     link(:download_button, xpath: "//a[@id = 'downloadBtn']")
     link(:sign_up_button, xpath: "//p[contains(@class, 'sub_info_text')]/a")
-    link(:conversion_api_button, xpath: "//a[contains(@href, '/editors/conversionapi')]")
+    link(:conversion_api_button, xpath: "(//a[contains(@href, '/api.onlyoffice.com/')])[2]")
     div(:formats_button, xpath: "//div[contains(@class, 'output_select_btn')]")
     text_field(:email_hidden_field, id: 'emailInput')
 

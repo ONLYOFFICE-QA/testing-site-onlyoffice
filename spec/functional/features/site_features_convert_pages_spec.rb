@@ -20,7 +20,7 @@ describe 'text files conversion' do
       @text_convert_page = @site_home_page.click_text_converter
     end
 
-    it 'converted file is not empty' do
+    it 'converted text file is not empty' do
       @text_convert_page.upload_file(TestingSiteOnlyoffice::TestData.docx_path)
       extension = @text_convert_page.selected_format.downcase
       @text_convert_page.bypass_captcha
@@ -29,17 +29,17 @@ describe 'text files conversion' do
       expect(@text_convert_page).to be_file_downloaded(TestingSiteOnlyoffice::TestData.docx_path, extension)
     end
 
-    it 'upload incorrect file format' do
+    it 'upload incorrect file format on text converter page' do
       @text_convert_page.upload_file(TestingSiteOnlyoffice::TestData.log_path)
       expect(@text_convert_page).to be_error_popup_appeared
     end
 
-    it 'sign up link works' do
+    it 'sign up link works on text converter page' do
       sign_up_page = @text_convert_page.sign_up_button_click
       expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp
     end
 
-    it 'conversion API link works' do
+    it 'conversion API link works on text converter page' do
       @text_convert_page.conversion_api_button_click
       expect(@text_convert_page.check_opened_page_title(switch_tab: false)).to eq(CONVERSION_API_TITLE)
     end
@@ -50,7 +50,7 @@ describe 'text files conversion' do
       @spreadsheet_convert_page = @site_home_page.click_spreadsheets_converter
     end
 
-    it 'converted file is not empty' do
+    it 'converted spreadsheet file is not empty' do
       @spreadsheet_convert_page.upload_file(TestingSiteOnlyoffice::TestData.spreadsheet_path)
       extension = @spreadsheet_convert_page.selected_format.downcase
       @spreadsheet_convert_page.bypass_captcha
@@ -59,17 +59,17 @@ describe 'text files conversion' do
       expect(@spreadsheet_convert_page).to be_file_downloaded(TestingSiteOnlyoffice::TestData.spreadsheet_path, extension)
     end
 
-    it 'upload incorrect file format' do
+    it 'upload incorrect file format on spreadsheet converter page' do
       @spreadsheet_convert_page.upload_file(TestingSiteOnlyoffice::TestData.log_path)
       expect(@spreadsheet_convert_page).to be_error_popup_appeared
     end
 
-    it 'sign up link works' do
+    it 'sign up link works on spreadsheet converter page' do
       sign_up_page = @spreadsheet_convert_page.sign_up_button_click
       expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp
     end
 
-    it 'conversion API link works' do
+    it 'conversion API link works on spreadsheet converter page' do
       @spreadsheet_convert_page.conversion_api_button_click
       expect(@spreadsheet_convert_page.check_opened_page_title(switch_tab: false)).to eq(CONVERSION_API_TITLE)
     end
@@ -80,7 +80,7 @@ describe 'text files conversion' do
       @presentation_convert_page = @site_home_page.click_presentations_converter
     end
 
-    it 'converted file is not empty' do
+    it 'converted presentation file is not empty' do
       @presentation_convert_page.upload_file(TestingSiteOnlyoffice::TestData.presentation_path)
       extension = @presentation_convert_page.selected_format.downcase
       @presentation_convert_page.bypass_captcha
@@ -89,17 +89,17 @@ describe 'text files conversion' do
       expect(@presentation_convert_page).to be_file_downloaded(TestingSiteOnlyoffice::TestData.presentation_path, extension)
     end
 
-    it 'upload incorrect file format' do
+    it 'upload incorrect file format on presentation converter page' do
       @presentation_convert_page.upload_file(TestingSiteOnlyoffice::TestData.log_path)
       expect(@presentation_convert_page).to be_error_popup_appeared
     end
 
-    it 'sign up link works' do
+    it 'sign up link works on presentation converter page' do
       sign_up_page = @presentation_convert_page.sign_up_button_click
       expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp
     end
 
-    it 'conversion API link works' do
+    it 'conversion API link works on presentation converter page' do
       @presentation_convert_page.conversion_api_button_click
       expect(@presentation_convert_page.check_opened_page_title(switch_tab: false)).to eq(CONVERSION_API_TITLE)
     end
@@ -110,7 +110,7 @@ describe 'text files conversion' do
       @pdf_convert_page = @site_home_page.click_PDFs_converter
     end
 
-    it 'converted file is not empty' do
+    it 'converted PDF file is not empty' do
       @pdf_convert_page.upload_file(TestingSiteOnlyoffice::TestData.pdf_path)
       extension = @pdf_convert_page.selected_format.downcase
       @pdf_convert_page.bypass_captcha
@@ -119,17 +119,17 @@ describe 'text files conversion' do
       expect(@pdf_convert_page).to be_file_downloaded(TestingSiteOnlyoffice::TestData.pdf_path, extension)
     end
 
-    it 'upload incorrect file format' do
+    it 'upload incorrect file format on PDF converter page' do
       @pdf_convert_page.upload_file(TestingSiteOnlyoffice::TestData.log_path)
       expect(@pdf_convert_page).to be_error_popup_appeared
     end
 
-    it 'sign up link works' do
+    it 'sign up link works on PDF converter page' do
       sign_up_page = @pdf_convert_page.sign_up_button_click
       expect(sign_up_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp
     end
 
-    it 'conversion API link works' do
+    it 'conversion API link works on PDF converter page' do
       @pdf_convert_page.conversion_api_button_click
       expect(@pdf_convert_page.check_opened_page_title(switch_tab: false)).to eq(CONVERSION_API_TITLE)
     end
