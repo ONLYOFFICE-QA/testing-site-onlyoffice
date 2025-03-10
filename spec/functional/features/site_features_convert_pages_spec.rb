@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-CONVERSION_API_TITLE = 'Conversion API'
+CONVERSION_API_TITLE = 'Online Spreadsheet Converter | ONLYOFFICE'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
 describe 'text files conversion' do
@@ -41,7 +41,7 @@ describe 'text files conversion' do
 
     it 'conversion API link works on text converter page' do
       @text_convert_page.conversion_api_button_click
-      expect(@text_convert_page.check_opened_page_title(switch_tab: false)).to eq(CONVERSION_API_TITLE)
+      expect(@text_convert_page.check_opened_page_title(switch_tab: false)).to eq('Online Text File Converter | ONLYOFFICE')
     end
   end
 
@@ -71,7 +71,7 @@ describe 'text files conversion' do
 
     it 'conversion API link works on spreadsheet converter page' do
       @spreadsheet_convert_page.conversion_api_button_click
-      expect(@spreadsheet_convert_page.check_opened_page_title(switch_tab: false)).to eq(CONVERSION_API_TITLE)
+      expect(@spreadsheet_convert_page.check_opened_page_title(switch_tab: false)).to eq('Online Spreadsheet Converter | ONLYOFFICE')
     end
   end
 
@@ -101,7 +101,7 @@ describe 'text files conversion' do
 
     it 'conversion API link works on presentation converter page' do
       @presentation_convert_page.conversion_api_button_click
-      expect(@presentation_convert_page.check_opened_page_title(switch_tab: false)).to eq(CONVERSION_API_TITLE)
+      expect(@presentation_convert_page.check_opened_page_title(switch_tab: false)).to eq('Online Presentation Converter | ONLYOFFICE')
     end
   end
 
@@ -131,7 +131,7 @@ describe 'text files conversion' do
 
     it 'conversion API link works on PDF converter page' do
       @pdf_convert_page.conversion_api_button_click
-      expect(@pdf_convert_page.check_opened_page_title(switch_tab: false)).to eq(CONVERSION_API_TITLE)
+      expect(@pdf_convert_page.check_opened_page_title(switch_tab: false)).to eq('Online PDF Converter | ONLYOFFICE')
     end
   end
 end
