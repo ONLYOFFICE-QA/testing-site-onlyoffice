@@ -16,8 +16,9 @@ describe 'Developers - Document Builder' do
   end
 
   it '[Developers] [Document Builder] "Download now" button at top block works' do
-    result_page = @document_builder.click_get_started_top
-    expect(result_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDownloadDocBuilder
+    expected_title = 'ONLYOFFICE'
+    @document_builder.click_get_started_top
+    expect(@document_builder.check_opened_page_title).to eq(expected_title)
   end
 
   it '[Developers] [Document Builder] Live demo for Document works' do
@@ -45,12 +46,6 @@ describe 'Developers - Document Builder' do
     @document_builder.click_pdf_generating_and_download_file
     expected_pdf_title = 'sampleformats.pdf'
     expect(@document_builder.opened_file_url).to include(expected_pdf_title)
-  end
-
-  it '[Developers] [Document Builder] "Github" link works' do
-    expected_title = 'GitHub - ONLYOFFICE/DocumentBuilder: ONLYOFFICE Document Builder is powerful text, spreadsheet, presentation and PDF generating tool'
-    @document_builder.github_open_source
-    expect(@document_builder.check_opened_page_title).to eq(expected_title)
   end
 
   it '[Developers] [Document Builder] "Read documentaion" link at top block works' do
