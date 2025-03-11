@@ -46,7 +46,6 @@ module TestingSiteOnlyoffice
 
     def click_get_started_top
       get_started_top_element.click
-      SiteGetOnlyofficeDownloadDocBuilder.new(@instance)
     end
 
     def click_download_now_bottom
