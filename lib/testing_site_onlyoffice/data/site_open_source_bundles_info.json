@@ -4,7 +4,7 @@
     "download": "ONLYOFFICE_Workspace_Win-install.latest.exe"
   },
   "workspace_deb": {
-    "instruction": "Installing server version from RPM/DEB packages using the provided script - ONLYOFFICE",
+    "instruction": "Installing ONLYOFFICE Workspace Community from RPM/DEB packages using the provided script",
     "download": "workspace-install.sh"
   },
   "workspace_rpm": {
@@ -16,7 +16,7 @@
     "download": "workspace-install.sh"
   },
   "workspace_docker_compose": {
-    "instruction": "Installing ONLYOFFICE Workspace using Docker Compose - ONLYOFFICE",
+    "instruction": "Installing ONLYOFFICE Workspace Community using Docker Compose",
     "download": "GitHub - ONLYOFFICE/Docker-CommunityServer: Collaborative system for managing documents, projects, customer relations and emails in one place"
   },
   "workspace_digitalocean": {

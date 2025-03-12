@@ -7,13 +7,13 @@
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
     "windows_10_8_7_x86": {
-      "instruction": "How to install Desktop Editors for Windows to your computer? - ONLYOFFICE",
+      "instruction": "Installing Desktop Editors on Windows on your computer",
       "exe": "DesktopEditors_x86.exe",
       "msi": "DesktopEditors_x86.msi",
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
     "windows_xp": {
-      "instruction": "How to install Desktop Editors for Windows to your computer? - ONLYOFFICE",
+      "instruction": "Installing Desktop Editors on Windows on your computer",
       "download_x64": "DesktopEditors_x64_xp.exe",
       "download_x86": "DesktopEditors_x86_xp.exe",
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
@@ -25,32 +25,32 @@
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
     "macos_x86": {
-      "instruction": "How to install ONLYOFFICE Desktop Editors for Mac OS? - ONLYOFFICE",
+      "instruction": "Installing ONLYOFFICE Desktop Editors on macOS",
       "download": "v8/distrib/ONLYOFFICE.dmg",
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
     "debian_8": {
-      "instruction": "Installing ONLYOFFICE Desktop Editors to Debian, Ubuntu and derivatives - ONLYOFFICE",
+      "instruction": "Installing ONLYOFFICE Desktop Editors on Debian, Ubuntu and derivatives",
       "download": "onlyoffice-desktopeditors_amd64.deb",
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
     "centos": {
-      "instruction": "Installing ONLYOFFICE Desktop Editors to Red Hat, CentOS and derivatives - ONLYOFFICE",
+      "instruction": "Installing ONLYOFFICE Desktop Editors on Red Hat, CentOS and derivatives",
       "download": "onlyoffice-desktopeditors.x86_64.rpm",
       "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
     },
     "snap": {
-      "instruction": "How to install Desktop Editors from snap package? - ONLYOFFICE",
+      "instruction": "Installing Desktop Editors from snap package",
       "download": "Install ONLYOFFICE Desktop Editors on Linux | Snap Store",
       "github": "GitHub - ONLYOFFICE/snap-desktopeditors: The ONLYOFFICE Desktop Editors snap package for the snap package system"
     },
     "flatpak": {
-      "instruction": "How to install ONLYOFFICE Desktop Editors for Linux to your computer using Flatpak? - ONLYOFFICE",
+      "instruction": "Installing ONLYOFFICE Desktop Editors on Linux on your computer using Flatpak",
       "download": "Install ONLYOFFICE Desktop Editors on Linux | Flathub",
       "github": "GitHub - flathub/org.onlyoffice.desktopeditors"
     },
     "appimage": {
-      "instruction": "Running ONLYOFFICE Desktop Editors via AppImage - ONLYOFFICE",
+      "instruction": "Running ONLYOFFICE Desktop Editors via AppImage",
       "download": "DesktopEditors-x86_64.AppImage",
       "github": "GitHub - ONLYOFFICE/appimage-desktopeditors: Portable version of ONLYOFFICE Desktop Editors"
     },
