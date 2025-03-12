@@ -1,6 +1,6 @@
 {
   "workspace_windows": {
-    "instruction": "Installing ONLYOFFICE Workspace for Windows on a local server - ONLYOFFICE",
+    "instruction": "Installing ONLYOFFICE Workspace Community on Windows on a local server",
     "download": "ONLYOFFICE_Workspace_Win-install.latest.exe"
   },
   "workspace_deb": {
@@ -8,11 +8,11 @@
     "download": "workspace-install.sh"
   },
   "workspace_rpm": {
-    "instruction": "Installing server version from RPM/DEB packages using the provided script - ONLYOFFICE",
+    "instruction": "Installing ONLYOFFICE Workspace Community from RPM/DEB packages using the provided script",
     "download": "workspace-install.sh"
   },
   "workspace_docker_image": {
-    "instruction": "Installing server version using the provided script - ONLYOFFICE",
+    "instruction": "Installing ONLYOFFICE Workspace Community using the provided script",
     "download": "workspace-install.sh"
   },
   "workspace_docker_compose": {
@@ -20,7 +20,7 @@
     "download": "GitHub - ONLYOFFICE/Docker-CommunityServer: Collaborative system for managing documents, projects, customer relations and emails in one place"
   },
   "workspace_digitalocean": {
-    "instruction": "Deploying ONLYOFFICE Workspace in DigitalOcean - ONLYOFFICE",
+    "instruction": "Deploying ONLYOFFICE Workspace Community in DigitalOcean",
     "download": "ONLYOFFICE Workspace | DigitalOcean Marketplace 1-Click App"
   },
   "owncloud_docker_compose": {
