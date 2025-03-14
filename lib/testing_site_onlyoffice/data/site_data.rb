@@ -39,7 +39,7 @@ module TestingSiteOnlyoffice
     end
 
     def self.site_languages
-      %w[en-US ru-RU fr-FR de-DE es-ES pt-BR it-IT cs-CZ nl-NL ja-JP zh-CN]
+      %w[en-US ru-RU fr-FR de-DE es-ES pt-BR it-IT cs-CZ nl-NL ja-JP zh-CN sr-Latn-RS]
     end
 
     def self.european_languages
