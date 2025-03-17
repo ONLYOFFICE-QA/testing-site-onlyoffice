@@ -64,6 +64,7 @@ module TestingSiteOnlyoffice
 
     def check_opened_page_title(switch_tab: true)
       @instance.webdriver.choose_tab(2) if switch_tab
+      sleep 3
       @instance.webdriver.title_of_current_tab
     end
 
