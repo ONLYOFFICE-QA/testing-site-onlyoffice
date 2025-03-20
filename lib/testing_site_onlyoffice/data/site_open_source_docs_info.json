@@ -1,21 +1,21 @@
 {
   "docker": {
-    "instruction": "Installing ONLYOFFICE Docs for Docker on a local server - ONLYOFFICE",
+    "instruction": "Installing ONLYOFFICE Docs for Docker on a local server",
     "download": "Installing ONLYOFFICE Docs for Docker on a local server",
     "github": "GitHub - ONLYOFFICE/Docker-DocumentServer: ONLYOFFICE Document Server is an online office suite comprising viewers and editors for texts, spreadsheets and presentations, fully compatible with Office Open XML formats: .docx, .xlsx, .pptx and enabling collaborative editing in real time."
   },
   "ubuntu": {
-    "instruction": "Installing ONLYOFFICE Docs for Debian, Ubuntu, and derivatives - ONLYOFFICE",
+    "instruction": "Installing ONLYOFFICE Docs for Debian, Ubuntu, and derivatives",
     "download": "Installing ONLYOFFICE Docs for Debian, Ubuntu, and derivatives",
     "github": "GitHub - ONLYOFFICE/DocumentServer: ONLYOFFICE Docs is a free collaborative online office suite comprising viewers and editors for texts, spreadsheets and presentations, forms and PDF, fully compatible with Office Open XML formats: .docx, .xlsx, .pptx and enabling collaborative editing in real time."
   },
   "centos": {
-    "instruction": "Installing ONLYOFFICE Docs for CentOS and derivatives - ONLYOFFICE",
+    "instruction": "Installing ONLYOFFICE Docs for CentOS and derivatives",
     "download": "Installing ONLYOFFICE Docs for CentOS and derivatives",
     "github": "GitHub - ONLYOFFICE/DocumentServer: ONLYOFFICE Docs is a free collaborative online office suite comprising viewers and editors for texts, spreadsheets and presentations, forms and PDF, fully compatible with Office Open XML formats: .docx, .xlsx, .pptx and enabling collaborative editing in real time."
   },
   "windows": {
-    "instruction": "Installing ONLYOFFICE Docs for Windows on a local server - ONLYOFFICE",
+    "instruction": "Installing ONLYOFFICE Docs for Windows on a local server",
     "download": "onlyoffice-documentserver.exe",
     "github": "GitHub - ONLYOFFICE/DocumentServer: ONLYOFFICE Docs is a free collaborative online office suite comprising viewers and editors for texts, spreadsheets and presentations, forms and PDF, fully compatible with Office Open XML formats: .docx, .xlsx, .pptx and enabling collaborative editing in real time."
   },
@@ -25,7 +25,7 @@
     "github": "GitHub - ONLYOFFICE/snap-documentserver: The ONLYOFFICE Document Server snap package for the snap package system"
   },
   "UCS": {
-    "instruction": "Integration. Getting Started. Nextcloud - ONLYOFFICE",
+    "instruction": "Integration Guides ownCloud - ONLYOFFICE",
     "download": "ONLYOFFICE Docs - Univention App Center"
   },
   "digitalocean": {
@@ -33,7 +33,7 @@
     "download": "ONLYOFFICE Docs | DigitalOcean Marketplace 1-Click App"
   },
   "cloudron": {
-    "instruction": "Deploying ONLYOFFICE Docs in Cloudron - ONLYOFFICE",
+    "instruction": "Deploying ONLYOFFICE Docs in Cloudron",
     "download": "ONLYOFFICE Docs on Cloudron"
   },
   "vultr": {
