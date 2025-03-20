@@ -40,7 +40,7 @@ module TestingSiteOnlyoffice
     DOCSPACE_API_TITLE = 'ONLYOFFICE'
 
     # Helpcenter - accessibility
-    HELPCENTER_ONLYOFFICE_ACCESSIBILITY = 'Accessibility of ONLYOFFICE editors - ONLYOFFICE'
+    HELPCENTER_ONLYOFFICE_ACCESSIBILITY = 'Accessibility of ONLYOFFICE editors'
 
     # Onlyoffice on marketplaces
     AWS_MARKETPLACE_TITLE = 'AWS Marketplace: Ascensio Systems Inc'
