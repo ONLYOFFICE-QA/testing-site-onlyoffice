@@ -28,39 +28,39 @@
     "download": "GitHub - ONLYOFFICE/docker-onlyoffice-owncloud"
   },
   "owncloud_vmware": {
-    "instruction": "Integration. Getting Started. OwnCloud - ONLYOFFICE",
+    "instruction": "Integration Guides ownCloud - ONLYOFFICE",
     "download": "Univention-App-onlyoffice-ds-owncloud-vmware.zip"
   },
   "owncloud_vmware_esxi": {
-    "instruction": "Integration. Getting Started. OwnCloud - ONLYOFFICE",
+    "instruction": "Integration Guides ownCloud - ONLYOFFICE",
     "download": "Univention-App-onlyoffice-ds-owncloud-ESX.ova"
   },
   "owncloud_virtualbox": {
-    "instruction": "Integration. Getting Started. OwnCloud - ONLYOFFICE",
+    "instruction": "Integration Guides ownCloud - ONLYOFFICE",
     "download": "Univention-App-onlyoffice-ds-owncloud-virtualbox.ova"
   },
   "owncloud_kvm": {
-    "instruction": "Integration. Getting Started. OwnCloud - ONLYOFFICE",
+    "instruction": "Integration Guides ownCloud - ONLYOFFICE",
     "download": "Univention-App-onlyoffice-ds-owncloud-KVM.qcow2"
   },
   "nextcloud_docker_compose": {
-    "instruction": "Integration. Getting Started. Nextcloud - ONLYOFFICE",
+    "instruction": "Integration Guides ownCloud - ONLYOFFICE",
     "download": "GitHub - ONLYOFFICE/docker-onlyoffice-nextcloud"
   },
   "nextcloud_vmware": {
-    "instruction": "Integration. Getting Started. Nextcloud - ONLYOFFICE",
+    "instruction": "Integration Guides - Nextcloud - ONLYOFFICE",
     "download": "Univention-App-onlyoffice-ds-nextcloud-vmware.zip"
   },
   "nextcloud_vmware_esxi": {
-    "instruction": "Integration. Getting Started. Nextcloud - ONLYOFFICE",
+    "instruction": "Integration Guides - Nextcloud - ONLYOFFICE",
     "download": "Univention-App-onlyoffice-ds-nextcloud-ESX.ova"
   },
   "nextcloud_virtualbox": {
-    "instruction": "Integration. Getting Started. Nextcloud - ONLYOFFICE",
+    "instruction": "Integration Guides - Nextcloud - ONLYOFFICE",
     "download": "Univention-App-onlyoffice-ds-nextcloud-virtualbox.ova"
   },
   "nextcloud_kvm": {
-    "instruction": "Integration. Getting Started. Nextcloud - ONLYOFFICE",
+    "instruction": "Integration Guides - Nextcloud - ONLYOFFICE",
     "download": "Univention-App-onlyoffice-ds-nextcloud-KVM.qcow2"
   }
 }
