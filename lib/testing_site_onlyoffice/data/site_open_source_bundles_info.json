@@ -44,7 +44,7 @@
     "download": "Univention-App-onlyoffice-ds-owncloud-KVM.qcow2"
   },
   "nextcloud_docker_compose": {
-    "instruction": "Integration Guides ownCloud - ONLYOFFICE",
+    "instruction": "Integration Guides - Nextcloud - ONLYOFFICE",
     "download": "GitHub - ONLYOFFICE/docker-onlyoffice-nextcloud"
   },
   "nextcloud_vmware": {

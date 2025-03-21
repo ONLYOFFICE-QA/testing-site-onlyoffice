@@ -35,7 +35,7 @@ describe 'Developers - All Developer Solutions' do
 
   it '[Developers] [All Developer Solutions] Docbuilder "Check examples" link works' do
     @all_developer_solutions.click_docbuilder_read_documentaion
-    expected_title = 'ONLYOFFICE'
+    expected_title = 'Overview | ONLYOFFICE'
     expect(@all_developer_solutions.check_opened_page_title).to eq(expected_title)
   end
 

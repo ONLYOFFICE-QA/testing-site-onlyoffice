@@ -219,7 +219,7 @@ describe 'SiteHourlyCheck' do
         end
       end
 
-      describe 'document builder' do
+      describe 'document builder', skip: 'Download builder page now redirects to /download-developer.aspx' do
         let(:other_products_document_builder_page) { @site_home_page.open_download_docbuilder_page }
 
         it_behaves_like 'document_builder_download',
