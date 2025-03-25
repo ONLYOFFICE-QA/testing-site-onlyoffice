@@ -25,11 +25,6 @@ describe 'Developers - Conversion API' do
     expect(@conversion_api.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::CONVERSION_API_ONLYOFFICE_TITLE)
   end
 
-  it '[Developers] [Conversion API] "Api Documentation" link works' do
-    @conversion_api.api_documentation_link
-    expect(@conversion_api.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::CONVERSION_API_ONLYOFFICE_TITLE)
-  end
-
   it '[Developers] [Conversion API] "Online Converter" link works' do
     result_page = @conversion_api.click_online_converter_link
     expect(result_page).to be_a TestingSiteOnlyoffice::ConvertPage

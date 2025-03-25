@@ -38,7 +38,7 @@ module TestingSiteOnlyoffice
     end
 
     def click_button_external_access
-      xpath = "//a[contains(@href,'api.onlyoffice.com/docs/docs-api/get-started/external-access-to-the-document-editing')]"
+      xpath = "//a[contains(@class, 'sfb_link') and contains(@href, '/automation-api.aspx')]"
       @instance.webdriver.move_to_element_by_locator(xpath)
       @instance.webdriver.click_on_locator(xpath)
     end

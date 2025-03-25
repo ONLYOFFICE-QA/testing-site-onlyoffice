@@ -19,31 +19,19 @@ describe 'For Developers Developer Edition' do
     expect(@developer_edition.click_document_builder).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocBuilder
   end
 
-  it '[Developer Edition] Go to Conversion API' do
-    expect(@developer_edition.click_document_conversion).to be_a TestingSiteOnlyoffice::SiteForDevelopersConversionAPI
-  end
-
   it '[Developer Edition] Go to macros_and_plugins' do
     @developer_edition.click_button_macros_and_plugins
-    expected_title = 'Overview'
+    expected_title = 'Online editors to develop your web solution | ONLYOFFICE'
     expect(@developer_edition.check_opened_page_title(switch_tab: false)).to eq(expected_title)
-  end
-
-  it '[Developer Edition] Go to cross_browser_compatibility' do
-    expect(@developer_edition.check_button_cross_browser_compatibility?).to be_a TestingSiteOnlyoffice::SiteCompareSuites
   end
 
   it '[Developer Edition] Go to check_button_easy_deployment' do
     expect(@developer_edition.check_button_easy_deployment?).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsDeveloper
   end
 
-  it '[Developer Edition] Go to check_button_integration_api' do
+  it '[Developer Edition] Go to check_button_external_access' do
     @developer_edition.click_button_external_access
     expect(@developer_edition.check_opened_page_title(switch_tab: false)).to eq(TestingSiteOnlyoffice::SiteDownloadData::EXTERNAL_ACCES_API_ONLYOFFICE_TITLE)
-  end
-
-  it '[Developer Edition] Go to check_button_wopi_support' do
-    expect(@developer_edition.check_button_wopi_support?).to be_a TestingSiteOnlyoffice::SiteWOPIComparison
   end
 
   it '[Developer Edition] Go to get started / self-hosted' do

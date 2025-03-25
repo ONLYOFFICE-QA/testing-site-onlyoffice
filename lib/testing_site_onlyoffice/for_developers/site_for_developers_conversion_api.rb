@@ -8,7 +8,7 @@ module TestingSiteOnlyoffice
     include SiteDownloadHelper
 
     link(:get_started, xpath: "//a[contains(@class, 'button') and contains(@href, 'api.onlyoffice.com')]")
-    link(:formats_link, xpath: "//a[contains(@href, '/additional-api/conversion-api/#text-document-file-formats')]")
+    link(:formats_link, xpath: "//a[contains(@href, '/additional-api/conversion-api/conversion-table')]")
     link(:api_documentation_link, xpath: "(//a[contains(@href, '/docs/docs-api/additional-api/conversion-api/')])[2]")
     link(:online_converter_link, xpath: "(//a[contains(@href, '/online-document-converter.aspx')])[2]")
     link(:security_measures_link, xpath: "(//div/a[contains(@href, '/security.aspx')])[2]")
