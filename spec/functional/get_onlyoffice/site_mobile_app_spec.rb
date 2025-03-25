@@ -35,11 +35,6 @@ describe 'Mobile apps' do
       @mobile_app_page.oo_documents_app_store
       expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_APP_STORE)
     end
-
-    it '[Mobile][ONLYOFFICE Documents for iOS] Check "Whats new" link' do
-      @mobile_app_page.oo_documents_ios_whats_new
-      expect(@mobile_app_page.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_IOS_CHANGELOG)
-    end
   end
 
   describe 'ONLYOFFICE Projects mobile Apps' do

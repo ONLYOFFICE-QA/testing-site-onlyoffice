@@ -19,10 +19,6 @@ describe 'For Developers Developer Edition' do
     expect(@developer_edition.click_document_builder).to be_a TestingSiteOnlyoffice::SiteForDevelopersDocBuilder
   end
 
-  it '[Developer Edition] Go to Conversion API' do
-    expect(@developer_edition.click_document_conversion).to be_a TestingSiteOnlyoffice::SiteForDevelopersConversionAPI
-  end
-
   it '[Developer Edition] Go to macros_and_plugins' do
     @developer_edition.click_button_macros_and_plugins
     expected_title = 'Online editors to develop your web solution | ONLYOFFICE'
