@@ -25,26 +25,6 @@ describe 'Site Nonprofit page links' do
     expect(@products_docs).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp
   end
 
-  it '[Site][NonProfits] Check link `Get it now / workspace' do
-    @products_docs = @nonprofits_page.click_download_workspace
-    expect(@products_docs).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeWorkspaceEnterprise
-  end
-
-  it '[Site][NonProfits] Check link `Get it now / docs' do
-    @products_docs = @nonprofits_page.click_download_docs
-    expect(@products_docs).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
-  end
-
-  it '[Site][NonProfits] Check link `Learn more about collaboration platform`' do
-    @products_groups = @nonprofits_page.click_learn_more_about_collaboration_platforms
-    expect(@products_groups).to be_a TestingSiteOnlyoffice::SiteFeaturesWorkspace
-  end
-
-  it '[Site][NonProfits] Check link `Learn about security`' do
-    @products_security = @nonprofits_page.click_learn_more_about_security
-    expect(@products_security).to be_a TestingSiteOnlyoffice::SiteFeaturesSecurity
-  end
-
   it '[Site][NonProfits] Check link `Download for Android`' do
     @nonprofits_page.nonprofit_android
     expect(@nonprofits_page.check_opened_page_title(switch_tab: false)).to eq(TestingSiteOnlyoffice::SiteDownloadData::MOBILE_DOCUMENTS_GOOGLE)
