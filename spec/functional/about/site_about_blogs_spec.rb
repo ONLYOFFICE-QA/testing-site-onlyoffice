@@ -13,7 +13,8 @@ describe 'About blogs' do
     test_manager.add_result(example, @test)
     @test.webdriver.quit
   end
-    it "[About] Go to blog}" do
+
+    it '[About] Go to blog}' do
       about_blogs_page = @site_home_page.click_link_on_toolbar(:about_blog)
       expect(about_blogs_page).to be_a TestingSiteOnlyoffice::SiteAboutBlog
     end
