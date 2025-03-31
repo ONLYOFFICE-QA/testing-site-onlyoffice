@@ -454,7 +454,7 @@ module TestingSiteOnlyoffice
       link = all_toolbar_links_and_classes_hash[section][:element]
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(link) }
       link.click
-      @instance.webdriver.switch_to_popup if %i[about_gift_shop about_help_center features_see_it_in_action features_oforms about_blog about_forum].include?(section)
+      @instance.webdriver.switch_to_popup if %i[about_gift_shop about_help_center features_see_it_in_action features_oforms about_blog about_forum about_translators].include?(section)
       all_toolbar_links_and_classes_hash[section][:class].new(@instance)
     end
   end
