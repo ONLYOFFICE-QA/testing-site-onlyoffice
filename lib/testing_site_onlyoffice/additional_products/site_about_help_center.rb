@@ -10,7 +10,7 @@ module TestingSiteOnlyoffice
 
     include PageObject
 
-    div(:headers_menu, xpath: '//div[@class="left-menu-wrapper"]')
+    div(:headers_menu, xpath: '//div[@class="info-content-header"]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
