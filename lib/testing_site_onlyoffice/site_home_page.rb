@@ -222,5 +222,11 @@ module TestingSiteOnlyoffice
     def page_body
       @instance.webdriver.get_text('//body')
     end
+
+    def append_captcha_bypass_param(param = '4testing=nctautotest-ignore-captcha')
+      current_url = @instance.webdriver.current_url
+      new_url = current_url.include?('?') ? "#{current_url}&#{param}" : "#{current_url}?#{param}"
+      @instance.webdriver.open(new_url)
+    end
   end
 end
