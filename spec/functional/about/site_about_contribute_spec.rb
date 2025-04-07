@@ -30,7 +30,7 @@ describe 'About contribute' do
     expect(@about_contribute_page.check_title_documentation_community_server).to be true
   end
 
-  it '[About contribute] Go to documentation plagins' do
+  it '[About contribute] Go to documentation plugins' do
     @about_contribute_page.click_read_api_documentation(1)
     expect(@about_contribute_page.check_title_documentation_plagins).to be true
   end
