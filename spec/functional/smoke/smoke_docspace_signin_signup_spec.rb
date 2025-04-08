@@ -47,6 +47,7 @@ describe 'Smoke site tests for sign in and sign up Docspace' do
     end
 
     it '[Site][Docspace Sign in] Successful sign up and log in to DocSpace' do
+      @site_home_page.append_captcha_bypass_param
       skip 'Cannot test email notifications in production' if config.server.include?('.com')
       @site_home_page.append_url_param
       result_page = @docspace_sign_up.complete_registration_form
