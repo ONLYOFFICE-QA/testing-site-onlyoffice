@@ -11,6 +11,9 @@
   "chess": {
     "get_it_now_title": "Chess | ONLYOFFICE"
   },
+  "cvbuilder": {
+    "get_it_now_title": "CVbuilder | ONLYOFFICE"
+  },
   "deepl": {
     "get_it_now_title": "DeepL | ONLYOFFICE"
   },
@@ -35,6 +38,9 @@
   "html": {
     "get_it_now_title": "HTML | ONLYOFFICE"
   },
+  "idphoto": {
+    "get_it_now_title": "ID Photo Converter | ONLYOFFICE"
+  },
   "jitsi": {
     "get_it_now_title": "Jitsi | ONLYOFFICE"
   },
@@ -47,11 +53,20 @@
   "markdown": {
     "get_it_now_title": "Markdown | ONLYOFFICE"
   },
+  "mathpix": {
+    "get_it_now_title": "Mathpix | ONLYOFFICE"
+  },
+  "mathtype": {
+    "get_it_now_title": "MathType| ONLYOFFICE"
+  },
   "mendeley": {
     "get_it_now_title": "Mendeley | ONLYOFFICE"
   },
   "ocr": {
     "get_it_now_title": "OCR | ONLYOFFICE"
+  },
+  "onlydraw": {
+    "get_it_now_title": "OnlyDraw | ONLYOFFICE"
   },
   "pdf-converter": {
     "get_it_now_title": "PDF Converter | ONLYOFFICE"
@@ -61,6 +76,9 @@
   },
   "pixabay": {
     "get_it_now_title": "Pixabay | ONLYOFFICE"
+  },
+  "pomodoro": {
+    "get_it_now_title": "Pomodoro | ONLYOFFICE"
   },
   "insertQR": {
     "get_it_now_title": "QR Code Generator | ONLYOFFICE"
