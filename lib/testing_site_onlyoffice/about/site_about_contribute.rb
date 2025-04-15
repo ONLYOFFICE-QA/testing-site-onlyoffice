@@ -34,7 +34,7 @@ module TestingSiteOnlyoffice
     end
 
     def check_title_documentation_github
-      @instance.webdriver.title_of_current_tab.include?('ONLYOFFICE · GitHub')
+      @instance.webdriver.wait_until { @instance.webdriver.title_of_current_tab.include?('ONLYOFFICE · GitHub') }
     end
 
     def check_title_documentation_oforms
@@ -42,11 +42,11 @@ module TestingSiteOnlyoffice
     end
 
     def check_title_documentation_community_server
-      @instance.webdriver.title_of_current_tab.include?('Basic concepts')
+      @instance.webdriver.wait_until { @instance.webdriver.title_of_current_tab.include?('Basic concepts') }
     end
 
     def check_title_documentation_plagins
-      @instance.webdriver.title_of_current_tab.include?('Overview')
+      @instance.webdriver.wait_until { @instance.webdriver.title_of_current_tab.include?('Overview') }
     end
 
     def check_title_documentation_connectors
