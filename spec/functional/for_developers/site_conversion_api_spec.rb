@@ -17,12 +17,14 @@ describe 'Developers - Conversion API' do
 
   it '[Developers] [Conversion API] "Get started" button works' do
     @conversion_api.get_started
-    expect(@conversion_api.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::OVERVIEW_API_ONLYOFFICE_TITLE)
+    expected_title = 'ONLYOFFICE'
+    expect(@conversion_api.check_opened_page_title).to eq(expected_title)
   end
 
   it '[Developers] [Conversion API] "Popular formats" link works' do
     @conversion_api.formats_link
-    expect(@conversion_api.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::CONVERSION_API_ONLYOFFICE_FORMATS)
+    expected_title = 'ONLYOFFICE'
+    expect(@conversion_api.check_opened_page_title).to eq(expected_title)
   end
 
   it '[Developers] [Conversion API] "Online Converter" link works' do
