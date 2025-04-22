@@ -39,6 +39,7 @@ module TestingSiteOnlyoffice
     CONVERSION_API_ONLYOFFICE_TITLE = 'Conversion API'
     CONVERSION_API_ONLYOFFICE_FORMATS = 'Conversion tables | ONLYOFFICE'
     DOCSPACE_API_TITLE = 'ONLYOFFICE API | ONLYOFFICE'
+    ONLYOFFICE_API_TITLE = 'ONLYOFFICE'
 
     # Helpcenter - accessibility
     HELPCENTER_ONLYOFFICE_ACCESSIBILITY = 'Accessibility of ONLYOFFICE editors'
