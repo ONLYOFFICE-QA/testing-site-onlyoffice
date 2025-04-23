@@ -55,7 +55,7 @@
     "instruction": "Integration Guides - SharePoint - ONLYOFFICE"
   },
   "redmine": {
-    "get_it_now": "GitHub - ONLYOFFICE/onlyoffice-redmine: The app which enables the users to edit office documents from Redmine using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Redmine",
+    "get_it_now": "GitHub - ONLYOFFICE/onlyoffice-redmine: The plugin which enables the users to edit office documents from Redmine using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Redmine",
     "instruction": "Integration Guides - Redmine - ONLYOFFICE"
   },
   "strapi": {
