@@ -55,7 +55,7 @@ describe 'Developers - Document Builder' do
   end
 
   it '[Developers] [Document Builder] "Read documentaion" link at bottom block works' do
-    expected_title = 'Overview | ONLYOFFICE'
+    expected_title = 'ONLYOFFICE'
     @document_builder.read_documentaion_bottom
     expect(@document_builder.check_opened_page_title).to eq(expected_title)
   end
