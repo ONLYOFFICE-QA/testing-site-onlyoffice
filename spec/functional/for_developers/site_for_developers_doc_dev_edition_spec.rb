@@ -31,7 +31,7 @@ describe 'For Developers Developer Edition' do
 
   it '[Developer Edition] Go to check_button_external_access' do
     @developer_edition.click_button_external_access
-    expect(@developer_edition.check_opened_page_title(switch_tab: false)).to eq(TestingSiteOnlyoffice::SiteDownloadData::EXTERNAL_ACCES_API_ONLYOFFICE_TITLE)
+    expect(@developer_edition.check_opened_page_title(switch_tab: false)).to eq(TestingSiteOnlyoffice::SiteDownloadData::AUTOMATION_API_ONLYOFFICE_TITLE)
   end
 
   it '[Developer Edition] Go to get started / self-hosted' do
