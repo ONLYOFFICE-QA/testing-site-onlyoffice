@@ -35,6 +35,7 @@ module TestingSiteOnlyoffice
 
     # Onlyoffice API
     EXTERNAL_ACCES_API_ONLYOFFICE_TITLE = 'External access to the document editing'
+    AUTOMATION_API_ONLYOFFICE_TITLE = 'Automation API | ONLYOFFICE'
     OVERVIEW_API_ONLYOFFICE_TITLE = 'Overview | ONLYOFFICE'
     CONVERSION_API_ONLYOFFICE_TITLE = 'Conversion API'
     CONVERSION_API_ONLYOFFICE_FORMATS = 'Conversion tables | ONLYOFFICE'
