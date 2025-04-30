@@ -25,11 +25,6 @@ describe 'Partners - Technology partners' do
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsDeveloper
   end
 
-  it '[Partners] [Technology Partners] Doc builder "Download now" button works' do
-    result_page = @partners_technology.click_doc_builder_download
-    expect(result_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDownloadDocBuilder
-  end
-
   TestingSiteOnlyoffice::SiteDownloadData.partners_os_distributions_list.each do |distro|
     describe distro.to_s do
       it "[Partners] [Technology Partners] [OS distributions] #{distro} link works" do

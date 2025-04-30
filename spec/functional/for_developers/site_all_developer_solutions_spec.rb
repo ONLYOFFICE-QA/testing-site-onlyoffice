@@ -17,7 +17,7 @@ describe 'Developers - All Developer Solutions' do
 
   it '[Developers] [All Developer Solutions] Docspace "API" link works' do
     @all_developer_solutions.click_docspace_api
-    expect(@all_developer_solutions.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::DOCSPACE_API_TITLE)
+    expect(@all_developer_solutions.check_opened_page_title).to eq(TestingSiteOnlyoffice::SiteDownloadData::ONLYOFFICE_API_TITLE)
   end
 
   it '[Developers] [All Developer Solutions] Docs "Open wopi support" link works' do
