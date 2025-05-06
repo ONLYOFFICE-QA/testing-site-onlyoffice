@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe 'Pricing Get a quote notification email' do
+describe 'Pricing Get a quote notification email', skip: 'mail sever issues' do
   test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
 
   before do
