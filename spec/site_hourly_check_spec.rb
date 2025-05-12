@@ -141,7 +141,7 @@ describe 'SiteHourlyCheck' do
       describe 'download onlyoffice docs /download-docs.aspx' do
         let(:onlyoffice_docs_enterprise_page) { @site_home_page.click_link_on_toolbar(:download_docs_enterprise) }
 
-        describe 'enterprise' do
+        describe 'enterprise', skip: 'due to hcaptcha update' do
           it_behaves_like 'commercial_installer_download', 'Docs_Enterprise',
                           TestingSiteOnlyoffice::SiteDownloadData.commercial_enterprise_docs_list_type do
             let(:installers_download_page) { onlyoffice_docs_enterprise_page }
