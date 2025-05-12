@@ -39,11 +39,6 @@ describe 'Document Builder download' do
     expect(download_workspace_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeWorkspaceEnterprise
   end
 
-  it '[Site][HomeUse]Button "Learn more" works for self-hosted productivity apps' do
-    product_workspace_page = @home_use_page.click_learn_more_hosted_productivity_apps
-    expect(product_workspace_page).to be_a TestingSiteOnlyoffice::SiteFeaturesWorkspace
-  end
-
   it '[Site][HomeUse]Button "Create online office" works' do
     personal_page = @home_use_page.open_docspace_registration
     expect(personal_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp

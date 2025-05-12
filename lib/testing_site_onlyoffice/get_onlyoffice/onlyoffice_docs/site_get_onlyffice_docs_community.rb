@@ -51,12 +51,12 @@ module TestingSiteOnlyoffice
     end
 
     def owncloud_bundles_block_number
-      bundle_block_xpath = "(//div[@class='dwn-mp-block'])[4]/div[@class='dwn-mp-item']"
+      bundle_block_xpath = "(//div[@class='dwn-mp-block'])[3]/div[@class='dwn-mp-item']"
       @instance.webdriver.get_element_count(bundle_block_xpath)
     end
 
     def nextcloud_bundles_block_number
-      bundle_block_xpath = "(//div[@class='dwn-mp-block'])[5]/div[@class='dwn-mp-item']"
+      bundle_block_xpath = "(//div[@class='dwn-mp-block'])[4]/div[@class='dwn-mp-item']"
       @instance.webdriver.get_element_count(bundle_block_xpath)
     end
   end
