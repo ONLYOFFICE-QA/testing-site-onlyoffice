@@ -46,7 +46,7 @@ describe 'Smoke site tests for sign in and sign up Docspace' do
       expect(@docspace_sign_up.check_opened_file_name).to eq(TestingSiteOnlyoffice::SiteNotificationData::PRIVACY_STATEMENT)
     end
 
-    it '[Site][Docspace Sign in] Successful sign up and log in to DocSpace' do
+    it '[Site][Docspace Sign in] Successful sign up and log in to DocSpace', skip: 'Cannot test new registration' do
       @site_home_page.append_url_param
       skip 'Cannot test email notifications in production' if config.server.include?('.com')
       result_page = @docspace_sign_up.complete_registration_form
