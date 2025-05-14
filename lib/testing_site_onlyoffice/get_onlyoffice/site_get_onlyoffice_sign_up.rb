@@ -46,7 +46,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(first_name_element)
+        @instance.webdriver.element_present?(email_element)
       end
     end
 
