@@ -59,6 +59,7 @@ module TestingSiteOnlyoffice
 
     def complete_email_field
       self.email = 'partners@qamail.teamlab.info'
+      # click on portal field to activate submit button
       aws_region_element.click
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(submit_button_element) }
       @instance.webdriver.click_on_locator(submit_button_element)
