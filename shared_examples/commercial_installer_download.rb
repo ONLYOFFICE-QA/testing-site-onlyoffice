@@ -40,7 +40,6 @@ shared_examples_for 'commercial_installer_download' do |product, installers_list
       end
 
       it "[Site][#{product}]instruction link for `#{installer}` alive" do
-        skip 'Skipping instruction link temporarily'
         installers_download_page.click_constructor_link(@current_installation.instruction_xpath)
         instruction_title = TestingSiteOnlyoffice::SiteDownloadData.commercial_info[product.downcase][installer.to_s]['instruction']
         expect(installers_download_page.check_opened_page_title).to eq(instruction_title)
@@ -55,7 +54,6 @@ shared_examples_for 'commercial_installer_download' do |product, installers_list
       end
 
       it "[Site][#{product}] version and realise date is not empty for `#{installer}`" do
-        skip 'Skipping version and release date checks temporarily'
         expect(installers_download_page.get_installer_release_date_or_version(@current_installation.release_date_xpath)).not_to be_empty
         expect(installers_download_page.get_installer_release_date_or_version(@current_installation.version_xpath)).not_to be_empty
       end
