@@ -1,19 +1,19 @@
 {
   "workspace_enterprise": {
     "windows": {
-      "instruction": "Installing ONLYOFFICE Workspace for Windows on a local server - ONLYOFFICE"
+      "instruction": "Installing ONLYOFFICE Workspace Enterprise for Windows on a local server"
     },
     "docker": {
-      "instruction": "Installing server version using the provided script - ONLYOFFICE"
+      "instruction": "Installing ONLYOFFICE Workspace Enterprise using the provided script"
     },
     "debian": {
-      "instruction": "Installing server version from RPM/DEB packages using the provided script - ONLYOFFICE"
+      "instruction": "Installing ONLYOFFICE Workspace Enterprise from RPM/DEB packages using the provided script"
     },
     "centos": {
-      "instruction": "Installing server version from RPM/DEB packages using the provided script - ONLYOFFICE"
+      "instruction": "Installing ONLYOFFICE Workspace Enterprise from RPM/DEB packages using the provided script"
     },
     "amazon_machine": {
-      "instruction": "Deploying ONLYOFFICE Workspace Enterprise Edition using AMI - ONLYOFFICE",
+      "instruction": "Deploying ONLYOFFICE Workspace Enterprise using AMI",
       "download": "AWS Marketplace: Ascensio Systems Inc"
     },
     "ovhcloud": {
@@ -25,10 +25,10 @@
       "instruction": "Installing ONLYOFFICE Docs Enterprise Edition for Docker on a local server"
     },
     "debian": {
-      "instruction": "Installing ONLYOFFICE Docs for Debian, Ubuntu, and derivatives - ONLYOFFICE"
+      "instruction": "Installing ONLYOFFICE Docs Enterprise Edition for Debian, Ubuntu, and derivatives"
     },
     "centos": {
-      "instruction": "Installing ONLYOFFICE Docs for CentOS and derivatives - ONLYOFFICE"
+      "instruction": "Installing ONLYOFFICE Docs Enterprise Edition for CentOS and derivatives"
     },
     "windows": {
       "instruction": "Installing ONLYOFFICE Docs Enterprise Edition for Windows on a local server"
@@ -43,23 +43,23 @@
   },
   "docs_developer": {
     "docker": {
-      "instruction": "Installing ONLYOFFICE Docs for Docker on a local server - ONLYOFFICE"
+      "instruction": "Installing ONLYOFFICE Docs for Docker on a local server"
     },
     "debian": {
-      "instruction": "Installing ONLYOFFICE Docs Enterprise Edition for Debian, Ubuntu, and derivatives"
+      "instruction": "Installing ONLYOFFICE Docs Developer Edition for Debian, Ubuntu, and derivatives"
     },
     "centos": {
-      "instruction": "Installing ONLYOFFICE Docs Enterprise Edition for CentOS and derivatives"
+      "instruction": "Installing ONLYOFFICE Docs Developer Edition for CentOS and derivatives"
     },
     "windows": {
-      "instruction": "Installing ONLYOFFICE Docs Enterprise Edition for Windows on a local server"
+      "instruction": "Installing ONLYOFFICE Docs Developer Edition for Windows on a local server"
     },
     "amazon_machine": {
-      "instruction": "Deploying ONLYOFFICE Docs Developer Edition using AMI - ONLYOFFICE",
+      "instruction": "Deploying ONLYOFFICE Docs Developer Edition using AMI",
       "download": "AWS Marketplace: Ascensio Systems Inc"
     },
     "alibaba_cloud": {
-      "instruction": "Deploying ONLYOFFICE Docs Developer Edition on Alibaba Cloud - ONLYOFFICE",
+      "instruction": "Deploying ONLYOFFICE Docs Developer Edition on Alibaba Cloud",
       "download": "Ascensio Systems Pte. Ltd - Alibaba Cloud"
     }
   }
