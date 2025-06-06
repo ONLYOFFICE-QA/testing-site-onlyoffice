@@ -17,6 +17,8 @@ module TestingSiteOnlyoffice
       @installer = installer.to_sym
       if installer == 'ovhcloud'
         @download_xpath = "//a[contains(@href, '#{installer}')]"
+        @version_xpath = "#{@download_xpath}/../../div/p[1]"
+        @release_date_xpath = "#{@download_xpath}/../../div/p[2]"
       else
         @download_xpath = "//a[contains(@id, '#{product}_for_#{installer}') and not(contains(@id, 'buy'))]"
         @buy_xpath = "#{@download_xpath}/../a[contains(@id, 'buy')]"
@@ -30,8 +32,6 @@ module TestingSiteOnlyoffice
           @release_date_xpath  = "#{@download_xpath}/../../div/p[2]"
         end
       end
-      # @version_xpath = "#{@download_xpath}/../../div/p[1]"
-      # @release_date_xpath = "#{@download_xpath}/../../div/p[2]"
       wait_to_load
     end
 
