@@ -17,8 +17,9 @@ module TestingSiteOnlyoffice
       @download_xpath_apple = "//a[contains(@id,'desktop_editors') and contains(@id,'#{@installer}') and contains(@id,'apple')]" if SiteDownloadData.desktop_download_list_type[:two_download_mac_files].include?(@installer.to_sym)
       @instruction_xpath = "(#{@download_xpath}/../..//a)[3]"
       @whats_new_link = "#{@download_xpath}/../..//a[contains(@href,'changelog')]"
-      @version_xpath = "#{@download_xpath}/../../div/p[1]"
-      @release_date_xpath = fetch_release_date
+      block_xpath = "#{@download_xpath}/ancestor::div[contains(@class, 'dwn-mp-item')]"
+      @version_xpath = "#{block_xpath}//p[contains(text(), 'Version')]"
+      @release_date_xpath = "#{block_xpath}//p[contains(text(), 'Release Date')]"
       @github_link = "(#{@download_xpath}/../..//a)[2]"
       wait_to_load
     end
