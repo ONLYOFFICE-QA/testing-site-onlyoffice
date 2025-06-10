@@ -13,7 +13,7 @@ module TestingSiteOnlyoffice
 
     link(:get_quote_button, xpath: "//div[@class='dep-part ee-production ee-2']//a[contains(@data-id, 'ie-gaq')]")
     link(:buy_now_button, xpath: '//a[@data-id = "ie-price-url-updated"]')
-    link(:free_button, xpath: "//a[@href='/download-developer.aspx?from=developer-edition-prices#docs-developer']")
+    link(:free_button, xpath: "//a[@href='/download-developer.aspx#docs-developer']")
     div(:add_num_connection, xpath: '//div[@class="num-connections"]//div[@class="connections_increase simcon_change"]')
     div(:num_connections, xpath: '//div[@class="dep-part ee-production ee-2"]//div[@data-id="ie-number-updated"]')
     div(:hosting_on_cloud, xpath: '//div[@data-id = "dd-cloud"]')
