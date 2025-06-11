@@ -91,5 +91,8 @@
   },
   "zapier": {
     "get_it_now": "ONLYOFFICE DocSpace Integrations | Connect Your Apps with Zapier"
+  },
+  "trello": {
+    "get_it_now": "GitHub - ONLYOFFICE/onlyoffice-trello: The Power-Up which enables the users to edit office documents from Trello using ONLYOFFICE Document Server, allows multiple users to collaborate in real time and to save back those changes to Trello"
   }
 }
