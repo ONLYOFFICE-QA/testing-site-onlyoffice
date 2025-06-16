@@ -4,13 +4,13 @@
       "instruction": "Installing Desktop Editors on Windows on your computer",
       "exe": "DesktopEditors_x64.exe",
       "msi": "DesktopEditors_x64.msi",
-      "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
+      "github": "GitHub - ONLYOFFICE/DesktopEditors: Open-source office suite pack that comprises all the tools you need to work with documents, spreadsheets, presentations, PDFs, and PDF forms on Windows, Linux, and macOS"
     },
     "windows_10_8_7_x86": {
       "instruction": "Installing Desktop Editors on Windows on your computer",
       "exe": "DesktopEditors_x86.exe",
       "msi": "DesktopEditors_x86.msi",
-      "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
+      "github": "GitHub - ONLYOFFICE/DesktopEditors: Open-source office suite pack that comprises all the tools you need to work with documents, spreadsheets, presentations, PDFs, and PDF forms on Windows, Linux, and macOS"
     },
     "windows_xp": {
       "instruction": "Installing Desktop Editors on Windows on your computer",
