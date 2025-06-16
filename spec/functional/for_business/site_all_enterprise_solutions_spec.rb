@@ -30,8 +30,8 @@ describe 'All enterprise solutions' do
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceMainPage
   end
 
-  it 'Docs "Try now" link works' do
-    result_page = @all_enterprise_solutions.click_docs_try_now
+  it '"Download desktop editors" link works' do
+    result_page = @all_enterprise_solutions.click_download_desktop
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteGetOnlyofficeDocsEnterprise
   end
 

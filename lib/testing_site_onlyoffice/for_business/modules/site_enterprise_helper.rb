@@ -18,9 +18,9 @@ module TestingSiteOnlyoffice
       SiteDocSpaceMainPage.new(@instance)
     end
 
-    def click_docs_try_now
-      docs_try_now_link_element.click
-      SiteGetOnlyofficeDocsEnterprise.new(@instance)
+    def click_download_desktop
+      docs_download_now_link_element.click
+      SiteGetOnlyofficeDesktopApps.new(@instance)
     end
 
     def click_docs_learn_more
