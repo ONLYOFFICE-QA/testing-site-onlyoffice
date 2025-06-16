@@ -7,7 +7,7 @@ require_relative '../../modules/site_block_constructor_helper'
 require_relative '../../../modules/site_toolbar'
 
 module TestingSiteOnlyoffice
-  # Download Desktop
+  # /download-desktop.aspx
   # https://user-images.githubusercontent.com/40513035/96171228-4aee2c80-0f2d-11eb-80f9-5be447890300.png
   class SiteGetOnlyofficeDesktopApps
     include PageObject

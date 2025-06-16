@@ -8,6 +8,7 @@ module TestingSiteOnlyoffice
     include SiteToolbar
 
     link(:forum_rules_link, xpath: '//a[@href = "/t/forum-rules/7"]')
+    element(:search, xpath: '//input[@id = "search-term"]')
 
     def initialize(instance)
       super(instance.webdriver.driver)
@@ -17,7 +18,7 @@ module TestingSiteOnlyoffice
 
     def wait_to_load
       @instance.webdriver.wait_until do
-        @instance.webdriver.element_present?(forum_rules_link_element)
+        @instance.webdriver.element_present?(search_element)
       end
     end
   end
