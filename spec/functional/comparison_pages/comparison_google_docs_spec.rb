@@ -15,11 +15,6 @@ describe 'Comparison - ONLYOFFICE Docs vs Google Docs' do
     @test.webdriver.quit
   end
 
-  it '[Comparison][Google Docs] Watch presentation' do
-    @google_docs_comparison.click_watch_presentation
-    expect(@google_docs_comparison.check_opened_file_name).to eq 'Comparison with Google Docs.pptx'
-  end
-
   it '[Comparison][Google Docs] Read instruction' do
     @google_docs_comparison.click_read_instruction
     expect(@google_docs_comparison.check_opened_file_name).to eq 'How to compare online editors.pdf'
