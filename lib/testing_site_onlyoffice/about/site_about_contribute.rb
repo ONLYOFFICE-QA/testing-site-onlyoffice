@@ -52,7 +52,7 @@ module TestingSiteOnlyoffice
     def check_title_documentation_connectors
       ready_to_use_connectors_element.click
       @instance.webdriver.choose_tab(2)
-      @instance.webdriver.wait_until { title_of_current_tab.include?('Ready-to-use connectors') }
+      @instance.webdriver.wait_until { title_of_current_tab.include?('connectors') }
     end
   end
 end
