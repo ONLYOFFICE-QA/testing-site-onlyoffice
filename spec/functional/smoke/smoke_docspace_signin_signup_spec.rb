@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
-docspace_client_email = TestingSiteOnlyoffice::SiteData::CLIENT_EMAIL
+docspace_email = TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL
 client_email_to_check = OnlyofficeIredmailHelper::IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL)
 
 describe 'Smoke site tests for sign in and sign up Docspace' do
@@ -26,7 +26,7 @@ describe 'Smoke site tests for sign in and sign up Docspace' do
     end
 
     it '[Site][Docspace Sign in] Restore password works' do
-      @docspace_sign_in.restore_password_from_sign_in(docspace_client_email)
+      @docspace_sign_in.restore_password_from_sign_in(docspace_email)
       expect(client_email_to_check.check_email_by_subject({ subject: 'ONLYOFFICE Password Reminder' }, 300, true)).to be true
     end
   end
