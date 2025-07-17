@@ -4,40 +4,40 @@
       "instruction": "Installing Desktop Editors on Windows on your computer",
       "exe": "DesktopEditors_x64.exe",
       "msi": "DesktopEditors_x64.msi",
-      "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
+      "github": "GitHub - ONLYOFFICE/DesktopEditors: Open-source office suite pack that comprises all the tools you need to work with documents, spreadsheets, presentations, PDFs, and PDF forms on Windows, Linux, and macOS"
     },
     "windows_10_8_7_x86": {
       "instruction": "Installing Desktop Editors on Windows on your computer",
       "exe": "DesktopEditors_x86.exe",
       "msi": "DesktopEditors_x86.msi",
-      "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
+      "github": "GitHub - ONLYOFFICE/DesktopEditors: Open-source office suite pack that comprises all the tools you need to work with documents, spreadsheets, presentations, PDFs, and PDF forms on Windows, Linux, and macOS"
     },
     "windows_xp": {
       "instruction": "Installing Desktop Editors on Windows on your computer",
       "download_x64": "DesktopEditors_x64_xp.exe",
       "download_x86": "DesktopEditors_x86_xp.exe",
-      "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
+      "github": "GitHub - ONLYOFFICE/DesktopEditors: Open-source office suite pack that comprises all the tools you need to work with documents, spreadsheets, presentations, PDFs, and PDF forms on Windows, Linux, and macOS"
     },
     "macos_10": {
       "instruction": "Installing ONLYOFFICE Desktop Editors on macOS",
       "download_intel": "/download/ONLYOFFICE-x86_64.dmg",
       "download_apple": "/latest/download/ONLYOFFICE-arm.dmg",
-      "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
+      "github": "GitHub - ONLYOFFICE/DesktopEditors: Open-source office suite pack that comprises all the tools you need to work with documents, spreadsheets, presentations, PDFs, and PDF forms on Windows, Linux, and macOS"
     },
     "macos_x86": {
       "instruction": "Installing ONLYOFFICE Desktop Editors on macOS",
       "download": "v8/distrib/ONLYOFFICE.dmg",
-      "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
+      "github": "GitHub - ONLYOFFICE/DesktopEditors: Open-source office suite pack that comprises all the tools you need to work with documents, spreadsheets, presentations, PDFs, and PDF forms on Windows, Linux, and macOS"
     },
     "debian_8": {
       "instruction": "Installing ONLYOFFICE Desktop Editors on Debian, Ubuntu and derivatives",
       "download": "onlyoffice-desktopeditors_amd64.deb",
-      "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
+      "github": "GitHub - ONLYOFFICE/DesktopEditors: Open-source office suite pack that comprises all the tools you need to work with documents, spreadsheets, presentations, PDFs, and PDF forms on Windows, Linux, and macOS"
     },
     "centos": {
       "instruction": "Installing ONLYOFFICE Desktop Editors on Red Hat, CentOS and derivatives",
       "download": "onlyoffice-desktopeditors.x86_64.rpm",
-      "github": "GitHub - ONLYOFFICE/DesktopEditors: An office suite that combines text, spreadsheet and presentation editors allowing to create, view and edit local documents"
+      "github": "GitHub - ONLYOFFICE/DesktopEditors: Open-source office suite pack that comprises all the tools you need to work with documents, spreadsheets, presentations, PDFs, and PDF forms on Windows, Linux, and macOS"
     },
     "snap": {
       "instruction": "Installing Desktop Editors from snap package",

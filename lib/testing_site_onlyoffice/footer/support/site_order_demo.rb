@@ -17,7 +17,7 @@ module TestingSiteOnlyoffice
     span(:onlyoffice_docs, xpath: '//input[@id="ONLYOFFICE_Docs"]/../span')
     span(:onlyoffice_docspace, xpath: '//input[@id="ONLYOFFICE_DocSpace"]/../span')
 
-    table(:select_time_field, xpath: '//table[@class= "timetable"]')
+    table(:select_time_field, xpath: '//table[contains(@class,"timetable")]')
     span(:time_zone, id: 'tmzone')
     span(:demo_time, id: 'tm')
     link(:select, id: 'selectbtn')

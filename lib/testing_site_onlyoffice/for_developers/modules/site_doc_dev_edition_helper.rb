@@ -51,7 +51,7 @@ module TestingSiteOnlyoffice
     end
 
     def check_button_get_started_self_hosted?
-      xpath = "//div[contains(@class, 'choice')]//a[contains(@href, '/download-developer.aspx')]"
+      xpath = "//div[contains(@class, 'choice')]//a[contains(@href, '/download.aspx#docs-enterprise')]"
       @instance.webdriver.move_to_element_by_locator(xpath)
       @instance.webdriver.click_on_locator(xpath)
       SiteGetOnlyofficeDocsDeveloper.new(@instance)

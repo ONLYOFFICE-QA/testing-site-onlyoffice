@@ -14,7 +14,7 @@ module TestingSiteOnlyoffice
     link(:docspace_use_for_free_link, xpath: "//div[@class='es_block_buttons']/a[@href='/docspace-registration.aspx?from=for-enterprises']")
     link(:docspace_run_on_your_server, xpath: "//div[@class='es_block_buttons']/a[@href='/download-docspace.aspx#docspace-enterprise']")
     link(:docs_enterprise_link, xpath: '//a[@href = "/docs-enterprise.aspx?from=for-enterprises"]')
-    link(:docs_try_now_link, xpath: '//a[@href = "/download-desktop.aspx#desktop"]')
+    link(:docs_download_now_link, xpath: '//a[@href = "/download-desktop.aspx#desktop"]')
     link(:docs_learn_more_link, xpath: '//a[@href = "/docs-enterprise.aspx?from=for-enterprises"]')
     link(:docs_see_prices_link, xpath: '//a[@href = "/docs-enterprise-prices.aspx?from=for-enterprises"]')
     link(:workspace_try_now_link, xpath: '//a[@href = "/download-workspace.aspx#workspace-enterprise"]')

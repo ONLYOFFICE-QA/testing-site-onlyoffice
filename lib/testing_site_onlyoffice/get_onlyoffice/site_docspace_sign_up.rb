@@ -9,6 +9,7 @@ module TestingSiteOnlyoffice
 
     div(:sign_up_form, xpath: "//div[contains(@class, 'signuppageform')]")
     div(:portal_region, xpath: "//div[contains(@class, 'signUpBaseDomainValue')]")
+    element(:aws_region, xpath: "//span[contains(@class, 'signUpAwsRegionSelect')]")
     link(:sign_in_from_register_page, xpath: '//a[@id = "toSignIn"]')
 
     text_field(:first_name, xpath: "//input[@id = 'txtSignUpFirstName']")
@@ -54,6 +55,14 @@ module TestingSiteOnlyoffice
     def log_in_from_register_page
       sign_in_from_register_page_element.click
       SiteDocSpaceSignIn.new(@instance)
+    end
+
+    def complete_email_field
+      self.email = 'partners@qamail.teamlab.info'
+      # click on portal field to activate submit button
+      aws_region_element.click
+      @instance.webdriver.wait_until { @instance.webdriver.element_present?(submit_button_element) }
+      @instance.webdriver.click_on_locator(submit_button_element)
     end
   end
 end

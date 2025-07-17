@@ -195,6 +195,7 @@ module TestingSiteOnlyoffice
       self.full_name = user_data.fetch(:full_name, TestingSiteOnlyoffice::SiteData::DEFAULT_ADMIN_FULLNAME)
       self.email = user_data.fetch(:email, TestingSiteOnlyoffice::SiteData::EMAIL_ADMIN)
       self.company_name = user_data[:company_name]
+      full_name_element.click
       press_button_submit
     end
 

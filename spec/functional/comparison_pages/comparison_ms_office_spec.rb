@@ -15,11 +15,6 @@ describe 'Comparison - ONLYOFFICE Docs vs MS Office Online' do
     @test.webdriver.quit
   end
 
-  it '[Comparison][MS Office] Watch presentation' do
-    @ms_office_comparison.click_watch_presentation
-    expect(@ms_office_comparison.check_opened_file_name).to eq 'ONLYOFFICE vs Microsoft Office Online.pptx'
-  end
-
   it '[Comparison][MS Office] Read instruction' do
     @ms_office_comparison.click_read_instruction
     expect(@ms_office_comparison.check_opened_file_name).to eq 'How to compare online editors.pdf'

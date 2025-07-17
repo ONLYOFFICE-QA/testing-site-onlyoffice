@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 test_manager = TestingSiteOnlyoffice::TestManager.new(suite_name: File.basename(__FILE__))
-docspace_client_email = TestingSiteOnlyoffice::SiteData::CLIENT_EMAIL
-client_email_to_check = OnlyofficeIredmailHelper::IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::CLIENT_EMAIL)
+docspace_email = TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL
+client_email_to_check = OnlyofficeIredmailHelper::IredMailHelper.new(username: TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL)
 
 describe 'Smoke site tests for sign in and sign up Docspace' do
   before do
@@ -26,7 +26,7 @@ describe 'Smoke site tests for sign in and sign up Docspace' do
     end
 
     it '[Site][Docspace Sign in] Restore password works' do
-      @docspace_sign_in.restore_password_from_sign_in(docspace_client_email)
+      @docspace_sign_in.restore_password_from_sign_in(docspace_email)
       expect(client_email_to_check.check_email_by_subject({ subject: 'ONLYOFFICE Password Reminder' }, 300, true)).to be true
     end
   end
@@ -46,12 +46,11 @@ describe 'Smoke site tests for sign in and sign up Docspace' do
       expect(@docspace_sign_up.check_opened_file_name).to eq(TestingSiteOnlyoffice::SiteNotificationData::PRIVACY_STATEMENT)
     end
 
-    it '[Site][Docspace Sign in] Successful sign up and log in to DocSpace', skip: 'Cannot test new registration' do
+    it '[Site][Docspace Sign in] Successful sign up and log in to DocSpace' do
       @site_home_page.append_url_param
       skip 'Cannot test email notifications in production' if config.server.include?('.com')
-      result_page = @docspace_sign_up.complete_registration_form
-      expect(result_page).to be_a TestingSiteOnlyoffice::DocSpaceMainPage
-      expect(client_email_to_check.check_email_by_subject({ subject: 'Welcome to ONLYOFFICE DocSpace!' }, 300, true)).to be true
+      @docspace_sign_up.complete_email_field
+      expect(client_email_to_check.check_email_by_subject({ subject: 'Your login link to ONLYOFFICE DocSpace' }, 300, true)).to be true
     end
   end
 end

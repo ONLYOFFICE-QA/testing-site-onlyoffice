@@ -40,11 +40,6 @@ describe 'Site Products Docs' do
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteFeaturesSecurity
   end
 
-  it '[Site Products] [Docs] "DocSpace sign up" button works' do
-    result_page = @docs_page.click_docspace_start_free
-    expect(result_page).to be_a TestingSiteOnlyoffice::SiteDocSpaceSignUp
-  end
-
   it '[Site Products] [Docs] "40+ ready integrations" button works' do
     result_page = @docs_page.click_ready_integrations
     expect(result_page).to be_a TestingSiteOnlyoffice::SiteConnectorsOnlyoffice

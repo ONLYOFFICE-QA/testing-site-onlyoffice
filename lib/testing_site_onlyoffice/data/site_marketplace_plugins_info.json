@@ -5,8 +5,8 @@
   "autocomplete": {
     "get_it_now_title": "Autocomplete | ONLYOFFICE"
   },
-  "openai": {
-    "get_it_now_title": "ChatGPT | ONLYOFFICE"
+  "ai": {
+    "get_it_now_title": "Use AI assistants in ONLYOFFICE"
   },
   "chess": {
     "get_it_now_title": "Chess | ONLYOFFICE"
@@ -98,9 +98,6 @@
   "speech-to-text": {
     "get_it_now_title": "Speech-to-text | ONLYOFFICE DocSpace"
   },
-  "telegram": {
-    "get_it_now_title": "Telegram | ONLYOFFICE"
-  },
   "termef": {
     "get_it_now_title": "TerMef | ONLYOFFICE Docs"
   },
@@ -112,6 +109,9 @@
   },
   "typograf": {
     "get_it_now_title": "Typograf | ONLYOFFICE Docs"
+  },
+  "videoembedder": {
+    "get_it_now_title": "Video Embedder | ONLYOFFICE Docs"
   },
   "wordscounter": {
     "get_it_now_title": "Word counter | ONLYOFFICE Docs"
