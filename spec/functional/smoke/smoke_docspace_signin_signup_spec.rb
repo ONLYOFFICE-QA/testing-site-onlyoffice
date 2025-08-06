@@ -64,7 +64,5 @@ describe 'Smoke site tests for sign in and sign up Docspace' do
       result_page = docspace_sign_up.click_create_new_account
       expect(result_page).to be_a TestingSiteOnlyoffice::DocSpaceMainPage
     end
-
-
   end
 end

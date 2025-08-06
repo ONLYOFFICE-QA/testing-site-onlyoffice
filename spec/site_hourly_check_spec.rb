@@ -262,9 +262,7 @@ describe 'SiteHourlyCheck' do
 
       def skip_unless_within_hours(start_hour = 9, end_hour = 11)
         current_hour = Time.now.hour
-        unless current_hour.between?(start_hour, end_hour)
-          skip "Skipped: current hour (#{current_hour}) not in range #{start_hour}-#{end_hour}"
-        end
+        skip "Skipped: current hour (#{current_hour}) not in range #{start_hour}-#{end_hour}" unless current_hour.between?(start_hour, end_hour)
       end
 
       it '[Site][Docspace Sign in] Successful sign up and log in to DocSpace' do

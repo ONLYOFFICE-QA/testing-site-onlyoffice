@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 module TestingSiteOnlyoffice
+  # Helper for mail client
   class MailClientPage
-    # Helper for mail client
     include PageObject
 
     text_field(:username, id: 'rcmloginuser')
