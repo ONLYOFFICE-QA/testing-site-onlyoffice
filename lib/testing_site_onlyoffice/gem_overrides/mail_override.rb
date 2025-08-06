@@ -88,5 +88,20 @@ module OnlyofficeIredmailHelper
         body.legal_violation_match? &&
         body.rarely_use_match?
     end
+
+    def extract_login_link_from_email(subject:, timeout: 60)
+      sleep 120
+
+      mail = get_email_by_subject({ subject: subject }, timeout, true)
+      raise 'No email found with login link' unless mail
+
+      html = mail[:html_body]
+      raise 'Email has no HTML body' if html.nil? || html.empty?
+
+      match = html.match(%r{<a[^>]*href="([^"]+)"[^>]*>Log in to DocSpace</a>}i)
+      raise 'Login link not found in email' unless match
+
+      CGI.unescapeHTML(match[1])
+    end
   end
 end

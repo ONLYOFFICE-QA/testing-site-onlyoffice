@@ -6,7 +6,7 @@ module TestingSiteOnlyoffice
   module CookieWindow
     include PageObject
 
-    link(:cookie_button, xpath: '//a[@class="cookie_mess_button"]')
+    link(:cookie_button, xpath: '//a[@id="acceptCookies"]')
 
     # @return [True, False] is cookie warning shown
     def cookie_warning_shown?
