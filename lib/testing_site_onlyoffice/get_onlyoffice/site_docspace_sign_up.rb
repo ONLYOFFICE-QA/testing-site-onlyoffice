@@ -7,9 +7,10 @@ module TestingSiteOnlyoffice
     include PageObject
     include SiteDownloadHelper
 
-    div(:sign_up_form, xpath: "//div[contains(@class, 'signuppageform')]")
+    div(:sign_up_form, xpath: "//div[contains(@class, 'DocspaceRegistrationForm')]")
     div(:portal_region, xpath: "//div[contains(@class, 'signUpBaseDomainValue')]")
     element(:aws_region, xpath: "//span[contains(@class, 'signUpAwsRegionSelect')]")
+    element(:sign_up_with_email_text, xpath: "//div[normalize-space(text())='or sign up with email']")
     link(:sign_in_from_register_page, xpath: '//a[@id = "toSignIn"]')
 
     text_field(:first_name, xpath: "//input[@id = 'txtSignUpFirstName']")
@@ -59,10 +60,18 @@ module TestingSiteOnlyoffice
 
     def complete_email_field
       self.email = 'partners@qamail.teamlab.info'
-      # click on portal field to activate submit button
-      aws_region_element.click
+      # click on a field to activate submit button
+      sign_up_with_email_text_element.click
       @instance.webdriver.wait_until { @instance.webdriver.element_present?(submit_button_element) }
       @instance.webdriver.click_on_locator(submit_button_element)
+    end
+
+    def click_create_new_account
+      @instance.webdriver.wait_until(20) do
+        @instance.webdriver.element_present?("//a[text()='Create new account']")
+      end
+      @instance.webdriver.click_on_locator("//a[text()='Create new account']")
+      DocSpaceMainPage.new(@instance)
     end
   end
 end

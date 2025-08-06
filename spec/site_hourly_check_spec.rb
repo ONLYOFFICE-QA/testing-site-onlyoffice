@@ -256,6 +256,36 @@ describe 'SiteHourlyCheck' do
       end
     end
 
+    describe '[Site][Docspace Sign up Page] /docspace-registration.aspx' do
+      docspace_email = TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL
+      client_email_to_check = OnlyofficeIredmailHelper::IredMailHelper.new(username: docspace_email)
+
+      def skip_unless_within_hours(start_hour = 9, end_hour = 11)
+        current_hour = Time.now.hour
+        skip "Skipped: current hour (#{current_hour}) not in range #{start_hour}-#{end_hour}" unless current_hour.between?(start_hour, end_hour)
+      end
+
+      it '[Site][Docspace Sign in] Successful sign up and log in to DocSpace' do
+        skip_unless_within_hours(10, 11)
+
+        docspace_sign_up = @site_home_page.click_link_on_toolbar(:site_get_onlyoffice_docspace_sign_up)
+        @site_home_page.append_url_param
+        docspace_sign_up.complete_email_field
+        sleep 30
+
+        login_url = client_email_to_check.extract_login_link_from_email(
+          subject: 'Your login link to ONLYOFFICE DocSpace'
+        )
+
+        @test.webdriver.driver.execute_script("window.open('#{login_url}', '_blank');")
+        @test.webdriver.driver.switch_to.window(@test.webdriver.driver.window_handles.last)
+
+        sign_up_page = TestingSiteOnlyoffice::SiteDocSpaceSignUp.new(@test)
+        result_page = sign_up_page.click_create_new_account
+        expect(result_page).to be_a TestingSiteOnlyoffice::DocSpaceMainPage
+      end
+    end
+
     describe 'Сhecking for a product version logging error' do
       before do
         @download_commercial_page = @site_home_page.click_link_on_toolbar(:download_docs_enterprise)

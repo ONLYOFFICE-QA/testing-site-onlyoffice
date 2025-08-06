@@ -49,8 +49,20 @@ describe 'Smoke site tests for sign in and sign up Docspace' do
     it '[Site][Docspace Sign in] Successful sign up and log in to DocSpace' do
       @site_home_page.append_url_param
       skip 'Cannot test email notifications in production' if config.server.include?('.com')
+
       @docspace_sign_up.complete_email_field
-      expect(client_email_to_check.check_email_by_subject({ subject: 'Your login link to ONLYOFFICE DocSpace' }, 300, true)).to be true
+      sleep 30
+
+      login_url = client_email_to_check.extract_login_link_from_email(
+        subject: 'Your login link to ONLYOFFICE DocSpace'
+      )
+
+      @test.webdriver.driver.execute_script("window.open('#{login_url}', '_blank');")
+      @test.webdriver.driver.switch_to.window(@test.webdriver.driver.window_handles.last)
+
+      docspace_sign_up = TestingSiteOnlyoffice::SiteDocSpaceSignUp.new(@test)
+      result_page = docspace_sign_up.click_create_new_account
+      expect(result_page).to be_a TestingSiteOnlyoffice::DocSpaceMainPage
     end
   end
 end
