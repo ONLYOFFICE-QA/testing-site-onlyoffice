@@ -4,6 +4,7 @@ module TestingSiteOnlyoffice
   # parent class for integrators
   class SiteForBusiness
     include PageObject
+
     attr_accessor :connector_type
 
     element(:title, xpath: '//div[@class="ct_head"]/span')

@@ -16,6 +16,7 @@ module TestingSiteOnlyoffice
     include SiteBlockConstructorHelper
     include SiteDownloadHelper
     include SiteToolbar
+
     divs(:connectors_block, xpath: "//div[@data-dev='oo_devs']//div[@class='itdn_section_description']")
     divs(:connectors_partners_block, xpath: "//div[@data-dev='partners_devs']//div[@class='itdn_section_description']")
 

@@ -13,6 +13,7 @@ module TestingSiteOnlyoffice
   class TestManager
     include PalladiumWrapper
     include TestManagerTestrail
+
     # @return [Object] testrail params
     attr_reader :testrail
 
