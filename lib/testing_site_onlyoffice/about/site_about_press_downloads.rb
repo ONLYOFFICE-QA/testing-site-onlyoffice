@@ -6,6 +6,7 @@ module TestingSiteOnlyoffice
   # https://user-images.githubusercontent.com/67409742/145952088-087b405c-94fb-43b8-bdcf-7d03b767b968.png
   class SiteAboutPressDownloads
     include PageObject
+
     div(:press_downloads_page, xpath: '//div[@class="InnerPage pressdownloadspage"]')
 
     def initialize(instance)

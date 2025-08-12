@@ -5,6 +5,7 @@ module TestingSiteOnlyoffice
   # https://github.com/ONLYOFFICE-QA/testing-site-onlyoffice/assets/99170537/fe7a5e76-766f-4896-87e0-c1ab52027b2c
   class SiteFeaturesEBookCreator
     include PageObject
+
     div(:documents_image, xpath: "//div[@class='oses_blocks_image e-book  ']")
 
     def initialize(instance)

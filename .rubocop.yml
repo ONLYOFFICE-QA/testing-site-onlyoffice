@@ -43,3 +43,6 @@ RSpec/InstanceVariable:
 # So I'll leave this check disabled until better times
 RSpec/MultipleExpectations:
   Enabled: false
+
+Naming/PredicateMethod:
+  Enabled: false

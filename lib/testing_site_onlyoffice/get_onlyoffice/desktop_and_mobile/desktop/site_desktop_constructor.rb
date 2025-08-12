@@ -33,7 +33,7 @@ module TestingSiteOnlyoffice
     def fetch_download_xpath_x86
       if SiteDownloadData.desktop_download_list_type[:three_download_windows_files][0..1].include?(@installer.to_sym)
         "//a[contains(@id,'desktop_editors') and contains(@id,'#{@installer}') and contains(@id,'msi')]"
-      elsif SiteDownloadData.desktop_download_list_type[:three_download_windows_files][2] == (@installer.to_sym)
+      elsif SiteDownloadData.desktop_download_list_type[:three_download_windows_files][2] == @installer.to_sym
         "//a[contains(@id,'desktop_editors') and contains(@id,'#{@installer}') and contains(@id,'x86')]"
       end
     end
@@ -41,7 +41,7 @@ module TestingSiteOnlyoffice
     def fetch_download_xpath
       if SiteDownloadData.desktop_download_list_type[:three_download_windows_files][0..1].include?(@installer.to_sym)
         "//a[contains(@id,'desktop_editors') and contains(@id,'#{@installer}') and contains(@id,'exe')]"
-      elsif SiteDownloadData.desktop_download_list_type[:three_download_windows_files][2] == (@installer.to_sym)
+      elsif SiteDownloadData.desktop_download_list_type[:three_download_windows_files][2] == @installer.to_sym
         "//a[contains(@id,'desktop_editors') and contains(@id,'#{@installer}') and contains(@id,'x64')]"
       elsif SiteDownloadData.desktop_download_list_type[:two_download_mac_files].include?(@installer.to_sym)
         "//a[contains(@id,'desktop_editors') and contains(@id,'#{@installer}') and contains(@id,'intel')]"
