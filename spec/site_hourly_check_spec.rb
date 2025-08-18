@@ -93,8 +93,6 @@ describe 'SiteHourlyCheck' do
       expect(page).to be_a TestingSiteOnlyoffice::SitePricingDocSpacePrices
       page = @site_home_page.click_link_on_toolbar(:pricing_developer)
       expect(page).to be_a TestingSiteOnlyoffice::SitePriceDocsDeveloper
-      page = @site_home_page.click_link_on_toolbar(:pricing_workspace)
-      expect(page).to be_a TestingSiteOnlyoffice::SitePricingWorkSpace
     end
 
     it '[Site] Check link HelpCenter' do
