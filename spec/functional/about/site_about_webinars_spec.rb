@@ -18,4 +18,15 @@ describe 'Webinars' do
   it '[Webinars] Go to Webinars' do
     expect(@webinars).to be_a TestingSiteOnlyoffice::SiteAboutWebinars
   end
+
+  it '[Webinars] All webinar links have valid href' do
+    hrefs = @webinars.webinar_links
+
+    expect(hrefs).not_to be_empty
+    hrefs.each do |href|
+      expect(href).not_to eq('undefined')
+      expect(href).not_to be_nil
+      expect(href.strip).not_to be_empty
+    end
+  end
 end

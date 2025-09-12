@@ -254,6 +254,15 @@ describe 'SiteHourlyCheck' do
       end
     end
 
+    # it '[Site] Webinars links do not contain undefined' do
+    #   webinars_page = @site_home_page.click_link_on_toolbar(:about_webinars)
+    #   hrefs = webinars_page.webinar_links
+    #
+    #   expect(hrefs).not_to be_empty
+    #   broken = hrefs.select { |href| href.nil? || href.strip.empty? || href == 'undefined' }
+    #   expect(broken).to be_empty, "Broken webinar links found: #{broken.inspect}"
+    # end
+
     describe '[Site][Docspace Sign up Page] /docspace-registration.aspx' do
       docspace_email = TestingSiteOnlyoffice::SiteData::PARTNERS_EMAIL
       client_email_to_check = OnlyofficeIredmailHelper::IredMailHelper.new(username: docspace_email)

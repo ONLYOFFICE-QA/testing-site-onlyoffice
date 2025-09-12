@@ -21,5 +21,11 @@ module TestingSiteOnlyoffice
 
       @instance.webdriver.webdriver_error("The page 'Webinars' didn't load or doesn't match the title")
     end
+
+    def webinar_links
+      xpath = "//a[contains(@class,'nwp_list_item')]"
+      elements = @instance.webdriver.driver.find_elements(:xpath, xpath)
+      elements.map { |el| el.dom_attribute('href') }
+    end
   end
 end
